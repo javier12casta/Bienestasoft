@@ -29,6 +29,7 @@ import { RolComponent } from './page/rol/rol.component';
 import { UdsComponent } from './page/uds/uds.component';
 import { UsuariosComponent } from './page/usuarios/usuarios.component';
 import { AcudientesComponent } from './page/acudientes/acudientes.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { AcudientesComponent } from './page/acudientes/acudientes.component';
     UdsComponent,
     UsuariosComponent,
     AcudientesComponent,
+    LoginComponent,
    
   ],
   imports: [
