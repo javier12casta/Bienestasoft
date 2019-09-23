@@ -1,43 +1,156 @@
+<html>
+		<title>Menu Desplegable</title>
+		<head>
 
-        <label>Tipo Documento</label>
-        <select placeholder="Selececiona una">
-                <option value="CC">Cedula de ciudadania</option>
-                <option value="CE">Cédula de extranjería</option>
-                <option value="TP"> Tarjeta pasaporte</option>
-              </select>
-        
-      
-            <label>Numero de Documento</label>
-            <input type="text">
-      
-            <label>Nombres</label>
-        <input type="text">
-      
-        <label>Apellidos</label>
-        <input type="text">
-      
-            <label>Parentesco Beneficiario</label>
-            <select placeholder="Selececiona una">
-              <option value="CC">Padre</option>
-              <option value="CE">Madre</option>
-              <option value="TP"> Hermano(a)</option>
-              <option value="TP"> Abuelo(a)</option>
-              <option value="TP"> Tio(a)</option>
-              <option value="TP"> persona con custodia</option>
-            </select>
-          
-              <label>Genero</label>
-              <select placeholder="Selececiona una">
-                <option value="H">H</option>
-                <option value="M">M</option>
-              </select>
-              <label>fecha Nacimiento</label>
-              <input type="datetime-local">
-              <label>fecha Ingreso</label>
-              <input type="datetime-local">
-                <label>Registro Biometrico</label>
-                <input type="text">
-    
-                <button>Siguiente</button>
-          
-      
+				<style type="text/css">
+			
+					* {
+						margin:0px;
+						padding:0px;
+					}
+					
+					#header {
+						margin:auto;
+						width:700px;
+						font-family:Arial, Helvetica, sans-serif;
+					}
+					
+					ul, ol {
+						list-style:none;
+					}
+					
+					.nav > li {
+						float:left;
+					}
+					
+					.nav li a {
+						background-color:rgb(39, 192, 25);
+						color:#fff;
+						text-decoration:none;
+						padding:10px 12px;
+						display:block;
+					}
+					
+					.nav li a:hover {
+						background-color:#434343;
+					}
+					
+					.nav li ul {
+						display:none;
+						position:absolute;
+						min-width:140px;
+					}
+					
+					.nav li:hover > ul {
+						display:block;
+					}
+					
+					.nav li ul li {
+						position:relative;
+					}
+					
+					.nav li ul li ul {
+						right:-140px;
+						top:0px;
+					}
+					
+				</style>
+
+
+		</head>
+		<body>
+
+				<div id="header">
+						<ul class="nav">
+							<li><a routerLink="/datosgeneralesbeneficiario">Datos Generales Beneficiario</a></li>
+							<li><a routerLink="/acudientesbeneficirio">Acuediente Beneficiario ICBF</a></li>
+							<li><a routerLink="/datosbeneficiario">Datos contacto Beneficiario</a></li>
+						</ul>
+					</div>
+
+		<h1>Crear Beneficiario</h1>
+
+		<h1>Acudiente Beneficiario</h1>
+		<div class="container" class="padre">
+		 <div class="card card-container">
+		
+		<form class="form-signin padding" >
+		
+        <span class="btn btn-success" >Tipo de Documento</span>
+                <h2></h2>
+                <select class="select-css">
+                        <option value="0">CC</option>
+                        <option value="1">CE</option>
+                        <option value="1">PA</option>
+                </select>
+                <h2></h2>
+
+                <span class="btn btn-success">Numero de Documento de identidad</span>
+                <h2></h2>
+                <input type="text" id="inputnumerodoc" placeholder="Numero de documento" required autofocus>
+                <h2></h2>
+
+                <span class="btn btn-success">Nombres</span>
+                <h2></h2>
+                <input type="text" id="inputnombres" placeholder="Nombres" required autofocus>
+                <h2></h2>
+
+                <span class="btn btn-success">Acudiente  : </span>
+                <h2></h2>
+
+                <span class="btn btn-success">Apellidos Acudiente</span>
+                <h2></h2>
+                <input type="text" id="inputapellidosa" placeholder="Apellidos" required autofocus>
+                <h2></h2>
+
+                <span class="btn btn-success">Parentesco con el Beneficiario</span>
+                <h2></h2>
+                
+                <select class="select-css">
+                    <option value="0">Padre</option>
+                    <option value="1">Madre</option>
+                    <option value="2">Hermano(a)</option>
+                    <option value="3">Abuelo(a)</option>
+                    <option value="4">Tio(a)</option>
+                    <option value="5">Persona con custodia</option>
+                </select>
+
+                <span class="btn btn-success">Genero</span>
+                <h2></h2>
+                
+                <select class="select-css">
+                    <option value="0">H:Hombre</option>
+                    <option value="1">M: Mujer</option>
+                
+                </select>
+
+                <span class="btn btn-success">Fecha de Nacimiento </span>
+                <h2></h2>
+                <input type="date" id="start" name="trip-start"
+                       value="2018-07-22"
+                       min="1900-01-01" max="2050-12-31">
+                       <h2></h2>
+
+                       <span class="btn btn-success">Fecha de Ingreso</span>
+                       <h2></h2>
+
+                       <input type="date" id="start" name="trip-start"
+                              value="2018-07-22"
+                              min="1900-01-01" max="2050-12-31">
+                              <h2></h2>
+
+                              <span class="btn btn-success">Registro Biometrico</span>
+                              <h2></h2>
+                              <input type="text" id="inputb" placeholder="Biometrico " required autofocus>
+                              <h2></h2>
+
+			   <button type="button" class="btn btn-success" routerLink="/datosgeneralesbeneficiario">siguiente</button>
+			   <h2></h2>
+		</form><!-- /form -->
+		</div><!-- /card-container -->
+		</div><!-- /card-container -->
+
+
+
+	</body>
+</html>

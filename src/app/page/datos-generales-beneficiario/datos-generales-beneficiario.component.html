@@ -1,1 +1,146 @@
-<p>datos-generales-beneficiario works!</p>
+
+
+<html>
+		<title>Menu Desplegable</title>
+		<head>
+
+				<style type="text/css">
+			
+					* {
+						margin:0px;
+						padding:0px;
+					}
+					
+					#header {
+						margin:auto;
+						width:700px;
+						font-family:Arial, Helvetica, sans-serif;
+					}
+					
+					ul, ol {
+						list-style:none;
+					}
+					
+					.nav > li {
+						float:left;
+					}
+					
+					.nav li a {
+						background-color:rgb(39, 192, 25);
+						color:#fff;
+						text-decoration:none;
+						padding:10px 12px;
+						display:block;
+					}
+					
+					.nav li a:hover {
+						background-color:#434343;
+					}
+					
+					.nav li ul {
+						display:none;
+						position:absolute;
+						min-width:140px;
+					}
+					
+					.nav li:hover > ul {
+						display:block;
+					}
+					
+					.nav li ul li {
+						position:relative;
+					}
+					
+					.nav li ul li ul {
+						right:-140px;
+						top:0px;
+					}
+					
+				</style>
+
+
+		</head>
+		<body>
+
+				<div id="header">
+						<ul class="nav">
+							<li><a routerLink="/datosgeneralesbeneficiario">Datos Generales Beneficiario</a></li>
+							<li><a routerLink="/acudientesbeneficirio">Acuediente Beneficiario ICBF</a></li>
+							<li><a routerLink="/datosbeneficiario">Datos contacto Beneficiario</a></li>
+						</ul>
+					</div>
+
+		<h1>Crear Beneficiario</h1>
+
+		<h1>Datos Generales Usuario</h1>
+		<div class="container" class="padre">
+		 <div class="card card-container">
+		
+		<form class="form-signin padding" >
+		
+                <span class="btn btn-success" >Numero de documento de identidad</span>
+                <h2></h2>
+                <input type="text" id="inputndocumento"  placeholder="Documento de identidad" required autofocus>
+                <h2></h2>
+                <span class="btn btn-success" >Primer Nombre</span>
+                <h2></h2>
+                <input type="text" id="inputnombre1"  placeholder="Primer Nombre" required autofocus>
+                <h2></h2>
+                <span class="btn btn-success" >Segundo Nombre</span>
+                <h2></h2>
+                <input type="text" id="inputnombre2"  placeholder="Segundo Nombre" required autofocus>
+                <h2></h2>
+                <span class="btn btn-success" >Primer Apellido</span>
+                <h2></h2>
+                <input type="text" id="inputapellido1"  placeholder="Primer Apellido" required autofocus>
+                <h2></h2>
+                <span class="btn btn-success" >Segundo Apellido</span>
+                <h2></h2>
+                <input type="text" id="inputapellido2"  placeholder="Segundo Apellido" required autofocus>
+                <h2></h2>
+                <span class="btn btn-success" >Estado del Beneficiario</span>
+                <h2></h2>
+                <label class="container1">Habilitar
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="container1">Inhabilitar
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                    </label>
+                    <h2></h2>
+                    <span class="btn btn-success" >Genero</span>
+                    <h2></h2>
+                    <select class="select-css">
+                            <option value="0">Masculino</option>
+                            <option value="1">Femenino</option>
+                                
+                    </select>
+                    
+                    <span class="btn btn-success">Fecha de Nacimiento:</span>
+
+<input type="date" id="start" name="trip-start"
+       value="2018-07-22"
+       min="1900-01-01" max="2050-12-31">
+       <h2></h2>
+       <span class="btn btn-success" >Servicio o modalidad</span>
+                <h2></h2>
+                <input type="text" id="inputservicio"  placeholder="Servicio o Modalidad" required autofocus>
+                <h2></h2>
+                <span class="btn btn-success">Fecha de Ingreso:</span>
+
+                <input type="date" id="start" name="trip-start"
+                       value="2018-07-22"
+                       min="1900-01-01" max="2050-12-31">
+                       <h2></h2>
+
+			   <button type="button" class="btn btn-success" routerLink="/datosgeneralesbeneficiario">siguiente</button>
+			   <h2></h2>
+		</form><!-- /form -->
+		</div><!-- /card-container -->
+		</div><!-- /card-container -->
+
+
+
+	</body>
+</html>

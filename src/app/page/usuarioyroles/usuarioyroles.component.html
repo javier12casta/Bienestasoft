@@ -1,19 +1,87 @@
 
 <html>
+		<head>
+
+				<style type="text/css">
+			
+					* {
+						margin:0px;
+						padding:0px;
+					}
+					
+					#header {
+						margin:auto;
+						width:700px;
+						font-family:Arial, Helvetica, sans-serif;
+					}
+					
+					ul, ol {
+						list-style:none;
+					}
+					
+					.nav > li {
+						float:left;
+					}
+					
+					.nav li a {
+						background-color:rgb(39, 192, 25);
+						color:#fff;
+						text-decoration:none;
+						padding:10px 12px;
+						display:block;
+					}
+					
+					.nav li a:hover {
+						background-color:#434343;
+					}
+					
+					.nav li ul {
+						display:none;
+						position:absolute;
+						min-width:140px;
+					}
+					
+					.nav li:hover > ul {
+						display:block;
+					}
+					
+					.nav li ul li {
+						position:relative;
+					}
+					
+					.nav li ul li ul {
+						right:-140px;
+						top:0px;
+					}
+					
+				</style>
+
+
+		</head>
 		<body>
+				<div class="padre">
+						<div id="header" class="hijo_uno">
+								<ul class="nav">
+										
+									<li><a routerLink="/modificarusuarios">Modificar</a></li>
+									<li><a routerLink="/inhabilitarusuarios">Inhabilitar</a></li>
+							
+								</ul>
+							</div>
+						</div>
 		<h1>Crear Usuario</h1>
 
 		<h1>Usuario y Asignación de Roles</h1>
-		<div class="container">
+		<div class="container" class="padre">
 		 <div class="card card-container">
 		
 		<form class="form-signin padding" >
 		
-		<span class="label success" >Usuario en el sistema</span>
+		<span class="btn btn-success" >Usuario en el sistema</span>
 		<h2></h2>
 		<input type="text" id="inputusuariosistema" placeholder="Ususario Sistema" required autofocus>
 		<h2></h2>
-		<span class="label success">Tipo Documento</span>
+		<span class="btn btn-success">Tipo Documento</span>
 		<h2></h2>
 		
 		<select class="select-css">
@@ -24,7 +92,7 @@
 		</select>
 		
                <h2></h2>
-               <span class="label success">Tipo Documento</span>
+               <span class="btn btn-success">Tipo Documento</span>
                <h2></h2>
                <select class="select-css">
                     <option value="0">Rol1</option>
