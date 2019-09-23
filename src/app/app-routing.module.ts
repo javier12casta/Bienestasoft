@@ -15,7 +15,6 @@ import { DatosContactoBeneficiarioComponent } from './page/datos-contacto-benefi
 import { InventarioComponent } from './page/inventario/inventario.component';
 import { DatosContactoUsuarioComponent } from './page/datos-contacto-usuario/datos-contacto-usuario.component';
 import { DatosGeneralesBeneficiarioComponent } from './page/datos-generales-beneficiario/datos-generales-beneficiario.component';
-import { DatosGeneralesUsuarioComponent } from './page/datos-generales-usuario/datos-generales-usuario.component';
 import { ListaMaestrosBienestarinaComponent } from './page/lista-maestros-bienestarina/lista-maestros-bienestarina.component';
 import { ListadoPreciosComponent } from './page/listado-precios/listado-precios.component';
 import { MunicipioComponent } from './page/municipio/municipio.component';
@@ -29,7 +28,10 @@ import { RolComponent } from './page/rol/rol.component';
 import { UdsComponent } from './page/uds/uds.component';
 import { UsuariosComponent } from './page/usuarios/usuarios.component';
 import { LoginComponent } from './login/login.component';
-
+import { UsuarioyrolesComponent } from './page/usuarioyroles/usuarioyroles.component';
+import { UsuarionivelComponent } from './page/usuarionivel/usuarionivel.component';
+import { ModificarusuariosComponent } from './page/modificarusuarios/modificarusuarios.component';
+import { InhabilitarusuariosComponent } from './page/inhabilitarusuarios/inhabilitarusuarios.component';
 
 const routes: Routes = [
   {path:'', component: LoginComponent},
@@ -50,7 +52,6 @@ const routes: Routes = [
   {path:'inventario', component:InventarioComponent},
   {path:'datoscontactousuario', component: DatosContactoUsuarioComponent},
   {path:'datosgeneralesbeneficiario', component:DatosGeneralesBeneficiarioComponent},
-  {path:'datosgeneralesusuario', component:DatosGeneralesUsuarioComponent},
   {path:'listamaestros', component:ListaMaestrosBienestarinaComponent},
   {path:'listaprecios', component: ListadoPreciosComponent},
   {path:'municipio', component: MunicipioComponent},
@@ -65,7 +66,10 @@ const routes: Routes = [
   {path:'rol', component: RolComponent},
   {path:'uds', component: UdsComponent},
   {path:'usuarios', component: UsuariosComponent},
-  
+  {path:'usuariosroles', component: UsuarioyrolesComponent},
+  {path:'usuariosnivel', component: UsuarionivelComponent},
+  {path:'modificarusuarios', component: ModificarusuariosComponent},
+  {path:'inhabilitarusuarios', component: InhabilitarusuariosComponent},
 ];
 
 @NgModule({
