@@ -30,6 +30,16 @@ import { UdsComponent } from './page/uds/uds.component';
 import { UsuariosComponent } from './page/usuarios/usuarios.component';
 import { AcudientesComponent } from './page/acudientes/acudientes.component';
 import { LoginComponent } from './login/login.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+//imports material modules
+import {
+  MatSidenavModule,
+  MatToolbarModule,
+  MatMenuModule
+} from '@angular/material'; 
+import {MatListModule} from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -66,7 +76,14 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    //Material Imports Module
+    BrowserAnimationsModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
