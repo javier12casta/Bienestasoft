@@ -15,7 +15,6 @@ import { DatosContactoBeneficiarioComponent } from './page/datos-contacto-benefi
 import { InventarioComponent } from './page/inventario/inventario.component';
 import { DatosContactoUsuarioComponent } from './page/datos-contacto-usuario/datos-contacto-usuario.component';
 import { DatosGeneralesBeneficiarioComponent } from './page/datos-generales-beneficiario/datos-generales-beneficiario.component';
-import { DatosGeneralesUsuarioComponent } from './page/datos-generales-usuario/datos-generales-usuario.component';
 import { ListaMaestrosBienestarinaComponent } from './page/lista-maestros-bienestarina/lista-maestros-bienestarina.component';
 import { ListadoPreciosComponent } from './page/listado-precios/listado-precios.component';
 import { MunicipioComponent } from './page/municipio/municipio.component';
@@ -41,6 +40,11 @@ import {
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 
+import { UsuarioyrolesComponent } from './page/usuarioyroles/usuarioyroles.component';
+import { UsuarionivelComponent } from './page/usuarionivel/usuarionivel.component';
+import { ModificarusuariosComponent } from './page/modificarusuarios/modificarusuarios.component';
+import { InhabilitarusuariosComponent } from './page/inhabilitarusuarios/inhabilitarusuarios.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +61,6 @@ import {MatIconModule} from '@angular/material/icon';
     InventarioComponent,
     DatosContactoUsuarioComponent,
     DatosGeneralesBeneficiarioComponent,
-    DatosGeneralesUsuarioComponent,
     ListaMaestrosBienestarinaComponent,
     ListadoPreciosComponent,
     MunicipioComponent,
@@ -72,6 +75,10 @@ import {MatIconModule} from '@angular/material/icon';
     UsuariosComponent,
     AcudientesComponent,
     LoginComponent,
+    UsuarioyrolesComponent,
+    UsuarionivelComponent,
+    ModificarusuariosComponent,
+    InhabilitarusuariosComponent,
    
   ],
   imports: [
@@ -83,7 +90,7 @@ import {MatIconModule} from '@angular/material/icon';
     MatToolbarModule,
     MatMenuModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
