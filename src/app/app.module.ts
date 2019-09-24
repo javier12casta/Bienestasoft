@@ -44,6 +44,8 @@ import { UsuarioyrolesComponent } from './page/usuarioyroles/usuarioyroles.compo
 import { UsuarionivelComponent } from './page/usuarionivel/usuarionivel.component';
 import { ModificarusuariosComponent } from './page/modificarusuarios/modificarusuarios.component';
 import { InhabilitarusuariosComponent } from './page/inhabilitarusuarios/inhabilitarusuarios.component';
+import { PuntoentregaiComponent } from './page/puntoentregai/puntoentregai.component';
+import { UdsiComponent } from './page/udsi/udsi.component';
 
 @NgModule({
   declarations: [
@@ -79,6 +81,8 @@ import { InhabilitarusuariosComponent } from './page/inhabilitarusuarios/inhabil
     UsuarionivelComponent,
     ModificarusuariosComponent,
     InhabilitarusuariosComponent,
+    PuntoentregaiComponent,
+    UdsiComponent,
    
   ],
   imports: [

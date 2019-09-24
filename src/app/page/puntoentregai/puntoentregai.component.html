@@ -1,0 +1,27 @@
+<mat-toolbar>
+        <button class="btn btn-success start" routerLink="/centrozonal">Volver</button>
+    </mat-toolbar>
+    
+    <div class="col-md-4 offset-md-4">
+            <div class="card">  
+              <div class="card-body">
+                <form>
+                  <div class="form-group padding">
+                    <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
+                    <input type="text" class="form-control" name="NombreCentroZonal"  placeholder="Nombre Centro Zonal">
+                    <input type="number" class="form-control" name="idMunicipios" placeholder="idMunicipios">
+                    <input type="number" class="form-control" name="idComunas" placeholder="idComunas">
+                    <input type="number" class="form-control" name="idBarrioVeredas" placeholder="idBarrioVeredas">
+                    <input type="text" class="form-control" name="CodigoExternoJcz" placeholder="CodigoExternoJcz">
+                    <input type="number" class="form-control" name="CodigoExternoCZ" placeholder="CodigoExternoCZ">
+                    <input type="text" class="form-control" name="Estado" placeholder="Estado">
+                    <input type="number" class="form-control" name="idRegional" placeholder="idRegional">
+                  </div>
+                  <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
+                  <button class="btn btn-success" type="submit" routerLink="/centrozonal">
+                    Guardar
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>

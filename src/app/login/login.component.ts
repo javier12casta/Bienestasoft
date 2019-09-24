@@ -35,17 +35,6 @@ export class LoginComponent implements OnInit {
     ],
   }
 
-  loginUser(){
-   
-    this.service.login(this.user.name, this.user.pw).then (success =>{
-      if (success) {
-        this.router.navigateByUrl('/entrega');
-      }else{
-        
-      } 
-    });
-
-  }
 
 
   constructor() { }

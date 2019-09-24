@@ -157,3 +157,9 @@ label {
    .select-css option {
 	font-weight:normal;
    }
+
+   .padre {
+	
+	/* IMPORTANTE */
+	text-align: center;
+  }

@@ -7,19 +7,18 @@ import { Municipio } from './interfaces/municipio';
 import { Centrozonal } from './interfaces/centrozonal';
 import { Regional } from './interfaces/regional';
 import { Observable } from 'rxjs';
-import { User } from './interfaces/user';
+import { Puntoentrega } from './interfaces/puntoentrega';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServicioService {
   api = 'http://localhost:3000';
-  currentUser: User; 
-
   constructor(public http: HttpClient) {
     console.log("hello service");
-  }
-//------rol Persona--------
+   }
+
+   //------rol Persona--------
 // metodo get de roles
   Obtenerdatos() {
     const path = `${this.api}/rol`;
@@ -130,45 +129,22 @@ postRegional(regi: Regional){
 putRegional(id: string|number, regi: Regional ){
   return this.http.put<Regional>(`${this.api}/regional/${id}`, regi);
 }
-
-login (name: string, pw: string) : Promise<boolean>{
-  return new Promise((resolve, reject) =>{
-    if(name === 'admin123' && pw ==='admin123'){
-      this.currentUser = {
-        name: name,
-        rol: 1,
-      };
-      resolve(true);
-    } else if(name === 'user12345' && pw ==='user12345'){
-      this.currentUser = {
-        name: name,
-        rol: 2,
-      };
-      resolve(true);
-    }else {
-      resolve(false);
-    }
-  });
+//--------------------------------
+getPunto(){
+  const path = `${this.api}/punto`;
+  return this.http.get<[Puntoentrega]>(path);
 }
-
-
-isLogedIn(){
-  return this.currentUser !=null;
+//---Metodo traer por id
+getPuntoid(id: string) {
+  return this.http.get(`${this.api}/punto/${id}`);
 }
-
-logout(){
-  this.currentUser = null;
+//----Metodo Crear Regionales
+postPunto(punto: Puntoentrega){
+  const path = `${this.api}/punto`;
+  return this.http.post<Puntoentrega>(path, punto);
 }
-
-isAdmin(){
-  return this.currentUser.rol == 1;
+//Metodo Actualizar Regionales
+putPunto(id: string|number, punto: Puntoentrega ){
+  return this.http.put<Puntoentrega>(`${this.api}/punto/${id}`, punto);
 }
-
-
 }
-
-
-
-
-
-

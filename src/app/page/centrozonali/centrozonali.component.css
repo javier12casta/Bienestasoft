@@ -1,0 +1,10 @@
+toolbar{
+    color: green;
+    position: fixed;
+    padding-inline: 50px;
+}
+
+input{
+    padding: 10px;
+    padding-block-end: 10px; 
+}
