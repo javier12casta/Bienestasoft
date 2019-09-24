@@ -26,7 +26,7 @@ export class MenuComponent implements OnInit {
     {name:"rol", route: "/rol", icon:"face" },
     {name:"uds", route: "/uds", icon:"public" },
     {name:"usuarios", route: "/usuarios", icon:"face" },
-
+    {name:"Datos Maestros", route: "/listamaestros", icon:"face" },
   ];
 
   fillerContent = Array.from({length: 50}, () =>'');

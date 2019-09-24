@@ -75,6 +75,7 @@ const routes: Routes = [
   {path:'inhabilitarusuarios', component: InhabilitarusuariosComponent},
   {path:'listamaestrosmodificar', component: ListaMaestrosBienestarinaModificarComponent},
   {path:'listamaestrosinhabilitar', component: ListaMaestrosBienestarinaInhabilitarComponent},
+  {path:'listamaestros', component:ListaMaestrosBienestarinaComponent},
 ];
 
 @NgModule({

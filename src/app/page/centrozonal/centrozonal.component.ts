@@ -3,7 +3,6 @@ import { Centrozonal } from '../../interfaces/centrozonal';
 import { ServicioService } from '../../servicio.service';
 
 import { Regional } from '../../interfaces/regional';
-import { async } from 'q';
 
 @Component({
   selector: 'app-centrozonal',
@@ -11,7 +10,7 @@ import { async } from 'q';
   styleUrls: ['./centrozonal.component.css']
 })
 export class CentrozonalComponent implements OnInit {
-  centros: Centrozonal [] = [];
+  centros: Centrozonal[] = [];
   regional: Regional = {
     idRegional: 0,
     Regional: '',
@@ -30,5 +29,4 @@ export class CentrozonalComponent implements OnInit {
       }
       );
   }
-
 }

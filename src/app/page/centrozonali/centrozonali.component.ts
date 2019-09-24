@@ -3,16 +3,22 @@ import { Centrozonal } from 'src/app/interfaces/centrozonal';
 import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 
+import { Municipio } from '../../interfaces/municipio';
+import { Comuna } from '../../interfaces/comuna';
+import { Regional } from '../../interfaces/regional';
+import {Barrio} from '../../interfaces/barrio';
+
 @Component({
   selector: 'app-centrozonali',
   templateUrl: './centrozonali.component.html',
   styleUrls: ['./centrozonali.component.css']
 })
 export class CentrozonaliComponent implements OnInit {
-  ServicioService: any;
+  
 
   constructor(
   private activeRoute: ActivatedRoute,
+  private Service: ServicioService,
   ){
   }
 
@@ -28,13 +34,18 @@ export class CentrozonaliComponent implements OnInit {
       idRegional: 2,
   };
 
+  muninicipios: Municipio[]=[];
+  comunas: Comuna []=[];
+  regional: Regional[]=[];
+  barrio: Barrio []=[];
+
   modificar = false;
 
   ngOnInit() {
     const params = this.activeRoute.snapshot.params;
     console.log(params);
     if (params.id) {
-      this.ServicioService.getCentroid(params.id)
+      this.Service.getCentroid(params.id)
         .subscribe(res => {
           console.log(res);
           this.centros = Object(res);
@@ -50,7 +61,7 @@ export class CentrozonaliComponent implements OnInit {
   //insertar Datos
   insertDatos(Centrozonal : string) {
     delete this.centros.idCentrosZonales;
-    this.ServicioService.postCentro(this.centros).subscribe(res => {
+    this.Service.postCentro(this.centros).subscribe(res => {
       console.log(this.centros);
       console.log(res);
     },
@@ -61,7 +72,7 @@ export class CentrozonaliComponent implements OnInit {
   }
   // Actualizar Datos
   updateDatos(){
-    this.ServicioService.putCentro(this.centros.idCentrosZonales, this.centros)
+    this.Service.putCentro(this.centros.idCentrosZonales, this.centros)
     .subscribe(
       res => {
         console.log(res);
