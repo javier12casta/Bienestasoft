@@ -11,25 +11,25 @@
         <th scope="col">Comunas</th>
         <th scope="col">idBarrioVeredas</th>
         <th scope="col">Codigo Externo Jcz</th>
-        <th>Codigo Externo CZ</th>
-        <th>Estado</th>
-        <th>Regional</th>
+        <th scope="col">Codigo Externo CZ</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Regional</th>
         <th scope="col">Modificar</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
+      <tr *ngFor="let cen of centros">
+        <th scope="row">{{cen.idCentrosZonales}}</th>
+        <td>{{cen.NombreCentroZonal}}</td>
+        <td>{{cen.idMunicipios}}</td>
+        <td>{{cen.idComunas}}</td>
+        <td>{{cen.idBarrioVeredas}}</td>
+        <td>{{cen.CodigoExternoJcz}}</td>
+        <td>{{cen.CodigoExternoCZ}}</td>
+        <td>{{cen.Estado}}</td>
+        <td>{{cen.idRegional}}</td>
         <td>
-          <button class="btn btn-primary">Modificar</button>
+          <button class="btn btn-primary" [routerLink]="['/centrozonali', cen.idCentrosZonales]">Modificar</button>
         </td>
       </tr>
     </tbody>
