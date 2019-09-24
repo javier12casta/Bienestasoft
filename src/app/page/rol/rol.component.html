@@ -1,14 +1,85 @@
 <html>
+		<head>
+
+				<style type="text/css">
+			
+					* {
+						margin:0px;
+						padding:0px;
+					}
+					
+					#header {
+						margin:auto;
+						width:700px;
+						font-family:Arial, Helvetica, sans-serif;
+						text-align: center;
+					}
+					
+					ul, ol {
+						list-style:none;
+					}
+					
+					.nav > li {
+						float:left;
+						text-align: center;
+					}
+					
+					.nav li a {
+						background-color:rgb(39, 192, 25);
+						color:#fff;
+						text-decoration:none;
+						padding:10px 12px;
+						display:block;
+						
+					}
+					
+					.nav li a:hover {
+						background-color:#434343;
+					}
+					
+					.nav li ul {
+						display:none;
+						position:absolute;
+						min-width:140px;
+					}
+					
+					.nav li:hover > ul {
+						display:block;
+					}
+					
+					.nav li ul li {
+						position:relative;
+					}
+					
+					.nav li ul li ul {
+						right:-140px;
+						top:0px;
+					}
+					
+				</style>
+
+
+		</head>
 		<body>
+				<div class="padre">
+						<div id="header" class="hijo_uno">
+								<ul class="nav">
+										
+									<li><a routerLink="">Modificar</a></li>
+									<li><a routerLink="">Inhabilitar</a></li>
+							
+								</ul>
+							</div>
+						</div>
 		<h1>Crear roles en el sistema</h1>
 
 		<h1>Datos Generales Usuario</h1>
-		<div class="container">
+		<div class="container" class="padre">
 		 <div class="card card-container">
 		
 		<form class="form-signin padding" >
 		
-		<span class="label success" >Estado del dato Maestro</span>
+		<span class="btn btn-success" >Estado del dato Maestro</span>
 		<h2></h2>
 		<select class="select-css">
 				<option value="0">1.Habilitar</option>
@@ -16,19 +87,19 @@
 		</select>
 		
 		<h2></h2>
-		<span class="label success">Tipo de rol</span>
+		<span class="btn btn-success">Tipo de rol</span>
 		<h2></h2>
 		<input type="text" id="inputnombrerol" placeholder="Nombre de Rol" required autofocus>
 		<h2></h2>
-		<span class="label success">Transacciones</span>
+		<span class="btn btn-success">Transacciones</span>
 		<h2></h2>
 		<input type="text" id="inputtransac"  placeholder="Transacciones" required autofocus>
 		<h2></h2>
-		<span class="label success">Almacenes</span>
+		<span class="btn btn-success">Almacenes</span>
 		<h2></h2>
 		<input type="text" id="inputalmacenes"  placeholder="Almacenes" required autofocus>
         <h2></h2>   
-        <button type="button">Enviar</button>
+        <button type="button" class="btn btn-success">Enviar</button>
 		</form><!-- /form -->
 		</div><!-- /card-container -->
 		</div><!-- /card-container -->
