@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ServicioService } from '../../servicio.service';
+import {Router} from '@angular/router'
+import { Regional } from 'src/app/interfaces/regional';
 
 @Component({
   selector: 'app-usuarios',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuariosComponent implements OnInit {
 
-  constructor() { }
+  datosgenerales: string[];
+  clickMessage = '';
+  
+  constructor() {
+
+this.datosgenerales = [];
+
+
+   }
 
   ngOnInit() {
   }
+
+  DatosGeneralesUsuario(){
+
+    this.clickMessage = 'You are my hero!';
+
+  }
+
 
 }
