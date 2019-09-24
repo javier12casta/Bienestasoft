@@ -11,23 +11,23 @@ import { Regional } from 'src/app/interfaces/regional';
 export class UsuariosComponent implements OnInit {
 
   datosgenerales: string[];
-  clickMessage = '';
-  
-  constructor() {
+ 
 
-this.datosgenerales = [];
-
-
-   }
+  constructor() 
+  {
+  }
 
   ngOnInit() {
   }
 
   DatosGeneralesUsuario(){
 
-    this.clickMessage = 'You are my hero!';
-
+  var x = document.getElementById('inputnumerodoc');
+  console.log(x);
+  
   }
+
+  
 
 
 }
