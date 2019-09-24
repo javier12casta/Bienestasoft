@@ -49,6 +49,8 @@ import { UdsiComponent } from './page/udsi/udsi.component';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ServicioService } from './servicio.service';
+import { ListaMaestrosBienestarinaModificarComponent } from './page/lista-maestros-bienestarina-modificar/lista-maestros-bienestarina-modificar.component';
+import { ListaMaestrosBienestarinaInhabilitarComponent } from './page/lista-maestros-bienestarina-inhabilitar/lista-maestros-bienestarina-inhabilitar.component';
 
 @NgModule({
   declarations: [
@@ -86,6 +88,8 @@ import { ServicioService } from './servicio.service';
     InhabilitarusuariosComponent,
     PuntoentregaiComponent,
     UdsiComponent,
+    ListaMaestrosBienestarinaModificarComponent,
+    ListaMaestrosBienestarinaInhabilitarComponent,
    
   ],
   imports: [

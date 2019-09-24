@@ -67,37 +67,30 @@
 				<div id="header" class="hijo_uno">
 						<ul class="nav">
 								
-							<li><a routerLink="/listamaestrosmodificar">Modificar</a></li>
-							<li><a routerLink="/listamaestrosinhabilitar">Inhabilitar</a></li>
+								<li><a routerLink="/listamaestrosmodificar">Modificar</a></li>
+								<li><a routerLink="/listamaestrosinhabilitar">Inhabilitar</a></li>
+						
 					
 						</ul>
 					</div>
 				</div>
 
-		<h1>Crear Listas De Datos Maestros</h1>
+		<h1>Modificar Listas De Datos Maestros</h1>
 		<div class="container"  class="padre">
 		 <div class="card card-container" >
 		
 		<form class="form-signin padding" >
 		<h2></h2>
-		<span class="btn btn-success" >Estado del dato Maestro</span>
+		<span class="btn btn-success" >Lista a Modificar</span>
 		<h2></h2>
 		
 		<select class="select-css">
-				<option value="0">1</option>
-				<option value="1">2</option>
+				<option value="0">Servicios y modalidades</option>		
 		</select>
 		<h2></h2>
 
-		<span class="btn btn-success">Codigo Servicio y madalidad</span>
-		<h2></h2>
-		<input type="text" id="inputservicio" placeholder="Codigo Servicio y modalidad" required autofocus>
-		<h2></h2>
-		<span class="btn btn-success">Modalidad</span>
-		<h2></h2>
-		<input type="text" id="inputmodalidad"  placeholder="Modalidad" required autofocus>
-		<h2></h2>
-			   <button type="button" class="btn btn-success">Aceptar</button>
+
+			   <button type="button" class="btn btn-success" routerLink="/listamaestros">Aceptar</button>
 			   <h2></h2>
 
 			   
@@ -105,11 +98,6 @@
 		</form><!-- /form -->
 		</div><!-- /card-container -->
 		</div><!-- /card-container -->
-
-
-
-
-
 
 	</body>
 </html>

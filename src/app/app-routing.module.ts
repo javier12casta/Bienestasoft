@@ -32,6 +32,9 @@ import { UsuarioyrolesComponent } from './page/usuarioyroles/usuarioyroles.compo
 import { UsuarionivelComponent } from './page/usuarionivel/usuarionivel.component';
 import { ModificarusuariosComponent } from './page/modificarusuarios/modificarusuarios.component';
 import { InhabilitarusuariosComponent } from './page/inhabilitarusuarios/inhabilitarusuarios.component';
+import { ListaMaestrosBienestarinaModificarComponent } from './page/lista-maestros-bienestarina-modificar/lista-maestros-bienestarina-modificar.component';
+import { ListaMaestrosBienestarinaInhabilitarComponent } from './page/lista-maestros-bienestarina-inhabilitar/lista-maestros-bienestarina-inhabilitar.component';
+
 
 const routes: Routes = [
   {path:'', component: LoginComponent},
@@ -70,6 +73,8 @@ const routes: Routes = [
   {path:'usuariosnivel', component: UsuarionivelComponent},
   {path:'modificarusuarios', component: ModificarusuariosComponent},
   {path:'inhabilitarusuarios', component: InhabilitarusuariosComponent},
+  {path:'listamaestrosmodificar', component: ListaMaestrosBienestarinaModificarComponent},
+  {path:'listamaestrosinhabilitar', component: ListaMaestrosBienestarinaInhabilitarComponent},
 ];
 
 @NgModule({
