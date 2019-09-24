@@ -46,6 +46,9 @@ import { ModificarusuariosComponent } from './page/modificarusuarios/modificarus
 import { InhabilitarusuariosComponent } from './page/inhabilitarusuarios/inhabilitarusuarios.component';
 import { PuntoentregaiComponent } from './page/puntoentregai/puntoentregai.component';
 import { UdsiComponent } from './page/udsi/udsi.component';
+import { HttpClientModule} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { ServicioService } from './servicio.service';
 
 @NgModule({
   declarations: [
@@ -95,6 +98,8 @@ import { UdsiComponent } from './page/udsi/udsi.component';
     MatMenuModule,
     MatIconModule,
     MatListModule,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
