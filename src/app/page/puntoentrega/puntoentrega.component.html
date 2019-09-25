@@ -1,61 +1,37 @@
+<nav class="navbar navbar-success bg-success">
+  <button class="btn btn-dark" routerLink="/puntoentregai"> Crear </button>
+</nav>
+
 <table class="table">
-    <thead class="thead-dark">
+    <thead class="thead-green">
       <tr>
         <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">Nombre Punto E</th>
+        <th scope="col">CodigoInternoPE</th>
+        <th scope="col">CodigoExternoPE</th>
+        <th scope="col">Direccion</th>
+        <th scope="col">Responsable</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Estado</th>
+        <th scope="col">centro zonal</th>
+        <th scope="col">Barrio</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  <table class="table">
-    <thead class="thead-light">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
+      <tr *ngFor="let pun of punto">
+        <th scope="row">{{pun.idPuntoEntrega}}</th>
+        <td>{{pun.NombrePE}}</td>
+        <td>{{pun.CodigoInternoPE}}</td>
+        <td>{{pun.CodigoExternoPE}}</td>
+        <td>{{pun.Direccion}}</td>
+        <td>{{pun.Responsable}}</td>
+        <td>{{pun.Telefono}}</td>
+        <td>{{pun.Estado}}</td>
+        <td>{{pun.idCentrosZonales}}</td>
+        <td>{{pun.idBarriosVeredas}}</td>
+        <td>
+          <button class="btn btn-primary" [routerLink]="['/centrozonali', pun.idPuntoEntrega]">Modificar</button>
+        </td>
       </tr>
     </tbody>
   </table>

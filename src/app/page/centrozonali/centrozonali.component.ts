@@ -15,14 +15,7 @@ import {Barrio} from '../../interfaces/barrio';
 })
 export class CentrozonaliComponent implements OnInit {
   
-
-  constructor(
-  private activeRoute: ActivatedRoute,
-  private Service: ServicioService,
-  ){
-  }
-
- centros : Centrozonal = {
+  centros : Centrozonal = {
     idCentrosZonales : 0,
       NombreCentroZonal: '',
       idMunicipios: 1,
@@ -41,6 +34,14 @@ export class CentrozonaliComponent implements OnInit {
 
   modificar = false;
 
+  constructor(
+  private activeRoute: ActivatedRoute,
+  private Service: ServicioService,
+  ){
+  }
+
+
+
   ngOnInit() {
     const params = this.activeRoute.snapshot.params;
     console.log(params);
@@ -55,6 +56,11 @@ export class CentrozonaliComponent implements OnInit {
         }
         );
     }
+    this.Service.getMunicipio()
+    .subscribe(data=>{
+      this.muninicipios = data;
+      console.log(data);
+    });
   }
 
 

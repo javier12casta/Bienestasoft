@@ -34,6 +34,7 @@ import { ModificarusuariosComponent } from './page/modificarusuarios/modificarus
 import { InhabilitarusuariosComponent } from './page/inhabilitarusuarios/inhabilitarusuarios.component';
 import { ListaMaestrosBienestarinaModificarComponent } from './page/lista-maestros-bienestarina-modificar/lista-maestros-bienestarina-modificar.component';
 import { ListaMaestrosBienestarinaInhabilitarComponent } from './page/lista-maestros-bienestarina-inhabilitar/lista-maestros-bienestarina-inhabilitar.component';
+import { PuntoentregaiComponent } from './page/puntoentregai/puntoentregai.component';
 
 
 const routes: Routes = [
@@ -62,6 +63,8 @@ const routes: Routes = [
   {path:'municipioli/:id', component:MunicipioliComponent},
   {path:'menu', component:MenuComponent},
   {path:'puntoentrega', component: PuntoentregaComponent},
+  {path:'puntoentregai', component: PuntoentregaiComponent},
+  {path:'puntoentregai/:id', component: PuntoentregaiComponent},
   {path:'regional', component:RegionalComponent},
   {path:'regionali', component: RegionaliComponent},
   {path:'regionali/:id', component: RegionaliComponent},
