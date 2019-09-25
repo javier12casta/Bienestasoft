@@ -52,9 +52,6 @@ import { ServicioService } from './servicio.service';
 import { ListaMaestrosBienestarinaModificarComponent } from './page/lista-maestros-bienestarina-modificar/lista-maestros-bienestarina-modificar.component';
 import { ListaMaestrosBienestarinaInhabilitarComponent } from './page/lista-maestros-bienestarina-inhabilitar/lista-maestros-bienestarina-inhabilitar.component';
 
-//angular imports
-
-
 @NgModule({
   declarations: [
     AppComponent,
