@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Puntoentrega } from '../../interfaces/puntoentrega';
+import { ServicioService } from '../../servicio.service';
 
 @Component({
   selector: 'app-puntoentrega',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./puntoentrega.component.css']
 })
 export class PuntoentregaComponent implements OnInit {
+  punto: Puntoentrega []=[];
+  constructor(private Service: ServicioService) { }
 
-  constructor() { }
+  //consultar Datos
+  async ngOnInit() {
 
-  ngOnInit() {
+    this.Service.getPunto()
+      .subscribe(async (data) => {
+        this.punto = data;
+        console.log(data);
+        console.log('funciona');
+      }
+      );
   }
-
 }

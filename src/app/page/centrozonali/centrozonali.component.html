@@ -10,11 +10,12 @@
                 <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
                 <input type="text" class="form-control" name="NombreCentroZonal"  placeholder="Nombre Centro Zonal">
                 <input type="number" class="form-control" name="idMunicipios" placeholder="idMunicipios">
-               <!-- <select2 [options]="muninicipios" [settings]="{ width: '100%' }"></select2>
-
-                <div *ngFor="let muni of municipios">
-                  <p>{{muni.Municipio}}</p>
-                </div>-->
+                <select select2 data-="muninicipios" > 
+                
+                <div *ngFor="let muni of muninicipios">
+                  <option [value]="muni.idMunicipios">{{muni.Municipio}}</option>
+                </div>
+              </select>
                 <input type="number" class="form-control" name="idComunas" placeholder="idComunas">
                 <input type="number" class="form-control" name="idBarrioVeredas" placeholder="idBarrioVeredas">
                 <input type="text" class="form-control" name="CodigoExternoJcz" placeholder="CodigoExternoJcz">

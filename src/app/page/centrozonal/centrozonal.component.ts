@@ -30,3 +30,4 @@ export class CentrozonalComponent implements OnInit {
       );
   }
 }
+ 
