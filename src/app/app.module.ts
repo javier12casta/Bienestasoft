@@ -51,6 +51,15 @@ import { FormsModule } from '@angular/forms';
 import { ServicioService } from './servicio.service';
 import { ListaMaestrosBienestarinaModificarComponent } from './page/lista-maestros-bienestarina-modificar/lista-maestros-bienestarina-modificar.component';
 import { ListaMaestrosBienestarinaInhabilitarComponent } from './page/lista-maestros-bienestarina-inhabilitar/lista-maestros-bienestarina-inhabilitar.component';
+import { DatosGeneralesUsuarioComponent } from './page/datos-generales-usuario/datos-generales-usuario.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { ModificarbeneficiariosComponent } from './page/modificarbeneficiarios/modificarbeneficiarios.component';
+import { Modificarbeneficiarios1Component } from './page/modificarbeneficiarios1/modificarbeneficiarios1.component';
+import { InhabilitarbeneficiariosComponent } from './page/inhabilitarbeneficiarios/inhabilitarbeneficiarios.component';
+import { Inhabilitarbeneficiarios1Component } from './page/inhabilitarbeneficiarios1/inhabilitarbeneficiarios1.component';
+
+
 
 @NgModule({
   declarations: [
@@ -90,6 +99,12 @@ import { ListaMaestrosBienestarinaInhabilitarComponent } from './page/lista-maes
     UdsiComponent,
     ListaMaestrosBienestarinaModificarComponent,
     ListaMaestrosBienestarinaInhabilitarComponent,
+    DatosGeneralesUsuarioComponent,
+    ModificarbeneficiariosComponent,
+    Modificarbeneficiarios1Component,
+    InhabilitarbeneficiariosComponent,
+    Inhabilitarbeneficiarios1Component,
+
    
   ],
   imports: [
@@ -104,6 +119,8 @@ import { ListaMaestrosBienestarinaInhabilitarComponent } from './page/lista-maes
     MatListModule,
     HttpClientModule,
     FormsModule,
+    MatInputModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

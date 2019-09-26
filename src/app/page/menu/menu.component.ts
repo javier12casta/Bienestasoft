@@ -16,7 +16,9 @@ export class MenuComponent implements OnInit {
     {name:"Inventario", route: "/inventario", icon:"store" },
     {name:"acudientes", route: "/acudientes", icon:"face" },
     {name:"barrio", route: "/barrio", icon:"public" },
-    {name:"beneficiarios", route: "/beneficiarios", icon:"face" },
+    {name:"Crear beneficiarios ICBF", route: "/beneficiarios", icon:"face" },
+    {name:"Modificar beneficiarios ICBF ", route: "/ModificarBeneficiario", icon:"face" },
+    {name:"Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon:"face" },
     {name:"centrozonal", route: "/centrozonal", icon:"public" },
     {name:"comuna", route: "/comuna", icon:"public" },
     {name:"municipio", route: "/municipio", icon:"public" },
@@ -25,7 +27,9 @@ export class MenuComponent implements OnInit {
     {name:"reportes", route: "/reportes", icon:"receipt" },
     {name:"rol", route: "/rol", icon:"face" },
     {name:"uds", route: "/uds", icon:"public" },
-    {name:"usuarios", route: "/usuarios", icon:"face" },
+    {name:"Crear usuarios", route: "/usuarios", icon:"face" },
+    {name:"Modificar Usuarios", route: "/modificarusuarios", icon:"face" },
+    {name:"Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon:"face" },
     {name:"Datos Maestros", route: "/listamaestros", icon:"face" },
   ];
 

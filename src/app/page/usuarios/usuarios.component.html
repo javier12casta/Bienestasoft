@@ -1,124 +1,27 @@
 
 <html>
-		<title>Menu Desplegable</title>
+		<title></title>
 		<head>
-
-				<style type="text/css">
-			
-					* {
-						margin:0px;
-						padding:0px;
-					}
-					
-					#header {
-						margin:auto;
-						width:700px;
-						font-family:Arial, Helvetica, sans-serif;
-						text-align: center;
-					}
-					
-					ul, ol {
-						list-style:none;
-					}
-					
-					.nav > li {
-						float:left;
-						text-align: center;
-					}
-					
-					.nav li a {
-						background-color:rgb(39, 192, 25);
-						color:#fff;
-						text-decoration:none;
-						padding:10px 12px;
-						display:block;
-						
-					}
-					
-					.nav li a:hover {
-						background-color:#434343;
-					}
-					
-					.nav li ul {
-						display:none;
-						position:absolute;
-						min-width:140px;
-					}
-					
-					.nav li:hover > ul {
-						display:block;
-					}
-					
-					.nav li ul li {
-						position:relative;
-					}
-					
-					.nav li ul li ul {
-						right:-140px;
-						top:0px;
-					}
-					
-				</style>
-
-
 		</head>
 		<body>
-                <div class="padre">
-				<div id="header" class="hijo_uno">
-						<ul class="nav">
-								
-							<li><a routerLink="/modificarusuarios">Modificar</a></li>
-							<li><a routerLink="/inhabilitarusuarios">Inhabilitar</a></li>
-					
-						</ul>
-					</div>
-				</div>
-		<h1>Crear Usuario</h1>
-
-		<h1>Datos Generales Usuario</h1>
+               
+		<h1>Seleccionar el nivel</h1>
 		<div class="container"  class="padre">
 		 <div class="card card-container" >
 		
 		<form class="form-signin padding" >
 		<h2></h2>
-		<span class="btn btn-success" >Estado del dato Maestro</span>
+		<span class="btn btn-success" >Nivel</span>
 		<h2></h2>
 		
 		<select class="select-css">
-				<option value="0">1</option>
-				<option value="1">2</option>
-		</select>
-		<h2></h2>
-		<span class="btn btn-success">Tipo Documento</span>
-		<h2></h2>
-		
-		<select class="select-css">
-				<option value="0">CC</option>
-				<option value="1">CE</option>
-				<option value="2">PA</option>
-				
+				<option value="0">Centro Zonal</option>
+				<option value="1">Punto De Entrega</option>
+				<option value="1">Unidad de servicio</option>
 		</select>
 		
-		<h2></h2>
-		<span class="btn btn-success">Numero de Documento</span>
-		<h2></h2>
-		<input type="text" id="inputnumerodoc" placeholder="Numero de documento" required autofocus>
-		<h2></h2>
-		<span class="btn btn-success">Nombres</span>
-		<h2></h2>
-		<input type="text" id="inputnombres"  placeholder="Nombres" required autofocus>
-		<h2></h2>
-		<span class="btn btn-success">Apellidos</span>
-		<h2></h2>
-		<input type="text" id="inputapellidos"  placeholder="Apellidos" required autofocus>
-		<h2></h2>
-		<span class="btn btn-success">Fecha de Ingreso</span>
-		<h2></h2>
-		<input type="date" id="start" name="trip-start"
-			   value="2018-07-22"
-			   min="2018-01-01" max="2050-12-31">
 			   <h2></h2>
-			   <button (click)="DatosGeneralesUsuario()" type="button" class="btn btn-success" routerLink="/usuariosroles">siguiente</button>
+			   <button type="button" class="btn btn-success" routerLink="/datosgeneralesusuario">siguiente</button>
 			   <h2></h2>
 
 			   
