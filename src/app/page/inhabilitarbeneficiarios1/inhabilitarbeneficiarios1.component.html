@@ -1,0 +1,103 @@
+
+<html>
+
+    <title></title>
+    <head>
+            <style type="text/css">
+			
+                * {
+                    margin:0px;
+                    padding:0px;
+                }
+                
+                #header {
+                    margin:auto;
+                    width:700px;
+                    font-family:Arial, Helvetica, sans-serif;
+                    text-align: center;
+                }
+                
+                ul, ol {
+                    list-style:none;
+                }
+                
+                .nav > li {
+                    float:left;
+                    text-align: center;
+                }
+                
+                .nav li a {
+                    background-color:rgb(39, 192, 25);
+                    color:#fff;
+                    text-decoration:none;
+                    padding:10px 12px;
+                    display:block;
+                    
+                }
+                
+                .nav li a:hover {
+                    background-color:#434343;
+                }
+                
+                .nav li ul {
+                    display:none;
+                    position:absolute;
+                    min-width:140px;
+                }
+                
+                .nav li:hover > ul {
+                    display:block;
+                }
+                
+                .nav li ul li {
+                    position:relative;
+                }
+                
+                .nav li ul li ul {
+                    right:-140px;
+                    top:0px;
+                }
+                
+            </style>
+    </head>
+
+    <body>
+            <div class="padre">
+                    <div id="header" class="hijo_uno">
+                            <ul class="nav">
+                                                        
+                                <li><a >Etiqueta 1</a></li>
+                                <li><a >Etiqueta 2</a></li>
+                                <li><a >Etiqueta 3</a></li>
+                        
+                            </ul>
+                        </div>
+                    </div>
+
+        <div class="container" class="padre">
+            <div class="card card-container">
+           
+           <form class="form-signin padding" >
+
+        <span class="btn btn-success" >Estado del Beneficiario</span>
+        <h2></h2>
+        <label class="container1">Habilitar
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container1">Inhabilitar
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+            </label>
+            <h2></h2>
+            <button type="button" class="btn btn-success">Aceptar</button>
+           <h2></h2>
+
+
+</form><!-- /form -->
+		</div><!-- /card-container -->
+		</div><!-- /card-container -->
+    </body>
+</html>
+
+

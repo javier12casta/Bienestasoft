@@ -1,5 +1,5 @@
-
 <html>
+		<title>Menu Desplegable</title>
 		<head>
 
 				<style type="text/css">
@@ -13,6 +13,7 @@
 						margin:auto;
 						width:700px;
 						font-family:Arial, Helvetica, sans-serif;
+						text-align: center;
 					}
 					
 					ul, ol {
@@ -21,6 +22,7 @@
 					
 					.nav > li {
 						float:left;
+						text-align: center;
 					}
 					
 					.nav li a {
@@ -29,6 +31,7 @@
 						text-decoration:none;
 						padding:10px 12px;
 						display:block;
+						
 					}
 					
 					.nav li a:hover {
@@ -59,59 +62,66 @@
 
 		</head>
 		<body>
-				<div class="padre">
-						<div id="header" class="hijo_uno">
-								<ul class="nav">
-										
-																
+                <div class="padre">
+				<div id="header" class="hijo_uno">
+						<ul class="nav">
+													
 							<li><a routerLink="/datosgeneralesusuario">Datos Generales</a></li>
 							<li><a routerLink="//usuariosroles">Usuario y Asignación de Roles</a></li>
 							<li><a routerLink="/datoscontactousuario">Datos de contacto</a></li>
 					
-								</ul>
-							</div>
-						</div>
+						</ul>
+					</div>
+				</div>
 		<h1>Crear Usuario</h1>
 
-		<h1>Usuario y Asignación de Roles</h1>
-		<div class="container" class="padre">
-		 <div class="card card-container">
+		<h1>Datos Generales Usuario</h1>
+		<div class="container"  class="padre">
+		 <div class="card card-container" >
 		
 		<form class="form-signin padding" >
-		
-		<span class="btn btn-success" >Usuario en el sistema</span>
 		<h2></h2>
-		<input type="text" id="inputusuariosistema" placeholder="Ususario Sistema" required autofocus>
+		<span class="btn btn-success" >Estado del dato Maestro</span>
+		<h2></h2>
+		
+		<select class="select-css">
+				<option value="0">1</option>
+				<option value="1">2</option>
+		</select>
 		<h2></h2>
 		<span class="btn btn-success">Tipo Documento</span>
 		<h2></h2>
 		
 		<select class="select-css">
-				<option value="0">PE</option>
-				<option value="1">UDS</option>
-				<option value="2">ADMINISTRADOR</option>
+				<option value="0">CC</option>
+				<option value="1">CE</option>
+				<option value="2">PA</option>
 				
 		</select>
 		
-               <h2></h2>
-               <span class="btn btn-success">Tipo Documento</span>
-               <h2></h2>
-               <select class="select-css">
-                    <option value="0">Rol1</option>
-                    <option value="1">Rol2</option>
-                    <option value="2">Rol3</option>
-                    <option value="2">Rol4</option>
-                    <option value="2">Rol5</option>
-                    <option value="2">Rol6</option>
-                    <option value="2">Rol7</option>
-                    <option value="2">Rol8</option>
-                    <option value="2">Rol9</option>
-                    <option value="2">Rol10</option>
+		<h2></h2>
+		<span class="btn btn-success">Numero de Documento</span>
+		<h2></h2>
+		<input type="text" id="inputnumerodoc" placeholder="Numero de documento" required autofocus>
+		<h2></h2>
+		<span class="btn btn-success">Nombres</span>
+		<h2></h2>
+		<input type="text" id="inputnombres"  placeholder="Nombres" required autofocus>
+		<h2></h2>
+		<span class="btn btn-success">Apellidos</span>
+		<h2></h2>
+		<input type="text" id="inputapellidos"  placeholder="Apellidos" required autofocus>
+		<h2></h2>
+		<span class="btn btn-success">Fecha de Ingreso</span>
+		<h2></h2>
+		<input type="date" id="start" name="trip-start"
+			   value="2018-07-22"
+			   min="2018-01-01" max="2050-12-31">
+			   <h2></h2>
+			  
 
-                    
-            </select>
-            <h2></h2>
 			   
+
 		</form><!-- /form -->
 		</div><!-- /card-container -->
 		</div><!-- /card-container -->
