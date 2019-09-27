@@ -61,9 +61,6 @@ import { Inhabilitarbeneficiarios1Component } from './page/inhabilitarbeneficiar
 
 
 
-//angular imports
-
-
 @NgModule({
   declarations: [
     AppComponent,
