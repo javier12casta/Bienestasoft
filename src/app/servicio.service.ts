@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Rol } from './interfaces/rol';
 import { Barrio } from './interfaces/barrio';
 import { Comuna } from './interfaces/comuna';
@@ -8,12 +8,14 @@ import { Centrozonal } from './interfaces/centrozonal';
 import { Regional } from './interfaces/regional';
 import { Observable } from 'rxjs';
 import { Puntoentrega } from './interfaces/puntoentrega';
+import { Usuarios } from './interfaces/usuarios';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServicioService {
   api = 'http://localhost:3000';
+  headers = new HttpHeaders({'Content-Type': 'application/json' });
   constructor(public http: HttpClient) {
     console.log("hello service");
    }
@@ -147,4 +149,23 @@ postPunto(punto: Puntoentrega){
 putPunto(id: string|number, punto: Puntoentrega ){
   return this.http.put<Puntoentrega>(`${this.api}/punto/${id}`, punto);
 }
+
+postUsuarios(usu : Usuarios){
+
+const path = `${this.api}/usuario`;
+return this.http.post<Usuarios>(path, usu);
+
+}
+
+getUsuarios(){
+  const path = `${this.api}/usuario`;
+  return this.http.get<[Usuarios]>(path);
+}
+
+putUsuarios(id: string|number, Nombre: Usuarios ){
+  return this.http.put<Usuarios>(`${this.api}/usuario/${id}`, Nombre);
+}
+
+
+
 }
