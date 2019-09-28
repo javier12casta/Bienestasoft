@@ -8,13 +8,16 @@ import { Comuna } from '../../interfaces/comuna';
 import { Regional } from '../../interfaces/regional';
 import {Barrio} from '../../interfaces/barrio';
 
+import { Select2OptionData } from 'ng2-select2';
 @Component({
   selector: 'app-centrozonali',
   templateUrl: './centrozonali.component.html',
   styleUrls: ['./centrozonali.component.css']
 })
 export class CentrozonaliComponent implements OnInit {
-  
+  public exampleData: Array<Select2OptionData>;
+  public regional: Regional[]=[];
+  public options: Select2Options;
 
   constructor(
   private activeRoute: ActivatedRoute,
@@ -36,7 +39,7 @@ export class CentrozonaliComponent implements OnInit {
 
   muninicipios: Municipio[]=[];
   comunas: Comuna []=[];
-  regional: Regional[]=[];
+  
   barrio: Barrio []=[];
 
   modificar = false;
@@ -55,6 +58,32 @@ export class CentrozonaliComponent implements OnInit {
         }
         );
     }
+    //traer regionales
+    this.Service.getRegional()
+    .subscribe(res=>{
+      this.regional = res;
+      //console.log(res);
+      var arr = [];
+
+      for(var i=0; i<res.length; i++) {
+         var x = res[i].Regional ;
+         arr.push(x);
+      }
+     console.log(arr)
+     this.regional  =  arr;
+     this.exampleData = arr;
+     console.log(this.exampleData);
+    },err=>{
+      console.log(err);
+    });
+    //opciones del select
+    this.options = {
+      multiple: true,
+      theme: 'classic',
+      closeOnSelect: false
+    }
+
+
   }
 
 

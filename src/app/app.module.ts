@@ -30,16 +30,6 @@ import { UsuariosComponent } from './page/usuarios/usuarios.component';
 import { AcudientesComponent } from './page/acudientes/acudientes.component';
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-//imports material modules
-import {
-  MatSidenavModule,
-  MatToolbarModule,
-  MatMenuModule
-} from '@angular/material'; 
-import {MatListModule} from '@angular/material/list';
-import {MatIconModule} from '@angular/material/icon';
-
 import { UsuarioyrolesComponent } from './page/usuarioyroles/usuarioyroles.component';
 import { UsuarionivelComponent } from './page/usuarionivel/usuarionivel.component';
 import { ModificarusuariosComponent } from './page/modificarusuarios/modificarusuarios.component';
@@ -59,8 +49,16 @@ import { Modificarbeneficiarios1Component } from './page/modificarbeneficiarios1
 import { InhabilitarbeneficiariosComponent } from './page/inhabilitarbeneficiarios/inhabilitarbeneficiarios.component';
 import { Inhabilitarbeneficiarios1Component } from './page/inhabilitarbeneficiarios1/inhabilitarbeneficiarios1.component';
 
+//imports material modules
+import {
+  MatSidenavModule,
+  MatToolbarModule,
+  MatMenuModule
+} from '@angular/material'; 
+import {MatListModule} from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon';
 
-
+import { Select2Module } from 'ng2-select2';
 @NgModule({
   declarations: [
     AppComponent,
@@ -121,6 +119,7 @@ import { Inhabilitarbeneficiarios1Component } from './page/inhabilitarbeneficiar
     FormsModule,
     MatInputModule,
     MatButtonModule,
+    Select2Module,
   ],
   providers: [],
   bootstrap: [AppComponent]

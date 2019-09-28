@@ -67,6 +67,7 @@ const routes: Routes = [
   {path:'municipioli/:id', component:MunicipioliComponent},
   {path:'menu', component:MenuComponent},
   {path:'puntoentrega', component: PuntoentregaComponent},
+  {path:'puntoentregai', component: PuntoentregaiComponent},
   {path:'regional', component:RegionalComponent},
   {path:'regionali', component: RegionaliComponent},
   {path:'regionali/:id', component: RegionaliComponent},

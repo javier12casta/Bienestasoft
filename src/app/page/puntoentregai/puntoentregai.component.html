@@ -1,27 +1,33 @@
-<mat-toolbar>
-        <button class="btn btn-success start" routerLink="/centrozonal">Volver</button>
-    </mat-toolbar>
-    
-    <div class="col-md-4 offset-md-4">
-            <div class="card">  
-              <div class="card-body">
-                <form>
-                  <div class="form-group padding">
-                    <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
-                    <input type="text" class="form-control" name="NombreCentroZonal"  placeholder="Nombre Centro Zonal">
-                    <input type="number" class="form-control" name="idMunicipios" placeholder="idMunicipios">
-                    <input type="number" class="form-control" name="idComunas" placeholder="idComunas">
-                    <input type="number" class="form-control" name="idBarrioVeredas" placeholder="idBarrioVeredas">
-                    <input type="text" class="form-control" name="CodigoExternoJcz" placeholder="CodigoExternoJcz">
-                    <input type="number" class="form-control" name="CodigoExternoCZ" placeholder="CodigoExternoCZ">
-                    <input type="text" class="form-control" name="Estado" placeholder="Estado">
-                    <input type="number" class="form-control" name="idRegional" placeholder="idRegional">
-                  </div>
-                  <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
-                  <button class="btn btn-success" type="submit" routerLink="/centrozonal">
-                    Guardar
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
+<nav class="navbar navbar-success bg-success">
+  <button class="btn btn-dark" routerLink="/puntoentrega">Volver</button>
+</nav>
+
+<div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+  <div class="card" padding>
+    <div class="card-body" padding>
+      <form>
+        <div class="form-group">
+          <!--Select 2 Centro Zonal-->
+          <input type="number" class="form-control" name="idCentrosZonales" placeholder="Centro Zonal">
+          <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
+          <select name="Estado" id="Estado" style="width: 385px;" class="form-control">
+            <option value="1"> Habilitar</option>
+            <Option value="0">Inhabilitar</Option>
+          </select>
+          <input type="text" class="form-control" name="NombrePE" placeholder="Nombre punto de entrega">
+          <input type="number" class="form-control" name="CodigoExternoPE" placeholder="Codigo externo PE">
+          <input type="text" class="form-control" name="CodigoInternoPE" placeholder="Codigo interno PE">
+          <input type="text" class="form-control" name="Responsable" placeholder="Responsable">
+          <input type="text" class="form-control" name="Comuna" placeholder="Comuna o vereda">
+          <input type="text" class="form-control" name="Direccion" placeholder="Direccion PE">
+          <input type="text" class="form-control" name="BarrioPE" placeholder="Barrio PE">
+          <input type="tel" class="form-control" name="Telefono" placeholder="Telefono PE">
+        </div>
+        <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
+        <button class="btn btn-success btn-block" type="submit" routerLink="/puntoentrega">
+          Guardar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
