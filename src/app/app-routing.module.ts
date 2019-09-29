@@ -40,6 +40,7 @@ import { Modificarbeneficiarios1Component } from './page/modificarbeneficiarios1
 import { InhabilitarbeneficiariosComponent } from './page/inhabilitarbeneficiarios/inhabilitarbeneficiarios.component';
 import { Inhabilitarbeneficiarios1Component } from './page/inhabilitarbeneficiarios1/inhabilitarbeneficiarios1.component';
 import { PuntoentregaiComponent } from './page/puntoentregai/puntoentregai.component';
+import { UdsiComponent } from './page/udsi/udsi.component';
 
 const routes: Routes = [
   {path:'', component: LoginComponent},
@@ -74,6 +75,8 @@ const routes: Routes = [
   {path:'reportes', component:ReportesComponent},
   {path:'rol', component: RolComponent},
   {path:'uds', component: UdsComponent},
+  {path:'udsi', component: UdsiComponent},
+  {path:'udsi/:id', component: UdsiComponent},
   {path:'usuarios', component: UsuariosComponent},
   {path:'usuariosroles', component: UsuarioyrolesComponent},
   {path:'usuariosnivel', component: UsuarionivelComponent},
