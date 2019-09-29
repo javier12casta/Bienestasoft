@@ -37,7 +37,7 @@ export class CentrozonaliComponent implements OnInit {
     idRegional: 2,
   };
 
-  muninicipios: Municipio[] = [];
+  municipios: Municipio[] = [];
   comunas: Comuna[] = [];
 
   barrio: Barrio[] = [];
@@ -62,31 +62,14 @@ export class CentrozonaliComponent implements OnInit {
     // Traer Comunas ---------------------------------------
     this.Service.getComuna()
       .subscribe(res => {
-/*         var arr = [];
-        arr.unshift('Comuna o localidad');
-        for (var i = 1; i < res.length; i++) {
-          var x = res[i].Comunas;
-          var y = res[i].idComunas;
-          arr.push(x);
-          
-        } */ 
         this.comunas = res;
-        console.log(this.comunas);
       }, err => {
         console.log(err);
       });
     // Traer Muinicipios ---------------------------------------
     this.Service.getMunicipio()
       .subscribe(res => {
-        var arr = [];
-        arr.unshift('Municipios');
-        for (var i = 1; i < res.length; i++) {
-          var x = res[i].Municipio;
-          var y = res[i].idMunicipios;
-          arr.push(x);
-        }
-        this.muninicipios = arr;
-
+        this.municipios = res;
       }, err => {
         console.log(err);
       });
@@ -95,19 +78,9 @@ export class CentrozonaliComponent implements OnInit {
     this.Service.getRegional()
       .subscribe(res => {
         this.regional = res;
-        var arr = [];
-        arr.unshift('Regionales');
-        for (var i = 1; i < res.length; i++) {
-          var x = res[i].Regional;
-          var y = res[i].idRegional;
-          arr.push(x);
-        }
-        this.regional = arr;
-        //console.log(this.regional);
       }, err => {
         console.log(err);
       });
-      console.log(this.regional);
     //opciones del select ----------------------------------------
     this.options = {
       multiple: false,
