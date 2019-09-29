@@ -59,6 +59,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 
 import { Select2Module } from 'ng2-select2';
+
+
 @NgModule({
   declarations: [
     AppComponent,

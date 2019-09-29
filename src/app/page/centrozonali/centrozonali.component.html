@@ -8,23 +8,37 @@
       <form>
         <div class="form-group">
           <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
-          <select name="Estado" id="Estado" style="width: 100%;" class="form-control">
+          <select name="Estado" id="Estado" [(ngModel)]="centros.Estado" style="width: 100%;" class="form-control">
             <option value="1"> Habilitar</option>
             <Option value="0">Inhabilitar</Option>
           </select>
-          <input type="text" class="form-control" name="NombreCentroZonal" placeholder="Nombre Centro Zonal">
-         <!--  <select2 [data]="regional">
-              <div *ngFor="let reg of regional">
-                  <p>{{reg.Regional}}</p>
-                </div>  
-          </select2> --> 
-          <select2 [data]="exampleData" [width]="300" [options]="options"></select2>
-      
-          <input type="number" class="form-control" name="idRegional" placeholder="idRegional">
-          <input type="number" class="form-control" name="idMunicipios" placeholder="idMunicipios">
-          <input type="number" class="form-control" name="idComunas" placeholder="idComunas">
-          <input type="text" class="form-control" name="CodigoExternoJcz" placeholder="CodigoExternoJcz">
-          <input type="number" class="form-control" name="CodigoExternoCZ" placeholder="CodigoExternoCZ">
+          <input type="text" class="form-control" [(ngModel)]="centros.NombreCentroZonal" name="NombreCentroZonal"
+            placeholder="Nombre Centro Zonal" class="form-control">
+          <!--select2 regional-->
+          <select2 name="idRegional" [data]="regional" [width]="385" [(ngModel)]="centros.idRegional"
+            [options]="options" placeholder="Regional">
+            <option *ngFor="let reg of regional" value="regional.idRegional"></option>
+          </select2>
+          <!--select 2 Municipio-->
+          <select2 name="idMunicipios" [data]="muninicipios" [width]="385" [(ngModel)]="centros.idMunicipios"
+            [options]="options" placeholder="Muninicipios">
+            <option *ngFor="let muni of muninicipios" value="muni.idMunicipios"></option>
+          </select2>
+          <!--select 2 Comunas-->
+          <!--           <select2 [data]="comunas" name="idComunas"  [(ngModel)]="centros.idComunas" [options]="options"
+            placeholder="Comuna o localidad"> 
+            <option *ngFor="let comu of comunas" [value]="comunas.findIndex"></option>
+          </select2> -->
+          <select2 [width]="385" [options]="options" name="idComunas" id="idComunas"
+          placeholder="Comunas"
+          [(ngModel)]="centros.idComunas"
+          >
+            <option *ngFor="let comu of comunas" value="comu.idComunas">{{comu.Comunas}}</option>
+          </select2>
+          <input type="text" class="form-control" name="CodigoExternoJcz" [(ngModel)]="centros.CodigoExternoJcz"
+            placeholder="CodigoExternoJcz">
+          <input type="number" class="form-control" name="CodigoExternoCZ" [(ngModel)]="centros.CodigoExternoCZ"
+            placeholder="CodigoExternoCZ">
         </div>
         <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
         <button class="btn btn-success btn-block" type="submit" (click)=" modificar ? updateDatos() : insertDatos()"
