@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input } from '@angular/core';
+import { Usuarios } from 'src/app/interfaces/usuarios';
 
 @Component({
   selector: 'app-datos-generales-usuario',
@@ -108,8 +109,10 @@ import { Component, OnInit } from '@angular/core';
 		<h2></h2>
     <span class="btn btn-success">Numero de Documento</span>
 		<h2></h2>
-    <input (keyup)="documento($event)" id="inputdocumento" placeholder="Documento">
+		<input type="number" class="form-control" [(ngModel)]="x.NumeroDocumento" name="numerodoc"
+		placeholder="numero Documento" class="form-control" id="inputdoc">
     
+		
 
     <h2></h2>
 		<span class="btn btn-success">Nombres</span>
@@ -137,42 +140,41 @@ import { Component, OnInit } from '@angular/core';
 
   `
 
-
 })
 export class DatosGeneralesUsuarioComponent implements OnInit {
 
   listamaestro:string[]=["0","1"];
   listadoc:string[]=["CC","CE","PA"];
 
+
+  x : Usuarios = {
+    
+    Nombres : '',
+    Apellidos : '',
+    Estado : 0,
+    NumeroDocumento : 0,
+    FechaIngreso : 1000,
+    NombreUsuarioSistema : 'hj65',
+    Direccion : '',
+    TelefonoFijo :  0,
+    TelefonoFijo2 : 0,
+    TelefonoMovil: 0,
+    TelefonoMovil2 : 0,
+    Email : '',
+
+  };
+  
+  @Input() N  = this.x.NumeroDocumento;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  obtenerdatos(){
 
-  maestro= '';
-  tipdoc='';
-  doc = '';
-  nomb = '';
-  appel = '';
-  feching = '';
+  this.x.NumeroDocumento;
 
- 
-
-  documento(event: any) { // without type info
-    this.doc = event.target.value;
-  }
-
-  Nombres(event: any) { // without type info
-    this.nomb = event.target.value;
-  }
-
-  Apellidos(event: any) { // without type info
-    this.appel = event.target.value;
-  }
-
-  FechaIngreso(event: any) { // without type info
-    this.feching = event.target.value;
   }
 
 
