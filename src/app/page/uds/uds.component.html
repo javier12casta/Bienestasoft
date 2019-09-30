@@ -1,5 +1,5 @@
 <nav class="navbar navbar-success bg-success">
-    <button class="btn btn-dark" routerLink="/centrozonali"> Crear </button>
+    <button class="btn btn-dark" routerLink="/udsi"> Crear </button>
   </nav>
   
   <table class="table">
@@ -15,21 +15,23 @@
           <th scope="col">Direccion</th>
           <th scope="col">Barrio</th>
           <th scope="col">Telefono</th>
+          <th scope="col">Modificar</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let cen of centros">
-          <th scope="row">{{cen.idCentrosZonales}}</th>
-          <td>{{cen.NombreCentroZonal}}</td>
-          <td>{{cen.idMunicipios}}</td>
-          <td>{{cen.idComunas}}</td>
-          <td>{{cen.idBarrioVeredas}}</td>
-          <td>{{cen.CodigoExternoJcz}}</td>
-          <td>{{cen.CodigoExternoCZ}}</td>
-          <td>{{cen.Estado}}</td>
-          <td>{{cen.idRegional}}</td>
+        <tr *ngFor="let uni of unidad">
+          <th scope="row">{{uni.idUDS}}</th>
+          <td>{{uni.Estado}}</td>
+          <td>{{uni.NombreUDS}}</td>
+          <td>{{uni.CodigoExternoUDS}}</td>
+          <td>{{uni.CodigoInternoUDS}}</td>
+          <td>{{uni.ReponsableUDS}}</td>
+          <td>{{uni.Comuna}}</td>
+          <td>{{uni.Direccion}}</td>
+          <td>{{uni.Barrio}}</td>
+          <td>{{uni.Telefono}}</td>
           <td>
-            <button class="btn btn-primary" [routerLink]="['/centrozonali', cen.idCentrosZonales]">Modificar</button>
+            <button class="btn btn-primary" [routerLink]="['/udsi', uni.idUDS]">Modificar</button>
           </td>
         </tr>
       </tbody>

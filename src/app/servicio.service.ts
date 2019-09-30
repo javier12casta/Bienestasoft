@@ -9,6 +9,7 @@ import { Regional } from './interfaces/regional';
 import { Observable } from 'rxjs';
 import { Puntoentrega } from './interfaces/puntoentrega';
 import { Usuarios } from './interfaces/usuarios';
+import { Uds } from './interfaces/uds';
  
 @Injectable({
   providedIn: 'root'
@@ -147,7 +148,7 @@ getPuntoid(id: string) {
 //----Metodo Crear
 postPunto(punto: Puntoentrega){
   //const path = ;
-  return this.http.post<Puntoentrega>(`${this.api}/punto`, punto);
+  return this.http.post<Puntoentrega>(`${this.api}/punto `, punto);
 }
 //Metodo Actualizar
 putPunto(id: string|number, punto: Puntoentrega ){
@@ -170,6 +171,24 @@ putUsuarios(id: string|number, Nombre: Usuarios ){
   return this.http.put<Usuarios>(`${this.api}/usuario/${id}`, Nombre);
 }
 
+//----UDS-----------------
+postUds(uds : Uds){
 
+  const path = `${this.api}/uds`;
+  return this.http.post<Uds>(path, uds);
+  
+  }
+  getUdsid(id: string) {
+    return this.http.get(`${this.api}/uds/${id}`);
+  }
+  
+  getUds(){
+    const path = `${this.api}/uds`;
+    return this.http.get<[Uds]>(path);
+  }
+  
+  putUds(id: string|number, uds: Usuarios ){
+    return this.http.put<Uds>(`${this.api}/uds/${id}`, uds);
+  }
 
 }

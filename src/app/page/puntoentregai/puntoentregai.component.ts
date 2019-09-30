@@ -22,7 +22,7 @@ export class PuntoentregaiComponent implements OnInit {
     Estado: 1,
     Telefono: '',
     CodigoExternoPE: 0,
-    idBarriosVeredas:0,
+    idBarriosVeredas:1,
     idCentrosZonales: 0,
     BarrioPE: '',
     Comuna: '',
@@ -57,6 +57,8 @@ export class PuntoentregaiComponent implements OnInit {
     }, err => {
       console.log(err);
     });
+
+    console.log(this.puntos);
   }
 
 
