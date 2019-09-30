@@ -8,9 +8,11 @@
       <form>
         <div class="form-group">
           <!--Select 2 Centro Zonal-->
-          <input type="number" class="form-control" name="idCentrosZonales" placeholder="Centro Zonal">
+          <select name="idCentrosZonales" id="idCentrosZonales" class="form-control" [(ngModel)]="punto.idCentrosZonales">
+            <option *ngFor="let cen of centros" [value]="cen.idCentrosZonales"> {{cen.NombreCentroZonal}}</option>
+          </select>
           <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
-          <select name="Estado" id="Estado" style="width: 385px;" class="form-control">
+          <select name="Estado" id="Estado" style="width: 385px;" class="form-control" [(ngModel)]="punto.Estado">
             <option value="1"> Habilitar</option>
             <Option value="0">Inhabilitar</Option>
           </select>

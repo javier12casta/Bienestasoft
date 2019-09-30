@@ -15,7 +15,7 @@ import { Select2OptionData } from 'ng2-select2';
   styleUrls: ['./centrozonali.component.css']
 })
 export class CentrozonaliComponent implements OnInit {
-  public exampleData: Array<Select2OptionData>;
+  //public exampleData: Array<Select2OptionData>;
   public regional: Regional[] = [];
   public options: Select2Options;
 
@@ -32,7 +32,7 @@ export class CentrozonaliComponent implements OnInit {
     idComunas: 2,
     idBarrioVeredas: 0,
     CodigoExternoJcz: '',
-    CodigoExternoCZ: 5634,
+    CodigoExternoCZ: 0,
     Estado: 1,
     idRegional: 2,
   };

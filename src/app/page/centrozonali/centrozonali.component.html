@@ -18,12 +18,12 @@
           <!--select2 regional-->
           <select name="idRegional"  class="Select2" style="width: 100%;" [(ngModel)]="centros.idRegional"
             options="options" placeholder="Regional">
-            <option *ngFor="let reg of regional" [value]="reg.idRegional">{{reg.Regional}} {{reg.codigo}}</option>
+            <option *ngFor="let reg of regional" [value]="reg.idRegional">{{reg.Regional}} | {{reg.codigo}}</option>
           </select>
           <!--select 2 Municipio-->
           <select name="idMunicipios" class="Select2" style="width: 100%;" [(ngModel)]="centros.idMunicipios"
             options="options">
-            <option *ngFor="let muni of municipios" [value]="muni.idMunicipios"> {{muni.Municipio}} {{muni.codigo}} {{muni.codigoR}}</option>
+            <option *ngFor="let muni of municipios" [value]="muni.idMunicipios"> {{muni.Municipio}} | {{muni.codigo}} | {{muni.codigoR}}</option>
           </select>
           <!--select 2 Comunas-->
           <!--           <select2 [data]="comunas" name="idComunas"  [(ngModel)]="centros.idComunas" [options]="options"
@@ -33,7 +33,7 @@
           <select select2 class="select2" options="options" name="idComunas" id="idComunas"
           placeholder="Comunas" style="width: 100%;"
           [(ngModel)]="centros.idComunas">
-            <option *ngFor="let comu of comunas" [value]="comu.idComunas">{{comu.Comunas}} {{comu.codigo}} {{comu.codigoM}}</option>
+            <option *ngFor="let comu of comunas" [value]="comu.idComunas">{{comu.Comunas}} | {{comu.codigo}} | {{comu.codigoM}}</option>
           </select>
           <input type="text" class="form-control" name="CodigoExternoJcz" [(ngModel)]="centros.CodigoExternoJcz"
             placeholder="CodigoExternoJcz">
