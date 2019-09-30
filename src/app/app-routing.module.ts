@@ -70,6 +70,7 @@ const routes: Routes = [
   {path:'menu', component:MenuComponent},
   {path:'puntoentrega', component: PuntoentregaComponent},
   {path:'puntoentregai', component: PuntoentregaiComponent},
+  {path:'puntoentregai/:id', component: PuntoentregaiComponent},
   {path:'regional', component:RegionalComponent},
   {path:'regionali', component: RegionaliComponent},
   {path:'regionali/:id', component: RegionaliComponent},

@@ -36,9 +36,9 @@ export class ServicioService {
     return this.http.post<Rol>(path, rol);
   }
 //metodo put de rolPersona
-  Actualizar(rol: Rol) {
-    const path = `${this.api}/rol/${rol.idRolPersona}`;
-    return this.http.put<Rol>(path, rol);
+  Actualizar(id: string | number, rol: Rol) {
+    //const path = `${this.api}/rol/${rol.idRolPersona}`;
+    return this.http.put<Rol>(`${this.api}/rol/${id}`, rol);
   }
 //-----Barrio Vereda------
 getBarrio(){

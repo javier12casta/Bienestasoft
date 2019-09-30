@@ -1,14 +1,14 @@
 <nav class="navbar navbar-success bg-success">
-    <button class="btn btn-dark" routerLink="/centrozonali"> Crear </button>
+    <button class="btn btn-dark" routerLink="/puntoentregai"> Crear </button>
   </nav>
   
   <table class="table">
       <thead class="thead-green">
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Nombre Centro Zonal</th>
-          <th scope="col">Estado</th>
+          <th scope="col">Centro Zonal</th>
           <th scope="col">Nombre PE</th>
+          <th scope="col">Estado</th>
           <th scope="col">Codigo Externo PE</th>
           <th scope="col">Codigo Interno PE</th>
           <th scope="col">Responsable</th>
@@ -16,21 +16,24 @@
           <th scope="col">Direccion PE</th>
           <th scope="col">Barrio PE</th>
           <th scope="col">Telefono</th> 
+          <th scope="col">Modificar</th> 
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let cen of centros">
-          <th scope="row">{{cen.idCentrosZonales}}</th>
-          <td>{{cen.NombreCentroZonal}}</td>
-          <td>{{cen.idMunicipios}}</td>
-          <td>{{cen.idComunas}}</td>
-          <td>{{cen.idBarrioVeredas}}</td>
-          <td>{{cen.CodigoExternoJcz}}</td>
-          <td>{{cen.CodigoExternoCZ}}</td>
-          <td>{{cen.Estado}}</td>
-          <td>{{cen.idRegional}}</td>
+        <tr *ngFor="let pun of punto">
+          <th scope="row">{{pun.idPuntoEntrega}}</th>
+          <td>{{pun.idCentrosZonales}}</td>
+          <td>{{pun.NombrePE}}</td>
+          <td>{{pun.Estado}}</td>
+          <td>{{pun.CodigoExternoPE}}</td>
+          <td>{{pun.CodigoInternoPE}}</td>
+          <td>{{pun.Responsable}}</td>
+          <td>{{pun.Comuna}}</td>
+          <td>{{pun.Direccion}}</td>
+          <td>{{pun.BarrioPE}}</td>
+          <td>{{pun.Telefono}}</td>
           <td>
-            <button class="btn btn-primary" [routerLink]="['/centrozonali', cen.idCentrosZonales]">Modificar</button>
+            <button class="btn btn-primary" [routerLink]="['/puntoentregai', pun.idPuntoEntrega]">Modificar</button>
           </td>
         </tr>
       </tbody>
