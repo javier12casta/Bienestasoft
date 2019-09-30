@@ -13,13 +13,12 @@ export class PuntoentregaiComponent implements OnInit {
 
   centros: Centrozonal[]=[];
 
-  punto: Puntoentrega = {
+  puntos: Puntoentrega = {
     idPuntoEntrega: 0,
     NombrePE: '',
     CodigoInternoPE: '',
     Direccion: '',
     Responsable: '',
-    Suplente: '',
     Estado: 1,
     Telefono: '',
     CodigoExternoPE: 0,
@@ -44,7 +43,7 @@ export class PuntoentregaiComponent implements OnInit {
       this.Service.getPuntoid(params.id)
         .subscribe(res => {
           console.log(res);
-          this.punto = Object(res);
+          this.puntos = Object(res);
           this.modificar = true;
         }, err => {
           console.log(err);
@@ -62,20 +61,20 @@ export class PuntoentregaiComponent implements OnInit {
 
 
   //insertar Datos ------------------------------------------------
-  insertDatos(Centrozonal: string) {
-    delete this.punto.idCentrosZonales;
-    this.Service.postPunto(this.punto).subscribe(res => {
-      console.log(this.punto);
-      console.log(res);
-    },
-      err => {
+  insertDatos() {
+    delete this.puntos.idPuntoEntrega;
+    this.Service.postPunto(this.puntos).subscribe(res => {
+      console.log(this.puntos);
+      console.log('Funicona');
+    },err => {
         console.log(err);
+        console.log('Fallo');
       });
 
   }
   // Actualizar Datos---------------------------------------------
   updateDatos() {
-    this.Service.putPunto(this.punto.idPuntoEntrega, this.punto)
+    this.Service.putPunto(this.puntos.idPuntoEntrega, this.puntos)
       .subscribe(
         res => {
           console.log(res);
