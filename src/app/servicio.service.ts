@@ -144,16 +144,16 @@ getPunto(){
 getPuntoid(id: string) {
   return this.http.get(`${this.api}/punto/${id}`);
 }
-//----Metodo Crear Regionales
+//----Metodo Crear
 postPunto(punto: Puntoentrega){
-  const path = `${this.api}/punto`;
-  return this.http.post<Puntoentrega>(path, punto);
+  //const path = ;
+  return this.http.post<Puntoentrega>(`${this.api}/punto`, punto);
 }
-//Metodo Actualizar Regionales
+//Metodo Actualizar
 putPunto(id: string|number, punto: Puntoentrega ){
   return this.http.put<Puntoentrega>(`${this.api}/punto/${id}`, punto);
 }
-
+//--------------------------------------------
 postUsuarios(usu : Usuarios){
 
 const path = `${this.api}/usuario`;
