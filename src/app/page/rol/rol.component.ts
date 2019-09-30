@@ -15,7 +15,7 @@ export class RolComponent implements OnInit {
     private Service: ServicioService,) { 
     
   }
-  Roles: Rol={
+  roles: Rol={
     idRolPersona : 0,
     RolPersona : '',
     Estado : 1,
