@@ -1,61 +1,36 @@
-<table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>
+<nav class="navbar navbar-success bg-success">
+    <button class="btn btn-dark" routerLink="/centrozonali"> Crear </button>
+  </nav>
   
   <table class="table">
-    <thead class="thead-light">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>
+      <thead class="thead-green">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Estado</th>
+          <th scope="col">Nombre UDS</th>
+          <th scope="col">Codigo Externo UDS</th>
+          <th scope="col">Codigo Interno UDS</th>
+          <th scope="col">Responsable</th>
+          <th scope="col">Localidad, Municipio, Vereda</th>
+          <th scope="col">Direccion</th>
+          <th scope="col">Barrio</th>
+          <th scope="col">Telefono</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cen of centros">
+          <th scope="row">{{cen.idCentrosZonales}}</th>
+          <td>{{cen.NombreCentroZonal}}</td>
+          <td>{{cen.idMunicipios}}</td>
+          <td>{{cen.idComunas}}</td>
+          <td>{{cen.idBarrioVeredas}}</td>
+          <td>{{cen.CodigoExternoJcz}}</td>
+          <td>{{cen.CodigoExternoCZ}}</td>
+          <td>{{cen.Estado}}</td>
+          <td>{{cen.idRegional}}</td>
+          <td>
+            <button class="btn btn-primary" [routerLink]="['/centrozonali', cen.idCentrosZonales]">Modificar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
