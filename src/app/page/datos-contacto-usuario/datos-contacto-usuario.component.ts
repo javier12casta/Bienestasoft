@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ServicioService } from 'src/app/servicio.service';
 import { Usuarios } from 'src/app/interfaces/usuarios';
-
+import { DatosGeneralesUsuarioComponent } from '../datos-generales-usuario/datos-generales-usuario.component';
 @Component({
   selector: 'app-datos-contacto-usuario',
   templateUrl: './datos-contacto-usuario.component.html',
@@ -124,34 +124,37 @@ import { Usuarios } from 'src/app/interfaces/usuarios';
 <h2></h2>
 
 
-<input (keyup)="Direccion($event)" id="inputdireccion" placeholder="Direccion" type="text">
+<input type="text" class="form-control" [(ngModel)]="x.Direccion" name="Nombredireccion"
+            placeholder="Direccion" class="form-control">
 
 
 <h2></h2>
 <span class="btn btn-success">Telefono Fijo 1</span>
 <h2></h2>
 
-<input (keyup)="Telefonof1($event)" id="inputtelefonof" placeholder="Telefono Fijo 1" type="number">
+<input type="number" class="form-control" [(ngModel)]="x.TelefonoFijo" name="telefonof1"
+            placeholder="Telefono fijo 1" class="form-control">
 
 <h2></h2>
 <span class="btn btn-success">Telefono Fijo 2</span>
 <h2></h2>
-<input (keyup)="Telefonof2($event)" id="inputtelefonof2" placeholder="Telefono Fijo 2" type="number">
-
+<input type="number" class="form-control" [(ngModel)]="x.TelefonoFijo2" name="telefonof2"
+            placeholder="Telefono fijo 2" class="form-control">
 <h2></h2>
 <span class="btn btn-success">Telefono Movil 1</span>
 <h2></h2>
-<input (keyup)="Telefonom1($event)" id="inputtelefonom1" placeholder="Telefono Movil 1" type="number">
-
+<input type="number" class="form-control" [(ngModel)]="x.TelefonoMovil" name="telefonom1"
+            placeholder="Telefono movil 1" class="form-control">
 <h2></h2>
 <span class="btn btn-success">Telefono movil 2</span>
 <h2></h2>
-<input (keyup)="Telefonom2($event)" id="inputtelefonom2" placeholder="Telefono Movil 2" type="number">
-
+<input type="number" class="form-control" [(ngModel)]="x.TelefonoMovil2" name="telefonom2"
+            placeholder="Telefono movil 2" class="form-control">
 <h2></h2>
 <span class="btn btn-success">Email</span>
 <h2></h2>
-<input (keyup)="Email($event)" id="inputtemail" placeholder="Email" type="text">
+<input type="text" class="form-control" [(ngModel)]="x.Email" name="email"
+placeholder="Email" class="form-control">
 
      <h2></h2>
      
@@ -179,54 +182,21 @@ import { Usuarios } from 'src/app/interfaces/usuarios';
 export class DatosContactoUsuarioComponent implements OnInit {
   
 
-  
-  telf1;
-  telf2;
-  telm1;
-  telm2;
-  emal;
-  dic;
 
-  
-  Telefonof1(event: any) { // without type info
-    
-   this.telf1 = event.target.value;
-  
-  }
-  Telefonof2(event: any) { // without type info
-    this.telf2 = event.target.value;
-  }
-
-  Telefonom1(event: any) { // without type info
-    this.telm1 = event.target.value;
-  }
-
-  Telefonom2(event: any) { // without type info
-    this.telm2 = event.target.value;
-  }
-
-  Email(event: any) { // without type info
-    this.emal = event.target.value;
-
-  }
-
-
- 
-
-
-  
   x : Usuarios = {
     
-    Nombres : 'hola2',
-    Apellidos : 'f3',
+    Nombres : '',
+    Apellidos : '',
     Estado : 1,
-    NumeroDocumento : 55,
+    NumeroDocumento : 0,
     FechaIngreso : 1000,
     NombreUsuarioSistema : 'hj65',
-    Direccion : this.dic,
+    Direccion : '',
     TelefonoFijo :  0,
-    TelefonoMovil: this.telm1,
-    Email : this.emal,
+    TelefonoFijo2 : 0,
+    TelefonoMovil: 0,
+    TelefonoMovil2 : 0,
+    Email : '',
 
   };
 
