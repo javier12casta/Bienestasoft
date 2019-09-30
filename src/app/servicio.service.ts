@@ -37,12 +37,12 @@ export class ServicioService {
     return this.http.post<Rol>(path, rol);
   }
 //metodo put de rolPersona
-  ActualizarRol(rol: Rol) {
+  /*ActualizarRol(rol: Rol) {
     const path = `${this.api}/rol/${rol.idRolPersona}`;
     return this.http.put<Rol>(path, rol);
-    }
-  Actualizar(id: string | number, rol: Rol) {
-    //const path = `${this.api}/rol/${rol.idRolPersona}`;
+    }*/
+  ActualizarRol(id: string | number, rol: Rol) {
+    const path = `${this.api}/rol/${rol.idRolPersona}`;
     return this.http.put<Rol>(`${this.api}/rol/${id}`, rol);
   }
 //-----Barrio Vereda------
