@@ -32,7 +32,7 @@ export class RolComponent implements OnInit {
       this.Service.getRol(params.id)
         .subscribe(res => {
           console.log(res);
-          this.Roles = Object(res);
+          this.roles = Object(res);
           this.modificar = true;
         }, err => {
           console.log(err);
@@ -46,9 +46,9 @@ export class RolComponent implements OnInit {
 
   //insertar Datos ------------------------------------------------
   insertDatos(Centrozonal: string) {
-    delete this.Roles.idRolPersona;
-    this.Service.insertarRol(this.Roles).subscribe(res => {
-      console.log(this.Roles);
+    delete this.roles.idRolPersona;
+    this.Service.insertarRol(this.roles).subscribe(res => {
+      console.log(this.roles);
       console.log(res);
     },
       err => {
@@ -58,7 +58,7 @@ export class RolComponent implements OnInit {
   }
   // Actualizar Datos---------------------------------------------
   updateDatos() {
-    this.Service.ActualizarRol(this.Roles.idRolPersona, this.Roles)
+    this.Service.ActualizarRol(this.roles.idRolPersona, this.roles)
       .subscribe(
         res => {
           console.log(res);
