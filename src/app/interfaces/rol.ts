@@ -3,6 +3,6 @@ export interface Rol {
     idRolPersona?: number,
     RolPersona:string,
     Estado: number,
-    Transaccion: string,
-    Almacen: string,
+    Transaccion?: string,
+    Almacen?: string,
 }

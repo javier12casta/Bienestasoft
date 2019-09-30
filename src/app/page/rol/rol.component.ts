@@ -57,8 +57,8 @@ export class RolComponent implements OnInit {
 
   }
   // Actualizar Datos---------------------------------------------
- /* updateDatos() {
-    this.Service.ActualizarRol(this.Roles.idRolPersona, this.Roles)
+  updateDatos() {
+    this.Service.Actualizar(this.Roles.idRolPersona, this.Roles)
       .subscribe(
         res => {
           console.log(res);
@@ -66,6 +66,6 @@ export class RolComponent implements OnInit {
           console.log(err);
         }
       );
-  }*/
+  }
 
 }
