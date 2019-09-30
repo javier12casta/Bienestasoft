@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { EntregaComponent } from './page/entrega/entrega.component';
 import { AppComponent } from './app.component';
 import { AcudienteBeneficiarioComponent } from './page/acudiente-beneficiario/acudiente-beneficiario.component';
@@ -69,6 +70,7 @@ const routes: Routes = [
   {path:'menu', component:MenuComponent},
   {path:'puntoentrega', component: PuntoentregaComponent},
   {path:'puntoentregai', component: PuntoentregaiComponent},
+  {path:'puntoentregai/:id', component: PuntoentregaiComponent},
   {path:'regional', component:RegionalComponent},
   {path:'regionali', component: RegionaliComponent},
   {path:'regionali/:id', component: RegionaliComponent},

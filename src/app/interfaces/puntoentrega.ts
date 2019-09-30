@@ -10,4 +10,6 @@ export interface Puntoentrega {
     CodigoExternoPE: number,
     idBarriosVeredas: number,
     idCentrosZonales: number,
+    BarrioPE: string,
+    Comuna: string,
 }
