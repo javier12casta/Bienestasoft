@@ -80,23 +80,24 @@
 		
 		<span class="btn btn-success" >Estado del dato Maestro</span>
 		<h2></h2>
-		<select class="select-css">
-				<option value="0">1.Habilitar</option>
-				<option value="1">2.Inhabilitar</option>
-		</select>
+		<!-- name= "al campo de la tabla" [(ngModel)]="Roles.(Nombre de la columna)"-->
+		<select name="Estado" id="Estado" [(ngModel)]="roles.Estado" style="width: 100%;" class="form-control">
+            <option value="1"> Habilitar</option>
+            <Option value="0">Inhabilitar</Option>
+          </select>
 		
 		<h2></h2>
 		<span class="btn btn-success">Tipo de rol</span>
 		<h2></h2>
-		<input type="text" id="inputnombrerol" placeholder="Nombre de Rol" required autofocus>
+		<input type="text" id="inputnombrerol" [(ngModel)]="centros.NombreCentroZonal" placeholder="Nombre de Rol" required autofocus>
 		<h2></h2>
 		<span class="btn btn-success">Transacciones</span>
 		<h2></h2>
-		<input type="text" id="inputtransac"  placeholder="Transacciones" required autofocus>
+		<input type="number" id="inputtransac"  placeholder="Transacciones" required autofocus>
 		<h2></h2>
 		<span class="btn btn-success">Almacenes</span>
 		<h2></h2>
-		<input type="text" id="inputalmacenes"  placeholder="Almacenes" required autofocus>
+		<input type="number" id="inputalmacenes"  placeholder="Almacenes" required autofocus>
         <h2></h2>   
         <button type="button" class="btn btn-success">Enviar</button>
 		</form><!-- /form -->

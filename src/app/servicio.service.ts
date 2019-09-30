@@ -9,7 +9,7 @@ import { Regional } from './interfaces/regional';
 import { Observable } from 'rxjs';
 import { Puntoentrega } from './interfaces/puntoentrega';
 import { Usuarios } from './interfaces/usuarios';
-
+ 
 @Injectable({
   providedIn: 'root'
 })
@@ -36,7 +36,7 @@ export class ServicioService {
     return this.http.post<Rol>(path, rol);
   }
 //metodo put de rolPersona
-  Actualizar(rol: Rol) {
+  ActualizarRol(rol: Rol) {
     const path = `${this.api}/rol/${rol.idRolPersona}`;
     return this.http.put<Rol>(path, rol);
   }
