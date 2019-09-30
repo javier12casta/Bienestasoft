@@ -90,21 +90,21 @@
 				<h2></h2>
 				<span class="btn btn-success">Tipo de rol</span>
 				<h2></h2>
-				<input type="text" id="inputnombrerol" [(ngModel)]="roles.RolPersona" placeholder="Nombre de Rol"
+				<input type="text" name="RolPersona" [(ngModel)]="roles.RolPersona" placeholder="Nombre de Rol"
 					required autofocus>
 				<h2></h2>
 				<span class="btn btn-success">Transacciones</span>
 				<h2></h2>
-				<input type="text" id="inputtransac" [(ngModel)]="roles.Transaccion" placeholder="Transacciones"
+				<input type="text" name="Transacciones" [(ngModel)]="roles.Transacciones" placeholder="Transacciones"
 					required autofocus>
 				<h2></h2>
 				<span class="btn btn-success">Almacenes</span>
 				<h2></h2>
-				<input type="text" id="inputalmacenes" [(ngModel)]="roles.Almacen" placeholder="Almacenes" required
+				<input type="text" name="Almacenes" [(ngModel)]="roles.Almacenes" placeholder="Almacenes" required
 					autofocus>
 				<h2></h2>
 				<button class="btn btn-success btn-block" type="submit"
-					(click)=" modificar ? updateDatos() : insertDatos()" routerLink="/menu">
+					(click)=" modificar ? updateDatos() : insertDatos()">
 					Guardar
 				</button>
 			</form><!-- /form -->

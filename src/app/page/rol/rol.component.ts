@@ -21,7 +21,6 @@ export class RolComponent implements OnInit {
     Estado : 1,
     Transacciones : '',
     Almacenes : '',
-   
   };
   modificar = false;
 

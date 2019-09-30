@@ -6,7 +6,7 @@ export interface Uds {
     ReponsableUDS: string,
     Estado: number,
     Telefono: string,
-    CodigoExternoUDS: number,
+    CodigoExternoUDS: string,
     Comunas_idComunas?: number,
     idPuntoEntrega:number,
     idBarriosVeredas?: number,

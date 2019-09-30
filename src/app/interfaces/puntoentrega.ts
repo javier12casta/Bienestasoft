@@ -6,7 +6,7 @@ export interface Puntoentrega {
     Responsable: string,
     Estado: number,
     Telefono: string,
-    CodigoExternoPE: number,
+    CodigoExternoPE: string,
     idBarriosVeredas: number,
     idCentrosZonales: number,
     BarrioPE: string,

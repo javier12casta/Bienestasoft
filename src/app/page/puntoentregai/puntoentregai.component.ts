@@ -21,7 +21,7 @@ export class PuntoentregaiComponent implements OnInit {
     Responsable: '',
     Estado: 1,
     Telefono: '',
-    CodigoExternoPE: 0,
+    CodigoExternoPE: '',
     idBarriosVeredas:1,
     idCentrosZonales: 0,
     BarrioPE: '',

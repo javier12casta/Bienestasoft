@@ -24,7 +24,7 @@ export class UdsiComponent implements OnInit {
     ReponsableUDS: '',
     Estado: 1,
     Telefono: '',
-    CodigoExternoUDS: 0,
+    CodigoExternoUDS: '',
     Comunas_idComunas: 0,
     idPuntoEntrega:0,
     idBarriosVeredas: 1,
