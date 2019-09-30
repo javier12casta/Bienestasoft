@@ -187,7 +187,7 @@ postUds(uds : Uds){
     return this.http.get<[Uds]>(path);
   }
   
-  putUds(id: string|number, uds: Usuarios ){
+  putUds(id: string|number, uds: Uds ){
     return this.http.put<Uds>(`${this.api}/uds/${id}`, uds);
   }
 

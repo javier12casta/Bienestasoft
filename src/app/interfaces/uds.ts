@@ -12,5 +12,5 @@ export interface Uds {
     idBarriosVeredas?: number,
     idCentrosZonales: number,
     Barrio: string,
-    Comuna: string
+    Comuna: string,
 }
