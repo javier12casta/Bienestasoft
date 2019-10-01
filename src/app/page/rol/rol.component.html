@@ -66,8 +66,7 @@
 		<div id="header" class="hijo_uno">
 			<ul class="nav">
 
-				<li><a routerLink="">Modificar</a></li>
-				<li><a routerLink="">Inhabilitar</a></li>
+				<li><a routerLink="/roli">Modificar</a></li>
 
 			</ul>
 		</div>
@@ -103,8 +102,8 @@
 				<input type="text" name="Almacenes" [(ngModel)]="roles.Almacenes" placeholder="Almacenes" required
 					autofocus>
 				<h2></h2>
-				<button class="btn btn-success btn-block" type="submit"
-					(click)=" modificar ? updateDatos() : insertDatos()">
+				<button class="btn btn-success btn-block" type="submit" routerLink="/roli"
+					(click)=" modificar ? updateDatos() : insertDatos()" >
 					Guardar
 				</button>
 			</form><!-- /form -->

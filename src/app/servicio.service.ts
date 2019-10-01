@@ -23,7 +23,7 @@ export class ServicioService {
 
    //------rol Persona--------
 // metodo get de roles
-  Obtenerdatos() {
+  ObtenerRoles() {
     const path = `${this.api}/rol`;
     return this.http.get<Rol[]>(path);
   }

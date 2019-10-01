@@ -1,0 +1,27 @@
+<nav class="navbar navbar-success bg-success">
+    <button class="btn btn-dark" routerLink="/rol"> Crear </button>
+  </nav>
+  
+  <table class="table">
+      <thead class="thead-green">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre Rol</th>
+          <th scope="col">Estado</th>
+          <th scope="col">Transacciones</th>
+          <th scope="col">Almacenes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let rol of roles">
+          <th scope="row">{{rol.idRolPersona}}</th>
+          <td>{{rol.RolPersona}}</td>
+          <td>{{rol.Estado}}</td>
+          <td>{{rol.Transacciones}}</td>
+          <td>{{rol.Almacenes}}</td>
+          <td>
+            <button class="btn btn-primary" [routerLink]="['/rol', roles.idRolPersona]">Modificar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>

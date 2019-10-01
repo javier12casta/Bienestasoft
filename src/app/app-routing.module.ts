@@ -26,6 +26,7 @@ import { RegionalComponent } from './page/regional/regional.component';
 import { RegionaliComponent } from './page/regionali/regionali.component';
 import { ReportesComponent } from './page/reportes/reportes.component';
 import { RolComponent } from './page/rol/rol.component';
+import { RoliComponent } from './page/roli/roli.component';
 import { UdsComponent } from './page/uds/uds.component';
 import { UsuariosComponent } from './page/usuarios/usuarios.component';
 import { LoginComponent } from './login/login.component';
@@ -76,6 +77,7 @@ const routes: Routes = [
   {path:'regionali/:id', component: RegionaliComponent},
   {path:'reportes', component:ReportesComponent},
   {path:'rol', component: RolComponent},
+  {path:'roli', component: RoliComponent},
   {path:'uds', component: UdsComponent},
   {path:'udsi', component: UdsiComponent},
   {path:'udsi/:id', component: UdsiComponent},
