@@ -59,6 +59,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 
 import { Select2Module } from 'ng2-select2';
+import { RoliComponent } from './page/roli/roli.component';
 
 
 @NgModule({
@@ -104,6 +105,7 @@ import { Select2Module } from 'ng2-select2';
     Modificarbeneficiarios1Component,
     InhabilitarbeneficiariosComponent,
     Inhabilitarbeneficiarios1Component,
+    RoliComponent,
 
    
   ],

@@ -9,7 +9,8 @@ import { Regional } from './interfaces/regional';
 import { Observable } from 'rxjs';
 import { Puntoentrega } from './interfaces/puntoentrega';
 import { Usuarios } from './interfaces/usuarios';
-
+import { Uds } from './interfaces/uds';
+ 
 @Injectable({
   providedIn: 'root'
 })
@@ -22,7 +23,7 @@ export class ServicioService {
 
    //------rol Persona--------
 // metodo get de roles
-  Obtenerdatos() {
+  ObtenerRoles() {
     const path = `${this.api}/rol`;
     return this.http.get<Rol[]>(path);
   }
@@ -36,8 +37,12 @@ export class ServicioService {
     return this.http.post<Rol>(path, rol);
   }
 //metodo put de rolPersona
-  Actualizar(id: string | number, rol: Rol) {
-    //const path = `${this.api}/rol/${rol.idRolPersona}`;
+  /*ActualizarRol(rol: Rol) {
+    const path = `${this.api}/rol/${rol.idRolPersona}`;
+    return this.http.put<Rol>(path, rol);
+    }*/
+  ActualizarRol(id: string | number, rol: Rol) {
+    const path = `${this.api}/rol/${rol.idRolPersona}`;
     return this.http.put<Rol>(`${this.api}/rol/${id}`, rol);
   }
 //-----Barrio Vereda------
@@ -140,16 +145,16 @@ getPunto(){
 getPuntoid(id: string) {
   return this.http.get(`${this.api}/punto/${id}`);
 }
-//----Metodo Crear Regionales
+//----Metodo Crear
 postPunto(punto: Puntoentrega){
-  const path = `${this.api}/punto`;
-  return this.http.post<Puntoentrega>(path, punto);
+  //const path = ;
+  return this.http.post<Puntoentrega>(`${this.api}/punto `, punto);
 }
-//Metodo Actualizar Regionales
+//Metodo Actualizar
 putPunto(id: string|number, punto: Puntoentrega ){
   return this.http.put<Puntoentrega>(`${this.api}/punto/${id}`, punto);
 }
-
+//--------------------------------------------
 postUsuarios(usu : Usuarios){
 
 const path = `${this.api}/usuario`;
@@ -166,6 +171,24 @@ putUsuarios(id: string|number, Nombre: Usuarios ){
   return this.http.put<Usuarios>(`${this.api}/usuario/${id}`, Nombre);
 }
 
+//----UDS-----------------
+postUds(uds : Uds){
 
+  const path = `${this.api}/uds`;
+  return this.http.post<Uds>(path, uds);
+  
+  }
+  getUdsid(id: string) {
+    return this.http.get(`${this.api}/uds/${id}`);
+  }
+  
+  getUds(){
+    const path = `${this.api}/uds`;
+    return this.http.get<[Uds]>(path);
+  }
+  
+  putUds(id: string|number, uds: Uds ){
+    return this.http.put<Uds>(`${this.api}/uds/${id}`, uds);
+  }
 
 }

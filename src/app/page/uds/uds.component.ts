@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ServicioService } from '../../servicio.service';
+import { ActivatedRoute } from '@angular/router';
+import { Uds } from '../../interfaces/uds';
 
 @Component({
   selector: 'app-uds',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UdsComponent implements OnInit {
 
-  constructor() { }
+  unidad: Uds []= [];
+  constructor(
+    private Service: ServicioService,
+
+  ) { }
 
   ngOnInit() {
+    this.Service.getUds()
+    .subscribe(res => {
+      this.unidad = res
+    }, err => {
+      console.log(err);
+    });
   }
 
 }
