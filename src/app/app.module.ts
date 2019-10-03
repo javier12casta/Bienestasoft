@@ -49,6 +49,8 @@ import { Modificarbeneficiarios1Component } from './page/modificarbeneficiarios1
 import { InhabilitarbeneficiariosComponent } from './page/inhabilitarbeneficiarios/inhabilitarbeneficiarios.component';
 import { Inhabilitarbeneficiarios1Component } from './page/inhabilitarbeneficiarios1/inhabilitarbeneficiarios1.component';
 
+
+
 //imports material modules
 import {
   MatSidenavModule,
@@ -60,6 +62,9 @@ import {MatIconModule} from '@angular/material/icon';
 
 import { Select2Module } from 'ng2-select2';
 import { RoliComponent } from './page/roli/roli.component';
+import { ServiciosymodalidadesComponent } from './page/serviciosymodalidades/serviciosymodalidades.component';
+import { ReferenciasdeBienestarinaComponent } from './page/referenciasde-bienestarina/referenciasde-bienestarina.component';
+import { ListadepreciosComponent } from './page/listadeprecios/listadeprecios.component';
 
 
 @NgModule({
@@ -106,6 +111,10 @@ import { RoliComponent } from './page/roli/roli.component';
     InhabilitarbeneficiariosComponent,
     Inhabilitarbeneficiarios1Component,
     RoliComponent,
+    ServiciosymodalidadesComponent,
+    ReferenciasdeBienestarinaComponent,
+    ListadepreciosComponent,
+  
 
    
   ],

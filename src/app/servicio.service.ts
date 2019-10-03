@@ -9,8 +9,11 @@ import { Regional } from './interfaces/regional';
 import { Observable } from 'rxjs';
 import { Puntoentrega } from './interfaces/puntoentrega';
 import { Usuarios } from './interfaces/usuarios';
+import { Beneficiario } from './interfaces/beneficiario';
 import { Uds } from './interfaces/uds';
- 
+import { MaestroBienestarina } from './interfaces/maestrosBienestarina';
+import { Acudientes } from './interfaces/acudiente';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -170,6 +173,61 @@ getUsuarios(){
 putUsuarios(id: string|number, Nombre: Usuarios ){
   return this.http.put<Usuarios>(`${this.api}/usuario/${id}`, Nombre);
 }
+
+
+postMaestrosBienestrina(usu : MaestroBienestarina ){
+
+  const path = `${this.api}/listaM`;
+  return this.http.post<MaestroBienestarina>(path, usu);
+  
+}
+
+getMaestrosBienestrina(){
+  const path = `${this.api}/listaM`;
+  return this.http.get<[MaestroBienestarina]>(path);
+}
+
+putMaestrosBienestrina(id: string|number, Nombre: MaestroBienestarina ){
+  return this.http.put<MaestroBienestarina>(`${this.api}/listaM/${id}`, Nombre);
+}
+
+
+postBeneficiarios(usu : Beneficiario ){
+
+  const path = `${this.api}/beneficiario`;
+  return this.http.post<Beneficiario>(path, usu);
+  
+}
+
+getBeneficiarios(){
+  const path = `${this.api}/beneficiario`;
+  return this.http.get<[Beneficiario]>(path);
+}
+
+putBeneficiarios(id: string|number, Nombre: Beneficiario ){
+  return this.http.put<Beneficiario>(`${this.api}/beneficiario/${id}`, Nombre);
+}
+
+
+postAcudientes(usu : Acudientes ){
+
+  const path = `${this.api}/acudiente`;
+  return this.http.post<Acudientes>(path, usu);
+  
+}
+
+getAcudientes(){
+  const path = `${this.api}/acudiente`;
+  return this.http.get<[Acudientes]>(path);
+}
+
+putAcudientes(id: string|number, Nombre: Acudientes ){
+  return this.http.put<Acudientes>(`${this.api}/acudiente/${id}`, Nombre);
+}
+
+
+
+
 
 //----UDS-----------------
 postUds(uds : Uds){
