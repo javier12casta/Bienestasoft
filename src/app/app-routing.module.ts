@@ -77,6 +77,7 @@ const routes: Routes = [
   {path:'regionali/:id', component: RegionaliComponent},
   {path:'reportes', component:ReportesComponent},
   {path:'rol', component: RolComponent},
+  {path:'rol/:id', component: RolComponent},
   {path:'roli', component: RoliComponent},
   {path:'uds', component: UdsComponent},
   {path:'udsi', component: UdsiComponent},

@@ -23,6 +23,8 @@ export class RoliComponent implements OnInit {
         console.log('funciona');
       }
       );
+  
+    
   }
 
 }
