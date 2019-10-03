@@ -79,6 +79,7 @@ const routes: Routes = [
   {path:'rol', component: RolComponent},
   {path:'rol/:id', component: RolComponent},
   {path:'roli', component: RoliComponent},
+  {path:'roli/:id', component: RolComponent},
   {path:'uds', component: UdsComponent},
   {path:'udsi', component: UdsiComponent},
   {path:'udsi/:id', component: UdsiComponent},
