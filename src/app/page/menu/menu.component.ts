@@ -30,7 +30,9 @@ export class MenuComponent implements OnInit {
     {name:"Crear usuarios", route: "/usuarios", icon:"face" },
     {name:"Modificar Usuarios", route: "/modificarusuarios", icon:"face" },
     {name:"Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon:"face" },
-    {name:"Datos Maestros", route: "/listamaestros", icon:"face" },
+    {name:"Crear Datos Maestros", route: "/listamaestros", icon:"face" },
+    {name:"Modificar Datos Maestros", route: "/listamaestrosmodificar", icon:"face" },
+    {name:"Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon:"face" },
   ];
 
   fillerContent = Array.from({length: 50}, () =>'');
