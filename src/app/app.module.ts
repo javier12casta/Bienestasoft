@@ -60,6 +60,9 @@ import {MatIconModule} from '@angular/material/icon';
 
 import { Select2Module } from 'ng2-select2';
 import { RoliComponent } from './page/roli/roli.component';
+import { CentrozonalmComponent } from './page/centrozonalm/centrozonalm.component';
+import { PuntoentregamComponent } from './page/puntoentregam/puntoentregam.component';
+import { UdsmComponent } from './page/udsm/udsm.component';
 
 
 @NgModule({
@@ -106,6 +109,9 @@ import { RoliComponent } from './page/roli/roli.component';
     InhabilitarbeneficiariosComponent,
     Inhabilitarbeneficiarios1Component,
     RoliComponent,
+    CentrozonalmComponent,
+    PuntoentregamComponent,
+    UdsmComponent,
 
    
   ],

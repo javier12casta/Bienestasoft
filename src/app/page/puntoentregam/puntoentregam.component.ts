@@ -5,11 +5,11 @@ import { ActivatedRoute } from '@angular/router';
 import { Centrozonal } from '../..//interfaces/centrozonal';
 
 @Component({
-  selector: 'app-puntoentregai',
-  templateUrl: './puntoentregai.component.html',
-  styleUrls: ['./puntoentregai.component.css']
+  selector: 'app-puntoentregam',
+  templateUrl: './puntoentregam.component.html',
+  styleUrls: ['./puntoentregam.component.css']
 })
-export class PuntoentregaiComponent implements OnInit {
+export class PuntoentregamComponent implements OnInit {
 
   centros: Centrozonal[]=[];
 
@@ -36,6 +36,20 @@ export class PuntoentregaiComponent implements OnInit {
   modificar = false;
 
   ngOnInit() {
+
+    const params = this.activeRoute.snapshot.params;
+    console.log(params);
+    if (params.id) {
+      this.Service.getPuntoid(params.id)
+        .subscribe(res => {
+          console.log(res);
+          this.puntos = Object(res);
+          this.modificar = true;
+        }, err => {
+          console.log(err);
+        }
+        );
+    }
   // Traer centro Zonal
     this.Service.getCentro()
     .subscribe(res=>{
@@ -47,18 +61,15 @@ export class PuntoentregaiComponent implements OnInit {
     console.log(this.puntos);
   }
 
-
-  //insertar Datos ------------------------------------------------
-  insertDatos() {
-    delete this.puntos.idPuntoEntrega;
-    this.Service.postPunto(this.puntos).subscribe(res => {
-      console.log(this.puntos);
-      console.log('Funicona');
-    },err => {
-        console.log(err);
-        console.log('Fallo');
-      });
-
+  // Actualizar Datos---------------------------------------------
+  updateDatos() {
+    this.Service.putPunto(this.puntos.idPuntoEntrega, this.puntos)
+      .subscribe(
+        res => {
+          console.log(res);
+        }, err => {
+          console.log(err);
+        }
+      );
   }
-
 }

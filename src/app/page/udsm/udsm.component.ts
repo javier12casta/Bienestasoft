@@ -5,14 +5,13 @@ import { ActivatedRoute } from '@angular/router';
 import { Centrozonal } from 'src/app/interfaces/centrozonal';
 import { Puntoentrega } from 'src/app/interfaces/puntoentrega';
 
-
 @Component({
-  selector: 'app-udsi',
-  templateUrl: './udsi.component.html',
-  styleUrls: ['./udsi.component.css']
+  selector: 'app-udsm',
+  templateUrl: './udsm.component.html',
+  styleUrls: ['./udsm.component.css']
 })
-export class UdsiComponent implements OnInit {
-  
+export class UdsmComponent implements OnInit {
+ 
   centros: Centrozonal []=[];
   puntos: Puntoentrega[]=[];
 
@@ -40,6 +39,19 @@ export class UdsiComponent implements OnInit {
 
   modificar = false;
   ngOnInit() {
+    const params = this.activeRoute.snapshot.params;
+    console.log(params);
+    if (params.id) {
+      this.Service.getUdsid(params.id)
+        .subscribe(res => {
+          console.log(res);
+          this.unidad = Object(res);
+          this.modificar = true;
+        }, err => {
+          console.log(err);
+        }
+        );
+    }
 //Traer Centros zonales
     this.Service.getCentro()
     .subscribe(res=> {
@@ -55,18 +67,17 @@ export class UdsiComponent implements OnInit {
       console.log(err);
     });
   }
-
-    //insertar Datos ------------------------------------------------
-    insertDatos() {
-      delete this.unidad.idUDS;
-      this.Service.postUds(this.unidad).subscribe(res => {
-        console.log(this.unidad);
-        console.log(res);
-      },
-        err => {
-          console.log(err);
-        });
   
+    // Actualizar Datos---------------------------------------------
+    updateDatos() {
+      this.Service.putUds(this.unidad.idUDS, this.unidad)
+        .subscribe(
+          res => {
+            console.log(res);
+          }, err => {
+            console.log(err);
+          }
+        );
     }
 
 }
