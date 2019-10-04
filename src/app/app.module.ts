@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { Component } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EntregaComponent } from './page/entrega/entrega.component';
@@ -60,6 +61,7 @@ import {MatIconModule} from '@angular/material/icon';
 
 import { Select2Module } from 'ng2-select2';
 import { RoliComponent } from './page/roli/roli.component';
+import { PermisosComponent } from './page/permisos/permisos.component';
 
 
 @NgModule({
@@ -106,8 +108,7 @@ import { RoliComponent } from './page/roli/roli.component';
     InhabilitarbeneficiariosComponent,
     Inhabilitarbeneficiarios1Component,
     RoliComponent,
-
-   
+    PermisosComponent,
   ],
   imports: [
     BrowserModule,
@@ -125,7 +126,7 @@ import { RoliComponent } from './page/roli/roli.component';
     MatButtonModule,
     Select2Module,
   ],
-  providers: [],
+  providers: [], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

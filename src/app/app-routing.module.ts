@@ -43,6 +43,8 @@ import { InhabilitarbeneficiariosComponent } from './page/inhabilitarbeneficiari
 import { Inhabilitarbeneficiarios1Component } from './page/inhabilitarbeneficiarios1/inhabilitarbeneficiarios1.component';
 import { PuntoentregaiComponent } from './page/puntoentregai/puntoentregai.component';
 import { UdsiComponent } from './page/udsi/udsi.component';
+import { PermisosComponent } from './page/permisos/permisos.component';
+
 
 const routes: Routes = [
   {path:'', component: LoginComponent},
@@ -96,6 +98,7 @@ const routes: Routes = [
   {path:'ModificarBeneficiario1', component: Modificarbeneficiarios1Component },
   {path:'InhabilitarBeneficiario', component: InhabilitarbeneficiariosComponent },
   {path:'InhabilitarBeneficiario1', component: Inhabilitarbeneficiarios1Component },
+  {path:'permisos', component: PermisosComponent },
 ];
 
 @NgModule({
