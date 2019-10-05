@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { Component } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EntregaComponent } from './page/entrega/entrega.component';
@@ -60,11 +61,18 @@ import {MatIconModule} from '@angular/material/icon';
 
 import { Select2Module } from 'ng2-select2';
 import { RoliComponent } from './page/roli/roli.component';
+import { PermisosComponent } from './page/permisos/permisos.component';
+
+import { CentrozonalmComponent } from './page/centrozonalm/centrozonalm.component';
+import { PuntoentregamComponent } from './page/puntoentregam/puntoentregam.component';
+import { UdsmComponent } from './page/udsm/udsm.component';
+
 import { ServiciosymodalidadesComponent } from './page/serviciosymodalidades/serviciosymodalidades.component';
 import { ListadepreciosComponent } from './page/listadeprecios/listadeprecios.component';
 import { ReferenciasbienestarinaComponent } from './page/referenciasbienestarina/referenciasbienestarina.component';
 import { DatosvariosComponent } from './page/datosvarios/datosvarios.component';
 import { Modificarusuarios1Component } from './page/modificarusuarios1/modificarusuarios1.component';
+
 
 
 @NgModule({
@@ -111,6 +119,11 @@ import { Modificarusuarios1Component } from './page/modificarusuarios1/modificar
     InhabilitarbeneficiariosComponent,
     Inhabilitarbeneficiarios1Component,
     RoliComponent,
+
+    CentrozonalmComponent,
+    PuntoentregamComponent,
+    UdsmComponent,
+
     ServiciosymodalidadesComponent,
     ListadepreciosComponent,
     ReferenciasbienestarinaComponent,
@@ -119,6 +132,8 @@ import { Modificarusuarios1Component } from './page/modificarusuarios1/modificar
   
 
    
+
+
   ],
   imports: [
     BrowserModule,
@@ -136,7 +151,7 @@ import { Modificarusuarios1Component } from './page/modificarusuarios1/modificar
     MatButtonModule,
     Select2Module,
   ],
-  providers: [],
+  providers: [], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

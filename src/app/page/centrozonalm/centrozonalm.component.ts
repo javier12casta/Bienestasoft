@@ -4,15 +4,15 @@ import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 
 import { Municipio } from '../../interfaces/municipio';
+import { Comuna } from '../../interfaces/comuna';
 import { Regional } from '../../interfaces/regional';
-import { Select2OptionData } from 'ng2-select2';
+import { Barrio } from '../../interfaces/barrio';
 @Component({
-  selector: 'app-centrozonali',
-  templateUrl: './centrozonali.component.html',
-  styleUrls: ['./centrozonali.component.css']
+  selector: 'app-centrozonalm',
+  templateUrl: './centrozonalm.component.html',
+  styleUrls: ['./centrozonalm.component.css']
 })
-export class CentrozonaliComponent implements OnInit {
-  //public exampleData: Array<Select2OptionData>;
+export class CentrozonalmComponent implements OnInit {
   public regional: Regional[] = [];
   municipios: Municipio[] = [];
   public options: Select2Options;
@@ -35,6 +35,19 @@ export class CentrozonaliComponent implements OnInit {
   };
 
   ngOnInit() {
+
+    const params = this.activeRoute.snapshot.params;
+    console.log(params);
+    if (params.id) {
+      this.Service.getCentroid(params.id)
+        .subscribe(res => {
+          console.log(res);
+          this.centros = Object(res);
+        }, err => {
+          console.log(err);
+        }
+        );
+    }
     // Traer Muinicipios ---------------------------------------
     this.Service.getMunicipio()
       .subscribe(res => {
@@ -58,17 +71,15 @@ export class CentrozonaliComponent implements OnInit {
     }
   }
 
-  //insertar Datos ------------------------------------------------
-  insertDatos(Centrozonal: string) {
-    delete this.centros.idCentrosZonales;
-    this.Service.postCentro(this.centros).subscribe(res => {
-      console.log(this.centros);
-      console.log(res);
-    },
-      err => {
-        console.log(err);
-      });
-
+  // Actualizar Datos---------------------------------------------
+  updateDatos() {
+    this.Service.putCentro(this.centros.idCentrosZonales, this.centros)
+      .subscribe(
+        res => {
+          console.log(res);
+        }, err => {
+          console.log(err);
+        }
+      );
   }
-
 }

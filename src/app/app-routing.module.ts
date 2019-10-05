@@ -44,9 +44,14 @@ import { InhabilitarbeneficiariosComponent } from './page/inhabilitarbeneficiari
 import { Inhabilitarbeneficiarios1Component } from './page/inhabilitarbeneficiarios1/inhabilitarbeneficiarios1.component';
 import { PuntoentregaiComponent } from './page/puntoentregai/puntoentregai.component';
 import { UdsiComponent } from './page/udsi/udsi.component';
+
 import { ServiciosymodalidadesComponent } from './page/serviciosymodalidades/serviciosymodalidades.component';
 import { ReferenciasbienestarinaComponent } from './page/referenciasbienestarina/referenciasbienestarina.component';
 import { DatosvariosComponent } from './page/datosvarios/datosvarios.component';
+
+import { PermisosComponent } from './page/permisos/permisos.component';
+
+
 
 const routes: Routes = [
   {path:'', component: LoginComponent},
@@ -59,7 +64,7 @@ const routes: Routes = [
   {path:'beneficiarios', component:BeneficiariosComponent},
   {path:'centrozonal', component:CentrozonalComponent},
   {path:'centrozonali', component:CentrozonaliComponent},
-  {path:'centrozonali/:id', component:CentrozonaliComponent},
+  {path:'centrozonalm/:id', component:CentrozonaliComponent},
   {path:'comuna', component:ComunaComponent},
   {path:'comunali', component: ComunaliComponent},
   {path:'comunali/:id', component: ComunaliComponent},
@@ -75,16 +80,18 @@ const routes: Routes = [
   {path:'menu', component:MenuComponent},
   {path:'puntoentrega', component: PuntoentregaComponent},
   {path:'puntoentregai', component: PuntoentregaiComponent},
-  {path:'puntoentregai/:id', component: PuntoentregaiComponent},
+  {path:'puntoentregam/:id', component: PuntoentregaiComponent},
   {path:'regional', component:RegionalComponent},
   {path:'regionali', component: RegionaliComponent},
   {path:'regionali/:id', component: RegionaliComponent},
   {path:'reportes', component:ReportesComponent},
   {path:'rol', component: RolComponent},
+  {path:'rol/:id', component: RolComponent},
   {path:'roli', component: RoliComponent},
+  {path:'roli/:id', component: RolComponent},
   {path:'uds', component: UdsComponent},
   {path:'udsi', component: UdsiComponent},
-  {path:'udsi/:id', component: UdsiComponent},
+  {path:'udsm/:id', component: UdsiComponent},
   {path:'usuarios', component: UsuariosComponent},
   {path:'usuariosroles', component: UsuarioyrolesComponent},
   {path:'usuariosnivel', component: UsuarionivelComponent},
@@ -99,10 +106,14 @@ const routes: Routes = [
   {path:'ModificarBeneficiario1', component: Modificarbeneficiarios1Component },
   {path:'InhabilitarBeneficiario', component: InhabilitarbeneficiariosComponent },
   {path:'InhabilitarBeneficiario1', component: Inhabilitarbeneficiarios1Component },
+
   {path:'serviciosmodalidades', component:ServiciosymodalidadesComponent },
   {path:'refrenciasbienestarina', component: ReferenciasbienestarinaComponent},
   {path:'datosvarios', component: DatosvariosComponent},
   
+
+  {path:'permisos', component: PermisosComponent },
+
 ];
 
 @NgModule({

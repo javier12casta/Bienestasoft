@@ -1,3 +1,5 @@
+<app-menu></app-menu>
+
 <nav class="navbar navbar-success bg-success">
   <button class="btn btn-dark" routerLink="/centrozonal">Volver</button>
 </nav>
@@ -28,17 +30,17 @@
           </select>
           <!--select 2 Comunas-->
           <!--           <select2 [data]="comunas" name="idComunas"  [(ngModel)]="centros.idComunas" [options]="options"
-            placeholder="Comuna o localidad"> 
-            <option *ngFor="let comu of comunas" [value]="comunas.findIndex"></option>
-          </select2> -->
-          <input type="text" class="form-control" name="Comuna" [(ngModel)]="centros.Comuna" placeholder="Comuna">
+              placeholder="Comuna o localidad"> 
+              <option *ngFor="let comu of comunas" [value]="comunas.findIndex"></option>
+            </select2> -->
+          <input type="text" class="formcontrol" name="Comuna" [(ngModel)]="centros.Comuna" placeholder="Comuna">
           <input type="text" class="form-control" name="CodigoExternoJcz" [(ngModel)]="centros.CodigoExternoJcz"
             placeholder="CodigoExternoJcz">
           <input type="number" class="form-control" name="CodigoExternoCZ" [(ngModel)]="centros.CodigoExternoCZ"
             placeholder="CodigoExternoCZ">
         </div>
         <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
-        <button class="btn btn-success btn-block" type="submit" (click)="insertDatos()" routerLink="/centrozonal">
+        <button class="btn btn-success btn-block" type="submit" (click)="updateDatos()" routerLink="/centrozonal">
           Guardar
         </button>
       </form>
