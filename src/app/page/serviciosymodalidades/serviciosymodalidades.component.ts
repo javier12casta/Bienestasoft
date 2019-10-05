@@ -14,7 +14,7 @@ import { ServicioService } from 'src/app/servicio.service';
   <body>
               
 
-  <h1>Crear Listas De Datos Maestros</h1>
+  <h1>Servicio y Modalidades</h1>
   <div class="container"  class="padre">
    <div class="card card-container" >
   
@@ -33,7 +33,7 @@ import { ServicioService } from 'src/app/servicio.service';
 
   <span class="btn btn-success">Codigo Servicio y madalidad</span>
   <h2></h2>
-  <input type="text" class="form-control" [(ngModel)]="x.CodigoServicio" name="codigo"
+  <input type="text" class="form-control" [(ngModel)]="x.Servicio " name="codigo"
 		placeholder="Codigo Servicio y madalidad" class="form-control">
   <h2></h2>
   <span class="btn btn-success">Modalidad</span>
@@ -60,10 +60,10 @@ export class ServiciosymodalidadesComponent implements OnInit {
 
   x : MaestroBienestarina = {
     
-   
     EstadoDatoMaestro : 0,
-    CodigoServicio : 0,
-    Modalidad : ""
+    Modalidad : "",
+    Servicio : 0,
+    
 
   };
 

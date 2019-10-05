@@ -33,6 +33,7 @@ import { LoginComponent } from './login/login.component';
 import { UsuarioyrolesComponent } from './page/usuarioyroles/usuarioyroles.component';
 import { UsuarionivelComponent } from './page/usuarionivel/usuarionivel.component';
 import { ModificarusuariosComponent } from './page/modificarusuarios/modificarusuarios.component';
+import { Modificarusuarios1Component } from './page/modificarusuarios1/modificarusuarios1.component';
 import { InhabilitarusuariosComponent } from './page/inhabilitarusuarios/inhabilitarusuarios.component';
 import { ListaMaestrosBienestarinaModificarComponent } from './page/lista-maestros-bienestarina-modificar/lista-maestros-bienestarina-modificar.component';
 import { ListaMaestrosBienestarinaInhabilitarComponent } from './page/lista-maestros-bienestarina-inhabilitar/lista-maestros-bienestarina-inhabilitar.component';
@@ -43,6 +44,9 @@ import { InhabilitarbeneficiariosComponent } from './page/inhabilitarbeneficiari
 import { Inhabilitarbeneficiarios1Component } from './page/inhabilitarbeneficiarios1/inhabilitarbeneficiarios1.component';
 import { PuntoentregaiComponent } from './page/puntoentregai/puntoentregai.component';
 import { UdsiComponent } from './page/udsi/udsi.component';
+import { ServiciosymodalidadesComponent } from './page/serviciosymodalidades/serviciosymodalidades.component';
+import { ReferenciasbienestarinaComponent } from './page/referenciasbienestarina/referenciasbienestarina.component';
+import { DatosvariosComponent } from './page/datosvarios/datosvarios.component';
 
 const routes: Routes = [
   {path:'', component: LoginComponent},
@@ -85,6 +89,7 @@ const routes: Routes = [
   {path:'usuariosroles', component: UsuarioyrolesComponent},
   {path:'usuariosnivel', component: UsuarionivelComponent},
   {path:'modificarusuarios', component: ModificarusuariosComponent},
+  {path:'modificarusuarios1', component: Modificarusuarios1Component},
   {path:'inhabilitarusuarios', component: InhabilitarusuariosComponent},
   {path:'listamaestrosmodificar', component: ListaMaestrosBienestarinaModificarComponent},
   {path:'listamaestrosinhabilitar', component: ListaMaestrosBienestarinaInhabilitarComponent},
@@ -94,6 +99,10 @@ const routes: Routes = [
   {path:'ModificarBeneficiario1', component: Modificarbeneficiarios1Component },
   {path:'InhabilitarBeneficiario', component: InhabilitarbeneficiariosComponent },
   {path:'InhabilitarBeneficiario1', component: Inhabilitarbeneficiarios1Component },
+  {path:'serviciosmodalidades', component:ServiciosymodalidadesComponent },
+  {path:'refrenciasbienestarina', component: ReferenciasbienestarinaComponent},
+  {path:'datosvarios', component: DatosvariosComponent},
+  
 ];
 
 @NgModule({
