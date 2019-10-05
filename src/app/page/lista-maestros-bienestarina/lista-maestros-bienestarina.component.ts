@@ -49,6 +49,7 @@ import { Router } from '@angular/router';
 export class ListaMaestrosBienestarinaComponent implements OnInit {
 
   lista = '';
+  
 
 
   constructor(private Service: ServicioService , private router:Router) { }
@@ -64,18 +65,29 @@ export class ListaMaestrosBienestarinaComponent implements OnInit {
 
   if(this.lista == 'servicio y modalidades'){
 
-    this.clickMessage = 'entro';
- //   this.router.navigate(['']);
+    this.router.navigate(['/serviciosmodalidades']);
 	
 
   }
 
-  if(this.lista == 'dd'){
+  if(this.lista == 'Referencias de Bienestarina'){
 
+    this.router.navigate(['/refrenciasbienestarina']);
     
-	
-
   }
+
+  if(this.lista == 'Lista de precios'){
+
+    this.router.navigate(['/listaprecios']);
+    
+  }
+
+  if(this.lista == 'Datos nutricionales' || this.lista == 'numero de cupos' ){
+
+    this.router.navigate(['/datosvarios']);
+    
+  }
+
 
 
 

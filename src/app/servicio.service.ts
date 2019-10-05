@@ -13,6 +13,10 @@ import { Beneficiario } from './interfaces/beneficiario';
 import { Uds } from './interfaces/uds';
 import { MaestroBienestarina } from './interfaces/maestrosBienestarina';
 import { Acudientes } from './interfaces/acudiente';
+import { TipoBienestarina } from './interfaces/tipobienestarina';
+import { Lprecios } from './interfaces/listaprecios';
+import { Datosvarios } from './interfaces/datosvarios';
+
 
 @Injectable({
   providedIn: 'root'
@@ -226,8 +230,53 @@ putAcudientes(id: string|number, Nombre: Acudientes ){
 }
 
 
+postTipobienestarina(usu : TipoBienestarina ){
 
+  const path = `${this.api}/tbienestarina`;
+  return this.http.post<TipoBienestarina>(path, usu);
+  
+}
 
+getTipobienestarina(){
+  const path = `${this.api}/tbienestarina`;
+  return this.http.get<[TipoBienestarina]>(path);
+}
+
+putTipobienestarina(id: string|number, Nombre: TipoBienestarina ){
+  return this.http.put<TipoBienestarina>(`${this.api}/tbienestarina/${id}`, Nombre);
+}
+
+postListaprecios(usu : Lprecios ){
+
+  const path = `${this.api}/listaP`;
+  return this.http.post<Lprecios>(path, usu);
+  
+}
+
+getListaprecios(){
+  const path = `${this.api}/listaP`;
+  return this.http.get<[Lprecios]>(path);
+}
+
+putListaprecios(id: string|number, Nombre: Lprecios ){
+  return this.http.put<Lprecios>(`${this.api}/listaP/${id}`, Nombre);
+}
+
+postdatosvarios(usu :  Datosvarios){
+
+  const path = `${this.api}/datos`;
+  return this.http.post<Datosvarios>(path, usu);
+  
+}
+
+getdatosvarios(){
+  const path = `${this.api}/datos`;
+  return this.http.get<[Datosvarios]>(path);
+}
+
+putdatosvarioss(id: string|number, Nombre: Datosvarios ){
+  return this.http.put<Datosvarios>(`${this.api}/datos/${id}`, Nombre);
+}
 
 //----UDS-----------------
 postUds(uds : Uds){
@@ -248,5 +297,6 @@ postUds(uds : Uds){
   putUds(id: string|number, uds: Uds ){
     return this.http.put<Uds>(`${this.api}/uds/${id}`, uds);
   }
+  
 
 }

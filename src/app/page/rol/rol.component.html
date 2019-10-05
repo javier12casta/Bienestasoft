@@ -102,10 +102,9 @@
 				<input type="text" name="Almacenes" [(ngModel)]="roles.Almacenes" placeholder="Almacenes" required
 					autofocus>
 				<h2></h2>
-				<button class="btn btn-success btn-block" type="submit" routerLink="/roli"
-					(click)=" modificar ? updateDatos() : insertDatos()" >
+				<button class="btn btn-success" (click)="modificar ? updateDatos() : insertDatos()" type="submit" routerLink="/roli">
 					Guardar
-				</button>
+				</button> 
 			</form><!-- /form -->
 		</div><!-- /card-container -->
 	</div><!-- /card-container -->
