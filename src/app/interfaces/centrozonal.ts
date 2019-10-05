@@ -2,7 +2,7 @@ export interface Centrozonal {
     idCentrosZonales?: number,
     NombreCentroZonal: string,
     idMunicipios: number,
-    Comunas: string,
+    Comuna: string,
     CodigoExternoJcz: string,
     CodigoExternoCZ: number,
     Estado: number,

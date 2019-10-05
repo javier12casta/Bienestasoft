@@ -124,11 +124,7 @@ import { ListadepreciosComponent } from './page/listadeprecios/listadeprecios.co
 
     ServiciosymodalidadesComponent,
     ReferenciasdeBienestarinaComponent,
-    ListadepreciosComponent,
-  
-
-
-   
+    ListadepreciosComponent, 
   ],
   imports: [
     BrowserModule,

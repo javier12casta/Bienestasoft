@@ -27,7 +27,7 @@ export class CentrozonalmComponent implements OnInit {
     idCentrosZonales: 0,
     NombreCentroZonal: '',
     idMunicipios: 1,
-    Comunas: '',
+    Comuna: '',
     CodigoExternoJcz: '',
     CodigoExternoCZ: 0,
     Estado: 1,
