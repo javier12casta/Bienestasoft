@@ -173,6 +173,9 @@ getUsuarios(){
   const path = `${this.api}/usuario`;
   return this.http.get<[Usuarios]>(path);
 }
+getUsuariosid(id: string) {
+  return this.http.get(`${this.api}/usuario/${id}`);
+}
 
 putUsuarios(id: string|number, Nombre: Usuarios ){
   return this.http.put<Usuarios>(`${this.api}/usuario/${id}`, Nombre);

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Centrozonal } from '../../interfaces/centrozonal';
 import { ServicioService } from '../../servicio.service';
-
 import { Regional } from '../../interfaces/regional';
 
 @Component({

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { EntregaComponent } from './page/entrega/entrega.component';
 import { AppComponent } from './app.component';
 import { AcudienteBeneficiarioComponent } from './page/acudiente-beneficiario/acudiente-beneficiario.component';
@@ -44,13 +43,11 @@ import { InhabilitarbeneficiariosComponent } from './page/inhabilitarbeneficiari
 import { Inhabilitarbeneficiarios1Component } from './page/inhabilitarbeneficiarios1/inhabilitarbeneficiarios1.component';
 import { PuntoentregaiComponent } from './page/puntoentregai/puntoentregai.component';
 import { UdsiComponent } from './page/udsi/udsi.component';
-
 import { ServiciosymodalidadesComponent } from './page/serviciosymodalidades/serviciosymodalidades.component';
 import { ReferenciasbienestarinaComponent } from './page/referenciasbienestarina/referenciasbienestarina.component';
 import { DatosvariosComponent } from './page/datosvarios/datosvarios.component';
-
 import { PermisosComponent } from './page/permisos/permisos.component';
-
+import { ModificarusuariomComponent } from './page/modificarusuariom/modificarusuariom.component';
 
 
 const routes: Routes = [
@@ -106,13 +103,12 @@ const routes: Routes = [
   {path:'ModificarBeneficiario1', component: Modificarbeneficiarios1Component },
   {path:'InhabilitarBeneficiario', component: InhabilitarbeneficiariosComponent },
   {path:'InhabilitarBeneficiario1', component: Inhabilitarbeneficiarios1Component },
-
   {path:'serviciosmodalidades', component:ServiciosymodalidadesComponent },
   {path:'refrenciasbienestarina', component: ReferenciasbienestarinaComponent},
   {path:'datosvarios', component: DatosvariosComponent},
-  
-
   {path:'permisos', component: PermisosComponent },
+  {path:'modificarusuariom/:id', component: ModificarusuariomComponent },
+ 
 
 ];
 

@@ -49,7 +49,7 @@ import { ModificarbeneficiariosComponent } from './page/modificarbeneficiarios/m
 import { Modificarbeneficiarios1Component } from './page/modificarbeneficiarios1/modificarbeneficiarios1.component';
 import { InhabilitarbeneficiariosComponent } from './page/inhabilitarbeneficiarios/inhabilitarbeneficiarios.component';
 import { Inhabilitarbeneficiarios1Component } from './page/inhabilitarbeneficiarios1/inhabilitarbeneficiarios1.component';
-
+import { PermisosComponent } from './page/permisos/permisos.component';
 //imports material modules
 import {
   MatSidenavModule,
@@ -61,7 +61,7 @@ import {MatIconModule} from '@angular/material/icon';
 
 import { Select2Module } from 'ng2-select2';
 import { RoliComponent } from './page/roli/roli.component';
-import { PermisosComponent } from './page/permisos/permisos.component';
+
 
 import { CentrozonalmComponent } from './page/centrozonalm/centrozonalm.component';
 import { PuntoentregamComponent } from './page/puntoentregam/puntoentregam.component';
@@ -72,6 +72,7 @@ import { ListadepreciosComponent } from './page/listadeprecios/listadeprecios.co
 import { ReferenciasbienestarinaComponent } from './page/referenciasbienestarina/referenciasbienestarina.component';
 import { DatosvariosComponent } from './page/datosvarios/datosvarios.component';
 import { Modificarusuarios1Component } from './page/modificarusuarios1/modificarusuarios1.component';
+import { ModificarusuariomComponent } from './page/modificarusuariom/modificarusuariom.component';
 
 
 
@@ -119,19 +120,16 @@ import { Modificarusuarios1Component } from './page/modificarusuarios1/modificar
     InhabilitarbeneficiariosComponent,
     Inhabilitarbeneficiarios1Component,
     RoliComponent,
-
+    PermisosComponent,
     CentrozonalmComponent,
     PuntoentregamComponent,
     UdsmComponent,
-
     ServiciosymodalidadesComponent,
     ListadepreciosComponent,
     ReferenciasbienestarinaComponent,
     DatosvariosComponent,
     Modificarusuarios1Component,
-  
-
-   
+    ModificarusuariomComponent,
 
 
   ],
