@@ -2,7 +2,7 @@ export interface Usuarios {
     idUsuarios?: number,
     Nombres : string,
     Apellidos : string,
-    Estado : number,
+    Estado: number,
     NumeroDocumento : number,
     FechaIngreso : number,
     NombreUsuarioSistema : string,
