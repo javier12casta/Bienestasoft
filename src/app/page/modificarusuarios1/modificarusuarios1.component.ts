@@ -62,7 +62,7 @@ import { ServicioService } from '../../servicio.service';
   </table>
  
   `
-  
+
 })
 export class Modificarusuarios1Component implements OnInit {
 
@@ -73,11 +73,11 @@ export class Modificarusuarios1Component implements OnInit {
   ngOnInit() {
 
     this.Service.getUsuarios()
-    .subscribe(async (data) => {
-      this.usua = data;
-      console.log(data);
-    }
-    );
+      .subscribe(async (data) => {
+        this.usua = data;
+        console.log(data);
+      }
+      );
 
   }
 
