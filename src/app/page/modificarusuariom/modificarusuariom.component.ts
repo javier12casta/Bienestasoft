@@ -24,7 +24,7 @@ export class ModificarusuariomComponent implements OnInit {
     idUsuarios: 0,
     Nombres : '',
     Apellidos : '',
-    Estado : 1,
+    Estado : 0,
     NumeroDocumento : 0,
     FechaIngreso : 0,
     NombreUsuarioSistema : '',
