@@ -132,6 +132,8 @@ import { Modificarusuarios1Component } from './page/modificarusuarios1/modificar
     ReferenciasbienestarinaComponent,
     DatosvariosComponent,
     Modificarusuarios1Component,
+    PermisosComponent,
+    
 
   ],
   imports: [
