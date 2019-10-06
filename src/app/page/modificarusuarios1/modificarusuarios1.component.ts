@@ -59,7 +59,7 @@ import { ServicioService } from '../../servicio.service';
         <td>{{usu.idTipoDocumento}}</td>
         <td>{{usu.idPermiso}}</td>
         <td>
-          <button class="btn btn-primary" [routerLink]="['/datosgeneralesusuario', usu.idUsuarios]">Modificar</button>
+          <button class="btn btn-primary" [routerLink]="['/modificarusuariom', usu.idUsuarios]">Modificar</button>
         </td>
       </tr>
     </tbody>
