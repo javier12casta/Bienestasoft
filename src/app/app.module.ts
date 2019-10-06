@@ -125,11 +125,16 @@ import { ModificarusuariomComponent } from './page/modificarusuariom/modificarus
     PuntoentregamComponent,
     UdsmComponent,
     ServiciosymodalidadesComponent,
+    ReferenciasbienestarinaComponent,
+    ListadepreciosComponent, 
+
     ListadepreciosComponent,
     ReferenciasbienestarinaComponent,
     DatosvariosComponent,
     Modificarusuarios1Component,
+
     ModificarusuariomComponent,
+
 
 
   ],

@@ -43,6 +43,11 @@ import { InhabilitarbeneficiariosComponent } from './page/inhabilitarbeneficiari
 import { Inhabilitarbeneficiarios1Component } from './page/inhabilitarbeneficiarios1/inhabilitarbeneficiarios1.component';
 import { PuntoentregaiComponent } from './page/puntoentregai/puntoentregai.component';
 import { UdsiComponent } from './page/udsi/udsi.component';
+
+
+import { CentrozonalmComponent } from './page/centrozonalm/centrozonalm.component';
+
+
 import { ServiciosymodalidadesComponent } from './page/serviciosymodalidades/serviciosymodalidades.component';
 import { ReferenciasbienestarinaComponent } from './page/referenciasbienestarina/referenciasbienestarina.component';
 import { DatosvariosComponent } from './page/datosvarios/datosvarios.component';
@@ -61,7 +66,7 @@ const routes: Routes = [
   {path:'beneficiarios', component:BeneficiariosComponent},
   {path:'centrozonal', component:CentrozonalComponent},
   {path:'centrozonali', component:CentrozonaliComponent},
-  {path:'centrozonalm/:id', component:CentrozonaliComponent},
+  {path:'centrozonalm/:id', component:CentrozonalmComponent},
   {path:'comuna', component:ComunaComponent},
   {path:'comunali', component: ComunaliComponent},
   {path:'comunali/:id', component: ComunaliComponent},
