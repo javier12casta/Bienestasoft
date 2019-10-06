@@ -35,17 +35,27 @@ import { ServicioService } from '../../servicio.service';
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let cen of centros">
-        <th scope="row">{{cen.idCentrosZonales}}</th>
-        <td>{{cen.NombreCentroZonal}}</td>
-        <td>{{cen.idMunicipios}}</td>
-        <td>{{cen.idComunas}}</td>
-        <td>{{cen.CodigoExternoJcz}}</td>
-        <td>{{cen.CodigoExternoCZ}}</td>
-        <td>{{cen.Estado}}</td>
-        <td>{{cen.idRegional}}</td>
+      <tr *ngFor="let usu of usua">
+        <th scope="row">{{usu.idUsuarios}}</th>
+        <td>{{usu.Nombres}}</td>
+        <td>{{usu.Apellidos}}</td>
+        <td>{{usu.Estado}}</td>
+        <td>{{usu.NumeroDocumento}}</td>
+        <td>{{usu.FechaIngreso}}</td>
+        <td>{{usu.NombreUsuarioSistema}}</td>
+        <td>{{usu.Direccion}}</td>
+        <td>{{usu.TelefonoFijo}}</td>
+        <td>{{usu.TelefonoFijo2}}</td>
+        <td>{{usu.TelefonoMovil}}</td>
+        <td>{{usu.TelefonoMovil2}}</td>
+        <td>{{usu.Email}}</td>
+        <td>{{usu.idRolPersona}}</td>
+        <td>{{usu.idPersonalICBF}}</td>
+        <td>{{usu.idUDS}}</td>
+        <td>{{usu.idTipoDocumento}}</td>
+        <td>{{usu.idPermiso}}</td>
         <td>
-          <button class="btn btn-primary" [routerLink]="['/centrozonali', cen.idCentrosZonales]">Modificar</button>
+          <button class="btn btn-primary" [routerLink]="['/datosgeneralesusuario', usu.idUsuarios]">Modificar</button>
         </td>
       </tr>
     </tbody>
@@ -66,7 +76,6 @@ export class Modificarusuarios1Component implements OnInit {
     .subscribe(async (data) => {
       this.usua = data;
       console.log(data);
-      
     }
     );
 
