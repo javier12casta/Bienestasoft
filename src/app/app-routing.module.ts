@@ -52,7 +52,14 @@ import { ServiciosymodalidadesComponent } from './page/serviciosymodalidades/ser
 import { ReferenciasbienestarinaComponent } from './page/referenciasbienestarina/referenciasbienestarina.component';
 import { DatosvariosComponent } from './page/datosvarios/datosvarios.component';
 import { PermisosComponent } from './page/permisos/permisos.component';
+
+
 import { ModificarusuariomComponent } from './page/modificarusuariom/modificarusuariom.component';
+
+import { PuntoentregamComponent } from './page/puntoentregam/puntoentregam.component';
+import { UdsmComponent } from './page/udsm/udsm.component';
+
+
 
 
 const routes: Routes = [
@@ -82,7 +89,7 @@ const routes: Routes = [
   {path:'menu', component:MenuComponent},
   {path:'puntoentrega', component: PuntoentregaComponent},
   {path:'puntoentregai', component: PuntoentregaiComponent},
-  {path:'puntoentregam/:id', component: PuntoentregaiComponent},
+  {path:'puntoentregam/:id', component: PuntoentregamComponent},
   {path:'regional', component:RegionalComponent},
   {path:'regionali', component: RegionaliComponent},
   {path:'regionali/:id', component: RegionaliComponent},
@@ -93,7 +100,7 @@ const routes: Routes = [
   {path:'roli/:id', component: RolComponent},
   {path:'uds', component: UdsComponent},
   {path:'udsi', component: UdsiComponent},
-  {path:'udsm/:id', component: UdsiComponent},
+  {path:'udsm/:id', component: UdsmComponent},
   {path:'usuarios', component: UsuariosComponent},
   {path:'usuariosroles', component: UsuarioyrolesComponent},
   {path:'usuariosnivel', component: UsuarionivelComponent},

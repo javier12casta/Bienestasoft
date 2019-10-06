@@ -6,6 +6,9 @@ import { ActivatedRoute } from '@angular/router';
 import { Municipio } from '../../interfaces/municipio';
 import { Regional } from '../../interfaces/regional';
 import { Select2OptionData } from 'ng2-select2';
+import Swal from 'sweetalert2';
+
+
 @Component({
   selector: 'app-centrozonali',
   templateUrl: './centrozonali.component.html',
@@ -17,11 +20,12 @@ export class CentrozonaliComponent implements OnInit {
   municipios: Municipio[] = [];
   public options: Select2Options;
 
+
   constructor(
     private activeRoute: ActivatedRoute,
     private Service: ServicioService,
   ) {
-  } 
+  }
 
   centros: Centrozonal = {
     idCentrosZonales: 0,
@@ -64,11 +68,32 @@ export class CentrozonaliComponent implements OnInit {
     this.Service.postCentro(this.centros).subscribe(res => {
       console.log(this.centros);
       console.log(res);
+      this.showMenssage();
     },
       err => {
         console.log(err);
+        this.showMenssage();
       });
 
   }
 
+  //mensajes de creacion
+  showMenssage(){
+    Swal.fire({
+      title: 'Creado!',
+      text: 'Centro Zonal Creado',
+      type: 'success',
+      confirmButtonText: 'Entendido'
+    });
+  }
+//Mensaje de error
+
+showMenssage2(){
+  Swal.fire({
+    title: 'Error!',
+    text: 'Error al crear centro zonal',
+    type: 'error',
+    confirmButtonText: 'Entendido'
+  });
+}
 }

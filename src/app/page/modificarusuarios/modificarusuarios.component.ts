@@ -28,9 +28,9 @@ import { Router } from '@angular/router';
               <span class="btn btn-success" >Nivel</span>
               <h2></h2>
               <select class="select-css">
-                      <option value="0">Centro Zonal</option>
-                      <option value="1">Punto de Entrega</option>
-                      <option value="1">Unidad de servicio</option>
+                      <option value="1">Centro Zonal</option>
+                      <option value="2">Punto de Entrega</option>
+                      <option value="3">Unidad de servicio</option>
               </select>
               <h2></h2>
 
