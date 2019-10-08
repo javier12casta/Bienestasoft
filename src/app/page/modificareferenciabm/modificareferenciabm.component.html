@@ -1,0 +1,48 @@
+<nav class="navbar navbar-success bg-success">
+        <button class="btn btn-dark" routerLink="/modificarbeneficiario1">Volver</button>
+      </nav>
+      
+      <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+        <div class="card" padding>
+          <div class="card-body" padding>
+            <form>
+              <div class="form-group">
+    
+    
+            
+                    <input type="text" class="form-control" [(ngModel)]="bine.Codigo" name="codigo"
+                    placeholder="Codigo" class="form-control" id="cod">
+    
+                    <select name="Estado" id="Estado" [(ngModel)]="bine.Estado" style="width: 100%;" class="form-control">
+                            <option value="0">0</option>
+                            <Option value="1">1</Option>
+                          </select>
+    
+                    <input type="text" class="form-control" [(ngModel)]="bine.Referencia" name="referencia"
+                    placeholder="Referencia" class="form-control" id="ref">
+    
+                    <select name="unidadmedida" id="unidadmedida" [(ngModel)]="bine.UnidadPrincipal" style="width: 100%;" class="form-control">
+                            <option>bolsa</option>
+                            <Option>caja</Option>
+                            <Option>otra presentacion</Option>
+                          </select>
+
+                          <input type="number" class="form-control" [(ngModel)]="bine.Cantidad" name="cantidad"
+                    placeholder="Cantidad " class="form-control" id="ref">
+
+
+                    <input type="text" class="form-control" [(ngModel)]="bine.UnidadSecundaria" name="unidadmedidas"
+                    placeholder="Unidad Medida Secundaria" class="form-control" id="uni">
+    
+      
+              <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
+              <button class="btn btn-success btn-block" type="submit" (click)="updateDatos()" routerLink="/modificarreferenciab">
+                Guardar
+              </button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+    

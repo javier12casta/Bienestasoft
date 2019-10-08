@@ -73,6 +73,17 @@ import { ReferenciasbienestarinaComponent } from './page/referenciasbienestarina
 import { DatosvariosComponent } from './page/datosvarios/datosvarios.component';
 import { Modificarusuarios1Component } from './page/modificarusuarios1/modificarusuarios1.component';
 import { ModificarusuariomComponent } from './page/modificarusuariom/modificarusuariom.component';
+import { ModificarlistamaestrosComponent } from './page/modificarlistamaestros/modificarlistamaestros.component';
+import { ModificarserviciosmComponent } from './page/modificarserviciosm/modificarserviciosm.component';
+import { ModificareferenciabComponent } from './page/modificareferenciab/modificareferenciab.component';
+import { ModificarlistapComponent } from './page/modificarlistap/modificarlistap.component';
+import { ModificarlistadocComponent } from './page/modificarlistadoc/modificarlistadoc.component';
+import { ListadocursosComponent } from './page/listadocursos/listadocursos.component';
+import { ModificarbeneficiariomComponent } from './page/modificarbeneficiariom/modificarbeneficiariom.component';
+import { ModificarserviciommComponent } from './page/modificarserviciomm/modificarserviciomm.component';
+import { ModificareferenciabmComponent } from './page/modificareferenciabm/modificareferenciabm.component';
+import { ModificarlistapmComponent } from './page/modificarlistapm/modificarlistapm.component';
+import { ModificarlistadocmComponent } from './page/modificarlistadocm/modificarlistadocm.component';
 
 
 
@@ -136,6 +147,42 @@ import { ModificarusuariomComponent } from './page/modificarusuariom/modificarus
     
 
     ModificarusuariomComponent,
+    
+
+    ModificarlistamaestrosComponent,
+    
+
+    ModificarserviciosmComponent,
+    
+
+    ModificareferenciabComponent,
+    
+
+    ModificarlistapComponent,
+    
+
+    ModificarlistadocComponent,
+    
+
+    ListadocursosComponent,
+    
+
+    ModificarbeneficiariomComponent,
+    
+
+    ModificarserviciommComponent,
+    
+
+    ModificareferenciabmComponent,
+    
+
+    ModificarlistapmComponent,
+    
+
+    ModificarlistadocmComponent,
+    
+
+  
 
 
 

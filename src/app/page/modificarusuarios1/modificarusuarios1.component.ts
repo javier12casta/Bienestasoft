@@ -6,14 +6,10 @@ import { ServicioService } from '../../servicio.service';
   selector: 'app-modificarusuarios1',
   templateUrl: './modificarusuarios1.component.html',
   styleUrls: ['./modificarusuarios1.component.css'],
-
-  
-  
-
   template: `
 
   <nav class="navbar navbar-success bg-success">
-  <button class="btn btn-dark" routerLink=""> Modificar </button>
+  
 </nav>
 
 <table class="table">
@@ -57,7 +53,7 @@ import { ServicioService } from '../../servicio.service';
         <td>{{usu.idPersonalICBF}}</td>
         <td>{{usu.idUDS}}</td>
         <td>{{usu.idTipoDocumento}}</td>
-        <td>{{usu.idPermiso}}</td>
+        <td>{{usu.TipoUsuario}}</td>
         <td>
           <button class="btn btn-primary" [routerLink]="['/modificarusuariom', usu.idUsuarios]">Modificar</button>
         </td>

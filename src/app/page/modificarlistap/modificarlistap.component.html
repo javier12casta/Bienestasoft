@@ -1,0 +1,39 @@
+<nav class="navbar navbar-success bg-success">
+    <button class="btn btn-dark" routerLink="/menu">Volver</button>
+    <button class="btn btn-dark" routerLink="/centrozonali"> Crear </button>
+  </nav>
+
+  <table class="table">
+    <thead class="thead-green">
+      <tr>
+        <th scope="col">idListaPrecios</th>
+        <th scope="col">Referencia</th>
+        <th scope="col">Mes</th>
+        <th scope="col">Ano</th>
+        <th scope="col">ValorCop</th>
+        <th scope="col">Estado</th>
+        <th scope="col">idBienestarina</th>
+        <th scope="col">idConsecutivosMaestro</th>
+        <th scope="col">Codigo</th>
+      </tr>
+    </thead>
+    <tbody>
+            <tr *ngFor="let cen of listapre">
+                    <th scope="row">{{cen.idListaPrecios}}</th>
+                    <td>{{cen.Referencia}}</td>
+                    <td>{{cen.Mes}}</td>
+                    <td>{{cen.Ano}}</td>
+          <td>{{cen.ValorCop}}</td>
+          <td>{{cen.Estado}}</td>
+          <td>{{cen.idBienestarina}}</td>
+          <td>{{cen.idConsecutivosMaestro}}</td>
+          <td>{{cen.Codigo}}</td>
+          <td>
+            <button class="btn btn-primary" [routerLink]="['/modificarlistacm', cen.idListaPrecios]">Modificar</button>
+          </td>
+                  </tr>
+                    
+            
+      </tbody>
+  
+</table>

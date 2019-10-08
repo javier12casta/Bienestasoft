@@ -3,5 +3,5 @@ export interface MaestroBienestarina {
     EstadoDatoMaestro : number,
     Modalidad : "",
     Servicio : number,
-   
+    idConsecutivosMaestro? : number,
  }

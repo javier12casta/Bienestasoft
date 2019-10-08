@@ -94,7 +94,7 @@ import { ServicioService } from 'src/app/servicio.service';
 		<span class="btn btn-success">Tipo Documento</span>
 		<h2></h2>
 		
-    <select name="tipodocumento" class="select-css">
+    <select name="tipodocumento" class="select-css" [(ngModel)]="x.idTipoDocumento">
     <option [value]="item" *ngFor="let item of listadoc">{{item}} </option>
     </select>
 		
@@ -111,7 +111,6 @@ import { ServicioService } from 'src/app/servicio.service';
 		<h2></h2>
 		<input type="text" class="form-control" [(ngModel)]="x.Nombres" name="nombre"
 		placeholder="Nombres" class="form-control" id="nom">
-    
   
 		<h2></h2>
 		<span class="btn btn-success">Apellidos</span>
@@ -133,10 +132,10 @@ import { ServicioService } from 'src/app/servicio.service';
 		placeholder="Usuario Sistema" class="form-control" id="usu">
 
   <h2></h2>
-  <span class="btn btn-success">Tipo Documento</span>
+  <span class="btn btn-success">Tipo Usuario</span>
   <h2></h2>
   
-  <select name="tipos" [(ngModel)]="tipousuario" class="select-css">
+  <select name="tipos" [(ngModel)]="x.TipoUsuario" class="select-css">
   <option [value]="item" *ngFor="let item of listat">{{item}} </option>
   </select>
   
@@ -208,9 +207,9 @@ import { ServicioService } from 'src/app/servicio.service';
 export class DatosGeneralesUsuarioComponent implements OnInit {
 
   listamaestro:string[]=["0","1"];
-  listadoc:string[]=["CC","CE","PA"];
+  listadoc:string[]=["1","2","3"];
   listat:string[]=["PE","UDS","ADMINISTRADOR"];
-  listar:string[]=["ROL 1","ROL 2","ROL 3","ROL 4","ROL 5","ROL 6","ROL 7","ROL 8","ROL 9","ROL 10"];
+  listar:string[]=["1","2","3","4","5","6","7","8","9","10"];
 
 
   x : Usuarios = {
@@ -226,7 +225,9 @@ export class DatosGeneralesUsuarioComponent implements OnInit {
     TelefonoFijo2 : 0,
     TelefonoMovil: 0,
     TelefonoMovil2 : 0,
-    Email : '',
+	Email : '',
+	TipoUsuario : '',
+	idTipoDocumento : 0,
 
   };
 

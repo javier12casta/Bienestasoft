@@ -43,21 +43,26 @@ import { InhabilitarbeneficiariosComponent } from './page/inhabilitarbeneficiari
 import { Inhabilitarbeneficiarios1Component } from './page/inhabilitarbeneficiarios1/inhabilitarbeneficiarios1.component';
 import { PuntoentregaiComponent } from './page/puntoentregai/puntoentregai.component';
 import { UdsiComponent } from './page/udsi/udsi.component';
-
-
+import { ModificarlistamaestrosComponent } from './page/modificarlistamaestros/modificarlistamaestros.component';
 import { CentrozonalmComponent } from './page/centrozonalm/centrozonalm.component';
-
-
 import { ServiciosymodalidadesComponent } from './page/serviciosymodalidades/serviciosymodalidades.component';
 import { ReferenciasbienestarinaComponent } from './page/referenciasbienestarina/referenciasbienestarina.component';
 import { DatosvariosComponent } from './page/datosvarios/datosvarios.component';
 import { PermisosComponent } from './page/permisos/permisos.component';
-
-
 import { ModificarusuariomComponent } from './page/modificarusuariom/modificarusuariom.component';
-
 import { PuntoentregamComponent } from './page/puntoentregam/puntoentregam.component';
 import { UdsmComponent } from './page/udsm/udsm.component';
+import { ModificarserviciosmComponent } from './page/modificarserviciosm/modificarserviciosm.component';
+import { ModificareferenciabComponent } from './page/modificareferenciab/modificareferenciab.component';
+import { ModificarlistapComponent } from './page/modificarlistap/modificarlistap.component';
+import { ModificarlistadocComponent } from './page/modificarlistadoc/modificarlistadoc.component';
+import { ModificarlistadocmComponent } from './page/modificarlistadocm/modificarlistadocm.component';
+import { ListadocursosComponent } from './page/listadocursos/listadocursos.component';
+import { ModificarbeneficiariomComponent } from './page/modificarbeneficiariom/modificarbeneficiariom.component';
+import { ModificarserviciommComponent } from './page/modificarserviciomm/modificarserviciomm.component';
+import { ModificareferenciabmComponent } from './page/modificareferenciabm/modificareferenciabm.component';
+import { ModificarlistapmComponent } from './page/modificarlistapm/modificarlistapm.component';
+
 
 
 
@@ -113,6 +118,7 @@ const routes: Routes = [
   {path:'datosgeneralesusuario', component:DatosGeneralesUsuarioComponent},
   {path:'ModificarBeneficiario', component: ModificarbeneficiariosComponent },
   {path:'ModificarBeneficiario1', component: Modificarbeneficiarios1Component },
+  {path:'modificarbeneficiariom/:id', component: ModificarbeneficiariomComponent },
   {path:'InhabilitarBeneficiario', component: InhabilitarbeneficiariosComponent },
   {path:'InhabilitarBeneficiario1', component: Inhabilitarbeneficiarios1Component },
   {path:'serviciosmodalidades', component:ServiciosymodalidadesComponent },
@@ -120,6 +126,16 @@ const routes: Routes = [
   {path:'datosvarios', component: DatosvariosComponent},
   {path:'permisos', component: PermisosComponent },
   {path:'modificarusuariom/:id', component: ModificarusuariomComponent },
+  {path:'modificarlistamaestro', component: ModificarlistamaestrosComponent },
+  {path:'modificarserviciom', component: ModificarserviciosmComponent },
+  {path:'modificarserviciomm/:id', component: ModificarserviciommComponent },
+  {path:'modificarreferenciab', component: ModificareferenciabComponent },
+  {path:'modificarreferenciabm/:id', component: ModificareferenciabmComponent },
+  {path:'modificarlistac', component: ModificarlistapComponent },
+  {path:'modificarlistacm/:id', component: ModificarlistapmComponent},
+  {path:'modificarlistadoc', component: ModificarlistadocComponent },
+  {path:'modificarlistadocm/:id', component: ModificarlistadocmComponent },
+  {path:'listadocursos', component: ListadocursosComponent },
  
 
 ];

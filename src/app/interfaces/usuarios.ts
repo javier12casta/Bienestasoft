@@ -15,6 +15,6 @@ export interface Usuarios {
     idRolPersona ?: number,
     idPersonalICBF ?: number,
     idUDS ?: number,
-    idTipoDocumento ?: number,
-    idPermiso? : number,
+    idTipoDocumento : number,
+    TipoUsuario : string,
   }

@@ -67,7 +67,6 @@ export class ListaMaestrosBienestarinaComponent implements OnInit {
 
     this.router.navigate(['/serviciosmodalidades']);
 	
-
   }
 
   if(this.lista == 'Referencias de Bienestarina'){
@@ -81,6 +80,13 @@ export class ListaMaestrosBienestarinaComponent implements OnInit {
     this.router.navigate(['/listaprecios']);
     
   }
+
+  if(this.lista == 'Listado de cursos'){
+
+    this.router.navigate(['/listadocursos']);
+    
+  }
+
 
   if(this.lista == 'Datos nutricionales' || this.lista == 'numero de cupos' ){
 

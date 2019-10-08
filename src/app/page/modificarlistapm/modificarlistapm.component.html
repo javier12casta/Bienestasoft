@@ -1,0 +1,45 @@
+<nav class="navbar navbar-success bg-success">
+        <button class="btn btn-dark" routerLink="/modificarbeneficiario1">Volver</button>
+      </nav>
+      
+      <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+        <div class="card" padding>
+          <div class="card-body" padding>
+            <form>
+              <div class="form-group">
+    
+                    <input type="text" class="form-control" [(ngModel)]="pre.Referencia" name="referencia"
+                    placeholder="referencia" class="form-control" id="ref">
+    
+                    <input type="text" class="form-control" [(ngModel)]="pre.Mes" name="mes"
+                    placeholder="Mes" class="form-control" id="me">
+    
+                    <input type="number" class="form-control" [(ngModel)]="pre.Ano" name="ano"
+                    placeholder="Año" class="form-control" id="ano">
+    
+                    <input type="number" class="form-control" [(ngModel)]="pre.ValorCop" name="valor1"
+                    placeholder="Valor Cop" class="form-control" id="valor1">
+    
+    
+                     <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
+                    <select name="Estado" id="Estado" [(ngModel)]="pre.Estado" style="width: 100%;" class="form-control">
+                        <option value="1">0</option>
+                        <Option value="0">1</Option>
+                      </select>
+          
+    
+                    <input type="number" class="form-control" [(ngModel)]="pre.Codigo" name="codigo"
+                    placeholder="Codigo" class="form-control">
+
+      
+              <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
+              <button class="btn btn-success btn-block" type="submit" (click)="updateDatos()" routerLink="/modificarlistac">
+                Guardar
+              </button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+    

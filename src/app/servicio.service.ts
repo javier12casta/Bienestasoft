@@ -16,6 +16,7 @@ import { Acudientes } from './interfaces/acudiente';
 import { TipoBienestarina } from './interfaces/tipobienestarina';
 import { Lprecios } from './interfaces/listaprecios';
 import { Datosvarios } from './interfaces/datosvarios';
+import { Listadocursos } from './interfaces/listadocursos';
 
 
 @Injectable({
@@ -193,6 +194,10 @@ getMaestrosBienestrina(){
   const path = `${this.api}/listaM`;
   return this.http.get<[MaestroBienestarina]>(path);
 }
+getMaestrosBienestrinaid(id: string) {
+  return this.http.get(`${this.api}/listaM/${id}`);
+}
+
 
 putMaestrosBienestrina(id: string|number, Nombre: MaestroBienestarina ){
   return this.http.put<MaestroBienestarina>(`${this.api}/listaM/${id}`, Nombre);
@@ -209,6 +214,10 @@ postBeneficiarios(usu : Beneficiario ){
 getBeneficiarios(){
   const path = `${this.api}/beneficiario`;
   return this.http.get<[Beneficiario]>(path);
+}
+
+getBeneficiariosid(id: string) {
+  return this.http.get(`${this.api}/beneficiario/${id}`);
 }
 
 putBeneficiarios(id: string|number, Nombre: Beneficiario ){
@@ -245,6 +254,10 @@ getTipobienestarina(){
   return this.http.get<[TipoBienestarina]>(path);
 }
 
+getTipobienestarinaid(id: string) {
+  return this.http.get(`${this.api}/tbienestarina/${id}`);
+}
+
 putTipobienestarina(id: string|number, Nombre: TipoBienestarina ){
   return this.http.put<TipoBienestarina>(`${this.api}/tbienestarina/${id}`, Nombre);
 }
@@ -260,6 +273,11 @@ getListaprecios(){
   const path = `${this.api}/listaP`;
   return this.http.get<[Lprecios]>(path);
 }
+
+getListapreciosid(id: string) {
+  return this.http.get(`${this.api}/listaP/${id}`);
+}
+
 
 putListaprecios(id: string|number, Nombre: Lprecios ){
   return this.http.put<Lprecios>(`${this.api}/listaP/${id}`, Nombre);
@@ -277,9 +295,37 @@ getdatosvarios(){
   return this.http.get<[Datosvarios]>(path);
 }
 
+getdatosvariosid(id: string) {
+  return this.http.get(`${this.api}/datos/${id}`);
+}
+
 putdatosvarioss(id: string|number, Nombre: Datosvarios ){
   return this.http.put<Datosvarios>(`${this.api}/datos/${id}`, Nombre);
 }
+
+postlistadocursos(usu :  Listadocursos){
+
+  const path = `${this.api}/listaC`;
+  return this.http.post<Listadocursos>(path, usu);
+  
+}
+
+getlistadocursos(){
+  const path = `${this.api}/listaC`;
+  return this.http.get<[Listadocursos]>(path);
+}
+
+getlistadocursossid(id: string) {
+  return this.http.get(`${this.api}/listaC/${id}`);
+}
+
+putlistadocursos(id: string|number, Nombre: Listadocursos ){
+  return this.http.put<Listadocursos>(`${this.api}/listaC/${id}`, Nombre);
+}
+
+
+
+
 
 //----UDS-----------------
 postUds(uds : Uds){

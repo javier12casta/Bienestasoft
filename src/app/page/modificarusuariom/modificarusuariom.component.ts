@@ -11,7 +11,7 @@ import { Usuarios } from '../../interfaces/usuarios';
 export class ModificarusuariomComponent implements OnInit {
 
   public usuarios: Usuarios[] = [];
-  public options: Select2Options;
+
 
   constructor(
     private activeRoute: ActivatedRoute,
@@ -21,7 +21,7 @@ export class ModificarusuariomComponent implements OnInit {
 
   usu: Usuarios = {
 
-    idUsuarios: 0,
+    idUsuarios: 1,
     Nombres : '',
     Apellidos : '',
     Estado : 0,
@@ -34,6 +34,8 @@ export class ModificarusuariomComponent implements OnInit {
     TelefonoMovil: 0,
     TelefonoMovil2 : 0,
     Email : '',
+    idTipoDocumento : 0,
+    TipoUsuario : '',
   };
 
   ngOnInit() {
@@ -51,12 +53,7 @@ export class ModificarusuariomComponent implements OnInit {
         );
     }
     
-    //opciones del select ----------------------------------------
-    this.options = {
-      multiple: false,
-      theme: 'classic',
-      closeOnSelect: false
-    }
+    
   }
 
   // Actualizar Datos---------------------------------------------
