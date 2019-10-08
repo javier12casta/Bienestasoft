@@ -34,6 +34,16 @@ import { UsuarionivelComponent } from './page/usuarionivel/usuarionivel.componen
 import { ModificarusuariosComponent } from './page/modificarusuarios/modificarusuarios.component';
 import { Modificarusuarios1Component } from './page/modificarusuarios1/modificarusuarios1.component';
 import { InhabilitarusuariosComponent } from './page/inhabilitarusuarios/inhabilitarusuarios.component';
+import { Inhabilitarusuarios1Component } from './page/inhabilitarusuarios1/inhabilitarusuarios1.component';
+import { InhabilitarusuariosiComponent } from './page/inhabilitarusuariosi/inhabilitarusuariosi.component';
+
+import { InhabilitarlistapComponent } from './page/inhabilitarlistap/inhabilitarlistap.component';
+import { InhabilitarlistapiComponent } from './page/inhabilitarlistapi/inhabilitarlistapi.component';
+
+import { InhabilitarlistadocComponent } from './page/inhabilitarlistadoc/inhabilitarlistadoc.component';
+import { InhabilitarlistadociComponent } from './page/inhabilitarlistadoci/inhabilitarlistadoci.component';
+
+
 import { ListaMaestrosBienestarinaModificarComponent } from './page/lista-maestros-bienestarina-modificar/lista-maestros-bienestarina-modificar.component';
 import { ListaMaestrosBienestarinaInhabilitarComponent } from './page/lista-maestros-bienestarina-inhabilitar/lista-maestros-bienestarina-inhabilitar.component';
 import { DatosGeneralesUsuarioComponent } from './page/datos-generales-usuario/datos-generales-usuario.component';
@@ -41,6 +51,7 @@ import { ModificarbeneficiariosComponent } from './page/modificarbeneficiarios/m
 import { Modificarbeneficiarios1Component } from './page/modificarbeneficiarios1/modificarbeneficiarios1.component';
 import { InhabilitarbeneficiariosComponent } from './page/inhabilitarbeneficiarios/inhabilitarbeneficiarios.component';
 import { Inhabilitarbeneficiarios1Component } from './page/inhabilitarbeneficiarios1/inhabilitarbeneficiarios1.component';
+import { InhabilitarbeneficiariosiComponent } from './page/inhabilitarbeneficiariosi/inhabilitarbeneficiariosi.component';
 import { PuntoentregaiComponent } from './page/puntoentregai/puntoentregai.component';
 import { UdsiComponent } from './page/udsi/udsi.component';
 import { ModificarlistamaestrosComponent } from './page/modificarlistamaestros/modificarlistamaestros.component';
@@ -63,7 +74,12 @@ import { ModificarserviciommComponent } from './page/modificarserviciomm/modific
 import { ModificareferenciabmComponent } from './page/modificareferenciabm/modificareferenciabm.component';
 import { ModificarlistapmComponent } from './page/modificarlistapm/modificarlistapm.component';
 
+import { InhabilitarserviciosmComponent } from './page/inhabilitarserviciosm/inhabilitarserviciosm.component';
+import { InhabilitarserviciosmiComponent } from './page/inhabilitarserviciosmi/inhabilitarserviciosmi.component';
 
+import { InhabilitareferenciabComponent } from './page/inhabilitareferenciab/inhabilitareferenciab.component';
+
+import { InhabilitareferenciabiComponent } from './page/inhabilitareferenciabi/inhabilitareferenciabi.component';
 
 
 
@@ -112,6 +128,8 @@ const routes: Routes = [
   {path:'modificarusuarios', component: ModificarusuariosComponent},
   {path:'modificarusuarios1', component: Modificarusuarios1Component},
   {path:'inhabilitarusuarios', component: InhabilitarusuariosComponent},
+  {path:'inhabilitarusuarios1', component: Inhabilitarusuarios1Component},
+  {path:'inhabilitarusuariosi/:id', component: InhabilitarusuariosiComponent },
   {path:'listamaestrosmodificar', component: ListaMaestrosBienestarinaModificarComponent},
   {path:'listamaestrosinhabilitar', component: ListaMaestrosBienestarinaInhabilitarComponent},
   {path:'listamaestros', component:ListaMaestrosBienestarinaComponent},
@@ -121,6 +139,7 @@ const routes: Routes = [
   {path:'modificarbeneficiariom/:id', component: ModificarbeneficiariomComponent },
   {path:'InhabilitarBeneficiario', component: InhabilitarbeneficiariosComponent },
   {path:'InhabilitarBeneficiario1', component: Inhabilitarbeneficiarios1Component },
+  {path:'InhabilitarBeneficiarioi/:id', component: InhabilitarbeneficiariosiComponent},
   {path:'serviciosmodalidades', component:ServiciosymodalidadesComponent },
   {path:'refrenciasbienestarina', component: ReferenciasbienestarinaComponent},
   {path:'datosvarios', component: DatosvariosComponent},
@@ -129,8 +148,20 @@ const routes: Routes = [
   {path:'modificarlistamaestro', component: ModificarlistamaestrosComponent },
   {path:'modificarserviciom', component: ModificarserviciosmComponent },
   {path:'modificarserviciomm/:id', component: ModificarserviciommComponent },
+  {path:'inhabilitarserviciom', component: InhabilitarserviciosmComponent },
+  {path:'inhabilitarserviciomi/:id', component: InhabilitarserviciosmiComponent  },
   {path:'modificarreferenciab', component: ModificareferenciabComponent },
   {path:'modificarreferenciabm/:id', component: ModificareferenciabmComponent },
+
+  {path:'inhabilitareferenciab', component:  InhabilitareferenciabComponent},
+  {path:'inhabilitareferenciabi/:id', component:  InhabilitareferenciabiComponent},
+
+  {path:'inhabilitarelistap', component: InhabilitarlistapComponent  },
+  {path:'inhabilitarelistapi/:id', component: InhabilitarlistapiComponent  },
+
+  {path:'inhabilitarelistadoc', component: InhabilitarlistadocComponent  },
+  {path:'inhabilitarelistadoci/:id', component:  InhabilitarlistadociComponent },
+
   {path:'modificarlistac', component: ModificarlistapComponent },
   {path:'modificarlistacm/:id', component: ModificarlistapmComponent},
   {path:'modificarlistadoc', component: ModificarlistadocComponent },

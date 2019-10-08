@@ -1,0 +1,37 @@
+<nav class="navbar navbar-success bg-success">
+        <button class="btn btn-dark" routerLink="/menu">Volver</button>
+        <button class="btn btn-dark" routerLink="/centrozonali"> Crear </button>
+      </nav>
+      
+      <table class="table">
+          <thead class="thead-green">
+            <tr>
+              <th scope="col">idTipoBienesterina</th>
+              <th scope="col">TipoBienesterina</th>
+              <th scope="col">Codigo</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Referencia</th>
+              <th scope="col">UnidadPrincipal</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">UnidadSecundaria</th>
+              <th scope="col">idConsecutivosMaestro</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let cen of tbienestarina">
+              <th scope="row">{{cen.idTipoBienesterina}}</th>
+              <td>{{cen.TipoBienesterina}}</td>
+              <td>{{cen.Codigo}}</td>
+              <td>{{cen.Estado}}</td>
+              <td>{{cen.Referencia}}</td>
+              <td>{{cen.UnidadPrincipal}}</td>
+              <td>{{cen.Cantidad}}</td>
+              <td>{{cen.UnidadSecundaria}}</td>
+              <td>{{cen.idConsecutivosMaestro}}</td>
+              <td>
+                <button class="btn btn-primary" [routerLink]="['/inhabilitareferenciabi', cen.idTipoBienesterina]">Inhabilitar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    

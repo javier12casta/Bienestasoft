@@ -9,7 +9,9 @@ import { Regional } from './interfaces/regional';
 import { Observable } from 'rxjs';
 import { Puntoentrega } from './interfaces/puntoentrega';
 import { Usuarios } from './interfaces/usuarios';
+import { InUsuarios } from './interfaces/inhabilitarusuarios';
 import { Beneficiario } from './interfaces/beneficiario';
+import { InBeneficiario } from './interfaces/inhabilitarBenefiario';
 import { Uds } from './interfaces/uds';
 import { MaestroBienestarina } from './interfaces/maestrosBienestarina';
 import { Acudientes } from './interfaces/acudiente';
@@ -17,8 +19,11 @@ import { TipoBienestarina } from './interfaces/tipobienestarina';
 import { Lprecios } from './interfaces/listaprecios';
 import { Datosvarios } from './interfaces/datosvarios';
 import { Listadocursos } from './interfaces/listadocursos';
+import { InMaestroBienestarina } from './interfaces/inhabilitarmaestrosBienestarina';
+import { InTipoBienestarina } from './interfaces/inhabilitartipobienestarina';
+import { InLprecios } from './interfaces/inhabilitarlistaprecio';
 
-
+import { InListadocursos } from './interfaces/inhabilitarlistadocursos';
 @Injectable({
   providedIn: 'root'
 })
@@ -182,6 +187,11 @@ putUsuarios(id: string|number, Nombre: Usuarios ){
   return this.http.put<Usuarios>(`${this.api}/usuario/${id}`, Nombre);
 }
 
+putUsuariosInhabilitar(id: string|number, Nombre: InUsuarios ){
+  return this.http.put<InUsuarios>(`${this.api}/usuario/${id}`, Nombre);
+}
+
+
 
 postMaestrosBienestrina(usu : MaestroBienestarina ){
 
@@ -201,6 +211,10 @@ getMaestrosBienestrinaid(id: string) {
 
 putMaestrosBienestrina(id: string|number, Nombre: MaestroBienestarina ){
   return this.http.put<MaestroBienestarina>(`${this.api}/listaM/${id}`, Nombre);
+}
+
+putMaestrosBienestrinaInhabilitar(id: string|number, Nombre: InMaestroBienestarina ){
+  return this.http.put<InMaestroBienestarina>(`${this.api}/listaM/${id}`, Nombre);
 }
 
 
@@ -224,6 +238,9 @@ putBeneficiarios(id: string|number, Nombre: Beneficiario ){
   return this.http.put<Beneficiario>(`${this.api}/beneficiario/${id}`, Nombre);
 }
 
+putBeneficiariosInhabilitar(id: string|number, Nombre: InBeneficiario ){
+  return this.http.put<InBeneficiario>(`${this.api}/beneficiario/${id}`, Nombre);
+}
 
 postAcudientes(usu : Acudientes ){
 
@@ -262,6 +279,11 @@ putTipobienestarina(id: string|number, Nombre: TipoBienestarina ){
   return this.http.put<TipoBienestarina>(`${this.api}/tbienestarina/${id}`, Nombre);
 }
 
+putTipobienestarinaInhabilitar(id: string|number, Nombre: InTipoBienestarina ){
+  return this.http.put<InTipoBienestarina>(`${this.api}/tbienestarina/${id}`, Nombre);
+}
+
+
 postListaprecios(usu : Lprecios ){
 
   const path = `${this.api}/listaP`;
@@ -282,6 +304,11 @@ getListapreciosid(id: string) {
 putListaprecios(id: string|number, Nombre: Lprecios ){
   return this.http.put<Lprecios>(`${this.api}/listaP/${id}`, Nombre);
 }
+
+putListapreciosInhabilitar(id: string|number, Nombre: InLprecios){
+  return this.http.put<InLprecios>(`${this.api}/listaP/${id}`, Nombre);
+}
+
 
 postdatosvarios(usu :  Datosvarios){
 
@@ -323,6 +350,9 @@ putlistadocursos(id: string|number, Nombre: Listadocursos ){
   return this.http.put<Listadocursos>(`${this.api}/listaC/${id}`, Nombre);
 }
 
+putlistadocursosInhabilitar(id: string|number, Nombre: InListadocursos){
+  return this.http.put<InListadocursos>(`${this.api}/listaC/${id}`, Nombre);
+}
 
 
 

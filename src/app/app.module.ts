@@ -84,6 +84,17 @@ import { ModificarserviciommComponent } from './page/modificarserviciomm/modific
 import { ModificareferenciabmComponent } from './page/modificareferenciabm/modificareferenciabm.component';
 import { ModificarlistapmComponent } from './page/modificarlistapm/modificarlistapm.component';
 import { ModificarlistadocmComponent } from './page/modificarlistadocm/modificarlistadocm.component';
+import { InhabilitarbeneficiariosiComponent } from './page/inhabilitarbeneficiariosi/inhabilitarbeneficiariosi.component';
+import { Inhabilitarusuarios1Component } from './page/inhabilitarusuarios1/inhabilitarusuarios1.component';
+import { InhabilitarusuariosiComponent } from './page/inhabilitarusuariosi/inhabilitarusuariosi.component';
+import { InhabilitarserviciosmComponent } from './page/inhabilitarserviciosm/inhabilitarserviciosm.component';
+import { InhabilitarserviciosmiComponent } from './page/inhabilitarserviciosmi/inhabilitarserviciosmi.component';
+import { InhabilitareferenciabComponent } from './page/inhabilitareferenciab/inhabilitareferenciab.component';
+import { InhabilitareferenciabiComponent } from './page/inhabilitareferenciabi/inhabilitareferenciabi.component';
+import { InhabilitarlistapComponent } from './page/inhabilitarlistap/inhabilitarlistap.component';
+import { InhabilitarlistapiComponent } from './page/inhabilitarlistapi/inhabilitarlistapi.component';
+import { InhabilitarlistadocComponent } from './page/inhabilitarlistadoc/inhabilitarlistadoc.component';
+import { InhabilitarlistadociComponent } from './page/inhabilitarlistadoci/inhabilitarlistadoci.component';
 
 
 
@@ -180,6 +191,39 @@ import { ModificarlistadocmComponent } from './page/modificarlistadocm/modificar
     
 
     ModificarlistadocmComponent,
+    
+
+    InhabilitarbeneficiariosiComponent,
+    
+
+    Inhabilitarusuarios1Component,
+    
+
+    InhabilitarusuariosiComponent,
+    
+
+    InhabilitarserviciosmComponent,
+    
+
+    InhabilitarserviciosmiComponent,
+    
+
+    InhabilitareferenciabComponent,
+    
+
+    InhabilitareferenciabiComponent,
+    
+
+    InhabilitarlistapComponent,
+    
+
+    InhabilitarlistapiComponent,
+    
+
+    InhabilitarlistadocComponent,
+    
+
+    InhabilitarlistadociComponent,
     
 
   
