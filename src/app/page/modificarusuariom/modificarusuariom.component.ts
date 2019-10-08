@@ -45,8 +45,8 @@ export class ModificarusuariomComponent implements OnInit {
     if (params.id) {
       this.Service.getUsuariosid(params.id)
         .subscribe(res => {
-          console.log(res);
           this.usu = Object(res);
+          console.log(this.usu);
         }, err => {
           console.log(err);
         }
