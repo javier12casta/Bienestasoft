@@ -123,10 +123,11 @@ import { ListadepreciosComponent } from './page/listadeprecios/listadeprecios.co
     CentrozonalmComponent,
     PuntoentregamComponent,
     UdsmComponent,
-
+    
     ServiciosymodalidadesComponent,
     ReferenciasdeBienestarinaComponent,
     ListadepreciosComponent,
+    PermisosComponent,
   ],
   imports: [
     BrowserModule,
