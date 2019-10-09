@@ -4,6 +4,7 @@ import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 import { Centrozonal } from 'src/app/interfaces/centrozonal';
 import { Puntoentrega } from 'src/app/interfaces/puntoentrega';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -17,7 +18,6 @@ export class UdsiComponent implements OnInit {
   puntos: Puntoentrega[]=[];
 
   unidad : Uds = {
-    idUDS: 0,
     NombreUDS: '',
     CodigoInternoUDS: '',
     Direccion: '',
@@ -25,9 +25,7 @@ export class UdsiComponent implements OnInit {
     Estado: 1,
     Telefono: '',
     CodigoExternoUDS: '',
-    Comunas_idComunas: 0,
     idPuntoEntrega:0,
-    idBarriosVeredas: 1,
     idCentrosZonales: 0,
     Barrio: '',
     Comuna: '',
@@ -39,16 +37,16 @@ export class UdsiComponent implements OnInit {
   ) { }
 
   modificar = false;
-  ngOnInit() {
+ async ngOnInit() {
 //Traer Centros zonales
-    this.Service.getCentro()
+   await this.Service.getCentro()
     .subscribe(res=> {
       this.centros = res;
     }, err => {
       console.log(err);
     });
 //Traer puntos de entrega
-    this.Service.getPunto()
+  await this.Service.getPunto()
     .subscribe(res=>{
       this.puntos =res;
     }, err=>{
@@ -58,15 +56,39 @@ export class UdsiComponent implements OnInit {
 
     //insertar Datos ------------------------------------------------
     insertDatos() {
-      delete this.unidad.idUDS;
       this.Service.postUds(this.unidad).subscribe(res => {
         console.log(this.unidad);
         console.log(res);
+        this.showMenssage();
       },
         err => {
           console.log(err);
+          this.showMenssage2();
         });
   
     }
+
+    
+  //mensajes de creacion
+  showMenssage() {
+    Swal.fire({
+      title: 'Creado!',
+      text: 'UDS creada',
+      type: 'success',
+      confirmButtonText: 'Entendido'
+    });
+  }
+  //Mensaje de error
+
+  showMenssage2() {
+    Swal.fire({
+      title: 'Error!',
+      text: 'Error al crear la UDS',
+      type: 'error',
+      confirmButtonText: 'Entendido'
+    });
+  }
+
+
 
 }

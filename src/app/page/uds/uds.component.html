@@ -1,4 +1,5 @@
 <nav class="navbar navbar-success bg-success">
+    <button class="btn btn-dark" routerLink="/menu"> Volver </button>
     <button class="btn btn-dark" routerLink="/udsi"> Crear </button>
   </nav>
   
@@ -21,7 +22,14 @@
       <tbody>
         <tr *ngFor="let uni of unidad">
           <th scope="row">{{uni.idUDS}}</th>
-          <td>{{uni.Estado}}</td>
+          <td>
+              <div *ngIf = "uni.Estado == 1">
+                  Habilitado
+              </div>
+              <div *ngIf = "uni.Estado == 0">
+                  Deshabilitado
+              </div>
+          </td> 
           <td>{{uni.NombreUDS}}</td>
           <td>{{uni.CodigoExternoUDS}}</td>
           <td>{{uni.CodigoInternoUDS}}</td>

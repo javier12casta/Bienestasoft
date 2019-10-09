@@ -16,7 +16,7 @@ export class RoliComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.Service.ObtenerRoles()
+   await this.Service.ObtenerRoles()
       .subscribe(async (data) => {
         this.roles = data;
         console.log(data);

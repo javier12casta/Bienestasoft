@@ -1,0 +1,69 @@
+
+
+<nav class="navbar navbar-success bg-success">
+  <button class="btn btn-dark" routerLink="/modificarusuarios1">Volver</button>
+</nav>
+
+<div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+  <div class="card" padding>
+    <div class="card-body" padding>
+      <form>
+        <div class="form-group">
+
+          <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
+          <select name="Estado" [(ngModel)]="usu.Estado" style="width: 100%;" class="form-control">
+            <option [value]="1">Habilitado</option>
+            <Option [value]="0">Inhabilitado</Option>
+          </select>
+          <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
+          <select name="tipodocumento" id="tipodocumento" style="width: 100%;" class="form-control">
+            <option value="1"> CC</option>
+            <Option value="2">CE</Option>
+            <Option value="3">PA</Option>
+          </select>
+
+          <input type="number" class="form-control" [(ngModel)]="usu.NumeroDocumento" name="numerodoc"
+            placeholder="numero Documento" class="form-control" id="inputdoc">
+
+          <input type="text" class="form-control" [(ngModel)]="usu.Nombres" name="nombre" placeholder="Nombres"
+            class="form-control" id="nom">
+
+          <input type="text" class="form-control" [(ngModel)]="usu.Apellidos" name="apellidos" placeholder="Apellidos"
+            class="form-control" id="app">
+
+          <input type="date" class="form-control" [(ngModel)]="usu.FechaIngreso" name="fechai" placeholder="Fecha"
+            min="2018-01-01" max="2050-12-31" class="form-control">
+
+          <input type="text" class="form-control" [(ngModel)]="usu.NombreUsuarioSistema" name="Usuario"
+            placeholder="Usuario Sistema" class="form-control" id="usu">
+
+          <input type="text" class="form-control" [(ngModel)]="usu.Direccion" name="Nombredireccion"
+            placeholder="Direccion" class="form-control">
+
+          <input type="number" class="form-control" [(ngModel)]="usu.TelefonoFijo" name="telefonof1"
+            placeholder="Telefono fijo 1" class="form-control">
+
+          <input type="number" class="form-control" [(ngModel)]="usu.TelefonoFijo2" name="telefonof2"
+            placeholder="Telefono fijo 2" class="form-control">
+
+          <input type="number" class="form-control" [(ngModel)]="usu.TelefonoMovil" name="telefonom1"
+            placeholder="Telefono movil 1" class="form-control">
+
+          <input type="number" class="form-control" [(ngModel)]="usu.TelefonoMovil2" name="telefonom2"
+            placeholder="Telefono movil 2" class="form-control">
+
+          <input type="text" class="form-control" [(ngModel)]="usu.Email" name="email" placeholder="Email"
+            class="form-control">
+
+            
+        
+        <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
+        <button class="btn btn-success btn-block" type="submit" (click)="updateDatos()"
+          routerLink="/modificarusuarios1">
+          Guardar
+        </button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>

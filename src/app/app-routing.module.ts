@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { EntregaComponent } from './page/entrega/entrega.component';
 import { AppComponent } from './app.component';
 import { AcudienteBeneficiarioComponent } from './page/acudiente-beneficiario/acudiente-beneficiario.component';
@@ -33,7 +32,18 @@ import { LoginComponent } from './login/login.component';
 import { UsuarioyrolesComponent } from './page/usuarioyroles/usuarioyroles.component';
 import { UsuarionivelComponent } from './page/usuarionivel/usuarionivel.component';
 import { ModificarusuariosComponent } from './page/modificarusuarios/modificarusuarios.component';
+import { Modificarusuarios1Component } from './page/modificarusuarios1/modificarusuarios1.component';
 import { InhabilitarusuariosComponent } from './page/inhabilitarusuarios/inhabilitarusuarios.component';
+import { Inhabilitarusuarios1Component } from './page/inhabilitarusuarios1/inhabilitarusuarios1.component';
+import { InhabilitarusuariosiComponent } from './page/inhabilitarusuariosi/inhabilitarusuariosi.component';
+
+import { InhabilitarlistapComponent } from './page/inhabilitarlistap/inhabilitarlistap.component';
+import { InhabilitarlistapiComponent } from './page/inhabilitarlistapi/inhabilitarlistapi.component';
+
+import { InhabilitarlistadocComponent } from './page/inhabilitarlistadoc/inhabilitarlistadoc.component';
+import { InhabilitarlistadociComponent } from './page/inhabilitarlistadoci/inhabilitarlistadoci.component';
+
+
 import { ListaMaestrosBienestarinaModificarComponent } from './page/lista-maestros-bienestarina-modificar/lista-maestros-bienestarina-modificar.component';
 import { ListaMaestrosBienestarinaInhabilitarComponent } from './page/lista-maestros-bienestarina-inhabilitar/lista-maestros-bienestarina-inhabilitar.component';
 import { DatosGeneralesUsuarioComponent } from './page/datos-generales-usuario/datos-generales-usuario.component';
@@ -41,9 +51,39 @@ import { ModificarbeneficiariosComponent } from './page/modificarbeneficiarios/m
 import { Modificarbeneficiarios1Component } from './page/modificarbeneficiarios1/modificarbeneficiarios1.component';
 import { InhabilitarbeneficiariosComponent } from './page/inhabilitarbeneficiarios/inhabilitarbeneficiarios.component';
 import { Inhabilitarbeneficiarios1Component } from './page/inhabilitarbeneficiarios1/inhabilitarbeneficiarios1.component';
+import { InhabilitarbeneficiariosiComponent } from './page/inhabilitarbeneficiariosi/inhabilitarbeneficiariosi.component';
 import { PuntoentregaiComponent } from './page/puntoentregai/puntoentregai.component';
 import { UdsiComponent } from './page/udsi/udsi.component';
+import { ModificarlistamaestrosComponent } from './page/modificarlistamaestros/modificarlistamaestros.component';
+import { CentrozonalmComponent } from './page/centrozonalm/centrozonalm.component';
+import { ServiciosymodalidadesComponent } from './page/serviciosymodalidades/serviciosymodalidades.component';
+import { ReferenciasbienestarinaComponent } from './page/referenciasbienestarina/referenciasbienestarina.component';
+import { DatosvariosComponent } from './page/datosvarios/datosvarios.component';
 import { PermisosComponent } from './page/permisos/permisos.component';
+import { ModificarusuariomComponent } from './page/modificarusuariom/modificarusuariom.component';
+import { PuntoentregamComponent } from './page/puntoentregam/puntoentregam.component';
+import { UdsmComponent } from './page/udsm/udsm.component';
+import { ModificarserviciosmComponent } from './page/modificarserviciosm/modificarserviciosm.component';
+import { ModificareferenciabComponent } from './page/modificareferenciab/modificareferenciab.component';
+import { ModificarlistapComponent } from './page/modificarlistap/modificarlistap.component';
+import { ModificarlistadocComponent } from './page/modificarlistadoc/modificarlistadoc.component';
+import { ModificarlistadocmComponent } from './page/modificarlistadocm/modificarlistadocm.component';
+import { ListadocursosComponent } from './page/listadocursos/listadocursos.component';
+import { ModificarbeneficiariomComponent } from './page/modificarbeneficiariom/modificarbeneficiariom.component';
+import { ModificarserviciommComponent } from './page/modificarserviciomm/modificarserviciomm.component';
+import { ModificareferenciabmComponent } from './page/modificareferenciabm/modificareferenciabm.component';
+import { ModificarlistapmComponent } from './page/modificarlistapm/modificarlistapm.component';
+
+import { InhabilitarserviciosmComponent } from './page/inhabilitarserviciosm/inhabilitarserviciosm.component';
+import { InhabilitarserviciosmiComponent } from './page/inhabilitarserviciosmi/inhabilitarserviciosmi.component';
+
+import { InhabilitareferenciabComponent } from './page/inhabilitareferenciab/inhabilitareferenciab.component';
+
+import { InhabilitareferenciabiComponent } from './page/inhabilitareferenciabi/inhabilitareferenciabi.component';
+import { UdsinhComponent } from './page/udsinh/udsinh.component';
+import { PuntoentregainhComponent } from './page/puntoentregainh/puntoentregainh.component';
+import { CentrozonalinhComponent } from './page/centrozonalinh/centrozonalinh.component';
+
 
 
 const routes: Routes = [
@@ -57,7 +97,8 @@ const routes: Routes = [
   {path:'beneficiarios', component:BeneficiariosComponent},
   {path:'centrozonal', component:CentrozonalComponent},
   {path:'centrozonali', component:CentrozonaliComponent},
-  {path:'centrozonalm/:id', component:CentrozonaliComponent},
+  {path:'centrozonalm/:id', component:CentrozonalmComponent},
+  {path:'centrozonalinh/:id', component:CentrozonalinhComponent},
   {path:'comuna', component:ComunaComponent},
   {path:'comunali', component: ComunaliComponent},
   {path:'comunali/:id', component: ComunaliComponent},
@@ -73,7 +114,8 @@ const routes: Routes = [
   {path:'menu', component:MenuComponent},
   {path:'puntoentrega', component: PuntoentregaComponent},
   {path:'puntoentregai', component: PuntoentregaiComponent},
-  {path:'puntoentregam/:id', component: PuntoentregaiComponent},
+  {path:'puntoentregam/:id', component: PuntoentregamComponent},
+  {path:'puntoentregainh/:id', component: PuntoentregainhComponent},
   {path:'regional', component:RegionalComponent},
   {path:'regionali', component: RegionaliComponent},
   {path:'regionali/:id', component: RegionaliComponent},
@@ -84,21 +126,55 @@ const routes: Routes = [
   {path:'roli/:id', component: RolComponent},
   {path:'uds', component: UdsComponent},
   {path:'udsi', component: UdsiComponent},
-  {path:'udsm/:id', component: UdsiComponent},
+  {path:'udsm/:id', component: UdsmComponent},
+  {path:'udsinh/:id', component: UdsinhComponent},
   {path:'usuarios', component: UsuariosComponent},
   {path:'usuariosroles', component: UsuarioyrolesComponent},
   {path:'usuariosnivel', component: UsuarionivelComponent},
   {path:'modificarusuarios', component: ModificarusuariosComponent},
+  {path:'modificarusuarios1', component: Modificarusuarios1Component},
   {path:'inhabilitarusuarios', component: InhabilitarusuariosComponent},
+  {path:'inhabilitarusuarios1', component: Inhabilitarusuarios1Component},
+  {path:'inhabilitarusuariosi/:id', component: InhabilitarusuariosiComponent },
   {path:'listamaestrosmodificar', component: ListaMaestrosBienestarinaModificarComponent},
   {path:'listamaestrosinhabilitar', component: ListaMaestrosBienestarinaInhabilitarComponent},
   {path:'listamaestros', component:ListaMaestrosBienestarinaComponent},
   {path:'datosgeneralesusuario', component:DatosGeneralesUsuarioComponent},
   {path:'ModificarBeneficiario', component: ModificarbeneficiariosComponent },
   {path:'ModificarBeneficiario1', component: Modificarbeneficiarios1Component },
+  {path:'modificarbeneficiariom/:id', component: ModificarbeneficiariomComponent },
   {path:'InhabilitarBeneficiario', component: InhabilitarbeneficiariosComponent },
   {path:'InhabilitarBeneficiario1', component: Inhabilitarbeneficiarios1Component },
+  {path:'InhabilitarBeneficiarioi/:id', component: InhabilitarbeneficiariosiComponent},
+  {path:'serviciosmodalidades', component:ServiciosymodalidadesComponent },
+  {path:'refrenciasbienestarina', component: ReferenciasbienestarinaComponent},
+  {path:'datosvarios', component: DatosvariosComponent},
   {path:'permisos', component: PermisosComponent },
+  {path:'modificarusuariom/:id', component: ModificarusuariomComponent },
+  {path:'modificarlistamaestro', component: ModificarlistamaestrosComponent },
+  {path:'modificarserviciom', component: ModificarserviciosmComponent },
+  {path:'modificarserviciomm/:id', component: ModificarserviciommComponent },
+  {path:'inhabilitarserviciom', component: InhabilitarserviciosmComponent },
+  {path:'inhabilitarserviciomi/:id', component: InhabilitarserviciosmiComponent  },
+  {path:'modificarreferenciab', component: ModificareferenciabComponent },
+  {path:'modificarreferenciabm/:id', component: ModificareferenciabmComponent },
+
+  {path:'inhabilitareferenciab', component:  InhabilitareferenciabComponent},
+  {path:'inhabilitareferenciabi/:id', component:  InhabilitareferenciabiComponent},
+
+  {path:'inhabilitarelistap', component: InhabilitarlistapComponent  },
+  {path:'inhabilitarelistapi/:id', component: InhabilitarlistapiComponent  },
+
+  {path:'inhabilitarelistadoc', component: InhabilitarlistadocComponent  },
+  {path:'inhabilitarelistadoci/:id', component:  InhabilitarlistadociComponent },
+
+  {path:'modificarlistac', component: ModificarlistapComponent },
+  {path:'modificarlistacm/:id', component: ModificarlistapmComponent},
+  {path:'modificarlistadoc', component: ModificarlistadocComponent },
+  {path:'modificarlistadocm/:id', component: ModificarlistadocmComponent },
+  {path:'listadocursos', component: ListadocursosComponent },
+ 
+
 ];
 
 @NgModule({

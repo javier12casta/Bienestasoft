@@ -3,6 +3,7 @@ import { Puntoentrega } from '../../interfaces/puntoentrega';
 import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 import { Centrozonal } from '../..//interfaces/centrozonal';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-puntoentregam',
@@ -11,7 +12,7 @@ import { Centrozonal } from '../..//interfaces/centrozonal';
 })
 export class PuntoentregamComponent implements OnInit {
 
-  centros: Centrozonal[]=[];
+  centros: Centrozonal[] = [];
 
   puntos: Puntoentrega = {
     idPuntoEntrega: 0,
@@ -22,11 +23,10 @@ export class PuntoentregamComponent implements OnInit {
     Estado: 1,
     Telefono: '',
     CodigoExternoPE: '',
-    idBarriosVeredas:1,
     idCentrosZonales: 0,
     BarrioPE: '',
     Comuna: '',
-  } ;
+  };
 
   constructor(
     private Service: ServicioService,
@@ -35,12 +35,12 @@ export class PuntoentregamComponent implements OnInit {
 
   modificar = false;
 
-  ngOnInit() {
+ async ngOnInit() {
 
     const params = this.activeRoute.snapshot.params;
     console.log(params);
     if (params.id) {
-      this.Service.getPuntoid(params.id)
+      await  this.Service.getPuntoid(params.id)
         .subscribe(res => {
           console.log(res);
           this.puntos = Object(res);
@@ -50,13 +50,13 @@ export class PuntoentregamComponent implements OnInit {
         }
         );
     }
-  // Traer centro Zonal
-    this.Service.getCentro()
-    .subscribe(res=>{
-      this.centros = res;
-    }, err => {
-      console.log(err);
-    });
+    // Traer centro Zonal
+    await this.Service.getCentro()
+      .subscribe(res => {
+        this.centros = res;
+      }, err => {
+        console.log(err);
+      });
 
     console.log(this.puntos);
   }
@@ -67,9 +67,34 @@ export class PuntoentregamComponent implements OnInit {
       .subscribe(
         res => {
           console.log(res);
+          this.showMenssage();
         }, err => {
           console.log(err);
+          this.showMenssage2();
         }
       );
   }
+
+
+  //mensajes de creacion
+  showMenssage() {
+    Swal.fire({
+      title: 'Modificado!',
+      text: 'Punto de entrega modificado',
+      type: 'success',
+      confirmButtonText: 'Entendido'
+    });
+  }
+  //Mensaje de error
+
+  showMenssage2() {
+    Swal.fire({
+      title: 'Error!',
+      text: 'Error al modificar el punto de entrega',
+      type: 'error',
+      confirmButtonText: 'Entendido'
+    });
+  }
+
+
 }

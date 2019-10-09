@@ -2,7 +2,7 @@ export interface Usuarios {
     idUsuarios?: number,
     Nombres : string,
     Apellidos : string,
-    Estado : number,
+    Estado: number,
     NumeroDocumento : number,
     FechaIngreso : number,
     NombreUsuarioSistema : string,
@@ -15,6 +15,6 @@ export interface Usuarios {
     idRolPersona ?: number,
     idPersonalICBF ?: number,
     idUDS ?: number,
-    idTipoDocumento ?: number,
-    idPermiso? : number,
+    idTipoDocumento : number,
+    TipoUsuario : string,
   }

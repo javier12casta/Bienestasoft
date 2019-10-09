@@ -49,9 +49,7 @@ import { ModificarbeneficiariosComponent } from './page/modificarbeneficiarios/m
 import { Modificarbeneficiarios1Component } from './page/modificarbeneficiarios1/modificarbeneficiarios1.component';
 import { InhabilitarbeneficiariosComponent } from './page/inhabilitarbeneficiarios/inhabilitarbeneficiarios.component';
 import { Inhabilitarbeneficiarios1Component } from './page/inhabilitarbeneficiarios1/inhabilitarbeneficiarios1.component';
-
-
-
+import { PermisosComponent } from './page/permisos/permisos.component';
 //imports material modules
 import {
   MatSidenavModule,
@@ -63,15 +61,43 @@ import {MatIconModule} from '@angular/material/icon';
 
 import { Select2Module } from 'ng2-select2';
 import { RoliComponent } from './page/roli/roli.component';
-import { PermisosComponent } from './page/permisos/permisos.component';
+
 
 import { CentrozonalmComponent } from './page/centrozonalm/centrozonalm.component';
 import { PuntoentregamComponent } from './page/puntoentregam/puntoentregam.component';
 import { UdsmComponent } from './page/udsm/udsm.component';
 
 import { ServiciosymodalidadesComponent } from './page/serviciosymodalidades/serviciosymodalidades.component';
-import { ReferenciasdeBienestarinaComponent } from './page/referenciasde-bienestarina/referenciasde-bienestarina.component';
 import { ListadepreciosComponent } from './page/listadeprecios/listadeprecios.component';
+import { ReferenciasbienestarinaComponent } from './page/referenciasbienestarina/referenciasbienestarina.component';
+import { DatosvariosComponent } from './page/datosvarios/datosvarios.component';
+import { Modificarusuarios1Component } from './page/modificarusuarios1/modificarusuarios1.component';
+import { ModificarusuariomComponent } from './page/modificarusuariom/modificarusuariom.component';
+import { ModificarlistamaestrosComponent } from './page/modificarlistamaestros/modificarlistamaestros.component';
+import { ModificarserviciosmComponent } from './page/modificarserviciosm/modificarserviciosm.component';
+import { ModificareferenciabComponent } from './page/modificareferenciab/modificareferenciab.component';
+import { ModificarlistapComponent } from './page/modificarlistap/modificarlistap.component';
+import { ModificarlistadocComponent } from './page/modificarlistadoc/modificarlistadoc.component';
+import { ListadocursosComponent } from './page/listadocursos/listadocursos.component';
+import { ModificarbeneficiariomComponent } from './page/modificarbeneficiariom/modificarbeneficiariom.component';
+import { ModificarserviciommComponent } from './page/modificarserviciomm/modificarserviciomm.component';
+import { ModificareferenciabmComponent } from './page/modificareferenciabm/modificareferenciabm.component';
+import { ModificarlistapmComponent } from './page/modificarlistapm/modificarlistapm.component';
+import { ModificarlistadocmComponent } from './page/modificarlistadocm/modificarlistadocm.component';
+import { InhabilitarbeneficiariosiComponent } from './page/inhabilitarbeneficiariosi/inhabilitarbeneficiariosi.component';
+import { Inhabilitarusuarios1Component } from './page/inhabilitarusuarios1/inhabilitarusuarios1.component';
+import { InhabilitarusuariosiComponent } from './page/inhabilitarusuariosi/inhabilitarusuariosi.component';
+import { InhabilitarserviciosmComponent } from './page/inhabilitarserviciosm/inhabilitarserviciosm.component';
+import { InhabilitarserviciosmiComponent } from './page/inhabilitarserviciosmi/inhabilitarserviciosmi.component';
+import { InhabilitareferenciabComponent } from './page/inhabilitareferenciab/inhabilitareferenciab.component';
+import { InhabilitareferenciabiComponent } from './page/inhabilitareferenciabi/inhabilitareferenciabi.component';
+import { InhabilitarlistapComponent } from './page/inhabilitarlistap/inhabilitarlistap.component';
+import { InhabilitarlistapiComponent } from './page/inhabilitarlistapi/inhabilitarlistapi.component';
+import { InhabilitarlistadocComponent } from './page/inhabilitarlistadoc/inhabilitarlistadoc.component';
+import { InhabilitarlistadociComponent } from './page/inhabilitarlistadoci/inhabilitarlistadoci.component';
+import { CentrozonalinhComponent } from './page/centrozonalinh/centrozonalinh.component';
+import { PuntoentregainhComponent } from './page/puntoentregainh/puntoentregainh.component';
+import { UdsinhComponent } from './page/udsinh/udsinh.component';
 
 
 
@@ -119,16 +145,104 @@ import { ListadepreciosComponent } from './page/listadeprecios/listadeprecios.co
     InhabilitarbeneficiariosComponent,
     Inhabilitarbeneficiarios1Component,
     RoliComponent,
-
+    PermisosComponent,
     CentrozonalmComponent,
     PuntoentregamComponent,
     UdsmComponent,
-    
     ServiciosymodalidadesComponent,
-    ReferenciasdeBienestarinaComponent,
+    ReferenciasbienestarinaComponent,
+    ListadepreciosComponent, 
+
     ListadepreciosComponent,
     PermisosComponent,
-  ],
+    ReferenciasbienestarinaComponent,
+    DatosvariosComponent,
+    Modificarusuarios1Component,
+    PermisosComponent,
+    
+
+    ModificarusuariomComponent,
+    
+
+    ModificarlistamaestrosComponent,
+    
+
+    ModificarserviciosmComponent,
+    
+
+    ModificareferenciabComponent,
+    
+
+    ModificarlistapComponent,
+    
+
+    ModificarlistadocComponent,
+    
+
+    ListadocursosComponent,
+    
+
+    ModificarbeneficiariomComponent,
+    
+
+    ModificarserviciommComponent,
+    
+
+    ModificareferenciabmComponent,
+    
+
+    ModificarlistapmComponent,
+    
+
+    ModificarlistadocmComponent,
+    
+
+    InhabilitarbeneficiariosiComponent,
+    
+
+    Inhabilitarusuarios1Component,
+    
+
+    InhabilitarusuariosiComponent,
+    
+
+    InhabilitarserviciosmComponent,
+    
+
+    InhabilitarserviciosmiComponent,
+    
+
+    InhabilitareferenciabComponent,
+    
+
+    InhabilitareferenciabiComponent,
+    
+
+    InhabilitarlistapComponent,
+    
+
+    InhabilitarlistapiComponent,
+    
+
+    InhabilitarlistadocComponent,
+    
+
+    InhabilitarlistadociComponent,
+    
+
+    CentrozonalinhComponent,
+    
+
+    PuntoentregainhComponent,
+    
+
+    UdsinhComponent,
+    
+
+  
+
+
+ ],
   imports: [
     BrowserModule,
     AppRoutingModule,

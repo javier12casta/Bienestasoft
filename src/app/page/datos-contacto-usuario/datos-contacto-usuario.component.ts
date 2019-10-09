@@ -124,7 +124,7 @@ import { DatosGeneralesUsuarioComponent } from '../datos-generales-usuario/datos
 <h2></h2>
 
 
-<input type="text" class="form-control" [(ngModel)]="x.Direccion" name="Nombredireccion"
+<input type="text" class="form-control"  name="Nombredireccion"
             placeholder="Direccion" class="form-control">
 
 
@@ -132,28 +132,28 @@ import { DatosGeneralesUsuarioComponent } from '../datos-generales-usuario/datos
 <span class="btn btn-success">Telefono Fijo 1</span>
 <h2></h2>
 
-<input type="number" class="form-control" [(ngModel)]="x.TelefonoFijo" name="telefonof1"
+<input type="number" class="form-control"  name="telefonof1"
             placeholder="Telefono fijo 1" class="form-control">
 
 <h2></h2>
 <span class="btn btn-success">Telefono Fijo 2</span>
 <h2></h2>
-<input type="number" class="form-control" [(ngModel)]="x.TelefonoFijo2" name="telefonof2"
+<input type="number" class="form-control"  name="telefonof2"
             placeholder="Telefono fijo 2" class="form-control">
 <h2></h2>
 <span class="btn btn-success">Telefono Movil 1</span>
 <h2></h2>
-<input type="number" class="form-control" [(ngModel)]="x.TelefonoMovil" name="telefonom1"
+<input type="number" class="form-control"  name="telefonom1"
             placeholder="Telefono movil 1" class="form-control">
 <h2></h2>
 <span class="btn btn-success">Telefono movil 2</span>
 <h2></h2>
-<input type="number" class="form-control" [(ngModel)]="x.TelefonoMovil2" name="telefonom2"
+<input type="number" class="form-control"  name="telefonom2"
             placeholder="Telefono movil 2" class="form-control">
 <h2></h2>
 <span class="btn btn-success">Email</span>
 <h2></h2>
-<input type="text" class="form-control" [(ngModel)]="x.Email" name="email"
+<input type="text" class="form-control"  name="email"
 placeholder="Email" class="form-control">
 
      <h2></h2>
@@ -180,25 +180,7 @@ placeholder="Email" class="form-control">
 
 
 export class DatosContactoUsuarioComponent implements OnInit {
-  
 
-
-  x : Usuarios = {
-    
-    Nombres : '',
-    Apellidos : '',
-    Estado : 1,
-    NumeroDocumento : 0,
-    FechaIngreso : 1000,
-    NombreUsuarioSistema : 'hj65',
-    Direccion : '',
-    TelefonoFijo :  0,
-    TelefonoFijo2 : 0,
-    TelefonoMovil: 0,
-    TelefonoMovil2 : 0,
-    Email : '',
-
-  };
 
   clickMessage = '';
   valor1='';
@@ -210,13 +192,6 @@ export class DatosContactoUsuarioComponent implements OnInit {
    this.valor1;
    this.clickMessage = 'Se ha creado el usuario con acceso al sistema <número de identificación> en el nivel <primer nivel o Segundo nivel o Tercer nivel>.';
    
-
-   this.Service.postUsuarios(this.x).subscribe(res => {
-    console.log(this.x);
-  },
-    err => {
-      console.log(err);
-    });
    
 }
 

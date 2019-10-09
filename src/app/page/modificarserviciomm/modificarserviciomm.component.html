@@ -1,0 +1,34 @@
+<nav class="navbar navbar-success bg-success">
+        <button class="btn btn-dark" routerLink="/modificarserviciom">Volver</button>
+      </nav>
+      
+      <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+        <div class="card" padding>
+          <div class="card-body" padding>
+            <form>
+              <div class="form-group">
+    
+                  <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
+                  <input type="text" class="form-control" [(ngModel)]="maes.EstadoDatoMaestro" name="mod3"
+                    placeholder="estado Maestro" class="form-control" id="nom">
+    
+                    <input type="text" class="form-control" [(ngModel)]="maes.Modalidad" name="mod"
+                    placeholder="Modalidad" class="form-control" id="nom">
+    
+                    <input type="number" class="form-control" [(ngModel)]="maes.idConsecutivosMaestro" name="cons"
+                    placeholder="Consecutivo maestro" class="form-control" id="app">
+    
+                    <input type="text" class="form-control" [(ngModel)]="maes.Servicio" name="ser"
+                    placeholder="Servicio" class="form-control" id="nom">
+    
+                   
+              <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
+              <button class="btn btn-success btn-block" type="submit" (click)="updateDatos()" routerLink="/modificarserviciom">
+                Guardar
+              </button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      

@@ -31,7 +31,7 @@ export class MenuComponent implements OnInit {
     {name:"Modificar Usuarios", route: "/modificarusuarios", icon:"face" },
     {name:"Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon:"face" },
     {name:"Crear Datos Maestros", route: "/listamaestros", icon:"face" },
-    {name:"Modificar Datos Maestros", route: "/listamaestrosmodificar", icon:"face" },
+    {name:"Modificar Datos Maestros", route: "/modificarlistamaestro", icon:"face" },
     {name:"Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon:"face" },
   ];
 
