@@ -1,0 +1,24 @@
+<nav class="navbar navbar-success bg-success">
+        <button class="btn btn-dark" routerLink="/centrozonal">Volver</button>
+      </nav>
+      
+      <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+        <div class="card" padding>
+          <div class="card-body" padding>
+            <form>
+              <div class="form-group">
+      
+                <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
+                <select name="Estado" id="Estado" [(ngModel)]="centros.Estado" style="width: 100%;" class="form-control">
+                    <Option value="0">Inhabilitar</Option>
+                    <option value="1"> Habilitar</option>
+                </select>
+              </div>
+              <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
+              <button class="btn btn-success btn-block" type="submit" (click)="updateDatos()" routerLink="/centrozonal">
+                Guardar
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>

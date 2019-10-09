@@ -95,6 +95,9 @@ import { InhabilitarlistapComponent } from './page/inhabilitarlistap/inhabilitar
 import { InhabilitarlistapiComponent } from './page/inhabilitarlistapi/inhabilitarlistapi.component';
 import { InhabilitarlistadocComponent } from './page/inhabilitarlistadoc/inhabilitarlistadoc.component';
 import { InhabilitarlistadociComponent } from './page/inhabilitarlistadoci/inhabilitarlistadoci.component';
+import { CentrozonalinhComponent } from './page/centrozonalinh/centrozonalinh.component';
+import { PuntoentregainhComponent } from './page/puntoentregainh/puntoentregainh.component';
+import { UdsinhComponent } from './page/udsinh/udsinh.component';
 
 
 
@@ -224,6 +227,15 @@ import { InhabilitarlistadociComponent } from './page/inhabilitarlistadoci/inhab
     
 
     InhabilitarlistadociComponent,
+    
+
+    CentrozonalinhComponent,
+    
+
+    PuntoentregainhComponent,
+    
+
+    UdsinhComponent,
     
 
   
