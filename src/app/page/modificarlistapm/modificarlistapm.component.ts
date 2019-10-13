@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 import { Lprecios } from '../../interfaces/listaprecios';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-modificarlistapm',
@@ -45,11 +46,22 @@ export class ModificarlistapmComponent implements OnInit {
 
   }
 
+  showMenssage(){
+    Swal.fire({
+      title: 'Creado!',
+      text: 'Dato Maestro Creado',
+      type: 'success',
+      confirmButtonText: 'Aceptar'
+    });
+  }
+
+
   updateDatos() {
     this.Service.putListaprecios(this.pre.idListaPrecios, this.pre)
       .subscribe(
         res => {
           console.log(res);
+          this.showMenssage();
         }, err => {
           console.log(err);
         }

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 import { TipoBienestarina } from '../../interfaces/tipobienestarina';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-modificareferenciabm',
@@ -45,11 +47,21 @@ export class ModificareferenciabmComponent implements OnInit {
 
   }
 
+  showMenssage(){
+    Swal.fire({
+      title: 'Modificado!',
+      text: 'Dsto Maestro Modificado',
+      type: 'success',
+      confirmButtonText: 'Ok'
+    });
+  }
+
    updateDatos() {
     this.Service.putTipobienestarina(this.bine.idTipoBienesterina, this.bine)
       .subscribe(
         res => {
           console.log(res);
+          this.showMenssage();
         }, err => {
           console.log(err);
         }

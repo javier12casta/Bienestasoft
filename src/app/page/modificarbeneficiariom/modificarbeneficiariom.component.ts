@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 import { Beneficiario } from '../../interfaces/beneficiario';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-modificarbeneficiariom',
@@ -58,12 +59,22 @@ export class ModificarbeneficiariomComponent implements OnInit {
     }
   }
 
+  showMenssage(){
+    Swal.fire({
+      title: 'Modificado!',
+      text: 'Beneficiario Modificado',
+      type: 'success',
+      confirmButtonText: 'Ok'
+    });
+  }
+
 
   updateDatos() {
     this.Service.putBeneficiarios(this.ben.idBeneficiarios, this.ben)
       .subscribe(
         res => {
           console.log(res);
+          this.showMenssage();
         }, err => {
           console.log(err);
         }

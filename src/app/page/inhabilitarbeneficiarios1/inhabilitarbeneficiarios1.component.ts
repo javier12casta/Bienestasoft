@@ -75,6 +75,7 @@ export class Inhabilitarbeneficiarios1Component implements OnInit {
 
   constructor(private Service: ServicioService) { }
 
+  
   ngOnInit() {
 
 

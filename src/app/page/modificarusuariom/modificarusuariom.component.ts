@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 import { Usuarios } from '../../interfaces/usuarios';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-modificarusuariom',
@@ -52,8 +53,15 @@ export class ModificarusuariomComponent implements OnInit {
         }
         );
     }
-    
-    
+  }
+
+  showMenssage(){
+    Swal.fire({
+      title: 'Modificado!',
+      text: 'Usuario Modificado',
+      type: 'success',
+      confirmButtonText: 'Ok'
+    });
   }
 
   // Actualizar Datos---------------------------------------------
@@ -62,11 +70,15 @@ export class ModificarusuariomComponent implements OnInit {
       .subscribe(
         res => {
           console.log(res);
+          this.showMenssage();
         }, err => {
           console.log(err);
         }
       );
   }
+
+ 
+
 }
 
 

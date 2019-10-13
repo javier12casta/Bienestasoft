@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 import { InUsuarios } from '../../interfaces/inhabilitarusuarios';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-inhabilitarusuariosi',
@@ -38,12 +39,42 @@ export class InhabilitarusuariosiComponent implements OnInit {
     }
   }
 
+  showMenssage(){
+    Swal.fire({
+      title: 'Inhabilitado!',
+      text: 'Beneficiario Inhabilitado',
+      type: 'success',
+      confirmButtonText: 'Ok'
+    });
+  }
+
+  showMenssage1(){
+    Swal.fire({
+      title: 'habilitado!',
+      text: 'Beneficiario habilitado',
+      type: 'success',
+      confirmButtonText: 'Ok'
+    });
+  }
+
+
   EnableDatos(){
 
     this.Service.putUsuariosInhabilitar(this.usu.idUsuarios, this.usu)
       .subscribe(
         res => {
           console.log(res);
+
+          if(this.usu.Estado == 1){
+
+            this.showMenssage1();
+
+          }else{
+
+            this.showMenssage();
+          }
+
+          
         }, err => {
           console.log(err);
         }

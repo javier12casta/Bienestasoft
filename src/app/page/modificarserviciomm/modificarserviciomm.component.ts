@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 import { MaestroBienestarina } from '../../interfaces/maestrosBienestarina';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-modificarserviciomm',
@@ -44,12 +45,22 @@ export class ModificarserviciommComponent implements OnInit {
     }
   }
 
+  showMenssage(){
+    Swal.fire({
+      title: 'Modificado!',
+      text: 'Dato Maestro Modificado',
+      type: 'success',
+      confirmButtonText: 'Ok'
+    });
+  }
+
 
   updateDatos() {
     this.Service.putMaestrosBienestrina(this.maes.idListasMaestro, this.maes)
       .subscribe(
         res => {
           console.log(res);
+          this.showMenssage();
         }, err => {
           console.log(err);
         }

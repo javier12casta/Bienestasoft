@@ -29,7 +29,7 @@ import { Regional } from 'src/app/interfaces/regional';
   </select>
   
        <h2></h2>
-       <button (click)="siguiente()" type="button" class="btn btn-success" routerLink="/datosgeneralesusuario">siguiente</button>
+       <button (click)="siguiente()" type="button" class="btn btn-success" routerLink="/usuariosv">siguiente</button>
        <h2></h2>
        {{resultado}}
   </form><!-- /form -->

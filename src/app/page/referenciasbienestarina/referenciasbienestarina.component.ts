@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TipoBienestarina } from 'src/app/interfaces/tipobienestarina';
 import { ServicioService } from 'src/app/servicio.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-referenciasbienestarina',
@@ -107,13 +108,24 @@ export class ReferenciasbienestarinaComponent implements OnInit {
   ngOnInit() {
   }
 
-  clickMessage = '';
+  showMenssage(){
+    Swal.fire({
+      title: 'Creado!',
+      text: 'Dato Maestro Creado',
+      type: 'success',
+      confirmButtonText: 'Aceptar'
+    });
+  }
+
+
+
 
   onClickMe() {
 
     
     this.Service.postTipobienestarina(this.x).subscribe(res => {
       console.log(this.x);
+      this.showMenssage();
       },
       err => {
         console.log(err);

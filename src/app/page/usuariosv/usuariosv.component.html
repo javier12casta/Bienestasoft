@@ -1,0 +1,50 @@
+
+  
+  <table class="table">
+    <thead class="thead-green">
+      <tr>
+        <th scope="col">idUsuarios</th>
+        <th scope="col">Nombres</th>
+        <th scope="col">Apellidos</th>
+        <th scope="col">Estado</th>
+        <th scope="col">NumeroDocumento</th>
+        <th scope="col">FechaIngreso</th>
+        <th scope="col">NombreUsuarioSistema</th>
+        <th scope="col">Direccion</th>
+        <th scope="col">TelefonoFijo</th>
+        <th scope="col">TelefonoFijo2</th>
+        <th scope="col">TelefonoMovil</th>
+        <th scope="col">TelefonoMovil2</th>
+        <th scope="col">Email</th>
+        <th scope="col">idPersonalICBF</th>
+        <th scope="col">idUDS</th>
+        <th scope="col">idTipoDocumento</th>
+        <th scope="col">TipoUsuario</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cen of usua">
+        <th scope="row">{{cen.idUsuarios}}</th>
+        <td>{{cen.Nombres}}</td>
+        <td>{{cen.Apellidos}}</td>
+        <td>{{cen.Estado}}</td>
+        <td>{{cen.NumeroDocumento}}</td>
+        <td>{{cen.FechaIngreso}}</td>
+        <td>{{cen.NombreUsuarioSistema}}</td>
+        <td>{{cen.Direccion}}</td>
+        <td>{{cen.TelefonoFijo}}</td>
+        <td>{{cen.TelefonoFijo2}}</td>
+        <td>{{cen.TelefonoMovil}}</td>
+        <td>{{cen.TelefonoMovil2}}</td>
+        <td>{{cen.Email}}</td>
+        <td>{{cen.idPersonalICBF}}</td>
+        <td>{{cen.idUDS}}</td>
+        <td>{{cen.idTipoDocumento}}</td>
+        <td>{{cen.TipoUsuario}}</td>
+        <td>
+          <button class="btn btn-primary" [routerLink]="['/ModificarBeneficiariom', cen.idUsuarios]">Modificar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+

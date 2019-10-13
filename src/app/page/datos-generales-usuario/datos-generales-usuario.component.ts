@@ -1,6 +1,8 @@
 import { Component, OnInit , Input } from '@angular/core';
 import { Usuarios } from 'src/app/interfaces/usuarios';
 import { ServicioService } from 'src/app/servicio.service';
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-datos-generales-usuario',
   templateUrl: './datos-generales-usuario.component.html',
@@ -190,7 +192,7 @@ import { ServicioService } from 'src/app/servicio.service';
 			   
 				  
 			   <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
-				   {{clickMessage}}
+				  
 			   <h2></h2>
 		
   </form><!-- /form -->
@@ -231,21 +233,11 @@ export class DatosGeneralesUsuarioComponent implements OnInit {
 
   };
 
-  clickMessage = '';
-  valor1='';
- 
-  
-
-
   onClickMe() {
-    
-    
-	this.valor1;
-	this.clickMessage = 'Se ha creado el usuario con acceso al sistema <número de identificación> en el nivel <primer nivel o Segundo nivel o Tercer nivel>.';
-	
  
 	this.Service.postUsuarios(this.x).subscribe(res => {
 	 console.log(this.x);
+	 this.showMenssage();
    },
 	 err => {
 	   console.log(err);
@@ -255,11 +247,18 @@ export class DatosGeneralesUsuarioComponent implements OnInit {
  
    constructor(private Service: ServicioService) { }
  
-   ngOnInit() {
- 
-	
- 
-   }
+   ngOnInit() {}
+
+
+   showMenssage(){
+    Swal.fire({
+      title: 'Creado!',
+      text: 'Usuario Creado',
+      type: 'success',
+      confirmButtonText: 'Aceptar'
+    });
+  }
+
  
 
 

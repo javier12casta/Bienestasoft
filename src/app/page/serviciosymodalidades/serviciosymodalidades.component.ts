@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MaestroBienestarina } from 'src/app/interfaces/maestrosBienestarina';
 import { ServicioService } from 'src/app/servicio.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-serviciosymodalidades',
@@ -42,7 +43,7 @@ import { ServicioService } from 'src/app/servicio.service';
 		placeholder="Modalidad" class="form-control">
   <h2></h2>
   <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
-  {{clickMessage}}
+ 
        <h2></h2>
 
        
@@ -72,14 +73,13 @@ export class ServiciosymodalidadesComponent implements OnInit {
   ngOnInit() {
   }
 
-  clickMessage = '';
 
   onClickMe() {
 
-  this.clickMessage = 'Se ha creado el usuario con acceso al sistema <número de identificación> en el nivel <primer nivel o Segundo nivel o Tercer nivel>.';
-   
+ 
   this.Service.postMaestrosBienestrina(this.x).subscribe(res => {
     console.log(this.x);
+    this.showMenssage();
     },
     err => {
       console.log(err);
@@ -87,5 +87,15 @@ export class ServiciosymodalidadesComponent implements OnInit {
    
 
   }
+
+  showMenssage(){
+    Swal.fire({
+      title: 'Creado!',
+      text: 'Dato Maestro Creado',
+      type: 'success',
+      confirmButtonText: 'Aceptar'
+    });
+  }
+
 
 }

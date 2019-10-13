@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Beneficiario } from 'src/app/interfaces/beneficiario';
 import { ServicioService } from 'src/app/servicio.service';
 import { Acudientes } from 'src/app/interfaces/acudiente';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-datos-generales-beneficiario',
@@ -292,16 +293,24 @@ export class DatosGeneralesBeneficiarioComponent implements OnInit {
 
   };
 
+  showMenssage(){
+
+    Swal.fire({
+      title: 'Creado!',
+      text: 'Beneficiario Creado',
+      type: 'success',
+      confirmButtonText: 'Ok'
+    });
+  }
 
 
-  clickMessage = '';
 
   onClickMe() {
 
-    this.clickMessage = 'Se ha creado el beneficiario con acceso al sistema <número de identificación> en el nivel <primer nivel o Segundo nivel o Tercer nivel>.';
-    
+   
     this.Service.postBeneficiarios(this.x).subscribe(res => {
       console.log(this.x);
+      this.showMenssage();
       },
       err => {
         console.log(err);

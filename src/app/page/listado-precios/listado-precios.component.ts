@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Lprecios } from 'src/app/interfaces/listaprecios';
 import { ServicioService } from 'src/app/servicio.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-listado-precios',
@@ -94,8 +95,16 @@ export class ListadoPreciosComponent implements OnInit {
 
   };
 
-  clickMessage = '';
-  valor1 = '';
+  
+  
+  showMenssage(){
+    Swal.fire({
+      title: 'Creado!',
+      text: 'Dato Maestro Creado',
+      type: 'success',
+      confirmButtonText: 'Aceptar'
+    });
+  }  
 
 
 
@@ -104,6 +113,7 @@ export class ListadoPreciosComponent implements OnInit {
 
     this.Service.postListaprecios(this.x).subscribe(res => {
       console.log(this.x);
+      this.showMenssage();
       },
       err => {
         console.log(err);

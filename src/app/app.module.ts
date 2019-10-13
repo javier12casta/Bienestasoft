@@ -95,6 +95,7 @@ import { InhabilitarlistapComponent } from './page/inhabilitarlistap/inhabilitar
 import { InhabilitarlistapiComponent } from './page/inhabilitarlistapi/inhabilitarlistapi.component';
 import { InhabilitarlistadocComponent } from './page/inhabilitarlistadoc/inhabilitarlistadoc.component';
 import { InhabilitarlistadociComponent } from './page/inhabilitarlistadoci/inhabilitarlistadoci.component';
+import { UsuariosvComponent } from './page/usuariosv/usuariosv.component';
 
 
 
@@ -224,6 +225,9 @@ import { InhabilitarlistadociComponent } from './page/inhabilitarlistadoci/inhab
     
 
     InhabilitarlistadociComponent,
+    
+
+    UsuariosvComponent,
     
 
   

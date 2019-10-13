@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioService } from 'src/app/servicio.service';
 import { Listadocursos } from 'src/app/interfaces/listadocursos';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-listadocursos',
@@ -183,22 +184,30 @@ export class ListadocursosComponent implements OnInit {
 
   };
 
-  clickMessage = '';
+ 
 
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {
   }
 
+  showMenssage(){
+    Swal.fire({
+      title: 'Creado!',
+      text: 'Dato Maestro Creado',
+      type: 'success',
+      confirmButtonText: 'Aceptar'
+    });
+  }
+
   onClickMe() {
     
     
 
-    this.clickMessage = 'Se ha creado el usuario con acceso al sistema <número de identificación> en el nivel <primer nivel o Segundo nivel o Tercer nivel>.';
-    
    
     this.Service.postlistadocursos(this.x).subscribe(res => {
-     console.log(this.x);
+	 console.log(this.x);
+	 this.showMenssage();
      },
      err => {
        console.log(err);

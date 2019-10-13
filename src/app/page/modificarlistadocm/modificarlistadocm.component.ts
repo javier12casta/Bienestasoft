@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 import { Listadocursos } from '../../interfaces/listadocursos';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-modificarlistadocm',
@@ -46,11 +47,21 @@ export class ModificarlistadocmComponent implements OnInit {
 
   }
 
+  showMenssage(){
+    Swal.fire({
+      title: 'Creado!',
+      text: 'Dato Maestro Creado',
+      type: 'success',
+      confirmButtonText: 'Aceptar'
+    });
+  }
+
   updateDatos() {
     this.Service.putlistadocursos(this.listac.idListadoCursos, this.listac)
       .subscribe(
         res => {
           console.log(res);
+          this.showMenssage();
         }, err => {
           console.log(err);
         }

@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 import { InTipoBienestarina } from '../../interfaces/inhabilitartipobienestarina';
-
+import { InMaestroBienestarina } from '../../interfaces/inhabilitarmaestrosBienestarina';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -43,12 +44,41 @@ export class InhabilitareferenciabiComponent implements OnInit {
 
   }
 
+  showMenssage(){
+    Swal.fire({
+      title: 'Inhabilitado!',
+      text: 'Dato Maestro Inhabilitado',
+      type: 'success',
+      confirmButtonText: 'Ok'
+    });
+  }
+
+  showMenssage1(){
+    Swal.fire({
+      title: 'habilitado!',
+      text: 'Dato Maestro habilitado',
+      type: 'success',
+      confirmButtonText: 'Ok'
+    });
+  }
+
+
   EnableDatos(){
 
     this.Service.putTipobienestarinaInhabilitar(this.tip.idTipoBienesterina, this.tip)
       .subscribe(
         res => {
           console.log(res);
+
+          if(this.tip.Estado == "1"){
+
+            this.showMenssage1();
+
+          }else{
+
+            this.showMenssage();
+          }
+
         }, err => {
           console.log(err);
         }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Datosvarios } from 'src/app/interfaces/datosvarios';
 import { ServicioService } from 'src/app/servicio.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-datosvarios',
@@ -144,16 +145,20 @@ export class DatosvariosComponent implements OnInit {
 
   };
 
-  clickMessage = '';
+  showMenssage(){
+    Swal.fire({
+      title: 'Creado!',
+      text: 'Dato Maestro Creado',
+      type: 'success',
+      confirmButtonText: 'Aceptar'
+    });
+  }
 
   onClickMe() {
     
-
-    this.clickMessage = 'Se ha creado el usuario con acceso al sistema <número de identificación> en el nivel <primer nivel o Segundo nivel o Tercer nivel>.';
-    
-   
     this.Service.postdatosvarios(this.x).subscribe(res => {
      console.log(this.x);
+     this.showMenssage();
      },
      err => {
        console.log(err);

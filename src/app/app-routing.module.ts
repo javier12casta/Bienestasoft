@@ -80,6 +80,7 @@ import { InhabilitarserviciosmiComponent } from './page/inhabilitarserviciosmi/i
 import { InhabilitareferenciabComponent } from './page/inhabilitareferenciab/inhabilitareferenciab.component';
 
 import { InhabilitareferenciabiComponent } from './page/inhabilitareferenciabi/inhabilitareferenciabi.component';
+import { UsuariosvComponent } from './page/usuariosv/usuariosv.component';
 
 
 
@@ -123,6 +124,7 @@ const routes: Routes = [
   {path:'udsi', component: UdsiComponent},
   {path:'udsm/:id', component: UdsmComponent},
   {path:'usuarios', component: UsuariosComponent},
+  {path:'usuariosv', component: UsuariosvComponent},
   {path:'usuariosroles', component: UsuarioyrolesComponent},
   {path:'usuariosnivel', component: UsuarionivelComponent},
   {path:'modificarusuarios', component: ModificarusuariosComponent},

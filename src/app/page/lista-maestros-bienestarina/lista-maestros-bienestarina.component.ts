@@ -23,8 +23,9 @@ import { Router } from '@angular/router';
   <h2></h2>
   <span class="btn btn-success" >Nombre de la lista </span>
   <h2></h2>
-  <input type="text" class="form-control" [(ngModel)]="lista" name="Lista"
-		placeholder="Nombre lista" class="form-control" id="lis">
+  <select name="rols" [(ngModel)]="lista" class="select-css">
+  <option [value]="item" *ngFor="let item of listar">{{item}} </option>
+  </select>
   <h2></h2>
   <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
   {{clickMessage}}
@@ -49,7 +50,7 @@ import { Router } from '@angular/router';
 export class ListaMaestrosBienestarinaComponent implements OnInit {
 
   lista = '';
-  
+  listar:string[]=["servicio y modalidades","Referencias de Bienestarina","Lista de precios","Listado de cursos","Datos nutricionales"];
 
 
   constructor(private Service: ServicioService , private router:Router) { }
