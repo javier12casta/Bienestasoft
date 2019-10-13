@@ -80,7 +80,13 @@ import { InhabilitarserviciosmiComponent } from './page/inhabilitarserviciosmi/i
 import { InhabilitareferenciabComponent } from './page/inhabilitareferenciab/inhabilitareferenciab.component';
 
 import { InhabilitareferenciabiComponent } from './page/inhabilitareferenciabi/inhabilitareferenciabi.component';
+
 import { UsuariosvComponent } from './page/usuariosv/usuariosv.component';
+
+import { UdsinhComponent } from './page/udsinh/udsinh.component';
+import { PuntoentregainhComponent } from './page/puntoentregainh/puntoentregainh.component';
+import { CentrozonalinhComponent } from './page/centrozonalinh/centrozonalinh.component';
+
 
 
 
@@ -96,6 +102,7 @@ const routes: Routes = [
   {path:'centrozonal', component:CentrozonalComponent},
   {path:'centrozonali', component:CentrozonaliComponent},
   {path:'centrozonalm/:id', component:CentrozonalmComponent},
+  {path:'centrozonalinh/:id', component:CentrozonalinhComponent},
   {path:'comuna', component:ComunaComponent},
   {path:'comunali', component: ComunaliComponent},
   {path:'comunali/:id', component: ComunaliComponent},
@@ -112,6 +119,7 @@ const routes: Routes = [
   {path:'puntoentrega', component: PuntoentregaComponent},
   {path:'puntoentregai', component: PuntoentregaiComponent},
   {path:'puntoentregam/:id', component: PuntoentregamComponent},
+  {path:'puntoentregainh/:id', component: PuntoentregainhComponent},
   {path:'regional', component:RegionalComponent},
   {path:'regionali', component: RegionaliComponent},
   {path:'regionali/:id', component: RegionaliComponent},
@@ -123,6 +131,7 @@ const routes: Routes = [
   {path:'uds', component: UdsComponent},
   {path:'udsi', component: UdsiComponent},
   {path:'udsm/:id', component: UdsmComponent},
+  {path:'udsinh/:id', component: UdsinhComponent},
   {path:'usuarios', component: UsuariosComponent},
   {path:'usuariosv', component: UsuariosvComponent},
   {path:'usuariosroles', component: UsuarioyrolesComponent},

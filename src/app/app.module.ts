@@ -95,7 +95,13 @@ import { InhabilitarlistapComponent } from './page/inhabilitarlistap/inhabilitar
 import { InhabilitarlistapiComponent } from './page/inhabilitarlistapi/inhabilitarlistapi.component';
 import { InhabilitarlistadocComponent } from './page/inhabilitarlistadoc/inhabilitarlistadoc.component';
 import { InhabilitarlistadociComponent } from './page/inhabilitarlistadoci/inhabilitarlistadoci.component';
+
 import { UsuariosvComponent } from './page/usuariosv/usuariosv.component';
+
+import { CentrozonalinhComponent } from './page/centrozonalinh/centrozonalinh.component';
+import { PuntoentregainhComponent } from './page/puntoentregainh/puntoentregainh.component';
+import { UdsinhComponent } from './page/udsinh/udsinh.component';
+
 
 
 
@@ -152,6 +158,7 @@ import { UsuariosvComponent } from './page/usuariosv/usuariosv.component';
     ListadepreciosComponent, 
 
     ListadepreciosComponent,
+    PermisosComponent,
     ReferenciasbienestarinaComponent,
     DatosvariosComponent,
     Modificarusuarios1Component,
@@ -227,14 +234,26 @@ import { UsuariosvComponent } from './page/usuariosv/usuariosv.component';
     InhabilitarlistadociComponent,
     
 
+
     UsuariosvComponent,
     
 
   
 
+    CentrozonalinhComponent,
+    
 
 
-  ],
+    PuntoentregainhComponent,
+    
+
+    UdsinhComponent,
+    
+
+  
+
+
+ ],
   imports: [
     BrowserModule,
     AppRoutingModule,

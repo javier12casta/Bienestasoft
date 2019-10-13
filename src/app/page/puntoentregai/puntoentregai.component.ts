@@ -3,6 +3,7 @@ import { Puntoentrega } from '../../interfaces/puntoentrega';
 import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 import { Centrozonal } from '../..//interfaces/centrozonal';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-puntoentregai',
@@ -11,10 +12,9 @@ import { Centrozonal } from '../..//interfaces/centrozonal';
 })
 export class PuntoentregaiComponent implements OnInit {
 
-  centros: Centrozonal[]=[];
+  centros: Centrozonal[] = [];
 
   puntos: Puntoentrega = {
-    idPuntoEntrega: 0,
     NombrePE: '',
     CodigoInternoPE: '',
     Direccion: '',
@@ -22,11 +22,10 @@ export class PuntoentregaiComponent implements OnInit {
     Estado: 1,
     Telefono: '',
     CodigoExternoPE: '',
-    idBarriosVeredas:1,
     idCentrosZonales: 0,
     BarrioPE: '',
     Comuna: '',
-  } ;
+  };
 
   constructor(
     private Service: ServicioService,
@@ -36,13 +35,13 @@ export class PuntoentregaiComponent implements OnInit {
   modificar = false;
 
   ngOnInit() {
-  // Traer centro Zonal
+    // Traer centro Zonal
     this.Service.getCentro()
-    .subscribe(res=>{
-      this.centros = res;
-    }, err => {
-      console.log(err);
-    });
+      .subscribe(res => {
+        this.centros = res;
+      }, err => {
+        console.log(err);
+      });
 
     console.log(this.puntos);
   }
@@ -50,15 +49,34 @@ export class PuntoentregaiComponent implements OnInit {
 
   //insertar Datos ------------------------------------------------
   insertDatos() {
-    delete this.puntos.idPuntoEntrega;
     this.Service.postPunto(this.puntos).subscribe(res => {
       console.log(this.puntos);
-      console.log('Funicona');
-    },err => {
-        console.log(err);
-        console.log('Fallo');
-      });
+      this.showMenssage();
+    }, err => {
+      console.log(err);
+      this.showMenssage2();
+    });
 
+  }
+
+  //mensajes de creacion
+  showMenssage() {
+    Swal.fire({
+      title: 'Creado!',
+      text: 'Punto de entrega Creado',
+      type: 'success',
+      confirmButtonText: 'Entendido'
+    });
+  }
+  //Mensaje de error
+
+  showMenssage2() {
+    Swal.fire({
+      title: 'Error!',
+      text: 'Error al crear el punto de entrega',
+      type: 'error',
+      confirmButtonText: 'Entendido'
+    });
   }
 
 }

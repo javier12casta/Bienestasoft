@@ -7,6 +7,8 @@ import { Municipio } from '../../interfaces/municipio';
 import { Comuna } from '../../interfaces/comuna';
 import { Regional } from '../../interfaces/regional';
 import { Barrio } from '../../interfaces/barrio';
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-centrozonalm',
   templateUrl: './centrozonalm.component.html',
@@ -77,9 +79,31 @@ export class CentrozonalmComponent implements OnInit {
       .subscribe(
         res => {
           console.log(res);
+          this.showMenssage();
         }, err => {
+          this.showMenssage2();
           console.log(err);
         }
       );
+  }
+
+    //mensajes de creacion
+    showMenssage(){
+      Swal.fire({
+        title: 'Modificado!',
+        text: 'Centro Zonal Modificado',
+        type: 'success',
+        confirmButtonText: 'Entendido'
+      });
+    }
+  //Mensaje de error
+  
+  showMenssage2(){
+    Swal.fire({
+      title: 'Error!',
+      text: 'Error al modificar el centro zonal',
+      type: 'error',
+      confirmButtonText: 'Entendido'
+    });
   }
 }

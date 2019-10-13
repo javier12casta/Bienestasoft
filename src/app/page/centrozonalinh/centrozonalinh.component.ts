@@ -5,27 +5,23 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Municipio } from '../../interfaces/municipio';
 import { Regional } from '../../interfaces/regional';
-import { Select2OptionData } from 'ng2-select2';
 import Swal from 'sweetalert2';
 
-
 @Component({
-  selector: 'app-centrozonali',
-  templateUrl: './centrozonali.component.html',
-  styleUrls: ['./centrozonali.component.css']
+  selector: 'app-centrozonalinh',
+  templateUrl: './centrozonalinh.component.html',
+  styleUrls: ['./centrozonalinh.component.css']
 })
-export class CentrozonaliComponent implements OnInit {
-  //public exampleData: Array<Select2OptionData>;
+export class CentrozonalinhComponent implements OnInit {
   public regional: Regional[] = [];
   municipios: Municipio[] = [];
   public options: Select2Options;
-
 
   constructor(
     private activeRoute: ActivatedRoute,
     private Service: ServicioService,
   ) {
-  }
+  } 
 
   centros: Centrozonal = {
     idCentrosZonales: 0,
@@ -34,11 +30,24 @@ export class CentrozonaliComponent implements OnInit {
     Comuna: '',
     CodigoExternoJcz: '',
     CodigoExternoCZ: 0,
-    Estado: 1, 
-    idRegional: 1,
+    Estado: 1,
+    idRegional: 2,
   };
 
   ngOnInit() {
+
+    const params = this.activeRoute.snapshot.params;
+    console.log(params);
+    if (params.id) {
+      this.Service.getCentroid(params.id)
+        .subscribe(res => {
+          console.log(res);
+          this.centros = Object(res);
+        }, err => {
+          console.log(err);
+        }
+        );
+    }
     // Traer Muinicipios ---------------------------------------
     this.Service.getMunicipio()
       .subscribe(res => {
@@ -62,39 +71,37 @@ export class CentrozonaliComponent implements OnInit {
     }
   }
 
-  //insertar Datos ------------------------------------------------
-  insertDatos(Centrozonal: string) {
-    delete this.centros.idCentrosZonales;
-    this.Service.postCentro(this.centros).subscribe(res => {
-      console.log(this.centros);
-      console.log(res);
-      this.showMenssage();
-    },
-      err => {
-        console.log(err);
-        this.showMenssage();
-      });
-
+  // Actualizar Datos---------------------------------------------
+  updateDatos() {
+    this.Service.putCentro(this.centros.idCentrosZonales, this.centros)
+      .subscribe(
+        res => {
+          console.log(res);
+          this.showMenssage();
+        }, err => {
+          this.showMenssage2();
+          console.log(err);
+        }
+      );
   }
 
-  //mensajes de creacion
-  showMenssage(){
+    //mensajes de creacion
+    showMenssage(){
+      Swal.fire({
+        title: 'Inhabilitado!',
+        text: 'Centro Zonal Inhabilitado',
+        type: 'success',
+        confirmButtonText: 'Entendido'
+      });
+    }
+  //Mensaje de error
+  
+  showMenssage2(){
     Swal.fire({
-      title: 'Creado!',
-      text: 'Centro Zonal Creado',
-      type: 'success',
+      title: 'Error!',
+      text: 'Error al inhabilitar el centro zonal',
+      type: 'error',
       confirmButtonText: 'Entendido'
     });
   }
-//Mensaje de error
-
-showMenssage2(){
-  Swal.fire({
-    title: 'Error!',
-    text: 'Error al crear centro zonal',
-    type: 'error',
-    confirmButtonText: 'Entendido'
-  });
-}
-
 }
