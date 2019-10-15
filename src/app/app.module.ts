@@ -120,6 +120,15 @@ import { InhabilitaralmacenComponent } from './page/inhabilitaralmacen/inhabilit
 import { InhabilitaralmacendiComponent } from './page/inhabilitaralmacendi/inhabilitaralmacendi.component';
 import { InhabilitaralmacendmComponent } from './page/inhabilitaralmacendm/inhabilitaralmacendm.component';
 import { BeneficiariosmComponent } from './page/beneficiariosm/beneficiariosm.component';
+import { ReporteusuariosComponent } from './page/reporteusuarios/reporteusuarios.component';
+import { ReporteserviciosmodalidadesComponent } from './page/reporteserviciosmodalidades/reporteserviciosmodalidades.component';
+import { ReportebeneficiarioComponent } from './page/reportebeneficiario/reportebeneficiario.component';
+import { ReportereferenciabienestarinaComponent } from './page/reportereferenciabienestarina/reportereferenciabienestarina.component';
+import { ReportepreciosbienestarinaComponent } from './page/reportepreciosbienestarina/reportepreciosbienestarina.component';
+import { ReportelistadocursosComponent } from './page/reportelistadocursos/reportelistadocursos.component';
+import { ReportedatosnutricionalesComponent } from './page/reportedatosnutricionales/reportedatosnutricionales.component';
+import { ReportecentrodistribucionComponent } from './page/reportecentrodistribucion/reportecentrodistribucion.component';
+import { ReportealmacenComponent } from './page/reportealmacen/reportealmacen.component';
 
 
 
@@ -324,6 +333,33 @@ import { BeneficiariosmComponent } from './page/beneficiariosm/beneficiariosm.co
     
 
     BeneficiariosmComponent,
+    
+
+    ReporteusuariosComponent,
+    
+
+    ReporteserviciosmodalidadesComponent,
+    
+
+    ReportebeneficiarioComponent,
+    
+
+    ReportereferenciabienestarinaComponent,
+    
+
+    ReportepreciosbienestarinaComponent,
+    
+
+    ReportelistadocursosComponent,
+    
+
+    ReportedatosnutricionalesComponent,
+    
+
+    ReportecentrodistribucionComponent,
+    
+
+    ReportealmacenComponent,
     
 
   

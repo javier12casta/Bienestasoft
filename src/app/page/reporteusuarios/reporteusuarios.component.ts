@@ -3,18 +3,13 @@ import { Usuarios } from '../../interfaces/usuarios';
 import { ServicioService } from '../../servicio.service';
 
 @Component({
-  selector: 'app-usuariosv',
-  templateUrl: './usuariosv.component.html',
-  styleUrls: ['./usuariosv.component.css'],
+  selector: 'app-reporteusuarios',
+  templateUrl: './reporteusuarios.component.html',
+  styleUrls: ['./reporteusuarios.component.css'],
   template: `
 
   <nav class="navbar navbar-success bg-success">
-  <td>
   <button class="btn btn-dark" routerLink="/menu">Volver</button>
-  </td>
-  <td>
-          <button class="btn btn-dark" [routerLink]="['/datosgeneralesusuario']">Crear</button>
-        </td>
 </nav>
 
 <table class="table">
@@ -59,15 +54,16 @@ import { ServicioService } from '../../servicio.service';
         <td>{{usu.idUDS}}</td>
         <td>{{usu.idTipoDocumento}}</td>
         <td>{{usu.TipoUsuario}}</td>
-        
+       
       </tr>
     </tbody>
   </table>
- 
-  `
+  <button class="btn btn-dark" >Imprimir</button>
 
+  `
 })
-export class UsuariosvComponent implements OnInit {
+export class ReporteusuariosComponent implements OnInit {
+
   usua: Usuarios[] = [];
 
   constructor(private Service: ServicioService) { }
@@ -75,12 +71,13 @@ export class UsuariosvComponent implements OnInit {
   ngOnInit() {
 
     this.Service.getUsuarios()
-      .subscribe(async (data) => {
-        this.usua = data;
-        console.log(data);
-      }
-      );
-      
+    .subscribe(async (data) => {
+      this.usua = data;
+      console.log(data);
+    }
+    );
+
+
   }
 
 }

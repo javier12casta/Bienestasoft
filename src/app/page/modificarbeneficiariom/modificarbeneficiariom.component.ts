@@ -3,6 +3,7 @@ import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 import { Beneficiario } from '../../interfaces/beneficiario';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modificarbeneficiariom',
@@ -13,8 +14,8 @@ export class ModificarbeneficiariomComponent implements OnInit {
 
   public beneficiarios: Beneficiario[] = [];
 
-  constructor(   private activeRoute: ActivatedRoute,
-    private Service: ServicioService,) { }
+  constructor(private activeRoute: ActivatedRoute,
+    private Service: ServicioService,private router:Router) { }
 
 
     ben: Beneficiario = {
@@ -65,6 +66,12 @@ export class ModificarbeneficiariomComponent implements OnInit {
       text: 'Beneficiario Modificado',
       type: 'success',
       confirmButtonText: 'Ok'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/ModificarBeneficiario1']);
+
+      }
     });
   }
 

@@ -1,0 +1,38 @@
+<nav class="navbar navbar-success bg-success">
+    <button class="btn btn-dark" routerLink="/menu">Volver</button>
+    <button class="btn btn-dark" routerLink="/centrozonali"> Crear </button>
+  </nav>
+
+  <table class="table">
+    <thead class="thead-green">
+      <tr>
+        <th scope="col">idListadoCursos</th>
+        <th scope="col">NombreAgenteE</th>
+        <th scope="col">NumeroDocumento</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Estado</th>
+        <th scope="col">idTipoDocumento</th>
+        <th scope="col">idConsecutivosMaestro</th>
+        <th scope="col">idBenefiarios</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+            <tr *ngFor="let cen of listadoc">
+                    <th scope="row">{{cen.idListadoCursos}}</th>
+                    <td>{{cen.NombreAgenteE}}</td>
+                    <td>{{cen.NumeroDocumento}}</td>
+                    <td>{{cen.Fecha}}</td>
+          <td>{{cen.Estado}}</td>
+          <td>{{cen.idTipoDocumento}}</td>
+          <td>{{cen.idConsecutivosMaestro}}</td>
+          <td>{{cen.idBenefiarios}}</td>
+        
+                  </tr>
+                    
+            
+      </tbody>
+  
+</table>
+
+<button class="btn btn-primary">Generar Reporte</button>

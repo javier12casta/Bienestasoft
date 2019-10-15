@@ -11,6 +11,8 @@ import { Beneficiario } from '../../interfaces/beneficiario';
   <nav class="navbar navbar-success bg-success">
   <td>
   <button class="btn btn-dark" routerLink="/menu">Volver</button>
+  </td>
+  <td>
           <button class="btn btn-dark" [routerLink]="['/datosgeneralesbeneficiario']">Crear</button>
         </td>
 </nav>

@@ -99,6 +99,16 @@ import {InhabilitarcentrodComponent } from './page/inhabilitarcentrod/inhabilita
 import {InhabilitarcentrodiComponent } from './page/inhabilitarcentrodi/inhabilitarcentrodi.component';
 import {InhabilitarcentrodmComponent } from './page/inhabilitarcentrodm/inhabilitarcentrodm.component';
 import {BeneficiariosmComponent } from './page/beneficiariosm/beneficiariosm.component';
+import { ReporteusuariosComponent} from './page/reporteusuarios/reporteusuarios.component';
+import { ReportealmacenComponent} from './page/reportealmacen/reportealmacen.component';
+import { ReportebeneficiarioComponent} from './page/reportebeneficiario/reportebeneficiario.component';
+import { ReportecentrodistribucionComponent} from './page/reportecentrodistribucion/reportecentrodistribucion.component';
+import { ReportedatosnutricionalesComponent} from './page/reportedatosnutricionales/reportedatosnutricionales.component';
+import { ReportelistadocursosComponent} from './page/reportelistadocursos/reportelistadocursos.component';
+import { ReportepreciosbienestarinaComponent} from './page/reportepreciosbienestarina/reportepreciosbienestarina.component';
+import { ReportereferenciabienestarinaComponent} from './page/reportereferenciabienestarina/reportereferenciabienestarina.component';
+import { ReporteserviciosmodalidadesComponent} from './page/reporteserviciosmodalidades/reporteserviciosmodalidades.component';
+
 
 
 const routes: Routes = [
@@ -211,7 +221,16 @@ const routes: Routes = [
   {path:'inhabilitaralmacen', component: InhabilitaralmacenComponent },
   {path:'inhabilitaralmaceni', component: InhabilitaralmacendiComponent },
   {path:'inhabilitaralmacenm/:id', component: InhabilitaralmacendmComponent },
-
+  {path:'reporteusuarios', component: ReporteusuariosComponent},
+  
+  {path:'reportealmacen', component: ReportealmacenComponent},
+  {path:'reportebeneficiario', component: ReportebeneficiarioComponent},
+  {path:'reportecentrodistribucion', component: ReportecentrodistribucionComponent},
+  {path:'reportedatosnutricionales', component: ReportedatosnutricionalesComponent},
+  {path:'reportelistadocursos', component: ReportelistadocursosComponent},
+  {path:'reportepreciosbienestarina', component: ReportepreciosbienestarinaComponent},
+  {path:'reportereferenciabienestarina', component: ReportereferenciabienestarinaComponent},
+  {path:'reporteserviciosymodalidades', component: ReporteserviciosmodalidadesComponent},
 
 
 ];

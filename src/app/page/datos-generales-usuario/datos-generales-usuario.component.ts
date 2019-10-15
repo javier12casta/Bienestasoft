@@ -2,6 +2,8 @@ import { Component, OnInit , Input } from '@angular/core';
 import { Usuarios } from 'src/app/interfaces/usuarios';
 import { ServicioService } from 'src/app/servicio.service';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-datos-generales-usuario',
@@ -245,7 +247,7 @@ export class DatosGeneralesUsuarioComponent implements OnInit {
 	
  }
  
-   constructor(private Service: ServicioService) { }
+   constructor(private Service: ServicioService, private router:Router) { }
  
    ngOnInit() {}
 
@@ -255,7 +257,14 @@ export class DatosGeneralesUsuarioComponent implements OnInit {
       title: 'Creado!',
       text: 'Usuario Creado',
       type: 'success',
-      confirmButtonText: 'Aceptar'
+	  confirmButtonText: 'Ok'
+	}).then((result) => {
+		if (result.value) {
+		  
+		  this.router.navigate(['/usuariosv']);
+  
+		}
+  
     });
   }
 

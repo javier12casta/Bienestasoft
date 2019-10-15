@@ -3,6 +3,8 @@ import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 import { InUsuarios } from '../../interfaces/inhabilitarusuarios';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-inhabilitarusuariosi',
@@ -13,7 +15,7 @@ export class InhabilitarusuariosiComponent implements OnInit {
   public usuarios: InUsuarios[] = [];
 
   constructor(private activeRoute: ActivatedRoute,
-    private Service: ServicioService,) { }
+    private Service: ServicioService, private router:Router) { }
 
     usu: InUsuarios = {
 
@@ -42,18 +44,30 @@ export class InhabilitarusuariosiComponent implements OnInit {
   showMenssage(){
     Swal.fire({
       title: 'Inhabilitado!',
-      text: 'Beneficiario Inhabilitado',
+      text: 'Usuario Inhabilitado',
       type: 'success',
       confirmButtonText: 'Ok'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/inhabilitarusuarios1']);
+    
+      }
     });
   }
 
   showMenssage1(){
     Swal.fire({
       title: 'habilitado!',
-      text: 'Beneficiario habilitado',
+      text: 'Usuario habilitado',
       type: 'success',
       confirmButtonText: 'Ok'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/inhabilitarusuarios1']);
+    
+      }
     });
   }
 

@@ -3,6 +3,7 @@ import { Beneficiario } from 'src/app/interfaces/beneficiario';
 import { ServicioService } from 'src/app/servicio.service';
 import { Acudientes } from 'src/app/interfaces/acudiente';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-datos-generales-beneficiario',
@@ -167,7 +168,7 @@ import Swal from 'sweetalert2';
                               <h2></h2>
                               
                               <input type="text" class="form-control" [(ngModel)]="x.Pais" name="pais"
-                placeholder="ppais" class="form-control" >
+                placeholder="pais" class="form-control" >
 
                                   <h2></h2>
                                   
@@ -300,6 +301,13 @@ export class DatosGeneralesBeneficiarioComponent implements OnInit {
       text: 'Beneficiario Creado',
       type: 'success',
       confirmButtonText: 'Ok'
+       }).then((result) => {
+        if (result.value) {
+          
+          this.router.navigate(['/beneficiariosm']);
+
+        }
+
     });
   }
 
@@ -325,7 +333,7 @@ export class DatosGeneralesBeneficiarioComponent implements OnInit {
 
 
   }
-  constructor(private Service: ServicioService) { }
+  constructor(private Service: ServicioService, private router:Router) { }
 
   ngOnInit() {
   }

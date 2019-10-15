@@ -1,0 +1,28 @@
+<nav class="navbar navbar-success bg-success">
+    <button class="btn btn-dark" routerLink="/menu">Volver</button>
+    <button class="btn btn-dark" routerLink="/centrozonali"> Crear </button>
+  </nav>
+  
+  <table class="table">
+      <thead class="thead-green">
+        <tr>
+          <th scope="col">idListasMaestro</th>
+          <th scope="col">EstadoDatoMaestro</th>
+          <th scope="col">Modalidad</th>
+          <th scope="col">idConsecutivosMaestro</th>
+          <th scope="col">Servicio</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cen of serviciom">
+          <th scope="row">{{cen.idListasMaestro}}</th>
+          <td>{{cen.EstadoDatoMaestro}}</td>
+          <td>{{cen.Modalidad}}</td>
+          <td>{{cen.idConsecutivosMaestro}}</td>
+          <td>{{cen.Servicio}}</td>
+  
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-primary" >Generar Reporte</button>

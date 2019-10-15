@@ -3,6 +3,7 @@ import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 import { Usuarios } from '../../interfaces/usuarios';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modificarusuariom',
@@ -16,7 +17,7 @@ export class ModificarusuariomComponent implements OnInit {
 
   constructor(
     private activeRoute: ActivatedRoute,
-    private Service: ServicioService,
+    private Service: ServicioService, private router:Router
   ) {
   } 
 
@@ -61,6 +62,12 @@ export class ModificarusuariomComponent implements OnInit {
       text: 'Usuario Modificado',
       type: 'success',
       confirmButtonText: 'Ok'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/modificarusuarios1']);
+    
+      }
     });
   }
 

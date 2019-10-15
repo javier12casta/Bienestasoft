@@ -3,6 +3,7 @@ import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 import { InBeneficiario } from '../../interfaces/inhabilitarBenefiario';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inhabilitarbeneficiariosi',
@@ -15,7 +16,7 @@ export class InhabilitarbeneficiariosiComponent implements OnInit {
   
 
   constructor(private activeRoute: ActivatedRoute,
-    private Service: ServicioService,) { }
+    private Service: ServicioService, private router:Router) { }
 
     ben: InBeneficiario = {
 
@@ -46,18 +47,32 @@ export class InhabilitarbeneficiariosiComponent implements OnInit {
   showMenssage(){
     Swal.fire({
       title: 'Inhabilitado!',
-      text: 'Usuario Inhabilitado',
+      text: 'Beneficiario Inhabilitado',
       type: 'success',
       confirmButtonText: 'Ok'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/InhabilitarBeneficiario1']);
+
+      }
+
+
     });
   }
 
   showMenssage1(){
     Swal.fire({
       title: 'habilitado!',
-      text: 'Usuario habilitado',
+      text: 'Beneficiario habilitado',
       type: 'success',
       confirmButtonText: 'Ok'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/InhabilitarBeneficiario1']);
+
+      }
     });
   }
 
