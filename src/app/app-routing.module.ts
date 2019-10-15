@@ -98,7 +98,7 @@ import {InhabilitaralmacendmComponent } from './page/inhabilitaralmacendm/inhabi
 import {InhabilitarcentrodComponent } from './page/inhabilitarcentrod/inhabilitarcentrod.component';
 import {InhabilitarcentrodiComponent } from './page/inhabilitarcentrodi/inhabilitarcentrodi.component';
 import {InhabilitarcentrodmComponent } from './page/inhabilitarcentrodm/inhabilitarcentrodm.component';
-
+import {BeneficiariosmComponent } from './page/beneficiariosm/beneficiariosm.component';
 
 
 const routes: Routes = [
@@ -110,6 +110,7 @@ const routes: Routes = [
   {path:'barrioli', component:BarrioliComponent},
   {path:'barrioli/:id', component:BarrioliComponent},
   {path:'beneficiarios', component:BeneficiariosComponent},
+  {path:'beneficiariosm', component:BeneficiariosmComponent},
   {path:'centrozonal', component:CentrozonalComponent},
   {path:'centrozonali', component:CentrozonaliComponent},
   {path:'centrozonalm/:id', component:CentrozonalmComponent},

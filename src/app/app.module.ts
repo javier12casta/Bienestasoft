@@ -119,6 +119,7 @@ import { InhabilitarcentrodmComponent } from './page/inhabilitarcentrodm/inhabil
 import { InhabilitaralmacenComponent } from './page/inhabilitaralmacen/inhabilitaralmacen.component';
 import { InhabilitaralmacendiComponent } from './page/inhabilitaralmacendi/inhabilitaralmacendi.component';
 import { InhabilitaralmacendmComponent } from './page/inhabilitaralmacendm/inhabilitaralmacendm.component';
+import { BeneficiariosmComponent } from './page/beneficiariosm/beneficiariosm.component';
 
 
 
@@ -320,6 +321,9 @@ import { InhabilitaralmacendmComponent } from './page/inhabilitaralmacendm/inhab
     
 
     InhabilitaralmacendmComponent,
+    
+
+    BeneficiariosmComponent,
     
 
   

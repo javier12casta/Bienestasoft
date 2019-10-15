@@ -19,7 +19,9 @@ export class MenuComponent implements OnInit {
     {name:"Crear beneficiarios ICBF", route: "/beneficiarios", icon:"face" },
     {name:"Modificar beneficiarios ICBF ", route: "/ModificarBeneficiario", icon:"face" },
     {name:"Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon:"face" },
+    {name:"Reporte beneficiarios ICBF", route: "/", icon:"face" },
     {name:"centrozonal", route: "/centrozonal", icon:"public" },
+    {name:"Reporte centrozonal", route: "/", icon:"public" },
     {name:"comuna", route: "/comuna", icon:"public" },
     {name:"municipio", route: "/municipio", icon:"public" },
     {name:"puntoentrega", route: "/puntoentrega", icon:"public" },
@@ -30,16 +32,19 @@ export class MenuComponent implements OnInit {
     {name:"Crear usuarios", route: "/usuarios", icon:"face" },
     {name:"Modificar Usuarios", route: "/modificarusuarios", icon:"face" },
     {name:"Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon:"face" },
+    {name:"Reporte Usuarios", route: "/", icon:"face" },
     {name:"Crear Datos Maestros", route: "/listamaestros", icon:"face" },
     {name:"Modificar Datos Maestros", route: "/modificarlistamaestro", icon:"face" },
     {name:"Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon:"face" },
+    {name:"Reporte Datos Maestros", route: "/", icon:"face" },
     {name:"Crear Centro Distribucion", route: "/centrodistribucion", icon:"face" },
     {name:"Modificar Centro Distribucion", route: "/modificarcentrod", icon:"face" },
     {name:"Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon:"face" },
+    {name:"Reporte Centro Distribucion", route: "/", icon:"face" },
     {name:"Crear Almacen", route: "/almacen", icon:"face" },
     {name:"Modificar Almacen", route: "/modificaralmacen", icon:"face" },
     {name:"Inhabilitar Almacen", route: "/inhabilitaralmacen", icon:"face" },
-
+    {name:"Reporte Almacen", route: "/", icon:"face" },
   ];
 
   fillerContent = Array.from({length: 50}, () =>'');
