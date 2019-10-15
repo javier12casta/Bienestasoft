@@ -1,0 +1,39 @@
+<nav class="navbar navbar-success bg-success">
+    <button class="btn btn-dark" routerLink="/menu">Volver</button>
+    <button class="btn btn-dark" routerLink="/centrozonali"> Crear </button>
+  </nav>
+
+  <table class="table">
+    <thead class="thead-green">
+      <tr>
+        <th scope="col">idAlmacenes</th>
+        <th scope="col">NumeroExterno </th>
+        <th scope="col">NombreCentroDistribucion</th>
+        <th scope="col">Responsable</th>
+        <th scope="col"> Capacidad</th>
+        <th scope="col">UnidadMedida</th>
+        <th scope="col">Estado</th>
+        <th scope="col">idCentroDistribucion</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+            <tr *ngFor="let cen of almac">
+                    <th scope="row">{{cen.idAlmacenes}}</th>
+                    <td>{{cen.NumeroExterno}}</td>
+                    <td>{{cen.NombreCentroDistribucion}}</td>
+                    <td>{{cen.Responsable}}</td>
+          <td>{{cen.Capacidad}}</td>
+          <td>{{cen.UnidadMedida}}</td>
+          <td>{{cen.Estado}}</td>
+          <td>{{cen.idCentroDistribucion}}</td>       
+          <td>
+            <button class="btn btn-primary" [routerLink]="['/inhabilitaralmacenm', cen.idAlmacenes]">inhabilitar</button>
+          </td>
+        </tr>
+                    
+            
+      </tbody>
+  
+</table>
+

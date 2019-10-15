@@ -1,0 +1,48 @@
+
+
+<nav class="navbar navbar-success bg-success">
+    <button class="btn btn-dark" routerLink="/modificarusuarios1">Volver</button>
+  </nav>
+  
+  <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+    <div class="card" padding>
+      <div class="card-body" padding>
+        <form>
+          <div class="form-group">
+  
+        
+
+            <input type="number" class="form-control" [(ngModel)]="almac.NumeroExterno" name="numeroext"
+              placeholder="numero Externo" class="form-control" id="inputnext">
+
+              <input type="text" class="form-control" [(ngModel)]="almac.NombreCentroDistribucion" name="nombre" placeholder="Nombre Centro Distribucion"
+              class="form-control" id="nom">
+
+              <input type="text" class="form-control" [(ngModel)]="almac.Responsable" name="res" placeholder="Responsable"
+              class="form-control" id="app">
+
+              <input type="text" class="form-control" [(ngModel)]="almac.Capacidad " name="cap"
+              placeholder="Capacidad" class="form-control" id="usu">
+
+              <input type="text" class="form-control" [(ngModel)]="almac.UnidadMedida" name="uni"
+              placeholder="Unidad de medida" class="form-control" id="usu">
+
+               <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
+            <select name="Estado" [(ngModel)]="almac.Estado" style="width: 100%;" class="form-control">
+                <option [value]="1">Habilitado</option>
+                <Option [value]="0">Inhabilitado</Option>
+              </select>
+             
+         
+
+          <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
+          <button class="btn btn-success btn-block" type="submit" (click)="updateDatos()"
+            routerLink="/modifcaralmaceni">
+            Guardar
+          </button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+

@@ -33,6 +33,13 @@ export class MenuComponent implements OnInit {
     {name:"Crear Datos Maestros", route: "/listamaestros", icon:"face" },
     {name:"Modificar Datos Maestros", route: "/modificarlistamaestro", icon:"face" },
     {name:"Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon:"face" },
+    {name:"Crear Centro Distribucion", route: "/centrodistribucion", icon:"face" },
+    {name:"Modificar Centro Distribucion", route: "/modificarcentrod", icon:"face" },
+    {name:"Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon:"face" },
+    {name:"Crear Almacen", route: "/almacen", icon:"face" },
+    {name:"Modificar Almacen", route: "/modificaralmacen", icon:"face" },
+    {name:"Inhabilitar Almacen", route: "/inhabilitaralmacen", icon:"face" },
+
   ];
 
   fillerContent = Array.from({length: 50}, () =>'');

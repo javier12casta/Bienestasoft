@@ -36,14 +36,10 @@ import { Modificarusuarios1Component } from './page/modificarusuarios1/modificar
 import { InhabilitarusuariosComponent } from './page/inhabilitarusuarios/inhabilitarusuarios.component';
 import { Inhabilitarusuarios1Component } from './page/inhabilitarusuarios1/inhabilitarusuarios1.component';
 import { InhabilitarusuariosiComponent } from './page/inhabilitarusuariosi/inhabilitarusuariosi.component';
-
 import { InhabilitarlistapComponent } from './page/inhabilitarlistap/inhabilitarlistap.component';
 import { InhabilitarlistapiComponent } from './page/inhabilitarlistapi/inhabilitarlistapi.component';
-
 import { InhabilitarlistadocComponent } from './page/inhabilitarlistadoc/inhabilitarlistadoc.component';
 import { InhabilitarlistadociComponent } from './page/inhabilitarlistadoci/inhabilitarlistadoci.component';
-
-
 import { ListaMaestrosBienestarinaModificarComponent } from './page/lista-maestros-bienestarina-modificar/lista-maestros-bienestarina-modificar.component';
 import { ListaMaestrosBienestarinaInhabilitarComponent } from './page/lista-maestros-bienestarina-inhabilitar/lista-maestros-bienestarina-inhabilitar.component';
 import { DatosGeneralesUsuarioComponent } from './page/datos-generales-usuario/datos-generales-usuario.component';
@@ -73,20 +69,35 @@ import { ModificarbeneficiariomComponent } from './page/modificarbeneficiariom/m
 import { ModificarserviciommComponent } from './page/modificarserviciomm/modificarserviciomm.component';
 import { ModificareferenciabmComponent } from './page/modificareferenciabm/modificareferenciabm.component';
 import { ModificarlistapmComponent } from './page/modificarlistapm/modificarlistapm.component';
-
 import { InhabilitarserviciosmComponent } from './page/inhabilitarserviciosm/inhabilitarserviciosm.component';
 import { InhabilitarserviciosmiComponent } from './page/inhabilitarserviciosmi/inhabilitarserviciosmi.component';
-
 import { InhabilitareferenciabComponent } from './page/inhabilitareferenciab/inhabilitareferenciab.component';
-
 import { InhabilitareferenciabiComponent } from './page/inhabilitareferenciabi/inhabilitareferenciabi.component';
-
 import { UsuariosvComponent } from './page/usuariosv/usuariosv.component';
-
 import { UdsinhComponent } from './page/udsinh/udsinh.component';
 import { PuntoentregainhComponent } from './page/puntoentregainh/puntoentregainh.component';
 import { CentrozonalinhComponent } from './page/centrozonalinh/centrozonalinh.component';
+import { CentrodistribucionComponent } from './page/centrodistribucion/centrodistribucion.component';
+import { CentrodistribucioncComponent } from './page/centrodistribucionc/centrodistribucionc.component';
+import { CentrodistribucionciComponent } from './page/centrodistribucionci/centrodistribucionci.component';
+import { AlmacenComponent } from './page/almacen/almacen.component';
+import { AlmacencComponent } from './page/almacenc/almacenc.component';
+import { AlmacenciComponent } from './page/almacenci/almacenci.component';
 
+import {ModificarcentrodComponent } from './page/modificarcentrod/modificarcentrod.component';
+import {ModificarcentrodiComponent } from './page/modificarcentrodi/modificarcentrodi.component';
+import {ModificarcentromComponent } from './page/modificarcentrom/modificarcentrom.component';
+import {ModificaralmacenComponent } from './page/modificaralmacen/modificaralmacen.component';
+import {ModificaralmaceniComponent } from './page/modificaralmaceni/modificaralmaceni.component';
+import {ModificaralmacenmComponent } from './page/modificaralmacenm/modificaralmacenm.component';
+
+
+import {InhabilitaralmacenComponent } from './page/inhabilitaralmacen/inhabilitaralmacen.component';
+import {InhabilitaralmacendiComponent } from './page/inhabilitaralmacendi/inhabilitaralmacendi.component';
+import {InhabilitaralmacendmComponent } from './page/inhabilitaralmacendm/inhabilitaralmacendm.component';
+import {InhabilitarcentrodComponent } from './page/inhabilitarcentrod/inhabilitarcentrod.component';
+import {InhabilitarcentrodiComponent } from './page/inhabilitarcentrodi/inhabilitarcentrodi.component';
+import {InhabilitarcentrodmComponent } from './page/inhabilitarcentrodm/inhabilitarcentrodm.component';
 
 
 
@@ -163,22 +174,44 @@ const routes: Routes = [
   {path:'inhabilitarserviciomi/:id', component: InhabilitarserviciosmiComponent  },
   {path:'modificarreferenciab', component: ModificareferenciabComponent },
   {path:'modificarreferenciabm/:id', component: ModificareferenciabmComponent },
-
   {path:'inhabilitareferenciab', component:  InhabilitareferenciabComponent},
   {path:'inhabilitareferenciabi/:id', component:  InhabilitareferenciabiComponent},
-
   {path:'inhabilitarelistap', component: InhabilitarlistapComponent  },
   {path:'inhabilitarelistapi/:id', component: InhabilitarlistapiComponent  },
-
   {path:'inhabilitarelistadoc', component: InhabilitarlistadocComponent  },
   {path:'inhabilitarelistadoci/:id', component:  InhabilitarlistadociComponent },
-
   {path:'modificarlistac', component: ModificarlistapComponent },
   {path:'modificarlistacm/:id', component: ModificarlistapmComponent},
   {path:'modificarlistadoc', component: ModificarlistadocComponent },
   {path:'modificarlistadocm/:id', component: ModificarlistadocmComponent },
   {path:'listadocursos', component: ListadocursosComponent },
+
+  {path:'centrodistribucion', component: CentrodistribucionComponent },
+  {path:'centrodistribucionc', component: CentrodistribucioncComponent },
+  {path:'centrodistribucionci', component: CentrodistribucionciComponent },
+
+  {path:'almacen', component: AlmacenComponent },
+  {path:'almacenc', component: AlmacencComponent },
+  {path:'almacenci', component: AlmacenciComponent },
+
+  {path:'modificarcentrod', component:  ModificarcentrodComponent},
+  {path:'modificarcentroi', component:  ModificarcentrodiComponent},
+  {path:'modificarcentrom/:id', component: ModificarcentromComponent },
  
+  {path:'modificaralmacen', component: ModificaralmacenComponent },
+  {path:'modificaralmaceni', component:  ModificaralmaceniComponent},
+  {path:'modificaralmacenm/:id', component:  ModificaralmacenmComponent},
+
+
+  {path:'inhabilitarcentrod', component: InhabilitarcentrodComponent },
+  {path:'inhabilitarcentroi', component: InhabilitarcentrodiComponent  },
+  {path:'inhabilitarcentrom/:id', component: InhabilitarcentrodmComponent},
+ 
+  {path:'inhabilitaralmacen', component: InhabilitaralmacenComponent },
+  {path:'inhabilitaralmaceni', component: InhabilitaralmacendiComponent },
+  {path:'inhabilitaralmacenm/:id', component: InhabilitaralmacendmComponent },
+
+
 
 ];
 

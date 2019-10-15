@@ -10,6 +10,12 @@ import { Regional } from '../../interfaces/regional';
   styleUrls: ['./modificarbeneficiarios1.component.css'],
   template: `
   
+  <nav class="navbar navbar-success bg-success">
+  <td>
+  <button class="btn btn-dark" routerLink="/menu">Volver</button>
+         
+        </td>
+</nav>
    
   <table class="table">
       <thead class="thead-green">

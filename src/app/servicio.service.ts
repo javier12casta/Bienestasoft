@@ -22,8 +22,12 @@ import { Listadocursos } from './interfaces/listadocursos';
 import { InMaestroBienestarina } from './interfaces/inhabilitarmaestrosBienestarina';
 import { InTipoBienestarina } from './interfaces/inhabilitartipobienestarina';
 import { InLprecios } from './interfaces/inhabilitarlistaprecio';
-
 import { InListadocursos } from './interfaces/inhabilitarlistadocursos';
+import { Centrodistribucion } from './interfaces/centrodistribucion';
+import { Almacen } from './interfaces/almacen';
+import { InAlmacen } from './interfaces/inhabilitaralmacen';
+import { InCentrodistribucion } from './interfaces/inhabilitarcentrodistribucion';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -377,5 +381,59 @@ postUds(uds : Uds){
     return this.http.put<Uds>(`${this.api}/uds/${id}`, uds);
   }
   
+  getcentrodistribucionid(id: string) {
+    return this.http.get(`${this.api}/centrosD/${id}`);
+  }
+  
+  getcentrodistribucion(){
+    const path = `${this.api}/centrosD`;
+    return this.http.get<[Centrodistribucion]>(path);
+  }
+
+  putcentrodistribucion(id: string|number, cent: Centrodistribucion  ){
+    return this.http.put<Centrodistribucion >(`${this.api}/centrosD/${id}`, cent);
+  }
+
+  postcentrodistribucion(cent : Centrodistribucion ){
+
+    const path = `${this.api}/centrosD`;
+    return this.http.post<Centrodistribucion>(path, cent);
+    
+    }
+
+    putcentrodistribucionInhabilitar(id: string|number, Nombre: InCentrodistribucion){
+      return this.http.put<InCentrodistribucion>(`${this.api}/centrosD/${id}`, Nombre);
+    }
+
+
+    getalmacenid(id: string) {
+      return this.http.get(`${this.api}/almacen/${id}`);
+    }
+    
+    getalmacen(){
+      const path = `${this.api}/almacen`;
+      return this.http.get<[Almacen]>(path);
+    }
+  
+    putalmacen(id: string|number, cent: Almacen  ){
+      return this.http.put<Almacen >(`${this.api}/almacen/${id}`, cent);
+    }
+  
+    postalmacen(almac : Almacen ){
+  
+      const path = `${this.api}/almacen`;
+      return this.http.post<Almacen>(path, almac);
+      
+      }
+    
+      putalmacenInhabilitar(id: string|number, Nombre: InAlmacen){
+        return this.http.put<InAlmacen>(`${this.api}/almacen/${id}`, Nombre);
+      }
+  
+
+
+
+
+    
 
 }

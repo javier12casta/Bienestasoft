@@ -101,6 +101,24 @@ import { UsuariosvComponent } from './page/usuariosv/usuariosv.component';
 import { CentrozonalinhComponent } from './page/centrozonalinh/centrozonalinh.component';
 import { PuntoentregainhComponent } from './page/puntoentregainh/puntoentregainh.component';
 import { UdsinhComponent } from './page/udsinh/udsinh.component';
+import { CentrodistribucionComponent } from './page/centrodistribucion/centrodistribucion.component';
+import { CentrodistribucioncComponent } from './page/centrodistribucionc/centrodistribucionc.component';
+import { CentrodistribucionciComponent } from './page/centrodistribucionci/centrodistribucionci.component';
+import { AlmacenComponent } from './page/almacen/almacen.component';
+import { AlmacencComponent } from './page/almacenc/almacenc.component';
+import { AlmacenciComponent } from './page/almacenci/almacenci.component';
+import { ModificarcentrodComponent } from './page/modificarcentrod/modificarcentrod.component';
+import { ModificarcentrodiComponent } from './page/modificarcentrodi/modificarcentrodi.component';
+import { ModificaralmacenComponent } from './page/modificaralmacen/modificaralmacen.component';
+import { ModificaralmaceniComponent } from './page/modificaralmaceni/modificaralmaceni.component';
+import { ModificarcentromComponent } from './page/modificarcentrom/modificarcentrom.component';
+import { ModificaralmacenmComponent } from './page/modificaralmacenm/modificaralmacenm.component';
+import { InhabilitarcentrodComponent } from './page/inhabilitarcentrod/inhabilitarcentrod.component';
+import { InhabilitarcentrodiComponent } from './page/inhabilitarcentrodi/inhabilitarcentrodi.component';
+import { InhabilitarcentrodmComponent } from './page/inhabilitarcentrodm/inhabilitarcentrodm.component';
+import { InhabilitaralmacenComponent } from './page/inhabilitaralmacen/inhabilitaralmacen.component';
+import { InhabilitaralmacendiComponent } from './page/inhabilitaralmacendi/inhabilitaralmacendi.component';
+import { InhabilitaralmacendmComponent } from './page/inhabilitaralmacendm/inhabilitaralmacendm.component';
 
 
 
@@ -248,6 +266,60 @@ import { UdsinhComponent } from './page/udsinh/udsinh.component';
     
 
     UdsinhComponent,
+    
+
+    CentrodistribucionComponent,
+    
+
+    CentrodistribucioncComponent,
+    
+
+    CentrodistribucionciComponent,
+    
+
+    AlmacenComponent,
+    
+
+    AlmacencComponent,
+    
+
+    AlmacenciComponent,
+    
+
+    ModificarcentrodComponent,
+    
+
+    ModificarcentrodiComponent,
+    
+
+    ModificaralmacenComponent,
+    
+
+    ModificaralmaceniComponent,
+    
+
+    ModificarcentromComponent,
+    
+
+    ModificaralmacenmComponent,
+    
+
+    InhabilitarcentrodComponent,
+    
+
+    InhabilitarcentrodiComponent,
+    
+
+    InhabilitarcentrodmComponent,
+    
+
+    InhabilitaralmacenComponent,
+    
+
+    InhabilitaralmacendiComponent,
+    
+
+    InhabilitaralmacendmComponent,
     
 
   

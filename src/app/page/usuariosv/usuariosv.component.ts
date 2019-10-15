@@ -10,6 +10,7 @@ import { ServicioService } from '../../servicio.service';
 
   <nav class="navbar navbar-success bg-success">
   <td>
+  <button class="btn btn-dark" routerLink="/menu">Volver</button>
           <button class="btn btn-primary" [routerLink]="['/datosgeneralesusuario']">Crear</button>
         </td>
 </nav>

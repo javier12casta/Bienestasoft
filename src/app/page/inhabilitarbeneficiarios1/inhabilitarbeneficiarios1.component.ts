@@ -8,7 +8,13 @@ import { ServicioService } from '../../servicio.service';
   styleUrls: ['./inhabilitarbeneficiarios1.component.css'],
   template: `
   
-   
+  <nav class="navbar navbar-success bg-success">
+  <td>
+  <button class="btn btn-dark" routerLink="/menu">Volver</button>
+         
+        </td>
+</nav>
+
   <table class="table">
       <thead class="thead-green">
         <tr>

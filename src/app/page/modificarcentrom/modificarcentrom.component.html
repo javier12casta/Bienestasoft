@@ -1,0 +1,50 @@
+
+
+<nav class="navbar navbar-success bg-success">
+    <button class="btn btn-dark" routerLink="/modificarusuarios1">Volver</button>
+  </nav>
+  
+  <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+    <div class="card" padding>
+      <div class="card-body" padding>
+        <form>
+          <div class="form-group">
+  
+        
+
+            <input type="number" class="form-control" [(ngModel)]="cend.NumeroExterno" name="numeroext"
+              placeholder="numero Externo" class="form-control" id="inputnext">
+
+              <input type="text" class="form-control" [(ngModel)]="cend.Nombre" name="nombre" placeholder="Nombres"
+              class="form-control" id="nom">
+
+              <input type="text" class="form-control" [(ngModel)]="cend.Responsable" name="res" placeholder="Responsable"
+              class="form-control" id="app">
+
+              <input type="text" class="form-control" [(ngModel)]="cend.Direccion" name="dic"
+              placeholder="Direccion" class="form-control" id="usu">
+
+              <input type="text" class="form-control" [(ngModel)]="cend.Barrio" name="bar"
+              placeholder="Barrio" class="form-control" id="usu">
+
+              <input type="text" class="form-control" [(ngModel)]="cend.Telefono" name="tel"
+              placeholder="Telefono" class="form-control" id="usu">
+
+            
+            <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
+            <select name="Estado" [(ngModel)]="cend.Estado" style="width: 100%;" class="form-control">
+              <option [value]="1">Habilitado</option>
+              <Option [value]="0">Inhabilitado</Option>
+            </select>
+           
+
+          <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
+          <button class="btn btn-success btn-block" type="submit" (click)="updateDatos()"
+            routerLink="/modificarcentroi">
+            Guardar
+          </button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
