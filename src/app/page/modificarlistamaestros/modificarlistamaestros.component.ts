@@ -33,6 +33,7 @@ import { Router } from '@angular/router';
   <option> Referencias de bienestarina</option>
   <option> Lista de precios</option>
   <option> Listado de cursos</option>
+  <option> Datos Nutricionales</option>
   </select>
 <h2></h2>
 
@@ -93,6 +94,13 @@ export class ModificarlistamaestrosComponent implements OnInit {
     this.router.navigate(['/modificarlistadoc']);
 
   }
+
+  if(this.modalidads == "Datos Nutricionales"){
+
+    this.router.navigate(['/modificardatosnutricionales']);
+
+  }
+
 
     
   

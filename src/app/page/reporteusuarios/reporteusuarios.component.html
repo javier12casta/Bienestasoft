@@ -1,6 +1,6 @@
 
   
-  <table class="table">
+  <table class="table" id="contentToConvert">
     <thead class="thead-green">
       <tr>
         <th scope="col">idUsuarios</th>
@@ -41,10 +41,10 @@
         <td>{{cen.idUDS}}</td>
         <td>{{cen.idTipoDocumento}}</td>
         <td>{{cen.TipoUsuario}}</td>
-        <td>
-          <button class="btn btn-primary" [routerLink]="['/ModificarBeneficiariom', cen.idUsuarios]">Modificar</button>
-        </td>
+        
       </tr>
     </tbody>
   </table>
 
+    <button class="btn btn-primary" (click)="Generareporte()" >Generar Reporte</button>
+  

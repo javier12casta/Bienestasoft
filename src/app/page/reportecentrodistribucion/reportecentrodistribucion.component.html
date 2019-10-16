@@ -1,1 +1,34 @@
-<p>reportecentrodistribucion works!</p>
+<nav class="navbar navbar-success bg-success">
+    <button class="btn btn-dark" routerLink="/menu">Volver</button>
+  </nav>
+  
+  <table class="table" id="contentToConvert">
+      <thead class="thead-green">
+        <tr>
+          <th scope="col">idCentroDistribucion</th>
+          <th scope="col">NumeroExterno</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Responsable </th>
+          <th scope="col">Direccion </th>
+          <th scope="col">Barrio </th>
+          <th scope="col"> Telefono </th>
+          <th scope="col">Estado </th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usu of cen">
+          <th scope="row">{{usu.idCentroDistribucion}}</th>
+          <td>{{usu.NumeroExterno}}</td>
+          <td>{{usu.Nombre}}</td>
+          <td>{{usu.Responsable}}</td>
+          <td>{{usu.Direccion}}</td>
+          <td>{{usu.Barrio}}</td>
+          <td>{{usu.Telefono}}</td>
+          <td>{{usu.Estado}}</td>    
+        </tr>
+      </tbody>
+    </table>
+   
+    <button class="btn btn-primary" (click)="Generareporte()">Generar Reporte</button>
+  
