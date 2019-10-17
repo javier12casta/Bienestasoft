@@ -132,6 +132,8 @@ import { ReportealmacenComponent } from './page/reportealmacen/reportealmacen.co
 import { ReportedatosvariosComponent } from './page/reportedatosvarios/reportedatosvarios.component';
 import { ModificardatosnutricionalesComponent } from './page/modificardatosnutricionales/modificardatosnutricionales.component';
 import { ModificardatosnutricionalesmComponent } from './page/modificardatosnutricionalesm/modificardatosnutricionalesm.component';
+import { ReportecentrozonalComponent } from './page/reportecentrozonal/reportecentrozonal.component';
+import { ReporteentregaComponent } from './page/reporteentrega/reporteentrega.component';
 
 
 
@@ -372,6 +374,12 @@ import { ModificardatosnutricionalesmComponent } from './page/modificardatosnutr
     
 
     ModificardatosnutricionalesmComponent,
+    
+
+    ReportecentrozonalComponent,
+    
+
+    ReporteentregaComponent,
     
 
   
