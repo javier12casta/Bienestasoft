@@ -21,11 +21,35 @@
           {{nav.name}}
         </a>
         <h3 matSubheader>Beneficiarios</h3>
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of beneficiarios">
+          <mat-icon class="icon">{{nav.icon}}</mat-icon>
+          {{nav.name}}
+        </a>
+        <h3 matSubheader>Usuarios</h3>
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of usuarios">
+          <mat-icon class="icon">{{nav.icon}}</mat-icon>
+          {{nav.name}}
+        </a>
+        <h3 matSubheader>Datos Maestros</h3>
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of datos">
+          <mat-icon class="icon">{{nav.icon}}</mat-icon>
+          {{nav.name}}
+        </a>
+        <h3 matSubheader>Centros de Distribucion</h3>
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of centros">
+          <mat-icon class="icon">{{nav.icon}}</mat-icon>
+          {{nav.name}}
+        </a>
+        <h3 matSubheader>Almacenes</h3>
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of almacenes">
+          <mat-icon class="icon">{{nav.icon}}</mat-icon>
+          {{nav.name}}
+        </a>
+        <h3 matSubheader>Reportes</h3>
         <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of fillerNav">
           <mat-icon class="icon">{{nav.icon}}</mat-icon>
           {{nav.name}}
         </a>
-
       </mat-nav-list>
     </mat-sidenav>
 
