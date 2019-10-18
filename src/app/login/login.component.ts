@@ -10,8 +10,6 @@ import { ServicioService } from '../servicio.service';
 })
 export class LoginComponent implements OnInit {
   title = 'Bienestasoft';
-  router: Router;
-  service: ServicioService;
   loginForm: FormGroup;
 
 
@@ -37,9 +35,23 @@ export class LoginComponent implements OnInit {
 
 
 
-  constructor() { }
+  constructor(private Service: ServicioService , private router:Router) { }
 
   ngOnInit() {
+  }
+
+  usuario : "";
+  pass : "";
+
+
+  traer(){
+
+  }
+
+  login(){
+
+  this.router.navigate(['/menu']); 
+
   }
 
 

@@ -38,6 +38,7 @@ export class MenuComponent implements OnInit {
   rol = [
 
     {name:"rol", route: "/rol", icon:"face" },
+    {name:"Modificar rol", route: "/roli", icon:"face" },
     {name:"Reporte Rol", route: "/reporterol", icon:"face" },
   ];
 
