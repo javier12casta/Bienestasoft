@@ -113,6 +113,9 @@ import { ModificardatosnutricionalesComponent} from './page/modificardatosnutric
 import { ModificardatosnutricionalesmComponent} from './page/modificardatosnutricionalesm/modificardatosnutricionalesm.component';
 import { ReportecentrozonalComponent} from './page/reportecentrozonal/reportecentrozonal.component';
 import { ReporteentregaComponent} from './page/reporteentrega/reporteentrega.component';
+import { ReporteudsComponent} from './page/reporteuds/reporteuds.component';
+
+import { ReporterolComponent} from './page/reporterol/reporterol.component';
 
 const routes: Routes = [
   {path:'', component: LoginComponent},
@@ -242,6 +245,8 @@ const routes: Routes = [
   {path:'reportecentrozonal', component: ReportecentrozonalComponent},
 
   {path:'reportepuntoentrega', component: ReporteentregaComponent},
+  {path:'reporteuds', component:  ReporteudsComponent},
+  {path:'reporterol', component:  ReporterolComponent},
 
 ];
 

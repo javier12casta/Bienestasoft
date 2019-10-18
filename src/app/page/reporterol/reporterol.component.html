@@ -1,0 +1,25 @@
+<nav class="navbar navbar-success bg-success">
+    <button class="btn btn-dark" routerLink="/menu">Volver</button>
+  </nav>
+  
+  <table class="table" id="contentToConvert">
+      <thead class="thead-green">
+        <tr>
+          <th scope="col">idRolPersona</th>
+          <th scope="col">Estado </th>
+          <th scope="col">RolPersona </th>
+          <th scope="col">Transacciones </th>
+          <th scope="col">Almacenes </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cen of trol">
+          <th scope="row">{{cen.idRolPersona}}</th>
+          <td>{{cen.Estado}}</td>
+          <td>{{cen.RolPersona}}</td>
+          <td>{{cen.Transacciones}}</td>
+          <td>{{cen.Almacenes}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-primary" (click)="Generareporte()">Generar Reporte</button>

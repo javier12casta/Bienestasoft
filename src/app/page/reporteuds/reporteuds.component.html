@@ -1,0 +1,43 @@
+<nav class="navbar navbar-success bg-success">
+    <button class="btn btn-dark" routerLink="/menu"> Volver </button>
+  </nav>
+  
+  <table class="table" id="contentToConvert">
+      <thead class="thead-green">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Estado</th>
+          <th scope="col">Nombre UDS</th>
+          <th scope="col">Codigo Externo UDS</th>
+          <th scope="col">Codigo Interno UDS</th>
+          <th scope="col">Responsable</th>
+          <th scope="col">Localidad, Municipio, Vereda</th>
+          <th scope="col">Direccion</th>
+          <th scope="col">Barrio</th>
+          <th scope="col">Telefono</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let uni of unidad">
+          <th scope="row">{{uni.idUDS}}</th>
+          <td>
+              <div *ngIf = "uni.Estado == 1">
+                  Habilitado
+              </div>
+              <div *ngIf = "uni.Estado == 0">
+                  Deshabilitado
+              </div>
+          </td> 
+          <td>{{uni.NombreUDS}}</td>
+          <td>{{uni.CodigoExternoUDS}}</td>
+          <td>{{uni.CodigoInternoUDS}}</td>
+          <td>{{uni.ReponsableUDS}}</td>
+          <td>{{uni.Comuna}}</td>
+          <td>{{uni.Direccion}}</td>
+          <td>{{uni.Barrio}}</td>
+          <td>{{uni.Telefono}}</td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-primary" (click)="Generareporte()">Generar Reporte</button>

@@ -21,11 +21,42 @@
           {{nav.name}}
         </a>
         <h3 matSubheader>Beneficiarios</h3>
-        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of fillerNav">
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of beneficiarios">
+          <mat-icon class="icon">{{nav.icon}}</mat-icon>
+          {{nav.name}}
+        </a>
+      
+        <h3 matSubheader>Rol</h3>
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of rol">
           <mat-icon class="icon">{{nav.icon}}</mat-icon>
           {{nav.name}}
         </a>
 
+        <h3 matSubheader>Usuarios</h3>
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of Usuarios">
+          <mat-icon class="icon">{{nav.icon}}</mat-icon>
+          {{nav.name}}
+        </a>
+
+        <h3 matSubheader>Datos Maestros </h3>
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of listad">
+          <mat-icon class="icon">{{nav.icon}}</mat-icon>
+          {{nav.name}}
+        </a>
+
+        <h3 matSubheader>Centro de distribucion</h3>
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of centrod">
+          <mat-icon class="icon">{{nav.icon}}</mat-icon>
+          {{nav.name}}
+        </a>
+
+        <h3 matSubheader>Almacen</h3>
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of almacen">
+          <mat-icon class="icon">{{nav.icon}}</mat-icon>
+          {{nav.name}}
+        </a>
+
+        
       </mat-nav-list>
     </mat-sidenav>
 

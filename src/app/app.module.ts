@@ -135,6 +135,8 @@ import { ModificardatosnutricionalesComponent } from './page/modificardatosnutri
 import { ModificardatosnutricionalesmComponent } from './page/modificardatosnutricionalesm/modificardatosnutricionalesm.component';
 import { ReportecentrozonalComponent } from './page/reportecentrozonal/reportecentrozonal.component';
 import { ReporteentregaComponent } from './page/reporteentrega/reporteentrega.component';
+import { ReporteudsComponent } from './page/reporteuds/reporteuds.component';
+import { ReporterolComponent } from './page/reporterol/reporterol.component';
 
 
 
@@ -381,6 +383,12 @@ import { ReporteentregaComponent } from './page/reporteentrega/reporteentrega.co
     
 
     ReporteentregaComponent,
+    
+
+    ReporteudsComponent,
+    
+
+    ReporterolComponent,
     
 
   
