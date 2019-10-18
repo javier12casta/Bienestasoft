@@ -1,49 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Centrodistribucion } from '../../interfaces/centrodistribucion';
 import { ServicioService } from '../../servicio.service';
+import * as jspdf from 'jspdf'; 
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-reportecentrodistribucion',
   templateUrl: './reportecentrodistribucion.component.html',
-  styleUrls: ['./reportecentrodistribucion.component.css'],
-  template: `
-
-  <nav class="navbar navbar-success bg-success">
-  <button class="btn btn-dark" routerLink="/menu">Volver</button>
-</nav>
-
-<table class="table">
-    <thead class="thead-green">
-      <tr>
-        <th scope="col">idCentroDistribucion</th>
-        <th scope="col">NumeroExterno</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Responsable </th>
-        <th scope="col">Direccion </th>
-        <th scope="col">Barrio </th>
-        <th scope="col"> Telefono </th>
-        <th scope="col">Estado </th>
-       
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let usu of cen">
-        <th scope="row">{{usu.idCentroDistribucion}}</th>
-        <td>{{usu.NumeroExterno}}</td>
-        <td>{{usu.Nombre}}</td>
-        <td>{{usu.Responsable}}</td>
-        <td>{{usu.Direccion}}</td>
-        <td>{{usu.Barrio}}</td>
-        <td>{{usu.Telefono}}</td>
-        <td>{{usu.Estado}}</td>    
-      </tr>
-    </tbody>
-  </table>
- 
-  <button class="btn btn-primary" >Generar PDF</button>
-
-  `
-
+  styleUrls: ['./reportecentrodistribucion.component.css']
 })
 export class ReportecentrodistribucionComponent implements OnInit {
 
@@ -61,5 +25,26 @@ export class ReportecentrodistribucionComponent implements OnInit {
       );
 
   }
+
+  Generareporte(){
+
+    var data = document.getElementById('contentToConvert');
+    html2canvas(data).then(canvas => {
+    // Few necessary setting options
+    var imgWidth = 208;
+    var pageHeight = 295;
+    var imgHeight = canvas.height * imgWidth / canvas.width;
+    var heightLeft = imgHeight;
+    
+    const contentDataURL = canvas.toDataURL('image/png')
+    let pdf = new jspdf('p', 'mm', 'a4'); // A4 size page of PDF
+    var position = 0;
+    pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
+    pdf.save('reportecentrodistribucion.pdf'); // Generated PDF
+    });
+       
+    
+    }
+
 
 }

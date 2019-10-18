@@ -1,29 +1,36 @@
 import { Component, OnInit } from '@angular/core';
-import { Almacen} from '../../interfaces/almacen';
+import { Centrozonal } from '../../interfaces/centrozonal';
 import { ServicioService } from '../../servicio.service';
+import { Regional } from '../../interfaces/regional';
 import * as jspdf from 'jspdf'; 
 import html2canvas from 'html2canvas';
 
 @Component({
-  selector: 'app-reportealmacen',
-  templateUrl: './reportealmacen.component.html',
-  styleUrls: ['./reportealmacen.component.css']
-
+  selector: 'app-reportecentrozonal',
+  templateUrl: './reportecentrozonal.component.html',
+  styleUrls: ['./reportecentrozonal.component.css']
 })
-export class ReportealmacenComponent implements OnInit {
+export class ReportecentrozonalComponent implements OnInit {
 
-  alm: Almacen[] = [];
-
+  centros: Centrozonal[] = [];
+  regional: Regional = {
+    idRegional: 0,
+    Regional: '',
+    
+  };
+  
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {
 
-    this.Service.getalmacen()
-    .subscribe(async (data) => {
-      this.alm = data;
-      console.log(data);
-    }
-    );
+    this.Service.getCentro()
+      .subscribe(async (data) => {
+        this.centros = data;
+        console.log(data);
+        console.log('funciona');
+      }
+      );
+
 
   }
 
@@ -41,7 +48,7 @@ export class ReportealmacenComponent implements OnInit {
     let pdf = new jspdf('p', 'mm', 'a4'); // A4 size page of PDF
     var position = 0;
     pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
-    pdf.save('reportealmacen.pdf'); // Generated PDF
+    pdf.save('reportecentrozonal.pdf'); // Generated PDF
     });
        
     

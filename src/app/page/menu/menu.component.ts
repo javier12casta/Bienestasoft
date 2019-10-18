@@ -27,8 +27,16 @@ export class MenuComponent implements OnInit {
     {name:"Modificar beneficiarios ICBF ", route: "/ModificarBeneficiario", icon:"face" },
     {name:"Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon:"face" },
     {name:"Reporte beneficiarios ICBF", route: "/reportebeneficiario", icon:"face" },
+
     {name:"Reporte centrozonal", route: "/", icon:"public" },
     {name:"municipio", route: "/municipio", icon:"public" },
+
+    {name:"centrozonal", route: "/centrozonal", icon:"public" },
+    {name:"Reporte centrozonal", route: "/reportecentrozonal", icon:"public" },
+    {name:"municipio", route: "/municipio", icon:"public" },
+    {name:"puntoentrega", route: "/puntoentrega", icon:"public" },
+    {name:"Reporte Punto Entrega", route: "/reportepuntoentrega", icon:"face" },
+
     {name:"regional", route: "/regional", icon:"public" },
     {name:"reportes", route: "/reportes", icon:"receipt" },
     {name:"rol", route: "/rol", icon:"face" },

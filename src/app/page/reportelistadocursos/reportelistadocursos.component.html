@@ -3,7 +3,7 @@
     <button class="btn btn-dark" routerLink="/centrozonali"> Crear </button>
   </nav>
 
-  <table class="table">
+  <table class="table" id="contentToConvert">
     <thead class="thead-green">
       <tr>
         <th scope="col">idListadoCursos</th>
@@ -35,4 +35,4 @@
   
 </table>
 
-<button class="btn btn-primary">Generar Reporte</button>
+<button class="btn btn-primary" (click)="Generareporte()">Generar Reporte</button>

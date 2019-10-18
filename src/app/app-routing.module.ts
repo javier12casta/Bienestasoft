@@ -108,8 +108,11 @@ import { ReportelistadocursosComponent} from './page/reportelistadocursos/report
 import { ReportepreciosbienestarinaComponent} from './page/reportepreciosbienestarina/reportepreciosbienestarina.component';
 import { ReportereferenciabienestarinaComponent} from './page/reportereferenciabienestarina/reportereferenciabienestarina.component';
 import { ReporteserviciosmodalidadesComponent} from './page/reporteserviciosmodalidades/reporteserviciosmodalidades.component';
-
-
+import { ReportedatosvariosComponent} from './page/reportedatosvarios/reportedatosvarios.component';
+import { ModificardatosnutricionalesComponent} from './page/modificardatosnutricionales/modificardatosnutricionales.component';
+import { ModificardatosnutricionalesmComponent} from './page/modificardatosnutricionalesm/modificardatosnutricionalesm.component';
+import { ReportecentrozonalComponent} from './page/reportecentrozonal/reportecentrozonal.component';
+import { ReporteentregaComponent} from './page/reporteentrega/reporteentrega.component';
 
 const routes: Routes = [
   {path:'', component: LoginComponent},
@@ -231,7 +234,14 @@ const routes: Routes = [
   {path:'reportepreciosbienestarina', component: ReportepreciosbienestarinaComponent},
   {path:'reportereferenciabienestarina', component: ReportereferenciabienestarinaComponent},
   {path:'reporteserviciosymodalidades', component: ReporteserviciosmodalidadesComponent},
+  {path:'reportedatosvarios', component: ReportedatosvariosComponent},
 
+  {path:'modificardatosnutricionales', component: ModificardatosnutricionalesComponent},
+  {path:'modificardatosnutricionalesm/:id', component: ModificardatosnutricionalesmComponent},
+
+  {path:'reportecentrozonal', component: ReportecentrozonalComponent},
+
+  {path:'reportepuntoentrega', component: ReporteentregaComponent},
 
 ];
 

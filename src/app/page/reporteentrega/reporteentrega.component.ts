@@ -1,29 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { Almacen} from '../../interfaces/almacen';
 import { ServicioService } from '../../servicio.service';
+import { Puntoentrega } from '../../interfaces/puntoentrega';
 import * as jspdf from 'jspdf'; 
 import html2canvas from 'html2canvas';
 
 @Component({
-  selector: 'app-reportealmacen',
-  templateUrl: './reportealmacen.component.html',
-  styleUrls: ['./reportealmacen.component.css']
-
+  selector: 'app-reporteentrega',
+  templateUrl: './reporteentrega.component.html',
+  styleUrls: ['./reporteentrega.component.css']
 })
-export class ReportealmacenComponent implements OnInit {
-
-  alm: Almacen[] = [];
-
-  constructor(private Service: ServicioService) { }
+export class ReporteentregaComponent implements OnInit {
+  punto: Puntoentrega [] = [];
+  constructor(private service: ServicioService) { }
 
   ngOnInit() {
 
-    this.Service.getalmacen()
-    .subscribe(async (data) => {
-      this.alm = data;
-      console.log(data);
-    }
-    );
+    this.service.getPunto()
+    .subscribe(res => {
+      this.punto = res;
+    }, err => {
+      console.log(err);
+    });
 
   }
 
@@ -41,11 +38,10 @@ export class ReportealmacenComponent implements OnInit {
     let pdf = new jspdf('p', 'mm', 'a4'); // A4 size page of PDF
     var position = 0;
     pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
-    pdf.save('reportealmacen.pdf'); // Generated PDF
+    pdf.save('reportepuntoentrega.pdf'); // Generated PDF
     });
        
     
     }
-
 
 }

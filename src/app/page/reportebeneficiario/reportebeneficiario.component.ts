@@ -1,82 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Beneficiario } from '../../interfaces/beneficiario';
 import { ServicioService } from '../../servicio.service';
-
+import * as jspdf from 'jspdf'; 
+import html2canvas from 'html2canvas';
 import { Regional } from '../../interfaces/regional';
+import { UserOptions } from 'jspdf';
+
+
 
 @Component({
   selector: 'app-reportebeneficiario',
   templateUrl: './reportebeneficiario.component.html',
-  styleUrls: ['./reportebeneficiario.component.css'],
-  template: `
+  styleUrls: ['./reportebeneficiario.component.css']
   
-  <nav class="navbar navbar-success bg-success">
-  <td>
-  <button class="btn btn-dark" routerLink="/menu">Volver</button>
-         
-        </td>
-</nav>
-   
-  <table class="table">
-      <thead class="thead-green">
-        <tr>
-          <th scope="col">idBeneficiarios</th>
-          <th scope="col">NumeroDocumento</th>
-          <th scope="col">FechaIngreso</th>
-          <th scope="col">FechaNacimiento</th>
-          <th scope="col">PrimerNombre</th>
-          <th scope="col">PrimerApellido</th>
-          <th scope="col">SegundoNombre</th>
-          <th scope="col">SegundoApellido</th>
-          <th scope="col">Direccion</th>
-          <th scope="col">Pais</th>
-          <th scope="col">Departamento</th>
-          <th scope="col">Municipio</th>
-          <th scope="col">TelefonoFijo</th>
-          <th scope="col">TelefonoFijo2</th>
-          <th scope="col">TelefonoMovil</th>
-          <th scope="col">TelefonoMovil2</th>
-          <th scope="col">Email</th>
-          <th scope="col">Estado</th>
-          <th scope="col">ServicioOmodalidad</th>
-          <th scope="col">idGenero</th>
-          <th scope="col">idTipoDocumento</th>
-         
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let cen of benefi">
-          <th scope="row">{{cen.idBeneficiarios}}</th>
-          <td>{{cen.NumeroDocumento}}</td>
-          <td>{{cen.FechaIngreso}}</td>
-          <td>{{cen.FechaNacimiento}}</td>
-          <td>{{cen.PrimerNombre}}</td>
-          <td>{{cen.PrimerApellido}}</td>
-          <td>{{cen.SegundoNombre}}</td>
-          <td>{{cen.SegundoApellido}}</td>
-          <td>{{cen.Direccion}}</td>
-          <td>{{cen.Pais}}</td>
-          <td>{{cen.Departamento}}</td>
-          <td>{{cen.Municipio}}</td>
-          <td>{{cen.TelefonoFijo}}</td>
-          <td>{{cen.TelefonoFijo2}}</td>
-          <td>{{cen.TelefonoMovil}}</td>
-          <td>{{cen.TelefonoMovil2}}</td>
-          <td>{{cen.Email}}</td>
-          <td>{{cen.Estado}}</td>
-          <td>{{cen.ServicioOmodalidad}}</td>
-          <td>{{cen.idGenero}}</td>
-          <td>{{cen.idTipoDocumento}}</td>
-  
-        
-        </tr>
-      </tbody>
-    </table>
-  
-    <button class="btn btn-primary">Generar pdf</button>
-
-  `
-
 
 })
 export class ReportebeneficiarioComponent implements OnInit {
@@ -98,4 +34,23 @@ export class ReportebeneficiarioComponent implements OnInit {
 
   }
 
+  Generareporte(){
+
+var data = document.getElementById('contentToConvert');
+html2canvas(data).then(canvas => {
+// Few necessary setting options
+var imgWidth = 208;
+var pageHeight = 295;
+var imgHeight = canvas.height * imgWidth / canvas.width;
+var heightLeft = imgHeight;
+
+const contentDataURL = canvas.toDataURL('image/png')
+let pdf = new jspdf('p', 'mm', 'a4'); // A4 size page of PDF
+var position = 0;
+pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
+pdf.save('reportebeneficuarios.pdf'); // Generated PDF
+});
+   
+
+}
 }
