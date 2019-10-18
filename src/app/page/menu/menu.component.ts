@@ -11,18 +11,24 @@ export class MenuComponent implements OnInit {
   mobileQuery: MediaQueryList;
 
  // fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
-  fillerNav = [
+  estructura =     [
+    {name:"centrozonal", route: "/centrozonal", icon:"public" },
+    {name:"puntoentrega", route: "/puntoentrega", icon:"public" },
+    {name:"uds", route: "/uds", icon:"public" },
+  ];
+  entrega = [
     {name:"Entrega", route:"/entrega", icon: "list_alt"},
     {name:"Inventario", route: "/inventario", icon:"store" },
+  ];
+  fillerNav = [
+
     {name:"acudientes", route: "/acudientes", icon:"face" },
     {name:"Crear beneficiarios ICBF", route: "/beneficiarios", icon:"face" },
     {name:"Modificar beneficiarios ICBF ", route: "/ModificarBeneficiario", icon:"face" },
     {name:"Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon:"face" },
     {name:"Reporte beneficiarios ICBF", route: "/reportebeneficiario", icon:"face" },
-    {name:"centrozonal", route: "/centrozonal", icon:"public" },
     {name:"Reporte centrozonal", route: "/", icon:"public" },
     {name:"municipio", route: "/municipio", icon:"public" },
-    {name:"puntoentrega", route: "/puntoentrega", icon:"public" },
     {name:"regional", route: "/regional", icon:"public" },
     {name:"reportes", route: "/reportes", icon:"receipt" },
     {name:"rol", route: "/rol", icon:"face" },

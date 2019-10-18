@@ -54,10 +54,11 @@ import { PermisosComponent } from './page/permisos/permisos.component';
 import {
   MatSidenavModule,
   MatToolbarModule,
-  MatMenuModule
+  MatMenuModule,
 } from '@angular/material'; 
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
+import {MatTreeModule} from '@angular/material/tree';
 
 import { Select2Module } from 'ng2-select2';
 import { RoliComponent } from './page/roli/roli.component';
@@ -380,6 +381,7 @@ import { ReportealmacenComponent } from './page/reportealmacen/reportealmacen.co
     FormsModule,
     MatInputModule,
     MatButtonModule,
+    MatTreeModule,
     Select2Module,
   ],
   providers: [], 
