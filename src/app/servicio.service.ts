@@ -27,6 +27,7 @@ import { Centrodistribucion } from './interfaces/centrodistribucion';
 import { Almacen } from './interfaces/almacen';
 import { InAlmacen } from './interfaces/inhabilitaralmacen';
 import { InCentrodistribucion } from './interfaces/inhabilitarcentrodistribucion';
+import { Entrega } from './interfaces/entrega';
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +38,16 @@ export class ServicioService {
   constructor(public http: HttpClient) {
     console.log("hello service");
    }
+
+   ObtenerEntrega() {
+    const path = `${this.api}/entrega`;
+    return this.http.get<Entrega []>(path);
+  }
+
+  postEntrega(entrega: Entrega) {
+    const path = `${this.api}/entrega`;
+    return this.http.post<Entrega>(path, entrega);
+  }
 
    //------rol Persona--------
 // metodo get de roles

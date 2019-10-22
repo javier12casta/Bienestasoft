@@ -137,6 +137,7 @@ import { ReportecentrozonalComponent } from './page/reportecentrozonal/reportece
 import { ReporteentregaComponent } from './page/reporteentrega/reporteentrega.component';
 import { ReporteudsComponent } from './page/reporteuds/reporteuds.component';
 import { ReporterolComponent } from './page/reporterol/reporterol.component';
+import { EntregacComponent } from './page/entregac/entregac.component';
 
 
 
@@ -389,6 +390,9 @@ import { ReporterolComponent } from './page/reporterol/reporterol.component';
     
 
     ReporterolComponent,
+    
+
+    EntregacComponent,
     
 
   

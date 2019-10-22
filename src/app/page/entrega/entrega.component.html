@@ -1,1 +1,38 @@
-<app-menu></app-menu>
+
+    <nav class="navbar navbar-success bg-success">
+        <button class="btn btn-dark" routerLink="/menu">Volver</button>
+        <button class="btn btn-dark" routerLink="/entregac"> Crear </button>
+      </nav>
+      
+      <table class="table">
+        <thead class="thead-green">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">CantidadEntregada</th>
+            <th scope="col">FechaEntrega </th>
+            <th scope="col">EstadoEntrega </th>
+            <th scope="col">idUDS</th>
+            <th scope="col">idBeneficiarios</th>
+            <th scope="col">idPersonalICBF</th>
+            <th scope="col">idInventario</th>
+            <th scope="col">idAcudientes</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cen of entrega">
+            <th scope="row">{{cen.idEntrega}}</th>
+            <td>{{cen.CantidadEntregada}}</td>
+            <td>{{cen.FechaEntrega }}</td>
+            <td>{{cen.EstadoEntrega }}</td>
+            <td>{{cen.idUDS}}</td>
+            <td>{{cen.idBeneficiarios}}</td>
+            <td>{{cen.idPersonalICBF}}</td>
+            <td>{{cen.idInventario}}</td>
+            <td>{{cen.idAcudientes}}</td>
+            
+          </tr>
+        </tbody>
+      </table>
+
+

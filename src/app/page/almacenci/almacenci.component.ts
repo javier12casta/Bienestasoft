@@ -75,7 +75,11 @@ import Swal from 'sweetalert2';
  
 		  
 			   <h2></h2>
-			   
+         
+         <span class="btn btn-success">Ceentro de distribucion</span>
+		<h2></h2>
+		<input type="number" class="form-control" [(ngModel)]="x.idCentroDistribucion" name="cap"
+		placeholder="centro de distribucion" class="form-control" id="inputcap">
 				  
 			   <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
 				  
@@ -105,7 +109,7 @@ export class AlmacenciComponent implements OnInit {
     Capacidad  : 0,
     UnidadMedida  : '',
     Estado  : 0,
-
+    idCentroDistribucion : 0,
   };
 
   onClickMe() {

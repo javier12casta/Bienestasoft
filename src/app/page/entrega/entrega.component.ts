@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Entrega } from '../../interfaces/entrega';
+import { ServicioService } from '../../servicio.service';
+
 
 @Component({
   selector: 'app-entrega',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EntregaComponent implements OnInit {
 
-  constructor() { }
+  entrega: Entrega[] = [];
+ 
+
+  constructor(private Service: ServicioService) { }
 
   ngOnInit() {
+
+    this.Service.ObtenerEntrega()
+    .subscribe(async (data) => {
+      this.entrega = data;
+      console.log(data);
+      console.log('funciona');
+    }
+    );
+
   }
 
 }
