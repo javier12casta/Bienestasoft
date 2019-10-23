@@ -8,15 +8,7 @@
         <form>
           <div class="form-group padding">
             <!-- select centro zonal-->
-            <select name="idCentrosZonales" placeholder="Centro Zonal" class="form-control"
-              [(ngModel)]="unidad.idCentrosZonales">
-              <option *ngFor="let cen of centros" [value]="cen.idCentrosZonales"> {{cen.NombreCentroZonal}}</option>
-            </select>
-            <!-- select punto de entrega-->
-            <select name="idCentrosZonales" placeholder="Centro Zonal" class="form-control"
-              [(ngModel)]="unidad.idPuntoEntrega">
-              <option *ngFor="let pun of puntos" [value]="pun.idPuntoEntrega"> {{pun.NombrePE}}</option>
-            </select>
+            
   
             <select required name="Estado" [(ngModel)]="unidad.Estado" style="width: 100%;"
               class="form-control">
@@ -34,10 +26,13 @@
   
             <input type="text" class="form-control" name="Barrio" placeholder="Barrio"  [(ngModel)]="unidad.Barrio" required>
             <input type="tel" class="form-control" name="Telefono" placeholder="Telefono" [(ngModel)]="unidad.Telefono" required>
+
+            <input type="number" class="form-control" name="idp" placeholder="punto de entrega"  [(ngModel)]="unidad.idPuntoEntrega" required>
+            <input type="number" class="form-control" name="idc" placeholder="centro zonal" [(ngModel)]="unidad.idCentrosZonales" required>
   
           </div>
           <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"  -->
-          <button class="btn btn-success" (click)="modificar ? updateDatos() : insertDatos()" type="submit" routerLink="/uds">
+          <button class="btn btn-success" (click)="updateDatos()" type="submit">
             Guardar
           </button> 
         </form>

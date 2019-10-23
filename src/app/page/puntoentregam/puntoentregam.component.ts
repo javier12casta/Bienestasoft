@@ -4,6 +4,7 @@ import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 import { Centrozonal } from '../..//interfaces/centrozonal';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-puntoentregam',
@@ -30,7 +31,7 @@ export class PuntoentregamComponent implements OnInit {
 
   constructor(
     private Service: ServicioService,
-    private activeRoute: ActivatedRoute,
+    private activeRoute: ActivatedRoute,private router:Router
   ) { }
 
   modificar = false;
@@ -83,6 +84,13 @@ export class PuntoentregamComponent implements OnInit {
       text: 'Punto de entrega modificado',
       type: 'success',
       confirmButtonText: 'Entendido'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/puntoentrega']);
+    
+      }
+
     });
   }
   //Mensaje de error
@@ -93,6 +101,13 @@ export class PuntoentregamComponent implements OnInit {
       text: 'Error al modificar el punto de entrega',
       type: 'error',
       confirmButtonText: 'Entendido'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/puntoentrega']);
+    
+      }
+
     });
   }
 

@@ -1,7 +1,7 @@
 
 
 <nav class="navbar navbar-success bg-success">
-    <button class="btn btn-dark" routerLink="/modificarusuarios1">Volver</button>
+    <button class="btn btn-dark" routerLink="/modificaralmaceni">Volver</button>
   </nav>
   
   <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
@@ -11,7 +11,6 @@
           <div class="form-group">
   
         
-
             <input type="number" class="form-control" [(ngModel)]="almac.NumeroExterno" name="numeroext"
               placeholder="numero Externo" class="form-control" id="inputnext">
 
@@ -33,7 +32,8 @@
                 <Option [value]="0">Inhabilitado</Option>
               </select>
              
-         
+              <input type="text" class="form-control" [(ngModel)]="almac.idCentroDistribucion " name="cend"
+              placeholder="centro de Distribucion" class="form-control" id="usu">
 
           <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
           <button class="btn btn-success btn-block" type="submit" (click)="updateDatos()"

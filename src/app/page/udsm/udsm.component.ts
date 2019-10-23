@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Centrozonal } from 'src/app/interfaces/centrozonal';
 import { Puntoentrega } from 'src/app/interfaces/puntoentrega';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-udsm',
@@ -33,7 +34,9 @@ export class UdsmComponent implements OnInit {
 
   constructor(
     private Service: ServicioService,
-    private activeRoute: ActivatedRoute
+    private activeRoute: ActivatedRoute,
+    private router:Router
+
   ) { }
 
   modificar = false;
@@ -89,6 +92,13 @@ export class UdsmComponent implements OnInit {
       text: 'UDS modificado',
       type: 'success',
       confirmButtonText: 'Entendido'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/uds']);
+    
+      }
+
     });
   }
   //Mensaje de error
@@ -99,6 +109,13 @@ export class UdsmComponent implements OnInit {
       text: 'Error al modificar la UDS',
       type: 'error',
       confirmButtonText: 'Entendido'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/uds']);
+    
+      }
+
     });
   }
 

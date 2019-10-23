@@ -115,8 +115,12 @@ import { ReportecentrozonalComponent} from './page/reportecentrozonal/reportecen
 import { ReporteentregaComponent} from './page/reporteentrega/reporteentrega.component';
 import { ReporteudsComponent} from './page/reporteuds/reporteuds.component';
 import { EntregacComponent} from './page/entregac/entregac.component';
-
+import {EntregamComponent } from './page/entregam/entregam.component';
+import { EntregaiComponent} from './page/entregai/entregai.component';
 import { ReporterolComponent} from './page/reporterol/reporterol.component';
+import { ReporteentregabComponent} from './page/reporteentregab/reporteentregab.component';
+
+import { InhabilitarudsComponent} from './page/inhabilitaruds/inhabilitaruds.component';
 
 const routes: Routes = [
   {path:'', component: LoginComponent},
@@ -249,6 +253,13 @@ const routes: Routes = [
   {path:'reporteuds', component:  ReporteudsComponent},
   {path:'reporterol', component:  ReporterolComponent},
   {path:'entregac', component:  EntregacComponent},
+  {path:'entregam/:id', component:  EntregamComponent},
+  {path:'entregai/:id', component:  EntregaiComponent},
+
+  {path:'reportentregab', component:  ReporteentregabComponent},
+  {path:'inhabilitaruds/:id', component:  InhabilitarudsComponent},
+  
+
 
 ];
 

@@ -10,14 +10,10 @@ import Swal from 'sweetalert2';
   template: `
 
   <html>
-		<title>Menu Desplegable</title>
 		<head>
-
 		</head>
 		<body>
-               
-
-		
+ 
 		<div class="container"  class="padre">
 		 <div class="card card-container" >
 		

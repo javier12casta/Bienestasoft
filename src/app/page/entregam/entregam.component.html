@@ -1,0 +1,42 @@
+
+<nav class="navbar navbar-success bg-success">
+    <button class="btn btn-dark" routerLink="/entrega">Volver</button>
+</nav>
+  
+<div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+    <div class="card" padding>
+      <div class="card-body" padding>
+        <form>
+          <div class="form-group">
+  
+            <span class="btn btn-success">Cantidad Entregada</span>
+		    <h2></h2>
+		    <input type="number" class="form-control" [(ngModel)]="entrea.CantidadEntregada" name="cane"
+		    placeholder="Cantidad Entregada" class="form-control" id="inputen">
+    
+            <h2></h2>
+    
+             <span class="btn btn-success">Fecha Entrega </span>
+		     <h2></h2>
+		    <input type="date" class="form-control" [(ngModel)]="entrea.FechaEntrega" name="fechai" placeholder="Fecha" min="2018-01-01" max="2050-12-31" class="form-control">
+             <h2></h2>
+
+		    <span class="btn btn-success" >Estado del dato Maestro</span>
+		     <h2></h2>
+		
+		    <select name="estadomaestro" [(ngModel)]="entrea.EstadoEntrega" class="select-css">
+            <option [value]="item" *ngFor="let item of listamaestro">{{item}} </option>
+             </select>
+
+		  
+               <h2></h2>
+               
+          <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
+          <button class="btn btn-success btn-block" type="submit" (click)="updateDatos()" >
+            Guardar
+          </button>
+        </div>
+        </form>
+    </div>
+  </div>
+</div>

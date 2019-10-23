@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Almacen } from 'src/app/interfaces/almacen';
 import { ServicioService } from 'src/app/servicio.service';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -109,7 +111,7 @@ export class AlmacenciComponent implements OnInit {
     Capacidad  : 0,
     UnidadMedida  : '',
     Estado  : 0,
-    idCentroDistribucion : 0,
+    idCentroDistribucion : 1,
   };
 
   onClickMe() {
@@ -126,7 +128,7 @@ export class AlmacenciComponent implements OnInit {
    }
 
 
-  constructor(private Service: ServicioService) { }
+  constructor(private Service: ServicioService,private router:Router) { }
 
   ngOnInit() {
   }
@@ -137,6 +139,12 @@ export class AlmacenciComponent implements OnInit {
       text: 'Almacen Creado',
       type: 'success',
       confirmButtonText: 'Aceptar'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/almacenc']);
+    
+      }
     });
 
 }

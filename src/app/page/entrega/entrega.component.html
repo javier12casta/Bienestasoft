@@ -30,7 +30,12 @@
             <td>{{cen.idPersonalICBF}}</td>
             <td>{{cen.idInventario}}</td>
             <td>{{cen.idAcudientes}}</td>
-            
+            <td>
+              <button class="btn btn-primary" [routerLink]="['/entregam', cen.idEntrega]">Modificar</button>
+            </td>
+            <td>
+              <button class="btn btn-primary" [routerLink]="['/entregai', cen.idEntrega]">Inhabilitar</button>
+            </td>
           </tr>
         </tbody>
       </table>

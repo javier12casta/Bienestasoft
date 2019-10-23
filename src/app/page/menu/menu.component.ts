@@ -22,6 +22,7 @@ export class MenuComponent implements OnInit {
   ];
   entrega = [
     {name:"Entrega", route:"/entrega", icon: "list_alt"},
+    {name:"Reporte Entrega", route:"/reportentregab", icon: "list_alt"},
     {name:"Inventario", route: "/inventario", icon:"store" },
   ];
   beneficiarios = [

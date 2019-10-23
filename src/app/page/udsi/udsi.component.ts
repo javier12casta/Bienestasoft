@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Centrozonal } from 'src/app/interfaces/centrozonal';
 import { Puntoentrega } from 'src/app/interfaces/puntoentrega';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -25,33 +26,19 @@ export class UdsiComponent implements OnInit {
     Estado: 1,
     Telefono: '',
     CodigoExternoUDS: '',
-    idPuntoEntrega:0,
-    idCentrosZonales: 0,
-    Barrio: '',
-    Comuna: '',
+    idPuntoEntrega : 0,
+    idCentrosZonales : 0,
   };
 
   constructor(
     private Service: ServicioService,
-    private activeRoute: ActivatedRoute
+    private activeRoute: ActivatedRoute,
+    private router:Router
   ) { }
 
   modificar = false;
- async ngOnInit() {
-//Traer Centros zonales
-   await this.Service.getCentro()
-    .subscribe(res=> {
-      this.centros = res;
-    }, err => {
-      console.log(err);
-    });
-//Traer puntos de entrega
-  await this.Service.getPunto()
-    .subscribe(res=>{
-      this.puntos =res;
-    }, err=>{
-      console.log(err);
-    });
+ ngOnInit() {
+
   }
 
     //insertar Datos ------------------------------------------------
@@ -76,6 +63,12 @@ export class UdsiComponent implements OnInit {
       text: 'UDS creada',
       type: 'success',
       confirmButtonText: 'Entendido'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/uds']);
+    
+      }
     });
   }
   //Mensaje de error
@@ -86,6 +79,12 @@ export class UdsiComponent implements OnInit {
       text: 'Error al crear la UDS',
       type: 'error',
       confirmButtonText: 'Entendido'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/uds']);
+    
+      }
     });
   }
 

@@ -29,7 +29,9 @@ import { InAlmacen } from './interfaces/inhabilitaralmacen';
 import { InCentrodistribucion } from './interfaces/inhabilitarcentrodistribucion';
 import { Entrega } from './interfaces/entrega';
 import { Permisos } from './interfaces/permisos';
+import {  InEntrega } from './interfaces/inhabilitarentrega';
 
+import {  Inuds } from './interfaces/inhabilitaruds';
 @Injectable({
   providedIn: 'root'
 })
@@ -45,10 +47,25 @@ export class ServicioService {
     return this.http.get<Entrega []>(path);
   }
 
+  
+  getentregaid(id: string) {
+    return this.http.get(`${this.api}/entrega/${id}`);
+  }
+
   postEntrega(entrega: Entrega) {
     const path = `${this.api}/entrega`;
     return this.http.post<Entrega>(path, entrega);
   }
+
+  putentrega(id: string | number, ent: Entrega) {
+    return this.http.put<Entrega>(`${this.api}/entrega/${id}`,ent);
+  }
+
+  putentregaInhabilitar(id: string | number, Nombre: InEntrega) {
+    return this.http.put<InEntrega>(`${this.api}/entrega/${id}`, Nombre);
+  }
+ 
+
 
    //------rol Persona--------
 // metodo get de roles
@@ -400,6 +417,11 @@ export class ServicioService {
   putUds(id: string | number, uds: Uds) {
     return this.http.put<Uds>(`${this.api}/uds/${id}`, uds);
   }
+
+  putUdsInhabilitar(id: string | number, Nombre: Inuds) {
+    return this.http.put<Inuds>(`${this.api}/uds/${id}`, Nombre);
+  }
+
   //-------------------------------------------
   getcentrodistribucionid(id: string) {
     return this.http.get(`${this.api}/centrosD/${id}`);

@@ -138,6 +138,10 @@ import { ReporteentregaComponent } from './page/reporteentrega/reporteentrega.co
 import { ReporteudsComponent } from './page/reporteuds/reporteuds.component';
 import { ReporterolComponent } from './page/reporterol/reporterol.component';
 import { EntregacComponent } from './page/entregac/entregac.component';
+import { EntregamComponent } from './page/entregam/entregam.component';
+import { EntregaiComponent } from './page/entregai/entregai.component';
+import { ReporteentregabComponent } from './page/reporteentregab/reporteentregab.component';
+import { InhabilitarudsComponent } from './page/inhabilitaruds/inhabilitaruds.component';
 
 
 
@@ -393,6 +397,18 @@ import { EntregacComponent } from './page/entregac/entregac.component';
     
 
     EntregacComponent,
+    
+
+    EntregamComponent,
+    
+
+    EntregaiComponent,
+    
+
+    ReporteentregabComponent,
+    
+
+    InhabilitarudsComponent,
     
 
   

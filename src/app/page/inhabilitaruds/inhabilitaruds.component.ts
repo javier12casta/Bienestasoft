@@ -1,46 +1,42 @@
 import { Component, OnInit } from '@angular/core';
+import { Inuds } from 'src/app/interfaces/inhabilitaruds';
 import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
-import { InAlmacen } from '../../interfaces/inhabilitaralmacen';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-inhabilitaralmacendm',
-  templateUrl: './inhabilitaralmacendm.component.html',
-  styleUrls: ['./inhabilitaralmacendm.component.css']
+  selector: 'app-inhabilitaruds',
+  templateUrl: './inhabilitaruds.component.html',
+  styleUrls: ['./inhabilitaruds.component.css']
 })
-export class InhabilitaralmacendmComponent implements OnInit {
+export class InhabilitarudsComponent implements OnInit {
 
-  public Inalmac: InAlmacen [] = [];
-
+  public Inunidad: Inuds [] = [];
 
   constructor(private activeRoute: ActivatedRoute,
     private Service: ServicioService,private router:Router) { }
 
-    ina: InAlmacen = {
-
-      idAlmacenes: 1,
-      Estado  : 0,
-      
-   };
-
-
+    inud:Inuds = {
+      idUDS: 0,
+    Estado: 0,
+    };
 
   ngOnInit() {
 
     const params = this.activeRoute.snapshot.params;
     console.log(params);
     if (params.id) {
-      this.Service.getalmacenid(params.id)
+      this.Service.getUdsid(params.id)
         .subscribe(res => {
           console.log(res);
-          this.ina = Object(res);
+          this.inud = Object(res);
         }, err => {
           console.log(err);
         }
         );
-    }
+
+  }
 
 
   }
@@ -48,49 +44,47 @@ export class InhabilitaralmacendmComponent implements OnInit {
   showMenssage(){
     Swal.fire({
       title: 'Inhabilitado!',
-      text: 'almacen Inhabilitado',
+      text: 'entrega Inhabilitado',
       type: 'success',
-      confirmButtonText: 'Ok'
-    }).then((result) => {
-      if (result.value) {
-        
-        this.router.navigate(['/inhabilitaralmaceni']);
-    
-      }
+      confirmButtonText: 'Ok'}).then((result) => {
+        if (result.value) {
+          
+          this.router.navigate(['/uds']);
+      
+        }
     });
   }
-
+  
   showMenssage1(){
     Swal.fire({
       title: 'habilitado!',
-      text: 'almacen habilitado',
+      text: 'entrega habilitado',
       type: 'success',
-      confirmButtonText: 'Ok'
-    }).then((result) => {
-      if (result.value) {
-        
-        this.router.navigate(['/inhabilitaralmaceni']);
-    
-      }
+      confirmButtonText: 'Ok'}).then((result) => {
+        if (result.value) {
+          
+          this.router.navigate(['/uds']);
+      
+        }
     });
   }
 
   EnableDatos(){
 
-    this.Service.putalmacenInhabilitar(this.ina.idAlmacenes, this.ina)
+    this.Service.putUdsInhabilitar(this.inud.idUDS, this.inud)
       .subscribe(
         res => {
           console.log(res);
-
-          if(this.ina.Estado == 1){
-
+  
+          if(this.inud.Estado == 1){
+  
             this.showMenssage1();
-
+  
           }else{
-
+  
             this.showMenssage();
           }
-
+  
           
         }, err => {
           console.log(err);

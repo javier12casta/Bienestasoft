@@ -7,8 +7,8 @@ export interface Uds {
     Estado: number,
     Telefono: string,
     CodigoExternoUDS: string,
-    idPuntoEntrega:number,
-    idCentrosZonales: number,
-    Barrio: string,
-    Comuna: string,
+    idPuntoEntrega : number,
+    idCentrosZonales : number,
+    Barrio?: string,
+    Comuna?: string,
 }

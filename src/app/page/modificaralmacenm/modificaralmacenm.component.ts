@@ -3,6 +3,7 @@ import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 import { Almacen } from '../../interfaces/almacen';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modificaralmacenm',
@@ -15,7 +16,7 @@ export class ModificaralmacenmComponent implements OnInit {
 
 
   constructor(private activeRoute: ActivatedRoute,
-    private Service: ServicioService,) { }
+    private Service: ServicioService,private router:Router) { }
 
     almac: Almacen = {
 
@@ -26,7 +27,7 @@ export class ModificaralmacenmComponent implements OnInit {
       Capacidad  : 0,
       UnidadMedida  : '',
       Estado  : 0,
-    
+      idCentroDistribucion : 1,
 
       };
 
@@ -54,11 +55,17 @@ export class ModificaralmacenmComponent implements OnInit {
       text: 'Almacen Modificado',
       type: 'success',
       confirmButtonText: 'Ok'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/modificaralmaceni']);
+    
+      }
     });
   }
 
   updateDatos() {
-    this.Service.putalmacen(this.almac.idCentroDistribucion, this.almac)
+    this.Service.putalmacen(this.almac.idAlmacenes, this.almac)
       .subscribe(
         res => {
           console.log(res);
