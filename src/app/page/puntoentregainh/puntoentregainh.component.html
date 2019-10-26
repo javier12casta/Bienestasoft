@@ -1,1 +1,23 @@
-<p>puntoentregainh works!</p>
+<nav class="navbar navbar-success bg-success">
+    <button class="btn btn-dark" routerLink="/puntoentrega">Volver</button>
+</nav>
+
+<div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+    <div class="card" padding>
+        <div class="card-body" padding>
+            <form>
+                <div class="form-group">
+                    <label>Estado</label>
+                    <select name="Estado" style="width: 100%;" class="form-control" [(ngModel)]="puntos.Estado">
+                        <option value="1"> Habilitar</option>
+                        <Option value="0">Inhabilitar</Option>
+                    </select>
+                </div>
+                <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"  -->
+                <button class="btn btn-success btn-block" type="submit" (click)="inhabilitarDatos()">
+                    Guardar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
