@@ -75,8 +75,8 @@ export class ServicioService {
     return this.http.get<Rol[]>(path);
   }
   // metodo get de rol
-  getRol(rol: Rol) {
-    return this.http.get(`${this.api}/rol/${rol.idRolPersona}`);
+  getRolid(id: string | number) {
+    return this.http.get(`${this.api}/rol/${id}`);
   }
   //metodo post de rolPersona
   insertarRol(rol: Rol) {

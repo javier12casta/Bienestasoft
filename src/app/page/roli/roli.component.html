@@ -32,7 +32,7 @@
             <button class="btn btn-primary" [routerLink]="['/rol',rol.idRolPersona]" type="submit">Modificar</button>
           </td>
           <td>
-            <button class="btn btn-primary" routerLink="/permisos" type="submit">Asignar Transacciones</button>
+            <button class="btn btn-primary" [routerLink]="['/permisos',rol.idRolPersona]" type="submit">Asignar Transacciones</button>
           </td>
         </tr>
       </tbody>

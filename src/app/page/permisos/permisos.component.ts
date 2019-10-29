@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../../servicio.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { Permisos } from '../../interfaces/permisos';
 
@@ -113,22 +113,27 @@ export class PermisosComponent implements OnInit {
   constructor(
     private activeRoute: ActivatedRoute,
     private Service: ServicioService,
+    private router:Router,
   ) {
 
   }
 
   ngOnInit() {
-    this.Service.getPermisos().subscribe(res => {
+    
+    //traer permisos
+/*     this.Service.getPermisos().subscribe(res => {
       this.permiso = res;
       console.log('Permiso get', this.permiso);
     }), err => {
       console.log(err);
-    };
+    }; */
 
   }
   //insertar Datos ------------------------------------------------
 
   insertDatos(data, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11) {
+    const params = this.activeRoute.snapshot.params;
+    
     data = this.Checkbox.Crear+'' + this.Checkbox.Actualizar+'' + this.Checkbox.vizualizar+'' + this.Checkbox.Reportes+'' + this.Checkbox.Inhabilitar+'';
     data2 = this.Checkbox2.Crear+'' + this.Checkbox2.Actualizar+'' + this.Checkbox2.vizualizar+'' + this.Checkbox2.Reportes+'' + this.Checkbox2.Inhabilitar+'';
     data3 = this.Checkbox3.Crear+'' + this.Checkbox3.Actualizar+'' + this.Checkbox3.vizualizar+'' + this.Checkbox3.Reportes+'' + this.Checkbox3.Inhabilitar+'';
@@ -141,6 +146,7 @@ export class PermisosComponent implements OnInit {
     data10 = this.Checkbox10.Crear+'' + this.Checkbox10.Actualizar+'' + this.Checkbox10.vizualizar+'' + this.Checkbox10.Reportes+'' + this.Checkbox10.Inhabilitar+'';
     data11 = this.Checkbox11.Crear+'' + this.Checkbox11.Actualizar+'' + this.Checkbox11.vizualizar+'' + this.Checkbox11.Reportes+'' + this.Checkbox11.Inhabilitar+'';
 
+    this.permisos.idRol = params.id;
     this.permisos.perCentros = data;
     this.permisos.perEntrega = data;
     this.permisos.perUDS = data3;
@@ -794,6 +800,11 @@ export class PermisosComponent implements OnInit {
       text: 'Permisos Asignados',
       type: 'success',
       confirmButtonText: 'Entendido'
+    }).then((res) => {
+      if(res.value){
+        console.log('confirmed');
+        this.router.navigate(['/roli']);
+    }
     });
   }
 

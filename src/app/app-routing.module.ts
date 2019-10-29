@@ -197,6 +197,7 @@ const routes: Routes = [
   {path:'refrenciasbienestarina', component: ReferenciasbienestarinaComponent},
   {path:'datosvarios', component: DatosvariosComponent},
   {path:'permisos', component: PermisosComponent },
+  {path:'permisos/:id', component: PermisosComponent },
   {path:'modificarusuariom/:id', component: ModificarusuariomComponent },
   {path:'modificarlistamaestro', component: ModificarlistamaestrosComponent },
   {path:'modificarserviciom', component: ModificarserviciosmComponent },
