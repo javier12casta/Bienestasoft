@@ -10,27 +10,24 @@ import { Permisos } from '../../interfaces/permisos';
   styleUrls: ['./permisos.component.css']
 })
 export class PermisosComponent implements OnInit {
-
+  permiso: Permisos [] = [];
   public permisos: Permisos = {
     idPermiso: 0,
-    perInventario: 0,
-    perEntrega: 0,
-    perBeneficiarios: 0,
-    perAcudientes: 0,
-    perRol: 0,
-    perUsuarios: 0,
-    perBarrios: 0,
-    perComunas: 0,
-    perMunicipios: 0,
-    perCentros: 0,
-    perRegionales: 0,
-    perUDS: 0,
-    perReportes: 0,
-    PerMaestros: 0,
-    idRol: 0,
+    perInventario: '',
+    perEntrega: '',
+    perBeneficiarios: '',
+    perRol: '',
+    perUsuarios: '',
+    perCentros: '',
+    perUDS: '',
+    perPuntoen: '',
+    PerMaestros: '',
+    idRol: 8,
+    perAlmacenes: '',
+    perCentrosD: '',
   };
   // marked = false;
-  //perCentros =  this.theCheckbox + this.Crear + this.vizualizar + this.Actualizar + this.Reportes + this.Inhabilitar;
+  //perCentros =  this.Crear + this.vizualizar + this.Actualizar + this.Reportes + this.Inhabilitar;
   Checkbox = {
     Crear: 0,
     vizualizar: 0,
@@ -88,6 +85,30 @@ export class PermisosComponent implements OnInit {
     Reportes: 0,
     Inhabilitar: 0,
   };
+  Checkbox9 = {
+    Crear: 0,
+    vizualizar: 0,
+    Actualizar: 0,
+    Reportes: 0,
+    Inhabilitar: 0,
+  };
+
+  Checkbox10 = {
+    Crear: 0,
+    vizualizar: 0,
+    Actualizar: 0,
+    Reportes: 0,
+    Inhabilitar: 0,
+  };
+  Checkbox11 = {
+    Crear: 0,
+    vizualizar: 0,
+    Actualizar: 0,
+    Reportes: 0,
+    Inhabilitar: 0,
+  };
+
+
 
   constructor(
     private activeRoute: ActivatedRoute,
@@ -97,25 +118,51 @@ export class PermisosComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.Service.getPermisos().subscribe(res => {
+      this.permiso = res;
+      console.log('Permiso get', this.permiso);
+    }), err => {
+      console.log(err);
+    };
 
   }
   //insertar Datos ------------------------------------------------
 
-  insertDatos(data, data2, data3, data4, data5, data6, data7, data8) {
-    data = this.Checkbox;
+  insertDatos(data, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11) {
+    data = this.Checkbox.Crear+'' + this.Checkbox.Actualizar+'' + this.Checkbox.vizualizar+'' + this.Checkbox.Reportes+'' + this.Checkbox.Inhabilitar+'';
+    data2 = this.Checkbox2.Crear+'' + this.Checkbox2.Actualizar+'' + this.Checkbox2.vizualizar+'' + this.Checkbox2.Reportes+'' + this.Checkbox2.Inhabilitar+'';
+    data3 = this.Checkbox3.Crear+'' + this.Checkbox3.Actualizar+'' + this.Checkbox3.vizualizar+'' + this.Checkbox3.Reportes+'' + this.Checkbox3.Inhabilitar+'';
+    data4 = this.Checkbox4.Crear+'' + this.Checkbox4.Actualizar+'' + this.Checkbox4.vizualizar+'' + this.Checkbox4.Reportes+'' + this.Checkbox4.Inhabilitar+'';
+    data5 = this.Checkbox5.Crear+'' + this.Checkbox5.Actualizar+'' + this.Checkbox5.vizualizar+'' + this.Checkbox5.Reportes+'' + this.Checkbox5.Inhabilitar+'';
+    data6 = this.Checkbox6.Crear+'' + this.Checkbox6.Actualizar+'' + this.Checkbox6.vizualizar+'' + this.Checkbox6.Reportes+'' + this.Checkbox6.Inhabilitar+'';
+    data7 = this.Checkbox7.Crear+'' + this.Checkbox7.Actualizar+'' + this.Checkbox7.vizualizar+'' + this.Checkbox7.Reportes+'' + this.Checkbox7.Inhabilitar+'';
+    data8 = this.Checkbox8.Crear+'' + this.Checkbox8.Actualizar+'' + this.Checkbox8.vizualizar+'' + this.Checkbox8.Reportes+'' + this.Checkbox8.Inhabilitar+'';
+    data9 = this.Checkbox9.Crear+'' + this.Checkbox9.Actualizar+'' + this.Checkbox9.vizualizar+'' + this.Checkbox9.Reportes+'' + this.Checkbox9.Inhabilitar+'';
+    data10 = this.Checkbox10.Crear+'' + this.Checkbox10.Actualizar+'' + this.Checkbox10.vizualizar+'' + this.Checkbox10.Reportes+'' + this.Checkbox10.Inhabilitar+'';
+    data11 = this.Checkbox11.Crear+'' + this.Checkbox11.Actualizar+'' + this.Checkbox11.vizualizar+'' + this.Checkbox11.Reportes+'' + this.Checkbox11.Inhabilitar+'';
+
     this.permisos.perCentros = data;
-    /*       this.Service.postPermisos(this.permisos).subscribe(res => {
-            console.log(this.permisos);
-            console.log(res);
-            this.showMenssage();
-          },
-            err => {
-              console.log(err);
-              this.showMenssage();
-            }); */
-            console.log('si');
-    console.log(this.permisos.perCentros);
+    this.permisos.perEntrega = data;
+    this.permisos.perUDS = data3;
+    this.permisos.perUsuarios = data4;
+    this.permisos.perBeneficiarios = data5;
+    this.permisos.perPuntoen = data6;
+    this.permisos.perCentrosD = data7;
+    this.permisos.perInventario = data8;
+    this.permisos.perRol = data9;
+    this.permisos.PerMaestros = data10;
+    this.permisos.perAlmacenes = data11;
+    console.log('Los permisos', this.permisos);
+    this.Service.postPermisos(this.permisos).subscribe(res => {
+      console.log(this.permisos);
+      console.log(res);
+      this.showMenssage();
+    },
+      err => {
+        console.log(err);
+        this.showMenssage();
+      }); 
+    console.log('si');
   }
 
   filter;
@@ -163,8 +210,19 @@ export class PermisosComponent implements OnInit {
   filter43;
   filter44;
   filter45;
+  filter46;
+  filter47;
+  filter48;
+  filter49;
+  filter50;
+  filter51;
+  filter52;
+  filter53;
+  filter54;
+  filter55;
 
 
+  //---------------centro zonal
   onFilterChange() {
 
     if (this.filter == true) {
@@ -269,7 +327,7 @@ export class PermisosComponent implements OnInit {
       this.Checkbox2.Inhabilitar = 0;
     }
   }
-  //-----
+  //-------------------------- Unidad de servicio
   onFilterChange11() {
 
     if (this.filter11 == true) {
@@ -320,7 +378,7 @@ export class PermisosComponent implements OnInit {
       this.Checkbox3.Inhabilitar = 0;
     }
   }
-  //-------
+  //---------------------------- Usuarios
   onFilterChange16() {
 
     if (this.filter16 == true) {
@@ -371,7 +429,7 @@ export class PermisosComponent implements OnInit {
       this.Checkbox4.Inhabilitar = 0;
     }
   }
-  //-------
+  //-------------------------- Beneficiarios
   onFilterChange21() {
 
     if (this.filter21 == true) {
@@ -422,7 +480,7 @@ export class PermisosComponent implements OnInit {
       this.Checkbox5.Inhabilitar = 0;
     }
   }
-  //-------
+  //--------------------------- Entrega
   onFilterChange26() {
 
     if (this.filter26 == true) {
@@ -473,7 +531,7 @@ export class PermisosComponent implements OnInit {
       this.Checkbox6.Inhabilitar = 0;
     }
   }
-  //-----
+  //----------------------centro Distribucion
   onFilterChange31() {
 
     if (this.filter31 == true) {
@@ -524,7 +582,7 @@ export class PermisosComponent implements OnInit {
       this.Checkbox7.Inhabilitar = 0;
     }
   }
-  //------
+  //----------------------Inventarios
   onFilterChange36() {
 
     if (this.filter36 == true) {
@@ -576,12 +634,164 @@ export class PermisosComponent implements OnInit {
       this.Checkbox8.Inhabilitar = 0;
     }
   }
+  //------------------------------- Roles
+  onFilterChange41() {
+
+    if (this.filter41 == true) {
+
+      this.Checkbox9.Crear = 1;
+    } else {
+
+      this.Checkbox9.Crear = 0;
+    }
+  }
+  onFilterChange42() {
+
+    if (this.filter42 == true) {
+
+      this.Checkbox9.Actualizar = 1;
+    } else {
+
+      this.Checkbox9.Actualizar = 0;
+    }
+  }
+  onFilterChange43() {
+
+    if (this.filter43 == true) {
+
+      this.Checkbox9.vizualizar = 1;
+    } else {
+
+      this.Checkbox9.vizualizar = 0;
+    }
+  }
+  onFilterChange44() {
+
+    if (this.filter44 == true) {
+
+      this.Checkbox9.Reportes = 1;
+    } else {
+
+      this.Checkbox9.Reportes = 0;
+    }
+  }
+  onFilterChange45() {
+
+    if (this.filter45 == true) {
+
+      this.Checkbox9.Inhabilitar = 1;
+    } else {
+
+      this.Checkbox9.Inhabilitar = 0;
+    }
+  }
+  //-------------------------------Datos maestros
+  onFilterChange46() {
+
+    if (this.filter46 == true) {
+
+      this.Checkbox10.Crear = 1;
+    } else {
+
+      this.Checkbox10.Crear = 0;
+    }
+  }
+  onFilterChange47() {
+
+    if (this.filter47 == true) {
+
+      this.Checkbox10.Actualizar = 1;
+    } else {
+
+      this.Checkbox10.Actualizar = 0;
+    }
+  }
+  onFilterChange48() {
+
+    if (this.filter48 == true) {
+
+      this.Checkbox10.vizualizar = 1;
+    } else {
+
+      this.Checkbox10.vizualizar = 0;
+    }
+  }
+  onFilterChange49() {
+
+    if (this.filter49 == true) {
+
+      this.Checkbox10.Reportes = 1;
+    } else {
+
+      this.Checkbox10.Reportes = 0;
+    }
+  }
+  onFilterChange50() {
+
+    if (this.filter50 == true) {
+
+      this.Checkbox10.Inhabilitar = 1;
+    } else {
+
+      this.Checkbox10.Inhabilitar = 0;
+    }
+  }
+  //--------------------Almacenes
+  onFilterChange51() {
+
+    if (this.filter51 == true) {
+
+      this.Checkbox11.Crear = 1;
+    } else {
+
+      this.Checkbox11.Crear = 0;
+    }
+  }
+  onFilterChange52() {
+
+    if (this.filter52 == true) {
+
+      this.Checkbox11.Actualizar = 1;
+    } else {
+
+      this.Checkbox11.Actualizar = 0;
+    }
+  }
+  onFilterChange53() {
+
+    if (this.filter53 == true) {
+
+      this.Checkbox11.vizualizar = 1;
+    } else {
+
+      this.Checkbox11.vizualizar = 0;
+    }
+  }
+  onFilterChange54() {
+
+    if (this.filter54 == true) {
+
+      this.Checkbox11.Reportes = 1;
+    } else {
+
+      this.Checkbox11.Reportes = 0;
+    }
+  }
+  onFilterChange55() {
+
+    if (this.filter55 == true) {
+
+      this.Checkbox11.Inhabilitar = 1;
+    } else {
+      this.Checkbox11.Inhabilitar = 0;
+    }
+  }
 
   //mensajes de asigancion
   showMenssage() {
     Swal.fire({
-      title: 'Creado!',
-      text: 'Centro Zonal Creado',
+      title: 'Asignados!',
+      text: 'Permisos Asignados',
       type: 'success',
       confirmButtonText: 'Entendido'
     });
