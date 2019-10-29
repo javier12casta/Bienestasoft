@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MaestroBienestarina } from 'src/app/interfaces/maestrosBienestarina';
 import { ServicioService } from 'src/app/servicio.service';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-serviciosymodalidades',
@@ -68,7 +70,7 @@ export class ServiciosymodalidadesComponent implements OnInit {
 
   };
 
-  constructor(private Service: ServicioService) { }
+  constructor(private Service: ServicioService,private router:Router) { }
 
   ngOnInit() {
   }
@@ -94,6 +96,14 @@ export class ServiciosymodalidadesComponent implements OnInit {
       text: 'Dato Maestro Creado',
       type: 'success',
       confirmButtonText: 'Aceptar'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/serviciosymodalidadesv']);
+    
+      }
+
+
     });
   }
 

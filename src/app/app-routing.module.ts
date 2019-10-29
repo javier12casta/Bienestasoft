@@ -121,6 +121,15 @@ import { ReporterolComponent} from './page/reporterol/reporterol.component';
 import { ReporteentregabComponent} from './page/reporteentregab/reporteentregab.component';
 
 import { InhabilitarudsComponent} from './page/inhabilitaruds/inhabilitaruds.component';
+import { ServiciosymodalidadesvComponent} from './page/serviciosymodalidadesv/serviciosymodalidadesv.component';
+
+import { RefrenciasbienestarinavComponent} from './page/refrenciasbienestarinav/refrenciasbienestarinav.component';
+import { ListapreciosvComponent} from './page/listapreciosv/listapreciosv.component';
+import { ListadocursosvComponent} from './page/listadocursosv/listadocursosv.component';
+import { DatosvariosvComponent} from './page/datosvariosv/datosvariosv.component';
+
+
+
 
 const routes: Routes = [
   {path:'', component: LoginComponent},
@@ -259,6 +268,14 @@ const routes: Routes = [
   {path:'reportentregab', component:  ReporteentregabComponent},
   {path:'inhabilitaruds/:id', component:  InhabilitarudsComponent},
   
+
+  {path:'serviciosymodalidadesv', component: ServiciosymodalidadesvComponent},
+
+  {path:'referenciasbienestarinav', component: RefrenciasbienestarinavComponent},
+  {path:'listapreciosv', component: ListapreciosvComponent},
+  {path:'listadocursosv', component: ListadocursosvComponent},
+  {path:'datosvariosv', component: DatosvariosvComponent},
+
 
 
 ];

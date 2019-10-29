@@ -1,5 +1,6 @@
 import { Component, OnInit , Input } from '@angular/core';
 import { Usuarios } from 'src/app/interfaces/usuarios';
+import { Tipodocumento } from 'src/app/interfaces/tipodocumento';
 import { ServicioService } from 'src/app/servicio.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
@@ -98,9 +99,11 @@ import { Router } from '@angular/router';
 		<span class="btn btn-success">Tipo Documento</span>
 		<h2></h2>
 		
-    <select name="tipodocumento" class="select-css" [(ngModel)]="x.idTipoDocumento">
-    <option [value]="item" *ngFor="let item of listadoc">{{item}} </option>
-    </select>
+		<select name="idRegional" class="select-css" style="width: 100%;" [(ngModel)]="x.idTipoDocumento"
+		options="options" placeholder="tipo documento">
+		<option *ngFor="let do of doc" [value]="do.idTipoDocumento">{{do.NombreTipo }} </option>
+	  </select>
+		   
 		
 		<h2></h2>
     <span class="btn btn-success">Numero de Documento</span>
@@ -211,10 +214,9 @@ import { Router } from '@angular/router';
 export class DatosGeneralesUsuarioComponent implements OnInit {
 
   listamaestro:string[]=["0","1"];
-  listadoc:string[]=["1","2","3"];
   listat:string[]=["PE","UDS","ADMINISTRADOR"];
   listar:string[]=["1","2","3","4","5","6","7","8","9","10"];
-
+  public doc: Tipodocumento[] = [];
 
   x : Usuarios = {
     
@@ -260,7 +262,16 @@ this.showMenssage3();
  
    constructor(private Service: ServicioService, private router:Router) { }
  
-   ngOnInit() {}
+   ngOnInit() {
+
+	this.Service.gettipodocumento()
+	.subscribe(res => {
+	  this.doc = res;
+	}, err => {
+	  console.log(err);
+	});
+
+   }
 
 
    showMenssage(){

@@ -16,8 +16,8 @@
             <Option [value]="0">Inhabilitado</Option>
           </select>
           <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
-          <select name="tipodocumento" id="tipodocumento" style="width: 100%;" class="form-control">
-            <option value="1"> CC</option>
+          <select name="tipodocumento" [(ngModel)]="usu.idTipoDocumento" id="tipodocumento" style="width: 100%;" class="form-control">
+            <option value="1">CC</option>
             <Option value="2">CE</Option>
             <Option value="3">PA</Option>
           </select>
@@ -54,6 +54,13 @@
 
           <input type="text" class="form-control" [(ngModel)]="usu.Email" name="email" placeholder="Email"
             class="form-control">
+
+            <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
+          <select name="tipousuario" [(ngModel)]="usu.TipoUsuario" id="tipousuario" style="width: 100%;" class="form-control">
+            <option >PE</option>
+            <Option >UDS</Option>
+            <Option >ADMINISTRADOR</Option>
+          </select>
 
             
         

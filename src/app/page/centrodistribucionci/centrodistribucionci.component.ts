@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Centrodistribucion } from 'src/app/interfaces/centrodistribucion';
 import { ServicioService } from 'src/app/servicio.service';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-centrodistribucionci',
@@ -120,7 +121,7 @@ export class CentrodistribucionciComponent implements OnInit {
     
    }
 
-  constructor(private Service: ServicioService) { }
+  constructor(private Service: ServicioService,private router:Router) { }
 
   ngOnInit() {
   }
@@ -131,6 +132,12 @@ export class CentrodistribucionciComponent implements OnInit {
       text: 'Centro Distribucion Creado',
       type: 'success',
       confirmButtonText: 'Aceptar'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/centrodistribucionc']);
+    
+      }
     });
 
 }

@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioService } from 'src/app/servicio.service';
 import { Listadocursos } from 'src/app/interfaces/listadocursos';
+import { Beneficiario } from 'src/app/interfaces/beneficiario';
+import { Genero } from 'src/app/interfaces/genero';
+import { Tipodocumento } from 'src/app/interfaces/tipodocumento';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listadocursos',
@@ -91,12 +95,14 @@ import Swal from 'sweetalert2';
 
 
 		<h2></h2>
+		<h2></h2>
 		<span class="btn btn-success">Tipo Documento</span>
 		<h2></h2>
 		
-    <select name="tipodocumento" class="select-css">
-    <option [value]="item" *ngFor="let item of listadoc">{{item}} </option>
-    </select>
+		<select name="idRegional" class="select-css" style="width: 100%;" [(ngModel)]="y.idTipoDocumento"
+		options="options" placeholder="tipo documento">
+		<option *ngFor="let do of tip" [value]="do.idTipoDocumento">{{do.NombreTipo }} </option>
+	  </select>
 		
 		<h2></h2>
     <span class="btn btn-success">Numero de Documento</span>
@@ -108,39 +114,39 @@ import Swal from 'sweetalert2';
     <h2></h2>
 		<span class="btn btn-success">Numero de documento de identidad</span>
 		<h2></h2>
-		<input type="text" class="form-control" [(ngModel)]="x.NumeroDocumento" name="numerodoc"
+		<input type="text" class="form-control" [(ngModel)]="y.NumeroDocumento " name="numerodoc"
 		placeholder="Numero de documento de identidad" class="form-control" id="numeroidentidad">
     
   
 		<h2></h2>
 		<span class="btn btn-success">  Primer nombre beneficiario ICBF</span>
 		<h2></h2>
-		<input type="text" class="form-control" [(ngModel)]="x.Apellidos" name="nbeneficiario"
+		<input type="text" class="form-control" [(ngModel)]="y.PrimerNombre" name="nbeneficiario"
 		placeholder="Primer nombre beneficiario ICBF" class="form-control" id="app">
     <h2></h2>
   
     <span class="btn btn-success">  Segundo nombre beneficiario ICBF</span>
 		<h2></h2>
-		<input type="text" class="form-control" [(ngModel)]="x.Apellidos" name="nbeneficiario2"
+		<input type="text" class="form-control" [(ngModel)]="y.SegundoNombre" name="nbeneficiario2"
 		placeholder="Segundo nombre beneficiario ICBF" class="form-control" id="app">
     <h2></h2>
 
     <span class="btn btn-success">Primer Apellido beneficiario ICBF</span>
 		<h2></h2>
-		<input type="text" class="form-control" [(ngModel)]="x.Apellidos" name="abeneficiario1"
+		<input type="text" class="form-control" [(ngModel)]="y.PrimerApellido" name="abeneficiario1"
 		placeholder="Primer Apellido beneficiario ICBF" class="form-control" id="app">
     <h2></h2>
 
   
     <span class="btn btn-success">Segundo Apellido beneficiario ICBF</span>
 		<h2></h2>
-		<input type="text" class="form-control" [(ngModel)]="x.Apellidos" name="abeneficiario2"
+		<input type="text" class="form-control" [(ngModel)]="y.SegundoApellido" name="abeneficiario2"
 		placeholder="Segundo Apellido beneficiario ICBF" class="form-control" id="app">
     <h2></h2>
 
 		<span class="btn btn-success">Fecha</span>
 		<h2></h2>
-		<input type="date" class="form-control" [(ngModel)]="x.Fecha" name="fechai" placeholder="Fecha" min="2018-01-01" max="2050-12-31" class="form-control">
+		<input type="date" class="form-control" [(ngModel)]="y.FechaNacimiento" name="fechai" placeholder="Fecha" min="2018-01-01" max="2050-12-31" class="form-control">
 	
 <h2></h2>
 		 {{today}}
@@ -172,7 +178,8 @@ import Swal from 'sweetalert2';
 export class ListadocursosComponent implements OnInit {
 
   listamaestro:string[]=["0","1"];
-  listadoc:string[]=["CC","CE","PA"];
+  public gen: Genero[] = [];
+  public tip: Tipodocumento[] = [];
 
   x : Listadocursos = {
     
@@ -181,14 +188,57 @@ export class ListadocursosComponent implements OnInit {
     Fecha : 0,
     Estado : 0,
 
+  };
+
+  y : Beneficiario = {
+    
+    NumeroDocumento : 0,
+    FechaIngreso : 0 ,
+    FechaNacimiento: 0 ,
+    PrimerNombre : '',
+    PrimerApellido: '',
+    SegundoNombre : '',
+    Direccion : '',
+    Pais : '',
+    Departamento : '',
+    Municipio : '',
+    TelefonoFijo : 0 ,
+    TelefonoFijo2 : 0 ,
+    TelefonoMovil : 0 ,
+    TelefonoMovil2 : 0 ,
+    Email : '',
+    Estado : '',
+    idGenero: 0,
+    idTipoDocumento: 0,
+    SegundoApellido: '',
+    ServicioOmodalidad : '',
+    
 
   };
 
+
+
  
 
-  constructor(private Service: ServicioService) { }
+  constructor(private Service: ServicioService,private router:Router) { }
 
   ngOnInit() {
+
+	this.Service.getgenero()
+	.subscribe(res => {
+	  this.gen = res;
+	}, err => {
+	  console.log(err);
+	});
+
+	this.Service.gettipodocumento()
+	.subscribe(res => {
+	  this.tip = res;
+	}, err => {
+	  console.log(err);
+	});
+
+
   }
 
   showMenssage(){
@@ -196,7 +246,13 @@ export class ListadocursosComponent implements OnInit {
       title: 'Creado!',
       text: 'Dato Maestro Creado',
       type: 'success',
-      confirmButtonText: 'Aceptar'
+	  confirmButtonText: 'Aceptar'
+	}).then((result) => {
+		if (result.value) {
+		  
+		  this.router.navigate(['/listadocursosv']);
+	  
+		}
     });
   }
 

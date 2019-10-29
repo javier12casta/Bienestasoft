@@ -142,6 +142,11 @@ import { EntregamComponent } from './page/entregam/entregam.component';
 import { EntregaiComponent } from './page/entregai/entregai.component';
 import { ReporteentregabComponent } from './page/reporteentregab/reporteentregab.component';
 import { InhabilitarudsComponent } from './page/inhabilitaruds/inhabilitaruds.component';
+import { ServiciosymodalidadesvComponent } from './page/serviciosymodalidadesv/serviciosymodalidadesv.component';
+import { RefrenciasbienestarinavComponent } from './page/refrenciasbienestarinav/refrenciasbienestarinav.component';
+import { ListapreciosvComponent } from './page/listapreciosv/listapreciosv.component';
+import { ListadocursosvComponent } from './page/listadocursosv/listadocursosv.component';
+import { DatosvariosvComponent } from './page/datosvariosv/datosvariosv.component';
 
 
 
@@ -409,6 +414,21 @@ import { InhabilitarudsComponent } from './page/inhabilitaruds/inhabilitaruds.co
     
 
     InhabilitarudsComponent,
+    
+
+    ServiciosymodalidadesvComponent,
+    
+
+    RefrenciasbienestarinavComponent,
+    
+
+    ListapreciosvComponent,
+    
+
+    ListadocursosvComponent,
+    
+
+    DatosvariosvComponent,
     
 
   

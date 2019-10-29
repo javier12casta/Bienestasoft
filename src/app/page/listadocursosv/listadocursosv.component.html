@@ -1,0 +1,32 @@
+<nav class="navbar navbar-success bg-success">
+    <button class="btn btn-dark" routerLink="/menu">Volver</button>
+    <button class="btn btn-dark" routerLink="/listadocursos"> Crear </button>
+  </nav>
+  
+  <table class="table">
+    <thead class="thead-green">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">NombreAgenteE  </th>
+        <th scope="col">NumeroDocumento </th>
+        <th scope="col">Fecha </th>
+        <th scope="col">Estado </th>
+        <th scope="col">idTipoDocumento </th>
+        <th scope="col">idConsecutivosMaestro</th>
+        <th scope="col">idBenefiarios</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ser of servic">
+        <th scope="row">{{ser.idListadoCursos}}</th>
+        <td>{{ser.NombreAgenteE  }}</td>
+        <td>{{ser.NumeroDocumento }}</td>
+        <td>{{ser.Fecha  }}</td>
+        <td>{{ser.Estado }}</td>
+        <td>{{ser.idTipoDocumento }}</td>
+        <td>{{ser.idConsecutivosMaestro }}</td>
+        <td>{{ser.idBenefiarios }}</td>
+      </tr>
+    </tbody>
+  </table>
+

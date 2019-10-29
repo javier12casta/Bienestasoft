@@ -30,8 +30,9 @@ import { InCentrodistribucion } from './interfaces/inhabilitarcentrodistribucion
 import { Entrega } from './interfaces/entrega';
 import { Permisos } from './interfaces/permisos';
 import {  InEntrega } from './interfaces/inhabilitarentrega';
-
+import {  Tipodocumento } from './interfaces/tipodocumento';
 import {  Inuds } from './interfaces/inhabilitaruds';
+import { Genero } from './interfaces/genero';
 @Injectable({
   providedIn: 'root'
 })
@@ -472,6 +473,14 @@ export class ServicioService {
     return this.http.put<InAlmacen>(`${this.api}/almacen/${id}`, Nombre);
   }
 
+  gettipodocumento() {
+    const path = `${this.api}/tdocumento`;
+    return this.http.get<[Tipodocumento]>(path);
+  }
 
+  getgenero() {
+    const path = `${this.api}/genero`;
+    return this.http.get<[Genero]>(path);
+  }
 
 }

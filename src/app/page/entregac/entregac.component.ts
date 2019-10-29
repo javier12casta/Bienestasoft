@@ -6,6 +6,7 @@ import { Select2OptionData } from 'ng2-select2';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { Uds } from '../../interfaces/uds';
 
 @Component({
   selector: 'app-entregac',
@@ -51,7 +52,15 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
   </select>
 
 		  
-			   <h2></h2>
+         <h2></h2>
+         
+         <span class="btn btn-success" > UDS </span>
+    <h2></h2>
+    
+         <select name="idRegional" class="Select2" style="width: 100%;" [(ngModel)]="entrea.idUDS"
+            options="options" placeholder="uds">
+            <option *ngFor="let ud of uds" [value]="ud.idUDS">{{ud.NombreUDS }} </option>
+          </select>
 			   
 				  
 			   <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
@@ -72,6 +81,7 @@ export class EntregacComponent implements OnInit {
 
   entrega: Entrega[] = [];
   listamaestro:string[]=["0","1"];
+  public uds: Uds[] = [];
 
   constructor(private activeRoute: ActivatedRoute,
     private Service: ServicioService, private router:Router) { }
@@ -81,10 +91,20 @@ export class EntregacComponent implements OnInit {
       CantidadEntregada : '',
       FechaEntrega : 0,
       EstadoEntrega : '',
+      idUDS : '',
     };
 
 
   ngOnInit() {
+
+    this.Service.getUds()
+      .subscribe(res => {
+        this.uds = res;
+      }, err => {
+        console.log(err);
+      });
+
+
   }
 
  //insertar Datos ------------------------------------------------

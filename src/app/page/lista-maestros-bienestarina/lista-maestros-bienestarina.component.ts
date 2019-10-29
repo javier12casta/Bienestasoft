@@ -66,38 +66,34 @@ export class ListaMaestrosBienestarinaComponent implements OnInit {
 
   if(this.lista == 'servicio y modalidades'){
 
-    this.router.navigate(['/serviciosmodalidades']);
+    this.router.navigate(['/serviciosymodalidadesv']);
 	
   }
 
   if(this.lista == 'Referencias de Bienestarina'){
 
-    this.router.navigate(['/refrenciasbienestarina']);
+    this.router.navigate(['/referenciasbienestarinav']);
     
   }
 
   if(this.lista == 'Lista de precios'){
 
-    this.router.navigate(['/listaprecios']);
+    this.router.navigate(['/listapreciosv']);
     
   }
 
   if(this.lista == 'Listado de cursos'){
 
-    this.router.navigate(['/listadocursos']);
+    this.router.navigate(['/listadocursosv']);
     
   }
 
 
   if(this.lista == 'Datos nutricionales' || this.lista == 'numero de cupos' ){
 
-    this.router.navigate(['/datosvarios']);
+    this.router.navigate(['/datosvariosv']);
     
   }
 
-
-
-
-  
   }
 }
