@@ -237,14 +237,25 @@ export class DatosGeneralesUsuarioComponent implements OnInit {
 
   onClickMe() {
  
+  if(this.x.NumeroDocumento == null || this.x.NumeroDocumento == 0 && this.x.TelefonoFijo == 0  && this.x.TelefonoFijo2 == null ||  this.x.TelefonoFijo2 == 0  && this.x.TelefonoMovil == null ||  this.x.TelefonoMovil == 0 && this.x.TelefonoMovil2 == null ||  this.x.TelefonoMovil2 == 0  && this.x.idTipoDocumento == null ||  this.x.idTipoDocumento == 0  && this.x.Nombres == ""  ){
+
+this.showMenssage3();
+
+  }else{
+
 	this.Service.postUsuarios(this.x).subscribe(res => {
-	 console.log(this.x);
-	 this.showMenssage();
-   },
-	 err => {
-	   console.log(err);
-	 });
-	
+		console.log(this.x);
+		this.showMenssage();
+	  },
+		err => {
+		  console.log(err);
+		});
+
+
+  }
+
+
+
  }
  
    constructor(private Service: ServicioService, private router:Router) { }
@@ -267,6 +278,15 @@ export class DatosGeneralesUsuarioComponent implements OnInit {
   
     });
   }
+
+  showMenssage3(){
+	Swal.fire({
+	  title: 'Error!',
+	  text: 'campos erroneos o vacios',
+	  type: 'error',
+	  confirmButtonText: 'Entendido'
+	});
+	}
 
  
 

@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Select2OptionData } from 'ng2-select2';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-entregac',
@@ -32,13 +33,14 @@ import { Router } from '@angular/router';
     <span class="btn btn-success">Cantidad Entregada</span>
 		<h2></h2>
 		<input type="number" class="form-control" [(ngModel)]="entrea.CantidadEntregada" name="cane"
-		placeholder="Cantidad Entregada" class="form-control" id="inputen">
+		placeholder="Cantidad Entregada" class="form-control" id="inputen" required>
     
     <h2></h2>
     
     <span class="btn btn-success">Fecha Entrega </span>
 		<h2></h2>
-		<input type="date" class="form-control" [(ngModel)]="entrea.FechaEntrega" name="fechai" placeholder="Fecha" min="2018-01-01" max="2050-12-31" class="form-control">
+    <input type="date" class="form-control" [(ngModel)]="entrea.FechaEntrega" name="fechai" placeholder="Fecha" min="2018-01-01" max="2050-12-31" class="form-control" required>
+   
     <h2></h2>
 
 		<span class="btn btn-success" >Estado del dato Maestro</span>
@@ -87,7 +89,19 @@ export class EntregacComponent implements OnInit {
 
  //insertar Datos ------------------------------------------------
  onClickMe() {
-  delete this.entrea.idEntrega;
+
+  if(this.entrea.CantidadEntregada == null || this.entrea.CantidadEntregada == ''){
+
+    
+      if(this.entrea.FechaEntrega == 0){
+
+        this.showMenssage3();
+
+      }    
+     
+  }else{
+
+    delete this.entrea.idEntrega;
   this.Service.postEntrega(this.entrea).subscribe(res => {
     console.log(this.entrea);
     console.log(res);
@@ -97,6 +111,9 @@ export class EntregacComponent implements OnInit {
       console.log(err);
       this.showMenssage2();
     });
+
+
+  }
 
 }
 
@@ -126,6 +143,15 @@ Swal.fire({
   confirmButtonText: 'Entendido'
 });
 }
+
+showMenssage3(){
+  Swal.fire({
+    title: 'Error!',
+    text: 'campos erroneos o vacios',
+    type: 'error',
+    confirmButtonText: 'Entendido'
+  });
+  }
 
 
 }
