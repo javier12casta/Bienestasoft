@@ -93,12 +93,23 @@ export class ServicioService {
     return this.http.put<Rol>(`${this.api}/rol/${id}`, rol);
   }
     //------------------Permisos--------------------------------
-
-    postPermisos(almac: Permisos) {
-
+    getPermisos() {
       const path = `${this.api}/permisos`;
-      return this.http.post<Almacen>(path, almac);
+      return this.http.get<Permisos[]>(path);
+    }
+
+    getPermisosid(per: Permisos) {
+      return this.http.get(`${this.api}/permisos/${per.idPermiso}`);
+    }
+
+    postPermisos(per: Permisos) {
+      const path = `${this.api}/permisos`;
+      return this.http.post<Almacen>(path, per);
   
+    }
+    putPermisos(id: string | number, per: Permisos) {
+      const path = `${this.api}/permisos/${per.idPermiso}`;
+      return this.http.put<Rol>(`${this.api}/permisos/${id}`, per);
     }
   //-----Barrio Vereda------
   getBarrio() {
