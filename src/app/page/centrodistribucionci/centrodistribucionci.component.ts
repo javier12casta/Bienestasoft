@@ -124,6 +124,8 @@ export class CentrodistribucionciComponent implements OnInit {
   constructor(private Service: ServicioService,private router:Router) { }
 
   ngOnInit() {
+
+   
   }
 
   showMenssage(){

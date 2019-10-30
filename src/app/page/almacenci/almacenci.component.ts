@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Almacen } from 'src/app/interfaces/almacen';
+import { Centrodistribucion } from 'src/app/interfaces/centrodistribucion';
 import { ServicioService } from 'src/app/servicio.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
@@ -79,9 +80,14 @@ import { Router } from '@angular/router';
 			   <h2></h2>
          
          <span class="btn btn-success">Ceentro de distribucion</span>
-		<h2></h2>
-		<input type="number" class="form-control" [(ngModel)]="x.idCentroDistribucion" name="cap"
-		placeholder="centro de distribucion" class="form-control" id="inputcap">
+    <h2></h2>
+    
+    <select name="idRegional" class="select-css" style="width: 100%;" [(ngModel)]="x.idCentroDistribucion"
+		options="options" placeholder="centro de distribucion">
+		<option *ngFor="let do of cen" [value]="do.idCentroDistribucion">{{do.Nombre  }} </option>
+    </select>
+    
+		
 				  
 			   <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
 				  
@@ -101,6 +107,7 @@ export class AlmacenciComponent implements OnInit {
 
   listamaestro:string[]=["0","1"];
   unidadmedida:string[]=["g","ml"];
+  public cen: Centrodistribucion[] = [];
 
   x : Almacen = {
     
@@ -131,6 +138,15 @@ export class AlmacenciComponent implements OnInit {
   constructor(private Service: ServicioService,private router:Router) { }
 
   ngOnInit() {
+
+    this.Service.getcentrodistribucion()
+    .subscribe(res => {
+      this.cen = res;
+    }, err => {
+      console.log(err);
+    });
+
+
   }
 
   showMenssage(){
