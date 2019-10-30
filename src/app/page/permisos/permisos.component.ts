@@ -10,7 +10,7 @@ import { Permisos } from '../../interfaces/permisos';
   styleUrls: ['./permisos.component.css']
 })
 export class PermisosComponent implements OnInit {
-  permiso: Permisos [] = [];
+  permiso: Permisos[] = [];
   public permisos: Permisos = {
     idPermiso: 0,
     perInventario: '',
@@ -113,38 +113,38 @@ export class PermisosComponent implements OnInit {
   constructor(
     private activeRoute: ActivatedRoute,
     private Service: ServicioService,
-    private router:Router,
+    private router: Router,
   ) {
 
   }
 
   ngOnInit() {
-    
+
     //traer permisos
-/*     this.Service.getPermisos().subscribe(res => {
-      this.permiso = res;
-      console.log('Permiso get', this.permiso);
-    }), err => {
-      console.log(err);
-    }; */
+    /*     this.Service.getPermisos().subscribe(res => {
+          this.permiso = res;
+          console.log('Permiso get', this.permiso);
+        }), err => {
+          console.log(err);
+        }; */
 
   }
   //insertar Datos ------------------------------------------------
 
   insertDatos(data, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11) {
     const params = this.activeRoute.snapshot.params;
-    
-    data = this.Checkbox.Crear+'' + this.Checkbox.Actualizar+'' + this.Checkbox.vizualizar+'' + this.Checkbox.Reportes+'' + this.Checkbox.Inhabilitar+'';
-    data2 = this.Checkbox2.Crear+'' + this.Checkbox2.Actualizar+'' + this.Checkbox2.vizualizar+'' + this.Checkbox2.Reportes+'' + this.Checkbox2.Inhabilitar+'';
-    data3 = this.Checkbox3.Crear+'' + this.Checkbox3.Actualizar+'' + this.Checkbox3.vizualizar+'' + this.Checkbox3.Reportes+'' + this.Checkbox3.Inhabilitar+'';
-    data4 = this.Checkbox4.Crear+'' + this.Checkbox4.Actualizar+'' + this.Checkbox4.vizualizar+'' + this.Checkbox4.Reportes+'' + this.Checkbox4.Inhabilitar+'';
-    data5 = this.Checkbox5.Crear+'' + this.Checkbox5.Actualizar+'' + this.Checkbox5.vizualizar+'' + this.Checkbox5.Reportes+'' + this.Checkbox5.Inhabilitar+'';
-    data6 = this.Checkbox6.Crear+'' + this.Checkbox6.Actualizar+'' + this.Checkbox6.vizualizar+'' + this.Checkbox6.Reportes+'' + this.Checkbox6.Inhabilitar+'';
-    data7 = this.Checkbox7.Crear+'' + this.Checkbox7.Actualizar+'' + this.Checkbox7.vizualizar+'' + this.Checkbox7.Reportes+'' + this.Checkbox7.Inhabilitar+'';
-    data8 = this.Checkbox8.Crear+'' + this.Checkbox8.Actualizar+'' + this.Checkbox8.vizualizar+'' + this.Checkbox8.Reportes+'' + this.Checkbox8.Inhabilitar+'';
-    data9 = this.Checkbox9.Crear+'' + this.Checkbox9.Actualizar+'' + this.Checkbox9.vizualizar+'' + this.Checkbox9.Reportes+'' + this.Checkbox9.Inhabilitar+'';
-    data10 = this.Checkbox10.Crear+'' + this.Checkbox10.Actualizar+'' + this.Checkbox10.vizualizar+'' + this.Checkbox10.Reportes+'' + this.Checkbox10.Inhabilitar+'';
-    data11 = this.Checkbox11.Crear+'' + this.Checkbox11.Actualizar+'' + this.Checkbox11.vizualizar+'' + this.Checkbox11.Reportes+'' + this.Checkbox11.Inhabilitar+'';
+
+    data = this.Checkbox.Crear + '' + this.Checkbox.Actualizar + '' + this.Checkbox.vizualizar + '' + this.Checkbox.Reportes + '' + this.Checkbox.Inhabilitar + '';
+    data2 = this.Checkbox2.Crear + '' + this.Checkbox2.Actualizar + '' + this.Checkbox2.vizualizar + '' + this.Checkbox2.Reportes + '' + this.Checkbox2.Inhabilitar + '';
+    data3 = this.Checkbox3.Crear + '' + this.Checkbox3.Actualizar + '' + this.Checkbox3.vizualizar + '' + this.Checkbox3.Reportes + '' + this.Checkbox3.Inhabilitar + '';
+    data4 = this.Checkbox4.Crear + '' + this.Checkbox4.Actualizar + '' + this.Checkbox4.vizualizar + '' + this.Checkbox4.Reportes + '' + this.Checkbox4.Inhabilitar + '';
+    data5 = this.Checkbox5.Crear + '' + this.Checkbox5.Actualizar + '' + this.Checkbox5.vizualizar + '' + this.Checkbox5.Reportes + '' + this.Checkbox5.Inhabilitar + '';
+    data6 = this.Checkbox6.Crear + '' + this.Checkbox6.Actualizar + '' + this.Checkbox6.vizualizar + '' + this.Checkbox6.Reportes + '' + this.Checkbox6.Inhabilitar + '';
+    data7 = this.Checkbox7.Crear + '' + this.Checkbox7.Actualizar + '' + this.Checkbox7.vizualizar + '' + this.Checkbox7.Reportes + '' + this.Checkbox7.Inhabilitar + '';
+    data8 = this.Checkbox8.Crear + '' + this.Checkbox8.Actualizar + '' + this.Checkbox8.vizualizar + '' + this.Checkbox8.Reportes + '' + this.Checkbox8.Inhabilitar + '';
+    data9 = this.Checkbox9.Crear + '' + this.Checkbox9.Actualizar + '' + this.Checkbox9.vizualizar + '' + this.Checkbox9.Reportes + '' + this.Checkbox9.Inhabilitar + '';
+    data10 = this.Checkbox10.Crear + '' + this.Checkbox10.Actualizar + '' + this.Checkbox10.vizualizar + '' + this.Checkbox10.Reportes + '' + this.Checkbox10.Inhabilitar + '';
+    data11 = this.Checkbox11.Crear + '' + this.Checkbox11.Actualizar + '' + this.Checkbox11.vizualizar + '' + this.Checkbox11.Reportes + '' + this.Checkbox11.Inhabilitar + '';
 
     this.permisos.idRol = params.id;
     this.permisos.perCentros = data;
@@ -167,7 +167,7 @@ export class PermisosComponent implements OnInit {
       err => {
         console.log(err);
         this.showMenssage();
-      }); 
+      });
     console.log('si');
   }
 
@@ -801,10 +801,10 @@ export class PermisosComponent implements OnInit {
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((res) => {
-      if(res.value){
+      if (res.value) {
         console.log('confirmed');
         this.router.navigate(['/roli']);
-    }
+      }
     });
   }
 

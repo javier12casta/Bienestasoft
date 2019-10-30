@@ -11,6 +11,14 @@ export class RoliComponent implements OnInit {
 
   roles: Rol[] = [];
 
+  rol: Rol ={
+    idRolPersona: 0,
+    RolPersona:'',
+    Estado: 1,
+    Transacciones: '',
+    Almacenes: '',
+  };
+
   constructor(private Service: ServicioService) { 
 
   }
@@ -22,9 +30,13 @@ export class RoliComponent implements OnInit {
         console.log(data);
         console.log('funciona');
       }
-      );
-  
-    
+      );  
+
+/*       this.Service.getPermisosid(this.rol.idRolPersona).subscribe(res=>{
+
+      }); */
   }
+
+
 
 }

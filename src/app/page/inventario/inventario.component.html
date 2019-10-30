@@ -1,1 +1,1188 @@
-<p>inventario works!</p>
+<nav class="navbar navbar-success bg-success">
+    <button class="btn btn-dark" routerLink="/menu"> Volver</button>
+  </nav>
+
+  <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+  <html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="generator" content="PhpSpreadsheet, https://github.com/PHPOffice/PhpSpreadsheet">
+        <meta name="author" content="Cristina Hincapie Bernal" />
+        <meta name="company" content="Microsoft Corporation" />
+      <style type="text/css">
+        html { font-family:Calibri, Arial, Helvetica, sans-serif; font-size:11pt; background-color:white }
+        a.comment-indicator:hover + div.comment { background:#ffd; position:absolute; display:block; border:1px solid black; padding:0.5em }
+        a.comment-indicator { background:red; display:inline-block; border:1px solid black; width:0.5em; height:0.5em }
+        div.comment { display:none }
+        table { border-collapse:collapse; page-break-after:always }
+        .gridlines td { border:1px dotted black }
+        .gridlines th { border:1px dotted black }
+        .b { text-align:center }
+        .e { text-align:center }
+        .f { text-align:right }
+        .inlineStr { text-align:left }
+        .n { text-align:right }
+        .s { text-align:left }
+        td.style0 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:white }
+        th.style0 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:white }
+        td.style1 { vertical-align:bottom; border-bottom:none #000000; border-top:2px solid #000000 !important; border-left:2px solid #000000 !important; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style1 { vertical-align:bottom; border-bottom:none #000000; border-top:2px solid #000000 !important; border-left:2px solid #000000 !important; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style2 { vertical-align:bottom; border-bottom:none #000000; border-top:2px solid #000000 !important; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style2 { vertical-align:bottom; border-bottom:none #000000; border-top:2px solid #000000 !important; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style3 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:2px solid #000000 !important; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style3 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:2px solid #000000 !important; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style4 { vertical-align:bottom; border-bottom:none #000000; border-top:2px solid #000000 !important; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style4 { vertical-align:bottom; border-bottom:none #000000; border-top:2px solid #000000 !important; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style5 { vertical-align:bottom; border-bottom:none #000000; border-top:2px solid #000000 !important; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style5 { vertical-align:bottom; border-bottom:none #000000; border-top:2px solid #000000 !important; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style6 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:2px solid #000000 !important; border-left:none #000000; border-right:2px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style6 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:2px solid #000000 !important; border-left:none #000000; border-right:2px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style7 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style7 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style8 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style8 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style9 { vertical-align:middle; border-bottom:none #000000; border-top:none #000000; border-left:2px solid #000000 !important; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style9 { vertical-align:middle; border-bottom:none #000000; border-top:none #000000; border-left:2px solid #000000 !important; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style10 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style10 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style11 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style11 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style12 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style12 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style13 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style13 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style14 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style14 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style15 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:2px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style15 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:2px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style16 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style16 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style17 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style17 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style18 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:2px solid #000000 !important; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style18 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:2px solid #000000 !important; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style19 { vertical-align:bottom; border-bottom:2px solid #000000 !important; border-top:none #000000; border-left:2px solid #000000 !important; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style19 { vertical-align:bottom; border-bottom:2px solid #000000 !important; border-top:none #000000; border-left:2px solid #000000 !important; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style20 { vertical-align:bottom; border-bottom:2px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style20 { vertical-align:bottom; border-bottom:2px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style21 { vertical-align:bottom; border-bottom:2px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style21 { vertical-align:bottom; border-bottom:2px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style22 { vertical-align:bottom; border-bottom:2px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style22 { vertical-align:bottom; border-bottom:2px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style23 { vertical-align:bottom; border-bottom:2px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:2px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style23 { vertical-align:bottom; border-bottom:2px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:2px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style24 { vertical-align:bottom; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:2px solid #000000 !important; border-left:2px solid #000000 !important; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style24 { vertical-align:bottom; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:2px solid #000000 !important; border-left:2px solid #000000 !important; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style25 { vertical-align:bottom; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:2px solid #000000 !important; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style25 { vertical-align:bottom; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:2px solid #000000 !important; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style26 { vertical-align:bottom; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:2px solid #000000 !important; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style26 { vertical-align:bottom; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:2px solid #000000 !important; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style27 { vertical-align:bottom; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:2px solid #000000 !important; border-left:none #000000; border-right:2px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style27 { vertical-align:bottom; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:2px solid #000000 !important; border-left:none #000000; border-right:2px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style28 { vertical-align:bottom; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style28 { vertical-align:bottom; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style29 { vertical-align:bottom; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:none #000000; border-left:2px solid #000000 !important; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style29 { vertical-align:bottom; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:none #000000; border-left:2px solid #000000 !important; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style30 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style30 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style31 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style31 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style32 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:2px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style32 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:2px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style33 { vertical-align:bottom; text-align:left; padding-left:9px; border-bottom:none #000000; border-top:none #000000; border-left:2px solid #000000 !important; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style33 { vertical-align:bottom; text-align:left; padding-left:9px; border-bottom:none #000000; border-top:none #000000; border-left:2px solid #000000 !important; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style34 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style34 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style35 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style35 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style36 { vertical-align:bottom; text-align:left; padding-left:18px; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style36 { vertical-align:bottom; text-align:left; padding-left:18px; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style37 { vertical-align:bottom; text-align:left; padding-left:18px; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style37 { vertical-align:bottom; text-align:left; padding-left:18px; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style38 { vertical-align:bottom; text-align:left; padding-left:27px; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style38 { vertical-align:bottom; text-align:left; padding-left:27px; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style39 { vertical-align:bottom; text-align:left; padding-left:9px; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style39 { vertical-align:bottom; text-align:left; padding-left:9px; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style40 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:2px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style40 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:2px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style41 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style41 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style42 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style42 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style43 { vertical-align:bottom; border-bottom:none #000000; border-top:2px solid #000000 !important; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style43 { vertical-align:bottom; border-bottom:none #000000; border-top:2px solid #000000 !important; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style44 { vertical-align:bottom; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:2px solid #000000 !important; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style44 { vertical-align:bottom; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:2px solid #000000 !important; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style45 { vertical-align:bottom; border-bottom:none #000000; border-top:2px solid #000000 !important; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style45 { vertical-align:bottom; border-bottom:none #000000; border-top:2px solid #000000 !important; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style46 { vertical-align:bottom; text-align:left; padding-left:9px; border-bottom:none #000000; border-top:2px solid #000000 !important; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style46 { vertical-align:bottom; text-align:left; padding-left:9px; border-bottom:none #000000; border-top:2px solid #000000 !important; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style47 { vertical-align:bottom; text-align:left; padding-left:9px; border-bottom:none #000000; border-top:2px solid #000000 !important; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style47 { vertical-align:bottom; text-align:left; padding-left:9px; border-bottom:none #000000; border-top:2px solid #000000 !important; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style48 { vertical-align:bottom; border-bottom:none #000000; border-top:2px solid #000000 !important; border-left:none #000000; border-right:2px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style48 { vertical-align:bottom; border-bottom:none #000000; border-top:2px solid #000000 !important; border-left:none #000000; border-right:2px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style49 { vertical-align:bottom; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style49 { vertical-align:bottom; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style50 { vertical-align:bottom; text-align:left; padding-left:9px; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style50 { vertical-align:bottom; text-align:left; padding-left:9px; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style51 { vertical-align:bottom; text-align:left; padding-left:9px; border-bottom:2px solid #000000 !important; border-top:none #000000; border-left:2px solid #000000 !important; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style51 { vertical-align:bottom; text-align:left; padding-left:9px; border-bottom:2px solid #000000 !important; border-top:none #000000; border-left:2px solid #000000 !important; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style52 { vertical-align:bottom; text-align:left; padding-left:9px; border-bottom:2px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style52 { vertical-align:bottom; text-align:left; padding-left:9px; border-bottom:2px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style53 { vertical-align:bottom; border-bottom:2px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style53 { vertical-align:bottom; border-bottom:2px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style54 { vertical-align:middle; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:10pt; background-color:white }
+        th.style54 { vertical-align:middle; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:10pt; background-color:white }
+        td.style55 { vertical-align:middle; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        th.style55 { vertical-align:middle; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        td.style56 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        th.style56 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        td.style57 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:8pt; background-color:#D8D8D8 }
+        th.style57 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:8pt; background-color:#D8D8D8 }
+        td.style58 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:12pt; background-color:white }
+        th.style58 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:12pt; background-color:white }
+        td.style59 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#FF0000; font-family:'Arial'; font-size:12pt; background-color:white }
+        th.style59 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#FF0000; font-family:'Arial'; font-size:12pt; background-color:white }
+        td.style60 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style60 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style61 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style61 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style62 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style62 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style63 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style63 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style64 { vertical-align:middle; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#D8D8D8 }
+        th.style64 { vertical-align:middle; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#D8D8D8 }
+        td.style65 { vertical-align:middle; text-align:justify; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#D8D8D8 }
+        th.style65 { vertical-align:middle; text-align:justify; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#D8D8D8 }
+        td.style66 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:2px solid #000000 !important; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style66 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:2px solid #000000 !important; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style67 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style67 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style68 { vertical-align:bottom; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style68 { vertical-align:bottom; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style69 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#D8D8D8 }
+        th.style69 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#D8D8D8 }
+        td.style70 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        th.style70 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        td.style71 { vertical-align:bottom; text-align:center; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style71 { vertical-align:bottom; text-align:center; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style72 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:2px solid #000000 !important; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style72 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:2px solid #000000 !important; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style73 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:12pt; background-color:white }
+        th.style73 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:12pt; background-color:white }
+        td.style74 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:12pt; background-color:white }
+        th.style74 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:12pt; background-color:white }
+        td.style75 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style75 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style76 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:10pt; background-color:white }
+        th.style76 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:10pt; background-color:white }
+        td.style77 { vertical-align:bottom; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style77 { vertical-align:bottom; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style78 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:10pt; background-color:white }
+        th.style78 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:10pt; background-color:white }
+        td.style79 { vertical-align:bottom; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:10pt; background-color:white }
+        th.style79 { vertical-align:bottom; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:10pt; background-color:white }
+        td.style80 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#D8D8D8 }
+        th.style80 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#D8D8D8 }
+        td.style81 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#FFF2CB }
+        th.style81 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#FFF2CB }
+        td.style82 { vertical-align:bottom; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:#FFFFFF }
+        th.style82 { vertical-align:bottom; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:#FFFFFF }
+        td.style83 { vertical-align:bottom; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:#FFFFFF }
+        th.style83 { vertical-align:bottom; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:#FFFFFF }
+        td.style84 { vertical-align:bottom; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:none #000000; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:#FFFFFF }
+        th.style84 { vertical-align:bottom; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:none #000000; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:#FFFFFF }
+        td.style85 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:1px solid #000000 !important; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:#FFFFFF }
+        th.style85 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:1px solid #000000 !important; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:#FFFFFF }
+        td.style86 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:#FFFFFF }
+        th.style86 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:#FFFFFF }
+        td.style87 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:#FFFFFF }
+        th.style87 { vertical-align:bottom; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:#FFFFFF }
+        td.style88 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:1px solid #000000 !important; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:#FFFFFF }
+        th.style88 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:1px solid #000000 !important; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:#FFFFFF }
+        td.style89 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:#FFFFFF }
+        th.style89 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:#FFFFFF }
+        td.style90 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:#FFFFFF }
+        th.style90 { vertical-align:bottom; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:1px solid #000000 !important; color:#000000; font-family:'Calibri'; font-size:11pt; background-color:#FFFFFF }
+        td.style91 { vertical-align:bottom; text-align:center; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style91 { vertical-align:bottom; text-align:center; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style92 { vertical-align:bottom; text-align:center; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Tempus Sans ITC'; font-size:12pt; background-color:white }
+        th.style92 { vertical-align:bottom; text-align:center; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Tempus Sans ITC'; font-size:12pt; background-color:white }
+        td.style93 { vertical-align:bottom; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style93 { vertical-align:bottom; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style94 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:12pt; background-color:white }
+        th.style94 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:12pt; background-color:white }
+        td.style95 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:12pt; background-color:white }
+        th.style95 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:12pt; background-color:white }
+        td.style96 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        th.style96 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        td.style97 { vertical-align:middle; text-align:center; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Tempus Sans ITC'; font-size:12pt; background-color:white }
+        th.style97 { vertical-align:middle; text-align:center; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Tempus Sans ITC'; font-size:12pt; background-color:white }
+        td.style98 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        th.style98 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        td.style99 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        th.style99 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        td.style100 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        th.style100 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        td.style101 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        th.style101 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        td.style102 { vertical-align:middle; text-align:center; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        th.style102 { vertical-align:middle; text-align:center; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        td.style103 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        th.style103 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        td.style104 { vertical-align:middle; text-align:center; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        th.style104 { vertical-align:middle; text-align:center; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        td.style105 { vertical-align:middle; text-align:center; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        th.style105 { vertical-align:middle; text-align:center; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        td.style106 { vertical-align:middle; text-align:center; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:none #000000; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        th.style106 { vertical-align:middle; text-align:center; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:none #000000; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        td.style107 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:1px solid #000000 !important; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        th.style107 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:1px solid #000000 !important; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        td.style108 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        th.style108 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        td.style109 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        th.style109 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:10pt; background-color:#D8D8D8 }
+        td.style110 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style110 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style111 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style111 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style112 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:none #000000; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style112 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:none #000000; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style113 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:none #000000; border-left:1px solid #000000 !important; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style113 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:none #000000; border-left:1px solid #000000 !important; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style114 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style114 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style115 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style115 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style116 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:1px solid #000000 !important; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style116 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:1px solid #000000 !important; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style117 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style117 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style118 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style118 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style119 { vertical-align:middle; text-align:center; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#D8D8D8 }
+        th.style119 { vertical-align:middle; text-align:center; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#D8D8D8 }
+        td.style120 { vertical-align:middle; text-align:center; border-bottom:none #000000; border-top:none #000000; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#D8D8D8 }
+        th.style120 { vertical-align:middle; text-align:center; border-bottom:none #000000; border-top:none #000000; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#D8D8D8 }
+        td.style121 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#D8D8D8 }
+        th.style121 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#D8D8D8 }
+        td.style122 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style122 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style123 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#D8D8D8 }
+        th.style123 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#D8D8D8 }
+        td.style124 { vertical-align:middle; text-align:center; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#D8D8D8 }
+        th.style124 { vertical-align:middle; text-align:center; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#D8D8D8 }
+        td.style125 { vertical-align:middle; text-align:center; border-bottom:none #000000; border-top:none #000000; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#D8D8D8 }
+        th.style125 { vertical-align:middle; text-align:center; border-bottom:none #000000; border-top:none #000000; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#D8D8D8 }
+        td.style126 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#D8D8D8 }
+        th.style126 { vertical-align:middle; text-align:center; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#D8D8D8 }
+        td.style127 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style127 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style128 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style128 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style129 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style129 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style130 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:none #000000; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style130 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:none #000000; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style131 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:none #000000; border-left:1px solid #000000 !important; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style131 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:none #000000; border-left:1px solid #000000 !important; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style132 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style132 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style133 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style133 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:none #000000; border-top:none #000000; border-left:none #000000; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style134 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:1px solid #000000 !important; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style134 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:1px solid #000000 !important; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style135 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style135 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style136 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style136 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:none #000000; border-left:none #000000; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style137 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style137 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style138 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style138 { vertical-align:top; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style139 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#FFF2CB }
+        th.style139 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#FFF2CB }
+        td.style140 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#FFF2CB }
+        th.style140 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#FFF2CB }
+        td.style141 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#FFF2CB }
+        th.style141 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#FFF2CB }
+        td.style142 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#FF0000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style142 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; color:#FF0000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style143 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style143 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style144 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style144 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style145 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style145 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style146 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style146 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style147 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style147 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style148 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style148 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:1px solid #000000 !important; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style149 { vertical-align:middle; text-align:center; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style149 { vertical-align:middle; text-align:center; border-bottom:none #000000; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style150 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style150 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style151 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:none #000000; color:#FF0000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style151 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:none #000000; color:#FF0000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style152 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; color:#FF0000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style152 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; color:#FF0000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style153 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:1px solid #000000 !important; color:#FF0000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style153 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:1px solid #000000 !important; color:#FF0000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style154 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#D8D8D8 }
+        th.style154 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:#D8D8D8 }
+        td.style155 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style155 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:1px solid #000000 !important; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style156 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style156 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:none #000000; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        td.style157 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        th.style157 { vertical-align:middle; text-align:left; padding-left:0px; border-bottom:1px solid #000000 !important; border-top:1px solid #000000 !important; border-left:none #000000; border-right:1px solid #000000 !important; font-weight:bold; color:#000000; font-family:'Arial'; font-size:11pt; background-color:white }
+        table.sheet0 col.col0 { width:24.39999972pt }
+        table.sheet0 col.col1 { width:24.39999972pt }
+        table.sheet0 col.col2 { width:24.39999972pt }
+        table.sheet0 col.col3 { width:90.82222118pt }
+        table.sheet0 col.col4 { width:98.95555442pt }
+        table.sheet0 col.col5 { width:26.43333303pt }
+        table.sheet0 col.col6 { width:26.43333303pt }
+        table.sheet0 col.col7 { width:26.43333303pt }
+        table.sheet0 col.col8 { width:59.64444376pt }
+        table.sheet0 col.col9 { width:52.18888829pt }
+        table.sheet0 col.col10 { width:58.96666599pt }
+        table.sheet0 col.col11 { width:59.64444376pt }
+        table.sheet0 col.col12 { width:50.15555498pt }
+        table.sheet0 col.col13 { width:30.49999965pt }
+        table.sheet0 col.col14 { width:49.47777721pt }
+        table.sheet0 col.col15 { width:43.37777728pt }
+        table.sheet0 col.col16 { width:26.43333303pt }
+        table.sheet0 col.col17 { width:39.98888843pt }
+        table.sheet0 col.col18 { width:16.26666648pt }
+        table.sheet0 col.col19 { width:42pt }
+        table.sheet0 col.col20 { width:42pt }
+        table.sheet0 tr { height:15pt }
+        table.sheet0 tr.row0 { height:15pt }
+        table.sheet0 tr.row1 { height:15pt }
+        table.sheet0 tr.row2 { height:15pt }
+        table.sheet0 tr.row3 { height:7.35pt }
+        table.sheet0 tr.row4 { height:15pt }
+        table.sheet0 tr.row5 { height:15pt }
+        table.sheet0 tr.row6 { height:15pt }
+        table.sheet0 tr.row7 { height:5.45pt }
+        table.sheet0 tr.row8 { height:15pt }
+        table.sheet0 tr.row9 { height:15pt }
+        table.sheet0 tr.row10 { height:15pt }
+        table.sheet0 tr.row11 { height:5.1pt }
+        table.sheet0 tr.row12 { height:7.35pt }
+        table.sheet0 tr.row13 { height:13.7pt }
+        table.sheet0 tr.row14 { height:15pt }
+        table.sheet0 tr.row15 { height:24pt }
+        table.sheet0 tr.row16 { height:18pt }
+        table.sheet0 tr.row17 { height:18pt }
+        table.sheet0 tr.row18 { height:18pt }
+        table.sheet0 tr.row19 { height:18pt }
+        table.sheet0 tr.row20 { height:18pt }
+        table.sheet0 tr.row21 { height:18pt }
+        table.sheet0 tr.row22 { height:18pt }
+        table.sheet0 tr.row23 { height:18pt }
+        table.sheet0 tr.row24 { height:18pt }
+        table.sheet0 tr.row25 { height:18pt }
+        table.sheet0 tr.row26 { height:18pt }
+        table.sheet0 tr.row27 { height:18pt }
+        table.sheet0 tr.row28 { height:18pt }
+        table.sheet0 tr.row29 { height:18pt }
+        table.sheet0 tr.row30 { height:18pt }
+        table.sheet0 tr.row31 { height:13.35pt }
+        table.sheet0 tr.row32 { height:15.6pt }
+        table.sheet0 tr.row33 { height:21pt }
+        table.sheet0 tr.row34 { height:27pt }
+        table.sheet0 tr.row35 { height:14.1pt }
+        table.sheet0 tr.row37 { height:20.45pt }
+        table.sheet0 tr.row38 { height:18pt }
+        table.sheet0 tr.row39 { height:18pt }
+        table.sheet0 tr.row40 { height:18pt }
+        table.sheet0 tr.row41 { height:18pt }
+        table.sheet0 tr.row42 { height:18pt }
+        table.sheet0 tr.row43 { height:18pt }
+        table.sheet0 tr.row44 { height:18pt }
+        table.sheet0 tr.row45 { height:18pt }
+        table.sheet0 tr.row46 { height:18pt }
+        table.sheet0 tr.row47 { height:18pt }
+        table.sheet0 tr.row48 { height:18pt }
+        table.sheet0 tr.row49 { height:18pt }
+        table.sheet0 tr.row50 { height:18pt }
+        table.sheet0 tr.row51 { height:18pt }
+        table.sheet0 tr.row52 { height:18pt }
+        table.sheet0 tr.row53 { height:18pt }
+        table.sheet0 tr.row54 { height:18pt }
+        table.sheet0 tr.row55 { height:18pt }
+        table.sheet0 tr.row56 { height:18pt }
+        table.sheet0 tr.row57 { height:18pt }
+        table.sheet0 tr.row58 { height:18pt }
+        table.sheet0 tr.row59 { height:18pt }
+        table.sheet0 tr.row60 { height:12pt }
+        table.sheet0 tr.row61 { height:20.45pt }
+        table.sheet0 tr.row62 { height:21.6pt }
+        table.sheet0 tr.row63 { height:24pt }
+        table.sheet0 tr.row64 { height:15.6pt }
+        table.sheet0 tr.row65 { height:15pt }
+      </style>
+    </head>
+  
+    <body>
+  <style>
+  @page { margin-left: 0.23622047244094in; margin-right: 0.23622047244094in; margin-top: 1.6535433070866in; margin-bottom: 0.74803149606299in; }
+  body { margin-left: 0.23622047244094in; margin-right: 0.23622047244094in; margin-top: 1.6535433070866in; margin-bottom: 0.74803149606299in; }
+  </style>
+ 
+      <table id="contentToConvert"  >
+          <col class="col0" id="contentToConvert">
+          <col class="col1" id="contentToConvert">
+          <col class="col2">
+          <col class="col3">
+          <col class="col4">
+          <col class="col5">
+          <col class="col6">
+          <col class="col7">
+          <col class="col8">
+          <col class="col9">
+          <col class="col10">
+          <col class="col11">
+          <col class="col12">
+          <col class="col13">
+          <col class="col14">
+          <col class="col15">
+          <col class="col16">
+          <col class="col17">
+          <col class="col18">
+          <col class="col19">
+          <col class="col20">
+          <tbody id="contentToConvert"> 
+            <tr class="row0">
+              <td class="column0 style1 s">NOMBRE DEL PUNTO DE ENTREGA</td>
+              <td class="column1 style2 null"></td>
+              <td class="column2 style2 null"></td>
+              <td class="column3 style2 null"></td>
+              <td class="column4 style3 null"></td>
+              <td class="column5 style3 null"></td>
+              <td class="column6 style3 null"></td>
+              <td class="column7 style3 null"></td>
+              <td class="column8 style66 null"></td>
+              <td class="column9 style4 s">CODIGO DEL PUNTO</td>
+              <td class="column10 style5 null"></td>
+              <td class="column11 style72 null"></td>
+              <td class="column12 style3 null"></td>
+              <td class="column13 style3 null"></td>
+              <td class="column14 style3 null"></td>
+              <td class="column15 style3 null"></td>
+              <td class="column16 style3 null"></td>
+              <td class="column17 style6 null"></td>
+              <td class="column18 style42 null"></td>
+              <td class="column19 style42 null"></td>
+              <td class="column20">&nbsp;</td>
+            </tr>
+            <tr class="row1">
+              <td class="column0 style9 s">NOMBRE RESPONSABLE DEL PUNTO</td>
+              <td class="column1 style10 null"></td>
+              <td class="column2 style10 null"></td>
+              <td class="column3 style10 null"></td>
+              <td class="column4 style11 null"></td>
+              <td class="column5 style11 null"></td>
+              <td class="column6 style11 null"></td>
+              <td class="column7 style11 null"></td>
+              <td class="column8 style67 null"></td>
+              <td class="column9 style12 s">NOMBRE RESPONSABLE DE DILIGENCIAR EL FORMATO</td>
+              <td class="column10 style13 null"></td>
+              <td class="column11 style13 null"></td>
+              <td class="column12 style13 null"></td>
+              <td class="column13 style13 null"></td>
+              <td class="column14 style14 null"></td>
+              <td class="column15 style11 null"></td>
+              <td class="column16 style11 null"></td>
+              <td class="column17 style15 null"></td>
+              <td class="column18 style42 null"></td>
+              <td class="column19 style42 null"></td>
+              <td class="column20">&nbsp;</td>
+            </tr>
+            <tr class="row2">
+              <td class="column0 style18 s">REGIONAL</td>
+              <td class="column1 style13 null"></td>
+              <td class="column2 style13 null"></td>
+              <td class="column3 style13 null"></td>
+              <td class="column4 style11 null"></td>
+              <td class="column5 style11 null"></td>
+              <td class="column6 style11 null"></td>
+              <td class="column7 style11 null"></td>
+              <td class="column8 style67 null"></td>
+              <td class="column9 style16 s">CENTRO ZONAL </td>
+              <td class="column10 style13 null"></td>
+              <td class="column11 style11 null"></td>
+              <td class="column12 style11 null"></td>
+              <td class="column13 style11 null"></td>
+              <td class="column14 style12 s">MUNICIPIO</td>
+              <td class="column15 style11 null"></td>
+              <td class="column16 style11 null"></td>
+              <td class="column17 style15 null"></td>
+              <td class="column18 style42 null"></td>
+              <td class="column19 style42 null"></td>
+              <td class="column20">&nbsp;</td>
+            </tr>
+            <tr class="row3">
+              <td class="column0 style19 null"></td>
+              <td class="column1 style20 null"></td>
+              <td class="column2 style20 null"></td>
+              <td class="column3 style20 null"></td>
+              <td class="column4 style20 null"></td>
+              <td class="column5 style20 null"></td>
+              <td class="column6 style20 null"></td>
+              <td class="column7 style20 null"></td>
+              <td class="column8 style21 null"></td>
+              <td class="column9 style20 null"></td>
+              <td class="column10 style20 null"></td>
+              <td class="column11 style20 null"></td>
+              <td class="column12 style20 null"></td>
+              <td class="column13 style20 null"></td>
+              <td class="column14 style22 null"></td>
+              <td class="column15 style20 null"></td>
+              <td class="column16 style20 null"></td>
+              <td class="column17 style23 null"></td>
+              <td class="column18 style42 null"></td>
+              <td class="column19 style42 null"></td>
+              <td class="column20">&nbsp;</td>
+            </tr>
+            <tr class="row4">
+              <td class="column0 style24 s">DESCRIPCION DEL AAVN:</td>
+              <td class="column1 style25 null"></td>
+              <td class="column2 style25 null"></td>
+              <td class="column3 style25 null"></td>
+              <td class="column4 style26 s">Bienestarina Más®</td>
+              <td class="column5 style25 null"></td>
+              <td class="column6 style26 null"></td>
+              <td class="column7 style26 null"></td>
+              <td class="column8 style25 null"></td>
+              <td class="column9 style26 s">Bienestarina Más® Vainilla</td>
+              <td class="column10 style25 null"></td>
+              <td class="column11 style26 null"></td>
+              <td class="column12 style26 null"></td>
+              <td class="column13 style26 s">Bienestarina Más® Fresa:</td>
+              <td class="column14 style25 null"></td>
+              <td class="column15 style25 null"></td>
+              <td class="column16 style25 null"></td>
+              <td class="column17 style27 null"></td>
+              <td class="column18 style42 null"></td>
+              <td class="column19 style42 null"></td>
+              <td class="column20">&nbsp;</td>
+            </tr>
+            <tr class="row5">
+              <td class="column0 style29 null"></td>
+              <td class="column1 style30 null"></td>
+              <td class="column2 style30 null"></td>
+              <td class="column3 style30 null"></td>
+              <td class="column4 style7 s">Alimento para la Mujer Gestante y en Periodo de Lactancia</td>
+              <td class="column5 style30 null"></td>
+              <td class="column6 style30 null"></td>
+              <td class="column7 style30 null"></td>
+              <td class="column8 style31 null"></td>
+              <td class="column9 style31 null"></td>
+              <td class="column10 style31 null"></td>
+              <td class="column11 style7 null"></td>
+              <td class="column12 style30 null"></td>
+              <td class="column13 style30 null"></td>
+              <td class="column14 style30 null"></td>
+              <td class="column15 style30 null"></td>
+              <td class="column16 style30 null"></td>
+              <td class="column17 style32 null"></td>
+              <td class="column18 style42 null"></td>
+              <td class="column19 style42 null"></td>
+              <td class="column20">&nbsp;</td>
+            </tr>
+            <tr class="row6">
+              <td class="column0 style33 null"></td>
+              <td class="column1 style13 null"></td>
+              <td class="column2 style13 null"></td>
+              <td class="column3 style13 null"></td>
+              <td class="column4 style12 s">Bienestarina® Líquida</td>
+              <td class="column5 style13 null"></td>
+              <td class="column6 style41 null"></td>
+              <td class="column7 style34 s">Sabor: </td>
+              <td class="column8 style35 null"></td>
+              <td class="column9 style36 null"></td>
+              <td class="column10 style37 null"></td>
+              <td class="column11 style37 null"></td>
+              <td class="column12 style38 null"></td>
+              <td class="column13 style12 s">Otro </td>
+              <td class="column14 style39 s">Cúal: </td>
+              <td class="column15 style11 null"></td>
+              <td class="column16 style11 null"></td>
+              <td class="column17 style15 null"></td>
+              <td class="column18">&nbsp;</td>
+              <td class="column19">&nbsp;</td>
+              <td class="column20">&nbsp;</td>
+            </tr>
+            <tr class="row7">
+              <td class="column0 style33 null"></td>
+              <td class="column1 style13 null"></td>
+              <td class="column2 style13 null"></td>
+              <td class="column3 style13 null"></td>
+              <td class="column4 style13 null"></td>
+              <td class="column5 style13 null"></td>
+              <td class="column6 style13 null"></td>
+              <td class="column7 style13 null"></td>
+              <td class="column8 style31 null"></td>
+              <td class="column9 style31 null"></td>
+              <td class="column10 style31 null"></td>
+              <td class="column11 style31 null"></td>
+              <td class="column12 style13 null"></td>
+              <td class="column13 style13 null"></td>
+              <td class="column14 style13 null"></td>
+              <td class="column15 style13 null"></td>
+              <td class="column16 style13 null"></td>
+              <td class="column17 style40 null"></td>
+              <td class="column18">&nbsp;</td>
+              <td class="column19">&nbsp;</td>
+              <td class="column20">&nbsp;</td>
+            </tr>
+            <tr class="row8">
+              <td class="column0 style24 s">VALOR INFORMATIVO </td>
+              <td class="column1 style43 null"></td>
+              <td class="column2 style43 null"></td>
+              <td class="column3 style43 null"></td>
+              <td class="column4 style44 s">Mes: ___________</td>
+              <td class="column5 style45 s">Valor: ________________</td>
+              <td class="column6 style43 null"></td>
+              <td class="column7 style43 null"></td>
+              <td class="column8 style46 null"></td>
+              <td class="column9 style47 s">Mes: ___________</td>
+              <td class="column10 style47 null"></td>
+              <td class="column11 style45 s">Valor: ________________</td>
+              <td class="column12 style43 null"></td>
+              <td class="column13 style47 s">Mes: ___________</td>
+              <td class="column14 style47 null"></td>
+              <td class="column15 style45 s">Valor: ____________</td>
+              <td class="column16 style45 null"></td>
+              <td class="column17 style48 null"></td>
+              <td class="column18 style41 null"></td>
+              <td class="column19 style41 null"></td>
+              <td class="column20 style41 null"></td>
+            </tr>
+            <tr class="row9">
+              <td class="column0 style29 s">DEL PRECIO DEL AAVN</td>
+              <td class="column1 style13 null"></td>
+              <td class="column2 style13 null"></td>
+              <td class="column3 style13 null"></td>
+              <td class="column4 style49 s">Mes: ___________</td>
+              <td class="column5 style12 s">Valor: ________________</td>
+              <td class="column6 style13 null"></td>
+              <td class="column7 style13 null"></td>
+              <td class="column8 style50 null"></td>
+              <td class="column9 style39 s">Mes: ___________</td>
+              <td class="column10 style39 null"></td>
+              <td class="column11 style12 s">Valor: ________________</td>
+              <td class="column12 style13 null"></td>
+              <td class="column13 style39 s">Mes: ___________</td>
+              <td class="column14 style39 null"></td>
+              <td class="column15 style12 s">Valor: ____________</td>
+              <td class="column16 style12 null"></td>
+              <td class="column17 style40 null"></td>
+              <td class="column18 style41 null"></td>
+              <td class="column19 style41 null"></td>
+              <td class="column20 style41 null"></td>
+            </tr>
+            <tr class="row10">
+              <td class="column0 style33 null"></td>
+              <td class="column1 style13 null"></td>
+              <td class="column2 style13 null"></td>
+              <td class="column3 style13 null"></td>
+              <td class="column4 style49 s">Mes: ___________</td>
+              <td class="column5 style12 s">Valor: ________________</td>
+              <td class="column6 style13 null"></td>
+              <td class="column7 style13 null"></td>
+              <td class="column8 style50 null"></td>
+              <td class="column9 style39 s">Mes: ___________</td>
+              <td class="column10 style39 null"></td>
+              <td class="column11 style12 s">Valor: ________________</td>
+              <td class="column12 style13 null"></td>
+              <td class="column13 style39 s">Mes: ___________</td>
+              <td class="column14 style39 null"></td>
+              <td class="column15 style12 s">Valor: ____________</td>
+              <td class="column16 style12 null"></td>
+              <td class="column17 style40 null"></td>
+              <td class="column18 style41 null"></td>
+              <td class="column19 style41 null"></td>
+              <td class="column20 style41 null"></td>
+            </tr>
+            <tr class="row11">
+              <td class="column0 style51 null"></td>
+              <td class="column1 style20 null"></td>
+              <td class="column2 style20 null"></td>
+              <td class="column3 style20 null"></td>
+              <td class="column4 style20 null"></td>
+              <td class="column5 style20 null"></td>
+              <td class="column6 style20 null"></td>
+              <td class="column7 style20 null"></td>
+              <td class="column8 style52 null"></td>
+              <td class="column9 style53 null"></td>
+              <td class="column10 style53 null"></td>
+              <td class="column11 style53 null"></td>
+              <td class="column12 style20 null"></td>
+              <td class="column13 style22 null"></td>
+              <td class="column14 style20 null"></td>
+              <td class="column15 style20 null"></td>
+              <td class="column16 style20 null"></td>
+              <td class="column17 style23 null"></td>
+              <td class="column18 style41 null"></td>
+              <td class="column19 style41 null"></td>
+              <td class="column20 style41 null"></td>
+            </tr>
+            <tr class="row12">
+              <td class="column0 style54 null"></td>
+              <td class="column1">&nbsp;</td>
+              <td class="column2">&nbsp;</td>
+              <td class="column3">&nbsp;</td>
+              <td class="column4">&nbsp;</td>
+              <td class="column5">&nbsp;</td>
+              <td class="column6">&nbsp;</td>
+              <td class="column7">&nbsp;</td>
+              <td class="column8">&nbsp;</td>
+              <td class="column9">&nbsp;</td>
+              <td class="column10">&nbsp;</td>
+              <td class="column11">&nbsp;</td>
+              <td class="column12">&nbsp;</td>
+              <td class="column13">&nbsp;</td>
+              <td class="column14">&nbsp;</td>
+              <td class="column15">&nbsp;</td>
+              <td class="column16">&nbsp;</td>
+              <td class="column17">&nbsp;</td>
+              <td class="column18">&nbsp;</td>
+              <td class="column19">&nbsp;</td>
+              <td class="column20">&nbsp;</td>
+            </tr>
+            <tr class="row13">
+              <td class="column0 style104 s style109" colspan="3" rowspan="2">Fecha de entrada o salida</td>
+              <td class="column3 style98 s style98" rowspan="3">No. de acta</td>
+              <td class="column4 style98 s style98" rowspan="3">No. Lote</td>
+              <td class="column5 style104 s style109" colspan="3" rowspan="2">Fecha de vencimiento</td>
+              <td class="column8 style96 s style96" rowspan="3">ENTRADA (Unidades)</td>
+              <td class="column9 style99 s style101" colspan="3">SALIDA </td>
+              <td class="column12 style96 s style96" colspan="2" rowspan="3">EXISTENCIA LOTE  (Unidades)</td>
+              <td class="column14 style96 s style96" colspan="2" rowspan="3">EXISTENCIA  PUNTO DE ENTREGA (Unidades)</td>
+              <td class="column16 style96 s style96" colspan="2" rowspan="3">RESERVA (Unidades)</td>
+              <td class="column18 style42 null"></td>
+              <td class="column19 style42 null"></td>
+              <td class="column20">&nbsp;</td>
+            </tr>
+            <tr class="row14">
+              <td class="column9 style102 s style103" rowspan="2">Unidades</td>
+              <td class="column10 style99 s style101" colspan="2">Destino</td>
+              <td class="column18">&nbsp;</td>
+              <td class="column19">&nbsp;</td>
+              <td class="column20">&nbsp;</td>
+            </tr>
+            <tr class="row15">
+              <td class="column0 style55 s">Día</td>
+              <td class="column1 style55 s">Mes</td>
+              <td class="column2 style56 s">Año</td>
+              <td class="column5 style70 s">Día</td>
+              <td class="column6 style70 s">Mes</td>
+              <td class="column7 style70 s">Año</td>
+              <td class="column10 style57 s">Beneficiarios </td>
+              <td class="column11 style57 s">Unidades ejecutoras</td>
+              <td class="column18">&nbsp;</td>
+              <td class="column19">&nbsp;</td>
+              <td class="column20">&nbsp;</td>
+            </tr>
+            <tr class="row16">
+              <td class="column0 style58 null"></td>
+              <td class="column1 style58 null"></td>
+              <td class="column2 style58 null"></td>
+              <td class="column3 style58 null"></td>
+              <td class="column4 style58 null"></td>
+              <td class="column5 style58 null"></td>
+              <td class="column6 style58 null"></td>
+              <td class="column7 style58 null"></td>
+              <td class="column8 style58 null"></td>
+              <td class="column9 style58 null"></td>
+              <td class="column10 style59 null"></td>
+              <td class="column11 style59 null"></td>
+              <td class="column12 style94 null style95" colspan="2"></td>
+              <td class="column14 style93 null style93" colspan="2"></td>
+              <td class="column16 style93 null style93" colspan="2"></td>
+              <td class="column18">&nbsp;</td>
+              <td class="column19">&nbsp;</td>
+              <td class="column20">&nbsp;</td>
+            </tr>
+            <tr class="row17">
+              <td class="column0 style58 null"></td>
+              <td class="column1 style58 null"></td>
+              <td class="column2 style58 null"></td>
+              <td class="column3 style58 null"></td>
+              <td class="column4 style58 null"></td>
+              <td class="column5 style58 null"></td>
+              <td class="column6 style58 null"></td>
+              <td class="column7 style58 null"></td>
+              <td class="column8 style58 null"></td>
+              <td class="column9 style58 null"></td>
+              <td class="column10 style59 null"></td>
+              <td class="column11 style59 null"></td>
+              <td class="column12 style94 null style95" colspan="2"></td>
+              <td class="column14 style93 null style93" colspan="2"></td>
+              <td class="column16 style93 null style93" colspan="2"></td>
+              <td class="column18">&nbsp;</td>
+              <td class="column19">&nbsp;</td>
+              <td class="column20">&nbsp;</td>
+            </tr>
+            <tr class="row18">
+              <td class="column0 style58 null"></td>
+              <td class="column1 style58 null"></td>
+              <td class="column2 style58 null"></td>
+              <td class="column3 style58 null"></td>
+              <td class="column4 style58 null"></td>
+              <td class="column5 style58 null"></td>
+              <td class="column6 style58 null"></td>
+              <td class="column7 style58 null"></td>
+              <td class="column8 style58 null"></td>
+              <td class="column9 style58 null"></td>
+              <td class="column10 style58 null"></td>
+              <td class="column11 style58 null"></td>
+              <td class="column12 style94 null style95" colspan="2"></td>
+              <td class="column14 style93 null style93" colspan="2"></td>
+              <td class="column16 style93 null style93" colspan="2"></td>
+              <td class="column18">&nbsp;</td>
+              <td class="column19">&nbsp;</td>
+              <td class="column20">&nbsp;</td>
+            </tr>
+            <tr class="row19">
+              <td class="column0 style58 null"></td>
+              <td class="column1 style58 null"></td>
+              <td class="column2 style58 null"></td>
+              <td class="column3 style58 null"></td>
+              <td class="column4 style58 null"></td>
+              <td class="column5 style58 null"></td>
+              <td class="column6 style58 null"></td>
+              <td class="column7 style58 null"></td>
+              <td class="column8 style58 null"></td>
+              <td class="column9 style58 null"></td>
+              <td class="column10 style58 null"></td>
+              <td class="column11 style58 null"></td>
+              <td class="column12 style94 null style95" colspan="2"></td>
+              <td class="column14 style93 null style93" colspan="2"></td>
+              <td class="column16 style93 null style93" colspan="2"></td>
+              <td class="column18">&nbsp;</td>
+              <td class="column19">&nbsp;</td>
+              <td class="column20">&nbsp;</td>
+            </tr>
+            <tr class="row20">
+              <td class="column0 style58 null"></td>
+              <td class="column1 style58 null"></td>
+              <td class="column2 style58 null"></td>
+              <td class="column3 style58 null"></td>
+              <td class="column4 style58 null"></td>
+              <td class="column5 style58 null"></td>
+              <td class="column6 style58 null"></td>
+              <td class="column7 style58 null"></td>
+              <td class="column8 style58 null"></td>
+              <td class="column9 style58 null"></td>
+              <td class="column10 style68 null"></td>
+              <td class="column11 style68 null"></td>
+              <td class="column12 style94 null style95" colspan="2"></td>
+              <td class="column14 style93 null style93" colspan="2"></td>
+              <td class="column16 style93 null style93" colspan="2"></td>
+              <td class="column18 style42 null"></td>
+              <td class="column19">&nbsp;</td>
+              <td class="column20">&nbsp;</td>
+            </tr>
+            <tr class="row21">
+              <td class="column0 style60 null"></td>
+              <td class="column1 style60 null"></td>
+              <td class="column2 style58 null"></td>
+              <td class="column3 style60 null"></td>
+              <td class="column4 style60 null"></td>
+              <td class="column5 style60 null"></td>
+              <td class="column6 style60 null"></td>
+              <td class="column7 style60 null"></td>
+              <td class="column8 style60 null"></td>
+              <td class="column9 style60 null"></td>
+              <td class="column10 style60 null"></td>
+              <td class="column11 style60 null"></td>
+              <td class="column12 style94 null style95" colspan="2"></td>
+              <td class="column14 style93 null style93" colspan="2"></td>
+              <td class="column16 style93 null style93" colspan="2"></td>
+              <td class="column18 style42 null"></td>
+              <td class="column19">&nbsp;</td>
+              <td class="column20">&nbsp;</td>
+            </tr>
+            <tr class="row22">
+              <td class="column0 style60 null"></td>
+              <td class="column1 style60 null"></td>
+              <td class="column2 style58 null"></td>
+              <td class="column3 style60 null"></td>
+              <td class="column4 style60 null"></td>
+              <td class="column5 style60 null"></td>
+              <td class="column6 style60 null"></td>
+              <td class="column7 style60 null"></td>
+              <td class="column8 style60 null"></td>
+              <td class="column9 style60 null"></td>
+              <td class="column10 style60 null"></td>
+              <td class="column11 style60 null"></td>
+              <td class="column12 style94 null style95" colspan="2"></td>
+              <td class="column14 style93 null style93" colspan="2"></td>
+              <td class="column16 style93 null style93" colspan="2"></td>
+              <td class="column18 style42 null"></td>
+              <td class="column19">&nbsp;</td>
+              <td class="column20">&nbsp;</td>
+            </tr>
+            <tr class="row23">
+              <td class="column0 style60 null"></td>
+              <td class="column1 style60 null"></td>
+              <td class="column2 style58 null"></td>
+              <td class="column3 style60 null"></td>
+              <td class="column4 style60 null"></td>
+              <td class="column5 style60 null"></td>
+              <td class="column6 style60 null"></td>
+              <td class="column7 style60 null"></td>
+              <td class="column8 style60 null"></td>
+              <td class="column9 style60 null"></td>
+              <td class="column10 style60 null"></td>
+              <td class="column11 style60 null"></td>
+              <td class="column12 style94 null style95" colspan="2"></td>
+              <td class="column14 style93 null style93" colspan="2"></td>
+              <td class="column16 style93 null style93" colspan="2"></td>
+              <td class="column18 style42 null"></td>
+              <td class="column19">&nbsp;</td>
+              <td class="column20">&nbsp;</td>
+            </tr>
+            <tr class="row24">
+              <td class="column0 style60 null"></td>
+              <td class="column1 style60 null"></td>
+              <td class="column2 style58 null"></td>
+              <td class="column3 style60 null"></td>
+              <td class="column4 style60 null"></td>
+              <td class="column5 style60 null"></td>
+              <td class="column6 style60 null"></td>
+              <td class="column7 style60 null"></td>
+              <td class="column8 style60 null"></td>
+              <td class="column9 style60 null"></td>
+              <td class="column10 style60 null"></td>
+              <td class="column11 style60 null"></td>
+              <td class="column12 style94 null style95" colspan="2"></td>
+              <td class="column14 style93 null style93" colspan="2"></td>
+              <td class="column16 style93 null style93" colspan="2"></td>
+              <td class="column18 style42 null"></td>
+              <td class="column19">&nbsp;</td>
+              <td class="column20">&nbsp;</td>
+            </tr>
+            <tr class="row25">
+              <td class="column0 style60 null"></td>
+              <td class="column1 style60 null"></td>
+              <td class="column2 style58 null"></td>
+              <td class="column3 style60 null"></td>
+              <td class="column4 style60 null"></td>
+              <td class="column5 style60 null"></td>
+              <td class="column6 style60 null"></td>
+              <td class="column7 style60 null"></td>
+              <td class="column8 style60 null"></td>
+              <td class="column9 style60 null"></td>
+              <td class="column10 style60 null"></td>
+              <td class="column11 style60 null"></td>
+              <td class="column12 style94 null style95" colspan="2"></td>
+              <td class="column14 style93 null style93" colspan="2"></td>
+              <td class="column16 style93 null style93" colspan="2"></td>
+              <td class="column18 style42 null"></td>
+              <td class="column19">&nbsp;</td>
+              <td class="column20">&nbsp;</td>
+            </tr>
+            <tr class="row26">
+              <td class="column0 style60 null"></td>
+              <td class="column1 style60 null"></td>
+              <td class="column2 style58 null"></td>
+              <td class="column3 style60 null"></td>
+              <td class="column4 style60 null"></td>
+              <td class="column5 style60 null"></td>
+              <td class="column6 style60 null"></td>
+              <td class="column7 style60 null"></td>
+              <td class="column8 style60 null"></td>
+              <td class="column9 style60 null"></td>
+              <td class="column10 style60 null"></td>
+              <td class="column11 style60 null"></td>
+              <td class="column12 style94 null style95" colspan="2"></td>
+              <td class="column14 style93 null style93" colspan="2"></td>
+              <td class="column16 style93 null style93" colspan="2"></td>
+              <td class="column18 style42 null"></td>
+              <td class="column19">&nbsp;</td>
+              <td class="column20">&nbsp;</td>
+            </tr>
+            <tr class="row27">
+              <td class="column0 style60 null"></td>
+              <td class="column1 style60 null"></td>
+              <td class="column2 style58 null"></td>
+              <td class="column3 style60 null"></td>
+              <td class="column4 style60 null"></td>
+              <td class="column5 style60 null"></td>
+              <td class="column6 style60 null"></td>
+              <td class="column7 style60 null"></td>
+              <td class="column8 style60 null"></td>
+              <td class="column9 style60 null"></td>
+              <td class="column10 style60 null"></td>
+              <td class="column11 style60 null"></td>
+              <td class="column12 style94 null style95" colspan="2"></td>
+              <td class="column14 style93 null style93" colspan="2"></td>
+              <td class="column16 style93 null style93" colspan="2"></td>
+              <td class="column18 style42 null"></td>
+              <td class="column19">&nbsp;</td>
+              <td class="column20">&nbsp;</td>
+            </tr>
+            <tr class="row28">
+              <td class="column0 style60 null"></td>
+              <td class="column1 style60 null"></td>
+              <td class="column2 style58 null"></td>
+              <td class="column3 style60 null"></td>
+              <td class="column4 style60 null"></td>
+              <td class="column5 style60 null"></td>
+              <td class="column6 style60 null"></td>
+              <td class="column7 style60 null"></td>
+              <td class="column8 style60 null"></td>
+              <td class="column9 style60 null"></td>
+              <td class="column10 style60 null"></td>
+              <td class="column11 style60 null"></td>
+              <td class="column12 style94 null style95" colspan="2"></td>
+              <td class="column14 style93 null style93" colspan="2"></td>
+              <td class="column16 style93 null style93" colspan="2"></td>
+              <td class="column18 style42 null"></td>
+              <td class="column19">&nbsp;</td>
+              <td class="column20">&nbsp;</td>
+            </tr>
+            <tr class="row29">
+              <td class="column0 style60 null"></td>
+              <td class="column1 style60 null"></td>
+              <td class="column2 style58 null"></td>
+              <td class="column3 style60 null"></td>
+              <td class="column4 style60 null"></td>
+              <td class="column5 style60 null"></td>
+              <td class="column6 style60 null"></td>
+              <td class="column7 style60 null"></td>
+              <td class="column8 style60 null"></td>
+              <td class="column9 style60 null"></td>
+              <td class="column10 style60 null"></td>
+              <td class="column11 style60 null"></td>
+              <td class="column12 style73 null"></td>
+              <td class="column13 style74 null"></td>
+              <td class="column14 style93 null style93" colspan="2"></td>
+              <td class="column16 style93 null style93" colspan="2"></td>
+              <td class="column18 style42 null"></td>
+              <td class="column19">&nbsp;</td>
+              <td class="column20">&nbsp;</td>
+            </tr>
+            <tr class="row30">
+              <td class="column0 style60 null"></td>
+              <td class="column1 style60 null"></td>
+              <td class="column2 style58 null"></td>
+              <td class="column3 style60 null"></td>
+              <td class="column4 style60 null"></td>
+              <td class="column5 style60 null"></td>
+              <td class="column6 style60 null"></td>
+              <td class="column7 style60 null"></td>
+              <td class="column8 style60 null"></td>
+              <td class="column9 style60 null"></td>
+              <td class="column10 style60 null"></td>
+              <td class="column11 style60 null"></td>
+              <td class="column12 style94 null style95" colspan="2"></td>
+              <td class="column14 style93 null style93" colspan="2"></td>
+              <td class="column16 style93 null style93" colspan="2"></td>
+              <td class="column18 style42 null"></td>
+              <td class="column19">&nbsp;</td>
+              <td class="column20">&nbsp;</td>
+            </tr>
+            <tr class="row31">
+              <td class="column0 style91 null style91" colspan="3"></td>
+              <td class="column3">&nbsp;</td>
+              <td class="column4">&nbsp;</td>
+              <td class="column5">&nbsp;</td>
+              <td class="column6">&nbsp;</td>
+              <td class="column7">&nbsp;</td>
+              <td class="column8">&nbsp;</td>
+              <td class="column9">&nbsp;</td>
+              <td class="column10">&nbsp;</td>
+              <td class="column11">&nbsp;</td>
+              <td class="column12">&nbsp;</td>
+              <td class="column13">&nbsp;</td>
+              <td class="column14">&nbsp;</td>
+              <td class="column15">&nbsp;</td>
+              <td class="column16 style13 null"></td>
+              <td class="column17 style13 null"></td>
+              <td class="column18">&nbsp;</td>
+              <td class="column19">&nbsp;</td>
+              <td class="column20">&nbsp;</td>
+            </tr>
+            <tr class="row32">
+              <td class="column0 style76 s">Fiirma del responsable del punto de entrega ____________________________________________</td>
+              <td class="column1 style75 null"></td>
+              <td class="column2 style75 null"></td>
+              <td class="column3 style75 null"></td>
+              <td class="column4">&nbsp;</td>
+              <td class="column5">&nbsp;</td>
+              <td class="column6">&nbsp;</td>
+              <td class="column7">&nbsp;</td>
+              <td class="column8">&nbsp;</td>
+              <td class="column9">&nbsp;</td>
+              <td class="column10">&nbsp;</td>
+              <td class="column11">&nbsp;</td>
+              <td class="column12">&nbsp;</td>
+              <td class="column13">&nbsp;</td>
+              <td class="column14">&nbsp;</td>
+              <td class="column15">&nbsp;</td>
+              <td class="column16 style13 null"></td>
+              <td class="column17 style13 null"></td>
+              <td class="column18">&nbsp;</td>
+              <td class="column19">&nbsp;</td>
+              <td class="column20">&nbsp;</td>
+            </tr>
+            <tr class="row33">
+              <td class="column0 style76 s">Cédula del responsable del punto de entrega ___________________________________________</td>
+              <td class="column1 style75 null"></td>
+              <td class="column2 style75 null"></td>
+              <td class="column3 style75 null"></td>
+              <td class="column4">&nbsp;</td>
+              <td class="column5">&nbsp;</td>
+              <td class="column6">&nbsp;</td>
+              <td class="column7">&nbsp;</td>
+              <td class="column8">&nbsp;</td>
+              <td class="column9">&nbsp;</td>
+              <td class="column10">&nbsp;</td>
+              <td class="column11">&nbsp;</td>
+              <td class="column12">&nbsp;</td>
+              <td class="column13">&nbsp;</td>
+              <td class="column14">&nbsp;</td>
+              <td class="column15">&nbsp;</td>
+              <td class="column16 style13 null"></td>
+              <td class="column17 style13 null"></td>
+              <td class="column18">&nbsp;</td>
+              <td class="column19">&nbsp;</td>
+              <td class="column20">&nbsp;</td>
+            </tr>
+            <tr class="row34">
+              <td class="column0 style13 null"></td>
+              <td class="column1 style13 null"></td>
+              <td class="column2 style13 null"></td>
+              <td class="column3 style13 null"></td>
+              <td class="column4 style13 null"></td>
+              <td class="column5 style97 s style97" colspan="9">Antes de imprimir este documento… piense en el medio ambiente!</td>
+              <td class="column14">&nbsp;</td>
+              <td class="column15">&nbsp;</td>
+              <td class="column16">&nbsp;</td>
+              <td class="column17">&nbsp;</td>
+              <td class="column18">&nbsp;</td>
+              <td class="column19">&nbsp;</td>
+              <td class="column20">&nbsp;</td>
+            </tr>
+           
+          </tbody>
+      </table>
+    
+      <button class="btn btn-primary" (click)="Generareporte()">Generar Reporte</button> 
+    </body>
+  </html>
+  
+
+
+
+ 
