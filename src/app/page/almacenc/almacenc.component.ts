@@ -11,7 +11,7 @@ import { Almacen} from '../../interfaces/almacen';
 
   <nav class="navbar navbar-success bg-success">
   <td>
-         <button class="btn btn-dark" routerLink="/menu">Volver</button>
+         <button class="btn btn-dark" routerLink="/almacen">Volver</button>
          </td>
          <td>
           <button class="btn btn-dark" [routerLink]="['/almacenci']">Crear</button>

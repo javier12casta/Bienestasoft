@@ -1,50 +1,25 @@
-
-<html>
-		<title>Menu Desplegable</title>
-		<head>
-
-			
-
-		</head>
-		<body>
-                
-
-		<h1>Crear Listas De Datos Maestros</h1>
-		<div class="container"  class="padre">
-		 <div class="card card-container" >
-		
-		<form class="form-signin padding" >
-		<h2></h2>
-		<span class="btn btn-success" >Estado del dato Maestro</span>
-		<h2></h2>
-		
-		<select class="select-css">
-				<option value="0">1</option>
-				<option value="1">2</option>
-		</select>
-		<h2></h2>
-
-		<span class="btn btn-success">Codigo Servicio y madalidad</span>
-		<h2></h2>
-		<input type="text" id="inputservicio" placeholder="Codigo Servicio y modalidad" required autofocus>
-		<h2></h2>
-		<span class="btn btn-success">Modalidad</span>
-		<h2></h2>
-		<input type="text" id="inputmodalidad"  placeholder="Modalidad" required autofocus>
-		<h2></h2>
-			   <button type="button" class="btn btn-success">Aceptar</button>
-			   <h2></h2>
-
-			   
-
-		</form><!-- /form -->
-		</div><!-- /card-container -->
-		</div><!-- /card-container -->
-
-
-
-
-
-
-	</body>
-</html>
+<nav class="navbar navbar-success bg-success">
+		<button class="btn btn-dark" routerLink="/menu">Volver</button>
+	  </nav>
+	  
+	  <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+		<div class="card" padding>
+		  <div class="card-body" padding>
+			<form>
+					<h1>Crear Listas De Datos Maestros</h1>
+			  <div class="form-group">
+					<span >Nombre de la lista </span>
+					<h2></h2>
+					<select name="rols" [(ngModel)]="lista" class="select-css">
+					<option [value]="item" *ngFor="let item of listar">{{item}} </option>
+					</select>
+					<h2></h2>
+					<button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
+				
+						 <h2></h2>
+					
+				</div>
+				</form>
+			</div>
+		  </div>
+		</div>

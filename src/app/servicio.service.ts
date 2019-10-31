@@ -287,6 +287,10 @@ export class ServicioService {
     return this.http.get(`${this.api}/beneficiario/${id}`);
   }
 
+  getBeneficiariosid1(id: number) {
+    return this.http.get(`${this.api}/beneficiario/${id}`);
+  }
+
   putBeneficiarios(id: string | number, Nombre: Beneficiario) {
     return this.http.put<Beneficiario>(`${this.api}/beneficiario/${id}`, Nombre);
   }
