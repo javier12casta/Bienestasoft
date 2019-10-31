@@ -21,8 +21,8 @@ export class ReferenciasbienestarinaComponent implements OnInit {
 
   x : TipoBienestarina  = {
     
-   
-   Codigo  : 0,
+    TipoBienesterina : '',
+    Codigo  : 0,
     Estado : '',
     Referencia : '',
     UnidadPrincipal : '',

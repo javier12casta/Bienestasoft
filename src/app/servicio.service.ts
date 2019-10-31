@@ -33,6 +33,8 @@ import {  InEntrega } from './interfaces/inhabilitarentrega';
 import {  Tipodocumento } from './interfaces/tipodocumento';
 import {  Inuds } from './interfaces/inhabilitaruds';
 import { Genero } from './interfaces/genero';
+import { Recepcion} from './interfaces/recepcion';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -496,6 +498,18 @@ export class ServicioService {
   getgenero() {
     const path = `${this.api}/genero`;
     return this.http.get<[Genero]>(path);
+  }
+
+  getrecepcion() {
+    const path = `${this.api}/bienestarina`;
+    return this.http.get<[Recepcion]>(path);
+  }
+
+  postrecepcion(recep: Recepcion) {
+
+    const path = `${this.api}/bienestarina`;
+    return this.http.post<Recepcion>(path, recep);
+
   }
 
 }
