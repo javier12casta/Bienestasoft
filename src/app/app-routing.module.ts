@@ -127,6 +127,7 @@ import { RefrenciasbienestarinavComponent} from './page/refrenciasbienestarinav/
 import { ListapreciosvComponent} from './page/listapreciosv/listapreciosv.component';
 import { ListadocursosvComponent} from './page/listadocursosv/listadocursosv.component';
 import { DatosvariosvComponent} from './page/datosvariosv/datosvariosv.component';
+import { PermisosmComponent } from './page/permisosm/permisosm.component';
 
 
 
@@ -198,6 +199,8 @@ const routes: Routes = [
   {path:'datosvarios', component: DatosvariosComponent},
   {path:'permisos', component: PermisosComponent },
   {path:'permisos/:id', component: PermisosComponent },
+  {path:'permisosm/:id', component: PermisosmComponent },
+  {path:'permisosm', component: PermisosmComponent },
   {path:'modificarusuariom/:id', component: ModificarusuariomComponent },
   {path:'modificarlistamaestro', component: ModificarlistamaestrosComponent },
   {path:'modificarserviciom', component: ModificarserviciosmComponent },

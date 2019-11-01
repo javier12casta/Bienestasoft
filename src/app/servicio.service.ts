@@ -98,8 +98,8 @@ export class ServicioService {
       return this.http.get<Permisos[]>(path);
     }
 
-    getPermisosid(per: Permisos) {
-      return this.http.get(`${this.api}/permisos/${per.idPermiso}`);
+    getPermisosid(id: string | number) {
+      return this.http.get(`${this.api}/permisos/${id}`);
     }
 
     postPermisos(per: Permisos) {

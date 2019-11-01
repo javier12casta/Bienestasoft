@@ -1,39 +1,41 @@
 <nav class="navbar navbar-success bg-success">
-    <button class="btn btn-dark" routerLink="/menu"> Volver</button>
-    <button class="btn btn-dark" routerLink="/rol"> Crear </button>
-  </nav>
-  
-  <table class="table">
-      <thead class="thead-green">
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Nombre Rol</th>
-          <th scope="col">Estado</th>
-          <th scope="col">Almacenes</th>
-          <th scope="col">Modificar</th>
-          <th scope="col">Transacciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let rol of roles">
-          <th scope="row">{{rol.idRolPersona}}</th>
-          <td>{{rol.RolPersona}}</td>
-         <!-- <td>{{rol.Estado}}</td>-->
-         <td>
-           <div *ngIf = "rol.Estado == 1">
-            Habilitado
+  <button class="btn btn-dark" routerLink="/menu"> Volver</button>
+  <button class="btn btn-dark" routerLink="/rol"> Crear </button>
+</nav>
+
+<table class="table">
+  <thead class="thead-green">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre Rol</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Almacenes</th>
+      <th scope="col">Modificar</th>
+      <th scope="col">Transacciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let rol of roles">
+      <th scope="row">{{rol.idRolPersona}}</th>
+      <td>{{rol.RolPersona}}</td>
+      <!-- <td>{{rol.Estado}}</td>-->
+      <td>
+        <div *ngIf="rol.Estado == 1">
+          Habilitado
         </div>
-        <div *ngIf = "rol.Estado == 0">
-            Deshabilitado
+        <div *ngIf="rol.Estado == 0">
+          Deshabilitado
         </div>
-          </td>
-          <td>{{rol.Almacenes}}</td>
-          <td>
-            <button class="btn btn-primary" [routerLink]="['/rol',rol.idRolPersona]" type="submit">Modificar</button>
-          </td>
-          <td>
-            <button class="btn btn-primary" [routerLink]="['/permisos',rol.idRolPersona]" type="submit">Asignar Transacciones</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+      </td>
+      <td>{{rol.Almacenes}}</td>
+      <td>
+        <button class="btn btn-primary" [routerLink]="['/rol',rol.idRolPersona]" type="submit">Modificar</button>
+      </td>
+      <td>
+        <!-- -->
+        <button class="btn btn-primary" type="submit" [routerLink]="['/permisosm',rol.idRolPersona]">Modificar
+          Transacciones</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
