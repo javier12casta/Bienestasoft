@@ -147,6 +147,8 @@ import { RefrenciasbienestarinavComponent } from './page/refrenciasbienestarinav
 import { ListapreciosvComponent } from './page/listapreciosv/listapreciosv.component';
 import { ListadocursosvComponent } from './page/listadocursosv/listadocursosv.component';
 import { DatosvariosvComponent } from './page/datosvariosv/datosvariosv.component';
+import { PermisosmComponent } from './page/permisosm/permisosm.component';
+
 import { ReporteinventarioComponent } from './page/reporteinventario/reporteinventario.component';
 import { RecepcionbienestrarinaComponent } from './page/recepcionbienestrarina/recepcionbienestrarina.component';
 import { RecepcionbienestarinavComponent } from './page/recepcionbienestarinav/recepcionbienestarinav.component';
@@ -154,7 +156,6 @@ import { RecepcionbienestarinaviComponent } from './page/recepcionbienestarinavi
 import { RecepcioninvComponent } from './page/recepcioninv/recepcioninv.component';
 import { InhabilitardatosnutricionalesComponent } from './page/inhabilitardatosnutricionales/inhabilitardatosnutricionales.component';
 import { InhabilitardatosnutricionalesiComponent } from './page/inhabilitardatosnutricionalesi/inhabilitardatosnutricionalesi.component';
-
 
 
 @NgModule({
@@ -436,6 +437,9 @@ import { InhabilitardatosnutricionalesiComponent } from './page/inhabilitardatos
 
     DatosvariosvComponent,
     
+
+
+    PermisosmComponent,
 
     ReporteinventarioComponent,
     
