@@ -152,6 +152,8 @@ import { RecepcionbienestrarinaComponent } from './page/recepcionbienestrarina/r
 import { RecepcionbienestarinavComponent } from './page/recepcionbienestarinav/recepcionbienestarinav.component';
 import { RecepcionbienestarinaviComponent } from './page/recepcionbienestarinavi/recepcionbienestarinavi.component';
 import { RecepcioninvComponent } from './page/recepcioninv/recepcioninv.component';
+import { InhabilitardatosnutricionalesComponent } from './page/inhabilitardatosnutricionales/inhabilitardatosnutricionales.component';
+import { InhabilitardatosnutricionalesiComponent } from './page/inhabilitardatosnutricionalesi/inhabilitardatosnutricionalesi.component';
 
 
 
@@ -448,6 +450,12 @@ import { RecepcioninvComponent } from './page/recepcioninv/recepcioninv.componen
     
 
     RecepcioninvComponent,
+    
+
+    InhabilitardatosnutricionalesComponent,
+    
+
+    InhabilitardatosnutricionalesiComponent,
     
 
     

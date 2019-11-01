@@ -134,6 +134,10 @@ import { RecepcionbienestarinavComponent} from './page/recepcionbienestarinav/re
 import { RecepcionbienestarinaviComponent} from './page/recepcionbienestarinavi/recepcionbienestarinavi.component';
 
 import { RecepcioninvComponent} from './page/recepcioninv/recepcioninv.component';
+import { InhabilitardatosnutricionalesComponent} from './page/inhabilitardatosnutricionales/inhabilitardatosnutricionales.component';
+
+import { InhabilitardatosnutricionalesiComponent} from './page/inhabilitardatosnutricionalesi/inhabilitardatosnutricionalesi.component';
+
 
 const routes: Routes = [
   {path:'', component: LoginComponent},
@@ -286,7 +290,8 @@ const routes: Routes = [
   {path:'recepcionv', component:  RecepcionbienestarinavComponent},
   {path:'recepcionvi', component:  RecepcionbienestarinaviComponent},
   {path:'recepcioninv', component:  RecepcioninvComponent},
-  
+  {path:'inhabilitardatosnutricionales', component: InhabilitardatosnutricionalesComponent},
+  {path:'inhabilitardatosnutricionalesi/:id', component: InhabilitardatosnutricionalesiComponent},
 ];
 
 @NgModule({

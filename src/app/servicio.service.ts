@@ -34,6 +34,7 @@ import {  Tipodocumento } from './interfaces/tipodocumento';
 import {  Inuds } from './interfaces/inhabilitaruds';
 import { Genero } from './interfaces/genero';
 import { Recepcion} from './interfaces/recepcion';
+import { Invarios} from './interfaces/inhabilitardatosvarios';
 
 @Injectable({
   providedIn: 'root'
@@ -510,6 +511,10 @@ export class ServicioService {
     const path = `${this.api}/bienestarina`;
     return this.http.post<Recepcion>(path, recep);
 
+  }
+
+  putdatosvariosInhabilitar(id: string | number, Nombre: Invarios) {
+    return this.http.put<Invarios>(`${this.api}/datos/${id}`, Nombre);
   }
 
 }

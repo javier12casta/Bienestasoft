@@ -1,0 +1,46 @@
+<nav class="navbar navbar-success bg-success">
+    <button class="btn btn-dark" routerLink="/menu">Volver</button>
+  </nav>
+  
+
+                
+        
+
+
+              
+              <table class="table">
+                  <thead class="thead-green">
+                    <tr>
+                      <th scope="col"># </th>
+                      <th scope="col">Nombres</th>
+                      <th scope="col">Apellidos </th>
+                      <th scope="col">NumeroDocumento</th>
+                      <th scope="col">Parentesco </th>
+                      <th scope="col">FechaNacimiento </th>
+                      <th scope="col">FechaIngreso </th>
+                      <th scope="col">RegistroBiometrico </th>
+                      <th scope="col">idTipoDocumento</th>
+                      <th scope="col">idBeneficiarios </th>
+                      <th scope="col">idGenero </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let ac of acu">
+                      <th scope="row">{{ac.idAcudientes}}</th>
+                      <td>{{ac.Nombres }}</td>
+                      <td>{{ac.Apellidos }}</td>
+                      <td>{{ac.NumeroDocumento }}</td>
+                      <td>{{ac.Parentesco }}</td>
+                      <td>{{ac.FechaNacimiento }}</td>
+                      <td>{{ac.FechaIngreso }}</td>
+                      <td>{{ac.RegistroBiometrico }}</td>
+                      <td>{{ac.idTipoDocumento }}</td>
+                      <td>{{ac.idBeneficiarios }}</td>
+                      <td>{{ac.idGenero }}</td>
+                          
+                    </tr>
+                  </tbody>
+                </table>
+
+
+

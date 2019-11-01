@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ServicioService } from '../../servicio.service';
+import { Acudientes} from '../../interfaces/acudiente';
 
 @Component({
   selector: 'app-acudientes',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AcudientesComponent implements OnInit {
 
-  constructor() { }
+  acu:Acudientes[] = [];
+
+
+  constructor(private Service: ServicioService) { }
 
   ngOnInit() {
+
+    this.Service.getAcudientes()
+    .subscribe(async (data) => {
+      this.acu = data;
+      console.log(data);
+    }
+    );
+
+
   }
 
 }

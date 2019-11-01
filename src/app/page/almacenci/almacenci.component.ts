@@ -20,14 +20,15 @@ export class AlmacenciComponent implements OnInit {
 
   x : Almacen = {
     
-   
     NumeroExterno : '',
-    NombreCentroDistribucion: '',
+    Nombre: '',
     Responsable : '',
     Capacidad  : 0,
     UnidadMedida  : '',
     Estado  : 0,
     idCentroDistribucion : 1,
+
+    
   };
 
   onClickMe() {

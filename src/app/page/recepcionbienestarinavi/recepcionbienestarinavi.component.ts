@@ -94,5 +94,22 @@ export class RecepcionbienestarinaviComponent implements OnInit {
 	  type: 'error',
 	  confirmButtonText: 'Entendido'
 	});
-	}
+  }
+  
+  showMenssage4(){
+    Swal.fire({
+      title: 'Advertencia',
+      text: 'esta seguro de registrar los datos',
+      type: 'warning',
+      confirmButtonText: 'Entendido'
+      }).then((result) => {
+      if (result.value) {
+        
+        this.onClickMe();
+    
+      }
+    
+      
+     });
+    }
 }

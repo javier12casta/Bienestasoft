@@ -41,6 +41,12 @@ export class ListaMaestrosBienestarinaInhabilitarComponent implements OnInit {
       this.router.navigate(['/inhabilitarelistadoc']);
   
     }
+
+    if(this.modalidads == "Datos Nutricionales"){
+  
+      this.router.navigate(['/inhabilitardatosnutricionales']);
+  
+    }
   
 }
 }
