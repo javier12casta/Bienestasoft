@@ -7,6 +7,7 @@ export interface Recepcion {
     UnidadPrincipal: string,
     FechaRecepcion  : number,
     idTipoBienesterina?: number,
-    idUnidadMedida?: number,
     idInventario?: number,
+    idAlmacenes?: number,
+    idCentroDistribucion?: number,
 }

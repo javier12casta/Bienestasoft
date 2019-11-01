@@ -67,19 +67,13 @@
 		 <span >Tipo Usuario</span>
 		 <h2></h2>
 		 
-		 <select name="tipos" [(ngModel)]="x.TipoUsuario" class="select-css">
-		 <option [value]="item" *ngFor="let item of listat">{{item}} </option>
-		 </select>
-		 
-		 
+		 <select name="idtipousuario" class="select-css" style="width: 100%;" [(ngModel)]="x.TipoUsuario"
+		 options="options" placeholder="tipo usuario">
+		 <option *ngFor="let do of rol" [value]="do.idRolPersona">{{do.RolPersona  }} </option>
+	   </select>
+
 					<h2></h2>
-					<span >Rol</span>
-					<h2></h2>
-			 
-					<select name="rols" [(ngModel)]="tiporol" class="select-css">
-					<option [value]="item" *ngFor="let item of listar">{{item}} </option>
-					</select>
-				 <h2></h2>
+					
 				 
 				 <h1>Datos de contacto</h1>
 				 <span  >Direccion</span>

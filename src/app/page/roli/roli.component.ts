@@ -17,8 +17,7 @@ export class RoliComponent implements OnInit {
     idRolPersona: 0,
     RolPersona: '',
     Estado: 1,
-    Transacciones: '',
-    Almacenes: '',
+    
   };
 
   permiso: Permisos[] = [];

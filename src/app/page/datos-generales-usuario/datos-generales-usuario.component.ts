@@ -1,6 +1,7 @@
 import { Component, OnInit , Input } from '@angular/core';
 import { Usuarios } from 'src/app/interfaces/usuarios';
 import { Tipodocumento } from 'src/app/interfaces/tipodocumento';
+import { Rol } from 'src/app/interfaces/rol';
 import { ServicioService } from 'src/app/servicio.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
@@ -18,6 +19,7 @@ export class DatosGeneralesUsuarioComponent implements OnInit {
   listat:string[]=["PE","UDS","ADMINISTRADOR"];
   listar:string[]=["1","2","3","4","5","6","7","8","9","10"];
   public doc: Tipodocumento[] = [];
+  public rol: Rol[] = [];
 
   x : Usuarios = {
     
@@ -68,6 +70,14 @@ this.showMenssage3();
 	this.Service.gettipodocumento()
 	.subscribe(res => {
 	  this.doc = res;
+	}, err => {
+	  console.log(err);
+  });
+  
+
+  this.Service.ObtenerRoles()
+	.subscribe(res => {
+	  this.rol = res;
 	}, err => {
 	  console.log(err);
 	});

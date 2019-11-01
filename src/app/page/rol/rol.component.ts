@@ -22,8 +22,7 @@ export class RolComponent implements OnInit {
     idRolPersona: 0,
     RolPersona:'',
     Estado: 1,
-    Transacciones: '',
-    Almacenes: '',
+    
   }; 
   modificar = false;
 

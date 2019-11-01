@@ -29,6 +29,8 @@ export class RecepcionbienestarinaviComponent implements OnInit {
     UnidadPrincipal: '',
     FechaRecepcion  : 0,
     idTipoBienesterina : 0,
+    idAlmacenes : 0,
+    idCentroDistribucion : 0,
   };
 
 
