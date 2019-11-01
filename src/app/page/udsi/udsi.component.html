@@ -32,11 +32,15 @@
           <input type="tel" class="form-control" name="Telefono" placeholder="Telefono" [(ngModel)]="unidad.Telefono"
             required>
 
-            <input type="number" class="form-control" name="pentrgea" placeholder="Punto de entrega" [(ngModel)]="unidad.idPuntoEntrega"
-            required>
+            <select name="idpuntoentrega" class="select-css" style="width: 100%;" [(ngModel)]="unidad.idPuntoEntrega"
+            options="options" placeholder="Punto entrega">
+            <option *ngFor="let do of puntos" [value]="do.idPuntoEntrega">{{do.NombrePE  }} </option>
+            </select>
 
-            <input type="number" class="form-control" name="czonal" placeholder="centro zonal" [(ngModel)]="unidad.idCentrosZonales"
-            required>
+            <select name="idcentrozonal" class="select-css" style="width: 100%;" [(ngModel)]="unidad.idCentrosZonales"
+            options="options" placeholder="Punto entrega">
+            <option *ngFor="let do of centros" [value]="do.idCentrosZonales">{{do.NombreCentroZonal  }} </option>
+            </select>
 
 
         </div>

@@ -129,8 +129,12 @@ import { ListadocursosvComponent} from './page/listadocursosv/listadocursosv.com
 import { DatosvariosvComponent} from './page/datosvariosv/datosvariosv.component';
 import { PermisosmComponent } from './page/permisosm/permisosm.component';
 
+import { ReporteinventarioComponent} from './page/reporteinventario/reporteinventario.component';
+import { RecepcionbienestrarinaComponent} from './page/recepcionbienestrarina/recepcionbienestrarina.component';
+import { RecepcionbienestarinavComponent} from './page/recepcionbienestarinav/recepcionbienestarinav.component';
+import { RecepcionbienestarinaviComponent} from './page/recepcionbienestarinavi/recepcionbienestarinavi.component';
 
-
+import { RecepcioninvComponent} from './page/recepcioninv/recepcioninv.component';
 
 const routes: Routes = [
   {path:'', component: LoginComponent},
@@ -280,8 +284,12 @@ const routes: Routes = [
   {path:'listadocursosv', component: ListadocursosvComponent},
   {path:'datosvariosv', component: DatosvariosvComponent},
 
-
-
+  {path:'reporteinventario', component: ReporteinventarioComponent},
+  {path:'recepcion', component: RecepcionbienestrarinaComponent},
+  {path:'recepcionv', component:  RecepcionbienestarinavComponent},
+  {path:'recepcionvi', component:  RecepcionbienestarinaviComponent},
+  {path:'recepcioninv', component:  RecepcioninvComponent},
+  
 ];
 
 @NgModule({

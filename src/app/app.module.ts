@@ -149,7 +149,11 @@ import { ListadocursosvComponent } from './page/listadocursosv/listadocursosv.co
 import { DatosvariosvComponent } from './page/datosvariosv/datosvariosv.component';
 import { PermisosmComponent } from './page/permisosm/permisosm.component';
 
-
+import { ReporteinventarioComponent } from './page/reporteinventario/reporteinventario.component';
+import { RecepcionbienestrarinaComponent } from './page/recepcionbienestrarina/recepcionbienestrarina.component';
+import { RecepcionbienestarinavComponent } from './page/recepcionbienestarinav/recepcionbienestarinav.component';
+import { RecepcionbienestarinaviComponent } from './page/recepcionbienestarinavi/recepcionbienestarinavi.component';
+import { RecepcioninvComponent } from './page/recepcioninv/recepcioninv.component';
 
 
 @NgModule({
@@ -432,9 +436,22 @@ import { PermisosmComponent } from './page/permisosm/permisosm.component';
     DatosvariosvComponent,
     
 
+
     PermisosmComponent,
+
+    ReporteinventarioComponent,
     
 
+    RecepcionbienestrarinaComponent,
+    
+
+    RecepcionbienestarinavComponent,
+    
+
+    RecepcionbienestarinaviComponent,
+    
+
+    RecepcioninvComponent,
   
 
 

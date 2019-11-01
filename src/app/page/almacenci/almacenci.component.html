@@ -1,1 +1,82 @@
-<p>almacenci works!</p>
+<nav class="navbar navbar-success bg-success">
+        <button class="btn btn-dark" routerLink="/almacenc">Volver</button>
+      </nav>
+      
+      <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+        <div class="card" padding>
+          <div class="card-body" padding>
+            <form>
+                    <h1>Crear Almacen </h1>
+              <div class="form-group">
+
+                    <span >Numero Externo</span>
+                    <h2></h2>
+                    <input type="number" class="form-control" [(ngModel)]="x.NumeroExterno " name="numeroex"
+                    placeholder="numero Externo" class="form-control" id="inputex">
+                
+                <h2></h2>
+                
+                <span >Nombre</span>
+                    <h2></h2>
+                    <input type="text" class="form-control" [(ngModel)]="x.NombreCentroDistribucion" name="nombre"
+                    placeholder="Nombre" class="form-control" id="inputnom">
+            
+                <h2></h2>
+            
+                <span >Responsable</span>
+                    <h2></h2>
+                    <input type="text" class="form-control" [(ngModel)]="x.Responsable" name="res"
+                    placeholder="Responsable" class="form-control" id="inputres">
+                
+                <h2></h2>
+            
+                <span >Capacidad</span>
+                    <h2></h2>
+                    <input type="number" class="form-control" [(ngModel)]="x.Capacidad" name="cap"
+                    placeholder="Capacidad" class="form-control" id="inputcap">
+                
+                <h2></h2>
+            
+                <span  >Unidad de medida</span>
+                    <h2></h2>
+                    
+                    <select name="unidadmedida" [(ngModel)]="x.UnidadMedida" class="select-css">
+              <option [value]="item" *ngFor="let item of unidadmedida">{{item}} </option>
+              </select>
+            
+             <h2></h2>
+            
+            
+                    <span  >Estado del dato Maestro</span>
+                    <h2></h2>
+                    
+                    <select name="estadomaestro" [(ngModel)]="x.Estado" class="select-css">
+              <option [value]="item" *ngFor="let item of listamaestro">{{item}} </option>
+              </select>
+             
+                      
+                           <h2></h2>
+                     
+                     <span >Ceentro de distribucion</span>
+                <h2></h2>
+                
+                <select name="idRegional" class="select-css" style="width: 100%;" [(ngModel)]="x.idCentroDistribucion"
+                    options="options" placeholder="centro de distribucion">
+                    <option *ngFor="let do of cen" [value]="do.idCentroDistribucion">{{do.Nombre  }} </option>
+                </select>
+                <h2></h2>
+                    
+                              
+                           <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
+                              
+                           <h2></h2>
+
+
+
+
+                </div>
+			</form>
+		</div>
+	  </div>
+	</div>
+

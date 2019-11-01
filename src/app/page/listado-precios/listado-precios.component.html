@@ -1,1 +1,60 @@
-<p>listado-precios works!</p>
+<nav class="navbar navbar-success bg-success">
+        <button class="btn btn-dark" routerLink="/listapreciosv">Volver</button>
+      </nav>
+      
+      <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+        <div class="card" padding>
+          <div class="card-body" padding>
+            <form>
+                    <h1>lista de precios</h1>
+                   <div class="form-group">
+                
+                        <span  >Codigo</span>
+                        <h2></h2>
+                        <input type="number" class="form-control" [(ngModel)]="x.Codigo" name="cod"
+                        placeholder="Codigo" class="form-control" id="codi">
+                        
+                        <span  >Estado del dato Maestro</span>
+                               <h2></h2>
+                               
+                               <select name="estadomaestro" [(ngModel)]="x.Estado" class="select-css">
+                         <option [value]="item" *ngFor="let item of listamaestro">{{item}} </option>
+                         </select>
+                       
+                         <h2></h2>
+                           <span >Referencia</span>
+                               <h2></h2>
+                               <input type="text" class="form-control" [(ngModel)]="x.Referencia" name="ref"
+                           placeholder="Referencia" class="form-control" id="refer">
+                           
+                           <h2></h2>
+                               <span >Mes</span>
+                               <h2></h2>
+                               <input type="text" class="form-control" [(ngModel)]="x.Mes" name="mes"
+                           placeholder="m" class="form-control" id="me">
+                           
+                           <h2></h2>
+                               <span>año</span>
+                               <h2></h2>
+                           
+                           <input type="number" class="form-control" [(ngModel)]="x.Ano" name="ano"
+                               placeholder="Año " class="form-control" id="ano">
+                           
+                           <h2></h2>
+                         
+                               <span >Valor cop</span>
+                               <h2></h2>
+                               <input type="number" class="form-control" [(ngModel)]="x.ValorCop" name="valo"
+                               placeholder="valor" class="form-control" id="cop">
+                                <h2></h2>
+                                
+                                      <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
+                                         
+                                      <h2></h2>
+    
+                </div>
+                </form>
+            </div>
+          </div>
+        </div>
+    

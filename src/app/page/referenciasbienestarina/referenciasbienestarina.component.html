@@ -1,1 +1,70 @@
-<p>referenciasbienestarina works!</p>
+<nav class="navbar navbar-success bg-success">
+        <button class="btn btn-dark" routerLink="/referenciasbienestarinav">Volver</button>
+      </nav>
+      
+      <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+        <div class="card" padding>
+          <div class="card-body" padding>
+            <form>
+                    <h1>Crear Listas De Datos Maestros</h1>
+              <div class="form-group">
+
+                  <span  >Tipo </span>
+                  <h2></h2>
+                  <input type="text" class="form-control" [(ngModel)]="x.TipoBienesterina" name="ref"
+                        placeholder="Tipo Bienestarina" class="form-control" id="tipo">
+                  <h2></h2>
+
+                    <span  >Código </span>
+                    <h2></h2>
+                    <input type="number" class="form-control" [(ngModel)]="x.Codigo" name="cod"
+                          placeholder="Codigo " class="form-control" id="codi">
+                    <h2></h2>
+                    <span  >Estado del dato Maestro</span>
+                    <h2></h2>
+                    
+                    <select name="estadomaestro" [(ngModel)]="x.Estado" class="select-css">
+                  <option [value]="item" *ngFor="let item of listamaestro">{{item}} </option>
+                  </select>
+                  
+                    <h2></h2>
+                  
+                    <span  >Referencia </span>
+                    <h2></h2>
+                    <input type="text" class="form-control" [(ngModel)]="x.Referencia" name="ref"
+                          placeholder="Referencia" class="form-control" id="referencia">
+                    <h2></h2>
+                  
+                    <span  >Unidad de medida principal</span>
+                    <h2></h2>
+                    
+                    <select name="unidadm" [(ngModel)]="x.UnidadPrincipal" class="select-css">
+                  <option [value]="item" *ngFor="let item of unidadmedidad">{{item}} </option>
+                  </select>
+                  <h2></h2>
+                  
+                  <span  >Cantidad Equivalente </span>
+                    <h2></h2>
+                    <input type="number" class="form-control" [(ngModel)]="x.Cantidad" name="cantidade"
+                          placeholder="Cantidad Equivalente" class="form-control" id="cantidadequivalente">
+                    <h2></h2>
+                  
+                    <span  >Unidad de medida secundaria </span>
+                    <h2></h2>
+                    <select name="unidadsecundario" [(ngModel)]="x.UnidadSecundaria"  class="select-css">
+                    <option [value]="item" *ngFor="let item of unidadsecundario">{{item}} </option>
+                    </select>
+                    <h2></h2>
+                  
+                  
+                    <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
+                
+                         <h2></h2>
+
+                </div>
+                </form>
+            </div>
+          </div>
+        </div>
+    
+    

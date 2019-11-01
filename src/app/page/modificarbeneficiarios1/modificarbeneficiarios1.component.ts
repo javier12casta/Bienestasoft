@@ -12,7 +12,7 @@ import { Regional } from '../../interfaces/regional';
   
   <nav class="navbar navbar-success bg-success">
   <td>
-  <button class="btn btn-dark" routerLink="/menu">Volver</button>
+  <button class="btn btn-dark" routerLink="/ModificarBeneficiario">Volver</button>
          
         </td>
 </nav>

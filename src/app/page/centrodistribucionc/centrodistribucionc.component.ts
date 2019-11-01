@@ -10,7 +10,7 @@ import { Centrodistribucion } from '../../interfaces/centrodistribucion';
 
   <nav class="navbar navbar-success bg-success">
   <td>
-  <button class="btn btn-dark" routerLink="/menu">Volver</button>
+  <button class="btn btn-dark" routerLink="/centrodistribucion">Volver</button>
   </td>
   <td>
           <button class="btn btn-dark" [routerLink]="['/centrodistribucionci']">Crear</button>
