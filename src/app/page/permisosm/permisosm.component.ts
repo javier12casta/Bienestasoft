@@ -2828,6 +2828,61 @@ export class PermisosmComponent implements OnInit {
 
   updatetDatos(data, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11) {
     const params = this.activeRoute.snapshot.params;
+    this.onFilterChange();
+    this.onFilterChange2();
+    this.onFilterChange3();
+    this.onFilterChange4();
+    this.onFilterChange5();
+    this.onFilterChange6();
+    this.onFilterChange7();
+    this.onFilterChange8();
+    this.onFilterChange9();
+    this.onFilterChange10();
+    this.onFilterChange11();
+    this.onFilterChange12();
+    this.onFilterChange13();
+    this.onFilterChange14();
+    this.onFilterChange15();
+    this.onFilterChange16();
+    this.onFilterChange17();
+    this.onFilterChange18();
+    this.onFilterChange19();
+    this.onFilterChange20();
+    this.onFilterChange21();
+    this.onFilterChange22();
+    this.onFilterChange23();
+    this.onFilterChange24();
+    this.onFilterChange25();
+    this.onFilterChange26();
+    this.onFilterChange27();
+    this.onFilterChange28();
+    this.onFilterChange29();
+    this.onFilterChange30();
+    this.onFilterChange31();
+    this.onFilterChange32();
+    this.onFilterChange33();
+    this.onFilterChange34();
+    this.onFilterChange35();
+    this.onFilterChange36();
+    this.onFilterChange37();
+    this.onFilterChange38();
+    this.onFilterChange39();
+    this.onFilterChange40();
+    this.onFilterChange41();
+    this.onFilterChange42();
+    this.onFilterChange43();
+    this.onFilterChange44();
+    this.onFilterChange45();
+    this.onFilterChange46();
+    this.onFilterChange47();
+    this.onFilterChange48();
+    this.onFilterChange49();
+    this.onFilterChange50();
+    this.onFilterChange51();
+    this.onFilterChange52();
+    this.onFilterChange53();
+    this.onFilterChange54();
+    this.onFilterChange55();
 
     data = this.Checkbox.Crear + '' + this.Checkbox.Actualizar + '' + this.Checkbox.vizualizar + '' + this.Checkbox.Reportes + '' + this.Checkbox.Inhabilitar + '';
     data2 = this.Checkbox2.Crear + '' + this.Checkbox2.Actualizar + '' + this.Checkbox2.vizualizar + '' + this.Checkbox2.Reportes + '' + this.Checkbox2.Inhabilitar + '';
@@ -2854,7 +2909,7 @@ export class PermisosmComponent implements OnInit {
     this.permisos.PerMaestros = data10;
     this.permisos.perAlmacenes = data11;
     console.log('Los permisos', this.permisos);
-/*     this.Service.postPermisos(this.permisos).subscribe(res => {
+     this.Service.putPermisos(params.id,this.permisos).subscribe(res => {
       console.log(this.permisos);
       console.log(res);
       this.showMenssage();
@@ -2862,7 +2917,7 @@ export class PermisosmComponent implements OnInit {
       err => {
         console.log(err);
         this.showMenssage();
-      }); */
+      }); 
     console.log('si');
   }
 
@@ -3491,8 +3546,8 @@ export class PermisosmComponent implements OnInit {
   //mensajes de asigancion
   showMenssage() {
     Swal.fire({
-      title: 'Asignados!',
-      text: 'Permisos Asignados',
+      title: 'Modificados!',
+      text: 'Permisos Modificados',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((res) => {
