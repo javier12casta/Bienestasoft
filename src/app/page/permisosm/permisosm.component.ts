@@ -11,7 +11,6 @@ import { Permisos } from '../../interfaces/permisos';
 })
 export class PermisosmComponent implements OnInit {
   permiso: Permisos[] = [];
-
   public permisos: Permisos = {
     idPermiso: 0,
     perInventario: '',
@@ -23,441 +22,10 @@ export class PermisosmComponent implements OnInit {
     perUDS: '',
     perPuntoen: '',
     PerMaestros: '',
-    idRol: 1,
+    idRol: 8,
     perAlmacenes: '',
     perCentrosD: '',
   };
-
-
-  constructor(
-    private activeRoute: ActivatedRoute,
-    private Service: ServicioService,
-    private router: Router,
-  ) {
-
-  }
-
-  ngOnInit() {
-    //traer permisos
-    this.Service.getPermisos().subscribe(res => {
-      this.permiso = res;
-      console.log('Permiso get', this.permiso);
-    }), err => {
-      console.log(err);
-    };
-    //traer permiso por id
-    const params = this.activeRoute.snapshot.params;
-    this.Service.getPermisosid(params.id).subscribe(res => {
-      this.permisos = Object(res);
-      this.cargarpemiso(); // cargar pemiso
-      console.log('Permiso', this.permisos);
-    }, err => {
-      console.log(err);
-    });
-
-  }
-
-  cargarpemiso() {
-    var centrostr = this.permisos.perCentros;
-    var array = centrostr.split("");
-    console.log('carga', array);
-
-    if (array[0] == "1") {
-      this.filter = 1;
-      if (array[1] == "1") {
-        this.filter2 = 1;
-        if (array[2] == "1") {
-          this.filter3 = 1;
-          if (array[3] == "1") {
-            this.filter4 = 1;
-            if (array[4] == "1") {
-              this.filter5 = 1;
-            }
-          }
-        }
-      }
-    }
-    else if (array[0] == "0") {
-      console.log('entro al if');
-      this.filter = 0;
-      if (array[1] == "0") {
-        this.filter2 = 0;
-        if (array[2] == "0") {
-          this.filter3 = 0;
-          if (array[3] == "0") {
-            this.filter4 = 0;
-            if (array[4] == "0") {
-              this.filter5 = 0;
-            }
-          }
-        }
-      }
-    }
-  }
-  /* 
-    cargarpemiso2() {
-      // this.Checkbox.Crear = this.permisos.perCentros;
-      var centrostr = this.permisos.perPuntoen;
-      var array = centrostr.split("");
-      //console.log('carga', array);
-  
-      if (array[0] == '1') {
-        this.filter6 = 1;
-        if (array[1] == '1') {
-          this.filter7 = 1;
-          if (array[2] == '1') {
-            this.filter8 = 1;
-            if (array[3] == '1') {
-              this.filter9 = 1;
-              if (array[4] == '1') {
-                this.filter10 = 1;
-              }
-            }
-          }
-        }
-      } else if (array[0] == '0') {
-        this.filter6 = 0;
-        if (array[1] == '0') {
-          this.filter7 = 0;
-          if (array[2] == '0') {
-            this.filter8 = 0;
-            if (array[3] == '0') {
-              this.filter9 = 0;
-              if (array[4] == '0') {
-                this.filter10 = 0;
-              }
-            }
-          }
-        }
-      }
-    }
-  
-    cargarpemiso3() {
-      // this.Checkbox.Crear = this.permisos.perCentros;
-      var centrostr = this.permisos.perUDS;
-      var array = centrostr.split("");
-     // console.log('carga', array);
-  
-      if (array[0] == '1') {
-        this.filter11 = 1;
-        if (array[1] == '1') {
-          this.filter12 = 1;
-          if (array[2] == '1') {
-            this.filter13 = 1;
-            if (array[3] == '1') {
-              this.filter14 = 1;
-              if (array[4] == '1') {
-                this.filter15 = 1;
-              }
-            }
-          }
-        }
-      } else if (array[0] == '0') {
-        this.filter11 = 0;
-        if (array[1] == '0') {
-          this.filter12 = 0;
-          if (array[2] == '0') {
-            this.filter13 = 0;
-            if (array[3] == '0') {
-              this.filter14 = 0;
-              if (array[4] == '0') {
-                this.filter15 = 0;
-              }
-            }
-          }
-        }
-      }
-    }
-    cargarpemiso4() {
-      // this.Checkbox.Crear = this.permisos.perCentros;
-      var centrostr = this.permisos.perUsuarios;
-      var array = centrostr.split("");
-      console.log('carga', array);
-  
-      if (array[0] == '1') {
-        this.filter16 = 1;
-        if (array[1] == '1') {
-          this.filter17 = 1;
-          if (array[2] == '1') {
-            this.filter18 = 1;
-            if (array[3] == '1') {
-              this.filter19 = 1;
-              if (array[4] == '1') {
-                this.filter20 = 1;
-              }
-            }
-          }
-        }
-      } else if (array[0] == '0') {
-        this.filter16 = 0;
-        if (array[1] == '0') {
-          this.filter17 = 0;
-          if (array[2] == '0') {
-            this.filter18 = 0;
-            if (array[3] == '0') {
-              this.filter19 = 0;
-              if (array[4] == '0') {
-                this.filter20 = 0;
-              }
-            }
-          }
-        }
-      }
-    }
-    cargarpemiso5() {
-      // this.Checkbox.Crear = this.permisos.perCentros;
-      var centrostr = this.permisos.perBeneficiarios;
-      var array = centrostr.split("");
-      console.log('carga', array);
-  
-      if (array[0] == '1') {
-        this.filter21 = 1;
-        if (array[1] == '1') {
-          this.filter22 = 1;
-          if (array[2] == '1') {
-            this.filter23 = 1;
-            if (array[3] == '1') {
-              this.filter24 = 1;
-              if (array[4] == '1') {
-                this.filter25 = 1;
-              }
-            }
-          }
-        }
-      } else if (array[0] == '0') {
-        this.filter21 = 0;
-        if (array[1] == '0') {
-          this.filter22 = 0;
-          if (array[2] == '0') {
-            this.filter23 = 0;
-            if (array[3] == '0') {
-              this.filter24 = 0;
-              if (array[4] == '0') {
-                this.filter25 = 0;
-              }
-            }
-          }
-        }
-      }
-    }
-    cargarpemiso6() {
-      // this.Checkbox.Crear = this.permisos.perCentros;
-      var centrostr = this.permisos.perEntrega;
-      var array = centrostr.split("");
-      console.log('carga', array);
-  
-      if (array[0] == '1') {
-        this.filter26 = 1;
-        if (array[1] == '1') {
-          this.filter27 = 1;
-          if (array[2] == '1') {
-            this.filter28 = 1;
-            if (array[3] == '1') {
-              this.filter29 = 1;
-              if (array[4] == '1') {
-                this.filter30 = 1;
-              }
-            }
-          }
-        }
-      } else if (array[0] == '0') {
-        this.filter26 = 0;
-        if (array[1] == '0') {
-          this.filter27 = 0;
-          if (array[2] == '0') {
-            this.filter28 = 0;
-            if (array[3] == '0') {
-              this.filter29 = 0;
-              if (array[4] == '0') {
-                this.filter30 = 0;
-              }
-            }
-          }
-        }
-      }
-    }
-    cargarpemiso7() {
-      // this.Checkbox.Crear = this.permisos.perCentros;
-      var centrostr = this.permisos.perCentrosD;
-      var array = centrostr.split("");
-      console.log('carga', array);
-  
-      if (array[0] == '1') {
-        this.filter31 = 1;
-        if (array[1] == '1') {
-          this.filter32 = 1;
-          if (array[2] == '1') {
-            this.filter33 = 1;
-            if (array[3] == '1') {
-              this.filter34 = 1;
-              if (array[4] == '1') {
-                this.filter35 = 1;
-              }
-            }
-          }
-        }
-      } else if (array[0] == '0') {
-        this.filter31 = 0;
-        if (array[1] == '0') {
-          this.filter32 = 0;
-          if (array[2] == '0') {
-            this.filter33 = 0;
-            if (array[3] == '0') {
-              this.filter34 = 0;
-              if (array[4] == '0') {
-                this.filter35 = 0;
-              }
-            }
-          }
-        }
-      }
-    }
-    cargarpemiso8() {
-      // this.Checkbox.Crear = this.permisos.perCentros;
-      var centrostr = this.permisos.perInventario;
-      var array = centrostr.split("");
-      console.log('carga', array);
-  
-      if (array[0] == '1') {
-        this.filter36 = 1;
-        if (array[1] == '1') {
-          this.filter37 = 1;
-          if (array[2] == '1') {
-            this.filter38 = 1;
-            if (array[3] == '1') {
-              this.filter39 = 1;
-              if (array[4] == '1') {
-                this.filter40 = 1;
-              }
-            }
-          }
-        }
-      } else if (array[0] == '0') {
-        this.filter36 = 0;
-        if (array[1] == '0') {
-          this.filter37 = 0;
-          if (array[2] == '0') {
-            this.filter38 = 0;
-            if (array[3] == '0') {
-              this.filter39 = 0;
-              if (array[4] == '0') {
-                this.filter40 = 0;
-              }
-            }
-          }
-        }
-      }
-    }
-    cargarpemiso9() {
-      // this.Checkbox.Crear = this.permisos.perCentros;
-      var centrostr = this.permisos.perRol;
-      var array = centrostr.split("");
-      console.log('carga', array);
-  
-      if (array[0] == '1') {
-        this.filter41 = 1;
-        if (array[1] == '1') {
-          this.filter42 = 1;
-          if (array[2] == '1') {
-            this.filter43 = 1;
-            if (array[3] == '1') {
-              this.filter44 = 1;
-              if (array[4] == '1') {
-                this.filter45 = 1;
-              }
-            }
-          }
-        }
-      } else if (array[0] == '0') {
-        this.filter41 = 0;
-        if (array[1] == '0') {
-          this.filter42 = 0;
-          if (array[2] == '0') {
-            this.filter43 = 0;
-            if (array[3] == '0') {
-              this.filter44 = 0;
-              if (array[4] == '0') {
-                this.filter45 = 0;
-              }
-            }
-          }
-        }
-      }
-    }
-    cargarpemiso10() {
-      // this.Checkbox.Crear = this.permisos.perCentros;
-      var centrostr = this.permisos.PerMaestros;
-      var array = centrostr.split("");
-      console.log('carga', array);
-  
-      if (array[0] == '1') {
-        this.filter46 = 1;
-        if (array[1] == '1') {
-          this.filter47 = 1;
-          if (array[2] == '1') {
-            this.filter48 = 1;
-            if (array[3] == '1') {
-              this.filter49 = 1;
-              if (array[4] == '1') {
-                this.filter50 = 1;
-              }
-            }
-          }
-        }
-      } else if (array[0] == '0') {
-        this.filter46 = 0;
-        if (array[1] == '0') {
-          this.filter47 = 0;
-          if (array[2] == '0') {
-            this.filter48 = 0;
-            if (array[3] == '0') {
-              this.filter49 = 0;
-              if (array[4] == '0') {
-                this.filter50 = 0;
-              }
-            }
-          }
-        }
-      }
-    }
-    cargarpemiso11() {
-      // this.Checkbox.Crear = this.permisos.perCentros;
-      var centrostr = this.permisos.perAlmacenes;
-      var array = centrostr.split("");
-      console.log('carga', array);
-  
-      if (array[0] == '1') {
-        this.filter15 = 1;
-        if (array[1] == '1') {
-          this.filter52 = 1;
-          if (array[2] == '1') {
-            this.filter53 = 1;
-            if (array[3] == '1') {
-              this.filter54 = 1;
-              if (array[4] == '1') {
-                this.filter55 = 1;
-              }
-            }
-          }
-        }
-      } else if (array[0] == '0') {
-        this.filter51 = 0;
-        if (array[1] == '0') {
-          this.filter52 = 0;
-          if (array[2] == '0') {
-            this.filter53 = 0;
-            if (array[3] == '0') {
-              this.filter54 = 0;
-              if (array[4] == '0') {
-                this.filter55 = 0;
-              }
-            }
-          }
-        }
-      }
-    } */
-
-
   // marked = false;
   //perCentros =  this.Crear + this.vizualizar + this.Actualizar + this.Reportes + this.Inhabilitar;
   Checkbox = {
@@ -539,7 +107,2765 @@ export class PermisosmComponent implements OnInit {
     Reportes: 0,
     Inhabilitar: 0,
   };
-  //--------------------
+
+
+
+  constructor(
+    private activeRoute: ActivatedRoute,
+    private Service: ServicioService,
+    private router: Router,
+  ) {
+
+  }
+
+  ngOnInit() {
+    const params = this.activeRoute.snapshot.params;
+    //traer permisos
+    this.Service.getPermisosid(params.id).subscribe(res => {
+      this.permisos = Object(res);
+      console.log('Permiso get', this.permisos);
+      this.cargarpermiso();
+      this.cargarpermiso2();
+      this.cargarpermiso3();
+      this.cargarpermiso4();
+      this.cargarpermiso5();
+      this.cargarpermiso6();
+      this.cargarpermiso7();
+      this.cargarpermiso8();
+      this.cargarpermiso9();
+      this.cargarpermiso10();
+      this.cargarpermiso11();
+    }), err => {
+      console.log(err);
+    };
+
+  }
+
+  cargarpermiso() {
+    var centrostr = this.permisos.perCentros;
+    var array = centrostr.split("");
+    //console.log('carga', array);
+
+    if (array[0] == "1") {
+      this.filter = 1;
+
+      if (array[1] == "1") {
+        this.filter2 = 1;
+
+        if (array[2] == "1") {
+          this.filter3 = 1;
+
+          if (array[3] == "1") {
+            this.filter4 = 1;
+
+            if (array[4] == "1") {
+              this.filter5 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter5 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter4 = 0;
+
+            if (array[4] == "1") {
+              this.filter5 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter5 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter3 = 0;
+
+          if (array[3] == "1") {
+            this.filter4 = 1;
+
+            if (array[4] == "1") {
+              this.filter5 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter5 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter4 = 0;
+
+            if (array[4] == "1") {
+              this.filter5 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter5 = 0;
+            }
+          }
+
+        }
+
+      }
+      else if (array[1] == "0") {
+        this.filter2 = 0;
+
+        if (array[2] == "1") {
+          this.filter3 = 1;
+
+          if (array[3] == "1") {
+            this.filter4 = 1;
+
+            if (array[4] == "1") {
+              this.filter5 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter5 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter4 = 0;
+
+            if (array[4] == "1") {
+              this.filter5 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter5 = 0;
+            }
+
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter3 = 0;
+
+          if (array[3] == "1") {
+            this.filter4 = 1;
+
+            if (array[4] == "1") {
+              this.filter5 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter5 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter4 = 0;
+
+            if (array[4] == "1") {
+              this.filter5 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter5 = 0;
+            }
+          }
+
+        }
+
+
+      }
+
+    }
+    else if (array[0] == "0") {
+      this.filter = 0;
+      if (array[1] == "1") {
+        this.filter2 = 1;
+        if (array[2] == "1") {
+          this.filter3 = 1;
+
+          if (array[3] == "1") {
+            this.filter4 = 1;
+            if (array[4] == "1") {
+              this.filter5 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter5 = 0;
+            }
+          }
+          else if (array[3] == "0") {
+            this.filter4 = 0;
+
+            if (array[4] == "1") {
+              this.filter5 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter5 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter3 = 0;
+
+          if (array[3] == "1") {
+            this.filter4 = 1;
+
+            if (array[4] == "1") {
+              this.filter5 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter5 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter4 = 0;
+
+            if (array[4] == "1") {
+              this.filter5 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter5 = 0;
+            }
+          }
+
+        }
+
+      }
+      else if (array[1] == "0") {
+        this.filter2 = 0;
+
+        if (array[2] == "1") {
+          this.filter3 = 1;
+
+          if (array[3] == "1") {
+            this.filter4 = 1;
+
+            if (array[4] == "1") {
+              this.filter5 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter5 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter4 = 0;
+
+            if (array[4] == "1") {
+              this.filter5 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter5 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter3 = 0;
+
+          if (array[3] == "1") {
+            this.filter4 = 1;
+
+            if (array[4] == "1") {
+              this.filter5 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter5 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter4 = 0;
+
+            if (array[4] == "1") {
+              this.filter5 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter5 = 0;
+            }
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+  //---2 carga
+  cargarpermiso2() {
+    var centrostr = this.permisos.perPuntoen;
+    var array = centrostr.split("");
+    //console.log('carga', array);
+
+    if (array[0] == "1") {
+      this.filter6 = 1;
+
+      if (array[1] == "1") {
+        this.filter7 = 1;
+
+        if (array[2] == "1") {
+          this.filter8 = 1;
+
+          if (array[3] == "1") {
+            this.filter9 = 1;
+
+            if (array[4] == "1") {
+              this.filter10 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter10 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter9 = 0;
+
+            if (array[4] == "1") {
+              this.filter10 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter10 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter8 = 0;
+
+          if (array[3] == "1") {
+            this.filter9 = 1;
+
+            if (array[4] == "1") {
+              this.filter10 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter10 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter9 = 0;
+
+            if (array[4] == "1") {
+              this.filter10 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter10 = 0;
+            }
+          }
+
+        }
+
+      }
+      else if (array[1] == "0") {
+        this.filter7 = 0;
+
+        if (array[2] == "1") {
+          this.filter8 = 1;
+
+          if (array[3] == "1") {
+            this.filter9 = 1;
+
+            if (array[4] == "1") {
+              this.filter10 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter10 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter9 = 0;
+
+            if (array[4] == "1") {
+              this.filter10 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter10 = 0;
+            }
+
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter8 = 0;
+
+          if (array[3] == "1") {
+            this.filter9 = 1;
+
+            if (array[4] == "1") {
+              this.filter10 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter10 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter9 = 0;
+
+            if (array[4] == "1") {
+              this.filter10 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter10 = 0;
+            }
+          }
+
+        }
+
+
+      }
+
+    }
+    else if (array[0] == "0") {
+      this.filter6 = 0;
+      if (array[1] == "1") {
+        this.filter7 = 1;
+        if (array[2] == "1") {
+          this.filter8 = 1;
+
+          if (array[3] == "1") {
+            this.filter9 = 1;
+            if (array[4] == "1") {
+              this.filter10 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter10 = 0;
+            }
+          }
+          else if (array[3] == "0") {
+            this.filter9 = 0;
+
+            if (array[4] == "1") {
+              this.filter10 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter10 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter8 = 0;
+
+          if (array[3] == "1") {
+            this.filter9 = 1;
+
+            if (array[4] == "1") {
+              this.filter10 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter10 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter9 = 0;
+
+            if (array[4] == "1") {
+              this.filter10 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter10 = 0;
+            }
+          }
+
+        }
+
+      }
+      else if (array[1] == "0") {
+        this.filter7 = 0;
+
+        if (array[2] == "1") {
+          this.filter8 = 1;
+
+          if (array[3] == "1") {
+            this.filter9 = 1;
+
+            if (array[4] == "1") {
+              this.filter10 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter10 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter9 = 0;
+
+            if (array[4] == "1") {
+              this.filter10 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter10 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter8 = 0;
+
+          if (array[3] == "1") {
+            this.filter9 = 1;
+
+            if (array[4] == "1") {
+              this.filter10 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter10 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter9 = 0;
+
+            if (array[4] == "1") {
+              this.filter10 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter10 = 0;
+            }
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+  //cargar 3--------------
+  cargarpermiso3() {
+    var centrostr = this.permisos.perUDS;
+    var array = centrostr.split("");
+    //console.log('carga', array);
+
+    if (array[0] == "1") {
+      this.filter11 = 1;
+
+      if (array[1] == "1") {
+        this.filter12 = 1;
+
+        if (array[2] == "1") {
+          this.filter13 = 1;
+
+          if (array[3] == "1") {
+            this.filter14 = 1;
+
+            if (array[4] == "1") {
+              this.filter15 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter15 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter14 = 0;
+
+            if (array[4] == "1") {
+              this.filter15 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter15 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter13 = 0;
+
+          if (array[3] == "1") {
+            this.filter14 = 1;
+
+            if (array[4] == "1") {
+              this.filter15 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter15 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter14 = 0;
+
+            if (array[4] == "1") {
+              this.filter15 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter15 = 0;
+            }
+          }
+
+        }
+
+      }
+      else if (array[1] == "0") {
+        this.filter12 = 0;
+
+        if (array[2] == "1") {
+          this.filter13 = 1;
+
+          if (array[3] == "1") {
+            this.filter14 = 1;
+
+            if (array[4] == "1") {
+              this.filter15 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter15 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter14 = 0;
+
+            if (array[4] == "1") {
+              this.filter15 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter15 = 0;
+            }
+
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter13 = 0;
+
+          if (array[3] == "1") {
+            this.filter14 = 1;
+
+            if (array[4] == "1") {
+              this.filter15 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter15 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter14 = 0;
+
+            if (array[4] == "1") {
+              this.filter15 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter15 = 0;
+            }
+          }
+
+        }
+
+
+      }
+
+    }
+    else if (array[0] == "0") {
+      this.filter11 = 0;
+      if (array[1] == "1") {
+        this.filter12 = 1;
+        if (array[2] == "1") {
+          this.filter13 = 1;
+
+          if (array[3] == "1") {
+            this.filter14 = 1;
+            if (array[4] == "1") {
+              this.filter15 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter15 = 0;
+            }
+          }
+          else if (array[3] == "0") {
+            this.filter14 = 0;
+
+            if (array[4] == "1") {
+              this.filter15 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter15 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter13 = 0;
+
+          if (array[3] == "1") {
+            this.filter14 = 1;
+
+            if (array[4] == "1") {
+              this.filter15 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter15 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter14 = 0;
+
+            if (array[4] == "1") {
+              this.filter15 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter15 = 0;
+            }
+          }
+
+        }
+
+      }
+      else if (array[1] == "0") {
+        this.filter12 = 0;
+
+        if (array[2] == "1") {
+          this.filter13 = 1;
+
+          if (array[3] == "1") {
+            this.filter14 = 1;
+
+            if (array[4] == "1") {
+              this.filter15 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter15 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter14 = 0;
+
+            if (array[4] == "1") {
+              this.filter15 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter15 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter13 = 0;
+
+          if (array[3] == "1") {
+            this.filter14 = 1;
+
+            if (array[4] == "1") {
+              this.filter15 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter15 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter14 = 0;
+
+            if (array[4] == "1") {
+              this.filter15 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter15 = 0;
+            }
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+  //carga permiso 4-------
+  cargarpermiso4() {
+    var centrostr = this.permisos.perUsuarios;
+    var array = centrostr.split("");
+    // console.log('carga', array);
+
+    if (array[0] == "1") {
+      this.filter16 = 1;
+
+      if (array[1] == "1") {
+        this.filter17 = 1;
+
+        if (array[2] == "1") {
+          this.filter18 = 1;
+
+          if (array[3] == "1") {
+            this.filter19 = 1;
+
+            if (array[4] == "1") {
+              this.filter20 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter20 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter19 = 0;
+
+            if (array[4] == "1") {
+              this.filter20 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter20 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter18 = 0;
+
+          if (array[3] == "1") {
+            this.filter19 = 1;
+
+            if (array[4] == "1") {
+              this.filter20 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter20 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter19 = 0;
+
+            if (array[4] == "1") {
+              this.filter20 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter20 = 0;
+            }
+          }
+
+        }
+
+      }
+      else if (array[1] == "0") {
+        this.filter17 = 0;
+
+        if (array[2] == "1") {
+          this.filter18 = 1;
+
+          if (array[3] == "1") {
+            this.filter19 = 1;
+
+            if (array[4] == "1") {
+              this.filter20 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter20 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter19 = 0;
+
+            if (array[4] == "1") {
+              this.filter20 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter20 = 0;
+            }
+
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter18 = 0;
+
+          if (array[3] == "1") {
+            this.filter19 = 1;
+
+            if (array[4] == "1") {
+              this.filter20 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter20 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter19 = 0;
+
+            if (array[4] == "1") {
+              this.filter20 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter20 = 0;
+            }
+          }
+
+        }
+
+
+      }
+
+    }
+    else if (array[0] == "0") {
+      this.filter16 = 0;
+      if (array[1] == "1") {
+        this.filter17 = 1;
+        if (array[2] == "1") {
+          this.filter18 = 1;
+
+          if (array[3] == "1") {
+            this.filter19 = 1;
+            if (array[4] == "1") {
+              this.filter20 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter20 = 0;
+            }
+          }
+          else if (array[3] == "0") {
+            this.filter19 = 0;
+
+            if (array[4] == "1") {
+              this.filter20 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter20 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter18 = 0;
+
+          if (array[3] == "1") {
+            this.filter19 = 1;
+
+            if (array[4] == "1") {
+              this.filter20 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter20 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter19 = 0;
+
+            if (array[4] == "1") {
+              this.filter20 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter20 = 0;
+            }
+          }
+
+        }
+
+      }
+      else if (array[1] == "0") {
+        this.filter17 = 0;
+
+        if (array[2] == "1") {
+          this.filter18 = 1;
+
+          if (array[3] == "1") {
+            this.filter19 = 1;
+
+            if (array[4] == "1") {
+              this.filter20 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter20 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter19 = 0;
+
+            if (array[4] == "1") {
+              this.filter20 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter20 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter18 = 0;
+
+          if (array[3] == "1") {
+            this.filter19 = 1;
+
+            if (array[4] == "1") {
+              this.filter20 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter20 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter19 = 0;
+
+            if (array[4] == "1") {
+              this.filter20 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter20 = 0;
+            }
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+  //carga permiso 5 --------
+  cargarpermiso5() {
+    var centrostr = this.permisos.perBeneficiarios;
+    var array = centrostr.split("");
+    // console.log('carga', array);
+
+    if (array[0] == "1") {
+      this.filter21 = 1;
+
+      if (array[1] == "1") {
+        this.filter22 = 1;
+
+        if (array[2] == "1") {
+          this.filter23 = 1;
+
+          if (array[3] == "1") {
+            this.filter24 = 1;
+
+            if (array[4] == "1") {
+              this.filter25 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter25 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter24 = 0;
+
+            if (array[4] == "1") {
+              this.filter25 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter25 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter23 = 0;
+
+          if (array[3] == "1") {
+            this.filter24 = 1;
+
+            if (array[4] == "1") {
+              this.filter25 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter25 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter24 = 0;
+
+            if (array[4] == "1") {
+              this.filter25 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter25 = 0;
+            }
+          }
+
+        }
+
+      }
+      else if (array[1] == "0") {
+        this.filter22 = 0;
+
+        if (array[2] == "1") {
+          this.filter23 = 1;
+
+          if (array[3] == "1") {
+            this.filter24 = 1;
+
+            if (array[4] == "1") {
+              this.filter25 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter25 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter24 = 0;
+
+            if (array[4] == "1") {
+              this.filter25 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter25 = 0;
+            }
+
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter23 = 0;
+
+          if (array[3] == "1") {
+            this.filter24 = 1;
+
+            if (array[4] == "1") {
+              this.filter25 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter25 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter24 = 0;
+
+            if (array[4] == "1") {
+              this.filter25 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter25 = 0;
+            }
+          }
+
+        }
+
+
+      }
+
+    }
+    else if (array[0] == "0") {
+      this.filter21 = 0;
+      if (array[1] == "1") {
+        this.filter22 = 1;
+        if (array[2] == "1") {
+          this.filter23 = 1;
+
+          if (array[3] == "1") {
+            this.filter24 = 1;
+            if (array[4] == "1") {
+              this.filter25 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter25 = 0;
+            }
+          }
+          else if (array[3] == "0") {
+            this.filter24 = 0;
+
+            if (array[4] == "1") {
+              this.filter25 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter25 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter23 = 0;
+
+          if (array[3] == "1") {
+            this.filter24 = 1;
+
+            if (array[4] == "1") {
+              this.filter25 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter25 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter24 = 0;
+
+            if (array[4] == "1") {
+              this.filter25 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter25 = 0;
+            }
+          }
+
+        }
+
+      }
+      else if (array[1] == "0") {
+        this.filter22 = 0;
+
+        if (array[2] == "1") {
+          this.filter23 = 1;
+
+          if (array[3] == "1") {
+            this.filter24 = 1;
+
+            if (array[4] == "1") {
+              this.filter25 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter25 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter24 = 0;
+
+            if (array[4] == "1") {
+              this.filter25 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter25 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter23 = 0;
+
+          if (array[3] == "1") {
+            this.filter24 = 1;
+
+            if (array[4] == "1") {
+              this.filter25 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter25 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter24 = 0;
+
+            if (array[4] == "1") {
+              this.filter25 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter25 = 0;
+            }
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+  //carga permiso 6----------
+  cargarpermiso6() {
+    var centrostr = this.permisos.perEntrega;
+    var array = centrostr.split("");
+    // console.log('carga', array);
+
+    if (array[0] == "1") {
+      this.filter26 = 1;
+
+      if (array[1] == "1") {
+        this.filter27 = 1;
+
+        if (array[2] == "1") {
+          this.filter28 = 1;
+
+          if (array[3] == "1") {
+            this.filter29 = 1;
+
+            if (array[4] == "1") {
+              this.filter30 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter30 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter29 = 0;
+
+            if (array[4] == "1") {
+              this.filter30 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter30 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter28 = 0;
+
+          if (array[3] == "1") {
+            this.filter29 = 1;
+
+            if (array[4] == "1") {
+              this.filter30 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter30 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter29 = 0;
+
+            if (array[4] == "1") {
+              this.filter30 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter30 = 0;
+            }
+          }
+
+        }
+
+      }
+      else if (array[1] == "0") {
+        this.filter27 = 0;
+
+        if (array[2] == "1") {
+          this.filter28 = 1;
+
+          if (array[3] == "1") {
+            this.filter29 = 1;
+
+            if (array[4] == "1") {
+              this.filter30 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter30 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter29 = 0;
+
+            if (array[4] == "1") {
+              this.filter30 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter30 = 0;
+            }
+
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter28 = 0;
+
+          if (array[3] == "1") {
+            this.filter29 = 1;
+
+            if (array[4] == "1") {
+              this.filter30 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter30 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter29 = 0;
+
+            if (array[4] == "1") {
+              this.filter30 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter30 = 0;
+            }
+          }
+
+        }
+
+
+      }
+
+    }
+    else if (array[0] == "0") {
+      this.filter26 = 0;
+      if (array[1] == "1") {
+        this.filter27 = 1;
+        if (array[2] == "1") {
+          this.filter28 = 1;
+
+          if (array[3] == "1") {
+            this.filter29 = 1;
+            if (array[4] == "1") {
+              this.filter30 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter30 = 0;
+            }
+          }
+          else if (array[3] == "0") {
+            this.filter29 = 0;
+
+            if (array[4] == "1") {
+              this.filter30 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter30 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter28 = 0;
+
+          if (array[3] == "1") {
+            this.filter29 = 1;
+
+            if (array[4] == "1") {
+              this.filter30 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter30 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter29 = 0;
+
+            if (array[4] == "1") {
+              this.filter30 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter30 = 0;
+            }
+          }
+
+        }
+
+      }
+      else if (array[1] == "0") {
+        this.filter27 = 0;
+
+        if (array[2] == "1") {
+          this.filter28 = 1;
+
+          if (array[3] == "1") {
+            this.filter29 = 1;
+
+            if (array[4] == "1") {
+              this.filter30 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter30 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter29 = 0;
+
+            if (array[4] == "1") {
+              this.filter30 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter30 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter28 = 0;
+
+          if (array[3] == "1") {
+            this.filter29 = 1;
+
+            if (array[4] == "1") {
+              this.filter30 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter30 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter29 = 0;
+
+            if (array[4] == "1") {
+              this.filter30 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter30 = 0;
+            }
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+  //carga permiso 7 ---------
+  cargarpermiso7() {
+    var centrostr = this.permisos.perCentrosD;
+    var array = centrostr.split("");
+    //console.log('carga', array);
+
+    if (array[0] == "1") {
+      this.filter31 = 1;
+
+      if (array[1] == "1") {
+        this.filter32 = 1;
+
+        if (array[2] == "1") {
+          this.filter33 = 1;
+
+          if (array[3] == "1") {
+            this.filter34 = 1;
+
+            if (array[4] == "1") {
+              this.filter35 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter35 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter34 = 0;
+
+            if (array[4] == "1") {
+              this.filter35 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter35 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter33 = 0;
+
+          if (array[3] == "1") {
+            this.filter34 = 1;
+
+            if (array[4] == "1") {
+              this.filter35 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter35 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter34 = 0;
+
+            if (array[4] == "1") {
+              this.filter35 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter35 = 0;
+            }
+          }
+
+        }
+
+      }
+      else if (array[1] == "0") {
+        this.filter32 = 0;
+
+        if (array[2] == "1") {
+          this.filter33 = 1;
+
+          if (array[3] == "1") {
+            this.filter34 = 1;
+
+            if (array[4] == "1") {
+              this.filter35 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter35 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter34 = 0;
+
+            if (array[4] == "1") {
+              this.filter35 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter35 = 0;
+            }
+
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter33 = 0;
+
+          if (array[3] == "1") {
+            this.filter34 = 1;
+
+            if (array[4] == "1") {
+              this.filter35 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter35 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter34 = 0;
+
+            if (array[4] == "1") {
+              this.filter35 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter35 = 0;
+            }
+          }
+
+        }
+
+
+      }
+
+    }
+    else if (array[0] == "0") {
+      this.filter31 = 0;
+      if (array[1] == "1") {
+        this.filter32 = 1;
+        if (array[2] == "1") {
+          this.filter33 = 1;
+
+          if (array[3] == "1") {
+            this.filter34 = 1;
+            if (array[4] == "1") {
+              this.filter35 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter35 = 0;
+            }
+          }
+          else if (array[3] == "0") {
+            this.filter34 = 0;
+
+            if (array[4] == "1") {
+              this.filter35 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter35 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter33 = 0;
+
+          if (array[3] == "1") {
+            this.filter34 = 1;
+
+            if (array[4] == "1") {
+              this.filter35 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter35 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter34 = 0;
+
+            if (array[4] == "1") {
+              this.filter35 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter35 = 0;
+            }
+          }
+
+        }
+
+      }
+      else if (array[1] == "0") {
+        this.filter32 = 0;
+
+        if (array[2] == "1") {
+          this.filter33 = 1;
+
+          if (array[3] == "1") {
+            this.filter34 = 1;
+
+            if (array[4] == "1") {
+              this.filter35 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter35 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter34 = 0;
+
+            if (array[4] == "1") {
+              this.filter35 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter35 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter33 = 0;
+
+          if (array[3] == "1") {
+            this.filter34 = 1;
+
+            if (array[4] == "1") {
+              this.filter35 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter35 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter34 = 0;
+
+            if (array[4] == "1") {
+              this.filter35 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter35 = 0;
+            }
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+  //carga permiso 8----------
+  cargarpermiso8() {
+    var centrostr = this.permisos.perInventario;
+    var array = centrostr.split("");
+    // console.log('carga', array);
+
+    if (array[0] == "1") {
+      this.filter36 = 1;
+
+      if (array[1] == "1") {
+        this.filter37 = 1;
+
+        if (array[2] == "1") {
+          this.filter38 = 1;
+
+          if (array[3] == "1") {
+            this.filter39 = 1;
+
+            if (array[4] == "1") {
+              this.filter40 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter40 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter39 = 0;
+
+            if (array[4] == "1") {
+              this.filter40 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter40 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter38 = 0;
+
+          if (array[3] == "1") {
+            this.filter39 = 1;
+
+            if (array[4] == "1") {
+              this.filter40 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter40 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter39 = 0;
+
+            if (array[4] == "1") {
+              this.filter40 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter40 = 0;
+            }
+          }
+
+        }
+
+      }
+      else if (array[1] == "0") {
+        this.filter37 = 0;
+
+        if (array[2] == "1") {
+          this.filter38 = 1;
+
+          if (array[3] == "1") {
+            this.filter39 = 1;
+
+            if (array[4] == "1") {
+              this.filter40 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter40 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter39 = 0;
+
+            if (array[4] == "1") {
+              this.filter40 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter40 = 0;
+            }
+
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter38 = 0;
+
+          if (array[3] == "1") {
+            this.filter39 = 1;
+
+            if (array[4] == "1") {
+              this.filter40 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter40 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter39 = 0;
+
+            if (array[4] == "1") {
+              this.filter40 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter40 = 0;
+            }
+          }
+
+        }
+
+
+      }
+
+    }
+    else if (array[0] == "0") {
+      this.filter36 = 0;
+      if (array[1] == "1") {
+        this.filter37 = 1;
+        if (array[2] == "1") {
+          this.filter38 = 1;
+
+          if (array[3] == "1") {
+            this.filter39 = 1;
+            if (array[4] == "1") {
+              this.filter40 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter40 = 0;
+            }
+          }
+          else if (array[3] == "0") {
+            this.filter39 = 0;
+
+            if (array[4] == "1") {
+              this.filter40 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter40 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter38 = 0;
+
+          if (array[3] == "1") {
+            this.filter39 = 1;
+
+            if (array[4] == "1") {
+              this.filter40 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter40 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter39 = 0;
+
+            if (array[4] == "1") {
+              this.filter40 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter40 = 0;
+            }
+          }
+
+        }
+
+      }
+      else if (array[1] == "0") {
+        this.filter37 = 0;
+
+        if (array[2] == "1") {
+          this.filter38 = 1;
+
+          if (array[3] == "1") {
+            this.filter39 = 1;
+
+            if (array[4] == "1") {
+              this.filter40 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter40 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter39 = 0;
+
+            if (array[4] == "1") {
+              this.filter40 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter40 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter38 = 0;
+
+          if (array[3] == "1") {
+            this.filter39 = 1;
+
+            if (array[4] == "1") {
+              this.filter40 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter40 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter39 = 0;
+
+            if (array[4] == "1") {
+              this.filter40 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter40 = 0;
+            }
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+  //carga permiso 9 ----------
+  cargarpermiso9() {
+    var centrostr = this.permisos.perRol;
+    var array = centrostr.split("");
+    //console.log('carga', array);
+
+    if (array[0] == "1") {
+      this.filter41 = 1;
+
+      if (array[1] == "1") {
+        this.filter42 = 1;
+
+        if (array[2] == "1") {
+          this.filter43 = 1;
+
+          if (array[3] == "1") {
+            this.filter44 = 1;
+
+            if (array[4] == "1") {
+              this.filter45 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter45 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter44 = 0;
+
+            if (array[4] == "1") {
+              this.filter45 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter45 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter43 = 0;
+
+          if (array[3] == "1") {
+            this.filter44 = 1;
+
+            if (array[4] == "1") {
+              this.filter45 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter45 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter44 = 0;
+
+            if (array[4] == "1") {
+              this.filter45 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter45 = 0;
+            }
+          }
+
+        }
+
+      }
+      else if (array[1] == "0") {
+        this.filter42 = 0;
+
+        if (array[2] == "1") {
+          this.filter43 = 1;
+
+          if (array[3] == "1") {
+            this.filter44 = 1;
+
+            if (array[4] == "1") {
+              this.filter45 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter45 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter44 = 0;
+
+            if (array[4] == "1") {
+              this.filter45 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter45 = 0;
+            }
+
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter43 = 0;
+
+          if (array[3] == "1") {
+            this.filter44 = 1;
+
+            if (array[4] == "1") {
+              this.filter45 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter45 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter44 = 0;
+
+            if (array[4] == "1") {
+              this.filter45 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter45 = 0;
+            }
+          }
+
+        }
+
+
+      }
+
+    }
+    else if (array[0] == "0") {
+      this.filter41 = 0;
+      if (array[1] == "1") {
+        this.filter42 = 1;
+        if (array[2] == "1") {
+          this.filter43 = 1;
+
+          if (array[3] == "1") {
+            this.filter44 = 1;
+            if (array[4] == "1") {
+              this.filter45 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter45 = 0;
+            }
+          }
+          else if (array[3] == "0") {
+            this.filter44 = 0;
+
+            if (array[4] == "1") {
+              this.filter45 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter45 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter43 = 0;
+
+          if (array[3] == "1") {
+            this.filter44 = 1;
+
+            if (array[4] == "1") {
+              this.filter45 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter45 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter44 = 0;
+
+            if (array[4] == "1") {
+              this.filter45 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter45 = 0;
+            }
+          }
+
+        }
+
+      }
+      else if (array[1] == "0") {
+        this.filter42 = 0;
+
+        if (array[2] == "1") {
+          this.filter43 = 1;
+
+          if (array[3] == "1") {
+            this.filter44 = 1;
+
+            if (array[4] == "1") {
+              this.filter45 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter45 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter44 = 0;
+
+            if (array[4] == "1") {
+              this.filter45 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter45 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter43 = 0;
+
+          if (array[3] == "1") {
+            this.filter44 = 1;
+
+            if (array[4] == "1") {
+              this.filter45 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter45 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter44 = 0;
+
+            if (array[4] == "1") {
+              this.filter45 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter45 = 0;
+            }
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+  //carga permiso 10----------
+  cargarpermiso10() {
+    var centrostr = this.permisos.PerMaestros;
+    var array = centrostr.split("");
+    // console.log('carga', array);
+
+    if (array[0] == "1") {
+      this.filter46 = 1;
+
+      if (array[1] == "1") {
+        this.filter47 = 1;
+
+        if (array[2] == "1") {
+          this.filter48 = 1;
+
+          if (array[3] == "1") {
+            this.filter49 = 1;
+
+            if (array[4] == "1") {
+              this.filter50 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter50 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter49 = 0;
+
+            if (array[4] == "1") {
+              this.filter50 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter50 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter48 = 0;
+
+          if (array[3] == "1") {
+            this.filter49 = 1;
+
+            if (array[4] == "1") {
+              this.filter50 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter50 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter49 = 0;
+
+            if (array[4] == "1") {
+              this.filter50 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter50 = 0;
+            }
+          }
+
+        }
+
+      }
+      else if (array[1] == "0") {
+        this.filter47 = 0;
+
+        if (array[2] == "1") {
+          this.filter48 = 1;
+
+          if (array[3] == "1") {
+            this.filter49 = 1;
+
+            if (array[4] == "1") {
+              this.filter50 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter50 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter49 = 0;
+
+            if (array[4] == "1") {
+              this.filter50 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter50 = 0;
+            }
+
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter48 = 0;
+
+          if (array[3] == "1") {
+            this.filter49 = 1;
+
+            if (array[4] == "1") {
+              this.filter50 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter50 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter49 = 0;
+
+            if (array[4] == "1") {
+              this.filter50 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter50 = 0;
+            }
+          }
+
+        }
+
+
+      }
+
+    }
+    else if (array[0] == "0") {
+      this.filter46 = 0;
+      if (array[1] == "1") {
+        this.filter47 = 1;
+        if (array[2] == "1") {
+          this.filter48 = 1;
+
+          if (array[3] == "1") {
+            this.filter49 = 1;
+            if (array[4] == "1") {
+              this.filter50 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter50 = 0;
+            }
+          }
+          else if (array[3] == "0") {
+            this.filter49 = 0;
+
+            if (array[4] == "1") {
+              this.filter50 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter50 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter48 = 0;
+
+          if (array[3] == "1") {
+            this.filter49 = 1;
+
+            if (array[4] == "1") {
+              this.filter50 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter50 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter49 = 0;
+
+            if (array[4] == "1") {
+              this.filter50 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter50 = 0;
+            }
+          }
+
+        }
+
+      }
+      else if (array[1] == "0") {
+        this.filter47 = 0;
+
+        if (array[2] == "1") {
+          this.filter48 = 1;
+
+          if (array[3] == "1") {
+            this.filter49 = 1;
+
+            if (array[4] == "1") {
+              this.filter50 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter50 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter49 = 0;
+
+            if (array[4] == "1") {
+              this.filter50 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter50 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter48 = 0;
+
+          if (array[3] == "1") {
+            this.filter49 = 1;
+
+            if (array[4] == "1") {
+              this.filter50 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter50 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter49 = 0;
+
+            if (array[4] == "1") {
+              this.filter50 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter50 = 0;
+            }
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+  //carga permiso 11----------
+  cargarpermiso11() {
+    var centrostr = this.permisos.perAlmacenes;
+    var array = centrostr.split("");
+    //console.log('carga', array);
+
+    if (array[0] == "1") {
+      this.filter51 = 1;
+
+      if (array[1] == "1") {
+        this.filter52 = 1;
+
+        if (array[2] == "1") {
+          this.filter53 = 1;
+
+          if (array[3] == "1") {
+            this.filter54 = 1;
+
+            if (array[4] == "1") {
+              this.filter55 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter55 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter54 = 0;
+
+            if (array[4] == "1") {
+              this.filter55 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter55 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter53 = 0;
+
+          if (array[3] == "1") {
+            this.filter54 = 1;
+
+            if (array[4] == "1") {
+              this.filter55 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter55 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter54 = 0;
+
+            if (array[4] == "1") {
+              this.filter55 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter55 = 0;
+            }
+          }
+
+        }
+
+      }
+      else if (array[1] == "0") {
+        this.filter52 = 0;
+
+        if (array[2] == "1") {
+          this.filter53 = 1;
+
+          if (array[3] == "1") {
+            this.filter54 = 1;
+
+            if (array[4] == "1") {
+              this.filter55 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter55 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter54 = 0;
+
+            if (array[4] == "1") {
+              this.filter55 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter55 = 0;
+            }
+
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter53 = 0;
+
+          if (array[3] == "1") {
+            this.filter54 = 1;
+
+            if (array[4] == "1") {
+              this.filter55 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter55 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter54 = 0;
+
+            if (array[4] == "1") {
+              this.filter55 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter55 = 0;
+            }
+          }
+
+        }
+
+
+      }
+
+    }
+    else if (array[0] == "0") {
+      this.filter51 = 0;
+      if (array[1] == "1") {
+        this.filter52 = 1;
+        if (array[2] == "1") {
+          this.filter53 = 1;
+
+          if (array[3] == "1") {
+            this.filter54 = 1;
+            if (array[4] == "1") {
+              this.filter55 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter55 = 0;
+            }
+          }
+          else if (array[3] == "0") {
+            this.filter54 = 0;
+
+            if (array[4] == "1") {
+              this.filter55 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter55 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter53 = 0;
+
+          if (array[3] == "1") {
+            this.filter54 = 1;
+
+            if (array[4] == "1") {
+              this.filter55 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter55 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter54 = 0;
+
+            if (array[4] == "1") {
+              this.filter55 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter55 = 0;
+            }
+          }
+
+        }
+
+      }
+      else if (array[1] == "0") {
+        this.filter52 = 0;
+
+        if (array[2] == "1") {
+          this.filter53 = 1;
+
+          if (array[3] == "1") {
+            this.filter54 = 1;
+
+            if (array[4] == "1") {
+              this.filter55 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter55 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter54 = 0;
+
+            if (array[4] == "1") {
+              this.filter55 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter55 = 0;
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+          this.filter53 = 0;
+
+          if (array[3] == "1") {
+            this.filter54 = 1;
+
+            if (array[4] == "1") {
+              this.filter55 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter55 = 0;
+            }
+
+          }
+          else if (array[3] == "0") {
+            this.filter54 = 0;
+
+            if (array[4] == "1") {
+              this.filter55 = 1;
+            }
+            else if (array[4] == "0") {
+              this.filter55 = 0;
+            }
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+  //insertar Datos ------------------------------------------------
+
+  updatetDatos(data, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11) {
+    const params = this.activeRoute.snapshot.params;
+
+    data = this.Checkbox.Crear + '' + this.Checkbox.Actualizar + '' + this.Checkbox.vizualizar + '' + this.Checkbox.Reportes + '' + this.Checkbox.Inhabilitar + '';
+    data2 = this.Checkbox2.Crear + '' + this.Checkbox2.Actualizar + '' + this.Checkbox2.vizualizar + '' + this.Checkbox2.Reportes + '' + this.Checkbox2.Inhabilitar + '';
+    data3 = this.Checkbox3.Crear + '' + this.Checkbox3.Actualizar + '' + this.Checkbox3.vizualizar + '' + this.Checkbox3.Reportes + '' + this.Checkbox3.Inhabilitar + '';
+    data4 = this.Checkbox4.Crear + '' + this.Checkbox4.Actualizar + '' + this.Checkbox4.vizualizar + '' + this.Checkbox4.Reportes + '' + this.Checkbox4.Inhabilitar + '';
+    data5 = this.Checkbox5.Crear + '' + this.Checkbox5.Actualizar + '' + this.Checkbox5.vizualizar + '' + this.Checkbox5.Reportes + '' + this.Checkbox5.Inhabilitar + '';
+    data6 = this.Checkbox6.Crear + '' + this.Checkbox6.Actualizar + '' + this.Checkbox6.vizualizar + '' + this.Checkbox6.Reportes + '' + this.Checkbox6.Inhabilitar + '';
+    data7 = this.Checkbox7.Crear + '' + this.Checkbox7.Actualizar + '' + this.Checkbox7.vizualizar + '' + this.Checkbox7.Reportes + '' + this.Checkbox7.Inhabilitar + '';
+    data8 = this.Checkbox8.Crear + '' + this.Checkbox8.Actualizar + '' + this.Checkbox8.vizualizar + '' + this.Checkbox8.Reportes + '' + this.Checkbox8.Inhabilitar + '';
+    data9 = this.Checkbox9.Crear + '' + this.Checkbox9.Actualizar + '' + this.Checkbox9.vizualizar + '' + this.Checkbox9.Reportes + '' + this.Checkbox9.Inhabilitar + '';
+    data10 = this.Checkbox10.Crear + '' + this.Checkbox10.Actualizar + '' + this.Checkbox10.vizualizar + '' + this.Checkbox10.Reportes + '' + this.Checkbox10.Inhabilitar + '';
+    data11 = this.Checkbox11.Crear + '' + this.Checkbox11.Actualizar + '' + this.Checkbox11.vizualizar + '' + this.Checkbox11.Reportes + '' + this.Checkbox11.Inhabilitar + '';
+
+    this.permisos.idRol = params.id;
+    this.permisos.perCentros = data;
+    this.permisos.perEntrega = data2;
+    this.permisos.perUDS = data3;
+    this.permisos.perUsuarios = data4;
+    this.permisos.perBeneficiarios = data5;
+    this.permisos.perPuntoen = data6;
+    this.permisos.perCentrosD = data7;
+    this.permisos.perInventario = data8;
+    this.permisos.perRol = data9;
+    this.permisos.PerMaestros = data10;
+    this.permisos.perAlmacenes = data11;
+    console.log('Los permisos', this.permisos);
+/*     this.Service.postPermisos(this.permisos).subscribe(res => {
+      console.log(this.permisos);
+      console.log(res);
+      this.showMenssage();
+    },
+      err => {
+        console.log(err);
+        this.showMenssage();
+      }); */
+    console.log('si');
+  }
+
   filter;
   filter2;
   filter3;
@@ -597,50 +2923,6 @@ export class PermisosmComponent implements OnInit {
   filter55;
 
 
-  //Actualizar Datos ------------------------------------------------
-
-  updatetDatos(data, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11) {
-    const params = this.activeRoute.snapshot.params;
-
-    data = this.Checkbox.Crear + '' + this.Checkbox.Actualizar + '' + this.Checkbox.vizualizar + '' + this.Checkbox.Reportes + '' + this.Checkbox.Inhabilitar + '';
-    data2 = this.Checkbox2.Crear + '' + this.Checkbox2.Actualizar + '' + this.Checkbox2.vizualizar + '' + this.Checkbox2.Reportes + '' + this.Checkbox2.Inhabilitar + '';
-    data3 = this.Checkbox3.Crear + '' + this.Checkbox3.Actualizar + '' + this.Checkbox3.vizualizar + '' + this.Checkbox3.Reportes + '' + this.Checkbox3.Inhabilitar + '';
-    data4 = this.Checkbox4.Crear + '' + this.Checkbox4.Actualizar + '' + this.Checkbox4.vizualizar + '' + this.Checkbox4.Reportes + '' + this.Checkbox4.Inhabilitar + '';
-    data5 = this.Checkbox5.Crear + '' + this.Checkbox5.Actualizar + '' + this.Checkbox5.vizualizar + '' + this.Checkbox5.Reportes + '' + this.Checkbox5.Inhabilitar + '';
-    data6 = this.Checkbox6.Crear + '' + this.Checkbox6.Actualizar + '' + this.Checkbox6.vizualizar + '' + this.Checkbox6.Reportes + '' + this.Checkbox6.Inhabilitar + '';
-    data7 = this.Checkbox7.Crear + '' + this.Checkbox7.Actualizar + '' + this.Checkbox7.vizualizar + '' + this.Checkbox7.Reportes + '' + this.Checkbox7.Inhabilitar + '';
-    data8 = this.Checkbox8.Crear + '' + this.Checkbox8.Actualizar + '' + this.Checkbox8.vizualizar + '' + this.Checkbox8.Reportes + '' + this.Checkbox8.Inhabilitar + '';
-    data9 = this.Checkbox9.Crear + '' + this.Checkbox9.Actualizar + '' + this.Checkbox9.vizualizar + '' + this.Checkbox9.Reportes + '' + this.Checkbox9.Inhabilitar + '';
-    data10 = this.Checkbox10.Crear + '' + this.Checkbox10.Actualizar + '' + this.Checkbox10.vizualizar + '' + this.Checkbox10.Reportes + '' + this.Checkbox10.Inhabilitar + '';
-    data11 = this.Checkbox11.Crear + '' + this.Checkbox11.Actualizar + '' + this.Checkbox11.vizualizar + '' + this.Checkbox11.Reportes + '' + this.Checkbox11.Inhabilitar + '';
-
-    this.permisos.idRol = params.id;
-    this.permisos.perCentros = data;
-    this.permisos.perEntrega = data;
-    this.permisos.perUDS = data3;
-    this.permisos.perUsuarios = data4;
-    this.permisos.perBeneficiarios = data5;
-    this.permisos.perPuntoen = data6;
-    this.permisos.perCentrosD = data7;
-    this.permisos.perInventario = data8;
-    this.permisos.perRol = data9;
-    this.permisos.PerMaestros = data10;
-    this.permisos.perAlmacenes = data11;
-    console.log('datos actualizar', this.permisos);
-    /*       console.log('Los permisos', this.permisos);
-          this.Service.putPermisos(this.permisos.idRol,this.permisos).subscribe(res => {
-            console.log(this.permisos);
-            console.log(res);
-            //this.showMenssage();
-          },
-            err => {
-              console.log(err);
-              //this.showMenssage();
-            }); */
-    console.log('si');
-  }
-
-
   //---------------centro zonal
   onFilterChange() {
 
@@ -652,6 +2934,8 @@ export class PermisosmComponent implements OnInit {
       this.Checkbox.Crear = 0;
     }
   }
+
+
   onFilterChange2() {
 
     if (this.filter2 == true) {
@@ -1030,6 +3314,7 @@ export class PermisosmComponent implements OnInit {
       this.Checkbox8.vizualizar = 0;
     }
   }
+
   onFilterChange39() {
 
     if (this.filter39 == true) {
@@ -1202,7 +3487,6 @@ export class PermisosmComponent implements OnInit {
       this.Checkbox11.Inhabilitar = 0;
     }
   }
-
 
   //mensajes de asigancion
   showMenssage() {
