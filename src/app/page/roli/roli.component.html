@@ -26,9 +26,12 @@
           Deshabilitado
         </div>
       </td>
-      <td>{{rol.Almacenes}}</td>
       <td>
         <button class="btn btn-primary" [routerLink]="['/rol',rol.idRolPersona]" type="submit">Modificar</button>
+      </td>
+      <td>
+        <!-- -->
+        <button class="btn btn-primary" type="submit" [routerLink]="['/permisos',rol.idRolPersona]">Asignar Transacciones</button>
       </td>
       <td>
         <!-- -->
@@ -37,4 +40,4 @@
       </td>
     </tr>
   </tbody>
-</table>
+</table> 
