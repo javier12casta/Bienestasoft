@@ -58,7 +58,6 @@ export class RoliComponent implements OnInit {
       this.permiso = Object(res);
       console.log(this.permisos);
     });
-
   }
 
 }

@@ -14,10 +14,12 @@
         <form class="form-signin padding" >
           
             <span id="reauth-email" class="reauth-email"></span>
-            <input type="text" id="inputEmail" class="form-control" placeholder="Usuario" required autofocus [(ngModel)]="usuario">
-            <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required [(ngModel)]="pass">
+            <label> Nombre Usuario</label>
+            <input type="text" class="form-control" placeholder="Usuario" required autofocus name="name" [(ngModel)]="user.name">
+            <label>Contraseña</label>
+            <input type="password" class="form-control" placeholder="Contraseña" required  name="pw" [(ngModel)]="user.pw">
   
-            <button type="button" class="btn btn-success" routerLink="/menu">Iniciar Sesión<nav></nav></button>
+            <button type="button" class="btn btn-success" (click)="login()">Iniciar Sesión<nav></nav></button>
         </form><!-- /form -->
     </div><!-- /card-container -->
 </div><!-- /container -->

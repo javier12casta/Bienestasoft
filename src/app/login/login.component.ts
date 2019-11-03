@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { ServicioService } from '../servicio.service';
+import { Usuarios } from '../interfaces/usuarios';
 
 @Component({
   selector: 'app-login',
@@ -14,8 +15,8 @@ export class LoginComponent implements OnInit {
 
 
   user = {
-    name:'admin123',
-    pw:'admin123'
+    name:'',
+    pw: null,
   };
 
   error_messages={
@@ -36,21 +37,21 @@ export class LoginComponent implements OnInit {
 
 
   constructor(private Service: ServicioService , private router:Router) { }
-
+  users: Usuarios [] = [];
   ngOnInit() {
-  }
-
-  usuario : "";
-  pass : "";
-
-
-  traer(){
+    this.Service.getUsuarios().subscribe(res => {
+      this.users = res;
+    });
 
   }
 
   login(){
-
-  this.router.navigate(['/menu']); 
+    for(let usu of this.users){
+      if(this.user.name == usu.NombreUsuarioSistema && this.user.pw == usu.NumeroDocumento){
+        console.log('inicio session  exitoso');
+         this.router.navigate(['/menu']); 
+      }
+    }
 
   }
 

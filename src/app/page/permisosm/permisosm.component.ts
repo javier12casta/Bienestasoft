@@ -22,7 +22,7 @@ export class PermisosmComponent implements OnInit {
     perUDS: '',
     perPuntoen: '',
     PerMaestros: '',
-    idRol: 8,
+    idRol: 1,
     perAlmacenes: '',
     perCentrosD: '',
   };
@@ -140,7 +140,7 @@ export class PermisosmComponent implements OnInit {
     };
 
   }
-
+ 
   cargarpermiso() {
     var centrostr = this.permisos.perCentros;
     var array = centrostr.split("");

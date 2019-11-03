@@ -17,4 +17,5 @@ export interface Usuarios {
     idUDS ?: number,
     idTipoDocumento : number,
     TipoUsuario : string,
+    password?: string,
   }
