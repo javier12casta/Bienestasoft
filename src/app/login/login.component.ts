@@ -6,6 +6,7 @@ import { Usuarios } from '../interfaces/usuarios';
 import { AuthserviceService } from '../authservice.service';
 import { User } from '../interfaces/user';
 import Swal from 'sweetalert2';
+import { delay } from 'q';
 
 @Component({
   selector: 'app-login',
@@ -59,10 +60,14 @@ export class LoginComponent implements OnInit {
     this.auth.getAuthUser(this.usuario.NombreUsuarioSistema).subscribe(res => {
       this.user = Object(res);
       //console.log('usuario',this.user);
-
+      delay(1000);
+      this.validarLogin();
     });
     
-     if (this.usuario.NombreUsuarioSistema == "" || this.usuario.password == "")
+  }
+
+  validarLogin(){
+    if (this.usuario.NombreUsuarioSistema == "" || this.usuario.password == "")
     {
       this.showMenssagelog();
       this.router.navigate(['/login']);
@@ -72,9 +77,6 @@ export class LoginComponent implements OnInit {
       }else {
         this.showMenssage2();
       }
-      
-    
-
   }
 
   grabarStorage(){
