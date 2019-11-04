@@ -1,26 +1,45 @@
-<!-- Just an image -->
-<nav class="navbar navbar-success bg-success">
+<nav class="navbar navbar-success bg-success" style="height: 60px;">
   <a class="navbar-brand">
-    <img src="../../assets/Logo UDEC.png" width="40" height="45">
+    <img src="../../assets/" width="40" height="45">
     Bienvenidos
   </a>
 </nav>
-<!-- Default form login -->
-<div class="container">
+<div class="container" style="justify-content: center; margin-right:auto; margin-left: auto;;">
+  <form class="form-signin was-validated" style="justify-content: center;" novalidate>
+
     <div class="card card-container">
-        <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-        <img id="profile-img" width="100" height="100" class="profile-img-card" src="../../assets/Logo UNAL.png" />
-        <p id="profile-name" class="profile-name-card"></p>
-        <form class="form-signin padding" >
-          
-            <span id="reauth-email" class="reauth-email"></span>
-            <label> Nombre Usuario</label>
-            <input type="text" class="form-control" placeholder="Usuario" required autofocus name="name" [(ngModel)]="usuario.NombreUsuarioSistema">
-            <label>Contraseña</label>
-            <input type="password" class="form-control" placeholder="Contraseña" required  name="pw" [(ngModel)]="usuario.password">
-  
-            <button type="button" class="btn btn-success" (click)="login()">Iniciar Sesión<nav></nav></button>
-        </form><!-- /form -->
-    </div><!-- /card-container -->
-</div><!-- /container -->
-<!-- Default form login -->
+      <img id="profile-img" width="300" height="300" class="profile-img-card" src="../../assets/login icon.svg" />
+
+      <div class="form-group">
+         <div> </div>
+
+        <label for="NombreUsuarioSistema">Nombre de usuario</label>
+        <input type="text" class="form-control" name="NombreUsuarioSistema" minlength="6" maxlength="20"
+          [(ngModel)]="usuario.NombreUsuarioSistema" placeholder="Nombre de usuario" required="">
+
+        <div class="valid-feedback"></div>
+        <div class="invalid-feedback">Completa este campo</div>
+
+        <label for="password">Contraseña</label>
+        <input type="password" class="form-control" name="password" minlength="6" maxlength="20"
+          [(ngModel)]="usuario.password" placeholder="Contraseña" required="">
+
+        <div class="valid-feedback"></div>
+        <div class="invalid-feedback">Completa este campo</div>
+
+      </div>
+      
+
+      <input type="submit" class="btn btn-success btn-block" (click)="login()" value="Iniciar sesión">
+
+    </div>
+
+  </form>
+</div>
+
+
+<footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+  <div class="container text-center">
+    <small>Copyright &copy; Your Website</small>
+  </div>
+</footer>

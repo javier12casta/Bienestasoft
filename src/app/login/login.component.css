@@ -4,6 +4,7 @@
 /*
  * General styles
  */
+ span {font-family: YourFontFamily; }
  body, html {
   height: 100%;
   background-repeat: no-repeat;
@@ -138,4 +139,10 @@
 .forgot-password:active,
 .forgot-password:focus{
   color: rgb(12, 97, 33);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Tahoma', 'tahoma', sans-serif;
 }

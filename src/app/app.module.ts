@@ -329,6 +329,7 @@ import { TrasladocComponent } from './page/trasladoc/trasladoc.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     //Material Imports Module
     BrowserAnimationsModule,
     MatSidenavModule,

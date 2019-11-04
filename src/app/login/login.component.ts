@@ -13,8 +13,6 @@ import Swal from 'sweetalert2';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  title = 'Bienestasoft';
-  loginForm: FormGroup;
 
   user : Usuarios = {
     idUsuarios: 1,
@@ -37,50 +35,45 @@ export class LoginComponent implements OnInit {
     password: ""
 }
 
-  error_messages={
-    'password': [
-      {type: 'reqired', message: 'Se requiere contraseña' },
-      {type: 'minlength', message:'Debe contener al menos 8 caracteres.'},
-      {type: 'maxlength', message:'Debe contener menos de 30 caracteres.'},
-      {type: 'pattern', message: 'La contraseña debe contener numeros, mayusculas o minusculas'}
-    ],
-    'usuario': [
-      {type: 'reqired', message: 'Se requiere nombre de usuario' },
-      {type: 'minlength', message:'Debe contener al menos 8 caracteres.'},
-      {type: 'maxlength', message:'Debe contener menos de 20 caracteres.'},
-      {type: 'pattern', message: 'El nombre de usuario debe contener numeros, mayusculas o minusculas'}
-    ],
-  }
-
-
-
   constructor(
     private Service: ServicioService , 
     private router:Router,
-    private auth: AuthserviceService)
-     { }
+    private auth: AuthserviceService,
+    )
+     { 
+
+     }
   
   ngOnInit() {
     
   }
+
 
   usuario: User = {
     NombreUsuarioSistema: '',
     password: '',
   };
 
-  login(){
+  login()
+  {
     this.auth.getAuthUser(this.usuario.NombreUsuarioSistema).subscribe(res => {
       this.user = Object(res);
       //console.log('usuario',this.user);
 
     });
-    if (this.usuario.NombreUsuarioSistema == this.user.NombreUsuarioSistema && this.usuario.password == this.user.password){
-      this.grabarStorage();
-      this.router.navigate(['/menu']);
-    }else {
-      this.showMenssage2();
-    }
+    
+     if (this.usuario.NombreUsuarioSistema == "" || this.usuario.password == "")
+    {
+      this.showMenssagelog();
+      this.router.navigate(['/login']);
+    }else if (this.usuario.NombreUsuarioSistema == this.user.NombreUsuarioSistema && this.usuario.password == this.user.password){
+        this.grabarStorage();
+        this.router.navigate(['/menu']);
+      }else {
+        this.showMenssage2();
+      }
+      
+    
 
   }
 
@@ -94,6 +87,15 @@ export class LoginComponent implements OnInit {
       title: 'Error al iniciar session!',
       text: 'Verifica tus credenciales',
       type: 'error',
+      confirmButtonText: 'Entendido'
+    });
+  }
+
+  showMenssagelog(){
+    Swal.fire({
+      title: 'Campos vacios!',
+      text: 'Ingresa tus datos',
+      type: 'warning',
       confirmButtonText: 'Entendido'
     });
   }
