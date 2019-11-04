@@ -1,19 +1,41 @@
-import {MediaMatcher} from '@angular/cdk/layout';
-import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
+import { MediaMatcher } from '@angular/cdk/layout';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 
 import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { Permisos } from '../../interfaces/permisos';
+import { Usuarios } from 'src/app/interfaces/usuarios';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
-})  
+})
 export class MenuComponent implements OnInit {
-  
+
   mobileQuery: MediaQueryList;
+
+  user: Usuarios = {
+    idUsuarios: 1,
+    Nombres: "",
+    Apellidos: "",
+    Estado: 1,
+    NumeroDocumento: 0,
+    FechaIngreso: 0,
+    NombreUsuarioSistema: "",
+    Direccion: "",
+    TelefonoFijo: 0,
+    TelefonoFijo2: 0,
+    TelefonoMovil: 0,
+    TelefonoMovil2: 0,
+    Email: "",
+    idPersonalICBF: null,
+    idUDS: null,
+    idTipoDocumento: 1,
+    TipoUsuario: "",
+    password: ""
+  }
 
   public permisos: Permisos = {
     idPermiso: 0,
@@ -31,87 +53,87 @@ export class MenuComponent implements OnInit {
     perCentrosD: '',
   };
 
- // fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
-  estructura =     [
-    {name:"centrozonal", route: "/centrozonal", icon:"public" },
-    {name:"puntoentrega", route: "/puntoentrega", icon:"public" },
-    {name:"uds", route: "/uds", icon:"public" },
-    {name:"Reporte centrozonal", route: "/reportecentrozonal", icon:"public" },
-    {name:"Reporte Punto Entrega", route: "/reportepuntoentrega", icon:"face" },
-    {name:"Reporte Unidad de servicio", route: "/reporteuds", icon:"face" },
+  // fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
+  estructura = [
+    { name: "centrozonal", route: "/centrozonal", icon: "public" },
+    { name: "puntoentrega", route: "/puntoentrega", icon: "public" },
+    { name: "uds", route: "/uds", icon: "public" },
+    { name: "Reporte centrozonal", route: "/reportecentrozonal", icon: "public" },
+    { name: "Reporte Punto Entrega", route: "/reportepuntoentrega", icon: "face" },
+    { name: "Reporte Unidad de servicio", route: "/reporteuds", icon: "face" },
 
   ];
   entrega = [
-    {name:"Entrega", route:"/entrega", icon: "list_alt"},
-    {name:"Reporte Entrega", route:"/reportentregab", icon: "list_alt"},
-    {name:"Inventario", route: "/inventario", icon:"store" },
-    {name:"Reporte Inventario", route: "/reporteinventario", icon:"store" },
-    {name:"Recepcion", route:"/recepcion", icon: "list_alt"},
+    { name: "Entrega", route: "/entrega", icon: "list_alt" },
+    { name: "Reporte Entrega", route: "/reportentregab", icon: "list_alt" },
+    { name: "Inventario", route: "/inventario", icon: "store" },
+    { name: "Reporte Inventario", route: "/reporteinventario", icon: "store" },
+    { name: "Recepcion", route: "/recepcion", icon: "list_alt" },
 
   ];
   beneficiarios = [
 
-    {name:"acudientes", route: "/acudientes", icon:"face" },
-    {name:"Crear beneficiarios ICBF", route: "/beneficiarios", icon:"face" },
-    {name:"Modificar beneficiarios ICBF ", route: "/ModificarBeneficiario", icon:"face" },
-    {name:"Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon:"face" },
-    {name:"Reporte beneficiarios ICBF", route: "/reportebeneficiario", icon:"face" },
+    { name: "acudientes", route: "/acudientes", icon: "face" },
+    { name: "Crear beneficiarios ICBF", route: "/beneficiarios", icon: "face" },
+    { name: "Modificar beneficiarios ICBF ", route: "/ModificarBeneficiario", icon: "face" },
+    { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" },
+    { name: "Reporte beneficiarios ICBF", route: "/reportebeneficiario", icon: "face" },
 
-   
+
   ];
 
   rol = [
 
-    {name:"rol", route: "/rol", icon:"face" },
-    {name:"Modificar rol", route: "/roli", icon:"face" },
-    {name:"Reporte Rol", route: "/reporterol", icon:"face" },
+    { name: "rol", route: "/rol", icon: "face" },
+    { name: "Modificar rol", route: "/roli", icon: "face" },
+    { name: "Reporte Rol", route: "/reporterol", icon: "face" },
   ];
 
-    Usuarios = [
+  Usuarios = [
 
-      {name:"Crear usuarios", route: "/usuarios", icon:"face" },
-      {name:"Modificar Usuarios", route: "/modificarusuarios", icon:"face" },
-      {name:"Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon:"face" },
-      {name:"Reporte Usuarios", route: "/reporteusuarios", icon:"face" },
+    { name: "Crear usuarios", route: "/usuarios", icon: "face" },
+    { name: "Modificar Usuarios", route: "/modificarusuarios", icon: "face" },
+    { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" },
+    { name: "Reporte Usuarios", route: "/reporteusuarios", icon: "face" },
 
-    ];
- 
+  ];
+
   datos = [
 
-    {name:"Crear Datos Maestros", route: "/listamaestros", icon:"face" },
-    {name:"Modificar Datos Maestros", route: "/modificarlistamaestro", icon:"face" },
-    {name:"Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon:"face" },
-    {name:"Reporte Datos Maestros", route: "/reportes", icon:"face" },
+    { name: "Crear Datos Maestros", route: "/listamaestros", icon: "face" },
+    { name: "Modificar Datos Maestros", route: "/modificarlistamaestro", icon: "face" },
+    { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" },
+    { name: "Reporte Datos Maestros", route: "/reportes", icon: "face" },
   ];
 
 
   centrod = [
 
 
-    {name:"Crear Centro Distribucion", route: "/centrodistribucion", icon:"face" },
-    {name:"Modificar Centro Distribucion", route: "/modificarcentrod", icon:"face" },
-    {name:"Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon:"face" },
-    {name:"Reporte Centro Distribucion", route: "/reportecentrodistribucion", icon:"face" },
+    { name: "Crear Centro Distribucion", route: "/centrodistribucion", icon: "face" },
+    { name: "Modificar Centro Distribucion", route: "/modificarcentrod", icon: "face" },
+    { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" },
+    { name: "Reporte Centro Distribucion", route: "/reportecentrodistribucion", icon: "face" },
   ];
 
   almacen = [
 
 
-    {name:"Crear Almacen", route: "/almacen", icon:"face" },
-    {name:"Modificar Almacen", route: "/modificaralmacen", icon:"face" },
-    {name:"Inhabilitar Almacen", route: "/inhabilitaralmacen", icon:"face" },
-    {name:"Reporte Almacen", route: "/reportealmacen", icon:"face" },
+    { name: "Crear Almacen", route: "/almacen", icon: "face" },
+    { name: "Modificar Almacen", route: "/modificaralmacen", icon: "face" },
+    { name: "Inhabilitar Almacen", route: "/inhabilitaralmacen", icon: "face" },
+    { name: "Reporte Almacen", route: "/reportealmacen", icon: "face" },
   ];
-  
 
-  fillerContent = Array.from({length: 50}, () =>'');
+
+  fillerContent = Array.from({ length: 50 }, () => '');
 
   private _mobileQueryListener: () => void;
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,
     private activeRoute: ActivatedRoute,
     private Service: ServicioService,
-    ) {
+  ) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -122,271 +144,282 @@ export class MenuComponent implements OnInit {
   }
 
   shouldRun = true;
-//-----------------------------------------------------------------------------------------------
-  ngOnInit() {
-    this.Service.getPermisosid(1).subscribe(res => {
-      this.permisos = Object(res);
-      console.log('Permiso get', this.permisos);
-      // this.cargarpermiso();
-      // this.cargarpermiso2();
-      // this.cargarpermiso3();
-      // this.cargarpermiso4();
-      // this.cargarpermiso5();
-      // this.cargarpermiso6();
-      // this.cargarpermiso7();
-      // this.cargarpermiso8();
-      // this.cargarpermiso9();
-      // this.cargarpermiso10();
-      // this.cargarpermiso11();
-    }), err => {
-      console.log(err);
-    };
+  //-----------------------------------------------------------------------------------------------
+  estado = 0;
+  obtenerStorage() {
+    this.user = JSON.parse(localStorage.getItem("persona"));
+    console.log(this.user);
+    this.estado = 1;
   }
 
-/*  
-  cargarpermiso() {
-    var centrostr = this.permisos.perCentros;
-    var array = centrostr.split("");
-    //console.log('carga', array);
 
-    if (array[0] == "1") {
-      this.filter = 1;
-
-      if (array[1] == "1") {
-        this.filter2 = 1;
-
-        if (array[2] == "1") {
-          this.filter3 = 1;
-
-          if (array[3] == "1") {
-            this.filter4 = 1;
-
-            if (array[4] == "1") {
-              this.filter5 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter5 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter4 = 0;
-
-            if (array[4] == "1") {
-              this.filter5 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter5 = 0;
-            }
-          }
-
-        }
-        else if (array[2] == "0") {
-          this.filter3 = 0;
-
-          if (array[3] == "1") {
-            this.filter4 = 1;
-
-            if (array[4] == "1") {
-              this.filter5 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter5 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter4 = 0;
-
-            if (array[4] == "1") {
-              this.filter5 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter5 = 0;
-            }
-          }
-
-        }
-
-      }
-      else if (array[1] == "0") {
-        this.filter2 = 0;
-
-        if (array[2] == "1") {
-          this.filter3 = 1;
-
-          if (array[3] == "1") {
-            this.filter4 = 1;
-
-            if (array[4] == "1") {
-              this.filter5 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter5 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter4 = 0;
-
-            if (array[4] == "1") {
-              this.filter5 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter5 = 0;
-            }
-
-          }
-
-        }
-        else if (array[2] == "0") {
-          this.filter3 = 0;
-
-          if (array[3] == "1") {
-            this.filter4 = 1;
-
-            if (array[4] == "1") {
-              this.filter5 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter5 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter4 = 0;
-
-            if (array[4] == "1") {
-              this.filter5 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter5 = 0;
-            }
-          }
-
-        }
-
-
-      }
-
+  ngOnInit() {
+    this.obtenerStorage();
+    if (this.estado == 1) {
+      this.Service.getPermisosid(this.user.TipoUsuario).subscribe(res => {
+        this.permisos = Object(res);
+        console.log('Permiso get', this.permisos);
+        // this.cargarpermiso();
+        // this.cargarpermiso2();
+        // this.cargarpermiso3();
+        // this.cargarpermiso4();
+        // this.cargarpermiso5();
+        // this.cargarpermiso6();
+        // this.cargarpermiso7();
+        // this.cargarpermiso8();
+        // this.cargarpermiso9();
+        // this.cargarpermiso10();
+        // this.cargarpermiso11();
+      }, err => {
+        console.log(err)
+      });
     }
-    else if (array[0] == "0") {
-      this.filter = 0;
-      if (array[1] == "1") {
-        this.filter2 = 1;
-        if (array[2] == "1") {
-          this.filter3 = 1;
+  }
 
-          if (array[3] == "1") {
-            this.filter4 = 1;
-            if (array[4] == "1") {
-              this.filter5 = 1;
+  /*  
+    cargarpermiso() {
+      var centrostr = this.permisos.perCentros;
+      var array = centrostr.split("");
+      //console.log('carga', array);
+  
+      if (array[0] == "1") {
+        this.filter = 1;
+  
+        if (array[1] == "1") {
+          this.filter2 = 1;
+  
+          if (array[2] == "1") {
+            this.filter3 = 1;
+  
+            if (array[3] == "1") {
+              this.filter4 = 1;
+  
+              if (array[4] == "1") {
+                this.filter5 = 1;
+              }
+              else if (array[4] == "0") {
+                this.filter5 = 0;
+              }
+  
             }
-            else if (array[4] == "0") {
-              this.filter5 = 0;
+            else if (array[3] == "0") {
+              this.filter4 = 0;
+  
+              if (array[4] == "1") {
+                this.filter5 = 1;
+              }
+              else if (array[4] == "0") {
+                this.filter5 = 0;
+              }
             }
+  
           }
-          else if (array[3] == "0") {
-            this.filter4 = 0;
-
-            if (array[4] == "1") {
-              this.filter5 = 1;
+          else if (array[2] == "0") {
+            this.filter3 = 0;
+  
+            if (array[3] == "1") {
+              this.filter4 = 1;
+  
+              if (array[4] == "1") {
+                this.filter5 = 1;
+              }
+              else if (array[4] == "0") {
+                this.filter5 = 0;
+              }
+  
             }
-            else if (array[4] == "0") {
-              this.filter5 = 0;
+            else if (array[3] == "0") {
+              this.filter4 = 0;
+  
+              if (array[4] == "1") {
+                this.filter5 = 1;
+              }
+              else if (array[4] == "0") {
+                this.filter5 = 0;
+              }
             }
+  
           }
-
+  
         }
-        else if (array[2] == "0") {
-          this.filter3 = 0;
-
-          if (array[3] == "1") {
-            this.filter4 = 1;
-
-            if (array[4] == "1") {
-              this.filter5 = 1;
+        else if (array[1] == "0") {
+          this.filter2 = 0;
+  
+          if (array[2] == "1") {
+            this.filter3 = 1;
+  
+            if (array[3] == "1") {
+              this.filter4 = 1;
+  
+              if (array[4] == "1") {
+                this.filter5 = 1;
+              }
+              else if (array[4] == "0") {
+                this.filter5 = 0;
+              }
+  
             }
-            else if (array[4] == "0") {
-              this.filter5 = 0;
+            else if (array[3] == "0") {
+              this.filter4 = 0;
+  
+              if (array[4] == "1") {
+                this.filter5 = 1;
+              }
+              else if (array[4] == "0") {
+                this.filter5 = 0;
+              }
+  
             }
-
+  
           }
-          else if (array[3] == "0") {
-            this.filter4 = 0;
-
-            if (array[4] == "1") {
-              this.filter5 = 1;
+          else if (array[2] == "0") {
+            this.filter3 = 0;
+  
+            if (array[3] == "1") {
+              this.filter4 = 1;
+  
+              if (array[4] == "1") {
+                this.filter5 = 1;
+              }
+              else if (array[4] == "0") {
+                this.filter5 = 0;
+              }
+  
             }
-            else if (array[4] == "0") {
-              this.filter5 = 0;
+            else if (array[3] == "0") {
+              this.filter4 = 0;
+  
+              if (array[4] == "1") {
+                this.filter5 = 1;
+              }
+              else if (array[4] == "0") {
+                this.filter5 = 0;
+              }
             }
+  
           }
-
+  
+  
         }
-
+  
       }
-      else if (array[1] == "0") {
-        this.filter2 = 0;
-
-        if (array[2] == "1") {
-          this.filter3 = 1;
-
-          if (array[3] == "1") {
-            this.filter4 = 1;
-
-            if (array[4] == "1") {
-              this.filter5 = 1;
+      else if (array[0] == "0") {
+        this.filter = 0;
+        if (array[1] == "1") {
+          this.filter2 = 1;
+          if (array[2] == "1") {
+            this.filter3 = 1;
+  
+            if (array[3] == "1") {
+              this.filter4 = 1;
+              if (array[4] == "1") {
+                this.filter5 = 1;
+              }
+              else if (array[4] == "0") {
+                this.filter5 = 0;
+              }
             }
-            else if (array[4] == "0") {
-              this.filter5 = 0;
+            else if (array[3] == "0") {
+              this.filter4 = 0;
+  
+              if (array[4] == "1") {
+                this.filter5 = 1;
+              }
+              else if (array[4] == "0") {
+                this.filter5 = 0;
+              }
             }
-
+  
           }
-          else if (array[3] == "0") {
-            this.filter4 = 0;
-
-            if (array[4] == "1") {
-              this.filter5 = 1;
+          else if (array[2] == "0") {
+            this.filter3 = 0;
+  
+            if (array[3] == "1") {
+              this.filter4 = 1;
+  
+              if (array[4] == "1") {
+                this.filter5 = 1;
+              }
+              else if (array[4] == "0") {
+                this.filter5 = 0;
+              }
+  
             }
-            else if (array[4] == "0") {
-              this.filter5 = 0;
+            else if (array[3] == "0") {
+              this.filter4 = 0;
+  
+              if (array[4] == "1") {
+                this.filter5 = 1;
+              }
+              else if (array[4] == "0") {
+                this.filter5 = 0;
+              }
             }
+  
           }
-
+  
         }
-        else if (array[2] == "0") {
-          this.filter3 = 0;
-
-          if (array[3] == "1") {
-            this.filter4 = 1;
-
-            if (array[4] == "1") {
-              this.filter5 = 1;
+        else if (array[1] == "0") {
+          this.filter2 = 0;
+  
+          if (array[2] == "1") {
+            this.filter3 = 1;
+  
+            if (array[3] == "1") {
+              this.filter4 = 1;
+  
+              if (array[4] == "1") {
+                this.filter5 = 1;
+              }
+              else if (array[4] == "0") {
+                this.filter5 = 0;
+              }
+  
             }
-            else if (array[4] == "0") {
-              this.filter5 = 0;
+            else if (array[3] == "0") {
+              this.filter4 = 0;
+  
+              if (array[4] == "1") {
+                this.filter5 = 1;
+              }
+              else if (array[4] == "0") {
+                this.filter5 = 0;
+              }
             }
-
+  
           }
-          else if (array[3] == "0") {
-            this.filter4 = 0;
-
-            if (array[4] == "1") {
-              this.filter5 = 1;
+          else if (array[2] == "0") {
+            this.filter3 = 0;
+  
+            if (array[3] == "1") {
+              this.filter4 = 1;
+  
+              if (array[4] == "1") {
+                this.filter5 = 1;
+              }
+              else if (array[4] == "0") {
+                this.filter5 = 0;
+              }
+  
             }
-            else if (array[4] == "0") {
-              this.filter5 = 0;
+            else if (array[3] == "0") {
+              this.filter4 = 0;
+  
+              if (array[4] == "1") {
+                this.filter5 = 1;
+              }
+              else if (array[4] == "0") {
+                this.filter5 = 0;
+              }
             }
+  
           }
-
+  
         }
-
+  
       }
-
-    }
-
-  } */
+  
+    } */
 
   /* 
   //---2 carga

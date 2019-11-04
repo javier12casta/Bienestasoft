@@ -23,7 +23,8 @@ export class CentrozonaliComponent implements OnInit {
 
   constructor(
     private activeRoute: ActivatedRoute,
-    private Service: ServicioService, private router:Router
+    private Service: ServicioService, 
+    private router:Router
   ) {
   }
 

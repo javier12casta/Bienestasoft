@@ -3,6 +3,9 @@ import {FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { ServicioService } from '../servicio.service';
 import { Usuarios } from '../interfaces/usuarios';
+import { AuthserviceService } from '../authservice.service';
+import { User } from '../interfaces/user';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -13,11 +16,26 @@ export class LoginComponent implements OnInit {
   title = 'Bienestasoft';
   loginForm: FormGroup;
 
-
-  user = {
-    name:'',
-    pw: null,
-  };
+  user : Usuarios = {
+    idUsuarios: 1,
+    Nombres: "",
+    Apellidos: "",
+    Estado: 1,
+    NumeroDocumento: 0,
+    FechaIngreso: 0,
+    NombreUsuarioSistema: "",
+    Direccion: "",
+    TelefonoFijo: 0,
+    TelefonoFijo2: 0,
+    TelefonoMovil: 0,
+    TelefonoMovil2: 0,
+    Email: "",
+    idPersonalICBF: null,
+    idUDS: null,
+    idTipoDocumento: 1,
+    TipoUsuario: "",
+    password: ""
+}
 
   error_messages={
     'password': [
@@ -36,23 +54,48 @@ export class LoginComponent implements OnInit {
 
 
 
-  constructor(private Service: ServicioService , private router:Router) { }
-  users: Usuarios [] = [];
+  constructor(
+    private Service: ServicioService , 
+    private router:Router,
+    private auth: AuthserviceService)
+     { }
+  
   ngOnInit() {
-    this.Service.getUsuarios().subscribe(res => {
-      this.users = res;
+    
+  }
+
+  usuario: User = {
+    NombreUsuarioSistema: '',
+    password: '',
+  };
+
+  login(){
+    this.auth.getAuthUser(this.usuario.NombreUsuarioSistema).subscribe(res => {
+      this.user = Object(res);
+      //console.log('usuario',this.user);
+
     });
+    if (this.usuario.NombreUsuarioSistema == this.user.NombreUsuarioSistema && this.usuario.password == this.user.password){
+      this.grabarStorage();
+      this.router.navigate(['/menu']);
+    }else {
+      this.showMenssage2();
+    }
 
   }
 
-  login(){
-    for(let usu of this.users){
-      if(this.user.name == usu.NombreUsuarioSistema && this.user.pw == usu.NumeroDocumento){
-        console.log('inicio session  exitoso');
-         this.router.navigate(['/menu']); 
-      }
-    }
+  grabarStorage(){
+   let persona = this.user;
+   localStorage.setItem("persona",JSON.stringify(persona));
+  }
 
+  showMenssage2(){
+    Swal.fire({
+      title: 'Error al iniciar session!',
+      text: 'Verifica tus credenciales',
+      type: 'error',
+      confirmButtonText: 'Entendido'
+    });
   }
 
 

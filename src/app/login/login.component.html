@@ -15,9 +15,9 @@
           
             <span id="reauth-email" class="reauth-email"></span>
             <label> Nombre Usuario</label>
-            <input type="text" class="form-control" placeholder="Usuario" required autofocus name="name" [(ngModel)]="user.name">
+            <input type="text" class="form-control" placeholder="Usuario" required autofocus name="name" [(ngModel)]="usuario.NombreUsuarioSistema">
             <label>Contraseña</label>
-            <input type="password" class="form-control" placeholder="Contraseña" required  name="pw" [(ngModel)]="user.pw">
+            <input type="password" class="form-control" placeholder="Contraseña" required  name="pw" [(ngModel)]="usuario.password">
   
             <button type="button" class="btn btn-success" (click)="login()">Iniciar Sesión<nav></nav></button>
         </form><!-- /form -->

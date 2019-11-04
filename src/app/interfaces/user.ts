@@ -1,4 +1,4 @@
 export interface User {
-    name: string,
-    rol: number,
+  NombreUsuarioSistema: string,
+  password: String,
   }
