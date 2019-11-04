@@ -11,6 +11,8 @@
     <div class="card card-container">
         <img class="card-img-top" src="../../assets/logheader.PNG" alt="Card image cap">
       <br>
+        <img id="profile-img" width="300" height="300" class="profile-img-card" src="../../assets/login icon.svg" />
+
       <div class="form-group">
          <div> </div>
 
@@ -21,8 +23,7 @@
         <div class="valid-feedback"></div>
         <div class="invalid-feedback">Completa este campo</div>
 
-
-        <label for="password">Nombre de usuario</label>
+        <label for="password">Contraseña</label>
         <input type="password" class="form-control" name="password" minlength="6" maxlength="20"
          [(ngModel)]="usuario.password" placeholder="Contraseña" required="">
 
@@ -32,9 +33,11 @@
       </div>
       
 
-      <input type="button" class="btn btn-success btn-block" (click)="login()" value="Iniciar sesión">
+      <input type="submit" class="btn btn-success btn-block" (click)="login()" value="Iniciar sesión">
 
     </div>
 
   </form>
+</div>
+
 </div>
