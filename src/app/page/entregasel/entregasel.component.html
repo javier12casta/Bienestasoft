@@ -1,0 +1,33 @@
+<nav class="navbar navbar-success bg-success">
+    <button class="btn btn-dark" routerLink="/centrozonal">Volver</button>
+  </nav>
+  
+  <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+    <div class="card" padding>
+      <div class="card-body" padding>
+        <form>
+          <div class="form-group">
+  
+            <span  >Salida de movimiento</span>
+            <h2></h2> 
+
+
+            <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
+            <select name="Salida" [(ngModel)]="salida">
+              <option >Salida para centro de distribución</option>
+              <Option >Salida para beneficiario ICBF</Option>
+              <Option >Salida para consumo interno</Option>
+            </select>
+         
+        <h2> </h2> 
+          <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()" routerLink="/centrozonal"-->
+          <button class="btn btn-success btn-block" (click)="validar()" type="submit" >
+            siguiente
+          </button>
+
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
