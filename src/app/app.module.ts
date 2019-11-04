@@ -158,6 +158,17 @@ import { InhabilitardatosnutricionalesComponent } from './page/inhabilitardatosn
 import { InhabilitardatosnutricionalesiComponent } from './page/inhabilitardatosnutricionalesi/inhabilitardatosnutricionalesi.component';
 import { InventariovComponent } from './page/inventariov/inventariov.component';
 import { InventariocComponent } from './page/inventarioc/inventarioc.component';
+import { EntregaselComponent } from './page/entregasel/entregasel.component';
+import { SalidacentroComponent } from './page/salidacentro/salidacentro.component';
+import { SalidabeneficiarioComponent } from './page/salidabeneficiario/salidabeneficiario.component';
+import { SalidaconsumoComponent } from './page/salidaconsumo/salidaconsumo.component';
+import { SalidacentrocComponent } from './page/salidacentroc/salidacentroc.component';
+import { SalidabeneficiariocComponent } from './page/salidabeneficiarioc/salidabeneficiarioc.component';
+import { SalidaconsumocComponent } from './page/salidaconsumoc/salidaconsumoc.component';
+import { DevolucionesComponent } from './page/devoluciones/devoluciones.component';
+import { DevolucionescComponent } from './page/devolucionesc/devolucionesc.component';
+import { TrasladoComponent } from './page/traslado/traslado.component';
+import { TrasladocComponent } from './page/trasladoc/trasladoc.component';
 
 
 @NgModule({
@@ -295,6 +306,17 @@ import { InventariocComponent } from './page/inventarioc/inventarioc.component';
     InhabilitardatosnutricionalesiComponent,
     InventariovComponent,
     InventariocComponent,
+    EntregaselComponent,
+    SalidacentroComponent,
+    SalidabeneficiarioComponent,
+    SalidaconsumoComponent,
+    SalidacentrocComponent,
+    SalidabeneficiariocComponent,
+    SalidaconsumocComponent,
+    DevolucionesComponent,
+    DevolucionescComponent,
+    TrasladoComponent,
+    TrasladocComponent,
     
 
     

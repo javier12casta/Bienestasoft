@@ -64,11 +64,12 @@ export class MenuComponent implements OnInit {
 
   ];
   entrega = [
-    { name: "Entrega", route: "/entrega", icon: "list_alt" },
+    { name: "Entrega", route: "/entregasel", icon: "list_alt" },
     { name: "Reporte Entrega", route: "/reportentregab", icon: "list_alt" },
     { name: "Inventario", route: "/inventario", icon: "store" },
     { name: "Reporte Inventario", route: "/reporteinventario", icon: "store" },
     { name: "Recepcion", route: "/recepcion", icon: "list_alt" },
+    { name: "devoluciones", route: "/devoluciones", icon: "list_alt" },
 
   ];
   beneficiarios = [

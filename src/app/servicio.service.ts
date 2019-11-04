@@ -36,6 +36,9 @@ import { Genero } from './interfaces/genero';
 import { Recepcion} from './interfaces/recepcion';
 import { Invarios} from './interfaces/inhabilitardatosvarios';
 import { Inventario} from './interfaces/inventario';
+import { Salidacentro} from './interfaces/salidacentro';
+import { Salidabeneficiario} from './interfaces/salidabeneficiario';
+import { Salidaconsumo} from './interfaces/salidaconsumo';
 
 @Injectable({
   providedIn: 'root'
@@ -523,4 +526,29 @@ export class ServicioService {
     const path = `${this.api}/inventario`;
     return this.http.get<[Inventario]>(path);
   }
+
+  getsalidacentro() {
+    const path = `${this.api}/`;
+    return this.http.get<[Salidacentro]>(path);
+  }
+
+  getsalidabeneficiario(){
+
+    const path = `${this.api}/`;
+    return this.http.get<[Salidabeneficiario]>(path);
+
+  }
+
+
+  getsalidaconsumo(){
+
+    const path = `${this.api}/`;
+    return this.http.get<[Salidaconsumo]>(path);
+
+  }
+
+
+
+
+
 }

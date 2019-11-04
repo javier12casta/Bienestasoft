@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ServicioService } from 'src/app/servicio.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inventario',
@@ -8,10 +9,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InventarioComponent implements OnInit {
 
-  constructor() { }
+
+  lista = '';
+  listar:string[]=["Crear Inventario","Traslado entre almacenes"];
+
+
+
+
+  constructor(private Service: ServicioService , private router:Router) { }
 
   ngOnInit() {
   }
+
+  onClickMe() {
+
+    if(this.lista == 'Crear Inventario'){
+  
+      this.router.navigate(['/inventariov']);
+      
+    }
+    
+  
+    if(this.lista == 'Traslado entre almacenes'){
+  
+      this.router.navigate(['/traslado']);
+      
+    }
+  
+    
+  
+    }
 
   
 

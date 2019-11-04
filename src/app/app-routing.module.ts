@@ -90,7 +90,7 @@ import {ModificarcentromComponent } from './page/modificarcentrom/modificarcentr
 import {ModificaralmacenComponent } from './page/modificaralmacen/modificaralmacen.component';
 import {ModificaralmaceniComponent } from './page/modificaralmaceni/modificaralmaceni.component';
 import {ModificaralmacenmComponent } from './page/modificaralmacenm/modificaralmacenm.component';
-
+import {EntregaselComponent } from './page/entregasel/entregasel.component';
 
 import {InhabilitaralmacenComponent } from './page/inhabilitaralmacen/inhabilitaralmacen.component';
 import {InhabilitaralmacendiComponent } from './page/inhabilitaralmacendi/inhabilitaralmacendi.component';
@@ -139,6 +139,19 @@ import { InhabilitardatosnutricionalesComponent} from './page/inhabilitardatosnu
 
 import { InhabilitardatosnutricionalesiComponent} from './page/inhabilitardatosnutricionalesi/inhabilitardatosnutricionalesi.component';
 
+import { SalidacentroComponent} from './page/salidacentro/salidacentro.component';
+import { SalidacentrocComponent} from './page/salidacentroc/salidacentroc.component';
+import { SalidabeneficiarioComponent} from './page/salidabeneficiario/salidabeneficiario.component';
+import { SalidabeneficiariocComponent} from './page/salidabeneficiarioc/salidabeneficiarioc.component';
+import { SalidaconsumoComponent} from './page/salidaconsumo/salidaconsumo.component';
+import { SalidaconsumocComponent} from './page/salidaconsumoc/salidaconsumoc.component';
+import { DevolucionesComponent} from './page/devoluciones/devoluciones.component';
+import { DevolucionescComponent} from './page/devolucionesc/devolucionesc.component';
+
+import { TrasladoComponent} from './page/traslado/traslado.component';
+import { TrasladocComponent} from './page/trasladoc/trasladoc.component';
+import { InventariovComponent} from './page/inventariov/inventariov.component';
+import { InventariocComponent} from './page/inventarioc/inventarioc.component';
 
 const routes: Routes = [
   {path:'', component: LoginComponent},
@@ -159,6 +172,8 @@ const routes: Routes = [
   {path:'comunali/:id', component: ComunaliComponent},
   {path:'datosbeneficiario', component: DatosContactoBeneficiarioComponent},
   {path:'inventario', component:InventarioComponent},
+  {path:'inventariov', component: InventariovComponent},
+  {path:'inventarioc', component: InventariocComponent},
   {path:'datoscontactousuario', component: DatosContactoUsuarioComponent},
   {path:'datosgeneralesbeneficiario', component:DatosGeneralesBeneficiarioComponent},
   {path:'listamaestros', component:ListaMaestrosBienestarinaComponent},
@@ -295,6 +310,23 @@ const routes: Routes = [
   {path:'recepcioninv', component:  RecepcioninvComponent},
   {path:'inhabilitardatosnutricionales', component: InhabilitardatosnutricionalesComponent},
   {path:'inhabilitardatosnutricionalesi/:id', component: InhabilitardatosnutricionalesiComponent},
+  {path:'entregasel', component: EntregaselComponent},
+
+
+
+  {path:'salidacentro', component: SalidacentroComponent},
+  {path:'salidacentroc', component: SalidacentrocComponent},
+  {path:'salidabeneficiario', component: SalidabeneficiarioComponent},
+  {path:'salidabeneficiarioc', component: SalidabeneficiariocComponent},
+  {path:'salidaconsumo', component: SalidaconsumoComponent},
+  {path:'salidaconsumoc', component: SalidaconsumocComponent},
+
+  {path:'devoluciones', component: DevolucionesComponent},
+  {path:'devolucionesc', component: DevolucionescComponent},
+
+  {path:'traslado', component: TrasladoComponent},
+  {path:'trasladoc', component: TrasladocComponent},
+
 ];
 
 @NgModule({
