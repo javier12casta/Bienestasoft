@@ -62,6 +62,8 @@ export class LoginComponent implements OnInit {
       //console.log('usuario',this.user);
       delay(1000);
       this.validarLogin();
+    },err =>{
+      this.showMenssage2();
     });
     
   }
