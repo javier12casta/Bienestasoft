@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Centrodistribucion } from 'src/app/interfaces/centrodistribucion';
 import { Almacen } from 'src/app/interfaces/almacen';
 import { TipoBienestarina } from 'src/app/interfaces/tipobienestarina';
+import { Inventario } from 'src/app/interfaces/inventario';
 import { ServicioService } from 'src/app/servicio.service';
 import { Recepcion } from 'src/app/interfaces/recepcion';
 import Swal from 'sweetalert2';
@@ -17,6 +18,7 @@ export class RecepcionbienestarinaviComponent implements OnInit {
   public alm: Almacen[] = [];
   public cen: Centrodistribucion[] = [];
   public tip: TipoBienestarina[] = [];
+  public inv: Inventario[] = [];
 
   constructor(private Service: ServicioService, private router:Router) { }
 
@@ -31,6 +33,7 @@ export class RecepcionbienestarinaviComponent implements OnInit {
     idTipoBienesterina : 0,
     idAlmacenes : 0,
     idCentroDistribucion : 0,
+    idInventario : 0,
   };
 
 
@@ -53,6 +56,14 @@ export class RecepcionbienestarinaviComponent implements OnInit {
     this.Service.getTipobienestarina()
     .subscribe(res => {
       this.tip = res;
+    }, err => {
+      console.log(err);
+    });
+
+
+    this.Service.getinventario()
+    .subscribe(res => {
+      this.inv = res;
     }, err => {
       console.log(err);
     });

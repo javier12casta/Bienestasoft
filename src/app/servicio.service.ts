@@ -35,6 +35,7 @@ import {  Inuds } from './interfaces/inhabilitaruds';
 import { Genero } from './interfaces/genero';
 import { Recepcion} from './interfaces/recepcion';
 import { Invarios} from './interfaces/inhabilitardatosvarios';
+import { Inventario} from './interfaces/inventario';
 
 @Injectable({
   providedIn: 'root'
@@ -517,4 +518,9 @@ export class ServicioService {
     return this.http.put<Invarios>(`${this.api}/datos/${id}`, Nombre);
   }
 
+
+  getinventario() {
+    const path = `${this.api}/inventario`;
+    return this.http.get<[Inventario]>(path);
+  }
 }

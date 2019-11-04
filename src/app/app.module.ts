@@ -156,6 +156,8 @@ import { RecepcionbienestarinaviComponent } from './page/recepcionbienestarinavi
 import { RecepcioninvComponent } from './page/recepcioninv/recepcioninv.component';
 import { InhabilitardatosnutricionalesComponent } from './page/inhabilitardatosnutricionales/inhabilitardatosnutricionales.component';
 import { InhabilitardatosnutricionalesiComponent } from './page/inhabilitardatosnutricionalesi/inhabilitardatosnutricionalesi.component';
+import { InventariovComponent } from './page/inventariov/inventariov.component';
+import { InventariocComponent } from './page/inventarioc/inventarioc.component';
 
 
 @NgModule({
@@ -291,6 +293,8 @@ import { InhabilitardatosnutricionalesiComponent } from './page/inhabilitardatos
     RecepcioninvComponent,
     InhabilitardatosnutricionalesComponent,
     InhabilitardatosnutricionalesiComponent,
+    InventariovComponent,
+    InventariocComponent,
     
 
     
