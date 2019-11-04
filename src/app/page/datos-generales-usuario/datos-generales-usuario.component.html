@@ -16,10 +16,10 @@
 			   <h2></h2>
 			   
 			   <select name="estadomaestro" [(ngModel)]="x.Estado" class="select-css">
-		 <option [value]="item" *ngFor="let item of listamaestro">{{item}} </option>
+					<option value="1"> Habilitar</option>
+					<Option value="0">Inhabilitar</Option>
 		 </select>
 		
-	   
 			   <h2></h2>
 			   <span >Tipo Documento</span>
 			   <h2></h2>
@@ -71,6 +71,13 @@
 		 options="options" placeholder="tipo usuario">
 		 <option *ngFor="let do of rol" [value]="do.idRolPersona">{{do.RolPersona  }} </option>
 	   </select>
+
+	   <span  >Contraseña</span>
+	   <h2></h2>
+	   <input type="text" class="form-control" [(ngModel)]="x.password" name="password"
+			 placeholder="Contraseña" class="form-control" id="psw">
+	 
+	   <h2></h2>
 
 					<h2></h2>
 					

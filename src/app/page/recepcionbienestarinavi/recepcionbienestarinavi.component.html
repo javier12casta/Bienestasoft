@@ -38,7 +38,17 @@
 			   <select name="idTipoBienesterina" class="select-css" style="width: 100%;" [(ngModel)]="x.idTipoBienesterina"
 			   options="options" placeholder="tipo bienestarina">
 			   <option *ngFor="let do of tip" [value]="do.idTipoBienesterina">{{do.TipoBienesterina  }} </option>
-			 </select>
+       </select>
+       
+       <h2></h2>
+       <span >Inventario</span>
+       <h2></h2>
+       
+       <select name="idInventario" class="select-css" style="width: 100%;" [(ngModel)]="x.idInventario"
+       options="options" placeholder="Inventario">
+       <option *ngFor="let do of inv" [value]="do.idInventario">{{do.Nombre  }} </option>
+     </select>
+
 
              <span >Lote</span>
              <h2></h2>
@@ -63,7 +73,15 @@
          <option>ml </option>
 			 </select>
              <h2></h2>
-					  
+            
+             
+             <span >Numero de acta</span>
+             <h2></h2>
+             <input type="text" class="form-control" [(ngModel)]="x.lote " name="acta"
+             placeholder="Numero de acta " class="form-control" id="nom">
+             <h2></h2>
+
+
              <button (click)="showMenssage4()" class="btn btn-success">Aceptar</button>
                 
              <h2></h2>
