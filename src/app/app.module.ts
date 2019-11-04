@@ -303,6 +303,7 @@ import { InhabilitardatosnutricionalesiComponent } from './page/inhabilitardatos
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     //Material Imports Module
     BrowserAnimationsModule,
     MatSidenavModule,
