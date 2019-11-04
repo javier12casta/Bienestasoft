@@ -13,8 +13,6 @@ import Swal from 'sweetalert2';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  title = 'Bienestasoft';
-  loginForm: FormGroup;
 
   user : Usuarios = {
     idUsuarios: 1,
@@ -37,28 +35,14 @@ export class LoginComponent implements OnInit {
     password: ""
 }
 
-  error_messages={
-    'password': [
-      {type: 'reqired', message: 'Se requiere contraseña' },
-      {type: 'minlength', message:'Debe contener al menos 8 caracteres.'},
-      {type: 'maxlength', message:'Debe contener menos de 30 caracteres.'},
-      {type: 'pattern', message: 'La contraseña debe contener numeros, mayusculas o minusculas'}
-    ],
-    'usuario': [
-      {type: 'reqired', message: 'Se requiere nombre de usuario' },
-      {type: 'minlength', message:'Debe contener al menos 8 caracteres.'},
-      {type: 'maxlength', message:'Debe contener menos de 20 caracteres.'},
-      {type: 'pattern', message: 'El nombre de usuario debe contener numeros, mayusculas o minusculas'}
-    ],
-  }
-
-
-
   constructor(
     private Service: ServicioService , 
     private router:Router,
-    private auth: AuthserviceService)
-     { }
+    private auth: AuthserviceService,
+    )
+     { 
+
+     }
   
   ngOnInit() {
     

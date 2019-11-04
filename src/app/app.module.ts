@@ -307,6 +307,7 @@ import { InventariocComponent } from './page/inventarioc/inventarioc.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     //Material Imports Module
     BrowserAnimationsModule,
     MatSidenavModule,
