@@ -148,7 +148,7 @@ export class PermisosComponent implements OnInit {
 
     this.permisos.idRol = params.id;
     this.permisos.perCentros = data;
-    this.permisos.perEntrega = data;
+    this.permisos.perEntrega = data2;
     this.permisos.perUDS = data3;
     this.permisos.perUsuarios = data4;
     this.permisos.perBeneficiarios = data5;
