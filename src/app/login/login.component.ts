@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     
   }
-
+  
   usuario: User = {
     NombreUsuarioSistema: '',
     password: '',
