@@ -36,13 +36,14 @@ export class DatosGeneralesUsuarioComponent implements OnInit {
     TelefonoMovil2 : 0,
 	Email : '',
 	TipoUsuario : '',
-	idTipoDocumento : 0,
+  idTipoDocumento : 0,
+  password : '',
 
   };
 
   onClickMe() {
  
-  if(this.x.NumeroDocumento == null || this.x.NumeroDocumento == 0 && this.x.TelefonoFijo == 0  && this.x.TelefonoFijo2 == null ||  this.x.TelefonoFijo2 == 0  && this.x.TelefonoMovil == null ||  this.x.TelefonoMovil == 0 && this.x.TelefonoMovil2 == null ||  this.x.TelefonoMovil2 == 0  && this.x.idTipoDocumento == null ||  this.x.idTipoDocumento == 0  && this.x.Nombres == ""  ){
+  if(this.x.NumeroDocumento == null || this.x.NumeroDocumento == 0 && this.x.TelefonoFijo == 0  && this.x.TelefonoFijo2 == null ||  this.x.TelefonoFijo2 == 0  && this.x.TelefonoMovil == null ||  this.x.TelefonoMovil == 0 && this.x.TelefonoMovil2 == null ||  this.x.TelefonoMovil2 == 0  && this.x.idTipoDocumento == null ||  this.x.idTipoDocumento == 0 || this.x.password == "" && this.x.Nombres == ""  ){
 
 this.showMenssage3();
 
