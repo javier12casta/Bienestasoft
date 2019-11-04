@@ -1,14 +1,18 @@
 <nav class="navbar navbar-success bg-success">
   <a class="navbar-brand">
-    <img src="../../assets/Logo UDEC.png" width="40" height="45">
+    <img src="../../assets/" width="40" height="45">
     Bienvenidos
   </a>
 </nav>
 <div class="container">
+    
   <form class="form-signin was-validated" novalidate>
-
+      
     <div class="card card-container">
+        <img class="card-img-top" src="../../assets/logheader.PNG" alt="Card image cap">
+      <br>
       <div class="form-group">
+         <div> </div>
 
         <label for="NombreUsuarioSistema">Nombre de usuario</label>
         <input type="text" class="form-control" name="NombreUsuarioSistema" minlength="6" maxlength="20"
@@ -26,6 +30,7 @@
         <div class="invalid-feedback">Completa este campo</div>
 
       </div>
+      
 
       <input type="button" class="btn btn-success btn-block" (click)="login()" value="Iniciar sesión">
 
