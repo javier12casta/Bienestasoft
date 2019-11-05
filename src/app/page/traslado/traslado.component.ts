@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Translado} from '../../interfaces/traslado';
+import { ServicioService } from '../../servicio.service';
 
 @Component({
   selector: 'app-traslado',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrasladoComponent implements OnInit {
 
-  constructor() { }
+  translado: Translado[] = [];
+
+  constructor(private Service: ServicioService) { }
 
   ngOnInit() {
+
+    this.Service.getraslados()
+    .subscribe( (data) => {
+      this.translado = data;
+      console.log(data);
+      console.log('funciona');
+    }
+    );
+
+
   }
 
 }

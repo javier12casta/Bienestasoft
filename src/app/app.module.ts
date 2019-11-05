@@ -169,6 +169,8 @@ import { DevolucionesComponent } from './page/devoluciones/devoluciones.componen
 import { DevolucionescComponent } from './page/devolucionesc/devolucionesc.component';
 import { TrasladoComponent } from './page/traslado/traslado.component';
 import { TrasladocComponent } from './page/trasladoc/trasladoc.component';
+import { RecuentoinventarioComponent } from './page/recuentoinventario/recuentoinventario.component';
+import { RecuentoinventariocComponent } from './page/recuentoinventarioc/recuentoinventarioc.component';
 
 
 @NgModule({
@@ -317,6 +319,8 @@ import { TrasladocComponent } from './page/trasladoc/trasladoc.component';
     DevolucionescComponent,
     TrasladoComponent,
     TrasladocComponent,
+    RecuentoinventarioComponent,
+    RecuentoinventariocComponent,
     
 
     

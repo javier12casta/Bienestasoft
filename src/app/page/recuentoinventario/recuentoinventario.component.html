@@ -1,0 +1,38 @@
+<nav class="navbar navbar-success bg-success">
+    <button class="btn btn-dark" routerLink="/menu">Volver</button>
+    <button class="btn btn-dark" routerLink="/recuentoinventarioc"> Crear </button>
+  </nav>
+
+  <table class="table">
+    <thead class="thead-green">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">lote</th>
+        <th scope="col">fechavencimiento</th>
+        <th scope="col">cantidad</th>
+        <th scope="col">unidadmedida</th>
+        <th scope="col">cantidad </th>
+        <th scope="col">cantidadcontada  </th>
+        <th scope="col">unidadmedida</th>
+        <th scope="col"># TipoBienesterina</th>
+        <th scope="col"># centro de distribucion</th>
+        <th scope="col"># Almacenes </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sal of centroB">
+        <th scope="row">{{sal.idrecuentroinventario}}</th>
+        <td>{{sal.lote}}</td>
+        <td>{{sal.fechavencimiento}}</td>
+        <td>{{sal.unidadmedida1 }}</td>
+        <td>{{sal.cantidad }}</td>
+        <td>{{sal.cantidadcontada }}</td>
+        <td>{{sal.unidadmedida2 }}</td>
+        <td>{{cen.idTipoBienesterina}}</td>
+        <td>{{cen.idCentroDistribucion}}</td>
+        <td>{{cen.idAlmacenes  }}</td>
+      
+
+      </tr>
+    </tbody>
+  </table>

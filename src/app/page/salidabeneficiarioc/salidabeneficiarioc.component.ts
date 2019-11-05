@@ -46,6 +46,76 @@ export class SalidabeneficiariocComponent implements OnInit {
 
 
   ngOnInit() {
+
+    this.Service.getTipobienestarina()
+    .subscribe(async (data) => {
+      this.tip = data;
+      console.log(data);
+      console.log('funciona');
+    }
+    );
+
+    this.Service.getcentrodistribucion()
+      .subscribe(async (data) => {
+        this.cen = data;
+        console.log(data);
+        console.log('funciona');
+      }
+      );
+
+      this.Service.getalmacen()
+      .subscribe(async (data) => {
+        this.alm = data;
+        console.log(data);
+        console.log('funciona');
+      }
+      );
+
+      this.Service.getAcudientes()
+      .subscribe(async (data) => {
+        this.acu = data;
+        console.log(data);
+        console.log('funciona');
+      }
+      );
+
+      this.Service.getBeneficiarios()
+      .subscribe(async (data) => {
+        this.ben = data;
+        console.log(data);
+        console.log('funciona');
+      }
+      );
+
   }
+
+  onClickMe(){
+
+    this.Service.postsalidabeneficiario(this.sal).subscribe(res => {
+      console.log(this.sal);
+      this.showMenssage();
+      
+      },
+      err => {
+        console.log(err);
+      });
+  }
+
+  showMenssage(){
+    Swal.fire({
+      title: 'Creado!',
+      text: 'salida beneficiario Creado',
+      type: 'success',
+      confirmButtonText: 'Aceptar'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/salidabeneficiario']);
+    
+      }
+    });
+  }
+
+
 
 }

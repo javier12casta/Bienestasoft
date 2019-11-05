@@ -39,6 +39,10 @@ import { Inventario} from './interfaces/inventario';
 import { Salidacentro} from './interfaces/salidacentro';
 import { Salidabeneficiario} from './interfaces/salidabeneficiario';
 import { Salidaconsumo} from './interfaces/salidaconsumo';
+import { Devoluciones} from './interfaces/devoluciones';
+import { Recuentoinventario} from './interfaces/recuentoinventario';
+import { Translado} from './interfaces/traslado';
+import { Acta} from './interfaces/acta';
 
 @Injectable({
   providedIn: 'root'
@@ -527,28 +531,109 @@ export class ServicioService {
     return this.http.get<[Inventario]>(path);
   }
 
+  postinventario(recep: Inventario) {
+
+    const path = `${this.api}/inventario`;
+    return this.http.post<Inventario>(path, recep);
+
+  }
+
   getsalidacentro() {
-    const path = `${this.api}/`;
+    const path = `${this.api}/entregacentrod`;
     return this.http.get<[Salidacentro]>(path);
   }
 
+  postsalidacentro(recep: Salidacentro) {
+
+    const path = `${this.api}/entregacentrod`;
+    return this.http.post<Salidacentro>(path, recep);
+
+  }
+
+
   getsalidabeneficiario(){
 
-    const path = `${this.api}/`;
+    const path = `${this.api}/entregabeneficiario`;
     return this.http.get<[Salidabeneficiario]>(path);
 
   }
 
+  postsalidabeneficiario(recep: Salidabeneficiario) {
+
+    const path = `${this.api}/entregabeneficiario`;
+    return this.http.post<Salidabeneficiario>(path, recep);
+
+  }
 
   getsalidaconsumo(){
 
-    const path = `${this.api}/`;
+    const path = `${this.api}/entregaconsumo`;
     return this.http.get<[Salidaconsumo]>(path);
 
   }
 
+  postsalidaconsumo(recep: Salidaconsumo) {
 
+    const path = `${this.api}/entregaconsumo`;
+    return this.http.post<Salidaconsumo>(path, recep);
 
+  }
+
+  getdevoluciones(){
+
+    const path = `${this.api}/devoluciones`;
+    return this.http.get<[Devoluciones]>(path);
+
+  }
+
+  postdevoluciones(recep: Devoluciones) {
+
+    const path = `${this.api}/devoluciones`;
+    return this.http.post<Devoluciones>(path, recep);
+
+  }
+
+  getrecuento(){
+
+    const path = `${this.api}/recuento`;
+    return this.http.get<[Recuentoinventario]>(path);
+
+  }
+
+  postrecuento(recep: Recuentoinventario) {
+
+    const path = `${this.api}/recuento`;
+    return this.http.post<Recuentoinventario>(path, recep);
+
+  }
+
+  getraslados(){
+
+    const path = `${this.api}/traslados`;
+    return this.http.get<[Translado]>(path);
+
+  }
+
+  postraslados(recep: Translado) {
+
+    const path = `${this.api}/traslados`;
+    return this.http.post<Translado>(path, recep);
+
+  }
+
+  getActa(){
+
+    const path = `${this.api}/Acta`;
+    return this.http.get<[Acta]>(path);
+
+  }
+
+  postacta(recep: Acta) {
+
+    const path = `${this.api}/Acta`;
+    return this.http.post<Acta>(path, recep);
+
+  }
 
 
 }

@@ -14,6 +14,15 @@ export class SalidabeneficiarioComponent implements OnInit {
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {
+
+    this.Service.getsalidabeneficiario()
+    .subscribe( (data) => {
+      this.centroB = data;
+      console.log(data);
+      console.log('funciona');
+    }
+    );
+
   }
 
 }

@@ -7,29 +7,29 @@
     <thead class="thead-green">
       <tr>
         <th scope="col">#</th>
-        <th scope="col">referenciabienestarina</th>
-        <th scope="col">Centro de distribucion origen</th>
-        <th scope="col">Almacen de origen</th>
-        <th scope="col">Lote</th>
-        <th scope="col">Fecha de vencimiento</th>
-        <th scope="col">cantidad</th>
-        <th scope="col">unidad de medida</th>
-        <th scope="col">centro de distribucion destino</th>
-        <th scope="col">fecha de registro</th>
+        <th scope="col">lote </th>
+        <th scope="col">fechavencimiento </th>
+        <th scope="col">cantidad </th>
+        <th scope="col">unidad </th>
+        <th scope="col">fecharegistro</th>
+        <th scope="col">idCentroDistribucionOrigen</th>
+        <th scope="col">idCentroDistribucionDestino</th>
+        <th scope="col">idAlmacen</th>
+        <th scope="col">idTipoBienesterina</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let sal of centroD">
         <th scope="row">{{sal.identregacentrodistribucion}}</th>
-        <td>{{sal.referenciabienestarina}}</td>
-        <td>{{sal.idCentroDistribucionOrigen}}</td>
-        <td>{{sal.idAlmacen}}</td>
-        <td>{{sal.lote}}</td>
+        <td>{{sal.lote }}</td>
         <td>{{sal.fechavencimiento}}</td>
-        <td>{{cen.cantidad}}</td>
-        <td>{{cen.unidad}}</td>
-        <td>{{cen.idCentroDistribucionDestino }}</td>
-        <td>{{cen.fecharegistro}}</td>
+        <td>{{sal.cantidad }}</td>
+        <td>{{sal.unidad}}</td>
+        <td>{{sal.fecharegistro}}</td>
+        <td>{{sal.idCentroDistribucionOrigen}}</td>
+        <td>{{sal.idCentroDistribucionDestino}}</td>
+        <td>{{sal.idAlmacen }}</td>
+        <td>{{sal.idTipoBienesterina}}</td>
 
       </tr>
     </tbody>

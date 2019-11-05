@@ -16,7 +16,13 @@ export class SalidacentroComponent implements OnInit {
 
   ngOnInit() {
 
-    
+    this.Service.getsalidacentro()
+      .subscribe( (data) => {
+        this.centroD = data;
+        console.log(data);
+        console.log('funciona');
+      }
+      );
 
   }
 

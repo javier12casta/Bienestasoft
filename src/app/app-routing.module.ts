@@ -153,6 +153,9 @@ import { TrasladocComponent} from './page/trasladoc/trasladoc.component';
 import { InventariovComponent} from './page/inventariov/inventariov.component';
 import { InventariocComponent} from './page/inventarioc/inventarioc.component';
 
+import { RecuentoinventarioComponent} from './page/recuentoinventario/recuentoinventario.component';
+import { RecuentoinventariocComponent} from './page/recuentoinventarioc/recuentoinventarioc.component';
+
 const routes: Routes = [
   {path:'', component: LoginComponent},
   {path:'entrega', component:EntregaComponent},
@@ -326,6 +329,9 @@ const routes: Routes = [
 
   {path:'traslado', component: TrasladoComponent},
   {path:'trasladoc', component: TrasladocComponent},
+
+  {path:'recuentoinventario', component: RecuentoinventarioComponent},
+  {path:'recuentoinventarioc', component: RecuentoinventariocComponent},
 
 ];
 
