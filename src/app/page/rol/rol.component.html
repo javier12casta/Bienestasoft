@@ -1,58 +1,41 @@
-<html>
+<nav class="navbar navbar-success bg-success">
+	<button class="btn btn-dark" routerLink="/menu">Volver</button>
+  </nav>
+  
+  <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+	<div class="card" padding>
+	  <div class="card-body" padding>
+		<form>
+				<h1>Crear Rol</h1>
+		  <div class="form-group">
 
-<head>
 
-	
+			<span >Estado del dato Maestro</span>
+			<h2></h2>
+			<!-- name= "al campo de la tabla" [(ngModel)]="Roles.(Nombre de la columna)"-->
+			<select name="Estado" id="Estado" [(ngModel)]="roles.Estado" style="width: 100%;" class="form-control">
+				<option value="1"> Habilitar</option>
+				<Option value="0">Inhabilitar</Option>
+			</select>
 
-</head>
+			<h2></h2>
+			<span >Tipo de rol</span>
+			<h2></h2>
+			<input type="text" name="RolPersona" [(ngModel)]="roles.RolPersona" placeholder="Nombre de Rol"
+				required autofocus>
+			<h2></h2>
+			
+			
+			<button class="btn btn-success" (click)="modificar ? updateDatos() : insertDatos()" type="submit">
+				Guardar
+			</button> 
 
-<body>
-	<nav class="navbar navbar-success bg-success">
-		<button class="btn btn-dark" routerLink="/menu"> Volver </button>
-	</nav>
-	<h1>Crear roles en el sistema</h1>
 
-	<div class="container" class="padre">
-		<div class="card card-container">
-
-			<form class="form-signin padding">
-
-				<span class="btn btn-success">Estado del dato Maestro</span>
-				<h2></h2>
-				<!-- name= "al campo de la tabla" [(ngModel)]="Roles.(Nombre de la columna)"-->
-				<select name="Estado" id="Estado" [(ngModel)]="roles.Estado" style="width: 100%;" class="form-control">
-					<option value="1"> Habilitar</option>
-					<Option value="0">Inhabilitar</Option>
-				</select>
-
-				<h2></h2>
-				<span class="btn btn-success">Tipo de rol</span>
-				<h2></h2>
-				<input type="text" name="RolPersona" [(ngModel)]="roles.RolPersona" placeholder="Nombre de Rol"
-					required autofocus>
-				<h2></h2>
-				<span class="btn btn-success">Transacciones</span>
-				<h2></h2>
-				<input type="text" name="Transacciones" [(ngModel)]="roles.Transacciones" placeholder="Transacciones"
-					required autofocus>
-				<h2></h2>
-				<span class="btn btn-success">Almacenes</span>
-				<h2></h2>
-				<input type="text" name="Almacenes" [(ngModel)]="roles.Almacenes" placeholder="Almacenes" required
-					autofocus>
-				<h2></h2>
-				<button class="btn btn-success" (click)="modificar ? updateDatos() : insertDatos()" type="submit" routerLink="/roli">
-					Guardar
-				</button> 
-			</form><!-- /form -->
-		</div><!-- /card-container -->
-	</div><!-- /card-container -->
+		</div>
+	</form>
+</div>
+</div>
+</div>
 
 
 
-
-
-
-</body>
-
-</html>

@@ -39,6 +39,20 @@ export class UdsiComponent implements OnInit {
   modificar = false;
  ngOnInit() {
 
+  this.Service.getPunto()
+	.subscribe(res => {
+	  this.puntos = res;
+	}, err => {
+	  console.log(err);
+  });
+  
+  this.Service.getCentro()
+	.subscribe(res => {
+	  this.centros = res;
+	}, err => {
+	  console.log(err);
+	});
+
   }
 
     //insertar Datos ------------------------------------------------

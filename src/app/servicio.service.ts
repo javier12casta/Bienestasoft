@@ -30,8 +30,16 @@ import { InCentrodistribucion } from './interfaces/inhabilitarcentrodistribucion
 import { Entrega } from './interfaces/entrega';
 import { Permisos } from './interfaces/permisos';
 import {  InEntrega } from './interfaces/inhabilitarentrega';
-
+import {  Tipodocumento } from './interfaces/tipodocumento';
 import {  Inuds } from './interfaces/inhabilitaruds';
+import { Genero } from './interfaces/genero';
+import { Recepcion} from './interfaces/recepcion';
+import { Invarios} from './interfaces/inhabilitardatosvarios';
+import { Inventario} from './interfaces/inventario';
+import { Salidacentro} from './interfaces/salidacentro';
+import { Salidabeneficiario} from './interfaces/salidabeneficiario';
+import { Salidaconsumo} from './interfaces/salidaconsumo';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -74,8 +82,8 @@ export class ServicioService {
     return this.http.get<Rol[]>(path);
   }
   // metodo get de rol
-  getRol(rol: Rol) {
-    return this.http.get(`${this.api}/rol/${rol.idRolPersona}`);
+  getRolid(id: string | number) {
+    return this.http.get(`${this.api}/rol/${id}`);
   }
   //metodo post de rolPersona
   insertarRol(rol: Rol) {
@@ -92,12 +100,23 @@ export class ServicioService {
     return this.http.put<Rol>(`${this.api}/rol/${id}`, rol);
   }
     //------------------Permisos--------------------------------
-
-    postPermisos(almac: Permisos) {
-
+    getPermisos() {
       const path = `${this.api}/permisos`;
-      return this.http.post<Almacen>(path, almac);
+      return this.http.get<Permisos[]>(path);
+    }
+
+    getPermisosid(id: string | number) {
+      return this.http.get(`${this.api}/permisos/${id}`);
+    }
+
+    postPermisos(per: Permisos) {
+      const path = `${this.api}/permisos`;
+      return this.http.post<Almacen>(path, per);
   
+    }
+    putPermisos(id: string | number, per: Permisos) {
+      const path = `${this.api}/permisos/${per.idPermiso}`;
+      return this.http.put<Rol>(`${this.api}/permisos/${id}`, per);
     }
   //-----Barrio Vereda------
   getBarrio() {
@@ -272,6 +291,10 @@ export class ServicioService {
   }
 
   getBeneficiariosid(id: string) {
+    return this.http.get(`${this.api}/beneficiario/${id}`);
+  }
+
+  getBeneficiariosid1(id: number) {
     return this.http.get(`${this.api}/beneficiario/${id}`);
   }
 
@@ -471,6 +494,60 @@ export class ServicioService {
   putalmacenInhabilitar(id: string | number, Nombre: InAlmacen) {
     return this.http.put<InAlmacen>(`${this.api}/almacen/${id}`, Nombre);
   }
+
+  gettipodocumento() {
+    const path = `${this.api}/tdocumento`;
+    return this.http.get<[Tipodocumento]>(path);
+  }
+
+  getgenero() {
+    const path = `${this.api}/genero`;
+    return this.http.get<[Genero]>(path);
+  }
+
+  getrecepcion() {
+    const path = `${this.api}/bienestarina`;
+    return this.http.get<[Recepcion]>(path);
+  }
+
+  postrecepcion(recep: Recepcion) {
+
+    const path = `${this.api}/bienestarina`;
+    return this.http.post<Recepcion>(path, recep);
+
+  }
+
+  putdatosvariosInhabilitar(id: string | number, Nombre: Invarios) {
+    return this.http.put<Invarios>(`${this.api}/datos/${id}`, Nombre);
+  }
+
+
+  getinventario() {
+    const path = `${this.api}/inventario`;
+    return this.http.get<[Inventario]>(path);
+  }
+
+  getsalidacentro() {
+    const path = `${this.api}/`;
+    return this.http.get<[Salidacentro]>(path);
+  }
+
+  getsalidabeneficiario(){
+
+    const path = `${this.api}/`;
+    return this.http.get<[Salidabeneficiario]>(path);
+
+  }
+
+
+  getsalidaconsumo(){
+
+    const path = `${this.api}/`;
+    return this.http.get<[Salidaconsumo]>(path);
+
+  }
+
+
 
 
 

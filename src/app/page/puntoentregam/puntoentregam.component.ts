@@ -31,7 +31,8 @@ export class PuntoentregamComponent implements OnInit {
 
   constructor(
     private Service: ServicioService,
-    private activeRoute: ActivatedRoute,private router:Router
+    private activeRoute: ActivatedRoute,
+    private router:Router
   ) { }
 
   modificar = false;
@@ -86,11 +87,8 @@ export class PuntoentregamComponent implements OnInit {
       confirmButtonText: 'Entendido'
     }).then((result) => {
       if (result.value) {
-        
         this.router.navigate(['/puntoentrega']);
-    
       }
-
     });
   }
   //Mensaje de error

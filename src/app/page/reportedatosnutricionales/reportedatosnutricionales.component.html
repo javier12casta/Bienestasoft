@@ -1,1 +1,31 @@
-<p>reportedatosnutricionales works!</p>
+<nav class="navbar navbar-success bg-success">
+    <button class="btn btn-dark" routerLink="/menu">Volver</button>
+  </nav>
+  
+  <table class="table" id="contentToConvert" >
+    <thead class="thead-green">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">CodigoInterno </th>
+        <th scope="col">EstadoDatoMaestro</th>
+        <th scope="col">DescripcionDelRegistro</th>
+        <th scope="col">Valor</th>
+        <th scope="col">UnidadDeMedida</th>
+        <th scope="col">idDatosMaestros</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dat of datosv">
+        <th scope="row">{{dat.idDatosVarios}}</th>
+        <td>{{dat.CodigoInterno}}</td>
+        <td>{{dat.EstadoDatoMaestro}}</td>
+        <td>{{dat.DescripcionDelRegistro}}</td>
+        <td>{{dat.Valor}}</td>
+        <td>{{dat.UnidadDeMedida}}</td>
+        <td>{{dat.idDatosMaestros}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="trans">
+  <button class="btn btn-dark" (click)="Generareporte()">Generar Reporte</button>
+</div>

@@ -44,7 +44,14 @@ export class EntregamComponent implements OnInit {
 }
 
 updateDatos() {
-  this.Service.putentrega(this.entrea.idEntrega, this.entrea)
+
+  if(this.entrea.CantidadEntregada == null || this.entrea.CantidadEntregada == ''){
+
+   this.showMenssage3();
+
+  }else {
+
+    this.Service.putentrega(this.entrea.idEntrega, this.entrea)
     .subscribe(
       res => {
         console.log(res);
@@ -54,6 +61,9 @@ updateDatos() {
         console.log(err);
       }
     );
+
+  }
+
 }
  //mensajes de creacion
  showMenssage(){
@@ -80,6 +90,15 @@ Swal.fire({
   confirmButtonText: 'Entendido'
 });
 }
+
+showMenssage3(){
+  Swal.fire({
+    title: 'Error!',
+    text: 'campos erroneos o vacios',
+    type: 'error',
+    confirmButtonText: 'Entendido'
+  });
+  }
 
 
 

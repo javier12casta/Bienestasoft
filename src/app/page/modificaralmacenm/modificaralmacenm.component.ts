@@ -22,7 +22,7 @@ export class ModificaralmacenmComponent implements OnInit {
 
       idAlmacenes: 1,
       NumeroExterno : '',
-      NombreCentroDistribucion: '',
+      Nombre: '',
       Responsable : '',
       Capacidad  : 0,
       UnidadMedida  : '',

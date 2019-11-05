@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { ServicioService } from '../servicio.service';
+import { Usuarios } from '../interfaces/usuarios';
+import { AuthserviceService } from '../authservice.service';
+import { User } from '../interfaces/user';
+import Swal from 'sweetalert2';
+import { delay } from 'q';
 
 @Component({
   selector: 'app-login',
@@ -9,49 +14,94 @@ import { ServicioService } from '../servicio.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  title = 'Bienestasoft';
-  loginForm: FormGroup;
+
+  user : Usuarios = {
+    idUsuarios: 1,
+    Nombres: "",
+    Apellidos: "",
+    Estado: 1,
+    NumeroDocumento: 0,
+    FechaIngreso: 0,
+    NombreUsuarioSistema: "",
+    Direccion: "",
+    TelefonoFijo: 0,
+    TelefonoFijo2: 0,
+    TelefonoMovil: 0,
+    TelefonoMovil2: 0,
+    Email: "",
+    idPersonalICBF: null,
+    idUDS: null,
+    idTipoDocumento: 1,
+    TipoUsuario: "",
+    password: ""
+}
+
+  constructor(
+    private Service: ServicioService , 
+    private router:Router,
+    private auth: AuthserviceService,
+    )
+     { 
+
+     }
+  
+  ngOnInit() {
+    
+  }
 
 
-  user = {
-    name:'admin123',
-    pw:'admin123'
+  usuario: User = {
+    NombreUsuarioSistema: '',
+    password: '',
   };
 
-  error_messages={
-    'password': [
-      {type: 'reqired', message: 'Se requiere contraseña' },
-      {type: 'minlength', message:'Debe contener al menos 8 caracteres.'},
-      {type: 'maxlength', message:'Debe contener menos de 30 caracteres.'},
-      {type: 'pattern', message: 'La contraseña debe contener numeros, mayusculas o minusculas'}
-    ],
-    'usuario': [
-      {type: 'reqired', message: 'Se requiere nombre de usuario' },
-      {type: 'minlength', message:'Debe contener al menos 8 caracteres.'},
-      {type: 'maxlength', message:'Debe contener menos de 20 caracteres.'},
-      {type: 'pattern', message: 'El nombre de usuario debe contener numeros, mayusculas o minusculas'}
-    ],
+  login()
+  {
+    this.auth.getAuthUser(this.usuario.NombreUsuarioSistema).subscribe(res => {
+      this.user = Object(res);
+      //console.log('usuario',this.user);
+      delay(1000);
+      this.validarLogin();
+    },err =>{
+      this.showMenssage2();
+    });
+    
   }
 
-
-
-  constructor(private Service: ServicioService , private router:Router) { }
-
-  ngOnInit() {
+  validarLogin(){
+    if (this.usuario.NombreUsuarioSistema == "" || this.usuario.password == "")
+    {
+      this.showMenssagelog();
+      this.router.navigate(['/login']);
+    }else if (this.usuario.NombreUsuarioSistema == this.user.NombreUsuarioSistema && this.usuario.password == this.user.password){
+        this.grabarStorage();
+        this.router.navigate(['/menu']);
+      }else {
+        this.showMenssage2();
+      }
   }
 
-  usuario : "";
-  pass : "";
-
-
-  traer(){
-
+  grabarStorage(){
+   let persona = this.user;
+   localStorage.setItem("persona",JSON.stringify(persona));
   }
 
-  login(){
+  showMenssage2(){
+    Swal.fire({
+      title: 'Error al iniciar session!',
+      text: 'Verifica tus credenciales',
+      type: 'error',
+      confirmButtonText: 'Entendido'
+    });
+  }
 
-  this.router.navigate(['/menu']); 
-
+  showMenssagelog(){
+    Swal.fire({
+      title: 'Campos vacios!',
+      text: 'Ingresa tus datos',
+      type: 'warning',
+      confirmButtonText: 'Entendido'
+    });
   }
 
 

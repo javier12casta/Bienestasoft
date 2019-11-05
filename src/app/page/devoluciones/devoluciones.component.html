@@ -1,0 +1,37 @@
+<nav class="navbar navbar-success bg-success">
+    <button class="btn btn-dark" routerLink="/menu">Volver</button>
+    <button class="btn btn-dark" routerLink="/devolucionesc"> Crear </button>
+  </nav>
+
+  <table class="table">
+    <thead class="thead-green">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">lote</th>
+        <th scope="col">fechavencimiento</th>       
+        <th scope="col">unidad</th>
+        <th scope="col">fecha registro</th>
+        <th scope="col"># TipoBienesterina</th>
+        <th scope="col"># CentroDistribucionOrigen </th>
+        <th scope="col"># CentroDistribucionDestino</th>
+        <th scope="col"># Almacenes</th>
+    
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sal of devolucion">
+        <th scope="row">{{sal.iddevoluciones}}</th>
+        <td>{{sal.lote}}</td>
+        <td>{{sal.fechavencimiento}}</td>
+        <td>{{sal.unidad}}</td>
+        <td>{{sal.fecharegistro}}</td>
+        <td>{{sal.idTipoBienesterina}}</td>
+        <td>{{cen.idCentroDistribucionOrigen}}</td>
+        <td>{{cen.idCentroDistribucionDestino}}</td>
+        <td>{{cen.idAlmacenes  }}</td>
+
+
+      </tr>
+    </tbody>
+  </table>
+

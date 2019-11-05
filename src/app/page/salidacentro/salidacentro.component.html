@@ -1,0 +1,36 @@
+<nav class="navbar navbar-success bg-success">
+    <button class="btn btn-dark" routerLink="/menu">Volver</button>
+    <button class="btn btn-dark" routerLink="/salidacentroc"> Crear </button>
+  </nav>
+
+  <table class="table">
+    <thead class="thead-green">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">referenciabienestarina</th>
+        <th scope="col">Centro de distribucion origen</th>
+        <th scope="col">Almacen de origen</th>
+        <th scope="col">Lote</th>
+        <th scope="col">Fecha de vencimiento</th>
+        <th scope="col">cantidad</th>
+        <th scope="col">unidad de medida</th>
+        <th scope="col">centro de distribucion destino</th>
+        <th scope="col">fecha de registro</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sal of centroD">
+        <th scope="row">{{sal.identregacentrodistribucion}}</th>
+        <td>{{sal.referenciabienestarina}}</td>
+        <td>{{sal.idCentroDistribucionOrigen}}</td>
+        <td>{{sal.idAlmacen}}</td>
+        <td>{{sal.lote}}</td>
+        <td>{{sal.fechavencimiento}}</td>
+        <td>{{cen.cantidad}}</td>
+        <td>{{cen.unidad}}</td>
+        <td>{{cen.idCentroDistribucionDestino }}</td>
+        <td>{{cen.fecharegistro}}</td>
+
+      </tr>
+    </tbody>
+  </table>

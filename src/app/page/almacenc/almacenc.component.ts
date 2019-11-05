@@ -11,7 +11,7 @@ import { Almacen} from '../../interfaces/almacen';
 
   <nav class="navbar navbar-success bg-success">
   <td>
-         <button class="btn btn-dark" routerLink="/menu">Volver</button>
+         <button class="btn btn-dark" routerLink="/almacen">Volver</button>
          </td>
          <td>
           <button class="btn btn-dark" [routerLink]="['/almacenci']">Crear</button>
@@ -23,7 +23,7 @@ import { Almacen} from '../../interfaces/almacen';
       <tr>
         <th scope="col">idAlmacenes </th>
         <th scope="col">NumeroExterno </th>
-        <th scope="col">NombreCentroDistribucion</th>
+        <th scope="col">Nombre</th>
         <th scope="col">Responsable </th>
         <th scope="col">Capacidad </th>
         <th scope="col">UnidadMedida </th>
@@ -36,7 +36,7 @@ import { Almacen} from '../../interfaces/almacen';
       <tr *ngFor="let al of alm">
         <th scope="row">{{al.idAlmacenes}}</th>
         <td>{{al.NumeroExterno }}</td>
-        <td>{{al.NombreCentroDistribucion }}</td>
+        <td>{{al.Nombre }}</td>
         <td>{{al.Responsable }}</td>
         <td>{{al.Capacidad }}</td>
         <td>{{al.UnidadMedida }}</td>

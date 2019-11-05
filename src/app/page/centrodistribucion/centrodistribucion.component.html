@@ -1,38 +1,30 @@
-<html>
-		<title></title>
-		<head>
-		</head>
-		<body>
-               
-		<h1>Seleccionar el nivel</h1>
-		<div class="container"  class="padre">
-		 <div class="card card-container" >
-		
-		<form class="form-signin padding" >
-		<h2></h2>
-		<span class="btn btn-success" >Nivel</span>
-		<h2></h2>
-		
-		<select class="select-css">
-				<option value="0">Centro Zonal</option>
-				<option value="1">Punto De Entrega</option>
-				<option value="1">Unidad de servicio</option>
-		</select>
-		
-			   <h2></h2>
-			   <button type="button" class="btn btn-success" routerLink="/centrodistribucionc">siguiente</button>
-			   <h2></h2>
+<nav class="navbar navbar-success bg-success">
+		<button class="btn btn-dark" routerLink="/menu">Volver</button>
+	  </nav>
+	  
+	  <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+		<div class="card" padding>
+		  <div class="card-body" padding>
+			<form>
+					<h1>Seleccionar el nivel</h1>
+			  <div class="form-group">
 
-			   
+					<span  >Nivel</span>
+					<h2></h2>
+					
+					<select name="miselect" [(ngModel)]="seleccionado" class="select-css">
+					<option [value]="item" *ngFor="let item of lista">{{item}} </option>
+					</select>
+					
+						 <h2></h2>
+						 <button (click)="siguiente()" type="button" class="btn btn-success" routerLink="/centrodistribucionc">siguiente</button>
+						 <h2></h2>
 
-		</form><!-- /form -->
-		</div><!-- /card-container -->
-		</div><!-- /card-container -->
+				</div>
+			</form>
+		</div>
+	  </div>
+	</div>
 
 
 
-
-
-
-	</body>
-</html>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Centrozonal } from 'src/app/interfaces/centrozonal';
 import { ServicioService } from '../../servicio.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { Municipio } from '../../interfaces/municipio';
 import { Regional } from '../../interfaces/regional';
@@ -46,6 +46,7 @@ export class CentrozonalinhComponent implements OnInit {
   constructor(
     private activeRoute: ActivatedRoute,
     private Service: ServicioService,
+    private router:Router,
   ) {
   }
 
@@ -100,18 +101,25 @@ export class CentrozonalinhComponent implements OnInit {
   updateDatos() {
     const params = this.activeRoute.snapshot.params;
     var numero = params.id;
+    var cont2: number = 0;
+    var cont3: number = 0;
     for (let numeros of this.puntos) {
-      console.log(numeros.idCentrosZonales, numeros.Estado);
-      console.log(numero);
       if (numero == numeros.idCentrosZonales && numeros.Estado == 1) {
-        console.log('Entro al if');
+        var cont: number = 0;
+        var cont2 = cont + 1;
         this.showMenssage3();
       } else if(numero == numeros.idCentrosZonales && numeros.Estado == 0) {
-        this.updateDatos2();
-        console.log('Inhabilitado');
+        var cont: number = 0;
+        cont3 = cont + 1;
       }
     }
-
+    if (cont2 == 0 && cont3 >0){
+      //console.log('funciona');
+      this.updateDatos2();
+    }else{
+      //mensaje de no se puede inhabilitar
+      this.showMenssage3();
+    }
   }
 
 
@@ -121,7 +129,11 @@ export class CentrozonalinhComponent implements OnInit {
       .subscribe(
         res => {
           console.log(res);
-          this.showMenssage();
+          if (this.centros.Estado == 1){
+            this.showMenssage();
+          }else if(this.centros.Estado == 0){
+            this.showMenssage4();
+          }
         }, err => {
           this.showMenssage2();
           console.log(err);
@@ -131,10 +143,15 @@ export class CentrozonalinhComponent implements OnInit {
   //mensajes de creacion
   showMenssage() {
     Swal.fire({
-      title: 'Inhabilitado!',
-      text: 'Centro Zonal Inhabilitado',
+      title: 'Habilitado!',
+      text: 'Centro Zonal habilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
+    }).then((res) => {
+      if(res.value){
+        console.log('confirmed');
+        this.router.navigate(['/centrozonal']);
+    }
     });
   }
   //Mensaje de error
@@ -153,6 +170,19 @@ export class CentrozonalinhComponent implements OnInit {
       text: 'No es posible inhabilitar el centro zonal',
       type: 'error',
       confirmButtonText: 'Entendido'
+    });
+  }
+  showMenssage4() {
+    Swal.fire({
+      title: 'Inhabilitado!',
+      text: 'centro zonal inhabilitado',
+      type: 'error',
+      confirmButtonText: 'Entendido'
+    }).then((res) => {
+      if(res.value){
+        console.log('confirmed');
+        this.router.navigate(['/centrozonal']);
+    }
     });
   }
 }

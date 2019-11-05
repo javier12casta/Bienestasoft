@@ -90,7 +90,7 @@ import {ModificarcentromComponent } from './page/modificarcentrom/modificarcentr
 import {ModificaralmacenComponent } from './page/modificaralmacen/modificaralmacen.component';
 import {ModificaralmaceniComponent } from './page/modificaralmaceni/modificaralmaceni.component';
 import {ModificaralmacenmComponent } from './page/modificaralmacenm/modificaralmacenm.component';
-
+import {EntregaselComponent } from './page/entregasel/entregasel.component';
 
 import {InhabilitaralmacenComponent } from './page/inhabilitaralmacen/inhabilitaralmacen.component';
 import {InhabilitaralmacendiComponent } from './page/inhabilitaralmacendi/inhabilitaralmacendi.component';
@@ -121,6 +121,37 @@ import { ReporterolComponent} from './page/reporterol/reporterol.component';
 import { ReporteentregabComponent} from './page/reporteentregab/reporteentregab.component';
 
 import { InhabilitarudsComponent} from './page/inhabilitaruds/inhabilitaruds.component';
+import { ServiciosymodalidadesvComponent} from './page/serviciosymodalidadesv/serviciosymodalidadesv.component';
+
+import { RefrenciasbienestarinavComponent} from './page/refrenciasbienestarinav/refrenciasbienestarinav.component';
+import { ListapreciosvComponent} from './page/listapreciosv/listapreciosv.component';
+import { ListadocursosvComponent} from './page/listadocursosv/listadocursosv.component';
+import { DatosvariosvComponent} from './page/datosvariosv/datosvariosv.component';
+import { PermisosmComponent } from './page/permisosm/permisosm.component';
+
+import { ReporteinventarioComponent} from './page/reporteinventario/reporteinventario.component';
+import { RecepcionbienestrarinaComponent} from './page/recepcionbienestrarina/recepcionbienestrarina.component';
+import { RecepcionbienestarinavComponent} from './page/recepcionbienestarinav/recepcionbienestarinav.component';
+import { RecepcionbienestarinaviComponent} from './page/recepcionbienestarinavi/recepcionbienestarinavi.component';
+
+import { RecepcioninvComponent} from './page/recepcioninv/recepcioninv.component';
+import { InhabilitardatosnutricionalesComponent} from './page/inhabilitardatosnutricionales/inhabilitardatosnutricionales.component';
+
+import { InhabilitardatosnutricionalesiComponent} from './page/inhabilitardatosnutricionalesi/inhabilitardatosnutricionalesi.component';
+
+import { SalidacentroComponent} from './page/salidacentro/salidacentro.component';
+import { SalidacentrocComponent} from './page/salidacentroc/salidacentroc.component';
+import { SalidabeneficiarioComponent} from './page/salidabeneficiario/salidabeneficiario.component';
+import { SalidabeneficiariocComponent} from './page/salidabeneficiarioc/salidabeneficiarioc.component';
+import { SalidaconsumoComponent} from './page/salidaconsumo/salidaconsumo.component';
+import { SalidaconsumocComponent} from './page/salidaconsumoc/salidaconsumoc.component';
+import { DevolucionesComponent} from './page/devoluciones/devoluciones.component';
+import { DevolucionescComponent} from './page/devolucionesc/devolucionesc.component';
+
+import { TrasladoComponent} from './page/traslado/traslado.component';
+import { TrasladocComponent} from './page/trasladoc/trasladoc.component';
+import { InventariovComponent} from './page/inventariov/inventariov.component';
+import { InventariocComponent} from './page/inventarioc/inventarioc.component';
 
 const routes: Routes = [
   {path:'', component: LoginComponent},
@@ -141,6 +172,8 @@ const routes: Routes = [
   {path:'comunali/:id', component: ComunaliComponent},
   {path:'datosbeneficiario', component: DatosContactoBeneficiarioComponent},
   {path:'inventario', component:InventarioComponent},
+  {path:'inventariov', component: InventariovComponent},
+  {path:'inventarioc', component: InventariocComponent},
   {path:'datoscontactousuario', component: DatosContactoUsuarioComponent},
   {path:'datosgeneralesbeneficiario', component:DatosGeneralesBeneficiarioComponent},
   {path:'listamaestros', component:ListaMaestrosBienestarinaComponent},
@@ -188,6 +221,9 @@ const routes: Routes = [
   {path:'refrenciasbienestarina', component: ReferenciasbienestarinaComponent},
   {path:'datosvarios', component: DatosvariosComponent},
   {path:'permisos', component: PermisosComponent },
+  {path:'permisos/:id', component: PermisosComponent },
+  {path:'permisosm/:id', component: PermisosmComponent },
+  {path:'permisosm', component: PermisosmComponent },
   {path:'modificarusuariom/:id', component: ModificarusuariomComponent },
   {path:'modificarlistamaestro', component: ModificarlistamaestrosComponent },
   {path:'modificarserviciom', component: ModificarserviciosmComponent },
@@ -260,6 +296,36 @@ const routes: Routes = [
   {path:'inhabilitaruds/:id', component:  InhabilitarudsComponent},
   
 
+  {path:'serviciosymodalidadesv', component: ServiciosymodalidadesvComponent},
+
+  {path:'referenciasbienestarinav', component: RefrenciasbienestarinavComponent},
+  {path:'listapreciosv', component: ListapreciosvComponent},
+  {path:'listadocursosv', component: ListadocursosvComponent},
+  {path:'datosvariosv', component: DatosvariosvComponent},
+
+  {path:'reporteinventario', component: ReporteinventarioComponent},
+  {path:'recepcion', component: RecepcionbienestrarinaComponent},
+  {path:'recepcionv', component:  RecepcionbienestarinavComponent},
+  {path:'recepcionvi', component:  RecepcionbienestarinaviComponent},
+  {path:'recepcioninv', component:  RecepcioninvComponent},
+  {path:'inhabilitardatosnutricionales', component: InhabilitardatosnutricionalesComponent},
+  {path:'inhabilitardatosnutricionalesi/:id', component: InhabilitardatosnutricionalesiComponent},
+  {path:'entregasel', component: EntregaselComponent},
+
+
+
+  {path:'salidacentro', component: SalidacentroComponent},
+  {path:'salidacentroc', component: SalidacentrocComponent},
+  {path:'salidabeneficiario', component: SalidabeneficiarioComponent},
+  {path:'salidabeneficiarioc', component: SalidabeneficiariocComponent},
+  {path:'salidaconsumo', component: SalidaconsumoComponent},
+  {path:'salidaconsumoc', component: SalidaconsumocComponent},
+
+  {path:'devoluciones', component: DevolucionesComponent},
+  {path:'devolucionesc', component: DevolucionescComponent},
+
+  {path:'traslado', component: TrasladoComponent},
+  {path:'trasladoc', component: TrasladocComponent},
 
 ];
 

@@ -1,1 +1,55 @@
-<p>datosvarios works!</p>
+<nav class="navbar navbar-success bg-success">
+        <button class="btn btn-dark" routerLink="/datosvariosv">Volver</button>
+      </nav>
+      
+      <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+        <div class="card" padding>
+          <div class="card-body" padding>
+            <form>
+                    <h1>Datos varios</h1>
+              <div class="form-group">
+                
+                    <span >Codigo Interno</span>
+  <h2></h2>
+  <input type="number" class="form-control" [(ngModel)]="x.CodigoInterno" name="codigoi"
+  placeholder="Codigo Interno" class="form-control" id="codigointerno">
+  <h2></h2>
+  <span  >Estado del dato Maestro</span>
+  <h2></h2>
+  
+  <select name="estadomaestro" [(ngModel)]="x.EstadoDatoMaestro" class="select-css">
+<option [value]="item" *ngFor="let item of listamaestro">{{item}} </option>
+</select>
+  
+  <h2></h2>
+  <span >Descripcion del registro</span>
+  <h2></h2>
+  <input type="text" class="form-control" [(ngModel)]="x.DescripcionDelRegistro" name="descripcionr"
+  placeholder="Descripcion del registro" class="form-control" id="descripcionregistro">
+  <h2></h2>
+  <span >Valor</span>
+  <h2></h2>
+  <input type="number" class="form-control" [(ngModel)]="x.Valor" name="v"
+  placeholder="Nombres" class="form-control" id="valor">
+
+  <h2></h2>
+<span >Unidad de medida</span>
+<h2></h2>
+
+<select name="unidad" [(ngModel)]="x.UnidadDeMedida" class="select-css">
+<option [value]="item" *ngFor="let item of unidadm">{{item}} </option>
+</select>
+
+<h2></h2>
+        
+       <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
+        
+<h2></h2>
+
+                </div>
+                </form>
+            </div>
+          </div>
+        </div>
+    
+    

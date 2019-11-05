@@ -1,145 +1,236 @@
+<nav class="navbar navbar-success bg-success">
+		<button class="btn btn-dark" routerLink="/beneficiariosm">Volver</button>
+	  </nav>
+	  
+	  <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+		<div class="card" padding>
+		  <div class="card-body" padding>
+			<form>
+			  <div class="form-group">
+					<h1>Datos Generales Beneficiario</h1>
+
+					<span  >Tipo de Documento</span>
+					  <h2></h2>
 
 
-<html>
-		<title>Menu Desplegable</title>
-		<head>
+					  <select name="idTipoDocumento" id="idTipoDocumento" [(ngModel)]="x.idTipoDocumento" style="width: 100%;" class="form-control">
+						<option value="1">CC</option>
+						<option value="2">CE</option>
+						<option value="3">PA</option>
+					  </select>
 
-				<style type="text/css">
-			
-					* {
-						margin:0px;
-						padding:0px;
-					}
+
+					<span  >Numero de documento de identidad</span>
+					<h2></h2>
+					<input type="number" class="form-control" [(ngModel)]="x.NumeroDocumento" name="Numerodoc"
+				  placeholder="Numero de documento " class="form-control">
+					<h2></h2>
+					<span  >Primer Nombre</span>
+					<h2></h2>
+					<input type="text" class="form-control" [(ngModel)]="x.PrimerNombre" name="primernombre"
+					placeholder="Primer nombre" class="form-control">
+					 <h2></h2>
+					<span  >Segundo Nombre</span>
+					<h2></h2>
+					<input type="text" class="form-control" [(ngModel)]="x.PrimerApellido" name="segundonombre"
+				  placeholder="Segundo Nombre" class="form-control">
+				   <h2></h2>
+					<span  >Primer Apellido</span>
+					<h2></h2>
+					<input type="text" class="form-control" [(ngModel)]="x.SegundoNombre" name="primerapellido"
+				  placeholder="primer apellido" class="form-control">
+				   <h2></h2>
+					<span  >Segundo Apellido</span>
+					<h2></h2>
+					<input type="text" class="form-control" [(ngModel)]="x.SegundoApellido" name="segundoapellido"
+				  placeholder="segundo apellido" class="form-control">
+					<h2></h2>
+					<span >Estado del Beneficiario</span>
+					<h2></h2>
+
+					<select name="Estado" id="Estado" [(ngModel)]="x.Estado" style="width: 100%;" class="form-control">
+							<option value="1"> Habilitar</option>
+							<Option value="0">Inhabilitar</Option>
+						  </select>
+
+				
+						<h2></h2>
+						<span  >Genero</span>
+						<h2></h2>
+
+						<select name="idGneero" class="Select2" style="width: 100%;" [(ngModel)]="x.idGenero"
+						options="options" placeholder="Genero">
+						<option *ngFor="let gener of gen" [value]="gener.idGenero">{{gener.NombreGenero}}</option>
+					  </select>
+
+
+						<h2></h2>
+						<span >Fecha de Nacimiento:</span>
+	  
+						<input type="date" class="form-control" [(ngModel)]="x.FechaNacimiento" name="fechan" placeholder="Fecha Nacimiento" min="1900-01-01" max="2050-12-31" class="form-control">
+		  
+		   <h2></h2>
+		   <span  >Servicio o modalidad</span>
+					<h2></h2>
+					<input type="text" class="form-control" [(ngModel)]="x.ServicioOmodalidad" name="serv"
+			  placeholder="Servcio o modalidad" class="form-control" id="inputdoc">
+					<h2></h2>
+					<span >Fecha de Ingreso:</span>
+	  
+					<input type="date" class="form-control" [(ngModel)]="x.FechaIngreso" name="fechai" placeholder="Fecha Ingreso" min="1900-01-01" max="2050-12-31" class="form-control">
+		  
+						   <h2></h2>
+	  
+					<h1>Acudiente Beneficiario</h1>
+	  
+					<h2></h2>
+	  
+					<span  >Tipo de Documento</span>
+					  <h2></h2>
+
+
+					  <select name="idTipoDocumento" id="idTipoDocumento" [(ngModel)]="y.idTipoDocumento" style="width: 100%;" class="form-control">
+						<option value="1">CC</option>
+						<option value="2">CE</option>
+						<option value="3">PA</option>
+					  </select>
+
+					  
 					
-					#header {
-						margin:auto;
-						width:700px;
-						font-family:Arial, Helvetica, sans-serif;
-					}
+					  <h2></h2>
+	  
+					  <span >Numero de Documento de identidad Acudiente</span>
+					  <h2></h2>
+					  <input type="text" class="form-control" [(ngModel)]="y.NumeroDocumento" name="numerodoc"
+			          placeholder="numero de documento" class="form-control" >
+					  <h2></h2>
+	  
+					  <span >Nombres</span>
+					  <h2></h2>
+					  <input type="text" class="form-control" [(ngModel)]="y.Nombres" name="nom"
+			  placeholder="Nombres" class="form-control" id="inputdoc">
+					  <h2></h2>
+	  
+					  
+					  <span >Apellidos </span>
+					  <h2></h2>
+					  <input type="text" class="form-control" [(ngModel)]="y.Apellidos" name="apl"
+					  placeholder="Apelldios" class="form-control" >
+					 <h2></h2>
+	  
+					  <span  >Parentesco con el Beneficiario</span>
+					  <h2></h2>
+
+					  <select name="Parentesco" id="Parentesco" [(ngModel)]="y.Parentesco" style="width: 100%;" class="form-control">
+						<option >Padre</option>
+						  <option >Madre</option>
+						  <option >Hermano(a)</option>
+						  <option >Abuelo(a)</option>
+						  <option >Tio(a)</option>
+						  <option >Persona con custodia</option>
+					  </select>
+
+
+					  
 					
-					ul, ol {
-						list-style:none;
-					}
-					
-					.nav > li {
-						float:left;
-					}
-					
-					.nav li a {
-						background-color:rgb(39, 192, 25);
-						color:#fff;
-						text-decoration:none;
-						padding:10px 12px;
-						display:block;
-					}
-					
-					.nav li a:hover {
-						background-color:#434343;
-					}
-					
-					.nav li ul {
-						display:none;
-						position:absolute;
-						min-width:140px;
-					}
-					
-					.nav li:hover > ul {
-						display:block;
-					}
-					
-					.nav li ul li {
-						position:relative;
-					}
-					
-					.nav li ul li ul {
-						right:-140px;
-						top:0px;
-					}
-					
-				</style>
+
+					  <h2></h2>
+	  
+					  <span >Genero</span>
+					  <h2></h2>
+					  
+					  <select name="idGneero1" class="Select2" style="width: 100%;" [(ngModel)]="y.idGenero "
+						options="options" placeholder="Genero">
+						<option *ngFor="let gener of gen" [value]="gener.idGenero">{{gener.NombreGenero}}</option>
+					  </select>
+
+	                  <h2></h2>
+					  <span >Fecha de Nacimiento </span>
+					  <h2></h2>
+					  <input type="date" class="form-control" [(ngModel)]="y.FechaNacimiento"  name="fechan" placeholder="Fecha Ingreso" min="1900-01-01" max="2050-12-31" class="form-control">
+		  
+							 <h2></h2>
+	  
+							 <span >Fecha de Ingreso</span>
+							 <h2></h2>
+	  
+							 <input type="date" class="form-control" [(ngModel)]="y.FechaIngreso" name="fechain" placeholder="Fecha Ingreso" min="1900-01-01" max="2050-12-31" class="form-control">
+		  
+									<h2></h2>
+	  
+									<span >Registro Biometrico</span>
+									<h2></h2>
+									<input type="text" [(ngModel)]="y.RegistroBiometrico" class="form-control" name="biometrico"
+									placeholder="Registro Biomerico" class="form-control" >
+									<h2></h2>
+	  
+									<h1>Datos De Contacto</h1>
+	  
+									<span >Direccion</span>
+									<h2></h2>
+									<input type="text" class="form-control" [(ngModel)]="x.Direccion" name="dic2"
+									placeholder="Direccion" class="form-control" >
+									<h2></h2>
+									<span >Pais</span>
+									<h2></h2>
+									
+									<input type="text" class="form-control" [(ngModel)]="x.Pais" name="pais"
+					  placeholder="pais" class="form-control" >
+	  
+										<h2></h2>
+										
+										<span >Departamento</span>
+									<h2></h2>
+									
+
+									<select name="idepartamento" class="Select2" style="width: 100%;" [(ngModel)]="x.Departamento"
+									options="options" placeholder="Departamento">
+									<option *ngFor="let regi of reg" [value]="regi.Regional">{{regi.Regional}}</option>
+								  </select>
 
 
-		</head>
-		<body>
-
-				<div id="header">
-						<ul class="nav">
-							<li><a routerLink="/datosgeneralesbeneficiario">Datos Generales Beneficiario</a></li>
-							<li><a routerLink="/acudientesbeneficirio">Acudiente Beneficiario ICBF</a></li>
-							<li><a routerLink="/datosbeneficiario">Datos contacto Beneficiario</a></li>
-						</ul>
-					</div>
-
-		<h1>Crear Beneficiario</h1>
-
-		<h1>Datos Generales Usuario</h1>
-		<div class="container" class="padre">
-		 <div class="card card-container">
-		
-		<form class="form-signin padding" >
-		
-                <span class="btn btn-success" >Numero de documento de identidad</span>
-                <h2></h2>
-                
-                <h2></h2>
-                <span class="btn btn-success" >Primer Nombre</span>
-                <h2></h2>
-                <input type="text" id="inputnombre1"  placeholder="Primer Nombre" required autofocus>
-                <h2></h2>
-                <span class="btn btn-success" >Segundo Nombre</span>
-                <h2></h2>
-                <input type="text" id="inputnombre2"  placeholder="Segundo Nombre" required autofocus>
-                <h2></h2>
-                <span class="btn btn-success" >Primer Apellido</span>
-                <h2></h2>
-                <input type="text" id="inputapellido1"  placeholder="Primer Apellido" required autofocus>
-                <h2></h2>
-                <span class="btn btn-success" >Segundo Apellido</span>
-                <h2></h2>
-                <input type="text" id="inputapellido2"  placeholder="Segundo Apellido" required autofocus>
-                <h2></h2>
-                <span class="btn btn-success" >Estado del Beneficiario</span>
-                <h2></h2>
-                <label class="container1">Habilitar
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                      </label>
-                      <label class="container1">Inhabilitar
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                    </label>
-                    <h2></h2>
-                    <span class="btn btn-success" >Genero</span>
-                    <h2></h2>
-                    <select class="select-css">
-                            <option value="0">Masculino</option>
-                            <option value="1">Femenino</option>
-                                
-                    </select>
-                    
-                    <span class="btn btn-success">Fecha de Nacimiento:</span>
-
-<input type="date" id="start" name="trip-start"
-       value="2018-07-22"
-       min="1900-01-01" max="2050-12-31">
-       <h2></h2>
-       <span class="btn btn-success" >Servicio o modalidad</span>
-                <h2></h2>
-                <input type="text" id="inputservicio"  placeholder="Servicio o Modalidad" required autofocus>
-                <h2></h2>
-                <span class="btn btn-success">Fecha de Ingreso:</span>
-
-                <input type="date" id="start" name="trip-start"
-                       value="2018-07-22"
-                       min="1900-01-01" max="2050-12-31">
-                       <h2></h2>
-
-			  
-		</form><!-- /form -->
-		</div><!-- /card-container -->
-		</div><!-- /card-container -->
+										<h2></h2>
+									<span >Municipio</span>
+									<h2></h2>
+									<input type="text" class="form-control" [(ngModel)]="x.Municipio" name="Municipio"
+					  placeholder="Municipio" class="form-control" >
+										<h2></h2>
+										<span >Telefono fijo 1 </span>
+									<h2></h2>
+									<input type="number" class="form-control" [(ngModel)]="x.TelefonoFijo" name="tel1"
+					  placeholder="telefono 1" class="form-control" >
+									<h2></h2>
+									<span >Telefono Fijo 2</span>
+									<h2></h2>
+									<input type="number" class="form-control" [(ngModel)]="x.TelefonoFijo2" name="tel2"
+					  placeholder="telefono 2" class="form-control" >
+									<h2></h2>
+									<span >Telefono movil 1 </span>
+									<h2></h2>
+									<input type="number" class="form-control" [(ngModel)]="x.TelefonoMovil" name="movil"
+					  placeholder="Telefono Movil 1" class="form-control" >
+									<h2></h2>
+									<span >Telefono movil 2</span>
+									<h2></h2>
+									<input type="number" class="form-control" [(ngModel)]="x.TelefonoMovil2" name="movil2"
+					  placeholder="telefono Movil 2" class="form-control" >
+									<h2></h2>
+									<span >Email</span>
+									<h2></h2>
+									<input type="text" class="form-control" [(ngModel)]="x.Email" name="email"
+					  placeholder="Email" class="form-control" >
+									  <h2></h2>
+									  <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
+									  {{clickMessage}}
+									<h2></h2>
+	  
+				</div>
+				</form>
+			</div>
+		  </div>
+		</div>
 
 
 
-	</body>
-</html>
+
+

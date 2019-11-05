@@ -73,7 +73,14 @@ export class ModificarusuariomComponent implements OnInit {
 
   // Actualizar Datos---------------------------------------------
   updateDatos() {
-    this.Service.putUsuarios(this.usu.idUsuarios, this.usu)
+
+    if(this.usu.NumeroDocumento == null || this.usu.NumeroDocumento == 0 &&  this.usu.idTipoDocumento == null ||  this.usu.idTipoDocumento == 0 && this.usu.TelefonoFijo == null ||  this.usu.TelefonoFijo == 0  && this.usu.TelefonoFijo2 == null ||  this.usu.TelefonoFijo2 == 0  && this.usu.TelefonoMovil == null ||  this.usu.TelefonoMovil == 0 && this.usu.TelefonoMovil2 == null ||  this.usu.TelefonoMovil2 == 0 ){
+
+this.showMenssage3();
+
+    }else{
+
+      this.Service.putUsuarios(this.usu.idUsuarios, this.usu)
       .subscribe(
         res => {
           console.log(res);
@@ -82,7 +89,20 @@ export class ModificarusuariomComponent implements OnInit {
           console.log(err);
         }
       );
+      
+    }
+
+    
   }
+
+  showMenssage3(){
+    Swal.fire({
+      title: 'Error!',
+      text: 'campos erroneos o vacios',
+      type: 'error',
+      confirmButtonText: 'Entendido'
+    });
+    }
 
  
 

@@ -142,8 +142,33 @@ import { EntregamComponent } from './page/entregam/entregam.component';
 import { EntregaiComponent } from './page/entregai/entregai.component';
 import { ReporteentregabComponent } from './page/reporteentregab/reporteentregab.component';
 import { InhabilitarudsComponent } from './page/inhabilitaruds/inhabilitaruds.component';
+import { ServiciosymodalidadesvComponent } from './page/serviciosymodalidadesv/serviciosymodalidadesv.component';
+import { RefrenciasbienestarinavComponent } from './page/refrenciasbienestarinav/refrenciasbienestarinav.component';
+import { ListapreciosvComponent } from './page/listapreciosv/listapreciosv.component';
+import { ListadocursosvComponent } from './page/listadocursosv/listadocursosv.component';
+import { DatosvariosvComponent } from './page/datosvariosv/datosvariosv.component';
+import { PermisosmComponent } from './page/permisosm/permisosm.component';
 
-
+import { ReporteinventarioComponent } from './page/reporteinventario/reporteinventario.component';
+import { RecepcionbienestrarinaComponent } from './page/recepcionbienestrarina/recepcionbienestrarina.component';
+import { RecepcionbienestarinavComponent } from './page/recepcionbienestarinav/recepcionbienestarinav.component';
+import { RecepcionbienestarinaviComponent } from './page/recepcionbienestarinavi/recepcionbienestarinavi.component';
+import { RecepcioninvComponent } from './page/recepcioninv/recepcioninv.component';
+import { InhabilitardatosnutricionalesComponent } from './page/inhabilitardatosnutricionales/inhabilitardatosnutricionales.component';
+import { InhabilitardatosnutricionalesiComponent } from './page/inhabilitardatosnutricionalesi/inhabilitardatosnutricionalesi.component';
+import { InventariovComponent } from './page/inventariov/inventariov.component';
+import { InventariocComponent } from './page/inventarioc/inventarioc.component';
+import { EntregaselComponent } from './page/entregasel/entregasel.component';
+import { SalidacentroComponent } from './page/salidacentro/salidacentro.component';
+import { SalidabeneficiarioComponent } from './page/salidabeneficiario/salidabeneficiario.component';
+import { SalidaconsumoComponent } from './page/salidaconsumo/salidaconsumo.component';
+import { SalidacentrocComponent } from './page/salidacentroc/salidacentroc.component';
+import { SalidabeneficiariocComponent } from './page/salidabeneficiarioc/salidabeneficiarioc.component';
+import { SalidaconsumocComponent } from './page/salidaconsumoc/salidaconsumoc.component';
+import { DevolucionesComponent } from './page/devoluciones/devoluciones.component';
+import { DevolucionescComponent } from './page/devolucionesc/devolucionesc.component';
+import { TrasladoComponent } from './page/traslado/traslado.component';
+import { TrasladocComponent } from './page/trasladoc/trasladoc.component';
 
 
 @NgModule({
@@ -196,219 +221,105 @@ import { InhabilitarudsComponent } from './page/inhabilitaruds/inhabilitaruds.co
     UdsmComponent,
     ServiciosymodalidadesComponent,
     ReferenciasbienestarinaComponent,
-    ListadepreciosComponent, 
-
     ListadepreciosComponent,
-    PermisosComponent,
-    ReferenciasbienestarinaComponent,
     DatosvariosComponent,
     Modificarusuarios1Component,
-    PermisosComponent,
-    
-
     ModificarusuariomComponent,
-    
-
     ModificarlistamaestrosComponent,
-    
-
     ModificarserviciosmComponent,
-    
-
     ModificareferenciabComponent,
-    
-
     ModificarlistapComponent,
-    
-
     ModificarlistadocComponent,
-    
-
     ListadocursosComponent,
-    
-
     ModificarbeneficiariomComponent,
-    
-
     ModificarserviciommComponent,
-    
-
     ModificareferenciabmComponent,
-    
-
     ModificarlistapmComponent,
-    
-
     ModificarlistadocmComponent,
-    
-
     InhabilitarbeneficiariosiComponent,
-    
-
     Inhabilitarusuarios1Component,
-    
-
     InhabilitarusuariosiComponent,
-    
-
     InhabilitarserviciosmComponent,
-    
-
     InhabilitarserviciosmiComponent,
-    
-
     InhabilitareferenciabComponent,
-    
-
     InhabilitareferenciabiComponent,
-    
-
     InhabilitarlistapComponent,
-    
-
     InhabilitarlistapiComponent,
-    
-
     InhabilitarlistadocComponent,
-    
-
     InhabilitarlistadociComponent,
-    
-
-
     UsuariosvComponent,
-    
-
-  
-
     CentrozonalinhComponent,
-    
-
-
     PuntoentregainhComponent,
-    
-
     UdsinhComponent,
-    
-
     CentrodistribucionComponent,
-    
-
     CentrodistribucioncComponent,
-    
-
     CentrodistribucionciComponent,
-    
-
     AlmacenComponent,
-    
-
     AlmacencComponent,
-    
-
     AlmacenciComponent,
-    
-
     ModificarcentrodComponent,
-    
-
     ModificarcentrodiComponent,
-    
-
     ModificaralmacenComponent,
-    
-
     ModificaralmaceniComponent,
-    
-
     ModificarcentromComponent,
-    
-
     ModificaralmacenmComponent,
-    
-
     InhabilitarcentrodComponent,
-    
-
     InhabilitarcentrodiComponent,
-    
-
     InhabilitarcentrodmComponent,
-    
-
     InhabilitaralmacenComponent,
-    
-
     InhabilitaralmacendiComponent,
-    
-
     InhabilitaralmacendmComponent,
-    
-
     BeneficiariosmComponent,
-    
-
     ReporteusuariosComponent,
-    
-
     ReporteserviciosmodalidadesComponent,
-    
-
     ReportebeneficiarioComponent,
-    
-
     ReportereferenciabienestarinaComponent,
-    
-
     ReportepreciosbienestarinaComponent,
-    
-
     ReportelistadocursosComponent,
-    
-
     ReportedatosnutricionalesComponent,
-    
-
     ReportecentrodistribucionComponent,
-    
-
     ReportealmacenComponent,
-    
-
     ReportedatosvariosComponent,
-    
-
     ModificardatosnutricionalesComponent,
-    
-
     ModificardatosnutricionalesmComponent,
-    
-
     ReportecentrozonalComponent,
-    
-
     ReporteentregaComponent,
-    
-
     ReporteudsComponent,
-    
-
     ReporterolComponent,
-    
-
     EntregacComponent,
-    
-
     EntregamComponent,
-    
-
     EntregaiComponent,
-    
-
     ReporteentregabComponent,
+    InhabilitarudsComponent,
+    ServiciosymodalidadesvComponent,
+    RefrenciasbienestarinavComponent,
+    ListapreciosvComponent,
+    ListadocursosvComponent,
+    DatosvariosvComponent,
+    PermisosmComponent,
+    ReporteinventarioComponent,
+    RecepcionbienestrarinaComponent,
+    RecepcionbienestarinavComponent,
+    RecepcionbienestarinaviComponent,
+    RecepcioninvComponent,
+    InhabilitardatosnutricionalesComponent,
+    InhabilitardatosnutricionalesiComponent,
+    InventariovComponent,
+    InventariocComponent,
+    EntregaselComponent,
+    SalidacentroComponent,
+    SalidabeneficiarioComponent,
+    SalidaconsumoComponent,
+    SalidacentrocComponent,
+    SalidabeneficiariocComponent,
+    SalidaconsumocComponent,
+    DevolucionesComponent,
+    DevolucionescComponent,
+    TrasladoComponent,
+    TrasladocComponent,
     
 
-    InhabilitarudsComponent,
+    
     
 
   
@@ -418,6 +329,7 @@ import { InhabilitarudsComponent } from './page/inhabilitaruds/inhabilitaruds.co
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     //Material Imports Module
     BrowserAnimationsModule,
     MatSidenavModule,

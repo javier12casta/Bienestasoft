@@ -9,7 +9,7 @@ import { ServicioService } from '../../servicio.service';
   template: `
 
   <nav class="navbar navbar-success bg-success">
-  <button class="btn btn-dark" routerLink="/menu">Volver</button>
+  <button class="btn btn-dark" routerLink="/modificarusuarios">Volver</button>
 </nav>
 
 <table class="table">

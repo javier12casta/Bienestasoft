@@ -7,40 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-reportes',
   templateUrl: './reportes.component.html',
-  styleUrls: ['./reportes.component.css'],
-  template: `<html>
-  <title>Menu Desplegable</title>
-  <head>
-
-  </head>
-  <body>
-              
-
-  <h1>Reporte Listas De Datos Maestros</h1>
-  <div class="container"  class="padre">
-   <div class="card card-container" >
-  
-  <form class="form-signin padding" >
-  <h2></h2>
-  <span class="btn btn-success" >Nombre de la lista </span>
-  <h2></h2>
-  <select name="rols" [(ngModel)]="lista" class="select-css">
-  <option [value]="item" *ngFor="let item of listar">{{item}} </option>
-  </select>
-  <h2></h2>
-  <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
-  {{clickMessage}}
-       <h2></h2>
-
-       
-
-  </form><!-- /form -->
-  </div><!-- /card-container -->
-  </div><!-- /card-container -->
-
-</body>
-</html>
- `
+  styleUrls: ['./reportes.component.css']
 })
 export class ReportesComponent implements OnInit {
 

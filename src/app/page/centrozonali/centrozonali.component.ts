@@ -7,7 +7,7 @@ import { Municipio } from '../../interfaces/municipio';
 import { Regional } from '../../interfaces/regional';
 import { Select2OptionData } from 'ng2-select2';
 import Swal from 'sweetalert2';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-centrozonali',
@@ -23,7 +23,8 @@ export class CentrozonaliComponent implements OnInit {
 
   constructor(
     private activeRoute: ActivatedRoute,
-    private Service: ServicioService,
+    private Service: ServicioService, 
+    private router:Router
   ) {
   }
 
@@ -84,6 +85,12 @@ export class CentrozonaliComponent implements OnInit {
       text: 'Centro Zonal Creado',
       type: 'success',
       confirmButtonText: 'Entendido'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/centrozonal']);
+    
+      }
     });
   }
 //Mensaje de error

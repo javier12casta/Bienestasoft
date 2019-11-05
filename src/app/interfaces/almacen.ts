@@ -1,7 +1,7 @@
 export interface Almacen {
     idAlmacenes?: number,
     NumeroExterno : string,
-    NombreCentroDistribucion: string,
+    Nombre: string,
     Responsable : string,
     Capacidad  : number,
     UnidadMedida  : string,
