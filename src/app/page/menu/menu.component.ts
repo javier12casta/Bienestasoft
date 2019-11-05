@@ -54,15 +54,7 @@ export class MenuComponent implements OnInit {
   };
 
   // fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
-  estructura = [
-    { name: "centrozonal", route: "/centrozonal", icon: "public" },
-    { name: "puntoentrega", route: "/puntoentrega", icon: "public" },
-    { name: "uds", route: "/uds", icon: "public" },
-    { name: "Reporte centrozonal", route: "/reportecentrozonal", icon: "public" },
-    { name: "Reporte Punto Entrega", route: "/reportepuntoentrega", icon: "face" },
-    { name: "Reporte Unidad de servicio", route: "/reporteuds", icon: "face" },
 
-  ];
   entrega = [
     { name: "Entrega", route: "/entregasel", icon: "list_alt" },
     { name: "Reporte Entrega", route: "/reportentregab", icon: "list_alt" },
@@ -160,7 +152,7 @@ export class MenuComponent implements OnInit {
       this.Service.getPermisosid(this.user.TipoUsuario).subscribe(res => {
         this.permisos = Object(res);
         console.log('Permiso get', this.permisos);
-        // this.cargarpermiso();
+        this.cargarpermiso();
         // this.cargarpermiso2();
         // this.cargarpermiso3();
         // this.cargarpermiso4();
@@ -177,250 +169,288 @@ export class MenuComponent implements OnInit {
     }
   }
 
-  /*  
-    cargarpermiso() {
-      var centrostr = this.permisos.perCentros;
-      var array = centrostr.split("");
-      //console.log('carga', array);
-  
-      if (array[0] == "1") {
-        this.filter = 1;
-  
-        if (array[1] == "1") {
-          this.filter2 = 1;
-  
-          if (array[2] == "1") {
-            this.filter3 = 1;
-  
-            if (array[3] == "1") {
-              this.filter4 = 1;
-  
-              if (array[4] == "1") {
-                this.filter5 = 1;
-              }
-              else if (array[4] == "0") {
-                this.filter5 = 0;
-              }
-  
+  estructura1 = [
+    
+    { name: "puntoentrega", route: "/puntoentrega", icon: "public" },
+    { name: "uds", route: "/uds", icon: "public" },
+    { name: "Reporte centrozonal", route: "/reportecentrozonal", icon: "public" },
+    { name: "Reporte Punto Entrega", route: "/reportepuntoentrega", icon: "face" },
+    { name: "Reporte Unidad de servicio", route: "/reporteuds", icon: "face" },
+
+  ];
+
+  estructura = [
+
+  ];
+
+  cargarpermiso() {
+    var centrostr = this.permisos.perCentros;
+    var array = centrostr.split("");
+    if (array[0] == "1") {
+      var create = { name: "Crear Centro Zonal", route: "/centrozonali", icon: "public" };
+      this.estructura.push(create);
+      if (array[1] == "1") {
+        var create = { name: "Actualizar Centro Zonal", route: "/centrozonalmv", icon: "public" };
+      this.estructura.push(create);
+
+        if (array[2] == "1") {
+          var create = { name: "Ver Centroz Zonales", route: "/centrozonal", icon: "public" };
+      this.estructura.push(create);
+
+          if (array[3] == "1") {
+            var create = { name: "Reporte centrozonal", route: "/reportecentrozonal", icon: "public" };
+      this.estructura.push(create);
+
+            if (array[4] == "1") {
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
+      this.estructura.push(create);
             }
-            else if (array[3] == "0") {
-              this.filter4 = 0;
-  
-              if (array[4] == "1") {
-                this.filter5 = 1;
-              }
-              else if (array[4] == "0") {
-                this.filter5 = 0;
-              }
+            else if (array[4] == "0") {
+              
             }
-  
+
           }
-          else if (array[2] == "0") {
-            this.filter3 = 0;
-  
-            if (array[3] == "1") {
-              this.filter4 = 1;
-  
-              if (array[4] == "1") {
-                this.filter5 = 1;
-              }
-              else if (array[4] == "0") {
-                this.filter5 = 0;
-              }
-  
+          else if (array[3] == "0") {
+            
+
+            if (array[4] == "1") {
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
+      this.estructura.push(create);
             }
-            else if (array[3] == "0") {
-              this.filter4 = 0;
-  
-              if (array[4] == "1") {
-                this.filter5 = 1;
-              }
-              else if (array[4] == "0") {
-                this.filter5 = 0;
-              }
+            else if (array[4] == "0") {
+              
             }
-  
           }
-  
+
         }
-        else if (array[1] == "0") {
-          this.filter2 = 0;
-  
-          if (array[2] == "1") {
-            this.filter3 = 1;
-  
-            if (array[3] == "1") {
-              this.filter4 = 1;
-  
-              if (array[4] == "1") {
-                this.filter5 = 1;
-              }
-              else if (array[4] == "0") {
-                this.filter5 = 0;
-              }
-  
+        else if (array[2] == "0") {
+         
+
+          if (array[3] == "1") {
+            var create = { name: "Reporte centrozonal", route: "/reportecentrozonal", icon: "public" };
+            this.estructura.push(create);
+
+            if (array[4] == "1") {
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
+              this.estructura.push(create);
             }
-            else if (array[3] == "0") {
-              this.filter4 = 0;
-  
-              if (array[4] == "1") {
-                this.filter5 = 1;
-              }
-              else if (array[4] == "0") {
-                this.filter5 = 0;
-              }
-  
+            else if (array[4] == "0") {
+              
             }
-  
+
           }
-          else if (array[2] == "0") {
-            this.filter3 = 0;
-  
-            if (array[3] == "1") {
-              this.filter4 = 1;
-  
-              if (array[4] == "1") {
-                this.filter5 = 1;
-              }
-              else if (array[4] == "0") {
-                this.filter5 = 0;
-              }
-  
+          else if (array[3] == "0") {
+            
+
+            if (array[4] == "1") {
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
+              this.estructura.push(create);
             }
-            else if (array[3] == "0") {
-              this.filter4 = 0;
-  
-              if (array[4] == "1") {
-                this.filter5 = 1;
-              }
-              else if (array[4] == "0") {
-                this.filter5 = 0;
-              }
+            else if (array[4] == "0") {
+              
             }
-  
           }
-  
-  
+
         }
-  
+
       }
-      else if (array[0] == "0") {
-        this.filter = 0;
-        if (array[1] == "1") {
-          this.filter2 = 1;
-          if (array[2] == "1") {
-            this.filter3 = 1;
-  
-            if (array[3] == "1") {
-              this.filter4 = 1;
-              if (array[4] == "1") {
-                this.filter5 = 1;
-              }
-              else if (array[4] == "0") {
-                this.filter5 = 0;
-              }
+      else if (array[1] == "0") {
+
+        if (array[2] == "1") {
+          var create = { name: "Ver Centroz Zonales", route: "/centrozonal", icon: "public" };
+      this.estructura.push(create);
+
+          if (array[3] == "1") {
+            var create = { name: "Reporte centrozonal", route: "/reportecentrozonal", icon: "public" };
+            this.estructura.push(create);
+
+            if (array[4] == "1") {
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
+              this.estructura.push(create);
             }
-            else if (array[3] == "0") {
-              this.filter4 = 0;
-  
-              if (array[4] == "1") {
-                this.filter5 = 1;
-              }
-              else if (array[4] == "0") {
-                this.filter5 = 0;
-              }
+            else if (array[4] == "0") {
+             
             }
-  
+
           }
-          else if (array[2] == "0") {
-            this.filter3 = 0;
-  
-            if (array[3] == "1") {
-              this.filter4 = 1;
-  
-              if (array[4] == "1") {
-                this.filter5 = 1;
-              }
-              else if (array[4] == "0") {
-                this.filter5 = 0;
-              }
-  
+          else if (array[3] == "0") {
+           
+
+            if (array[4] == "1") {
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
+              this.estructura.push(create);
             }
-            else if (array[3] == "0") {
-              this.filter4 = 0;
-  
-              if (array[4] == "1") {
-                this.filter5 = 1;
-              }
-              else if (array[4] == "0") {
-                this.filter5 = 0;
-              }
+            else if (array[4] == "0") {
+              
             }
-  
+
           }
-  
+
         }
-        else if (array[1] == "0") {
-          this.filter2 = 0;
-  
-          if (array[2] == "1") {
-            this.filter3 = 1;
-  
-            if (array[3] == "1") {
-              this.filter4 = 1;
-  
-              if (array[4] == "1") {
-                this.filter5 = 1;
-              }
-              else if (array[4] == "0") {
-                this.filter5 = 0;
-              }
-  
+        else if (array[2] == "0") {
+
+          if (array[3] == "1") {
+            var create = { name: "Reporte centrozonal", route: "/reportecentrozonal", icon: "public" };
+            this.estructura.push(create);
+
+            if (array[4] == "1") {
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
+              this.estructura.push(create);
             }
-            else if (array[3] == "0") {
-              this.filter4 = 0;
-  
-              if (array[4] == "1") {
-                this.filter5 = 1;
-              }
-              else if (array[4] == "0") {
-                this.filter5 = 0;
-              }
+            else if (array[4] == "0") {
             }
-  
+
           }
-          else if (array[2] == "0") {
-            this.filter3 = 0;
-  
-            if (array[3] == "1") {
-              this.filter4 = 1;
-  
-              if (array[4] == "1") {
-                this.filter5 = 1;
-              }
-              else if (array[4] == "0") {
-                this.filter5 = 0;
-              }
-  
+          else if (array[3] == "0") {
+            
+
+            if (array[4] == "1") {
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
+              this.estructura.push(create);
             }
-            else if (array[3] == "0") {
-              this.filter4 = 0;
-  
-              if (array[4] == "1") {
-                this.filter5 = 1;
-              }
-              else if (array[4] == "0") {
-                this.filter5 = 0;
-              }
+            else if (array[4] == "0") {
             }
-  
           }
-  
+
         }
-  
+
+
       }
-  
-    } */
+      
+    }else if(array[0] == "0"){
+
+      if (array[1] == "1") {
+        var create = { name: "Actualizar Centro Zonal", route: "/centrozonalmv", icon: "public" };
+      this.estructura.push(create);
+
+        if (array[2] == "1") {
+          var create = { name: "Ver Centroz Zonales", route: "/centrozonal", icon: "public" };
+      this.estructura.push(create);
+
+          if (array[3] == "1") {
+            var create = { name: "Reporte centrozonal", route: "/reportecentrozonal", icon: "list_alt" };
+      this.estructura.push(create);
+
+            if (array[4] == "1") {
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
+      this.estructura.push(create);
+            }
+            else if (array[4] == "0") {
+              
+            }
+
+          }
+          else if (array[3] == "0") {
+            
+
+            if (array[4] == "1") {
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
+      this.estructura.push(create);
+            }
+            else if (array[4] == "0") {
+              
+            }
+          }
+
+        }
+        else if (array[2] == "0") {
+         
+
+          if (array[3] == "1") {
+            var create = { name: "Reporte centrozonal", route: "/reportecentrozonal", icon: "list_alt" };
+            this.estructura.push(create);
+
+            if (array[4] == "1") {
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
+              this.estructura.push(create);
+            }
+            else if (array[4] == "0") {
+              
+            }
+
+          }
+          else if (array[3] == "0") {
+            
+
+            if (array[4] == "1") {
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
+              this.estructura.push(create);
+            }
+            else if (array[4] == "0") {
+              
+            }
+          }
+
+        }
+
+      }
+      else if (array[1] == "0") {
+
+        if (array[2] == "1") {
+          var create = { name: "Ver Centroz Zonales", route: "/centrozonal", icon: "public" };
+      this.estructura.push(create);
+
+          if (array[3] == "1") {
+            var create = { name: "Reporte centrozonal", route: "/reportecentrozonal", icon: "list_alt" };
+            this.estructura.push(create);
+
+            if (array[4] == "1") {
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
+              this.estructura.push(create);
+            }
+            else if (array[4] == "0") {
+             
+            }
+
+          }
+          else if (array[3] == "0") {
+           
+
+            if (array[4] == "1") {
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
+              this.estructura.push(create);
+            }
+            else if (array[4] == "0") {
+              
+            }
+
+          }
+
+        }
+        else if (array[2] == "0") {
+
+          if (array[3] == "1") {
+            var create = { name: "Reporte centrozonal", route: "/reportecentrozonal", icon: "list_alt" };
+            this.estructura.push(create);
+
+            if (array[4] == "1") {
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
+              this.estructura.push(create);
+            }
+            else if (array[4] == "0") {
+            }
+
+          }
+          else if (array[3] == "0") {
+            
+
+            if (array[4] == "1") {
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
+              this.estructura.push(create);
+            }
+            else if (array[4] == "0") {
+            }
+          }
+
+        }
+
+
+      }
+
+    }
+//------------------------------------------------------------
+
+  }
 
   /* 
   //---2 carga
