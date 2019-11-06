@@ -171,6 +171,11 @@ import { TrasladoComponent } from './page/traslado/traslado.component';
 import { TrasladocComponent } from './page/trasladoc/trasladoc.component';
 import { RecuentoinventarioComponent } from './page/recuentoinventario/recuentoinventario.component';
 import { RecuentoinventariocComponent } from './page/recuentoinventarioc/recuentoinventarioc.component';
+import { ReporterecepcionComponent } from './page/reporterecepcion/reporterecepcion.component';
+import { ReportedevolucionesComponent } from './page/reportedevoluciones/reportedevoluciones.component';
+import { ReportesalidacentrodComponent } from './page/reportesalidacentrod/reportesalidacentrod.component';
+import { ReportesalidabeneficiarioComponent } from './page/reportesalidabeneficiario/reportesalidabeneficiario.component';
+import { ReportesalidaconsumoiComponent } from './page/reportesalidaconsumoi/reportesalidaconsumoi.component';
 
 
 @NgModule({
@@ -321,6 +326,11 @@ import { RecuentoinventariocComponent } from './page/recuentoinventarioc/recuent
     TrasladocComponent,
     RecuentoinventarioComponent,
     RecuentoinventariocComponent,
+    ReporterecepcionComponent,
+    ReportedevolucionesComponent,
+    ReportesalidacentrodComponent,
+    ReportesalidabeneficiarioComponent,
+    ReportesalidaconsumoiComponent,
     
 
     

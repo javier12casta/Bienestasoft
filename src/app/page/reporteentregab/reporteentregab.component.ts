@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../../servicio.service';
 import { Entrega } from '../../interfaces/entrega';
-import * as jspdf from 'jspdf'; 
-import html2canvas from 'html2canvas';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reporteentregab',
@@ -11,7 +11,9 @@ import html2canvas from 'html2canvas';
 })
 export class ReporteentregabComponent implements OnInit {
   ent: Entrega [] = [];
-  constructor(private service: ServicioService) {
+  salida = '';
+  constructor(private activeRoute: ActivatedRoute,
+    private service: ServicioService, private router:Router) {
 
     this.service.ObtenerEntrega()
     .subscribe(res => {
@@ -20,31 +22,35 @@ export class ReporteentregabComponent implements OnInit {
       console.log(err);
     });
 
-
    }
 
   ngOnInit() {
   }
 
-  Generareporte(){
+  validar(){
 
-    var data = document.getElementById('contentToConvert');
-    html2canvas(data).then(canvas => {
-    // Few necessary setting options
-    var imgWidth = 208;
-    var pageHeight = 295;
-    var imgHeight = canvas.height * imgWidth / canvas.width;
-    var heightLeft = imgHeight;
-    
-    const contentDataURL = canvas.toDataURL('image/png')
-    let pdf = new jspdf('p', 'mm', 'a4'); // A4 size page of PDF
-    var position = 0;
-    pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
-    pdf.save('reporteentrega.pdf'); // Generated PDF
-    });
-       
+    if(this.salida == 'Reporte para centro de distribución'){
+
+      this.router.navigate(['/reportentregacentrodistribucion']);
     
     }
+
+    if(this.salida == 'Reporte para beneficiario ICBF'){
+
+     
+      this.router.navigate(['/reporteentregabeneficiario']);
+    
+    }
+
+    if(this.salida == 'Reporte para consumo interno'){
+
+      this.router.navigate(['/reporteentregaconsumo']);
+    }
+
+  }
+
+
+ 
 
 
 }
