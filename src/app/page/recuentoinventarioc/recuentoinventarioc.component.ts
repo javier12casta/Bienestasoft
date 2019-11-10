@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Translado } from 'src/app/interfaces/traslado';
+import { Recuentoinventario } from 'src/app/interfaces/recuentoinventario';
 import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -11,13 +11,13 @@ import { Centrodistribucion } from '../../interfaces/centrodistribucion';
 import { Almacen } from '../../interfaces/almacen';
 
 @Component({
-  selector: 'app-trasladoc',
-  templateUrl: './trasladoc.component.html',
-  styleUrls: ['./trasladoc.component.css']
+  selector: 'app-recuentoinventarioc',
+  templateUrl: './recuentoinventarioc.component.html',
+  styleUrls: ['./recuentoinventarioc.component.css']
 })
-export class TrasladocComponent implements OnInit {
+export class RecuentoinventariocComponent implements OnInit {
 
-  translado: Translado[] = [];
+  recuento:Recuentoinventario[] = [];
  
   public tip: TipoBienestarina[] = [];
   public cen: Centrodistribucion[] = [];
@@ -27,21 +27,18 @@ export class TrasladocComponent implements OnInit {
     private Service: ServicioService, private router:Router) { }
 
 
-    sal: Translado = {
+    sal: Recuentoinventario = {
 
-   
-      lote  : '',
-      fechavencimiento  : 0,
-      unidad  : '',
-      fecharegistro  : 0,
-      idTipoBienesterina  : 0,
-      idCentroDistribucion  : 0,
-      idAlmacenesOrigen  : 0,
-      idAlmacenesDestino  : 0,
-      
-    
-    };
-
+      lote : '',
+      FechaVencimiento : 0,
+      unidadmedida1  : '',
+      cantidad: 0,
+      cantidadcontada: 0,
+      unidadmedida2  : '',
+      idTipoBienesterina: 0,
+      idAlmacenes: 0,
+      idCentroDistribucion: 0,
+    } 
   ngOnInit() {
 
     this.Service.getTipobienestarina()
@@ -68,11 +65,13 @@ export class TrasladocComponent implements OnInit {
       }
       );
 
+      
   }
+
   onClickMe(){
 
     
-    this.Service.postraslados(this.sal).subscribe(res => {
+    this.Service.postrecuento(this.sal).subscribe(res => {
       console.log(this.sal);
       this.showMenssage();
       
@@ -89,13 +88,13 @@ export class TrasladocComponent implements OnInit {
   showMenssage(){
     Swal.fire({
       title: 'Creado!',
-      text: 'traslado Creado',
+      text: 'Recuento Creado',
       type: 'success',
       confirmButtonText: 'Aceptar'
     }).then((result) => {
       if (result.value) {
         
-        this.router.navigate(['/traslado']);
+        this.router.navigate(['/recuentoinventario']);
     
       }
     });

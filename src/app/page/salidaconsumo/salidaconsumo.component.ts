@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Salidaconsumo} from '../../interfaces/salidaconsumo';
+import { ServicioService } from '../../servicio.service';
 
 @Component({
   selector: 'app-salidaconsumo',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SalidaconsumoComponent implements OnInit {
 
-  constructor() { }
+  centroC: Salidaconsumo[] = [];
+
+  constructor(private Service: ServicioService) { }
 
   ngOnInit() {
+
+    this.Service.getsalidaconsumo()
+    .subscribe( (data) => {
+      this.centroC = data;
+      console.log(data);
+      console.log('funciona');
+    }
+    );
   }
 
 }

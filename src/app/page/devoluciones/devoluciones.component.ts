@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Devoluciones} from '../../interfaces/devoluciones';
+import { ServicioService } from '../../servicio.service';
 
 @Component({
   selector: 'app-devoluciones',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DevolucionesComponent implements OnInit {
 
-  constructor() { }
+  devolucion: Devoluciones[] = [];
+
+  constructor(private Service: ServicioService) { }
 
   ngOnInit() {
+
+    this.Service.getdevoluciones()
+    .subscribe( (data) => {
+      this.devolucion = data;
+      console.log(data);
+      console.log('funciona');
+    }
+    );
   }
 
 }

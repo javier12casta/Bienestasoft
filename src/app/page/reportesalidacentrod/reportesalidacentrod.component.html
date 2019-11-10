@@ -1,9 +1,8 @@
 <nav class="navbar navbar-success bg-success">
     <button class="btn btn-dark" routerLink="/menu">Volver</button>
-    <button class="btn btn-dark" routerLink="/salidacentroc"> Crear </button>
   </nav>
 
-  <table class="table" >
+  <table class="table" id="contentToConvert">
     <thead class="thead-green">
       <tr>
         <th scope="col">#</th>
@@ -33,5 +32,7 @@
 
       </tr>
     </tbody>
-  </table>  
- 
+  </table>
+  <div class="trans">
+    <button class="btn btn-dark" (click)="Generareporte()">Generar Reporte</button>
+  </div>

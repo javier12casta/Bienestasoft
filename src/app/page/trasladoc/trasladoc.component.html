@@ -25,7 +25,7 @@
           <span >Centro de distribucion de origen</span>
           <h2></h2>
 
-          <select name="idcentrodistribucion" class="select-css" style="width: 100%;" [(ngModel)]="sal.idCentroDistribucionOrigen"
+          <select name="idcentrodistribucion" class="select-css" style="width: 100%;" [(ngModel)]="sal.idCentroDistribucion"
           options="options" placeholder="almacen">
           <option *ngFor="let ud of cen" [value]="ud.idCentroDistribucion">{{ud.Nombre }} </option>
         </select>
@@ -35,7 +35,7 @@
         <span >Almacen de origen</span>
         <h2></h2>
 
-        <select name="idalmacen" class="select-css" style="width: 100%;" [(ngModel)]="sal.idAlmacen"
+        <select name="idalmacen" class="select-css" style="width: 100%;" [(ngModel)]="sal.idAlmacenesOrigen "
         options="options" placeholder="almacen">
         <option *ngFor="let ud of alm" [value]="ud.idAlmacenes">{{ud.Nombre }} </option>
       </select>
@@ -45,7 +45,7 @@
       <span >lote</span>
       <h2></h2>
       <input type="text" class="form-control" [(ngModel)]="sal.lote" name="cane"
-      placeholder="Cantidad Entregada" class="form-control" id="inputen" required>
+      placeholder="Lote" class="form-control" id="inputen" required>
   
   <h2></h2>
 
@@ -57,12 +57,7 @@
             <h2></h2>
 
 
-            <span >Cantidad</span>
-            <h2></h2>
-            <input type="number" class="form-control" [(ngModel)]="sal.cantidad" name="cane"
-            placeholder="Cantidad Entregada" class="form-control" id="inputen" required>
-        
-        <h2></h2>
+          
 
         <span >Unidad de medida</span>
         <h2></h2>
@@ -77,7 +72,7 @@
       <span >Almacen de destino</span>
           <h2></h2>
 
-          <select name="idcentrodistribucion" class="select-css" style="width: 100%;" [(ngModel)]="sal.idCentroDistribucionDestino"
+          <select name="idcentrodistribucion" class="select-css" style="width: 100%;" [(ngModel)]="sal.idAlmacenesDestino"
           options="options" placeholder="almacen">
           <option *ngFor="let ud of cen" [value]="ud.idCentroDistribucion">{{ud.Nombre }} </option>
         </select>
@@ -90,12 +85,10 @@
    
     <h2></h2>
 
-                       <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
+      <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
                         
                  <h2></h2>
                  
-
-
          </div>
 
         </form>

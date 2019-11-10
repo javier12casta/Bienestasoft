@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Salidacentro } from 'src/app/interfaces/salidacentro';
+import { Devoluciones } from 'src/app/interfaces/devoluciones';
 import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 import { Select2OptionData } from 'ng2-select2';
@@ -17,7 +17,7 @@ import { Almacen } from '../../interfaces/almacen';
 })
 export class DevolucionescComponent implements OnInit {
 
-  salidacentro: Salidacentro[] = [];
+  devolucion: Devoluciones[] = [];
  
   public tip: TipoBienestarina[] = [];
   public cen: Centrodistribucion[] = [];
@@ -27,17 +27,15 @@ export class DevolucionescComponent implements OnInit {
   constructor(private activeRoute: ActivatedRoute,
     private Service: ServicioService, private router:Router) { }
 
-    sal: Salidacentro = {
+    sal: Devoluciones = {
 
-      identregacentrodistribucion: 0,
       lote  : '',
       fechavencimiento  : 0,
-      cantidad  : 0,
       unidad  : '',
       fecharegistro  : 0,
       idCentroDistribucionOrigen  : 0,
       idCentroDistribucionDestino  : 0,
-      idAlmacen  : 0,
+      idAlmacenes  : 0,
       idTipoBienesterina  : 0,
     
     };
@@ -45,6 +43,61 @@ export class DevolucionescComponent implements OnInit {
 
 
   ngOnInit() {
+
+    this.Service.getTipobienestarina()
+    .subscribe(async (data) => {
+      this.tip = data;
+      console.log(data);
+      console.log('funciona');
+    }
+    );
+
+    this.Service.getcentrodistribucion()
+      .subscribe(async (data) => {
+        this.cen = data;
+        console.log(data);
+        console.log('funciona');
+      }
+      );
+
+      this.Service.getalmacen()
+      .subscribe(async (data) => {
+        this.alm = data;
+        console.log(data);
+        console.log('funciona');
+      }
+      );
+
   }
+
+  onClickMe(){
+
+    this.Service.postdevoluciones(this.sal).subscribe(res => {
+      console.log(this.sal);
+      this.showMenssage();
+      
+      },
+      err => {
+        console.log(err);
+      });
+     
+
+  }
+
+  showMenssage(){
+    Swal.fire({
+      title: 'Creado!',
+      text: 'Devolucion Creada',
+      type: 'success',
+      confirmButtonText: 'Aceptar'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/devoluciones']);
+    
+      }
+    });
+  }
+
 
 }

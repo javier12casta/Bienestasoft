@@ -11,7 +11,7 @@ export class InventarioComponent implements OnInit {
 
 
   lista = '';
-  listar:string[]=["Crear Inventario","Traslado entre almacenes"];
+  listar:string[]=["Crear Inventario","Traslado entre almacenes","Recuento de inventario"];
 
 
 
@@ -33,6 +33,12 @@ export class InventarioComponent implements OnInit {
     if(this.lista == 'Traslado entre almacenes'){
   
       this.router.navigate(['/traslado']);
+      
+    }
+
+    if(this.lista == 'Recuento de inventario'){
+  
+      this.router.navigate(['/recuentoinventario']);
       
     }
   

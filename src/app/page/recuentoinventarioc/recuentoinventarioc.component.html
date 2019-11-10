@@ -1,0 +1,110 @@
+<nav class="navbar navbar-success bg-success">
+    <button class="btn btn-dark" routerLink="/recuentoinventario">Volver</button>
+  </nav>
+  
+  <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+    <div class="card" padding>
+      <div class="card-body" padding>
+        <form>
+          <div class="form-group">
+  
+          
+            <h1>Recuento Inventario </h1>
+            <h2></h2>
+            
+            <span >lote</span>
+            <h2></h2>
+            <input type="text" class="form-control" [(ngModel)]="sal.lote" name="cane"
+            placeholder="Lote" class="form-control" id="inputen" required>
+        
+        <h2></h2>
+
+
+        <span >Fecha de vencimiento </span>
+        <h2></h2>
+    <input type="date" class="form-control" [(ngModel)]="sal.FechaVencimiento" name="fechai" placeholder="Fecha" min="2018-01-01" max="2050-12-31" class="form-control" required>
+   
+    <h2></h2>
+
+    
+    <span >Unidad de medida</span>
+    <h2></h2>
+
+    <select name="idalmacen" class="select-css" style="width: 100%;" [(ngModel)]="sal.unidadmedida1"
+    options="options" placeholder="almacen">
+    <option *ngFor="let ud of tip" [value]="ud.idTipoBienesterina">{{ud.UnidadSecundaria }} </option>
+  </select>
+
+  <h2></h2>
+
+  
+        
+  <span >Cantidad</span>
+  <h2></h2>
+  <input type="number" class="form-control" [(ngModel)]="sal.cantidad" name="cane"
+  placeholder="Cantidad" class="form-control" id="inputen" required>
+  
+
+<h2></h2>
+
+
+<span >Cantidad contada</span>
+<h2></h2>
+
+<input type="number" class="form-control" [(ngModel)]="sal.cantidadcontada" name="cane"
+  placeholder="Cantidad contada" class="form-control" id="inputen" required>
+
+<h2></h2>
+
+
+<span >Unidad de medida # 2</span>
+<h2></h2>
+
+<select name="idalmacen" class="select-css" style="width: 100%;" [(ngModel)]="sal.unidadmedida2"
+options="options" placeholder="almacen">
+<option *ngFor="let ud of tip" [value]="ud.idTipoBienesterina">{{ud.UnidadSecundaria }} </option>
+</select>
+
+<h2></h2>
+
+
+            <span >Referencia Bienestarina</span>
+            <h2></h2>
+
+            <select name="idreferencia" class="select-css" style="width: 100%;" [(ngModel)]="sal.idTipoBienesterina"
+            options="options" placeholder="referencia">
+            <option *ngFor="let ud of tip" [value]="ud.idTipoBienesterina ">{{ud.TipoBienesterina }} </option>
+          </select>
+
+          <h2></h2>
+
+          <span >Centro de distribucion </span>
+          <h2></h2>
+
+          <select name="idcentrodistribucion" class="select-css" style="width: 100%;" [(ngModel)]="sal.idCentroDistribucion"
+          options="options" placeholder="almacen">
+          <option *ngFor="let ud of cen" [value]="ud.idCentroDistribucion">{{ud.Nombre }} </option>
+        </select>
+
+        <h2></h2>
+
+        <span >Almacen </span>
+        <h2></h2>
+
+        <select name="idalmacen" class="select-css" style="width: 100%;" [(ngModel)]="sal.idAlmacenes"
+        options="options" placeholder="almacen">
+        <option *ngFor="let ud of alm" [value]="ud.idAlmacenes">{{ud.Nombre }} </option>
+      </select>
+
+      <h2></h2>
+
+      <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
+                        
+                 <h2></h2>
+                 
+         </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
