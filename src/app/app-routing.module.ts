@@ -160,6 +160,11 @@ import { ReportedevolucionesComponent} from './page/reportedevoluciones/reported
 import { ReportesalidacentrodComponent} from './page/reportesalidacentrod/reportesalidacentrod.component';
 import { ReportesalidaconsumoiComponent} from './page/reportesalidaconsumoi/reportesalidaconsumoi.component';
 import { ReportesalidabeneficiarioComponent} from './page/reportesalidabeneficiario/reportesalidabeneficiario.component';
+import { CentrozonalinComponent } from './page/centrozonalin/centrozonalin.component';
+import { PuntoentregainComponent } from './page/puntoentregain/puntoentregain.component';
+import { UdsinComponent } from './page/udsin/udsin.component';
+import { RolinComponent } from './page/rolin/rolin.component';
+import { RolinhComponent } from './page/rolinh/rolinh.component';
 
 const routes: Routes = [
   {path:'', component: LoginComponent},
@@ -172,6 +177,7 @@ const routes: Routes = [
   {path:'beneficiarios', component:BeneficiariosComponent},
   {path:'beneficiariosm', component:BeneficiariosmComponent},
   {path:'centrozonal', component:CentrozonalComponent},
+  {path:'centrozonalin', component:CentrozonalinComponent},
   {path:'centrozonali', component:CentrozonaliComponent},
   {path:'centrozonalm/:id', component:CentrozonalmComponent},
   {path:'centrozonalinh/:id', component:CentrozonalinhComponent},
@@ -191,6 +197,7 @@ const routes: Routes = [
   {path:'municipioli/:id', component:MunicipioliComponent},
   {path:'menu', component:MenuComponent},
   {path:'puntoentrega', component: PuntoentregaComponent},
+  {path:'puntoentregain', component: PuntoentregainComponent},
   {path:'puntoentregai', component: PuntoentregaiComponent},
   {path:'puntoentregam/:id', component: PuntoentregamComponent},
   {path:'puntoentregainh/:id', component: PuntoentregainhComponent},
@@ -199,10 +206,13 @@ const routes: Routes = [
   {path:'regionali/:id', component: RegionaliComponent},
   {path:'reportes', component:ReportesComponent},
   {path:'rol', component: RolComponent},
+  {path:'rolin', component: RolinComponent},
+  {path:'rolinh', component: RolinhComponent},
   {path:'rol/:id', component: RolComponent},
   {path:'roli', component: RoliComponent},
   {path:'roli/:id', component: RolComponent},
   {path:'uds', component: UdsComponent},
+  {path:'udsin', component: UdsinComponent},
   {path:'udsi', component: UdsiComponent},
   {path:'udsm/:id', component: UdsmComponent},
   {path:'udsinh/:id', component: UdsinhComponent},

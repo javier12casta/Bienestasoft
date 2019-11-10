@@ -1,0 +1,41 @@
+<nav class="navbar navbar-success bg-success">
+    <button class="btn btn-dark" routerLink="/menu">Volver</button>
+  </nav>
+  
+  <table class="table">
+    <thead class="thead-green">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre Centro Zonal</th>
+        <th scope="col">Municipios</th>
+        <th scope="col">Comunas</th>
+        <th scope="col">Codigo Externo Jcz</th>
+        <th scope="col">Codigo Externo CZ</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Regional</th>
+        <th scope="col">Inhabilitar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cen of centros">
+        <th scope="row">{{cen.idCentrosZonales}}</th>
+        <td>{{cen.NombreCentroZonal}}</td>
+        <td>{{cen.idMunicipios}}</td>
+        <td>{{cen.Comuna}}</td>
+        <td>{{cen.CodigoExternoJcz}}</td>
+        <td>{{cen.CodigoExternoCZ}}</td>
+        <td>
+          <div *ngIf="cen.Estado == 1">
+            Habilitado
+          </div>
+          <div *ngIf="cen.Estado== 0">
+            Deshabilitado
+          </div>
+        </td>
+        <td>{{cen.idRegional}}</td>
+        <td>
+          <button class="btn btn-primary" [routerLink]="['/centrozonalinh', cen.idCentrosZonales]">Inhabilitar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

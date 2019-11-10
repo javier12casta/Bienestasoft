@@ -1,6 +1,5 @@
 <nav class="navbar navbar-success bg-success">
   <button class="btn btn-dark" routerLink="/menu"> Volver </button>
-  <button class="btn btn-dark" routerLink="/puntoentregai"> Crear </button>
 </nav>
 
 <table class="table">
@@ -18,7 +17,6 @@
       <th scope="col">Barrio PE</th>
       <th scope="col">Telefono</th>
       <th scope="col">Modificar</th>
-      <th scope="col">inhabilitar</th>
     </tr>
   </thead>
   <tbody>
@@ -44,10 +42,6 @@
       <td>
         <button class="btn btn-primary" [routerLink]="['/puntoentregam', pun.idPuntoEntrega]">Modificar</button>
       </td>
-      <td>
-        <button class="btn btn-primary" [routerLink]="['/puntoentregainh', pun.idPuntoEntrega]">Inhabilitar</button>
-      </td>
-
     </tr>
   </tbody>
 </table>

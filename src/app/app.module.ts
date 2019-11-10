@@ -176,6 +176,11 @@ import { ReportedevolucionesComponent } from './page/reportedevoluciones/reporte
 import { ReportesalidacentrodComponent } from './page/reportesalidacentrod/reportesalidacentrod.component';
 import { ReportesalidabeneficiarioComponent } from './page/reportesalidabeneficiario/reportesalidabeneficiario.component';
 import { ReportesalidaconsumoiComponent } from './page/reportesalidaconsumoi/reportesalidaconsumoi.component';
+import { CentrozonalinComponent } from './page/centrozonalin/centrozonalin.component';
+import { PuntoentregainComponent } from './page/puntoentregain/puntoentregain.component';
+import { UdsinComponent } from './page/udsin/udsin.component';
+import { RolinComponent } from './page/rolin/rolin.component';
+import { RolinhComponent } from './page/rolinh/rolinh.component';
 
 
 @NgModule({
@@ -331,6 +336,11 @@ import { ReportesalidaconsumoiComponent } from './page/reportesalidaconsumoi/rep
     ReportesalidacentrodComponent,
     ReportesalidabeneficiarioComponent,
     ReportesalidaconsumoiComponent,
+    CentrozonalinComponent,
+    PuntoentregainComponent,
+    UdsinComponent,
+    RolinComponent,
+    RolinhComponent,
     
 
     

@@ -1,6 +1,5 @@
 <nav class="navbar navbar-success bg-success">
   <button class="btn btn-dark" routerLink="/menu">Volver</button>
-  <button class="btn btn-dark" routerLink="/centrozonali"> Crear </button>
 </nav>
 
 <table class="table">
@@ -15,7 +14,6 @@
       <th scope="col">Estado</th>
       <th scope="col">Regional</th>
       <th scope="col">Modificar</th>
-      <th scope="col">Inhabilitar</th>
     </tr>
   </thead>
   <tbody>
@@ -37,9 +35,6 @@
       <td>{{cen.idRegional}}</td>
       <td>
         <button class="btn btn-primary" [routerLink]="['/centrozonalm', cen.idCentrosZonales]">Modificar</button>
-      </td>
-      <td>
-        <button class="btn btn-primary" [routerLink]="['/centrozonalinh', cen.idCentrosZonales]">Inhabilitar</button>
       </td>
     </tr>
   </tbody>

@@ -17,7 +17,8 @@
           <th scope="col"># centro zonal</th>
           <th scope="col">Localidad, Municipio, Vereda</th>
           <th scope="col">Barrio</th>
-         <th scope="col">Modificar</th>
+          <th scope="col">Inhabilitar</th>
+         
         </tr>
       </thead>
       <tbody>
@@ -34,9 +35,6 @@
           <td>{{uni.idCentrosZonales}}</td>
           <td>{{uni.Comuna}}</td>
           <td>{{uni.Barrio}}</td>
-          <td>
-            <button class="btn btn-primary" [routerLink]="['/udsm', uni.idUDS]">Modificar</button>
-          </td>
           <td>
             <button class="btn btn-primary" [routerLink]="['/inhabilitaruds', uni.idUDS]">Inhabilitar</button>
           </td>

@@ -53,68 +53,7 @@ export class MenuComponent implements OnInit {
     perCentrosD: '',
   };
 
-  // fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
-
-  entrega = [
-    { name: "Entrega", route: "/entregasel", icon: "list_alt" },
-    { name: "Reporte Entrega", route: "/reportentregab", icon: "list_alt" },
-    { name: "Inventario", route: "/inventario", icon: "store" },
-    { name: "Reporte Inventario", route: "/reporteinventario", icon: "store" },
-    { name: "Recepcion", route: "/recepcion", icon: "list_alt" },
-    { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "list_alt" },
-    { name: "devoluciones", route: "/devoluciones", icon: "list_alt" },
-    { name: "Reporte devoluciones", route: "/reportedevolucion", icon: "list_alt" },
-  ];
-  beneficiarios = [
-
-    { name: "acudientes", route: "/acudientes", icon: "face" },
-    { name: "Crear beneficiarios ICBF", route: "/beneficiarios", icon: "face" },
-    { name: "Modificar beneficiarios ICBF ", route: "/ModificarBeneficiario", icon: "face" },
-    { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" },
-    { name: "Reporte beneficiarios ICBF", route: "/reportebeneficiario", icon: "face" },
-  ];
-
-  rol = [
-
-    { name: "rol", route: "/rol", icon: "face" },
-    { name: "Modificar rol", route: "/roli", icon: "face" },
-    { name: "Reporte Rol", route: "/reporterol", icon: "face" },
-  ];
-
-  Usuarios = [
-
-    { name: "Crear usuarios", route: "/usuarios", icon: "face" },
-    { name: "Modificar Usuarios", route: "/modificarusuarios", icon: "face" },
-    { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" },
-    { name: "Reporte Usuarios", route: "/reporteusuarios", icon: "face" },
-
-  ];
-
-  datos = [
-
-    { name: "Crear Datos Maestros", route: "/listamaestros", icon: "face" },
-    { name: "Modificar Datos Maestros", route: "/modificarlistamaestro", icon: "face" },
-    { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" },
-    { name: "Reporte Datos Maestros", route: "/reportes", icon: "face" },
-  ];
-
-
-  centrod = [
-
-
-    { name: "Crear Centro Distribucion", route: "/centrodistribucion", icon: "face" },
-    { name: "Modificar Centro Distribucion", route: "/modificarcentrod", icon: "face" },
-    { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" },
-    { name: "Reporte Centro Distribucion", route: "/reportecentrodistribucion", icon: "face" },
-  ];
-
-  almacen = [
-    { name: "Crear Almacen", route: "/almacen", icon: "face" },
-    { name: "Modificar Almacen", route: "/modificaralmacen", icon: "face" },
-    { name: "Inhabilitar Almacen", route: "/inhabilitaralmacen", icon: "face" },
-    { name: "Reporte Almacen", route: "/reportealmacen", icon: "face" },
-  ];
-
+  //------------------------------------Menu----------------------------------------------------------
 
   fillerContent = Array.from({ length: 50 }, () => '');
 
@@ -134,7 +73,7 @@ export class MenuComponent implements OnInit {
   }
 
   shouldRun = true;
-  //-----------------------------------------------------------------------------------------------
+  //--------------------------------------Traer Datos locale storage---------------------------------------------------------
   estado = 0;
   obtenerStorage() {
     this.user = JSON.parse(localStorage.getItem("persona"));
@@ -142,7 +81,7 @@ export class MenuComponent implements OnInit {
     this.estado = 1;
   }
 
-
+//------------------------------ Traer datos API y cargar permisos pra el menu ----------------------------------------------------
   ngOnInit() {
     this.obtenerStorage();
     if (this.estado == 1) {
@@ -150,35 +89,23 @@ export class MenuComponent implements OnInit {
         this.permisos = Object(res);
         console.log('Permiso get', this.permisos);
         this.cargarpermiso();
-        // this.cargarpermiso2();
-        // this.cargarpermiso3();
-        // this.cargarpermiso4();
-        // this.cargarpermiso5();
-        // this.cargarpermiso6();
-        // this.cargarpermiso7();
-        // this.cargarpermiso8();
-        // this.cargarpermiso9();
-        // this.cargarpermiso10();
-        // this.cargarpermiso11();
+        this.cargarpermiso2();
+        this.cargarpermiso3();
+        this.cargarpermiso4();
+        this.cargarpermiso5();
+        this.cargarpermiso6();
+        this.cargarpermiso7();
+        this.cargarpermiso8();
+        this.cargarpermiso9();
+        this.cargarpermiso10();
+        this.cargarpermiso11();
       }, err => {
         console.log(err)
       });
     }
   }
-
-  estructura1 = [
-    
-    { name: "puntoentrega", route: "/puntoentrega", icon: "public" },
-    { name: "uds", route: "/uds", icon: "public" },
-    { name: "Reporte centrozonal", route: "/reportecentrozonal", icon: "public" },
-    { name: "Reporte Punto Entrega", route: "/reportepuntoentrega", icon: "face" },
-    { name: "Reporte Unidad de servicio", route: "/reporteuds", icon: "face" },
-
-  ];
-
-  estructura = [
-
-  ];
+  //-------------------------------------------------------------------------------------------------------
+  estructura = [];
 
   cargarpermiso() {
     var centrostr = this.permisos.perCentros;
@@ -187,64 +114,61 @@ export class MenuComponent implements OnInit {
       var create = { name: "Crear Centro Zonal", route: "/centrozonali", icon: "public" };
       this.estructura.push(create);
       if (array[1] == "1") {
-        var create = { name: "Actualizar Centro Zonal", route: "/centrozonalmv", icon: "public" };
-      this.estructura.push(create);
+        var create = { name: "Actualizar Centro Zonal", route: "/centrozonal", icon: "public" };
+        this.estructura.push(create);
 
         if (array[2] == "1") {
-          var create = { name: "Ver Centroz Zonales", route: "/centrozonal", icon: "public" };
-      this.estructura.push(create);
-
           if (array[3] == "1") {
             var create = { name: "Reporte centrozonal", route: "/reportecentrozonal", icon: "public" };
-      this.estructura.push(create);
+            this.estructura.push(create);
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
-      this.estructura.push(create);
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
+              this.estructura.push(create);
             }
             else if (array[4] == "0") {
-              
+
             }
 
           }
           else if (array[3] == "0") {
-            
+
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
-      this.estructura.push(create);
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
+              this.estructura.push(create);
             }
             else if (array[4] == "0") {
-              
+
             }
           }
 
         }
         else if (array[2] == "0") {
-         
+
 
           if (array[3] == "1") {
             var create = { name: "Reporte centrozonal", route: "/reportecentrozonal", icon: "public" };
             this.estructura.push(create);
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
-              
+
             }
 
           }
           else if (array[3] == "0") {
-            
+
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
-              
+
             }
           }
 
@@ -254,31 +178,28 @@ export class MenuComponent implements OnInit {
       else if (array[1] == "0") {
 
         if (array[2] == "1") {
-          var create = { name: "Ver Centroz Zonales", route: "/centrozonal", icon: "public" };
-      this.estructura.push(create);
-
           if (array[3] == "1") {
             var create = { name: "Reporte centrozonal", route: "/reportecentrozonal", icon: "public" };
             this.estructura.push(create);
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
-             
+
             }
 
           }
           else if (array[3] == "0") {
-           
+
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
-              
+
             }
 
           }
@@ -291,7 +212,7 @@ export class MenuComponent implements OnInit {
             this.estructura.push(create);
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -299,10 +220,10 @@ export class MenuComponent implements OnInit {
 
           }
           else if (array[3] == "0") {
-            
+
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -313,68 +234,65 @@ export class MenuComponent implements OnInit {
 
 
       }
-      
-    }else if(array[0] == "0"){
+
+    } else if (array[0] == "0") {
 
       if (array[1] == "1") {
-        var create = { name: "Actualizar Centro Zonal", route: "/centrozonalmv", icon: "public" };
-      this.estructura.push(create);
+        var create = { name: "Actualizar Centro Zonal", route: "/centrozonal", icon: "public" };
+        this.estructura.push(create);
 
         if (array[2] == "1") {
-          var create = { name: "Ver Centroz Zonales", route: "/centrozonal", icon: "public" };
-      this.estructura.push(create);
-
           if (array[3] == "1") {
             var create = { name: "Reporte centrozonal", route: "/reportecentrozonal", icon: "list_alt" };
-      this.estructura.push(create);
+            this.estructura.push(create);
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
-      this.estructura.push(create);
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
+              this.estructura.push(create);
             }
             else if (array[4] == "0") {
-              
+
             }
 
           }
           else if (array[3] == "0") {
-            
+
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
-      this.estructura.push(create);
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
+              this.estructura.push(create);
             }
             else if (array[4] == "0") {
-              
+
             }
           }
 
         }
         else if (array[2] == "0") {
-         
+
 
           if (array[3] == "1") {
             var create = { name: "Reporte centrozonal", route: "/reportecentrozonal", icon: "list_alt" };
             this.estructura.push(create);
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
-              
+
             }
 
           }
           else if (array[3] == "0") {
-            
+
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
-              
+
             }
           }
 
@@ -384,31 +302,28 @@ export class MenuComponent implements OnInit {
       else if (array[1] == "0") {
 
         if (array[2] == "1") {
-          var create = { name: "Ver Centroz Zonales", route: "/centrozonal", icon: "public" };
-      this.estructura.push(create);
-
           if (array[3] == "1") {
             var create = { name: "Reporte centrozonal", route: "/reportecentrozonal", icon: "list_alt" };
             this.estructura.push(create);
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
-             
+
             }
 
           }
           else if (array[3] == "0") {
-           
+
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
-              
+
             }
 
           }
@@ -421,7 +336,7 @@ export class MenuComponent implements OnInit {
             this.estructura.push(create);
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -429,10 +344,10 @@ export class MenuComponent implements OnInit {
 
           }
           else if (array[3] == "0") {
-            
+
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalinhv", icon: "public" };
+              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -445,11 +360,10 @@ export class MenuComponent implements OnInit {
       }
 
     }
-//------------------------------------------------------------
+    //------------------------------------------------------------
 
   }
 
-  /* 
   //---2 carga
   cargarpermiso2() {
     var centrostr = this.permisos.perPuntoen;
@@ -457,59 +371,68 @@ export class MenuComponent implements OnInit {
     //console.log('carga', array);
 
     if (array[0] == "1") {
-      this.filter6 = 1;
-
+      var create = { name: "Crear Punto Entrega", route: "/puntoentregai", icon: "public" };
+      this.estructura.push(create);
       if (array[1] == "1") {
-        this.filter7 = 1;
-
+        var create = { name: "Modificar Punto Entrega", route: "/puntoentrega", icon: "public" };
+        this.estructura.push(create);
         if (array[2] == "1") {
-          this.filter8 = 1;
-
           if (array[3] == "1") {
-            this.filter9 = 1;
 
+            var create = { name: "Reporte Punto Entrega", route: "/reportepuntoentrega", icon: "face" };
+            this.estructura.push(create);
             if (array[4] == "1") {
-              this.filter10 = 1;
+              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              this.estructura.push(create);
             }
             else if (array[4] == "0") {
-              this.filter10 = 0;
+
             }
 
           }
           else if (array[3] == "0") {
-            this.filter9 = 0;
+
 
             if (array[4] == "1") {
-              this.filter10 = 1;
+              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              this.estructura.push(create);
+
             }
             else if (array[4] == "0") {
-              this.filter10 = 0;
+
             }
           }
 
         }
         else if (array[2] == "0") {
-          this.filter8 = 0;
+
 
           if (array[3] == "1") {
-            this.filter9 = 1;
+
+
+            var create = { name: "Reporte Punto Entrega", route: "/reportepuntoentrega", icon: "face" };
+            this.estructura.push(create);
 
             if (array[4] == "1") {
-              this.filter10 = 1;
+              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              this.estructura.push(create);
+
             }
             else if (array[4] == "0") {
-              this.filter10 = 0;
+
             }
 
           }
           else if (array[3] == "0") {
-            this.filter9 = 0;
+
 
             if (array[4] == "1") {
-              this.filter10 = 1;
+              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              this.estructura.push(create);
+
             }
             else if (array[4] == "0") {
-              this.filter10 = 0;
+
             }
           }
 
@@ -517,57 +440,71 @@ export class MenuComponent implements OnInit {
 
       }
       else if (array[1] == "0") {
-        this.filter7 = 0;
+
 
         if (array[2] == "1") {
-          this.filter8 = 1;
+
 
           if (array[3] == "1") {
-            this.filter9 = 1;
+
+
+            var create = { name: "Reporte Punto Entrega", route: "/reportepuntoentrega", icon: "face" };
+            this.estructura.push(create);
 
             if (array[4] == "1") {
-              this.filter10 = 1;
+              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              this.estructura.push(create);
+
             }
             else if (array[4] == "0") {
-              this.filter10 = 0;
+
             }
 
           }
           else if (array[3] == "0") {
-            this.filter9 = 0;
+
 
             if (array[4] == "1") {
-              this.filter10 = 1;
+              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              this.estructura.push(create);
+
             }
             else if (array[4] == "0") {
-              this.filter10 = 0;
+
             }
 
           }
 
         }
         else if (array[2] == "0") {
-          this.filter8 = 0;
+
 
           if (array[3] == "1") {
-            this.filter9 = 1;
+
+
+            var create = { name: "Reporte Punto Entrega", route: "/reportepuntoentrega", icon: "face" };
+            this.estructura.push(create);
 
             if (array[4] == "1") {
-              this.filter10 = 1;
+              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              this.estructura.push(create);
+
             }
             else if (array[4] == "0") {
-              this.filter10 = 0;
+
             }
 
           }
           else if (array[3] == "0") {
-            this.filter9 = 0;
+
 
             if (array[4] == "1") {
-              this.filter10 = 1;
+              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              this.estructura.push(create);
+
             }
             else if (array[4] == "0") {
-              this.filter10 = 0;
+
             }
           }
 
@@ -578,55 +515,71 @@ export class MenuComponent implements OnInit {
 
     }
     else if (array[0] == "0") {
-      this.filter6 = 0;
+
       if (array[1] == "1") {
-        this.filter7 = 1;
+        var create = { name: "Modificar Punto Entrega", route: "/puntoentrega", icon: "public" };
+        this.estructura.push(create);
+
         if (array[2] == "1") {
-          this.filter8 = 1;
+
 
           if (array[3] == "1") {
-            this.filter9 = 1;
+
+
+            var create = { name: "Reporte Punto Entrega", route: "/reportepuntoentrega", icon: "face" };
+            this.estructura.push(create);
             if (array[4] == "1") {
-              this.filter10 = 1;
+              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              this.estructura.push(create);
+
             }
             else if (array[4] == "0") {
-              this.filter10 = 0;
+
             }
           }
           else if (array[3] == "0") {
-            this.filter9 = 0;
+
 
             if (array[4] == "1") {
-              this.filter10 = 1;
+              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              this.estructura.push(create);
+
             }
             else if (array[4] == "0") {
-              this.filter10 = 0;
+
             }
           }
 
         }
         else if (array[2] == "0") {
-          this.filter8 = 0;
+
 
           if (array[3] == "1") {
-            this.filter9 = 1;
+
+
+            var create = { name: "Reporte Punto Entrega", route: "/reportepuntoentrega", icon: "face" };
+            this.estructura.push(create);
 
             if (array[4] == "1") {
-              this.filter10 = 1;
+              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              this.estructura.push(create);
+
             }
             else if (array[4] == "0") {
-              this.filter10 = 0;
+
             }
 
           }
           else if (array[3] == "0") {
-            this.filter9 = 0;
+
 
             if (array[4] == "1") {
-              this.filter10 = 1;
+              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              this.estructura.push(create);
+
             }
             else if (array[4] == "0") {
-              this.filter10 = 0;
+
             }
           }
 
@@ -634,56 +587,70 @@ export class MenuComponent implements OnInit {
 
       }
       else if (array[1] == "0") {
-        this.filter7 = 0;
+
 
         if (array[2] == "1") {
-          this.filter8 = 1;
+
 
           if (array[3] == "1") {
-            this.filter9 = 1;
+
+
+            var create = { name: "Reporte Punto Entrega", route: "/reportepuntoentrega", icon: "face" };
+            this.estructura.push(create);
 
             if (array[4] == "1") {
-              this.filter10 = 1;
+              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              this.estructura.push(create);
+
             }
             else if (array[4] == "0") {
-              this.filter10 = 0;
+
             }
 
           }
           else if (array[3] == "0") {
-            this.filter9 = 0;
+
 
             if (array[4] == "1") {
-              this.filter10 = 1;
+              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              this.estructura.push(create);
+
             }
             else if (array[4] == "0") {
-              this.filter10 = 0;
+
             }
           }
 
         }
         else if (array[2] == "0") {
-          this.filter8 = 0;
+
 
           if (array[3] == "1") {
-            this.filter9 = 1;
+
+
+            var create = { name: "Reporte Punto Entrega", route: "/reportepuntoentrega", icon: "face" };
+            this.estructura.push(create);
 
             if (array[4] == "1") {
-              this.filter10 = 1;
+              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              this.estructura.push(create);
+
             }
             else if (array[4] == "0") {
-              this.filter10 = 0;
+
             }
 
           }
           else if (array[3] == "0") {
-            this.filter9 = 0;
+
 
             if (array[4] == "1") {
-              this.filter10 = 1;
+              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              this.estructura.push(create);
+
             }
             else if (array[4] == "0") {
-              this.filter10 = 0;
+
             }
           }
 
@@ -694,6 +661,7 @@ export class MenuComponent implements OnInit {
     }
 
   }
+
   //cargar 3--------------
   cargarpermiso3() {
     var centrostr = this.permisos.perUDS;
@@ -701,59 +669,66 @@ export class MenuComponent implements OnInit {
     //console.log('carga', array);
 
     if (array[0] == "1") {
-      this.filter11 = 1;
+      var create = { name: "Crear UDS", route: "/udsi", icon: "public" };
+      this.estructura.push(create);
 
       if (array[1] == "1") {
-        this.filter12 = 1;
+        var create = { name: "Modificar UDS", route: "/uds", icon: "public" };
+        this.estructura.push(create);
 
         if (array[2] == "1") {
-          this.filter13 = 1;
+
 
           if (array[3] == "1") {
-            this.filter14 = 1;
-
+            var create = { name: "Reporte UDS", route: "/reporteuds", icon: "face" };
+              this.estructura.push(create);
             if (array[4] == "1") {
-              this.filter15 = 1;
+              var create = { name: "Inhabilitar UDS", route: "/udsin", icon: "public" };
+this.estructura.push(create);
             }
             else if (array[4] == "0") {
-              this.filter15 = 0;
+
             }
 
           }
           else if (array[3] == "0") {
-            this.filter14 = 0;
+
 
             if (array[4] == "1") {
-              this.filter15 = 1;
+              var create = { name: "Inhabilitar UDS", route: "/udsin", icon: "public" };
+this.estructura.push(create);
             }
             else if (array[4] == "0") {
-              this.filter15 = 0;
+
             }
           }
 
         }
         else if (array[2] == "0") {
-          this.filter13 = 0;
+
 
           if (array[3] == "1") {
-            this.filter14 = 1;
+            var create = { name: "Reporte UDS", route: "/reporteuds", icon: "face" };
+              this.estructura.push(create);
 
             if (array[4] == "1") {
-              this.filter15 = 1;
+              var create = { name: "Inhabilitar UDS", route: "/udsin", icon: "public" };
+this.estructura.push(create);
             }
             else if (array[4] == "0") {
-              this.filter15 = 0;
+
             }
 
           }
           else if (array[3] == "0") {
-            this.filter14 = 0;
+
 
             if (array[4] == "1") {
-              this.filter15 = 1;
+              var create = { name: "Inhabilitar UDS", route: "/udsin", icon: "public" };
+this.estructura.push(create);
             }
             else if (array[4] == "0") {
-              this.filter15 = 0;
+
             }
           }
 
@@ -761,57 +736,63 @@ export class MenuComponent implements OnInit {
 
       }
       else if (array[1] == "0") {
-        this.filter12 = 0;
+
 
         if (array[2] == "1") {
-          this.filter13 = 1;
+
 
           if (array[3] == "1") {
-            this.filter14 = 1;
+            var create = { name: "Reporte UDS", route: "/reporteuds", icon: "face" };
+              this.estructura.push(create);
 
             if (array[4] == "1") {
-              this.filter15 = 1;
+              var create = { name: "Inhabilitar UDS", route: "/udsin", icon: "public" };
+this.estructura.push(create);
             }
             else if (array[4] == "0") {
-              this.filter15 = 0;
+
             }
 
           }
           else if (array[3] == "0") {
-            this.filter14 = 0;
+
 
             if (array[4] == "1") {
-              this.filter15 = 1;
+              var create = { name: "Inhabilitar UDS", route: "/udsin", icon: "public" };
+this.estructura.push(create);
             }
             else if (array[4] == "0") {
-              this.filter15 = 0;
+
             }
 
           }
 
         }
         else if (array[2] == "0") {
-          this.filter13 = 0;
+
 
           if (array[3] == "1") {
-            this.filter14 = 1;
+            var create = { name: "Reporte UDS", route: "/reporteuds", icon: "face" };
+              this.estructura.push(create);
 
             if (array[4] == "1") {
-              this.filter15 = 1;
+              var create = { name: "Inhabilitar UDS", route: "/udsin", icon: "public" };
+this.estructura.push(create);
             }
             else if (array[4] == "0") {
-              this.filter15 = 0;
+
             }
 
           }
           else if (array[3] == "0") {
-            this.filter14 = 0;
+
 
             if (array[4] == "1") {
-              this.filter15 = 1;
+              var create = { name: "Inhabilitar UDS", route: "/udsin", icon: "public" };
+this.estructura.push(create);
             }
             else if (array[4] == "0") {
-              this.filter15 = 0;
+
             }
           }
 
@@ -822,55 +803,63 @@ export class MenuComponent implements OnInit {
 
     }
     else if (array[0] == "0") {
-      this.filter11 = 0;
-      if (array[1] == "1") {
-        this.filter12 = 1;
-        if (array[2] == "1") {
-          this.filter13 = 1;
 
+      if (array[1] == "1") {
+        var create = { name: "Modificar UDS", route: "/uds", icon: "public" };
+        this.estructura.push(create);
+
+        if (array[2] == "1") {
           if (array[3] == "1") {
-            this.filter14 = 1;
+            var create = { name: "Reporte UDS", route: "/reporteuds", icon: "face" };
+              this.estructura.push(create);
+
             if (array[4] == "1") {
-              this.filter15 = 1;
+              var create = { name: "Inhabilitar UDS", route: "/udsin", icon: "public" };
+this.estructura.push(create);
             }
             else if (array[4] == "0") {
-              this.filter15 = 0;
+
             }
           }
           else if (array[3] == "0") {
-            this.filter14 = 0;
+
 
             if (array[4] == "1") {
-              this.filter15 = 1;
+              var create = { name: "Inhabilitar UDS", route: "/udsin", icon: "public" };
+this.estructura.push(create);
             }
             else if (array[4] == "0") {
-              this.filter15 = 0;
+
             }
           }
 
         }
         else if (array[2] == "0") {
-          this.filter13 = 0;
+
 
           if (array[3] == "1") {
-            this.filter14 = 1;
+            var create = { name: "Reporte UDS", route: "/reporteuds", icon: "face" };
+              this.estructura.push(create);
+
 
             if (array[4] == "1") {
-              this.filter15 = 1;
+              var create = { name: "Inhabilitar UDS", route: "/udsin", icon: "public" };
+this.estructura.push(create);
             }
             else if (array[4] == "0") {
-              this.filter15 = 0;
+
             }
 
           }
           else if (array[3] == "0") {
-            this.filter14 = 0;
+
 
             if (array[4] == "1") {
-              this.filter15 = 1;
+              var create = { name: "Inhabilitar UDS", route: "/udsin", icon: "public" };
+this.estructura.push(create);
             }
             else if (array[4] == "0") {
-              this.filter15 = 0;
+
             }
           }
 
@@ -878,56 +867,63 @@ export class MenuComponent implements OnInit {
 
       }
       else if (array[1] == "0") {
-        this.filter12 = 0;
+
 
         if (array[2] == "1") {
-          this.filter13 = 1;
+
 
           if (array[3] == "1") {
-            this.filter14 = 1;
+            var create = { name: "Reporte UDS", route: "/reporteuds", icon: "face" };
+              this.estructura.push(create);
 
             if (array[4] == "1") {
-              this.filter15 = 1;
+              var create = { name: "Inhabilitar UDS", route: "/udsin", icon: "public" };
+this.estructura.push(create);
             }
             else if (array[4] == "0") {
-              this.filter15 = 0;
+
             }
 
           }
           else if (array[3] == "0") {
-            this.filter14 = 0;
+
 
             if (array[4] == "1") {
-              this.filter15 = 1;
+              var create = { name: "Inhabilitar UDS", route: "/udsin", icon: "public" };
+this.estructura.push(create);
             }
             else if (array[4] == "0") {
-              this.filter15 = 0;
+
             }
           }
 
         }
         else if (array[2] == "0") {
-          this.filter13 = 0;
+
 
           if (array[3] == "1") {
-            this.filter14 = 1;
+            var create = { name: "Reporte UDS", route: "/reporteuds", icon: "face" };
+              this.estructura.push(create);
+
 
             if (array[4] == "1") {
-              this.filter15 = 1;
+              var create = { name: "Inhabilitar UDS", route: "/udsin", icon: "public" };
+this.estructura.push(create);
             }
             else if (array[4] == "0") {
-              this.filter15 = 0;
+
             }
 
           }
           else if (array[3] == "0") {
-            this.filter14 = 0;
+
 
             if (array[4] == "1") {
-              this.filter15 = 1;
+              var create = { name: "Inhabilitar UDS", route: "/udsin", icon: "public" };
+this.estructura.push(create);
             }
             else if (array[4] == "0") {
-              this.filter15 = 0;
+
             }
           }
 
@@ -939,65 +935,73 @@ export class MenuComponent implements OnInit {
 
   }
   //carga permiso 4-------
+  Usuarios = [];
   cargarpermiso4() {
     var centrostr = this.permisos.perUsuarios;
     var array = centrostr.split("");
     // console.log('carga', array);
 
     if (array[0] == "1") {
-      this.filter16 = 1;
+      var create = { name: "Crear usuarios", route: "/usuarios", icon: "face" };
+      this.Usuarios.push(create);
 
       if (array[1] == "1") {
-        this.filter17 = 1;
+        var create = { name: "Modificar Usuarios", route: "/modificarusuarios", icon: "face" };
+        this.Usuarios.push(create);
+
 
         if (array[2] == "1") {
-          this.filter18 = 1;
+
 
           if (array[3] == "1") {
-            this.filter19 = 1;
-
+            var create = { name: "Reporte Usuarios", route: "/reporteusuarios", icon: "face" };
+              this.Usuarios.push(create);
             if (array[4] == "1") {
-              this.filter20 = 1;
+              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
-              this.filter20 = 0;
+
             }
 
           }
           else if (array[3] == "0") {
-            this.filter19 = 0;
+
 
             if (array[4] == "1") {
-              this.filter20 = 1;
+              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
-              this.filter20 = 0;
+
             }
           }
 
         }
         else if (array[2] == "0") {
-          this.filter18 = 0;
+
 
           if (array[3] == "1") {
-            this.filter19 = 1;
-
+            var create = { name: "Reporte Usuarios", route: "/reporteusuarios", icon: "face" };
+              this.Usuarios.push(create);
             if (array[4] == "1") {
-              this.filter20 = 1;
+              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
-              this.filter20 = 0;
+
             }
 
           }
           else if (array[3] == "0") {
-            this.filter19 = 0;
+
 
             if (array[4] == "1") {
-              this.filter20 = 1;
+              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
-              this.filter20 = 0;
+
             }
           }
 
@@ -1005,57 +1009,61 @@ export class MenuComponent implements OnInit {
 
       }
       else if (array[1] == "0") {
-        this.filter17 = 0;
+
 
         if (array[2] == "1") {
-          this.filter18 = 1;
+
 
           if (array[3] == "1") {
-            this.filter19 = 1;
-
+            var create = { name: "Reporte Usuarios", route: "/reporteusuarios", icon: "face" };
+              this.Usuarios.push(create);
             if (array[4] == "1") {
-              this.filter20 = 1;
+              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
-              this.filter20 = 0;
+
             }
 
           }
           else if (array[3] == "0") {
-            this.filter19 = 0;
+
 
             if (array[4] == "1") {
-              this.filter20 = 1;
+              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
-              this.filter20 = 0;
+
             }
 
           }
 
         }
         else if (array[2] == "0") {
-          this.filter18 = 0;
+
 
           if (array[3] == "1") {
-            this.filter19 = 1;
-
+            var create = { name: "Reporte Usuarios", route: "/reporteusuarios", icon: "face" };
+              this.Usuarios.push(create);
             if (array[4] == "1") {
-              this.filter20 = 1;
+              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
-              this.filter20 = 0;
+
             }
 
           }
           else if (array[3] == "0") {
-            this.filter19 = 0;
+
 
             if (array[4] == "1") {
-              this.filter20 = 1;
+              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
-              this.filter20 = 0;
+
             }
           }
 
@@ -1066,55 +1074,62 @@ export class MenuComponent implements OnInit {
 
     }
     else if (array[0] == "0") {
-      this.filter16 = 0;
+
       if (array[1] == "1") {
-        this.filter17 = 1;
+        var create = { name: "Modificar Usuarios", route: "/modificarusuarios", icon: "face" };
+        this.Usuarios.push(create);
+
         if (array[2] == "1") {
-          this.filter18 = 1;
+
 
           if (array[3] == "1") {
-            this.filter19 = 1;
+            var create = { name: "Reporte Usuarios", route: "/reporteusuarios", icon: "face" };
+              this.Usuarios.push(create);
             if (array[4] == "1") {
-              this.filter20 = 1;
+              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
-              this.filter20 = 0;
+
             }
           }
           else if (array[3] == "0") {
-            this.filter19 = 0;
+
 
             if (array[4] == "1") {
-              this.filter20 = 1;
+              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
-              this.filter20 = 0;
+
             }
           }
 
         }
         else if (array[2] == "0") {
-          this.filter18 = 0;
+
 
           if (array[3] == "1") {
-            this.filter19 = 1;
-
+            var create = { name: "Reporte Usuarios", route: "/reporteusuarios", icon: "face" };
+              this.Usuarios.push(create);
             if (array[4] == "1") {
-              this.filter20 = 1;
+              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
-              this.filter20 = 0;
+
             }
 
           }
           else if (array[3] == "0") {
-            this.filter19 = 0;
+
 
             if (array[4] == "1") {
-              this.filter20 = 1;
+              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
-              this.filter20 = 0;
+
             }
           }
 
@@ -1122,56 +1137,60 @@ export class MenuComponent implements OnInit {
 
       }
       else if (array[1] == "0") {
-        this.filter17 = 0;
+
 
         if (array[2] == "1") {
-          this.filter18 = 1;
+
 
           if (array[3] == "1") {
-            this.filter19 = 1;
-
+            var create = { name: "Reporte Usuarios", route: "/reporteusuarios", icon: "face" };
+              this.Usuarios.push(create);
             if (array[4] == "1") {
-              this.filter20 = 1;
+              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
-              this.filter20 = 0;
+
             }
 
           }
           else if (array[3] == "0") {
-            this.filter19 = 0;
+
 
             if (array[4] == "1") {
-              this.filter20 = 1;
+              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
-              this.filter20 = 0;
+
             }
           }
 
         }
         else if (array[2] == "0") {
-          this.filter18 = 0;
+
 
           if (array[3] == "1") {
-            this.filter19 = 1;
-
+            var create = { name: "Reporte Usuarios", route: "/reporteusuarios", icon: "face" };
+              this.Usuarios.push(create);
             if (array[4] == "1") {
-              this.filter20 = 1;
+              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
-              this.filter20 = 0;
+
             }
 
           }
           else if (array[3] == "0") {
-            this.filter19 = 0;
+
 
             if (array[4] == "1") {
-              this.filter20 = 1;
+              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
-              this.filter20 = 0;
+
             }
           }
 
@@ -1183,65 +1202,78 @@ export class MenuComponent implements OnInit {
 
   }
   //carga permiso 5 --------
+  beneficiarios = [];
   cargarpermiso5() {
     var centrostr = this.permisos.perBeneficiarios;
     var array = centrostr.split("");
     // console.log('carga', array);
 
     if (array[0] == "1") {
-      this.filter21 = 1;
+      var create = { name: "acudientes", route: "/acudientes", icon: "face" };
+      this.beneficiarios.push(create);
+      var create = { name: "Crear beneficiarios ICBF", route: "/beneficiarios", icon: "face" };
+      this.beneficiarios.push(create);
 
       if (array[1] == "1") {
-        this.filter22 = 1;
+        var create = { name: "Modificar beneficiarios ICBF ", route: "/ModificarBeneficiario", icon: "face" };
+        this.beneficiarios.push(create);
 
         if (array[2] == "1") {
-          this.filter23 = 1;
+
 
           if (array[3] == "1") {
-            this.filter24 = 1;
-
+            var create = { name: "Reporte beneficiarios ICBF", route: "/reportebeneficiario", icon: "face" };
+              this.beneficiarios.push(create);
             if (array[4] == "1") {
-              this.filter25 = 1;
+              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
-              this.filter25 = 0;
+
             }
 
           }
           else if (array[3] == "0") {
-            this.filter24 = 0;
+
 
             if (array[4] == "1") {
-              this.filter25 = 1;
+              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+this.beneficiarios.push(create);
+
             }
             else if (array[4] == "0") {
-              this.filter25 = 0;
+
             }
           }
 
         }
         else if (array[2] == "0") {
-          this.filter23 = 0;
+
 
           if (array[3] == "1") {
-            this.filter24 = 1;
+            var create = { name: "Reporte beneficiarios ICBF", route: "/reportebeneficiario", icon: "face" };
+              this.beneficiarios.push(create);
+
+
 
             if (array[4] == "1") {
-              this.filter25 = 1;
+              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
-              this.filter25 = 0;
+
             }
 
           }
           else if (array[3] == "0") {
-            this.filter24 = 0;
+
 
             if (array[4] == "1") {
-              this.filter25 = 1;
+              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
-              this.filter25 = 0;
+
             }
           }
 
@@ -1249,57 +1281,64 @@ export class MenuComponent implements OnInit {
 
       }
       else if (array[1] == "0") {
-        this.filter22 = 0;
+
 
         if (array[2] == "1") {
-          this.filter23 = 1;
+
 
           if (array[3] == "1") {
-            this.filter24 = 1;
+            var create = { name: "Reporte beneficiarios ICBF", route: "/reportebeneficiario", icon: "face" };
+              this.beneficiarios.push(create);
+
+
 
             if (array[4] == "1") {
-              this.filter25 = 1;
+              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
-              this.filter25 = 0;
+
             }
 
           }
           else if (array[3] == "0") {
-            this.filter24 = 0;
+
 
             if (array[4] == "1") {
-              this.filter25 = 1;
+              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
-              this.filter25 = 0;
+
             }
 
           }
 
         }
         else if (array[2] == "0") {
-          this.filter23 = 0;
+
 
           if (array[3] == "1") {
-            this.filter24 = 1;
-
+            var create = { name: "Reporte beneficiarios ICBF", route: "/reportebeneficiario", icon: "face" };
+              this.beneficiarios.push(create);
             if (array[4] == "1") {
-              this.filter25 = 1;
+              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
-              this.filter25 = 0;
+
             }
 
           }
           else if (array[3] == "0") {
-            this.filter24 = 0;
+
 
             if (array[4] == "1") {
-              this.filter25 = 1;
+              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
-              this.filter25 = 0;
+
             }
           }
 
@@ -1310,55 +1349,64 @@ export class MenuComponent implements OnInit {
 
     }
     else if (array[0] == "0") {
-      this.filter21 = 0;
+
       if (array[1] == "1") {
-        this.filter22 = 1;
+        var create = { name: "Modificar beneficiarios ICBF ", route: "/ModificarBeneficiario", icon: "face" };
+        this.beneficiarios.push(create);
+
         if (array[2] == "1") {
-          this.filter23 = 1;
+
 
           if (array[3] == "1") {
-            this.filter24 = 1;
+            var create = { name: "Reporte beneficiarios ICBF", route: "/reportebeneficiario", icon: "face" };
+              this.beneficiarios.push(create);
+
+
             if (array[4] == "1") {
-              this.filter25 = 1;
+              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
-              this.filter25 = 0;
+
             }
           }
           else if (array[3] == "0") {
-            this.filter24 = 0;
+
 
             if (array[4] == "1") {
-              this.filter25 = 1;
+              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
-              this.filter25 = 0;
+
             }
           }
 
         }
         else if (array[2] == "0") {
-          this.filter23 = 0;
+
 
           if (array[3] == "1") {
-            this.filter24 = 1;
-
+            var create = { name: "Reporte beneficiarios ICBF", route: "/reportebeneficiario", icon: "face" };
+              this.beneficiarios.push(create);
             if (array[4] == "1") {
-              this.filter25 = 1;
+              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
-              this.filter25 = 0;
+
             }
 
           }
           else if (array[3] == "0") {
-            this.filter24 = 0;
+
 
             if (array[4] == "1") {
-              this.filter25 = 1;
+              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
-              this.filter25 = 0;
+
             }
           }
 
@@ -1366,56 +1414,60 @@ export class MenuComponent implements OnInit {
 
       }
       else if (array[1] == "0") {
-        this.filter22 = 0;
+
 
         if (array[2] == "1") {
-          this.filter23 = 1;
+
 
           if (array[3] == "1") {
-            this.filter24 = 1;
-
+            var create = { name: "Reporte beneficiarios ICBF", route: "/reportebeneficiario", icon: "face" };
+              this.beneficiarios.push(create);
             if (array[4] == "1") {
-              this.filter25 = 1;
+              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
-              this.filter25 = 0;
+
             }
 
           }
           else if (array[3] == "0") {
-            this.filter24 = 0;
+
 
             if (array[4] == "1") {
-              this.filter25 = 1;
+              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
-              this.filter25 = 0;
+
             }
           }
 
         }
         else if (array[2] == "0") {
-          this.filter23 = 0;
+
 
           if (array[3] == "1") {
-            this.filter24 = 1;
-
+            var create = { name: "Reporte beneficiarios ICBF", route: "/reportebeneficiario", icon: "face" };
+              this.beneficiarios.push(create);
             if (array[4] == "1") {
-              this.filter25 = 1;
+              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
-              this.filter25 = 0;
+
             }
 
           }
           else if (array[3] == "0") {
-            this.filter24 = 0;
+
 
             if (array[4] == "1") {
-              this.filter25 = 1;
+              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
-              this.filter25 = 0;
+
             }
           }
 
@@ -1427,65 +1479,73 @@ export class MenuComponent implements OnInit {
 
   }
   //carga permiso 6----------
+  entrega = [
+    { name: "Entrega", route: "/entregasel", icon: "list_alt" },
+    { name: "Recepcion", route: "/recepcion", icon: "list_alt" },
+    { name: "devoluciones", route: "/devoluciones", icon: "list_alt" },
+    { name: "Reporte devoluciones", route: "/reportedevolucion", icon: "list_alt" },
+    { name: "Reporte Entrega", route: "/reportentregab", icon: "list_alt" },
+    { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "list_alt" },
+  ];
   cargarpermiso6() {
     var centrostr = this.permisos.perEntrega;
     var array = centrostr.split("");
     // console.log('carga', array);
 
     if (array[0] == "1") {
-      this.filter26 = 1;
+      
 
       if (array[1] == "1") {
-        this.filter27 = 1;
+        
 
         if (array[2] == "1") {
-          this.filter28 = 1;
+          
 
           if (array[3] == "1") {
-            this.filter29 = 1;
+            
 
             if (array[4] == "1") {
-              this.filter30 = 1;
+              
             }
             else if (array[4] == "0") {
-              this.filter30 = 0;
+              
             }
 
           }
           else if (array[3] == "0") {
-            this.filter29 = 0;
+            
 
             if (array[4] == "1") {
-              this.filter30 = 1;
+              
             }
             else if (array[4] == "0") {
-              this.filter30 = 0;
+              
             }
           }
 
         }
         else if (array[2] == "0") {
-          this.filter28 = 0;
+          
 
           if (array[3] == "1") {
-            this.filter29 = 1;
+            
 
             if (array[4] == "1") {
-              this.filter30 = 1;
+              
             }
             else if (array[4] == "0") {
-              this.filter30 = 0;
+              
             }
 
           }
           else if (array[3] == "0") {
-            this.filter29 = 0;
+            
 
             if (array[4] == "1") {
-              this.filter30 = 1;
+              
             }
             else if (array[4] == "0") {
-              this.filter30 = 0;
+              
             }
           }
 
@@ -1493,57 +1553,57 @@ export class MenuComponent implements OnInit {
 
       }
       else if (array[1] == "0") {
-        this.filter27 = 0;
+        
 
         if (array[2] == "1") {
-          this.filter28 = 1;
+          
 
           if (array[3] == "1") {
-            this.filter29 = 1;
+            
 
             if (array[4] == "1") {
-              this.filter30 = 1;
+              
             }
             else if (array[4] == "0") {
-              this.filter30 = 0;
+              
             }
 
           }
           else if (array[3] == "0") {
-            this.filter29 = 0;
+            
 
             if (array[4] == "1") {
-              this.filter30 = 1;
+              
             }
             else if (array[4] == "0") {
-              this.filter30 = 0;
+              
             }
 
           }
 
         }
         else if (array[2] == "0") {
-          this.filter28 = 0;
+          
 
           if (array[3] == "1") {
-            this.filter29 = 1;
+            
 
             if (array[4] == "1") {
-              this.filter30 = 1;
+              
             }
             else if (array[4] == "0") {
-              this.filter30 = 0;
+              
             }
 
           }
           else if (array[3] == "0") {
-            this.filter29 = 0;
+            
 
             if (array[4] == "1") {
-              this.filter30 = 1;
+              
             }
             else if (array[4] == "0") {
-              this.filter30 = 0;
+              
             }
           }
 
@@ -1554,55 +1614,55 @@ export class MenuComponent implements OnInit {
 
     }
     else if (array[0] == "0") {
-      this.filter26 = 0;
+      
       if (array[1] == "1") {
-        this.filter27 = 1;
+        
         if (array[2] == "1") {
-          this.filter28 = 1;
+          
 
           if (array[3] == "1") {
-            this.filter29 = 1;
+            
             if (array[4] == "1") {
-              this.filter30 = 1;
+              
             }
             else if (array[4] == "0") {
-              this.filter30 = 0;
+              
             }
           }
           else if (array[3] == "0") {
-            this.filter29 = 0;
+            
 
             if (array[4] == "1") {
-              this.filter30 = 1;
+              
             }
             else if (array[4] == "0") {
-              this.filter30 = 0;
+              
             }
           }
 
         }
         else if (array[2] == "0") {
-          this.filter28 = 0;
+          
 
           if (array[3] == "1") {
-            this.filter29 = 1;
+            
 
             if (array[4] == "1") {
-              this.filter30 = 1;
+              
             }
             else if (array[4] == "0") {
-              this.filter30 = 0;
+              
             }
 
           }
           else if (array[3] == "0") {
-            this.filter29 = 0;
+            
 
             if (array[4] == "1") {
-              this.filter30 = 1;
+              
             }
             else if (array[4] == "0") {
-              this.filter30 = 0;
+              
             }
           }
 
@@ -1610,1276 +1670,56 @@ export class MenuComponent implements OnInit {
 
       }
       else if (array[1] == "0") {
-        this.filter27 = 0;
+        
 
         if (array[2] == "1") {
-          this.filter28 = 1;
+          
 
           if (array[3] == "1") {
-            this.filter29 = 1;
+            
 
             if (array[4] == "1") {
-              this.filter30 = 1;
+              
             }
             else if (array[4] == "0") {
-              this.filter30 = 0;
+              
             }
 
           }
           else if (array[3] == "0") {
-            this.filter29 = 0;
+            
 
             if (array[4] == "1") {
-              this.filter30 = 1;
+              
             }
             else if (array[4] == "0") {
-              this.filter30 = 0;
+              
             }
           }
 
         }
         else if (array[2] == "0") {
-          this.filter28 = 0;
+          
 
           if (array[3] == "1") {
-            this.filter29 = 1;
+            
 
             if (array[4] == "1") {
-              this.filter30 = 1;
+              
             }
             else if (array[4] == "0") {
-              this.filter30 = 0;
+              
             }
 
           }
           else if (array[3] == "0") {
-            this.filter29 = 0;
+            
 
             if (array[4] == "1") {
-              this.filter30 = 1;
+              
             }
             else if (array[4] == "0") {
-              this.filter30 = 0;
-            }
-          }
-
-        }
-
-      }
-
-    }
-
-  }
-  //carga permiso 7 ---------
-  cargarpermiso7() {
-    var centrostr = this.permisos.perCentrosD;
-    var array = centrostr.split("");
-    //console.log('carga', array);
-
-    if (array[0] == "1") {
-      this.filter31 = 1;
-
-      if (array[1] == "1") {
-        this.filter32 = 1;
-
-        if (array[2] == "1") {
-          this.filter33 = 1;
-
-          if (array[3] == "1") {
-            this.filter34 = 1;
-
-            if (array[4] == "1") {
-              this.filter35 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter35 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter34 = 0;
-
-            if (array[4] == "1") {
-              this.filter35 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter35 = 0;
-            }
-          }
-
-        }
-        else if (array[2] == "0") {
-          this.filter33 = 0;
-
-          if (array[3] == "1") {
-            this.filter34 = 1;
-
-            if (array[4] == "1") {
-              this.filter35 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter35 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter34 = 0;
-
-            if (array[4] == "1") {
-              this.filter35 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter35 = 0;
-            }
-          }
-
-        }
-
-      }
-      else if (array[1] == "0") {
-        this.filter32 = 0;
-
-        if (array[2] == "1") {
-          this.filter33 = 1;
-
-          if (array[3] == "1") {
-            this.filter34 = 1;
-
-            if (array[4] == "1") {
-              this.filter35 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter35 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter34 = 0;
-
-            if (array[4] == "1") {
-              this.filter35 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter35 = 0;
-            }
-
-          }
-
-        }
-        else if (array[2] == "0") {
-          this.filter33 = 0;
-
-          if (array[3] == "1") {
-            this.filter34 = 1;
-
-            if (array[4] == "1") {
-              this.filter35 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter35 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter34 = 0;
-
-            if (array[4] == "1") {
-              this.filter35 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter35 = 0;
-            }
-          }
-
-        }
-
-
-      }
-
-    }
-    else if (array[0] == "0") {
-      this.filter31 = 0;
-      if (array[1] == "1") {
-        this.filter32 = 1;
-        if (array[2] == "1") {
-          this.filter33 = 1;
-
-          if (array[3] == "1") {
-            this.filter34 = 1;
-            if (array[4] == "1") {
-              this.filter35 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter35 = 0;
-            }
-          }
-          else if (array[3] == "0") {
-            this.filter34 = 0;
-
-            if (array[4] == "1") {
-              this.filter35 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter35 = 0;
-            }
-          }
-
-        }
-        else if (array[2] == "0") {
-          this.filter33 = 0;
-
-          if (array[3] == "1") {
-            this.filter34 = 1;
-
-            if (array[4] == "1") {
-              this.filter35 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter35 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter34 = 0;
-
-            if (array[4] == "1") {
-              this.filter35 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter35 = 0;
-            }
-          }
-
-        }
-
-      }
-      else if (array[1] == "0") {
-        this.filter32 = 0;
-
-        if (array[2] == "1") {
-          this.filter33 = 1;
-
-          if (array[3] == "1") {
-            this.filter34 = 1;
-
-            if (array[4] == "1") {
-              this.filter35 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter35 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter34 = 0;
-
-            if (array[4] == "1") {
-              this.filter35 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter35 = 0;
-            }
-          }
-
-        }
-        else if (array[2] == "0") {
-          this.filter33 = 0;
-
-          if (array[3] == "1") {
-            this.filter34 = 1;
-
-            if (array[4] == "1") {
-              this.filter35 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter35 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter34 = 0;
-
-            if (array[4] == "1") {
-              this.filter35 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter35 = 0;
-            }
-          }
-
-        }
-
-      }
-
-    }
-
-  }
-  //carga permiso 8----------
-  cargarpermiso8() {
-    var centrostr = this.permisos.perInventario;
-    var array = centrostr.split("");
-    // console.log('carga', array);
-
-    if (array[0] == "1") {
-      this.filter36 = 1;
-
-      if (array[1] == "1") {
-        this.filter37 = 1;
-
-        if (array[2] == "1") {
-          this.filter38 = 1;
-
-          if (array[3] == "1") {
-            this.filter39 = 1;
-
-            if (array[4] == "1") {
-              this.filter40 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter40 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter39 = 0;
-
-            if (array[4] == "1") {
-              this.filter40 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter40 = 0;
-            }
-          }
-
-        }
-        else if (array[2] == "0") {
-          this.filter38 = 0;
-
-          if (array[3] == "1") {
-            this.filter39 = 1;
-
-            if (array[4] == "1") {
-              this.filter40 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter40 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter39 = 0;
-
-            if (array[4] == "1") {
-              this.filter40 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter40 = 0;
-            }
-          }
-
-        }
-
-      }
-      else if (array[1] == "0") {
-        this.filter37 = 0;
-
-        if (array[2] == "1") {
-          this.filter38 = 1;
-
-          if (array[3] == "1") {
-            this.filter39 = 1;
-
-            if (array[4] == "1") {
-              this.filter40 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter40 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter39 = 0;
-
-            if (array[4] == "1") {
-              this.filter40 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter40 = 0;
-            }
-
-          }
-
-        }
-        else if (array[2] == "0") {
-          this.filter38 = 0;
-
-          if (array[3] == "1") {
-            this.filter39 = 1;
-
-            if (array[4] == "1") {
-              this.filter40 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter40 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter39 = 0;
-
-            if (array[4] == "1") {
-              this.filter40 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter40 = 0;
-            }
-          }
-
-        }
-
-
-      }
-
-    }
-    else if (array[0] == "0") {
-      this.filter36 = 0;
-      if (array[1] == "1") {
-        this.filter37 = 1;
-        if (array[2] == "1") {
-          this.filter38 = 1;
-
-          if (array[3] == "1") {
-            this.filter39 = 1;
-            if (array[4] == "1") {
-              this.filter40 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter40 = 0;
-            }
-          }
-          else if (array[3] == "0") {
-            this.filter39 = 0;
-
-            if (array[4] == "1") {
-              this.filter40 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter40 = 0;
-            }
-          }
-
-        }
-        else if (array[2] == "0") {
-          this.filter38 = 0;
-
-          if (array[3] == "1") {
-            this.filter39 = 1;
-
-            if (array[4] == "1") {
-              this.filter40 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter40 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter39 = 0;
-
-            if (array[4] == "1") {
-              this.filter40 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter40 = 0;
-            }
-          }
-
-        }
-
-      }
-      else if (array[1] == "0") {
-        this.filter37 = 0;
-
-        if (array[2] == "1") {
-          this.filter38 = 1;
-
-          if (array[3] == "1") {
-            this.filter39 = 1;
-
-            if (array[4] == "1") {
-              this.filter40 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter40 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter39 = 0;
-
-            if (array[4] == "1") {
-              this.filter40 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter40 = 0;
-            }
-          }
-
-        }
-        else if (array[2] == "0") {
-          this.filter38 = 0;
-
-          if (array[3] == "1") {
-            this.filter39 = 1;
-
-            if (array[4] == "1") {
-              this.filter40 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter40 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter39 = 0;
-
-            if (array[4] == "1") {
-              this.filter40 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter40 = 0;
-            }
-          }
-
-        }
-
-      }
-
-    }
-
-  }
-  //carga permiso 9 ----------
-  cargarpermiso9() {
-    var centrostr = this.permisos.perRol;
-    var array = centrostr.split("");
-    //console.log('carga', array);
-
-    if (array[0] == "1") {
-      this.filter41 = 1;
-
-      if (array[1] == "1") {
-        this.filter42 = 1;
-
-        if (array[2] == "1") {
-          this.filter43 = 1;
-
-          if (array[3] == "1") {
-            this.filter44 = 1;
-
-            if (array[4] == "1") {
-              this.filter45 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter45 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter44 = 0;
-
-            if (array[4] == "1") {
-              this.filter45 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter45 = 0;
-            }
-          }
-
-        }
-        else if (array[2] == "0") {
-          this.filter43 = 0;
-
-          if (array[3] == "1") {
-            this.filter44 = 1;
-
-            if (array[4] == "1") {
-              this.filter45 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter45 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter44 = 0;
-
-            if (array[4] == "1") {
-              this.filter45 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter45 = 0;
-            }
-          }
-
-        }
-
-      }
-      else if (array[1] == "0") {
-        this.filter42 = 0;
-
-        if (array[2] == "1") {
-          this.filter43 = 1;
-
-          if (array[3] == "1") {
-            this.filter44 = 1;
-
-            if (array[4] == "1") {
-              this.filter45 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter45 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter44 = 0;
-
-            if (array[4] == "1") {
-              this.filter45 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter45 = 0;
-            }
-
-          }
-
-        }
-        else if (array[2] == "0") {
-          this.filter43 = 0;
-
-          if (array[3] == "1") {
-            this.filter44 = 1;
-
-            if (array[4] == "1") {
-              this.filter45 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter45 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter44 = 0;
-
-            if (array[4] == "1") {
-              this.filter45 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter45 = 0;
-            }
-          }
-
-        }
-
-
-      }
-
-    }
-    else if (array[0] == "0") {
-      this.filter41 = 0;
-      if (array[1] == "1") {
-        this.filter42 = 1;
-        if (array[2] == "1") {
-          this.filter43 = 1;
-
-          if (array[3] == "1") {
-            this.filter44 = 1;
-            if (array[4] == "1") {
-              this.filter45 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter45 = 0;
-            }
-          }
-          else if (array[3] == "0") {
-            this.filter44 = 0;
-
-            if (array[4] == "1") {
-              this.filter45 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter45 = 0;
-            }
-          }
-
-        }
-        else if (array[2] == "0") {
-          this.filter43 = 0;
-
-          if (array[3] == "1") {
-            this.filter44 = 1;
-
-            if (array[4] == "1") {
-              this.filter45 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter45 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter44 = 0;
-
-            if (array[4] == "1") {
-              this.filter45 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter45 = 0;
-            }
-          }
-
-        }
-
-      }
-      else if (array[1] == "0") {
-        this.filter42 = 0;
-
-        if (array[2] == "1") {
-          this.filter43 = 1;
-
-          if (array[3] == "1") {
-            this.filter44 = 1;
-
-            if (array[4] == "1") {
-              this.filter45 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter45 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter44 = 0;
-
-            if (array[4] == "1") {
-              this.filter45 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter45 = 0;
-            }
-          }
-
-        }
-        else if (array[2] == "0") {
-          this.filter43 = 0;
-
-          if (array[3] == "1") {
-            this.filter44 = 1;
-
-            if (array[4] == "1") {
-              this.filter45 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter45 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter44 = 0;
-
-            if (array[4] == "1") {
-              this.filter45 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter45 = 0;
-            }
-          }
-
-        }
-
-      }
-
-    }
-
-  }
-  //carga permiso 10----------
-  cargarpermiso10() {
-    var centrostr = this.permisos.PerMaestros;
-    var array = centrostr.split("");
-    // console.log('carga', array);
-
-    if (array[0] == "1") {
-      this.filter46 = 1;
-
-      if (array[1] == "1") {
-        this.filter47 = 1;
-
-        if (array[2] == "1") {
-          this.filter48 = 1;
-
-          if (array[3] == "1") {
-            this.filter49 = 1;
-
-            if (array[4] == "1") {
-              this.filter50 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter50 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter49 = 0;
-
-            if (array[4] == "1") {
-              this.filter50 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter50 = 0;
-            }
-          }
-
-        }
-        else if (array[2] == "0") {
-          this.filter48 = 0;
-
-          if (array[3] == "1") {
-            this.filter49 = 1;
-
-            if (array[4] == "1") {
-              this.filter50 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter50 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter49 = 0;
-
-            if (array[4] == "1") {
-              this.filter50 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter50 = 0;
-            }
-          }
-
-        }
-
-      }
-      else if (array[1] == "0") {
-        this.filter47 = 0;
-
-        if (array[2] == "1") {
-          this.filter48 = 1;
-
-          if (array[3] == "1") {
-            this.filter49 = 1;
-
-            if (array[4] == "1") {
-              this.filter50 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter50 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter49 = 0;
-
-            if (array[4] == "1") {
-              this.filter50 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter50 = 0;
-            }
-
-          }
-
-        }
-        else if (array[2] == "0") {
-          this.filter48 = 0;
-
-          if (array[3] == "1") {
-            this.filter49 = 1;
-
-            if (array[4] == "1") {
-              this.filter50 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter50 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter49 = 0;
-
-            if (array[4] == "1") {
-              this.filter50 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter50 = 0;
-            }
-          }
-
-        }
-
-
-      }
-
-    }
-    else if (array[0] == "0") {
-      this.filter46 = 0;
-      if (array[1] == "1") {
-        this.filter47 = 1;
-        if (array[2] == "1") {
-          this.filter48 = 1;
-
-          if (array[3] == "1") {
-            this.filter49 = 1;
-            if (array[4] == "1") {
-              this.filter50 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter50 = 0;
-            }
-          }
-          else if (array[3] == "0") {
-            this.filter49 = 0;
-
-            if (array[4] == "1") {
-              this.filter50 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter50 = 0;
-            }
-          }
-
-        }
-        else if (array[2] == "0") {
-          this.filter48 = 0;
-
-          if (array[3] == "1") {
-            this.filter49 = 1;
-
-            if (array[4] == "1") {
-              this.filter50 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter50 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter49 = 0;
-
-            if (array[4] == "1") {
-              this.filter50 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter50 = 0;
-            }
-          }
-
-        }
-
-      }
-      else if (array[1] == "0") {
-        this.filter47 = 0;
-
-        if (array[2] == "1") {
-          this.filter48 = 1;
-
-          if (array[3] == "1") {
-            this.filter49 = 1;
-
-            if (array[4] == "1") {
-              this.filter50 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter50 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter49 = 0;
-
-            if (array[4] == "1") {
-              this.filter50 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter50 = 0;
-            }
-          }
-
-        }
-        else if (array[2] == "0") {
-          this.filter48 = 0;
-
-          if (array[3] == "1") {
-            this.filter49 = 1;
-
-            if (array[4] == "1") {
-              this.filter50 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter50 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter49 = 0;
-
-            if (array[4] == "1") {
-              this.filter50 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter50 = 0;
-            }
-          }
-
-        }
-
-      }
-
-    }
-
-  }
-  //carga permiso 11----------
-  cargarpermiso11() {
-    var centrostr = this.permisos.perAlmacenes;
-    var array = centrostr.split("");
-    //console.log('carga', array);
-
-    if (array[0] == "1") {
-      this.filter51 = 1;
-
-      if (array[1] == "1") {
-        this.filter52 = 1;
-
-        if (array[2] == "1") {
-          this.filter53 = 1;
-
-          if (array[3] == "1") {
-            this.filter54 = 1;
-
-            if (array[4] == "1") {
-              this.filter55 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter55 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter54 = 0;
-
-            if (array[4] == "1") {
-              this.filter55 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter55 = 0;
-            }
-          }
-
-        }
-        else if (array[2] == "0") {
-          this.filter53 = 0;
-
-          if (array[3] == "1") {
-            this.filter54 = 1;
-
-            if (array[4] == "1") {
-              this.filter55 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter55 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter54 = 0;
-
-            if (array[4] == "1") {
-              this.filter55 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter55 = 0;
-            }
-          }
-
-        }
-
-      }
-      else if (array[1] == "0") {
-        this.filter52 = 0;
-
-        if (array[2] == "1") {
-          this.filter53 = 1;
-
-          if (array[3] == "1") {
-            this.filter54 = 1;
-
-            if (array[4] == "1") {
-              this.filter55 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter55 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter54 = 0;
-
-            if (array[4] == "1") {
-              this.filter55 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter55 = 0;
-            }
-
-          }
-
-        }
-        else if (array[2] == "0") {
-          this.filter53 = 0;
-
-          if (array[3] == "1") {
-            this.filter54 = 1;
-
-            if (array[4] == "1") {
-              this.filter55 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter55 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter54 = 0;
-
-            if (array[4] == "1") {
-              this.filter55 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter55 = 0;
-            }
-          }
-
-        }
-
-
-      }
-
-    }
-    else if (array[0] == "0") {
-      this.filter51 = 0;
-      if (array[1] == "1") {
-        this.filter52 = 1;
-        if (array[2] == "1") {
-          this.filter53 = 1;
-
-          if (array[3] == "1") {
-            this.filter54 = 1;
-            if (array[4] == "1") {
-              this.filter55 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter55 = 0;
-            }
-          }
-          else if (array[3] == "0") {
-            this.filter54 = 0;
-
-            if (array[4] == "1") {
-              this.filter55 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter55 = 0;
-            }
-          }
-
-        }
-        else if (array[2] == "0") {
-          this.filter53 = 0;
-
-          if (array[3] == "1") {
-            this.filter54 = 1;
-
-            if (array[4] == "1") {
-              this.filter55 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter55 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter54 = 0;
-
-            if (array[4] == "1") {
-              this.filter55 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter55 = 0;
-            }
-          }
-
-        }
-
-      }
-      else if (array[1] == "0") {
-        this.filter52 = 0;
-
-        if (array[2] == "1") {
-          this.filter53 = 1;
-
-          if (array[3] == "1") {
-            this.filter54 = 1;
-
-            if (array[4] == "1") {
-              this.filter55 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter55 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter54 = 0;
-
-            if (array[4] == "1") {
-              this.filter55 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter55 = 0;
-            }
-          }
-
-        }
-        else if (array[2] == "0") {
-          this.filter53 = 0;
-
-          if (array[3] == "1") {
-            this.filter54 = 1;
-
-            if (array[4] == "1") {
-              this.filter55 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter55 = 0;
-            }
-
-          }
-          else if (array[3] == "0") {
-            this.filter54 = 0;
-
-            if (array[4] == "1") {
-              this.filter55 = 1;
-            }
-            else if (array[4] == "0") {
-              this.filter55 = 0;
+              
             }
           }
 
@@ -2891,5 +1731,1308 @@ export class MenuComponent implements OnInit {
 
   }
 
- */
+ //carga permiso 7 ---------
+ centrod = [];
+ cargarpermiso7() {
+  var centrostr = this.permisos.perCentrosD;
+  var array = centrostr.split("");
+  //console.log('carga', array);
+
+  if (array[0] == "1") {
+    var create = { name: "Crear Centro Distribucion", route: "/centrodistribucion", icon: "face" };
+     this.centrod.push(create);
+    if (array[1] == "1") {
+      var create = { name: "Modificar Centro Distribucion", route: "/modificarcentrod", icon: "face" };
+     this.centrod.push(create);
+      if (array[2] == "1") {
+        
+
+        if (array[3] == "1") {
+          var create = { name: "Reporte Centro Distribucion", route: "/reportecentrodistribucion", icon: "face" };
+     this.centrod.push(create);
+          if (array[4] == "1") {
+            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+     this.centrod.push(create);
+          }
+          else if (array[4] == "0") {
+            
+          }
+
+        }
+        else if (array[3] == "0") {
+          
+
+          if (array[4] == "1") {
+            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+     this.centrod.push(create);
+          }
+          else if (array[4] == "0") {
+            
+          }
+        }
+
+      }
+      else if (array[2] == "0") {
+        
+
+        if (array[3] == "1") {
+          var create = { name: "Reporte Centro Distribucion", route: "/reportecentrodistribucion", icon: "face" };
+     this.centrod.push(create);
+          if (array[4] == "1") {
+            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+     this.centrod.push(create);
+          }
+          else if (array[4] == "0") {
+            
+          }
+
+        }
+        else if (array[3] == "0") {
+          
+
+          if (array[4] == "1") {
+            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+     this.centrod.push(create);
+          }
+          else if (array[4] == "0") {
+            
+          }
+        }
+
+      }
+
+    }
+    else if (array[1] == "0") {
+      
+
+      if (array[2] == "1") {
+        
+
+        if (array[3] == "1") {
+          var create = { name: "Reporte Centro Distribucion", route: "/reportecentrodistribucion", icon: "face" };
+     this.centrod.push(create);
+          if (array[4] == "1") {
+            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+     this.centrod.push(create);
+          }
+          else if (array[4] == "0") {
+            
+          }
+
+        }
+        else if (array[3] == "0") {
+          
+
+          if (array[4] == "1") {
+            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+     this.centrod.push(create);
+          }
+          else if (array[4] == "0") {
+            
+          }
+
+        }
+
+      }
+      else if (array[2] == "0") {
+        
+
+        if (array[3] == "1") {
+          var create = { name: "Reporte Centro Distribucion", route: "/reportecentrodistribucion", icon: "face" };
+     this.centrod.push(create);
+          if (array[4] == "1") {
+            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+     this.centrod.push(create);
+          }
+          else if (array[4] == "0") {
+            
+          }
+
+        }
+        else if (array[3] == "0") {
+          
+
+          if (array[4] == "1") {
+            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+     this.centrod.push(create);
+          }
+          else if (array[4] == "0") {
+            
+          }
+        }
+
+      }
+
+
+    }
+
+  }
+  else if (array[0] == "0") {
+    
+    if (array[1] == "1") {
+      var create = { name: "Modificar Centro Distribucion", route: "/modificarcentrod", icon: "face" };
+     this.centrod.push(create);
+      if (array[2] == "1") {
+        
+
+        if (array[3] == "1") {
+          var create = { name: "Reporte Centro Distribucion", route: "/reportecentrodistribucion", icon: "face" };
+     this.centrod.push(create);
+          if (array[4] == "1") {
+            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+     this.centrod.push(create);
+          }
+          else if (array[4] == "0") {
+            
+          }
+        }
+        else if (array[3] == "0") {
+          
+
+          if (array[4] == "1") {
+            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+     this.centrod.push(create);
+          }
+          else if (array[4] == "0") {
+            
+          }
+        }
+
+      }
+      else if (array[2] == "0") {
+        
+
+        if (array[3] == "1") {
+          var create = { name: "Reporte Centro Distribucion", route: "/reportecentrodistribucion", icon: "face" };
+     this.centrod.push(create);
+          if (array[4] == "1") {
+            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+     this.centrod.push(create);
+          }
+          else if (array[4] == "0") {
+            
+          }
+
+        }
+        else if (array[3] == "0") {
+          
+
+          if (array[4] == "1") {
+            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+     this.centrod.push(create);
+          }
+          else if (array[4] == "0") {
+            
+          }
+        }
+
+      }
+
+    }
+    else if (array[1] == "0") {
+      
+
+      if (array[2] == "1") {
+        
+
+        if (array[3] == "1") {
+          var create = { name: "Reporte Centro Distribucion", route: "/reportecentrodistribucion", icon: "face" };
+     this.centrod.push(create);
+          if (array[4] == "1") {
+            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+     this.centrod.push(create);
+          }
+          else if (array[4] == "0") {
+            
+          }
+
+        }
+        else if (array[3] == "0") {
+          
+
+          if (array[4] == "1") {
+            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+     this.centrod.push(create);
+          }
+          else if (array[4] == "0") {
+            
+          }
+        }
+
+      }
+      else if (array[2] == "0") {
+        
+
+        if (array[3] == "1") {
+          var create = { name: "Reporte Centro Distribucion", route: "/reportecentrodistribucion", icon: "face" };
+     this.centrod.push(create);
+          if (array[4] == "1") {
+            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+     this.centrod.push(create);
+          }
+          else if (array[4] == "0") {
+            
+          }
+
+        }
+        else if (array[3] == "0") {
+          
+
+          if (array[4] == "1") {
+            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+     this.centrod.push(create);
+          }
+          else if (array[4] == "0") {
+            
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+}
+ //carga permiso 8----------
+ inventarios = [
+  { name: "Inventario", route: "/inventario", icon: "store" },
+  { name: "Reporte Inventario", route: "/reporteinventario", icon: "store" },
+];
+ cargarpermiso8() {
+   var centrostr = this.permisos.perInventario;
+   var array = centrostr.split("");
+   // console.log('carga', array);
+
+   if (array[0] == "1") {
+      
+
+    if (array[1] == "1") {
+      
+
+      if (array[2] == "1") {
+        
+
+        if (array[3] == "1") {
+          
+
+          if (array[4] == "1") {
+            
+          }
+          else if (array[4] == "0") {
+            
+          }
+
+        }
+        else if (array[3] == "0") {
+          
+
+          if (array[4] == "1") {
+            
+          }
+          else if (array[4] == "0") {
+            
+          }
+        }
+
+      }
+      else if (array[2] == "0") {
+        
+
+        if (array[3] == "1") {
+          
+
+          if (array[4] == "1") {
+            
+          }
+          else if (array[4] == "0") {
+            
+          }
+
+        }
+        else if (array[3] == "0") {
+          
+
+          if (array[4] == "1") {
+            
+          }
+          else if (array[4] == "0") {
+            
+          }
+        }
+
+      }
+
+    }
+    else if (array[1] == "0") {
+      
+
+      if (array[2] == "1") {
+        
+
+        if (array[3] == "1") {
+          
+
+          if (array[4] == "1") {
+            
+          }
+          else if (array[4] == "0") {
+            
+          }
+
+        }
+        else if (array[3] == "0") {
+          
+
+          if (array[4] == "1") {
+            
+          }
+          else if (array[4] == "0") {
+            
+          }
+
+        }
+
+      }
+      else if (array[2] == "0") {
+        
+
+        if (array[3] == "1") {
+          
+
+          if (array[4] == "1") {
+            
+          }
+          else if (array[4] == "0") {
+            
+          }
+
+        }
+        else if (array[3] == "0") {
+          
+
+          if (array[4] == "1") {
+            
+          }
+          else if (array[4] == "0") {
+            
+          }
+        }
+
+      }
+
+
+    }
+
+  }
+  else if (array[0] == "0") {
+    
+    if (array[1] == "1") {
+      
+      if (array[2] == "1") {
+        
+
+        if (array[3] == "1") {
+          
+          if (array[4] == "1") {
+            
+          }
+          else if (array[4] == "0") {
+            
+          }
+        }
+        else if (array[3] == "0") {
+          
+
+          if (array[4] == "1") {
+            
+          }
+          else if (array[4] == "0") {
+            
+          }
+        }
+
+      }
+      else if (array[2] == "0") {
+        
+
+        if (array[3] == "1") {
+          
+
+          if (array[4] == "1") {
+            
+          }
+          else if (array[4] == "0") {
+            
+          }
+
+        }
+        else if (array[3] == "0") {
+          
+
+          if (array[4] == "1") {
+            
+          }
+          else if (array[4] == "0") {
+            
+          }
+        }
+
+      }
+
+    }
+    else if (array[1] == "0") {
+      
+
+      if (array[2] == "1") {
+        
+
+        if (array[3] == "1") {
+          
+
+          if (array[4] == "1") {
+            
+          }
+          else if (array[4] == "0") {
+            
+          }
+
+        }
+        else if (array[3] == "0") {
+          
+
+          if (array[4] == "1") {
+            
+          }
+          else if (array[4] == "0") {
+            
+          }
+        }
+
+      }
+      else if (array[2] == "0") {
+        
+
+        if (array[3] == "1") {
+          
+
+          if (array[4] == "1") {
+            
+          }
+          else if (array[4] == "0") {
+            
+          }
+
+        }
+        else if (array[3] == "0") {
+          
+
+          if (array[4] == "1") {
+            
+          }
+          else if (array[4] == "0") {
+            
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+ }
+ //carga permiso 9 ----------
+ rol = [];
+ cargarpermiso9() {
+  var centrostr = this.permisos.perRol;
+  var array = centrostr.split("");
+  //console.log('carga', array);
+
+  if (array[0] == "1") {
+     var create = { name: "Crear Rol", route: "/rol", icon: "face" };
+     this.rol.push(create);
+   if (array[1] == "1") {
+     var create = { name: "Modificar Rol", route: "/roli", icon: "face" };
+     this.rol.push(create);
+
+
+     if (array[2] == "1") {
+       
+
+       if (array[3] == "1") {
+         var create = { name: "Reporte Rol", route: "/reporterol", icon: "face" };
+     this.rol.push(create);
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+     this.rol.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+
+       }
+       else if (array[3] == "0") {
+         
+
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+     this.rol.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
+
+     }
+     else if (array[2] == "0") {
+       
+
+       if (array[3] == "1") {
+         var create = { name: "Reporte Rol", route: "/reporterol", icon: "face" };
+     this.rol.push(create);
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+     this.rol.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+
+       }
+       else if (array[3] == "0") {
+         
+
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+     this.rol.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
+
+     }
+
+   }
+   else if (array[1] == "0") {
+     
+
+     if (array[2] == "1") {
+       
+
+       if (array[3] == "1") {
+         var create = { name: "Reporte Rol", route: "/reporterol", icon: "face" };
+     this.rol.push(create);
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+     this.rol.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+
+       }
+       else if (array[3] == "0") {
+         
+
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+     this.rol.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+
+       }
+
+     }
+     else if (array[2] == "0") {
+       
+
+       if (array[3] == "1") {
+         var create = { name: "Reporte Rol", route: "/reporterol", icon: "face" };
+     this.rol.push(create);
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+     this.rol.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+
+       }
+       else if (array[3] == "0") {
+         
+
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+     this.rol.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
+
+     }
+
+
+   }
+
+ }
+ else if (array[0] == "0") {
+   
+   if (array[1] == "1") {
+     var create = { name: "Modificar Rol", route: "/roli", icon: "face" };
+     this.rol.push(create);
+
+     if (array[2] == "1") {
+       
+
+       if (array[3] == "1") {
+         var create = { name: "Reporte Rol", route: "/reporterol", icon: "face" };
+     this.rol.push(create);
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+     this.rol.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
+       else if (array[3] == "0") {
+         
+
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+     this.rol.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
+
+     }
+     else if (array[2] == "0") {
+       
+
+       if (array[3] == "1") {
+         var create = { name: "Reporte Rol", route: "/reporterol", icon: "face" };
+     this.rol.push(create);
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+     this.rol.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+
+       }
+       else if (array[3] == "0") {
+         
+
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+     this.rol.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
+
+     }
+
+   }
+   else if (array[1] == "0") {
+     
+
+     if (array[2] == "1") {
+       
+
+       if (array[3] == "1") {
+         var create = { name: "Reporte Rol", route: "/reporterol", icon: "face" };
+     this.rol.push(create);
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+     this.rol.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+
+       }
+       else if (array[3] == "0") {
+         
+
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+     this.rol.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
+
+     }
+     else if (array[2] == "0") {
+       
+
+       if (array[3] == "1") {
+         var create = { name: "Reporte Rol", route: "/reporterol", icon: "face" };
+     this.rol.push(create);
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+     this.rol.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+
+       }
+       else if (array[3] == "0") {
+         
+
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+     this.rol.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
+
+     }
+
+   }
+
+ }
+
+}
+
+ //carga permiso 10----------
+ datos = [];
+ cargarpermiso10() {
+  var centrostr = this.permisos.PerMaestros;
+  var array = centrostr.split("");
+  // console.log('carga', array);
+
+  if (array[0] == "1" ) {
+     var create = { name: "Crear Datos Maestros", route: "/listamaestros", icon: "face" };
+    this.datos.push(create);
+   if (array[1] == "1") {
+     var create = { name: "Modificar Datos Maestros", route: "/modificarlistamaestro", icon: "face" };
+    this.datos.push(create);
+     if (array[2] == "1") {        
+       if (array[3] == "1") {
+         var create = { name: "Reporte Datos Maestros", route: "/reportes", icon: "face" };
+    this.datos.push(create);
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+    this.datos.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+
+       }
+       else if (array[3] == "0") {
+         
+
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+    this.datos.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
+
+     }
+     else if (array[2] == "0") {
+       
+
+       if (array[3] == "1") {
+         var create = { name: "Reporte Datos Maestros", route: "/reportes", icon: "face" };
+    this.datos.push(create);
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+    this.datos.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+
+       }
+       else if (array[3] == "0") {
+         
+
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+    this.datos.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
+
+     }
+
+   }
+   else if (array[1] == "0") {
+     
+
+     if (array[2] == "1") {
+       
+
+       if (array[3] == "1") {
+         var create = { name: "Reporte Datos Maestros", route: "/reportes", icon: "face" };
+    this.datos.push(create);
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+    this.datos.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+
+       }
+       else if (array[3] == "0") {
+         
+
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+    this.datos.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+
+       }
+
+     }
+     else if (array[2] == "0") {
+       
+
+       if (array[3] == "1") {
+         var create = { name: "Reporte Datos Maestros", route: "/reportes", icon: "face" };
+    this.datos.push(create);
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+    this.datos.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+
+       }
+       else if (array[3] == "0") {
+         
+
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+    this.datos.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
+
+     }
+
+
+   }
+
+ }
+ else if (array[0] == "0") {
+   
+   if (array[1] == "1") {
+     var create = { name: "Modificar Datos Maestros", route: "/modificarlistamaestro", icon: "face" };
+    this.datos.push(create);
+     if (array[2] == "1") {
+       
+
+       if (array[3] == "1") {
+         var create = { name: "Reporte Datos Maestros", route: "/reportes", icon: "face" };
+    this.datos.push(create);
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+    this.datos.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
+       else if (array[3] == "0") {
+         
+
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+    this.datos.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
+
+     }
+     else if (array[2] == "0") {
+       
+
+       if (array[3] == "1") {
+         var create = { name: "Reporte Datos Maestros", route: "/reportes", icon: "face" };
+    this.datos.push(create);
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+    this.datos.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+
+       }
+       else if (array[3] == "0") {
+         
+
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+    this.datos.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
+
+     }
+
+   }
+   else if (array[1] == "0") {
+     
+
+     if (array[2] == "1") {
+       
+
+       if (array[3] == "1") {
+         var create = { name: "Reporte Datos Maestros", route: "/reportes", icon: "face" };
+    this.datos.push(create);
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+    this.datos.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+
+       }
+       else if (array[3] == "0") {
+         
+
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+    this.datos.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
+
+     }
+     else if (array[2] == "0") {
+       
+
+       if (array[3] == "1") {
+         var create = { name: "Reporte Datos Maestros", route: "/reportes", icon: "face" };
+    this.datos.push(create);
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+    this.datos.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+
+       }
+       else if (array[3] == "0") {
+         
+
+         if (array[4] == "1") {
+           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+    this.datos.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
+
+     }
+
+   }
+
+ }
+
+}
+
+ //carga permiso 11----------
+ almacen =[];
+ cargarpermiso11() {
+  var centrostr = this.permisos.perAlmacenes;
+  var array = centrostr.split("");
+  //console.log('carga', array);
+
+  if (array[0] == "1") {
+     var create = {name: "Crear Almacen", route:"/almacenci", icon:"store"};
+   this.almacen.push(create);
+
+   if (array[1] == "1") {
+     var create = {name: "Modificar Almacen", route:"/modificaralmacen", icon:"store"};
+   this.almacen.push(create);
+     if (array[2] == "1") {
+            if (array[3] == "1") {
+         var create = {name: "Reporte Almacen", route:"/reportealmacen", icon:"list_alt"};
+   this.almacen.push(create);
+         if (array[4] == "1") {
+           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+   this.almacen.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+
+       }
+       else if (array[3] == "0") {
+         
+
+         if (array[4] == "1") {
+           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+   this.almacen.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
+
+     }
+     else if (array[2] == "0") {
+       
+
+       if (array[3] == "1") {
+         var create = {name: "Reporte Almacen", route:"/reportealmacen", icon:"list_alt"};
+   this.almacen.push(create);
+         if (array[4] == "1") {
+           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+   this.almacen.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+
+       }
+       else if (array[3] == "0") {
+         
+
+         if (array[4] == "1") {
+           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+   this.almacen.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
+
+     }
+
+   }
+   else if (array[1] == "0") {
+     
+
+     if (array[2] == "1") {
+       
+
+       if (array[3] == "1") {
+         var create = {name: "Reporte Almacen", route:"/reportealmacen", icon:"list_alt"};
+   this.almacen.push(create);
+         if (array[4] == "1") {
+           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+   this.almacen.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+
+       }
+       else if (array[3] == "0") {
+         
+
+         if (array[4] == "1") {
+           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+   this.almacen.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+
+       }
+
+     }
+     else if (array[2] == "0") {
+       
+
+       if (array[3] == "1") {
+        var create = {name: "Reporte Almacen", route:"/reportealmacen", icon:"list_alt"};
+   this.almacen.push(create);
+         if (array[4] == "1") {
+           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+   this.almacen.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+
+       }
+       else if (array[3] == "0") {
+         
+
+         if (array[4] == "1") {
+           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+   this.almacen.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
+
+     }
+
+
+   }
+
+ }
+ else if (array[0] == "0") {
+   
+   if (array[1] == "1") {
+     var create = {name: "Modificar Almacen", route:"/modificaralmacen", icon:"store"};
+   this.almacen.push(create);
+     if (array[2] == "1") {
+       
+
+       if (array[3] == "1") {
+         var create = {name: "Reporte Almacen", route:"/reportealmacen", icon:"list_alt"};
+   this.almacen.push(create);
+         if (array[4] == "1") {
+           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+   this.almacen.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
+       else if (array[3] == "0") {
+         
+
+         if (array[4] == "1") {
+           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+   this.almacen.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
+
+     }
+     else if (array[2] == "0") {
+       
+
+       if (array[3] == "1") {
+         var create = {name: "Reporte Almacen", route:"/reportealmacen", icon:"list_alt"};
+   this.almacen.push(create);
+         if (array[4] == "1") {
+           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+   this.almacen.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+
+       }
+       else if (array[3] == "0") {
+         
+
+         if (array[4] == "1") {
+           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+   this.almacen.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
+
+     }
+
+   }
+   else if (array[1] == "0") {
+     
+
+     if (array[2] == "1") {
+       
+
+       if (array[3] == "1") {
+         var create = {name: "Reporte Almacen", route:"/reportealmacen", icon:"list_alt"};
+   this.almacen.push(create);
+         if (array[4] == "1") {
+           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+   this.almacen.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+
+       }
+       else if (array[3] == "0") {
+         
+
+         if (array[4] == "1") {
+           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+   this.almacen.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
+
+     }
+     else if (array[2] == "0") {
+       
+
+       if (array[3] == "1") {
+         var create = {name: "Reporte Almacen", route:"/reportealmacen", icon:"list_alt"};
+   this.almacen.push(create);
+         if (array[4] == "1") {
+           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+   this.almacen.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+
+       }
+       else if (array[3] == "0") {
+         
+
+         if (array[4] == "1") {
+           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+   this.almacen.push(create);
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
+
+     }
+
+   }
+
+ }
+
+}
+
+
 }

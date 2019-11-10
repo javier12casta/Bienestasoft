@@ -1,0 +1,48 @@
+<nav class="navbar navbar-success bg-success">
+    <button class="btn btn-dark" routerLink="/menu"> Volver </button>
+  </nav>
+  
+  <table class="table">
+    <thead class="thead-green">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Centro Zonal</th>
+        <th scope="col">Nombre PE</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Codigo Externo PE</th>
+        <th scope="col">Codigo Interno PE</th>
+        <th scope="col">Responsable</th>
+        <th scope="col">Comuna o Vereda</th>
+        <th scope="col">Direccion PE</th>
+        <th scope="col">Barrio PE</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">inhabilitar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pun of punto">
+        <th scope="row">{{pun.idPuntoEntrega}}</th>
+        <td>{{pun.idCentrosZonales}}</td>
+        <td>{{pun.NombrePE}}</td>
+        <td>
+          <div *ngIf="pun.Estado == 1">
+            Habilitado
+          </div>
+          <div *ngIf="pun.Estado== 0">
+            Deshabilitado
+          </div>
+        </td>
+        <td>{{pun.CodigoExternoPE}}</td>
+        <td>{{pun.CodigoInternoPE}}</td>
+        <td>{{pun.Responsable}}</td>
+        <td>{{pun.Comuna}}</td>
+        <td>{{pun.Direccion}}</td>
+        <td>{{pun.BarrioPE}}</td>
+        <td>{{pun.Telefono}}</td>
+        <td>
+          <button class="btn btn-primary" [routerLink]="['/puntoentregainh', pun.idPuntoEntrega]">Inhabilitar</button>
+        </td>
+  
+      </tr>
+    </tbody>
+  </table>
