@@ -71,8 +71,6 @@ export class MenuComponent implements OnInit {
     { name: "Modificar beneficiarios ICBF ", route: "/ModificarBeneficiario", icon: "face" },
     { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" },
     { name: "Reporte beneficiarios ICBF", route: "/reportebeneficiario", icon: "face" },
-
-
   ];
 
   rol = [
@@ -110,8 +108,6 @@ export class MenuComponent implements OnInit {
   ];
 
   almacen = [
-
-
     { name: "Crear Almacen", route: "/almacen", icon: "face" },
     { name: "Modificar Almacen", route: "/modificaralmacen", icon: "face" },
     { name: "Inhabilitar Almacen", route: "/inhabilitaralmacen", icon: "face" },
