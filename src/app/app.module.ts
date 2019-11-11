@@ -181,6 +181,7 @@ import { PuntoentregainComponent } from './page/puntoentregain/puntoentregain.co
 import { UdsinComponent } from './page/udsin/udsin.component';
 import { RolinComponent } from './page/rolin/rolin.component';
 import { RolinhComponent } from './page/rolinh/rolinh.component';
+import { RolmComponent } from './page/rolm/rolm.component';
 
 
 @NgModule({
@@ -341,6 +342,7 @@ import { RolinhComponent } from './page/rolinh/rolinh.component';
     UdsinComponent,
     RolinComponent,
     RolinhComponent,
+    RolmComponent,
     
 
     

@@ -1479,22 +1479,19 @@ this.beneficiarios.push(create);
 
   }
   //carga permiso 6----------
-  entrega = [
-    { name: "Entrega", route: "/entregasel", icon: "list_alt" },
-    { name: "Recepcion", route: "/recepcion", icon: "list_alt" },
-    { name: "devoluciones", route: "/devoluciones", icon: "list_alt" },
-    { name: "Reporte devoluciones", route: "/reportedevolucion", icon: "list_alt" },
-    { name: "Reporte Entrega", route: "/reportentregab", icon: "list_alt" },
-    { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "list_alt" },
-  ];
+  entrega = [];
   cargarpermiso6() {
     var centrostr = this.permisos.perEntrega;
     var array = centrostr.split("");
     // console.log('carga', array);
 
     if (array[0] == "1") {
-      
-
+      var create = { name: "Entrega", route: "/entregasel", icon: "list_alt" };
+     this.entrega.push(create);
+var create = { name: "Recepcion", route: "/recepcion", icon: "list_alt" };
+     this.entrega.push(create);
+var create = { name: "devoluciones", route: "/devoluciones", icon: "list_alt" };
+     this.entrega.push(create);
       if (array[1] == "1") {
         
 
@@ -1502,8 +1499,12 @@ this.beneficiarios.push(create);
           
 
           if (array[3] == "1") {
-            
-
+            var create = { name: "Reporte devoluciones", route: "/reportedevolucion", icon: "list_alt" };
+     this.entrega.push(create);
+var create = { name: "Reporte Entrega", route: "/reportentregab", icon: "list_alt" };
+     this.entrega.push(create);
+var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "list_alt" };
+     this.entrega.push(create);
             if (array[4] == "1") {
               
             }
@@ -1528,8 +1529,12 @@ this.beneficiarios.push(create);
           
 
           if (array[3] == "1") {
-            
-
+            var create = { name: "Reporte devoluciones", route: "/reportedevolucion", icon: "list_alt" };
+     this.entrega.push(create);
+var create = { name: "Reporte Entrega", route: "/reportentregab", icon: "list_alt" };
+     this.entrega.push(create);
+var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "list_alt" };
+     this.entrega.push(create);
             if (array[4] == "1") {
               
             }
@@ -1559,8 +1564,12 @@ this.beneficiarios.push(create);
           
 
           if (array[3] == "1") {
-            
-
+            var create = { name: "Reporte devoluciones", route: "/reportedevolucion", icon: "list_alt" };
+     this.entrega.push(create);
+var create = { name: "Reporte Entrega", route: "/reportentregab", icon: "list_alt" };
+     this.entrega.push(create);
+var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "list_alt" };
+     this.entrega.push(create);
             if (array[4] == "1") {
               
             }
@@ -1586,8 +1595,12 @@ this.beneficiarios.push(create);
           
 
           if (array[3] == "1") {
-            
-
+            var create = { name: "Reporte devoluciones", route: "/reportedevolucion", icon: "list_alt" };
+     this.entrega.push(create);
+var create = { name: "Reporte Entrega", route: "/reportentregab", icon: "list_alt" };
+     this.entrega.push(create);
+var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "list_alt" };
+     this.entrega.push(create);
             if (array[4] == "1") {
               
             }
@@ -1621,7 +1634,12 @@ this.beneficiarios.push(create);
           
 
           if (array[3] == "1") {
-            
+            var create = { name: "Reporte devoluciones", route: "/reportedevolucion", icon: "list_alt" };
+     this.entrega.push(create);
+var create = { name: "Reporte Entrega", route: "/reportentregab", icon: "list_alt" };
+     this.entrega.push(create);
+var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "list_alt" };
+     this.entrega.push(create);
             if (array[4] == "1") {
               
             }
@@ -1645,8 +1663,12 @@ this.beneficiarios.push(create);
           
 
           if (array[3] == "1") {
-            
-
+            var create = { name: "Reporte devoluciones", route: "/reportedevolucion", icon: "list_alt" };
+     this.entrega.push(create);
+var create = { name: "Reporte Entrega", route: "/reportentregab", icon: "list_alt" };
+     this.entrega.push(create);
+var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "list_alt" };
+     this.entrega.push(create);
             if (array[4] == "1") {
               
             }
@@ -1676,8 +1698,12 @@ this.beneficiarios.push(create);
           
 
           if (array[3] == "1") {
-            
-
+            var create = { name: "Reporte devoluciones", route: "/reportedevolucion", icon: "list_alt" };
+     this.entrega.push(create);
+var create = { name: "Reporte Entrega", route: "/reportentregab", icon: "list_alt" };
+     this.entrega.push(create);
+var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "list_alt" };
+     this.entrega.push(create);
             if (array[4] == "1") {
               
             }
@@ -1702,8 +1728,12 @@ this.beneficiarios.push(create);
           
 
           if (array[3] == "1") {
-            
-
+            var create = { name: "Reporte devoluciones", route: "/reportedevolucion", icon: "list_alt" };
+     this.entrega.push(create);
+var create = { name: "Reporte Entrega", route: "/reportentregab", icon: "list_alt" };
+     this.entrega.push(create);
+var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "list_alt" };
+     this.entrega.push(create);
             if (array[4] == "1") {
               
             }
@@ -1995,253 +2025,251 @@ this.beneficiarios.push(create);
 
 }
  //carga permiso 8----------
- inventarios = [
-  { name: "Inventario", route: "/inventario", icon: "store" },
-  { name: "Reporte Inventario", route: "/reporteinventario", icon: "store" },
-];
+ inventarios = [];
  cargarpermiso8() {
-   var centrostr = this.permisos.perInventario;
-   var array = centrostr.split("");
-   // console.log('carga', array);
+  var centrostr = this.permisos.perInventario;
+  var array = centrostr.split("");
+  // console.log('carga', array);
 
-   if (array[0] == "1") {
-      
+  if (array[0] == "1") {
+          var create = { name: "Inventario", route: "/inventario", icon: "store" };
+    this.inventarios.push(create);
+   if (array[1] == "1") {
+     
 
-    if (array[1] == "1") {
-      
+     if (array[2] == "1") {
+       
 
-      if (array[2] == "1") {
-        
+       if (array[3] == "1") {
+         var create = { name: "Reporte Inventario", route: "/reporteinventario", icon: "store" };
+    this.inventarios.push(create);
+         if (array[4] == "1") {
+           
+         }
+         else if (array[4] == "0") {
+           
+         }
 
-        if (array[3] == "1") {
-          
+       }
+       else if (array[3] == "0") {
+         
 
-          if (array[4] == "1") {
-            
-          }
-          else if (array[4] == "0") {
-            
-          }
+         if (array[4] == "1") {
+           
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
 
-        }
-        else if (array[3] == "0") {
-          
+     }
+     else if (array[2] == "0") {
+       
 
-          if (array[4] == "1") {
-            
-          }
-          else if (array[4] == "0") {
-            
-          }
-        }
+       if (array[3] == "1") {
+         var create = { name: "Reporte Inventario", route: "/reporteinventario", icon: "store" };
+    this.inventarios.push(create);
+         if (array[4] == "1") {
+           
+         }
+         else if (array[4] == "0") {
+           
+         }
 
-      }
-      else if (array[2] == "0") {
-        
+       }
+       else if (array[3] == "0") {
+         
 
-        if (array[3] == "1") {
-          
+         if (array[4] == "1") {
+           
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
 
-          if (array[4] == "1") {
-            
-          }
-          else if (array[4] == "0") {
-            
-          }
+     }
 
-        }
-        else if (array[3] == "0") {
-          
+   }
+   else if (array[1] == "0") {
+     
 
-          if (array[4] == "1") {
-            
-          }
-          else if (array[4] == "0") {
-            
-          }
-        }
+     if (array[2] == "1") {
+       
 
-      }
+       if (array[3] == "1") {
+         var create = { name: "Reporte Inventario", route: "/reporteinventario", icon: "store" };
+    this.inventarios.push(create);
+         if (array[4] == "1") {
+           
+         }
+         else if (array[4] == "0") {
+           
+         }
 
-    }
-    else if (array[1] == "0") {
-      
+       }
+       else if (array[3] == "0") {
+         
 
-      if (array[2] == "1") {
-        
+         if (array[4] == "1") {
+           
+         }
+         else if (array[4] == "0") {
+           
+         }
 
-        if (array[3] == "1") {
-          
+       }
 
-          if (array[4] == "1") {
-            
-          }
-          else if (array[4] == "0") {
-            
-          }
+     }
+     else if (array[2] == "0") {
+       
 
-        }
-        else if (array[3] == "0") {
-          
+       if (array[3] == "1") {
+         var create = { name: "Reporte Inventario", route: "/reporteinventario", icon: "store" };
+    this.inventarios.push(create);
+         if (array[4] == "1") {
+           
+         }
+         else if (array[4] == "0") {
+           
+         }
 
-          if (array[4] == "1") {
-            
-          }
-          else if (array[4] == "0") {
-            
-          }
+       }
+       else if (array[3] == "0") {
+         
 
-        }
+         if (array[4] == "1") {
+           
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
 
-      }
-      else if (array[2] == "0") {
-        
-
-        if (array[3] == "1") {
-          
-
-          if (array[4] == "1") {
-            
-          }
-          else if (array[4] == "0") {
-            
-          }
-
-        }
-        else if (array[3] == "0") {
-          
-
-          if (array[4] == "1") {
-            
-          }
-          else if (array[4] == "0") {
-            
-          }
-        }
-
-      }
+     }
 
 
-    }
-
-  }
-  else if (array[0] == "0") {
-    
-    if (array[1] == "1") {
-      
-      if (array[2] == "1") {
-        
-
-        if (array[3] == "1") {
-          
-          if (array[4] == "1") {
-            
-          }
-          else if (array[4] == "0") {
-            
-          }
-        }
-        else if (array[3] == "0") {
-          
-
-          if (array[4] == "1") {
-            
-          }
-          else if (array[4] == "0") {
-            
-          }
-        }
-
-      }
-      else if (array[2] == "0") {
-        
-
-        if (array[3] == "1") {
-          
-
-          if (array[4] == "1") {
-            
-          }
-          else if (array[4] == "0") {
-            
-          }
-
-        }
-        else if (array[3] == "0") {
-          
-
-          if (array[4] == "1") {
-            
-          }
-          else if (array[4] == "0") {
-            
-          }
-        }
-
-      }
-
-    }
-    else if (array[1] == "0") {
-      
-
-      if (array[2] == "1") {
-        
-
-        if (array[3] == "1") {
-          
-
-          if (array[4] == "1") {
-            
-          }
-          else if (array[4] == "0") {
-            
-          }
-
-        }
-        else if (array[3] == "0") {
-          
-
-          if (array[4] == "1") {
-            
-          }
-          else if (array[4] == "0") {
-            
-          }
-        }
-
-      }
-      else if (array[2] == "0") {
-        
-
-        if (array[3] == "1") {
-          
-
-          if (array[4] == "1") {
-            
-          }
-          else if (array[4] == "0") {
-            
-          }
-
-        }
-        else if (array[3] == "0") {
-          
-
-          if (array[4] == "1") {
-            
-          }
-          else if (array[4] == "0") {
-            
-          }
-        }
-
-      }
-
-    }
-
-  }
+   }
 
  }
+ else if (array[0] == "0") {
+   
+   if (array[1] == "1") {
+     
+     if (array[2] == "1") {
+       
+
+       if (array[3] == "1") {
+         var create = { name: "Reporte Inventario", route: "/reporteinventario", icon: "store" };
+    this.inventarios.push(create);
+         if (array[4] == "1") {
+           
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
+       else if (array[3] == "0") {
+         
+
+         if (array[4] == "1") {
+           
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
+
+     }
+     else if (array[2] == "0") {
+       
+
+       if (array[3] == "1") {
+         var create = { name: "Reporte Inventario", route: "/reporteinventario", icon: "store" };
+    this.inventarios.push(create);
+         if (array[4] == "1") {
+           
+         }
+         else if (array[4] == "0") {
+           
+         }
+
+       }
+       else if (array[3] == "0") {
+         
+
+         if (array[4] == "1") {
+           
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
+
+     }
+
+   }
+   else if (array[1] == "0") {
+     
+
+     if (array[2] == "1") {
+       
+
+       if (array[3] == "1") {
+         var create = { name: "Reporte Inventario", route: "/reporteinventario", icon: "store" };
+    this.inventarios.push(create);
+         if (array[4] == "1") {
+           
+         }
+         else if (array[4] == "0") {
+           
+         }
+
+       }
+       else if (array[3] == "0") {
+         
+
+         if (array[4] == "1") {
+           
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
+
+     }
+     else if (array[2] == "0") {
+       
+
+       if (array[3] == "1") {
+         var create = { name: "Reporte Inventario", route: "/reporteinventario", icon: "store" };
+    this.inventarios.push(create);
+         if (array[4] == "1") {
+           
+         }
+         else if (array[4] == "0") {
+           
+         }
+
+       }
+       else if (array[3] == "0") {
+         
+
+         if (array[4] == "1") {
+           
+         }
+         else if (array[4] == "0") {
+           
+         }
+       }
+
+     }
+
+   }
+
+ }
+
+}
  //carga permiso 9 ----------
  rol = [];
  cargarpermiso9() {

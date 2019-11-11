@@ -165,6 +165,7 @@ import { PuntoentregainComponent } from './page/puntoentregain/puntoentregain.co
 import { UdsinComponent } from './page/udsin/udsin.component';
 import { RolinComponent } from './page/rolin/rolin.component';
 import { RolinhComponent } from './page/rolinh/rolinh.component';
+import { RolmComponent } from './page/rolm/rolm.component';
 
 const routes: Routes = [
   {path:'', component: LoginComponent},
@@ -206,9 +207,9 @@ const routes: Routes = [
   {path:'regionali/:id', component: RegionaliComponent},
   {path:'reportes', component:ReportesComponent},
   {path:'rol', component: RolComponent},
+  {path:'rolm/:id', component: RolmComponent},
   {path:'rolin', component: RolinComponent},
-  {path:'rolinh', component: RolinhComponent},
-  {path:'rol/:id', component: RolComponent},
+  {path:'rolinh/:id', component: RolinhComponent},
   {path:'roli', component: RoliComponent},
   {path:'roli/:id', component: RolComponent},
   {path:'uds', component: UdsComponent},

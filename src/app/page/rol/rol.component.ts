@@ -24,7 +24,7 @@ export class RolComponent implements OnInit {
     Estado: 1,
     
   }; 
-  modificar = false;
+  modificar = false; 
 
   ngOnInit() {
     const params = this.activeRoute.snapshot.params;
@@ -48,6 +48,7 @@ export class RolComponent implements OnInit {
 
   //insertar Datos ------------------------------------------------
   insertDatos() {
+    this.grabarStorage();
     delete this.roles.idRolPersona;
     this.Service.insertarRol(this.roles).subscribe(res => {
       //console.log(this.roles);
@@ -59,20 +60,11 @@ export class RolComponent implements OnInit {
       });
 
   }
-  // Actualizar Datos---------------------------------------------
-  updateDatos() {
-    this.Service.ActualizarRol(this.roles.idRolPersona, this.roles)
-      .subscribe(
-        res => {
-          console.log(res);
-          this.showMenssage2();
-        }, err => {
-          console.log(err);
-        }
-      );
-  }
-
-
+  grabarStorage(){
+    let rol = this.roles;
+    localStorage.setItem("roli",JSON.stringify(rol));
+   }
+  
     //mensajes de asigancion
     showMenssage() {
       Swal.fire({
@@ -83,25 +75,12 @@ export class RolComponent implements OnInit {
       }).then((res) => {
         if(res.value){
           console.log('confirmed');
-          this.router.navigate(['/roli']);
+          this.router.navigate(['/permisos']);
       }
       });
     }
 
       //mensajes de asigancion
-  showMenssage2() {
-    Swal.fire({
-      title: 'Actualizado!',
-      text: 'El rol a sido actualizado',
-      type: 'success',
-      confirmButtonText: 'Entendido'
-    }).then((res) => {
-      if(res.value){
-        console.log('confirmed');
-        this.router.navigate(['/roli']);
-    }
-    });
-  }
   
   showMenssage3() {
     Swal.fire({

@@ -3,6 +3,8 @@ import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { Permisos } from '../../interfaces/permisos';
+import { Rol } from 'src/app/interfaces/rol';
+import { delay } from 'q';
 
 @Component({
   selector: 'app-permisos',
@@ -26,7 +28,19 @@ export class PermisosComponent implements OnInit {
     perAlmacenes: '',
     perCentrosD: '',
   };
-  // marked = false;
+  // obtener storge
+  roles: Rol={
+    idRolPersona: 0,
+    RolPersona:'',
+    Estado: 1,
+    
+  }; 
+  rol:Rol={
+    idRolPersona: 0,
+    RolPersona:'',
+    Estado: 1,
+  }; 
+
   //perCentros =  this.Crear + this.vizualizar + this.Actualizar + this.Reportes + this.Inhabilitar;
   Checkbox = {
     Crear: 0,
@@ -118,21 +132,25 @@ export class PermisosComponent implements OnInit {
 
   }
 
-  ngOnInit() {
-
-    //traer permisos
-    /*     this.Service.getPermisos().subscribe(res => {
-          this.permiso = res;
-          console.log('Permiso get', this.permiso);
-        }), err => {
-          console.log(err);
-        }; */
-
+  async ngOnInit() {
+  this.obtenerStorage();
+  
+  this.Service.getRolName(this.roles.RolPersona).subscribe(res => {
+      this.rol = Object(res);
+      console.log('Roles',this.rol);
+    }, err => {
+      console.log(err);
+    });
+    
+  }
+  
+  obtenerStorage() {
+    this.roles = JSON.parse(localStorage.getItem("roli"));
+    console.log(this.roles);
   }
   //insertar Datos ------------------------------------------------
 
   insertDatos(data, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11) {
-    const params = this.activeRoute.snapshot.params;
 
     data = this.Checkbox.Crear + '' + this.Checkbox.Actualizar + '' + this.Checkbox.vizualizar + '' + this.Checkbox.Reportes + '' + this.Checkbox.Inhabilitar + '';
     data2 = this.Checkbox2.Crear + '' + this.Checkbox2.Actualizar + '' + this.Checkbox2.vizualizar + '' + this.Checkbox2.Reportes + '' + this.Checkbox2.Inhabilitar + '';
@@ -146,7 +164,7 @@ export class PermisosComponent implements OnInit {
     data10 = this.Checkbox10.Crear + '' + this.Checkbox10.Actualizar + '' + this.Checkbox10.vizualizar + '' + this.Checkbox10.Reportes + '' + this.Checkbox10.Inhabilitar + '';
     data11 = this.Checkbox11.Crear + '' + this.Checkbox11.Actualizar + '' + this.Checkbox11.vizualizar + '' + this.Checkbox11.Reportes + '' + this.Checkbox11.Inhabilitar + '';
 
-    this.permisos.idRol = params.id;
+    this.permisos.idRol = this.rol.idRolPersona;
     this.permisos.perCentros = data;
     this.permisos.perEntrega = data2;
     this.permisos.perUDS = data3;

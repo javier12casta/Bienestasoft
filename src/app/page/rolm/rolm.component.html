@@ -1,12 +1,12 @@
 <nav class="navbar navbar-success bg-success">
-	<button class="btn btn-dark" routerLink="/rolin">Volver</button>
+	<button class="btn btn-dark" routerLink="/roli">Volver</button>
   </nav>
   
   <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
 	<div class="card" padding>
 	  <div class="card-body" padding>
 		<form>
-				<h1>Inhabilitar Rol</h1>
+				<h1>Crear Rol</h1>
 		  <div class="form-group">
 
 
@@ -16,9 +16,16 @@
 			<select name="Estado" id="Estado" [(ngModel)]="roles.Estado" style="width: 100%;" class="form-control">
 				<option value="1"> Habilitar</option>
 				<Option value="0">Inhabilitar</Option>
-            </select>
-            <h2></h2>
+			</select>
 
+			<h2></h2>
+			<span >Tipo de rol</span>
+			<h2></h2>
+			<input type="text" name="RolPersona" [(ngModel)]="roles.RolPersona" placeholder="Nombre de Rol"
+				required autofocus>
+			<h2></h2>
+			
+			
 			<button class="btn btn-success" (click)="updateDatos()" type="submit">
 				Guardar
 			</button> 

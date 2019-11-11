@@ -20,6 +20,11 @@
           <mat-icon class="icon">{{nav.icon}}</mat-icon>
           {{nav.name}}
         </a>
+        <h3 matSubheader>Inventario</h3>
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of inventarios">
+          <mat-icon class="icon">{{nav.icon}}</mat-icon>
+          {{nav.name}}
+        </a>
         <h3 matSubheader>Beneficiarios</h3>
         <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of beneficiarios">
           <mat-icon class="icon">{{nav.icon}}</mat-icon>

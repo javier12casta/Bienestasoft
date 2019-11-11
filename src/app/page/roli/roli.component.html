@@ -1,6 +1,5 @@
 <nav class="navbar navbar-success bg-success">
   <button class="btn btn-dark" routerLink="/menu"> Volver</button>
-  <button class="btn btn-dark" routerLink="/rol"> Crear </button>
 </nav>
 
 <table class="table">
@@ -27,11 +26,7 @@
         </div>
       </td>
       <td>
-        <button class="btn btn-primary" [routerLink]="['/rol',rol.idRolPersona]" type="submit">Modificar</button>
-      </td>
-      <td>
-        <!-- -->
-        <button class="btn btn-primary" type="submit" [routerLink]="['/permisos',rol.idRolPersona]">Asignar Transacciones</button>
+        <button class="btn btn-primary" [routerLink]="['/rolm',rol.idRolPersona]" type="submit">Modificar</button>
       </td>
       <td>
         <!-- -->

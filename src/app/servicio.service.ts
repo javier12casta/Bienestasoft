@@ -89,6 +89,11 @@ export class ServicioService {
   getRolid(id: string | number) {
     return this.http.get(`${this.api}/rol/${id}`);
   }
+
+  getRolName(name: string) {
+    return this.http.get<Rol>(`${this.api}/rol/rolnom/${name}`);
+  }
+
   //metodo post de rolPersona
   insertarRol(rol: Rol) {
     const path = `${this.api}/rol`;

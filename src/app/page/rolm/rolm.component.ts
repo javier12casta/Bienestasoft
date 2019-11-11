@@ -5,11 +5,11 @@ import { Rol } from 'src/app/interfaces/rol';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-rolinh',
-  templateUrl: './rolinh.component.html',
-  styleUrls: ['./rolinh.component.css']
+  selector: 'app-rolm',
+  templateUrl: './rolm.component.html',
+  styleUrls: ['./rolm.component.css']
 })
-export class RolinhComponent implements OnInit {
+export class RolmComponent implements OnInit {
 
   constructor(
     private activeRoute: ActivatedRoute,
@@ -69,7 +69,7 @@ export class RolinhComponent implements OnInit {
     }).then((res) => {
       if(res.value){
         console.log('confirmed');
-        this.router.navigate(['/rolin']);
+        this.router.navigate(['/roli']);
     }
     });
   }
@@ -82,4 +82,5 @@ export class RolinhComponent implements OnInit {
       confirmButtonText: 'Entendido'
     });
   }
+
 }

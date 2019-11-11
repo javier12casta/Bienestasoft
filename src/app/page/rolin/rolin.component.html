@@ -1,1 +1,32 @@
-<p>rolin works!</p>
+<nav class="navbar navbar-success bg-success">
+    <button class="btn btn-dark" routerLink="/menu"> Volver</button>
+  </nav>
+  
+  <table class="table">
+    <thead class="thead-green">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre Rol</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Inhabilitar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let rol of roles">
+        <th scope="row">{{rol.idRolPersona}}</th>
+        <td>{{rol.RolPersona}}</td>
+        <!-- <td>{{rol.Estado}}</td>-->
+        <td>
+          <div *ngIf="rol.Estado == 1">
+            Habilitado
+          </div>
+          <div *ngIf="rol.Estado == 0">
+            Deshabilitado
+          </div>
+        </td>
+        <td>
+          <button class="btn btn-primary" [routerLink]="['/rolinh',rol.idRolPersona]" type="submit">Inhabilitar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table> 
