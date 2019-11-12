@@ -41,6 +41,7 @@ import { Beneficiario } from '../../interfaces/beneficiario';
         <th scope="col"> ServicioOmodalidad </th>
         <th scope="col"> 	idGenero    </th>
         <th scope="col"> idTipoDocumento  </th>
+        <th scope="col"> Uds </th>
         
 
 
@@ -70,7 +71,7 @@ import { Beneficiario } from '../../interfaces/beneficiario';
         <td>{{centro.ServicioOmodalidad }}</td>
         <td>{{centro.idGenero  }}</td>
         <td>{{centro.idTipoDocumento }}</td>
-        
+        <td>{{centro.idUDS }}</td>
       
             
       </tr>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 import { Beneficiario } from '../../interfaces/beneficiario';
+import { Uds } from '../../interfaces/uds';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 
@@ -13,6 +14,7 @@ import { Router } from '@angular/router';
 export class ModificarbeneficiariomComponent implements OnInit {
 
   public beneficiarios: Beneficiario[] = [];
+  public ud: Uds[] = [];
 
   constructor(private activeRoute: ActivatedRoute,
     private Service: ServicioService,private router:Router) { }
@@ -41,6 +43,7 @@ export class ModificarbeneficiariomComponent implements OnInit {
     idTipoDocumento: 0,
     SegundoApellido: '',
     ServicioOmodalidad : '',
+    idUDS : null,
 
     };
 
@@ -58,6 +61,15 @@ export class ModificarbeneficiariomComponent implements OnInit {
         }
         );
     }
+
+    this.Service.getUds()
+    .subscribe(async (data) => {
+      this.ud = data;
+      console.log(data);
+      console.log('funciona');
+    });
+
+
   }
 
   showMenssage(){

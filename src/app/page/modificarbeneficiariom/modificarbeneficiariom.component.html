@@ -8,6 +8,13 @@
         <form>
           <div class="form-group">
 
+    
+              <select name="idnivel" class="Select2" style="width: 100%;" [(ngModel)]="ben.idUDS"
+                options="options" placeholder="uds">
+                <option *ngFor="let uds of ud" [value]="uds.idUDS">{{uds.NombreUDS }}</option>
+                </select>
+                <h2></h2>
+
                 <input type="number" class="form-control" [(ngModel)]="ben.NumeroDocumento" name="numerodoc"
                 placeholder="numero Documento" class="form-control" id="inputdoc">
 

@@ -41,7 +41,7 @@ import { Regional } from '../../interfaces/regional';
           <th scope="col">ServicioOmodalidad</th>
           <th scope="col">idGenero</th>
           <th scope="col">idTipoDocumento</th>
-         
+          <th scope="col">uds</th>
         </tr>
       </thead>
       <tbody>
@@ -67,7 +67,8 @@ import { Regional } from '../../interfaces/regional';
           <td>{{cen.ServicioOmodalidad}}</td>
           <td>{{cen.idGenero}}</td>
           <td>{{cen.idTipoDocumento}}</td>
-  
+          <td>{{cen.idUDS }}</td>
+
           <td>
             <button class="btn btn-primary" [routerLink]="['/modificarbeneficiariom', cen.idBeneficiarios]">Modificar</button>
           </td>

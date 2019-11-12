@@ -7,6 +7,15 @@
 		  <div class="card-body" padding>
 			<form>
 			  <div class="form-group">
+
+					<h1  >Nivel </h1>
+					<h2></h2>
+
+					<select name="idnivel" class="Select2" style="width: 100%;" [(ngModel)]="x.idUDS"
+						options="options" placeholder="uds">
+						<option *ngFor="let udss of ud" [value]="udss.idUDS">{{udss.NombreUDS }}</option>
+					  </select>
+					  <h2></h2>
 					<h1>Datos Generales Beneficiario</h1>
 
 					<span  >Tipo de Documento</span>

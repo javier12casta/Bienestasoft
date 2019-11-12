@@ -5,6 +5,7 @@ import { Acudientes } from 'src/app/interfaces/acudiente';
 import Swal from 'sweetalert2';
 import { Regional } from '../../interfaces/regional';
 import { Genero } from '../../interfaces/genero';
+import { Uds } from '../../interfaces/uds';
 import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-datos-generales-beneficiario',
@@ -17,7 +18,7 @@ export class DatosGeneralesBeneficiarioComponent implements OnInit {
 
   public reg: Regional[] = [];
   public gen: Genero[] = [];
- 
+  public ud: Uds[] = [];
 
   x : Beneficiario = {
 
@@ -41,6 +42,7 @@ export class DatosGeneralesBeneficiarioComponent implements OnInit {
     SegundoApellido: '',
     ServicioOmodalidad : '',
     Departamento : '',
+    idUDS : null,
 
   };
 
@@ -116,6 +118,12 @@ export class DatosGeneralesBeneficiarioComponent implements OnInit {
    console.log(err);
  });
 
+ this.Service.getUds()
+ .subscribe(res => {
+   this.ud= res;
+ }, err => {
+   console.log(err);
+ });
 
  
 
