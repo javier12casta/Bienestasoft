@@ -11,12 +11,12 @@
 
              <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
              <select name="Estado" id="Estado" [(ngModel)]="inc.Estado" style="width: 100%;" class="form-control">
-                <option value="0">0</option>
-                <Option value="1">1</Option>
+                <option value="0">Inhabilitar</option>
+                <Option value="1">Habilitar</Option> 
               </select>
 
                <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
-      <button class="btn btn-success btn-block" type="submit" (click)="EnableDatos()" routerLink="/inhabilitarcentroi">
+      <button class="btn btn-success btn-block" type="submit" (click)="updateDatos()" routerLink="/inhabilitarcentroi">
         Guardar
       </button>
 

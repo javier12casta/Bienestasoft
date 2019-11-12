@@ -3,6 +3,7 @@ import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 import { InCentrodistribucion } from '../../interfaces/inhabilitarcentrodistribucion';
 import Swal from 'sweetalert2';
+import { Almacen } from 'src/app/interfaces/almacen';
 
 @Component({
   selector: 'app-inhabilitarcentrodm',
@@ -12,6 +13,7 @@ import Swal from 'sweetalert2';
 export class InhabilitarcentrodmComponent implements OnInit {
 
   public centrod: InCentrodistribucion[] = [];
+  almacen: Almacen [] = [];
 
   constructor(private activeRoute: ActivatedRoute,
     private Service: ServicioService,) { }
@@ -41,6 +43,40 @@ export class InhabilitarcentrodmComponent implements OnInit {
     }
   }
 
+  updateDatos() {
+    const params = this.activeRoute.snapshot.params;
+    var numero = params.id;
+    var cont2: number = 0;
+    var cont3: number = 0;
+
+    for (let numeros of this.almacen) {
+      if (numero == numeros.idCentroDistribucion && numeros.Estado == 1) {
+        var cont: number = 0;
+        var cont2 = cont + 1;
+        //this.showMenssage3();
+      } else if(numero == numeros.idCentroDistribucion && numeros.Estado == 0) {
+        var cont: number = 0;
+        cont3 = cont + 1;
+      }
+    }
+    if (cont2 == 0 && cont3 >0){
+      //console.log('funciona');
+      this.updateDatos2();
+    }else{
+      //mensaje de no se puede inhabilitar
+      this.showMenssage4();
+    } 
+  }
+
+  showMenssage4() {
+    Swal.fire({
+      title: 'Error!',
+      text: 'No es posible inhabilitar la UDS',
+      type: 'error',
+      confirmButtonText: 'Entendido'
+    });
+  }
+
   showMenssage(){
     Swal.fire({
       title: 'Inhabilitado!',
@@ -59,7 +95,7 @@ export class InhabilitarcentrodmComponent implements OnInit {
     });
   }
 
-  EnableDatos(){
+  updateDatos2(){
 
     this.Service.putcentrodistribucionInhabilitar(this.inc.idCentroDistribucion, this.inc)
       .subscribe(
