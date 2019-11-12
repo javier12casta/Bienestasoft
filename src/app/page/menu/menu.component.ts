@@ -30,7 +30,7 @@ export class MenuComponent implements OnInit {
     TelefonoMovil: 0,
     TelefonoMovil2: 0,
     Email: "",
-    idPersonalICBF: null,
+    idPuntoEntrega : null,
     idUDS: null,
     idTipoDocumento: 1,
     TipoUsuario: "",

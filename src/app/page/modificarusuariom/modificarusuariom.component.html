@@ -10,6 +10,24 @@
       <form>
         <div class="form-group">
 
+       <select name="idnivel1" class="select-css" style="width: 100%;" [(ngModel)]="usu.idCentrosZonales"
+			options="options" placeholder="nivel" [hidden]="habilitado">
+			<option *ngFor="let did of cen " [value]="did.idCentrosZonales">{{did.NombreCentroZonal }} </option>
+	
+      </select>
+      
+      <select name="idnivel2" class="select-css" style="width: 100%;" [(ngModel)]="usu.idPuntoEntrega"
+			options="options" placeholder="nivel" [hidden]="habilitado1">
+			<option *ngFor="let dodo of pe" [value]="dodo.idPuntoEntrega">{{dodo.NombrePE }} </option>
+	
+		  </select>
+
+		  <select name="idnivel3" class="select-css" style="width: 100%;" [(ngModel)]="usu.idUDS" 
+			options="options" placeholder="nivel" [hidden]="habilitado2">
+			<option *ngFor="let doso1 of ud" [value]="doso1.idUDS">{{doso1.NombreUDS }} </option>
+	
+		  </select>
+      
           <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
           <select name="Estado" [(ngModel)]="usu.Estado" style="width: 100%;" class="form-control">
             <option [value]="1">Habilitado</option>
@@ -55,13 +73,10 @@
           <input type="text" class="form-control" [(ngModel)]="usu.Email" name="email" placeholder="Email"
             class="form-control">
 
-            <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
-          <select name="tipousuario" [(ngModel)]="usu.TipoUsuario" id="tipousuario" style="width: 100%;" class="form-control">
-            <option >PE</option>
-            <Option >UDS</Option>
-            <Option >ADMINISTRADOR</Option>
-          </select>
-
+            <select name="idtipousuario" class="select-css" style="width: 100%;" [(ngModel)]="usu.TipoUsuario"
+            options="options" placeholder="tipo usuario">
+            <option *ngFor="let do of rol" [value]="do.idRolPersona">{{do.RolPersona  }} </option>
+            </select>
             
         
         <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->

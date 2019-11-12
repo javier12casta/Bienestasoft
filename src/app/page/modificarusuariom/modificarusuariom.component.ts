@@ -4,6 +4,11 @@ import { ActivatedRoute } from '@angular/router';
 import { Usuarios } from '../../interfaces/usuarios';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { Rol } from 'src/app/interfaces/rol';
+import { Centrozonal } from 'src/app/interfaces/centrozonal';
+import { Puntoentrega} from 'src/app/interfaces/puntoentrega';
+import { Uds } from 'src/app/interfaces/uds';
+
 
 @Component({
   selector: 'app-modificarusuariom',
@@ -13,7 +18,12 @@ import { Router } from '@angular/router';
 export class ModificarusuariomComponent implements OnInit {
 
   public usuarios: Usuarios[] = [];
+  public rol: Rol[] = [];
+  public cen: Centrozonal[] = [];
+  public pe: Puntoentrega[] = [];
+  public ud: Uds[] = [];
 
+ 
 
   constructor(
     private activeRoute: ActivatedRoute,
@@ -38,6 +48,9 @@ export class ModificarusuariomComponent implements OnInit {
     Email : '',
     idTipoDocumento : 0,
     TipoUsuario : '',
+    idCentrosZonales : null,
+    idPuntoEntrega : null,
+    idUDS : null,
   };
 
   ngOnInit() {
@@ -54,7 +67,52 @@ export class ModificarusuariomComponent implements OnInit {
         }
         );
     }
+
+    this.Service.ObtenerRoles()
+    .subscribe(res => {
+      this.rol = res;
+    }, err => {
+      console.log(err);
+    });
+
+    this.Service.getCentro()
+    .subscribe(res => {
+      this.cen = res;
+    }, err => {
+      console.log(err);
+    });
+
+    const es = this.Service.getCentro()
+    .subscribe(res => {
+      this.cen = res;
+    }, err => {
+      console.log(err);
+    });
+
+    this.Service.getPunto()
+    .subscribe(res => {
+      this.pe = res;
+    }, err => {
+      console.log(err);
+    });
+
+    this.Service.getUds()
+    .subscribe(res => {
+      this.ud = res;
+    }, err => {
+      console.log(err);
+    });
+
+    
+ 
+ 
+
+
+
   }
+
+
+
 
   showMenssage(){
     Swal.fire({

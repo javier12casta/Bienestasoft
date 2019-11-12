@@ -192,6 +192,8 @@ export class ServicioService {
   getCentroid(id: string) {
     return this.http.get(`${this.api}/centrosZ/${id}`);
   }
+
+
   postCentro(cen: Centrozonal) {
     const path = `${this.api}/centrosZ`;
     return this.http.post<Centrozonal>(path, cen);

@@ -6,7 +6,36 @@
 	<div class="card" padding>
 	  <div class="card-body" padding>
 		<form>
+			
 				<h1>Crear Usuarios</h1>
+
+				<span >Seleccionar nivel</span>
+			   <h2></h2>
+			   
+			   <select name="estadomaestro" [(ngModel)]="nivel" (change)="onChange($event)" class="select-css">
+					<option >Centrozonal</option>
+					<Option>Punto de entrega</Option>
+					<Option >Unidad de servicio</Option>
+		    </select>
+			<h2></h2>
+			<select name="idnivel1" class="select-css" style="width: 100%;" [(ngModel)]="x.idCentrosZonales"
+			options="options" placeholder="nivel" [hidden]="habilitado">
+			<option *ngFor="let do of cen " [value]="do.idCentrosZonales">{{do.NombreCentroZonal }} </option>
+	
+		  </select>
+
+		  <select name="idnivel2" class="select-css" style="width: 100%;" [(ngModel)]="x.idPuntoEntrega"
+			options="options" placeholder="nivel" [hidden]="habilitado1">
+			<option *ngFor="let do of pe" [value]="do.idPuntoEntrega">{{do.NombrePE }} </option>
+	
+		  </select>
+
+		  <select name="idnivel3" class="select-css" style="width: 100%;" [(ngModel)]="x.idUDS" 
+			options="options" placeholder="nivel" [hidden]="habilitado2">
+			<option *ngFor="let do of ud" [value]="do.idUDS">{{do.NombreUDS }} </option>
+	
+		  </select>
+				
 		  <div class="form-group">
 
 				

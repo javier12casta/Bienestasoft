@@ -2,6 +2,9 @@ import { Component, OnInit , Input } from '@angular/core';
 import { Usuarios } from 'src/app/interfaces/usuarios';
 import { Tipodocumento } from 'src/app/interfaces/tipodocumento';
 import { Rol } from 'src/app/interfaces/rol';
+import { Centrozonal } from 'src/app/interfaces/centrozonal';
+import {Puntoentrega } from 'src/app/interfaces/puntoentrega';
+import { Uds } from 'src/app/interfaces/uds';
 import { ServicioService } from 'src/app/servicio.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
@@ -20,6 +23,13 @@ export class DatosGeneralesUsuarioComponent implements OnInit {
   listar:string[]=["1","2","3","4","5","6","7","8","9","10"];
   public doc: Tipodocumento[] = [];
   public rol: Rol[] = [];
+  public cen: Centrozonal[] = [];
+  public pe: Puntoentrega[] = [];
+  public ud: Uds[] = [];
+  habilitado = true;
+  habilitado1 = true;
+  habilitado2 = true;
+  nivel;
 
   x : Usuarios = {
     
@@ -34,10 +44,13 @@ export class DatosGeneralesUsuarioComponent implements OnInit {
     TelefonoFijo2 : 0,
     TelefonoMovil: 0,
     TelefonoMovil2 : 0,
-	Email : '',
-	TipoUsuario : '',
-  idTipoDocumento : 0,
-  password : '',
+	   Email : '',
+	   TipoUsuario : '',
+     idTipoDocumento : 0,
+     password : '',
+     idUDS : null,
+     idCentrosZonales : null,
+     idPuntoEntrega : null,
 
   };
 
@@ -81,7 +94,8 @@ this.showMenssage3();
 	  this.rol = res;
 	}, err => {
 	  console.log(err);
-	});
+  });
+  
 
    }
 
@@ -112,6 +126,98 @@ this.showMenssage3();
 	}
 
  
+onChange($event) {
 
+  
+  if(this.nivel == "Centrozonal"){
+    this.habilitado = false;
+    this.habilitado1 = true;
+    this.habilitado2 =true;
+
+    this.Service.getCentro()
+    .subscribe(res => {
+      this.cen = res;
+    }, err => {
+      console.log(err);
+    });
+
+
+    this.Service.getPunto()
+    .subscribe(res => {
+      this.pe = null;
+    }, err => {
+      console.log(err);
+    });
+
+    this.Service.getUds()
+    .subscribe(res => {
+      this.ud = null;
+    }, err => {
+      console.log(err);
+    });
+
+  }
+
+  if(this.nivel == "Punto de entrega"){
+
+    this.habilitado = true;
+    this.habilitado1 = false;
+    this.habilitado2 =true;
+
+    this.Service.getPunto()
+    .subscribe(res => {
+      this.pe = res;
+    }, err => {
+      console.log(err);
+    });
+
+    this.Service.getCentro()
+    .subscribe(res => {
+      this.cen = null;
+    }, err => {
+      console.log(err);
+    });
+ 
+    this.Service.getUds()
+    .subscribe(res => {
+      this.ud = null;
+    }, err => {
+      console.log(err);
+    });
+
+
+   }
+
+   if(this.nivel == "Unidad de servicio"){
+   
+    this.habilitado = true;
+    this.habilitado1 = true;
+    this.habilitado2 =false;
+
+    this.Service.getUds()
+    .subscribe(res => {
+      this.ud = res;
+    }, err => {
+      console.log(err);
+    });
+
+    this.Service.getCentro()
+    .subscribe(res => {
+      this.cen = null;
+    }, err => {
+      console.log(err);
+    });
+
+    this.Service.getPunto()
+    .subscribe(res => {
+      this.pe = null;
+    }, err => {
+      console.log(err);
+    });
+
+   }
+
+   
+}
 
 }
