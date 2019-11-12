@@ -1,1 +1,25 @@
-<p>udsinh works!</p>
+<mat-toolbar>
+    <button class="btn btn-success start" routerLink="/udsin">Volver</button>
+  </mat-toolbar>
+  
+  <div class="col-md-4 offset-md-4">
+    <div class="card">
+      <div class="card-body">
+        <form>
+          <div class="form-group padding">
+
+            <Label>Inhabilitar unidad de servicio</Label>
+            <!-- select centro zonal-->
+            <select required name="Estado" [(ngModel)]="unidad.Estado" style="width: 100%;"
+              class="form-control">
+              <option value="1"> Habilitar</option>
+              <Option value="0">Inhabilitar</Option> 
+            </select>
+          </div>
+          <button class="btn btn-success" (click)="updateDatos()" type="submit">
+            Guardar
+          </button> 
+        </form>
+      </div>
+    </div>
+  </div>

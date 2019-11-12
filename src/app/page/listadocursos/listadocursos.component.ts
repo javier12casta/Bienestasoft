@@ -44,7 +44,7 @@ export class ListadocursosComponent implements OnInit {
     TelefonoMovil : '',
     TelefonoMovil2 : '' ,
     Email : '',
-    Estado : '',
+    Estado : 1,
     idGenero: 0,
     idTipoDocumento: 0,
     SegundoApellido: '',

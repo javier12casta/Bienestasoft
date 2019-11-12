@@ -47,7 +47,7 @@ export class MenuComponent implements OnInit {
     perCentros: '',
     perUDS: '',
     perPuntoen: '',
-    PerMaestros: '',
+    perMaestros: '',
     idRol: 1,
     perAlmacenes: '',
     perCentrosD: '',
@@ -2540,7 +2540,7 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
  //carga permiso 10----------
  datos = [];
  cargarpermiso10() {
-  var centrostr = this.permisos.PerMaestros;
+  var centrostr = this.permisos.perMaestros;
   var array = centrostr.split("");
   // console.log('carga', array);
 
