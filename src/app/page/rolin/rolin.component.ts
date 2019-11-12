@@ -31,7 +31,7 @@ export class RolinComponent implements OnInit {
     perCentros: '',
     perUDS: '',
     perPuntoen: '',
-    PerMaestros: '',
+    perMaestros: '',
     idRol: 0,
     perAlmacenes: '',
     perCentrosD: '',

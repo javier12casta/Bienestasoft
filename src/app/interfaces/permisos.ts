@@ -8,7 +8,7 @@ export interface Permisos {
     perCentros: string,
     perUDS: string,
     perPuntoen: string,
-    PerMaestros: string,
+    perMaestros: string,
     idRol?: number,
     perAlmacenes: string,
     perCentrosD: string,

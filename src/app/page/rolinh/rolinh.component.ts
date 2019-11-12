@@ -76,7 +76,7 @@ export class RolinhComponent implements OnInit {
     }else{
       //mensaje de no se puede inhabilitar
       this.showMenssage4();
-    }
+    }   
   }
 
   showMenssage4() {

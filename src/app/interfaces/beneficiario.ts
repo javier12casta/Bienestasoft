@@ -16,11 +16,11 @@ export interface Beneficiario {
     TelefonoMovil : string ,
     TelefonoMovil2 : string ,
     Email : string,
-    Estado : string,
+    Estado : number,
     idGenero: number,
     idTipoDocumento: number,
     SegundoApellido?: string,
     ServicioOmodalidad : string,
-
+    idUDS?: number,
 
   }

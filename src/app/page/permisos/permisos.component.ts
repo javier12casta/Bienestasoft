@@ -23,7 +23,7 @@ export class PermisosComponent implements OnInit {
     perCentros: '',
     perUDS: '',
     perPuntoen: '',
-    PerMaestros: '',
+    perMaestros: '',
     idRol: 8,
     perAlmacenes: '',
     perCentrosD: '',
@@ -174,7 +174,7 @@ export class PermisosComponent implements OnInit {
     this.permisos.perCentrosD = data7;
     this.permisos.perInventario = data8;
     this.permisos.perRol = data9;
-    this.permisos.PerMaestros = data10;
+    this.permisos.perMaestros = data10;
     this.permisos.perAlmacenes = data11;
     console.log('Los permisos', this.permisos);
     this.Service.postPermisos(this.permisos).subscribe(res => {

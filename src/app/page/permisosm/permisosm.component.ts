@@ -21,7 +21,7 @@ export class PermisosmComponent implements OnInit {
     perCentros: '',
     perUDS: '',
     perPuntoen: '',
-    PerMaestros: '',
+    perMaestros: '',
     idRol: 1,
     perAlmacenes: '',
     perCentrosD: '',
@@ -2338,7 +2338,7 @@ export class PermisosmComponent implements OnInit {
   }
   //carga permiso 10----------
   cargarpermiso10() {
-    var centrostr = this.permisos.PerMaestros;
+    var centrostr = this.permisos.perMaestros;
     var array = centrostr.split("");
     // console.log('carga', array);
 
@@ -2906,7 +2906,7 @@ export class PermisosmComponent implements OnInit {
     this.permisos.perCentrosD = data7;
     this.permisos.perInventario = data8;
     this.permisos.perRol = data9;
-    this.permisos.PerMaestros = data10;
+    this.permisos.perMaestros = data10;
     this.permisos.perAlmacenes = data11;
     console.log('Los permisos', this.permisos);
      this.Service.putPermisos(params.id,this.permisos).subscribe(res => {
