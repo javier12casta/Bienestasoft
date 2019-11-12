@@ -17,6 +17,7 @@ export class ListadocursosComponent implements OnInit {
   listamaestro:string[]=["0","1"];
   public gen: Genero[] = [];
   public tip: Tipodocumento[] = [];
+  public ben: Beneficiario[] = [];
 
   x : Listadocursos = {
     
@@ -24,6 +25,8 @@ export class ListadocursosComponent implements OnInit {
     NumeroDocumento : '',
     Fecha : 0,
     Estado : 0,
+    idTipoDocumento : 0,
+    idBenefiarios : 0
 
   };
 
@@ -49,14 +52,8 @@ export class ListadocursosComponent implements OnInit {
     idTipoDocumento: 0,
     SegundoApellido: '',
     ServicioOmodalidad : '',
-    
-
+  
   };
-
-
-
- 
-
   constructor(private Service: ServicioService,private router:Router) { }
 
   ngOnInit() {
@@ -71,6 +68,13 @@ export class ListadocursosComponent implements OnInit {
 	this.Service.gettipodocumento()
 	.subscribe(res => {
 	  this.tip = res;
+	}, err => {
+	  console.log(err);
+  });
+  
+  this.Service.getBeneficiarios()
+	.subscribe(res => {
+	  this.ben = res;
 	}, err => {
 	  console.log(err);
 	});

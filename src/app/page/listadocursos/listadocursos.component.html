@@ -20,7 +20,7 @@
                     <span c>Tipo Documento</span>
                     <h2></h2>
                     
-                    <select name="idRegional" class="select-css" style="width: 100%;" [(ngModel)]="y.idTipoDocumento"
+                    <select name="idRegional" class="select-css" style="width: 100%;" [(ngModel)]="x.idTipoDocumento"
                     options="options" placeholder="tipo documento">
                     <option *ngFor="let do of tip" [value]="do.idTipoDocumento">{{do.NombreTipo }} </option>
                   </select>
@@ -35,39 +35,54 @@
                 <h2></h2>
                     <span >Numero de documento de identidad</span>
                     <h2></h2>
-                    <input type="text" class="form-control" [(ngModel)]="y.NumeroDocumento " name="numerodoc"
-                    placeholder="Numero de documento de identidad" class="form-control" id="numeroidentidad">
-                
+
+                    <select name="idRegional" class="select-css" style="width: 100%;" [(ngModel)]="x.idBenefiarios "
+                    options="options" placeholder="tipo documento">
+                    <option *ngFor="let do of ben" [value]="do.idBeneficiarios">{{do.NumeroDocumento }} </option>
+                  </select>
+
               
                     <h2></h2>
                     <span >  Primer nombre beneficiario ICBF</span>
                     <h2></h2>
-                    <input type="text" class="form-control" [(ngModel)]="y.PrimerNombre" name="nbeneficiario"
-                    placeholder="Primer nombre beneficiario ICBF" class="form-control" id="app">
+
+                    <select name="idRegional" class="select-css" style="width: 100%;" [(ngModel)]="y.PrimerNombre"
+                    options="options" placeholder="tipo documento">
+                    <option *ngFor="let do of ben" [value]="do.idBeneficiarios">{{do.PrimerNombre }} </option>
+                  </select>
+
                 <h2></h2>
               
                 <span >  Segundo nombre beneficiario ICBF</span>
                     <h2></h2>
-                    <input type="text" class="form-control" [(ngModel)]="y.SegundoNombre" name="nbeneficiario2"
-                    placeholder="Segundo nombre beneficiario ICBF" class="form-control" id="app">
+                    <select name="idRegional" class="select-css" style="width: 100%;" [(ngModel)]="y.SegundoNombre"
+                    options="options" placeholder="tipo documento">
+                    <option *ngFor="let do of ben" [value]="do.idBeneficiarios">{{do.SegundoNombre }} </option>
+                  </select>
+
                 <h2></h2>
             
                 <span >Primer Apellido beneficiario ICBF</span>
                     <h2></h2>
-                    <input type="text" class="form-control" [(ngModel)]="y.PrimerApellido" name="abeneficiario1"
-                    placeholder="Primer Apellido beneficiario ICBF" class="form-control" id="app">
+                    <select name="idRegional" class="select-css" style="width: 100%;" [(ngModel)]="y.PrimerApellido"
+                    options="options" placeholder="tipo documento">
+                    <option *ngFor="let do of ben" [value]="do.idBeneficiarios">{{do.PrimerApellido  }} </option>
+                  </select>
                 <h2></h2>
             
               
                 <span >Segundo Apellido beneficiario ICBF</span>
                     <h2></h2>
-                    <input type="text" class="form-control" [(ngModel)]="y.SegundoApellido" name="abeneficiario2"
-                    placeholder="Segundo Apellido beneficiario ICBF" class="form-control" id="app">
+                    <select name="idRegional" class="select-css" style="width: 100%;" [(ngModel)]="y.SegundoApellido"
+                    options="options" placeholder="tipo documento">
+                    <option *ngFor="let do of ben" [value]="do.idBeneficiarios">{{do.SegundoApellido  }} </option>
+                  </select>
+
                 <h2></h2>
             
                     <span >Fecha</span>
                     <h2></h2>
-                    <input type="date" class="form-control" [(ngModel)]="y.FechaNacimiento" name="fechai" placeholder="Fecha" min="2018-01-01" max="2050-12-31" class="form-control">
+                    <input type="date" class="form-control" [(ngModel)]="y.FechaNacimiento" name="fechai" placeholder="Fecha" min="1900-01-01" max="2050-12-31" class="form-control">
                 
             <h2></h2>
                      {{today}}
