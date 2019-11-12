@@ -45,14 +45,14 @@
       <span >lote</span>
       <h2></h2>
       <input type="text" class="form-control" [(ngModel)]="sal.lote" name="cane"
-      placeholder="Cantidad Entregada" class="form-control" id="inputen" required>
+      placeholder="lote" class="form-control" id="inputen" required>
   
   <h2></h2>
 
 
             <span >Fecha de vencimiento </span>
                 <h2></h2>
-            <input type="date" class="form-control" [(ngModel)]="sal.fechavencimiento" name="fechai" placeholder="Fecha" min="2018-01-01" max="2050-12-31" class="form-control" required>
+            <input type="date" class="form-control" [(ngModel)]="sal.fechavencimiento" name="fechai" placeholder="Fecha" min="1900-01-01" max="2050-12-31" class="form-control" required>
            
             <h2></h2>
 
@@ -62,7 +62,7 @@
 
         <select name="idalmacen" class="select-css" style="width: 100%;" [(ngModel)]="sal.unidad"
         options="options" placeholder="almacen">
-        <option *ngFor="let ud of tip" [value]="ud.idTipoBienesterina">{{ud.TipoBienesterina }} </option>
+        <option *ngFor="let ud of tip" [value]="ud.idTipoBienesterina">{{ud.UnidadSecundaria }} </option>
       </select>
 
       <h2></h2>
@@ -79,7 +79,7 @@
 
         <span >Fecha de registro </span>
         <h2></h2>
-    <input type="date" class="form-control" [(ngModel)]="sal.fecharegistro" name="fechai" placeholder="Fecha" min="2018-01-01" max="2050-12-31" class="form-control" required>
+    <input type="date" class="form-control" [(ngModel)]="sal.fecharegistro" name="fechai" placeholder="Fecha" min="1900-01-01" max="2050-12-31" class="form-control" required>
    
 
     <h2></h2>

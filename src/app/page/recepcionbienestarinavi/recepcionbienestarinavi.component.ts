@@ -5,6 +5,7 @@ import { TipoBienestarina } from 'src/app/interfaces/tipobienestarina';
 import { Inventario } from 'src/app/interfaces/inventario';
 import { ServicioService } from 'src/app/servicio.service';
 import { Recepcion } from 'src/app/interfaces/recepcion';
+import { Acta } from 'src/app/interfaces/acta';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 
@@ -19,6 +20,7 @@ export class RecepcionbienestarinaviComponent implements OnInit {
   public cen: Centrodistribucion[] = [];
   public tip: TipoBienestarina[] = [];
   public inv: Inventario[] = [];
+  public ac: Acta[] = [];
 
   constructor(private Service: ServicioService, private router:Router) { }
 
@@ -36,6 +38,12 @@ export class RecepcionbienestarinaviComponent implements OnInit {
     idInventario : 0,
   };
 
+  y: Acta = {  
+
+    numero : 0,
+    idBienestarina : 6,
+  };
+  
 
   ngOnInit() {
 
@@ -68,6 +76,8 @@ export class RecepcionbienestarinaviComponent implements OnInit {
       console.log(err);
     });
 
+  
+
   }
 
 
@@ -80,6 +90,14 @@ export class RecepcionbienestarinaviComponent implements OnInit {
       err => {
         console.log(err);
       });
+
+      this.Service.postacta(this.y).subscribe(res => {
+        console.log(this.y);
+        },
+        err => {
+          console.log(err);
+        });
+      
 
 
   }
