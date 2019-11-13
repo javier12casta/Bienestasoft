@@ -5,6 +5,7 @@ import { Centrozonal } from 'src/app/interfaces/centrozonal';
 import { Puntoentrega } from 'src/app/interfaces/puntoentrega';
 import { Uds } from 'src/app/interfaces/uds';
 import Swal from 'sweetalert2';
+import { Usuarios } from 'src/app/interfaces/usuarios';
 
 @Component({
   selector: 'app-puntoentregainh',
@@ -16,6 +17,7 @@ export class PuntoentregainhComponent implements OnInit {
   uds: Uds[] = [];
   punto: Puntoentrega[] = [];
   unidades: Uds[] = [];
+  usuarios: Usuarios[] = [];
 
   centros: Centrozonal = {
     idCentrosZonales: 0,
@@ -71,6 +73,13 @@ export class PuntoentregainhComponent implements OnInit {
     this.Service.getUds().subscribe(res => {
       this.unidades = Object(res);
     });
+
+    this.Service.getUsuarios().subscribe(res => {
+      this.usuarios = Object(res);
+    }, err => {
+      console.log(err);
+    });
+
   }
 
   centrosEstado() {
@@ -105,6 +114,17 @@ export class PuntoentregainhComponent implements OnInit {
           //console.log('contador 3', cont3);
         }
       } //cierra for()
+      for (let numeros of this.usuarios) {
+        if (numero == numeros.idPuntoEntrega && numeros.Estado == 1) {
+          var cont: number = 0;
+          var cont2 = cont + 1;
+          //console.log('Comaparado', numero, numeros.idPuntoEntrega);
+          //console.log('contador 2', cont2);
+        } else if (numero == numeros.idPuntoEntrega && numeros.Estado == 0) {
+          var cont: number = 0;
+          cont3 = cont + 1;
+          //console.log('contador 3', cont3);
+        }
       if (cont2 == 0 && cont3 > 0) {
         console.log('funciona');
         this.updateDatos2();
@@ -113,14 +133,17 @@ export class PuntoentregainhComponent implements OnInit {
         this.showMenssage3();
       }
 
+      }
     }//primer if
     else {
       this.showMenssage3();
       this.puntos.Estado = 0;
       this.updateDatos2();
     }
+}
 
-  }
+  
+
 
   updateDatos2() {
     this.Service.putPunto(this.puntos.idPuntoEntrega, this.puntos)

@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { Uds } from 'src/app/interfaces/uds';
 import { Beneficiario } from 'src/app/interfaces/beneficiario';
+import { Usuarios } from 'src/app/interfaces/usuarios';
 
 @Component({
   selector: 'app-udsinh',
@@ -17,7 +18,7 @@ export class UdsinhComponent implements OnInit {
   
   centros: Centrozonal []=[];
   puntos: Puntoentrega[]=[];
-
+  usuarios: Usuarios[] = [];
   benefi: Beneficiario [] = [];
   
   unidad: Uds = {
@@ -63,6 +64,11 @@ export class UdsinhComponent implements OnInit {
   }, err => {
     console.log(err);
   });
+  this.Service.getUsuarios().subscribe(res => {
+    this.usuarios = Object(res);
+  }, err => {
+    console.log(err);
+  });
 
   }
 
@@ -81,6 +87,26 @@ export class UdsinhComponent implements OnInit {
         var cont: number = 0;
         cont3 = cont + 1;
       }
+    }
+    for (let numeros of this.usuarios) {
+      if (numero == numeros.idUDS && numeros.Estado == 1) {
+        var cont: number = 0;
+        var cont2 = cont + 1;
+        //console.log('Comaparado', numero, numeros.idPuntoEntrega);
+        //console.log('contador 2', cont2);
+      } else if (numero == numeros.idUDS && numeros.Estado == 0) {
+        var cont: number = 0;
+        cont3 = cont + 1;
+        //console.log('contador 3', cont3);
+      }
+    if (cont2 == 0 && cont3 > 0) {
+      console.log('funciona');
+      this.updateDatos2();
+    } else {
+      //mensaje de no se puede inhabilitar
+      this.showMenssage3();
+    }
+
     }
     if (cont2 == 0 && cont3 >0){
       //console.log('funciona');

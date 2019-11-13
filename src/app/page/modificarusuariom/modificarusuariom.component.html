@@ -10,19 +10,19 @@
       <form>
         <div class="form-group">
 
-       <select name="idnivel1" class="select-css" style="width: 100%;" [(ngModel)]="usu.idCentrosZonales"
+       <select name="idCentrosZonales" class="select-css" style="width: 100%;" (change)="onChange($event)" [(ngModel)]="usu.idCentrosZonales"
 			options="options" placeholder="nivel" [hidden]="habilitado">
 			<option *ngFor="let did of cen " [value]="did.idCentrosZonales">{{did.NombreCentroZonal }} </option>
 	
       </select>
       
-      <select name="idnivel2" class="select-css" style="width: 100%;" [(ngModel)]="usu.idPuntoEntrega"
+      <select name="idPuntoEntrega" class="select-css" style="width: 100%;" (change)="onChange($event)" [(ngModel)]="usu.idPuntoEntrega"
 			options="options" placeholder="nivel" [hidden]="habilitado1">
 			<option *ngFor="let dodo of pe" [value]="dodo.idPuntoEntrega">{{dodo.NombrePE }} </option>
 	
 		  </select>
 
-		  <select name="idnivel3" class="select-css" style="width: 100%;" [(ngModel)]="usu.idUDS" 
+		  <select name="idUDS" class="select-css" style="width: 100%;" (change)="onChange($event)" [(ngModel)]="usu.idUDS" 
 			options="options" placeholder="nivel" [hidden]="habilitado2">
 			<option *ngFor="let doso1 of ud" [value]="doso1.idUDS">{{doso1.NombreUDS }} </option>
 	

@@ -7,6 +7,7 @@ import { Municipio } from '../../interfaces/municipio';
 import { Regional } from '../../interfaces/regional';
 import Swal from 'sweetalert2';
 import { Puntoentrega } from 'src/app/interfaces/puntoentrega';
+import { Usuarios } from 'src/app/interfaces/usuarios';
 
 @Component({
   selector: 'app-centrozonalinh',
@@ -17,6 +18,7 @@ export class CentrozonalinhComponent implements OnInit {
   public regional: Regional[] = [];
   municipios: Municipio[] = [];
   puntos: Puntoentrega[] = [];
+  usuarios: Usuarios[] = [];
   punto: Puntoentrega = {
     idPuntoEntrega: 0,
     NombrePE: '',
@@ -64,6 +66,12 @@ export class CentrozonalinhComponent implements OnInit {
           console.log(err);
         }
         );
+
+        this.Service.getUsuarios().subscribe(res => {
+          this.usuarios = Object(res);
+        }, err => {
+          console.log(err);
+        });
     }
 
     this.Service.getPunto().subscribe(
@@ -112,6 +120,26 @@ export class CentrozonalinhComponent implements OnInit {
         var cont: number = 0;
         cont3 = cont + 1;
       }
+    }
+    for (let numeros of this.usuarios) {
+      if (numero == numeros.idCentrosZonales && numeros.Estado == 1) {
+        var cont: number = 0;
+        var cont2 = cont + 1;
+        //console.log('Comaparado', numero, numeros.idPuntoEntrega);
+        //console.log('contador 2', cont2);
+      } else if (numero == numeros.idCentrosZonales && numeros.Estado == 0) {
+        var cont: number = 0;
+        cont3 = cont + 1;
+        //console.log('contador 3', cont3);
+      }
+    if (cont2 == 0 && cont3 > 0) {
+      console.log('funciona');
+      this.updateDatos2();
+    } else {
+      //mensaje de no se puede inhabilitar
+      this.showMenssage3();
+    }
+
     }
     if (cont2 == 0 && cont3 >0){
       //console.log('funciona');

@@ -8,6 +8,7 @@ import { Rol } from 'src/app/interfaces/rol';
 import { Centrozonal } from 'src/app/interfaces/centrozonal';
 import { Puntoentrega} from 'src/app/interfaces/puntoentrega';
 import { Uds } from 'src/app/interfaces/uds';
+import { delay } from 'q';
 
 
 @Component({
@@ -62,6 +63,9 @@ export class ModificarusuariomComponent implements OnInit {
         .subscribe(res => {
           this.usu = Object(res);
           console.log(this.usu);
+          delay(2000);
+          this
+          this.onChange(Event);
         }, err => {
           console.log(err);
         }
@@ -102,17 +106,35 @@ export class ModificarusuariomComponent implements OnInit {
     }, err => {
       console.log(err);
     });
-
-    
  
- 
-
-
-
   }
 
 
+    habilitado = true;
+    habilitado1 = true;
+    habilitado2 = true;
+    onChange($event) {
+      delay(2000);
+      console.log(this.usu.idCentrosZonales > 0 ||this.usu.idCentrosZonales);
+    
+    if(this.usu.idCentrosZonales !== null ){
+      console.log('Entro al if');
+      this.habilitado = false;
+      this.habilitado1 = true;
+      this.habilitado2 = true;
 
+    }else if (this.usu.idPuntoEntrega > 0 || this.usu.idPuntoEntrega != null) {
+      this.habilitado = true;
+      this.habilitado1 = false;
+      this.habilitado2 = true;
+
+    }else if (this.usu.idUDS > 0 || this.usu.idUDS != null) {
+      this.habilitado = true;
+      this.habilitado1 = true;
+      this.habilitado2 = false;
+    }
+     
+  }
 
   showMenssage(){
     Swal.fire({
