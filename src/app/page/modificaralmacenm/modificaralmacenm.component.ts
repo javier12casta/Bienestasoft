@@ -19,15 +19,15 @@ export class ModificaralmacenmComponent implements OnInit {
     private Service: ServicioService,private router:Router) { }
 
     almac: Almacen = {
-
       idAlmacenes: 1,
       NumeroExterno : '',
       Nombre: '',
-      Responsable : '',
-      Capacidad  : 0,
-      UnidadMedida  : '',
-      Estado  : 0,
-      idCentroDistribucion : 1,
+      Responsable: '',
+      Capacidad: 0,
+      Capacidad2: 0,
+      UnidadMedida: '',
+      Estado: 0,
+      idCentroDistribucion: 1,
 
       };
 
@@ -48,6 +48,21 @@ export class ModificaralmacenmComponent implements OnInit {
     }
 
   }
+
+  habilitado = true;
+
+  onChange($event) {
+   
+   if(this.almac.UnidadMedida == "g y ml"){
+     this.habilitado = false;
+
+   }else if (this.almac.UnidadMedida == "g") {
+     this.habilitado = true;
+   }else if (this.almac.UnidadMedida == "ml") {
+     this.habilitado = true;
+   }
+    
+ }
 
   showMenssage(){
     Swal.fire({
