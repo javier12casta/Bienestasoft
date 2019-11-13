@@ -2,8 +2,14 @@
 
 //@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @font-face {
-  font-family: lato;
-  src: url(assets/Fonts/tahoma.ttf) format("opentype");
+  font-family: AncizarSans;
+  src: url(assets/Fonts/AncizarSans-Regular_02042016.otf) format("opentype");
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Ancizar', 'Ancizar Sans', sans-serif;
 }
 
 body { 

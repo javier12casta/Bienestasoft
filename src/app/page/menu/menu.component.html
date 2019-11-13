@@ -4,6 +4,9 @@
       <mat-icon>menu</mat-icon>
     </button>
     <h1 class="example-app-name">BienestaSoft</h1>
+    
+    
+      
   </mat-toolbar>
   <!--contenido del menu-->
   <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
@@ -60,7 +63,7 @@
           <mat-icon class="icon">{{nav.icon}}</mat-icon>
           {{nav.name}}
         </a>
-
+        <button (click)="logout()"routerLink=’myRoute’ style="float: right;"> Cerrar sesión </button>
       </mat-nav-list>
     </mat-sidenav>
 

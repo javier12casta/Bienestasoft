@@ -14,6 +14,7 @@ import { Usuarios } from 'src/app/interfaces/usuarios';
 })
 export class MenuComponent implements OnInit {
 
+
   mobileQuery: MediaQueryList;
 
   user: Usuarios = {
@@ -54,15 +55,21 @@ export class MenuComponent implements OnInit {
   };
 
   //------------------------------------Menu----------------------------------------------------------
-
+logout()
+{
+  localStorage.clear();
+  this.router.navigate(['']);
+}
   fillerContent = Array.from({ length: 50 }, () => '');
 
   private _mobileQueryListener: () => void;
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,
+    private router:Router,
     private activeRoute: ActivatedRoute,
     private Service: ServicioService,
   ) {
+
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
