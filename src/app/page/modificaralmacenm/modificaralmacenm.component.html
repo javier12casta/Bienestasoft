@@ -22,14 +22,12 @@
             class="form-control" id="usu">
 
           <div id="unidad" hidden [hidden]="habilitado">
-            <h2></h2>
-            <span>Capacidad 2</span>
-            <input type="number" class="form-control" [(ngModel)]="x.Capacidad2" name="Capacidad2"
+            <input type="number" class="form-control" [(ngModel)]="almac.Capacidad2" name="Capacidad2"
               placeholder="Capacidad 2" class="form-control" id="inputcap">
           </div>
 
           <input type="text" class="form-control" (change)="onChange($event)" [(ngModel)]="almac.UnidadMedida"
-            name="uni" placeholder="Unidad de medida" class="form-control" id="usu">
+            name="UnidadMedida" placeholder="Unidad de medida">
 
           <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
           <select name="Estado" [(ngModel)]="almac.Estado" style="width: 100%;" class="form-control">
