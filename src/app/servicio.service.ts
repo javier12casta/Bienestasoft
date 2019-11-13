@@ -43,6 +43,7 @@ import { Devoluciones} from './interfaces/devoluciones';
 import { Recuentoinventario} from './interfaces/recuentoinventario';
 import { Translado} from './interfaces/traslado';
 import { Acta} from './interfaces/acta';
+import { Biometrico } from './interfaces/biometrico';
 
 @Injectable({
   providedIn: 'root'
@@ -640,6 +641,12 @@ export class ServicioService {
     const path = `${this.api}/Acta`;
     return this.http.post<Acta>(path, recep);
 
+  }
+
+  //biometrico
+  gethuella(){
+    const path = `${this.api}/biometrico`;
+    return this.http.get<[Biometrico]>(path);
   }
 
 

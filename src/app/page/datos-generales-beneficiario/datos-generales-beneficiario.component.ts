@@ -7,6 +7,8 @@ import { Regional } from '../../interfaces/regional';
 import { Genero } from '../../interfaces/genero';
 import { Uds } from '../../interfaces/uds';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Biometrico } from 'src/app/interfaces/biometrico';
+import { delay } from 'q';
 @Component({
   selector: 'app-datos-generales-beneficiario',
   templateUrl: './datos-generales-beneficiario.component.html',
@@ -57,7 +59,10 @@ export class DatosGeneralesBeneficiarioComponent implements OnInit {
     FechaNacimiento : 0,
     FechaIngreso : 0,
     RegistroBiometrico :'',
+  };
 
+  bio: Biometrico = {
+    Huella: '',
   };
 
   showMenssage(){
@@ -82,26 +87,35 @@ export class DatosGeneralesBeneficiarioComponent implements OnInit {
   onClickMe() {
 
    
-    this.Service.postBeneficiarios(this.x).subscribe(res => {
+   this.Service.postBeneficiarios(this.x).subscribe(res => {
       console.log(this.x);
       this.showMenssage();
       },
       err => {
         console.log(err);
       });
-
-      this.Service.postAcudientes(this.y).subscribe(res => {
+    
+    this.Service.postAcudientes(this.y).subscribe(res => {
         console.log(this.y);
         },
         err => {
           console.log(err);
-        });
+        }); 
 
 
   }
   constructor(private Service: ServicioService, private router:Router,private activeRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.Service.gethuella().subscribe(res => {
+      this.y.RegistroBiometrico = JSON.stringify (res);
+      console.log(this.y.RegistroBiometrico);
+      delay(1000);
+    }, err => {
+      console.log(err);
+    });
+    this.y.RegistroBiometrico = this.bio.Huella;
+    console.log(this.y.RegistroBiometrico);
  //traer regionales -----------------------------------------
  this.Service.getRegional()
  .subscribe(res => {
