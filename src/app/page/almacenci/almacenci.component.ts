@@ -15,8 +15,9 @@ import { Router } from '@angular/router';
 export class AlmacenciComponent implements OnInit {
 
   listamaestro:string[]=["0","1"];
-  unidadmedida:string[]=["g","ml"];
+  unidadmedida:string[]=["g","ml", "g y ml"];
   public cen: Centrodistribucion[] = [];
+  campo: [];
 
   x : Almacen = {
     
@@ -24,6 +25,7 @@ export class AlmacenciComponent implements OnInit {
     Nombre: '',
     Responsable : '',
     Capacidad  : 0,
+    Capacidad2  : 0,
     UnidadMedida  : '',
     Estado  : 0,
     idCentroDistribucion : 1,
@@ -44,6 +46,20 @@ export class AlmacenciComponent implements OnInit {
     
    }
 
+   habilitado = true;
+
+   onChange($event) {
+    
+    if(this.x.UnidadMedida == "g y ml"){
+      this.habilitado = false;
+
+    }else if (this.x.UnidadMedida == "g") {
+      this.habilitado = true;
+    }else if (this.x.UnidadMedida == "ml") {
+      this.habilitado = true;
+    }
+     
+  }
 
   constructor(private Service: ServicioService,private router:Router) { }
 

@@ -25,6 +25,7 @@ export class ModificaralmacenmComponent implements OnInit {
       Nombre: '',
       Responsable : '',
       Capacidad  : 0,
+      Capacidad2  : 0,
       UnidadMedida  : '',
       Estado  : 0,
       idCentroDistribucion : 1,
