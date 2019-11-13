@@ -1,5 +1,5 @@
 <nav class="navbar navbar-success bg-success">
-    <button class="btn btn-dark" routerLink="/recepcionbienestarina">Volver</button>
+    <button class="btn btn-dark" routerLink="/recepcion">Volver</button>
     <button class="btn btn-dark" routerLink="/recepcionvi"> Crear </button>
   </nav>
   
@@ -20,8 +20,8 @@
     </thead>
     <tbody>
       <tr *ngFor="let ser of rec">
-        <th scope="row">{{ser.idTipoBienesterina}}</th>
-        <td>{{ser.lote   }}</td>
+        <th scope="row">{{ser.idBienestarina}}</th>
+        <td>{{ser.lote}}</td>
         <td>{{ser.FechaVencimiento   }}</td>
         <td>{{ser.Cantidad   }}</td>
         <td>{{ser.UnidadPrincipal  }}</td>

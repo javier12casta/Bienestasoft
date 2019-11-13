@@ -1,1 +1,35 @@
-<p>inventarioc works!</p>
+<nav class="navbar navbar-success bg-success">
+        <button class="btn btn-dark" routerLink="/inventariov">Volver</button>
+      </nav>
+      
+      <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+        <div class="card" padding>
+          <div class="card-body" padding>
+            <form>
+
+                    <h1>Crear Inventario</h1>
+
+                    <h2></h2>
+                    <span >Nombre</span>
+                        <h2></h2>
+                        <input type="text" class="form-control" [(ngModel)]="x.Nombre" name="nom"
+                        placeholder="Nombre" class="form-control" id="inputdoc">
+                    
+                        <h2></h2>
+                    <span >Cantidad</span>
+                        <h2></h2>
+                        <input type="number" class="form-control" [(ngModel)]="x.Cantidad" name="can"
+                        placeholder="Cantidad" class="form-control" id="inputdoc">
+
+                        <h2></h2>
+					  
+						 
+					  <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
+						 
+					  <h2></h2>
+
+              
+            </form>
+        </div>
+      </div>
+    </div>

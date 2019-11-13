@@ -114,7 +114,7 @@ export class MenuComponent implements OnInit {
       var create = { name: "Crear Centro Zonal", route: "/centrozonali", icon: "public" };
       this.estructura.push(create);
       if (array[1] == "1") {
-        var create = { name: "Actualizar Centro Zonal", route: "/centrozonal", icon: "public" };
+        var create = { name: "Modificar Centro Zonal", route: "/centrozonal", icon: "public" };
         this.estructura.push(create);
 
         if (array[2] == "1") {
