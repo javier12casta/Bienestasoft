@@ -50,6 +50,7 @@ export class SalidacentrocComponent implements OnInit {
     Nombre: '',
     Responsable : '',
     Capacidad  : 0,
+    Capacidad2  : 0,
     UnidadMedida  : '',
     Estado  : 0,
    
