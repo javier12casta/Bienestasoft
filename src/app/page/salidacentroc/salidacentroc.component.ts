@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { TipoBienestarina } from '../../interfaces/tipobienestarina';
+import { Inventario } from '../../interfaces/inventario';
 import { Centrodistribucion } from '../../interfaces/centrodistribucion';
 import { Almacen } from '../../interfaces/almacen';
 
@@ -18,12 +19,13 @@ import { Almacen } from '../../interfaces/almacen';
 export class SalidacentrocComponent implements OnInit {
 
   salidacentro: Salidacentro[] = [];
- 
+  public inv: Inventario[] = [];
   public tip: TipoBienestarina[] = [];
   public cen: Centrodistribucion[] = [];
   public alm: Almacen[] = [];
-
-
+  public alm1: Almacen[] = [];
+  cant;
+  id;
   constructor(private activeRoute: ActivatedRoute,
     private Service: ServicioService, private router:Router) { }
 
@@ -40,6 +42,23 @@ export class SalidacentrocComponent implements OnInit {
       idTipoBienesterina  : 0,
     
     };
+
+    bine: Almacen = {
+
+    idAlmacenes: 1,
+    NumeroExterno : '',
+    Nombre: '',
+    Responsable : '',
+    Capacidad  : 0,
+    UnidadMedida  : '',
+    Estado  : 0,
+   
+      
+  
+  
+      };
+
+
 
   ngOnInit() {
 
@@ -67,6 +86,29 @@ export class SalidacentrocComponent implements OnInit {
       }
       );
 
+      const params = this.activeRoute.snapshot.params;
+    console.log(params);
+    if (params.id) {
+      this.Service.getalmacenid(params.id)
+        .subscribe(res => {
+          console.log(res);
+          this.alm1 = Object(res);
+        }, err => {
+          console.log(err);
+        }
+        );
+    }
+
+
+
+      this.Service.getinventario()
+      .subscribe(async (data) => {
+        this.inv = data;
+        console.log(data);
+        console.log('funciona');
+      }
+      );
+
 
   }
 
@@ -82,6 +124,8 @@ export class SalidacentrocComponent implements OnInit {
         console.log(err);
       });
      
+     
+      
 
   }
 
@@ -89,6 +133,22 @@ export class SalidacentrocComponent implements OnInit {
     Swal.fire({
       title: 'Creado!',
       text: 'salida centro de distribucion Creado',
+      type: 'success',
+      confirmButtonText: 'Aceptar'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/salidacentro']);
+    
+      }
+    });
+  }
+
+
+  showMenssage4(){
+    Swal.fire({
+      title: 'Creado!',
+      text: 'entro',
       type: 'success',
       confirmButtonText: 'Aceptar'
     }).then((result) => {

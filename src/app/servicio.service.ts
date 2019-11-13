@@ -546,6 +546,10 @@ export class ServicioService {
 
   }
 
+  putinventario(id: string | number, Nombre: Inventario) {
+    return this.http.put<Inventario>(`${this.api}/inventario/${id}`, Nombre);
+  }
+
   getsalidacentro() {
     const path = `${this.api}/entregacentrod`;
     return this.http.get<[Salidacentro]>(path);
