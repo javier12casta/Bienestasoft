@@ -80,7 +80,7 @@ export class ReporteinventarioComponent implements OnInit {
     const contentDataURL = canvas.toDataURL('image/png')
     let pdf = new jspdf('p', 'mm', 'a0'); // A4 size page of PDF
     var position = 0;
-    pdf.addImage(contentDataURL, 'PNG', 0, position, 1280, 720)
+    pdf.addImage(contentDataURL, 'PNG', 0, position, 1280, 480)
     pdf.save('reporteinventario.pdf'); // Generated PDF
     });   
        
