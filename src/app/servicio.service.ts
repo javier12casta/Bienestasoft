@@ -539,6 +539,12 @@ export class ServicioService {
     return this.http.get<[Inventario]>(path);
   }
 
+  getinventarioid(id: string) {
+    return this.http.get(`${this.api}/inventario/${id}`);
+  }
+
+  
+
   postinventario(recep: Inventario) {
 
     const path = `${this.api}/inventario`;
