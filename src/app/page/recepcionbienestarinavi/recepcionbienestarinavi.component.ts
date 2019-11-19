@@ -26,7 +26,6 @@ export class RecepcionbienestarinaviComponent implements OnInit {
 
   x : Recepcion = {
     
-
     lote : '',
     FechaVencimiento : 0,
     Cantidad  : 0,
@@ -75,9 +74,6 @@ export class RecepcionbienestarinaviComponent implements OnInit {
     }, err => {
       console.log(err);
     });
-
-  
-
   }
 
 
