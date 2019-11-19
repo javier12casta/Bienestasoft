@@ -7,6 +7,7 @@ export interface TipoBienestarina {
     Referencia : string,
     UnidadPrincipal : string,
     Cantidad : number,
+    cantidad2 ?  : number,
     UnidadSecundaria:  string,
 
 }

@@ -26,6 +26,19 @@ export class SalidacentrocComponent implements OnInit {
   public alm1: Almacen[] = [];
   cant;
   id;
+  inventa;
+  id1 = 0;
+
+  //para las operaciones
+  public inventario: Inventario = {
+    idInventario: 0,
+    Nombre: '',
+    Cantidad: 0,
+    Cantidad2: 0,
+    unidad: '',
+  };
+
+
   constructor(private activeRoute: ActivatedRoute,
     private Service: ServicioService, private router:Router) { }
 
@@ -34,6 +47,7 @@ export class SalidacentrocComponent implements OnInit {
       lote  : '',
       fechavencimiento  : 0,
       cantidad  : 0,
+      cantidad2 : 0,
       unidad  : '',
       fecharegistro  : 0,
       idCentroDistribucionOrigen  : 0,
@@ -43,23 +57,38 @@ export class SalidacentrocComponent implements OnInit {
     
     };
 
-    bine: Almacen = {
-
-    idAlmacenes: 1,
-    NumeroExterno : '',
+      //para la capacidad
+  public almacen: Almacen = {
+    idAlmacenes: 0,
+    NumeroExterno: '',
     Nombre: '',
-    Responsable : '',
-    Capacidad  : 0,
-    Capacidad2  : 0,
-    UnidadMedida  : '',
-    Estado  : 0,
-   
-      
+    Responsable: '',
+    Capacidad: 0,
+    Capacidad2: 0,
+    UnidadMedida: '',
+    Estado: 0,
+    idCentroDistribucion: 0,
+  };
   
-  
-      };
+      idinv = 0;
+      onChange1($event) {
 
-
+        for (let inve of this.inv) {
+    
+          if (this.idinv == inve.idInventario) {
+            this.id1 = inve.idInventario;
+            console.log("IGUAl", this.id1);
+            this.Service.getinventarioid(this.id1.toString()).subscribe(res => {
+              this.inventario = Object(res);
+              console.log(this.inventario);
+            }, err => {
+              console.log(err);
+            });
+    
+          }
+        }
+    
+      }
 
   ngOnInit() {
 
@@ -87,21 +116,6 @@ export class SalidacentrocComponent implements OnInit {
       }
       );
 
-      const params = this.activeRoute.snapshot.params;
-    console.log(params);
-    if (params.id) {
-      this.Service.getalmacenid(params.id)
-        .subscribe(res => {
-          console.log(res);
-          this.alm1 = Object(res);
-        }, err => {
-          console.log(err);
-        }
-        );
-    }
-
-
-
       this.Service.getinventario()
       .subscribe(async (data) => {
         this.inv = data;
@@ -109,8 +123,6 @@ export class SalidacentrocComponent implements OnInit {
         console.log('funciona');
       }
       );
-
-
   }
 
 
@@ -119,14 +131,10 @@ export class SalidacentrocComponent implements OnInit {
     this.Service.postsalidacentro(this.sal).subscribe(res => {
       console.log(this.sal);
       this.showMenssage();
-      
       },
       err => {
         console.log(err);
       });
-     
-     
-      
 
   }
 
@@ -161,5 +169,49 @@ export class SalidacentrocComponent implements OnInit {
     });
   }
 
-  
+  showMenssage5() {
+    Swal.fire({
+      title: 'Advertencia',
+      text: 'La Cantidad ingresada supera la capacidad',
+      type: 'warning',
+      confirmButtonText: 'Entendido'
+    });
+  }
+
+  onKey($event) {
+    const Cantidadx = this.sal.cantidad;
+    const cap = this.almacen.Capacidad;
+    const cantidadinv = this.inventario.Cantidad;
+    const cantidadsuma = Cantidadx + cantidadinv;
+    if (cantidadsuma >= cap) {
+      this.showMenssage5();
+    }
+  }
+  onKey2($event) {
+    const Cantidadx = this.sal.cantidad2;
+    const cap2 = this.almacen.Capacidad2;
+    const cantidadinv = this.inventario.Cantidad2;
+    const cantidadsuma = Cantidadx + cantidadinv;
+    if (cantidadsuma >= cap2) {
+      this.showMenssage5();
+    }
+  }
+
+  habilitado = true;
+  onChange3($event) {
+    
+    console.log(this.sal.unidad);
+    console.log("entro");
+    if(this.sal.unidad == "g y ml"){
+      
+      this.habilitado = false;
+      console.log(this.habilitado);
+    }else if (this.sal.unidad == "g") {
+      this.habilitado = true;
+    }else if (this.sal.unidad == "ml") {
+      this.habilitado = true;
+    }
+  }
+
+
 }
