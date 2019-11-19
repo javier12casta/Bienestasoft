@@ -28,8 +28,9 @@ export class SalidacentrocComponent implements OnInit {
   id;
   inventa;
   id1 = 0;
+  unidadmedida = [];
 
-  //para las operaciones
+  //para las operaciones capacidad
   public inventario: Inventario = {
     idInventario: 0,
     Nombre: '',
@@ -57,7 +58,7 @@ export class SalidacentrocComponent implements OnInit {
     
     };
 
-      //para la capacidad
+      //para la capacidad almacen
   public almacen: Almacen = {
     idAlmacenes: 0,
     NumeroExterno: '',
@@ -71,24 +72,7 @@ export class SalidacentrocComponent implements OnInit {
   };
   
       idinv = 0;
-      onChange1($event) {
-
-        for (let inve of this.inv) {
     
-          if (this.idinv == inve.idInventario) {
-            this.id1 = inve.idInventario;
-            console.log("IGUAl", this.id1);
-            this.Service.getinventarioid(this.id1.toString()).subscribe(res => {
-              this.inventario = Object(res);
-              console.log(this.inventario);
-            }, err => {
-              console.log(err);
-            });
-    
-          }
-        }
-    
-      }
 
   ngOnInit() {
 
@@ -177,7 +161,7 @@ export class SalidacentrocComponent implements OnInit {
       confirmButtonText: 'Entendido'
     });
   }
-
+//Para saber que digita en el campo cantidad
   onKey($event) {
     const Cantidadx = this.sal.cantidad;
     const cap = this.almacen.Capacidad;
@@ -187,6 +171,8 @@ export class SalidacentrocComponent implements OnInit {
       this.showMenssage5();
     }
   }
+
+  //para saber que digita en la cantidad2
   onKey2($event) {
     const Cantidadx = this.sal.cantidad2;
     const cap2 = this.almacen.Capacidad2;
@@ -196,19 +182,73 @@ export class SalidacentrocComponent implements OnInit {
       this.showMenssage5();
     }
   }
+//saber que inventario selecciono
+  onChange($event) {
 
+    for (let inve of this.inv) {
+
+      if (this.idinv == inve.idInventario) {
+        this.id1 = inve.idInventario;
+        console.log("IGUAl", this.id1);
+        this.Service.getinventarioid(this.id1.toString()).subscribe(res => {
+          this.inventario = Object(res);
+          console.log(this.inventario);
+        }, err => {
+          console.log(err);
+        });
+
+      }
+    }
+
+  }
+
+  onChange1($event) {
+
+    for (let al of this.alm) {
+
+      if (this.almacen.idAlmacenes == al.idAlmacenes) {
+        console.log("si")
+        const id = al.idAlmacenes;
+        console.log("IGUAl", id);
+        this.Service.getalmacenid(id.toString()).subscribe(res => {
+          this.almacen = Object(res);
+          console.log(this.almacen);
+          if(this.almacen.UnidadMedida == "g"){
+            console.log('entro g');
+            this.unidadmedida.pop();
+            this.unidadmedida.push('g');
+          }else if(this.almacen.UnidadMedida == "ml"){
+            this.unidadmedida.pop();
+            this.unidadmedida.push("ml");
+          }else if (this.almacen.UnidadMedida == "g y ml"){
+            this.unidadmedida.pop();
+            this.unidadmedida.push("g y ml");
+          }
+
+        }, err => {
+          console.log(err);
+        });
+
+      }
+    }
+  }
+
+
+  
   habilitado = true;
   onChange3($event) {
     
     console.log(this.sal.unidad);
     console.log("entro");
     if(this.sal.unidad == "g y ml"){
-      
+    
       this.habilitado = false;
       console.log(this.habilitado);
     }else if (this.sal.unidad == "g") {
+     
       this.habilitado = true;
     }else if (this.sal.unidad == "ml") {
+    
       this.habilitado = true;
     }
   }

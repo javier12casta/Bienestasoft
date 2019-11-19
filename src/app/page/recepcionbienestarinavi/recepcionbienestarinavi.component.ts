@@ -108,7 +108,7 @@ export class RecepcionbienestarinaviComponent implements OnInit {
     const cantidad2 = this.x.Cantidad2;
     this.inventario.Cantidad = this.inventario.Cantidad + cantidad;
     this.inventario.Cantidad2 = this.inventario.Cantidad2 + cantidad2;
-    console.log('Catidad inventario', this.inventario.Cantidad);
+    console.log('Cantidad inventario', this.inventario.Cantidad);
 
     this.Service.putinventario(this.id1, this.inventario).subscribe(res => {
 
