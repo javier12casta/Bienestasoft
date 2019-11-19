@@ -4,6 +4,7 @@ export interface Salidacentro {
     lote:string,
     fechavencimiento : number,
     cantidad  : number,
+    cantidad2 ?  : number,
     unidad : string,
     fecharegistro : number,
     idCentroDistribucionOrigen:number,

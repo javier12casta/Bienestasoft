@@ -4,6 +4,7 @@ export interface Salidaconsumo {
     lote :string,
     fechavencimiento : number,
     cantidad  : number,
+    cantidad2 ?  : number,
     unidad : string,
     fecharegistro  : number,
     idTipoBienesterina:number,

@@ -19,12 +19,28 @@ export class InventariocComponent implements OnInit {
     
     Nombre : '',
     Cantidad : 0,
-  
+    Cantidad2 : 0,
+    unidad:'',
   };
-
+  unidadmedida:string[]=["g","ml", "g y ml"];
 
   ngOnInit() {
   }
+
+  habilitado = true;
+
+  onChange($event) {
+   
+   if(this.x.unidad == "g y ml"){
+     this.habilitado = false;
+  console.log(this.habilitado);
+   }else if (this.x.unidad== "g") {
+     this.habilitado = true;
+   }else if (this.x.unidad == "ml") {
+     this.habilitado = true;
+   }
+    
+ }
 
   onClickMe() {
 

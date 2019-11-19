@@ -52,7 +52,7 @@ export class AlmacenciComponent implements OnInit {
     
     if(this.x.UnidadMedida == "g y ml"){
       this.habilitado = false;
-
+   console.log(this.habilitado);
     }else if (this.x.UnidadMedida == "g") {
       this.habilitado = true;
     }else if (this.x.UnidadMedida == "ml") {
