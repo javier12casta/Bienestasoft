@@ -79,39 +79,50 @@ export class SalidacentrocComponent implements OnInit {
     this.Service.getTipobienestarina()
     .subscribe(async (data) => {
       this.tip = data;
-      console.log(data);
-      console.log('funciona');
+      //console.log(data);
+      //console.log('funciona');
     }
     );
 
     this.Service.getcentrodistribucion()
       .subscribe(async (data) => {
         this.cen = data;
-        console.log(data);
-        console.log('funciona');
+       // console.log(data);
+        //console.log('funciona');
       }
       );
 
       this.Service.getalmacen()
       .subscribe(async (data) => {
         this.alm = data;
-        console.log(data);
-        console.log('funciona');
+        //console.log(data);
+        //console.log('funciona');
       }
       );
 
       this.Service.getinventario()
       .subscribe(async (data) => {
         this.inv = data;
-        console.log(data);
-        console.log('funciona');
+        //console.log(data);
+        //console.log('funciona');
       }
       );
   }
 
 
   onClickMe(){
+    // para restar al inventario
+    const cantidad = this.sal.cantidad;
+    const cantidad2 = this.sal.cantidad2;
+    this.inventario.Cantidad = this.inventario.Cantidad - cantidad;
+    this.inventario.Cantidad2 = this.inventario.Cantidad2 - cantidad2;
+    console.log('Cantidad inventario', this.inventario.Cantidad);
+    this.Service.putinventario(this.idinv, this.inventario).subscribe(res => {
 
+    }, err => {
+      console.log(err);
+    });
+//--------------------------------------------------------------
     this.Service.postsalidacentro(this.sal).subscribe(res => {
       console.log(this.sal);
       this.showMenssage();
@@ -152,7 +163,7 @@ export class SalidacentrocComponent implements OnInit {
       }
     });
   }
-
+//mensaje de la capacidad
   showMenssage5() {
     Swal.fire({
       title: 'Advertencia',
@@ -182,73 +193,77 @@ export class SalidacentrocComponent implements OnInit {
       this.showMenssage5();
     }
   }
-//saber que inventario selecciono
-  onChange($event) {
+//saber que almacen selecciono y cargar la unidad de medida
+onChange($event) {
 
-    for (let inve of this.inv) {
+  for (let al of this.alm) {
 
-      if (this.idinv == inve.idInventario) {
-        this.id1 = inve.idInventario;
-        console.log("IGUAl", this.id1);
-        this.Service.getinventarioid(this.id1.toString()).subscribe(res => {
-          this.inventario = Object(res);
-          console.log(this.inventario);
-        }, err => {
-          console.log(err);
-        });
+    if (this.sal.idAlmacen == al.idAlmacenes) {
+      const id = this.sal.idAlmacen;
+     // console.log("IGUAl", id);
+      this.Service.getalmacenid(id.toString()).subscribe(res => {
+        this.almacen = Object(res);
+        console.log(this.almacen);
+/*         if(this.almacen.UnidadMedida == "g"){
+          console.log('entro g');
+          this.unidadmedida.pop();
+          this.unidadmedida.push('g');
+        }else if(this.almacen.UnidadMedida == "ml"){
+          this.unidadmedida.pop();
+          this.unidadmedida.push("ml");
+        }else if (this.almacen.UnidadMedida == "g y ml"){
+          this.unidadmedida.pop();
+          this.unidadmedida.push("g y ml");
+        } */
+      }, err => {
+        console.log(err);
+      });
 
-      }
-    }
-
-  }
-
-  onChange1($event) {
-
-    for (let al of this.alm) {
-
-      if (this.almacen.idAlmacenes == al.idAlmacenes) {
-        console.log("si")
-        const id = al.idAlmacenes;
-        console.log("IGUAl", id);
-        this.Service.getalmacenid(id.toString()).subscribe(res => {
-          this.almacen = Object(res);
-          console.log(this.almacen);
-          if(this.almacen.UnidadMedida == "g"){
-            console.log('entro g');
-            this.unidadmedida.pop();
-            this.unidadmedida.push('g');
-          }else if(this.almacen.UnidadMedida == "ml"){
-            this.unidadmedida.pop();
-            this.unidadmedida.push("ml");
-          }else if (this.almacen.UnidadMedida == "g y ml"){
-            this.unidadmedida.pop();
-            this.unidadmedida.push("g y ml");
-          }
-
-        }, err => {
-          console.log(err);
-        });
-
-      }
     }
   }
+}
+//para saber que inventario selecciono y cargar la unidad 
+onChange1($event) {
+  console.log(this.sal);
 
+  for (let al of this.inv) {
 
-  
+    if (this.idinv == al.idInventario) {
+      console.log("IGUAl", this.idinv);
+      this.Service.getinventarioid(this.idinv.toString()).subscribe(res => {
+        this.inventario = Object(res);
+        console.log(this.inventario);
+        if(this.inventario.unidad == "g"){
+          //console.log('entro g');
+          this.unidadmedida.pop();
+          this.unidadmedida.push('g');
+        }else if(this.inventario.unidad  == "ml"){
+          this.unidadmedida.pop();
+          this.unidadmedida.push("ml");
+        }else if (this.inventario.unidad == "g y ml"){
+          this.unidadmedida.pop();
+          this.unidadmedida.push("g y ml");
+        }
+
+      }, err => {
+        console.log(err);
+      });
+
+    }
+  }
+}
+
+  //verificar que selecciono en la unidad de medida
   habilitado = true;
   onChange3($event) {
-    
     console.log(this.sal.unidad);
-    console.log("entro");
     if(this.sal.unidad == "g y ml"){
-    
+      console.log("entro");
       this.habilitado = false;
       console.log(this.habilitado);
     }else if (this.sal.unidad == "g") {
-     
       this.habilitado = true;
     }else if (this.sal.unidad == "ml") {
-    
       this.habilitado = true;
     }
   }

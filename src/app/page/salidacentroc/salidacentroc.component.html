@@ -35,10 +35,10 @@
           <span>Almacen de origen</span>
           <h2></h2>
 
-          <select name="idAlmacenes" class="select-css" style="width: 100%;" [(ngModel)]="sal.idAlmacen" options="options"
-           placeholder="Almacen" (change)="onChange1($event)">
-                <option *ngFor="let do of alm" [value]="do.idAlmacenes">{{do.Nombre  }} </option>
-              </select>
+          <select name="idAlmacen" class="select-css" style="width: 100%;" [(ngModel)]="sal.idAlmacen"
+            options="options" placeholder="Almacen" (change)="onChange($event)">
+            <option *ngFor="let do of alm" [value]="do.idAlmacenes">{{do.Nombre  }} </option>
+          </select>
 
         
 
@@ -86,7 +86,7 @@
 
           <h2></h2>
 
-          <div id="unidad" hidden [hidden]="habilitado">
+          <div id="unidad" [hidden]="habilitado">
             <h2></h2>
             <span>Capacidad liquida</span>
             <h2></h2>

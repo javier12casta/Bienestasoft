@@ -1,102 +1,105 @@
 <nav class="navbar navbar-success bg-success">
-    <button class="btn btn-dark" routerLink="/recepcionv">Volver</button>
-  </nav>
-  
-  <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
-    <div class="card" padding>
-      <div class="card-body" padding>
-        <form>
-                <h1>Crear Recepcion </h1>
-          <div class="form-group">
+  <button class="btn btn-dark" routerLink="/recepcionv">Volver</button>
+</nav>
 
-                <span >Fecha de Recepcion</span>
-                <h2></h2>
-                <input type="date" class="form-control" [(ngModel)]="x.FechaRecepcion" name="fechai" placeholder="Fecha" min="1900-01-01" max="2050-12-31" class="form-control">
-            
-                <h2></h2>
-                <span >almacen</span>
-                <h2></h2>
-                
-                <select name="idAlmacenes" class="select-css" style="width: 100%;" [(ngModel)]="x.idAlmacenes"
-                options="options" placeholder="Almacen" (change)="onChange($event)">
-                <option *ngFor="let do of alm" [value]="do.idAlmacenes">{{do.Nombre  }} </option>
-              </select>
+<div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+  <div class="card" padding>
+    <div class="card-body" padding>
+      <form>
+        <h1>Crear Recepcion </h1>
+        <div class="form-group">
 
-              <h2></h2>
-			   <span >centro distribucion</span>
-			   <h2></h2>
-			   
-			   <select name="idRegional" class="select-css" style="width: 100%;" [(ngModel)]="x.idCentroDistribucion"
-			   options="options" placeholder="centro distribucion">
-			   <option *ngFor="let do of cen" [value]="do.idCentroDistribucion">{{do.Nombre  }} </option>
-             </select>
-             
-             <h2></h2>
-			   <span >Tipo Bienestarina</span>
-			   <h2></h2>
-			   
-			   <select name="idTipoBienesterina" class="select-css" style="width: 100%;" [(ngModel)]="x.idTipoBienesterina"
-			   options="options" placeholder="tipo bienestarina">
-			   <option *ngFor="let do of tip" [value]="do.idTipoBienesterina">{{do.TipoBienesterina  }} </option>
-       </select>
-       
-       <h2></h2>
-       <span >Inventario</span>
-       <h2></h2>
-       
-       <select name="idInventario" class="select-css" style="width: 100%;" [(ngModel)]="x.idInventario"
-       options="options" placeholder="Inventario" (change)="onChange1($event)">
-       <option *ngFor="let do of inv" [value]="do.idInventario">{{do.Nombre  }} </option>
-     </select>
+          <span>Fecha de Recepcion</span>
+          <h2></h2>
+          <input type="date" class="form-control" [(ngModel)]="x.FechaRecepcion" name="fechai" placeholder="Fecha"
+            min="1900-01-01" max="2050-12-31" class="form-control">
+
+          <h2></h2>
+          <span>almacen</span>
+          <h2></h2>
+
+          <select name="idAlmacenes" class="select-css" style="width: 100%;" [(ngModel)]="x.idAlmacenes"
+            options="options" placeholder="Almacen" (change)="onChange($event)">
+            <option *ngFor="let do of alm" [value]="do.idAlmacenes">{{do.Nombre  }} </option>
+          </select>
+
+          <h2></h2>
+          <span>centro distribucion</span>
+          <h2></h2>
+
+          <select name="idRegional" class="select-css" style="width: 100%;" [(ngModel)]="x.idCentroDistribucion"
+            options="options" placeholder="centro distribucion">
+            <option *ngFor="let do of cen" [value]="do.idCentroDistribucion">{{do.Nombre  }} </option>
+          </select>
+
+          <h2></h2>
+          <span>Tipo Bienestarina</span>
+          <h2></h2>
+
+          <select name="idTipoBienesterina" class="select-css" style="width: 100%;" [(ngModel)]="x.idTipoBienesterina"
+            options="options" placeholder="tipo bienestarina">
+            <option *ngFor="let do of tip" [value]="do.idTipoBienesterina">{{do.TipoBienesterina  }} </option>
+          </select>
+
+          <h2></h2>
+          <span>Inventario</span>
+          <h2></h2>
+
+          <select name="idInventario" class="select-css" style="width: 100%;" [(ngModel)]="x.idInventario"
+            options="options" placeholder="Inventario" (change)="onChange1($event)">
+            <option *ngFor="let do of inv" [value]="do.idInventario">{{do.Nombre  }} </option>
+          </select>
 
 
-             <span >Lote</span>
-             <h2></h2>
-             <input type="text" class="form-control" [(ngModel)]="x.lote" name="nombre"
-             placeholder="Lote" id="nom">
-       
-             <span >Fecha de Vencimiento</span>
-             <h2></h2>
-             <input type="date" class="form-control" [(ngModel)]="x.FechaVencimiento" name="fechai" placeholder="Fecha" min="1900-01-01" max="2050-12-31" class="form-control">
-              
-             <span >unidad de medida</span>
-             <h2></h2>
+          <span>Lote</span>
+          <h2></h2>
+          <input type="text" class="form-control" [(ngModel)]="x.lote" name="nombre" placeholder="Lote" id="nom">
 
-             <br>
-             <select name="UnidadPrincipal" [(ngModel)]="x.UnidadPrincipal" (change)="onChange3($event)" class="select-css">
-              <option [value]="item" *ngFor="let item of unidadmedida">{{item}} </option>
-            </select>
+          <span>Fecha de Vencimiento</span>
+          <h2></h2>
+          <input type="date" class="form-control" [(ngModel)]="x.FechaVencimiento" name="fechai" placeholder="Fecha"
+            min="1900-01-01" max="2050-12-31" class="form-control">
+
+          <span>unidad de medida</span>
+          <h2></h2>
+
+          <br>
+          <select name="UnidadPrincipal" [(ngModel)]="x.UnidadPrincipal" (change)="onChange3($event)"
+            class="select-css">
+            <option [value]="item" *ngFor="let item of unidadmedida">{{item}} </option>
+          </select>
+          <h2></h2>
+
+          <span>Cantidad</span>
+          <h2></h2>
+          <input type="number" class="form-control" [(ngModel)]="x.Cantidad" name="fechai" placeholder="Cantidad"
+            class="form-control" (keyup)="onKey($event)">
+
+          <div id="unidad" hidden [hidden]="habilitado">
             <h2></h2>
+            <span>Capacidad liquida</span>
+            <h2></h2>
+            <input type="number" class="form-control" [(ngModel)]="x.Cantidad2" name="Cantidad2"
+              placeholder="Capacidad liquida" (keyup)="onKey2($event)" class="form-control" id="inputcap">
 
-             <span >Cantidad</span>  
-             <h2></h2>
-             <input type="number" class="form-control" [(ngModel)]="x.Cantidad" name="fechai" placeholder="Cantidad"  class="form-control" (keyup)="onKey($event)">
-         
-             <div id="unidad" hidden [hidden]="habilitado">
-              <h2></h2>
-              <span>Capacidad liquida</span>
-              <h2></h2>
-              <input type="number" class="form-control" [(ngModel)]="x.Cantidad2" name="Cantidad2" placeholder="Capacidad liquida" (keyup)="onKey2($event)"
-                class="form-control" id="inputcap">
-    
-              <h2></h2>
-            </div>
+            <h2></h2>
+          </div>
 
-             <span >Numero de acta</span>
-             <h2></h2>
-             <input type="text" class="form-control"  name="acta"
-             placeholder="Numero de acta " class="form-control" id="nom" [(ngModel)]="y.numero">
-             <h2></h2>
+          <span>Numero de acta</span>
+          <h2></h2>
+          <input type="text" class="form-control" name="acta" placeholder="Numero de acta " class="form-control"
+            id="nom" [(ngModel)]="y.numero">
+          <h2></h2>
 
 
-             <button (click)="showMenssage4()" class="btn btn-success">Aceptar</button>
-                
-             <h2></h2>
-      
+          <button (click)="showMenssage4()" class="btn btn-success">Aceptar</button>
+
+          <h2></h2>
+
 
 
         </div>
-    </form>
-</div>
-</div>
+      </form>
+    </div>
+  </div>
 </div>
