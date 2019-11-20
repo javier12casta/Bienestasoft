@@ -949,7 +949,7 @@ this.estructura.push(create);
     // console.log('carga', array);
 
     if (array[0] == "1") {
-      var create = { name: "Crear usuarios", route: "/usuarios", icon: "face" };
+      var create = { name: "Crear usuarios", route: "/usuariosv", icon: "face" };
       this.Usuarios.push(create);
 
       if (array[1] == "1") {
@@ -1218,7 +1218,7 @@ this.Usuarios.push(create);
     if (array[0] == "1") {
       var create = { name: "acudientes", route: "/acudientes", icon: "face" };
       this.beneficiarios.push(create);
-      var create = { name: "Crear beneficiarios ICBF", route: "/datosgeneralesbeneficiario", icon: "face" };
+      var create = { name: "Crear beneficiarios ICBF", route: "/beneficiariosm", icon: "face" };
       this.beneficiarios.push(create);
 
       if (array[1] == "1") {
@@ -2814,7 +2814,7 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
   //console.log('carga', array);
 
   if (array[0] == "1") {
-     var create = {name: "Crear Almacen", route:"/almacenci", icon:"store"};
+     var create = {name: "Crear Almacen", route:"/almacenc", icon:"store"};
    this.almacen.push(create);
 
    if (array[1] == "1") {
