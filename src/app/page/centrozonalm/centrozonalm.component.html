@@ -16,15 +16,15 @@
           <input type="text" class="form-control" [(ngModel)]="centros.NombreCentroZonal" name="NombreCentroZonal"
             placeholder="Nombre Centro Zonal" class="form-control"minlength="1" required="">
            
-            <div class="invalid-feedback">*</div>
+            
           <!--select2 regional-->
           <select name="idRegional" class="Select2" style="width: 100%;" [(ngModel)]="centros.idRegional"
-            options="options" placeholder="Regional">
+            options="options" placeholder="Regional" class="form-control">
             <option *ngFor="let reg of regional" [value]="reg.idRegional">{{reg.Regional}} | {{reg.codigo}}</option>
           </select>
           <!--select 2 Municipio-->
           <select name="idMunicipios" class="Select2" style="width: 100%;" [(ngModel)]="centros.idMunicipios"
-            options="options">
+            options="options" class="form-control">
             <option *ngFor="let muni of municipios" [value]="muni.idMunicipios"> {{muni.Municipio}} | {{muni.codigo}} |
               {{muni.codigoR}}</option>
           </select>
@@ -35,15 +35,15 @@
             </select2> -->
           <input type="text" class="form-control" name="Comuna" [(ngModel)]="centros.Comuna" placeholder="Comuna" minlength="1" required="">
       
-            <div class="invalid-feedback">*</div>
+            
           <input type="text" class="form-control" name="CodigoExternoJcz" [(ngModel)]="centros.CodigoExternoJcz"
             placeholder="CodigoExternoJcz" minlength="1" required="">
          
-            <div class="invalid-feedback">*</div>
+            
           <input type="number" class="form-control" name="CodigoExternoCZ" [(ngModel)]="centros.CodigoExternoCZ"
             placeholder="CodigoExternoCZ" minlength="1" required="">
           
-            <div class="invalid-feedback">*</div>
+        
         </div>
         <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
         <button class="btn btn-success btn-block" type="submit" (click)="updateDatos()" routerLink="/centrozonal">

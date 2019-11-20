@@ -12,7 +12,7 @@
 					<h2></h2>
 
 					<select name="idnivel" class="Select2" style="width: 100%;" [(ngModel)]="x.idUDS"
-						options="options" placeholder="uds" minlength="0" required="">
+						options="options" placeholder="uds" minlength="0" required="" class="form-control">
 						<option *ngFor="let udss of ud" [value]="udss.idUDS">{{udss.NombreUDS }}</option>
 					  </select>
 					  <h2></h2>
@@ -68,7 +68,7 @@
 						<h2></h2>
 
 						<select name="idGneero" class="Select2" style="width: 100%;" [(ngModel)]="x.idGenero"
-						options="options" placeholder="Genero" minlength="0" required="">
+						options="options" placeholder="Genero" minlength="0" required="" class="form-control">
 						<option *ngFor="let gener of gen" [value]="gener.idGenero">{{gener.NombreGenero}}</option>
 					  </select>
 
@@ -149,7 +149,7 @@
 					  <h2></h2>
 					  
 					  <select name="idGneero1" class="Select2" style="width: 100%;" [(ngModel)]="y.idGenero "
-						options="options" placeholder="Genero" minlength="0" required="">
+						options="options" placeholder="Genero" minlength="0" required="" class="form-control">
 						<option *ngFor="let gener of gen" [value]="gener.idGenero">{{gener.NombreGenero}}</option>
 					  </select>
 
