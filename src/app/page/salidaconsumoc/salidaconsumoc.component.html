@@ -1,96 +1,118 @@
 <nav class="navbar navbar-success bg-success">
-    <button class="btn btn-dark" routerLink="/salidaconsumo">Volver</button>
-  </nav>
-  
-  <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
-    <div class="card" padding>
-      <div class="card-body" padding>
-        <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
-          <div class="form-group">
-  
-          
-            <h1>Salida Consumo interno </h1>
-            <h2></h2>
-            
-            <span >Referencia Bienestarina</span>
-            <h2></h2>
+  <button class="btn btn-dark" routerLink="/salidaconsumo">Volver</button>
+</nav>
 
-            <select name="idreferencia" class="select-css" style="width: 100%;" [(ngModel)]="sal.idTipoBienesterina"
+<div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+  <div class="card" padding>
+    <div class="card-body" padding>
+      <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
+        <div class="form-group">
+
+
+          <h1>Salida Consumo interno </h1>
+          <h2></h2>
+
+          <span>Referencia Bienestarina</span>
+          <h2></h2>
+
+          <select name="idreferencia" class="select-css" style="width: 100%;" [(ngModel)]="sal.idTipoBienesterina"
             options="options" placeholder="referencia" minlength="0" required="" class="form-control">
             <option *ngFor="let ud of tip" [value]="ud.idTipoBienesterina ">{{ud.TipoBienesterina }} </option>
           </select>
 
           <h2></h2>
 
-          <span >Centro de distribucion </span>
+          <span>Centro de distribucion </span>
           <h2></h2>
 
-          <select name="idcentrodistribucion" class="select-css" style="width: 100%;" [(ngModel)]="sal.idCentroDistribucion"
-          options="options" placeholder="almacen" minlength="0" required="" class="form-control">
-          <option *ngFor="let ud of cen" [value]="ud.idCentroDistribucion">{{ud.Nombre }} </option>
-        </select>
+          <select name="idcentrodistribucion" class="select-css" style="width: 100%;"
+            [(ngModel)]="sal.idCentroDistribucion" options="options" placeholder="almacen" minlength="0" required=""
+            class="form-control">
+            <option *ngFor="let ud of cen" [value]="ud.idCentroDistribucion">{{ud.Nombre }} </option>
+          </select>
 
-        <h2></h2>
+          <h2></h2>
 
-        <span >Almacen </span>
-        <h2></h2>
+          <span>Almacen </span>
+          <h2></h2>
 
-        <select name="idalmacen" class="select-css" style="width: 100%;" [(ngModel)]="sal.idAlmacenes"
-        options="options" placeholder="almacen" minlength="0" required="" class="form-control">
-        <option *ngFor="let ud of alm" [value]="ud.idAlmacenes">{{ud.Nombre }} </option>
-      </select>
+          <select name="idalmacen" class="select-css" style="width: 100%;" [(ngModel)]="sal.idAlmacenes"
+            options="options" placeholder="almacen" minlength="0" required="" class="form-control">
+            <option *ngFor="let ud of alm" [value]="ud.idAlmacenes">{{ud.Nombre }} </option>
+          </select>
 
-      <h2></h2>
+          <h2></h2>
 
-      <span >lote</span>
-      <h2></h2>
-      <input type="text" class="form-control" [(ngModel)]="sal.lote" name="cane"
-      placeholder="Cantidad Entregada" class="form-control" id="inputen" minlength="0" required="">
-  
-  <h2></h2>
+          <span> Inventario</span>
+          <h2></h2>
+
+          <select name="idinv" class="select-css" style="width: 100%;" (change)="onChange3($event)" [(ngModel)]="idinv"
+            options="options" placeholder="inventario" (change)="onChange1($event)" minlength="0" required=""
+            class="form-control">
+            <option *ngFor="let ud of inv" [value]="ud.idInventario">{{ud.Nombre }} </option>
+          </select>
 
 
-            <span >Fecha de vencimiento </span>
-                <h2></h2>
-            <input type="date" class="form-control" [(ngModel)]="sal.fechavencimiento" name="fechai" placeholder="Fecha" min="2018-01-01" max="2050-12-31" class="form-control" minlength="0" required="">
-           
+          <span>lote</span>
+          <h2></h2>
+          <input type="text" class="form-control" [(ngModel)]="sal.lote" name="cane" placeholder="Cantidad Entregada"
+            class="form-control" id="inputen" minlength="0" required="">
+
+          <h2></h2>
+
+
+          <span>Fecha de vencimiento </span>
+          <h2></h2>
+          <input type="date" class="form-control" [(ngModel)]="sal.fechavencimiento" name="fechai" placeholder="Fecha"
+            min="2018-01-01" max="2050-12-31" class="form-control" minlength="0" required="">
+
+          <h2></h2>
+
+          <span>Unidad de medida</span>
+          <h2></h2>
+
+          <select name="unidad" [(ngModel)]="sal.unidad" (change)="onChange3($event)" class="select-css" minlength="0"
+            required="" class="form-control">
+            <option [value]="item" *ngFor="let item of unidadmedida">{{item}} </option>
+          </select>
+
+          <h2></h2>
+
+
+          <span>Cantidad</span>
+          <h2></h2>
+          <input type="number" class="form-control" [(ngModel)]="sal.cantidad" name="cane"
+            placeholder="Cantidad Entregada" class="form-control" (keyup)="onKey($event)" id="inputen" minlength="0" required="">
+
+          <h2></h2>
+
+          <div id="unidad" [hidden]="habilitado">
             <h2></h2>
-
-
-            <span >Cantidad</span>
+            <span>Capacidad liquida</span>
             <h2></h2>
-            <input type="number" class="form-control" [(ngModel)]="sal.cantidad" name="cane"
-            placeholder="Cantidad Entregada" class="form-control" id="inputen" minlength="0" required="">
-        
-        <h2></h2>
+            <input type="number" class="form-control" [(ngModel)]="sal.cantidad2" name="cantidad2"
+              placeholder="Capacidad liquida" (keyup)="onKey2($event)" class="form-control" id="inputcap" minlength="0"
+              required="" class="form-control">
 
-        <span >Unidad de medida</span>
-        <h2></h2>
+            <h2></h2>
+          </div>
 
-        <select name="idalmacen" class="select-css" style="width: 100%;" [(ngModel)]="sal.unidad"
-        options="options" placeholder="almacen" minlength="0" required="" class="form-control">
-        <option *ngFor="let ud of tip" [value]="ud.idTipoBienesterina">{{ud.TipoBienesterina }} </option>
-      </select>
+          <span>Fecha de registro </span>
+          <h2></h2>
+          <input type="date" class="form-control" [(ngModel)]="sal.fecharegistro" name="fechai" placeholder="Fecha"
+            min="1940-01-01" max="2050-12-31" class="form-control" minlength="0" required="">
 
-      <h2></h2>
+          <h2></h2>
 
-      
+          <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
 
-        <span >Fecha de registro </span>
-        <h2></h2>
-    <input type="date" class="form-control" [(ngModel)]="sal.fecharegistro" name="fechai" placeholder="Fecha" min="1940-01-01" max="2050-12-31" class="form-control" minlength="0" required="">
-   
-    <h2></h2>
-
-                       <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
-                        
-                 <h2></h2>
-                 
+          <h2></h2>
 
 
-         </div>
 
-        </form>
-      </div>
+        </div>
+
+      </form>
     </div>
   </div>
+</div>

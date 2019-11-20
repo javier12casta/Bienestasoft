@@ -177,8 +177,8 @@ export class SalidacentrocComponent implements OnInit {
     const Cantidadx = this.sal.cantidad;
     const cap = this.almacen.Capacidad;
     const cantidadinv = this.inventario.Cantidad;
-    const cantidadsuma = Cantidadx + cantidadinv;
-    if (cantidadsuma >= cap) {
+    const cantidadsuma = cantidadinv;
+    if (cantidadsuma >= cantidadinv) {
       this.showMenssage5();
     }
   }
@@ -188,8 +188,8 @@ export class SalidacentrocComponent implements OnInit {
     const Cantidadx = this.sal.cantidad2;
     const cap2 = this.almacen.Capacidad2;
     const cantidadinv = this.inventario.Cantidad2;
-    const cantidadsuma = Cantidadx + cantidadinv;
-    if (cantidadsuma >= cap2) {
+    const cantidadsuma = cantidadinv;
+    if (cantidadsuma >= cantidadinv) {
       this.showMenssage5();
     }
   }
