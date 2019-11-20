@@ -5,27 +5,27 @@
   <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
     <div class="card" padding>
       <div class="card-body" padding>
-        <form>
+        <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
           <div class="form-group">
 
                 <input type="number" class="form-control" [(ngModel)]="dvarios.CodigoInterno" name="codin"
-                placeholder="CodigoInterno " class="form-control" id="inputcodin">
+                placeholder="CodigoInterno " class="form-control" id="inputcodin" minlength="0" required="">
 
                 <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
-            <select name="Estado" id="Estado" [(ngModel)]="dvarios.EstadoDatoMaestro" style="width: 100%;" class="form-control">
+            <select name="Estado" id="Estado" [(ngModel)]="dvarios.EstadoDatoMaestro" style="width: 100%;" class="form-control" minlength="0" required="">
                 <option value="1">0</option>
                 <Option value="0">1</Option>
               </select>
 
               
                 <input type="text" class="form-control" [(ngModel)]="dvarios.DescripcionDelRegistro" name="dr"
-                placeholder="Descripcion del registro" class="form-control" id="desr">
+                placeholder="Descripcion del registro" class="form-control" id="desr" minlength="0" required="">
 
                 <input type="text" class="form-control" [(ngModel)]="dvarios.Valor" name="vl"
-                placeholder="Valor " class="form-control" id="app">
+                placeholder="Valor " class="form-control" id="app" minlength="0" required="">
 
                 <input type="text" class="form-control" [(ngModel)]="dvarios.UnidadDeMedida" name="nmedida"
-                placeholder="Unidad Medida" class="form-control" id="nm">
+                placeholder="Unidad Medida" class="form-control" id="nm" minlength="0" required="">
 
           <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
           <button class="btn btn-success btn-block" type="submit" (click)="updateDatos()" routerLink="/modificardatosnutricionales">

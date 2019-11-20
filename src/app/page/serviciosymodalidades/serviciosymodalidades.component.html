@@ -5,13 +5,13 @@
       <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
         <div class="card" padding>
           <div class="card-body" padding>
-            <form>
+            <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
                     <h1>Servicio y Modalidades</h1>
               <div class="form-group">
                     <span  >Estado del dato Maestro</span>
                     <h2></h2>
                     
-                    <select name="EstadoDatoMaestro" id="EstadoDatoMaestro" [(ngModel)]="x.EstadoDatoMaestro" style="width: 100%;" class="form-control">
+                    <select name="EstadoDatoMaestro" id="EstadoDatoMaestro" [(ngModel)]="x.EstadoDatoMaestro" style="width: 100%;" class="form-control" minlength="0" required="">
                               <option value="0">0</option>
                               <option value="1">1</option>
                             </select>
@@ -21,12 +21,12 @@
                     <span >Codigo Servicio y modalidad</span>
                     <h2></h2>
                     <input type="text" class="form-control" [(ngModel)]="x.Servicio " name="codigo"
-                          placeholder="Codigo Servicio y madalidad" class="form-control">
+                          placeholder="Codigo Servicio y madalidad" class="form-control" minlength="0" required="">
                     <h2></h2>
                     <span>Modalidad</span>
                     <h2></h2>
                     <input type="text" class="form-control" [(ngModel)]="x.Modalidad" name="modalidad"
-                          placeholder="Modalidad" class="form-control">
+                          placeholder="Modalidad" class="form-control" minlength="0" required="">
                     <h2></h2>
                     <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
                    

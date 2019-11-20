@@ -5,14 +5,14 @@
 	  <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
 		<div class="card" padding>
 		  <div class="card-body" padding>
-			<form>
+			<form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
 			  <div class="form-group">
 
 					<h1  >Nivel </h1>
 					<h2></h2>
 
 					<select name="idnivel" class="Select2" style="width: 100%;" [(ngModel)]="x.idUDS"
-						options="options" placeholder="uds">
+						options="options" placeholder="uds" minlength="0" required="">
 						<option *ngFor="let udss of ud" [value]="udss.idUDS">{{udss.NombreUDS }}</option>
 					  </select>
 					  <h2></h2>
@@ -22,7 +22,7 @@
 					  <h2></h2>
 
 
-					  <select name="idTipoDocumento" id="idTipoDocumento" [(ngModel)]="x.idTipoDocumento" style="width: 100%;" class="form-control">
+					  <select name="idTipoDocumento" id="idTipoDocumento" [(ngModel)]="x.idTipoDocumento" style="width: 100%;" class="form-control" minlength="0" required="">
 						<option value="1">CC</option>
 						<option value="2">CE</option>
 						<option value="3">TI</option>
@@ -32,22 +32,22 @@
 					<span  >Numero de documento de identidad</span>
 					<h2></h2>
 					<input type="number" class="form-control" [(ngModel)]="x.NumeroDocumento" name="Numerodoc"
-				  placeholder="Numero de documento " class="form-control">
+				  placeholder="Numero de documento " class="form-control" minlength="0" required="">
 					<h2></h2>
 					<span  >Primer Nombre</span>
 					<h2></h2>
 					<input type="text" class="form-control" [(ngModel)]="x.PrimerNombre" name="primernombre"
-					placeholder="Primer nombre" class="form-control">
+					placeholder="Primer nombre" class="form-control" minlength="0" required="">
 					 <h2></h2>
 					<span  >Segundo Nombre</span>
 					<h2></h2>
 					<input type="text" class="form-control" [(ngModel)]="x.PrimerApellido" name="segundonombre"
-				  placeholder="Segundo Nombre" class="form-control">
+				  placeholder="Segundo Nombre" class="form-control" minlength="0" required="">
 				   <h2></h2>
 					<span  >Primer Apellido</span>
 					<h2></h2>
 					<input type="text" class="form-control" [(ngModel)]="x.SegundoNombre" name="primerapellido"
-				  placeholder="primer apellido" class="form-control">
+				  placeholder="primer apellido" class="form-control" minlength="0" required="">
 				   <h2></h2>
 					<span  >Segundo Apellido</span>
 					<h2></h2>
@@ -57,7 +57,7 @@
 					<span >Estado del Beneficiario</span>
 					<h2></h2>
 
-					<select name="Estado" id="Estado" [(ngModel)]="x.Estado" style="width: 100%;" class="form-control">
+					<select name="Estado" id="Estado" [(ngModel)]="x.Estado" style="width: 100%;" class="form-control" minlength="0" required="">
 							<option value="1"> Habilitar</option>
 							<Option value="0">Inhabilitar</Option>
 						  </select>
@@ -68,7 +68,7 @@
 						<h2></h2>
 
 						<select name="idGneero" class="Select2" style="width: 100%;" [(ngModel)]="x.idGenero"
-						options="options" placeholder="Genero">
+						options="options" placeholder="Genero" minlength="0" required="">
 						<option *ngFor="let gener of gen" [value]="gener.idGenero">{{gener.NombreGenero}}</option>
 					  </select>
 
@@ -76,17 +76,17 @@
 						<h2></h2>
 						<span >Fecha de Nacimiento:</span>
 	  
-						<input type="date" class="form-control" [(ngModel)]="x.FechaNacimiento" name="fechan" placeholder="Fecha Nacimiento" min="1900-01-01" max="2050-12-31" class="form-control">
+						<input type="date" class="form-control" [(ngModel)]="x.FechaNacimiento" name="fechan" placeholder="Fecha Nacimiento" min="1900-01-01" max="2050-12-31" class="form-control" minlength="0" required="">
 		  
 		   <h2></h2>
 		   <span  >Servicio o modalidad</span>
 					<h2></h2>
 					<input type="text" class="form-control" [(ngModel)]="x.ServicioOmodalidad" name="serv"
-			  placeholder="Servcio o modalidad" class="form-control" id="inputdoc">
+			  placeholder="Servcio o modalidad" class="form-control" id="inputdoc" minlength="0" required="">
 					<h2></h2>
 					<span >Fecha de Ingreso:</span>
 	  
-					<input type="date" class="form-control" [(ngModel)]="x.FechaIngreso" name="fechai" placeholder="Fecha Ingreso" min="1900-01-01" max="2050-12-31" class="form-control">
+					<input type="date" class="form-control" [(ngModel)]="x.FechaIngreso" name="fechai" placeholder="Fecha Ingreso" min="1900-01-01" max="2050-12-31" class="form-control" minlength="0" required="">
 		  
 						   <h2></h2>
 	  
@@ -98,7 +98,7 @@
 					  <h2></h2>
 
 
-					  <select name="idTipoDocumento" id="idTipoDocumento" [(ngModel)]="y.idTipoDocumento" style="width: 100%;" class="form-control">
+					  <select name="idTipoDocumento" id="idTipoDocumento" [(ngModel)]="y.idTipoDocumento" style="width: 100%;" class="form-control" minlength="0" required="">
 						<option value="1">CC</option>
 						<option value="2">CE</option>
 						<option value="3">PA</option>
@@ -111,26 +111,26 @@
 					  <span >Numero de Documento de identidad Acudiente</span>
 					  <h2></h2>
 					  <input type="text" class="form-control" [(ngModel)]="y.NumeroDocumento" name="numerodoc"
-			          placeholder="numero de documento" class="form-control" >
+			          placeholder="numero de documento" class="form-control" minlength="0" required="">
 					  <h2></h2>
 	  
 					  <span >Nombres</span>
 					  <h2></h2>
 					  <input type="text" class="form-control" [(ngModel)]="y.Nombres" name="nom"
-			  placeholder="Nombres" class="form-control" id="inputdoc">
+			  placeholder="Nombres" class="form-control" id="inputdoc" minlength="0" required="">
 					  <h2></h2>
 	  
 					  
 					  <span >Apellidos </span>
 					  <h2></h2>
 					  <input type="text" class="form-control" [(ngModel)]="y.Apellidos" name="apl"
-					  placeholder="Apelldios" class="form-control" >
+					  placeholder="Apelldios" class="form-control" minlength="0" required="">
 					 <h2></h2>
 	  
 					  <span  >Parentesco con el Beneficiario</span>
 					  <h2></h2>
 
-					  <select name="Parentesco" id="Parentesco" [(ngModel)]="y.Parentesco" style="width: 100%;" class="form-control">
+					  <select name="Parentesco" id="Parentesco" [(ngModel)]="y.Parentesco" style="width: 100%;" class="form-control" minlength="0" required="">
 						<option >Padre</option>
 						  <option >Madre</option>
 						  <option >Hermano(a)</option>
@@ -149,28 +149,28 @@
 					  <h2></h2>
 					  
 					  <select name="idGneero1" class="Select2" style="width: 100%;" [(ngModel)]="y.idGenero "
-						options="options" placeholder="Genero">
+						options="options" placeholder="Genero" minlength="0" required="">
 						<option *ngFor="let gener of gen" [value]="gener.idGenero">{{gener.NombreGenero}}</option>
 					  </select>
 
 	                  <h2></h2>
 					  <span >Fecha de Nacimiento </span>
 					  <h2></h2>
-					  <input type="date" class="form-control" [(ngModel)]="y.FechaNacimiento"  name="fechan" placeholder="Fecha Ingreso" min="1900-01-01" max="2050-12-31" class="form-control">
+					  <input type="date" class="form-control" [(ngModel)]="y.FechaNacimiento"  name="fechan" placeholder="Fecha Ingreso" min="1900-01-01" max="2050-12-31" class="form-control" minlength="0" required="">
 		  
 							 <h2></h2>
 	  
 							 <span >Fecha de Ingreso</span>
 							 <h2></h2>
 	  
-							 <input type="date" class="form-control" [(ngModel)]="y.FechaIngreso" name="fechain" placeholder="Fecha Ingreso" min="1900-01-01" max="2050-12-31" class="form-control">
+							 <input type="date" class="form-control" [(ngModel)]="y.FechaIngreso" name="fechain" placeholder="Fecha Ingreso" min="1900-01-01" max="2050-12-31" class="form-control" minlength="0" required="">
 		  
 									<h2></h2>
 	  
 									<span >Registro Biometrico</span>
 									<h2></h2>
 									<input type="text" [(ngModel)]="y.RegistroBiometrico" class="form-control" name="RegistroBiometrico"
-									placeholder="Registro Biomerico" class="form-control" >
+									placeholder="Registro Biomerico" class="form-control" minlength="0" required="">
 									<h2></h2>
 	  
 									<h1>Datos De Contacto</h1>
@@ -178,13 +178,13 @@
 									<span >Direccion</span>
 									<h2></h2>
 									<input type="text" class="form-control" [(ngModel)]="x.Direccion" name="dic2"
-									placeholder="Direccion" class="form-control" >
+									placeholder="Direccion" class="form-control" minlength="0" required="">
 									<h2></h2>
 									<span >Pais</span>
 									<h2></h2>
 									
 									<input type="text" class="form-control" [(ngModel)]="x.Pais" name="pais"
-					  placeholder="pais" class="form-control" >
+					  placeholder="pais" class="form-control" minlength="0" required="">
 	  
 										<h2></h2>
 										
@@ -193,7 +193,7 @@
 									
 
 									<select name="idepartamento" class="Select2" style="width: 100%;" [(ngModel)]="x.Departamento"
-									options="options" placeholder="Departamento">
+									options="options" placeholder="Departamento" minlength="0" required="">
 									<option *ngFor="let regi of reg" [value]="regi.Regional">{{regi.Regional}}</option>
 								  </select>
 
@@ -202,12 +202,12 @@
 									<span >Municipio</span>
 									<h2></h2>
 									<input type="text" class="form-control" [(ngModel)]="x.Municipio" name="Municipio"
-					  placeholder="Municipio" class="form-control" >
+					  placeholder="Municipio" class="form-control" minlength="0" required="">
 										<h2></h2>
 										<span >Telefono fijo 1 </span>
 									<h2></h2>
 									<input type="number" class="form-control" [(ngModel)]="x.TelefonoFijo" name="tel1"
-					  placeholder="telefono 1" class="form-control" >
+					  placeholder="telefono 1" class="form-control" minlength="0" required="">
 									<h2></h2>
 									<span >Telefono Fijo 2</span>
 									<h2></h2>
@@ -217,7 +217,7 @@
 									<span >Telefono movil 1 </span>
 									<h2></h2>
 									<input type="number" class="form-control" [(ngModel)]="x.TelefonoMovil" name="movil"
-					  placeholder="Telefono Movil 1" class="form-control" >
+					  placeholder="Telefono Movil 1" class="form-control" minlength="0" required="">
 									<h2></h2>
 									<span >Telefono movil 2</span>
 									<h2></h2>
@@ -227,7 +227,7 @@
 									<span >Email</span>
 									<h2></h2>
 									<input type="text" class="form-control" [(ngModel)]="x.Email" name="email"
-					  placeholder="Email" class="form-control" >
+					  placeholder="Email" class="form-control" minlength="0" required="" >
 									  <h2></h2>
 									  <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
 									  {{clickMessage}}

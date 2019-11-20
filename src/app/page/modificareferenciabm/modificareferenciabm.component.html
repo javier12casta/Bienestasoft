@@ -5,32 +5,32 @@
       <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
         <div class="card" padding>
           <div class="card-body" padding>
-            <form>
+            <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
               <div class="form-group">
   
                     <input type="text" class="form-control" [(ngModel)]="bine.Codigo" name="codigo"
-                    placeholder="Codigo" class="form-control" id="cod">
+                    placeholder="Codigo" class="form-control" id="cod" minlength="0" required="">
     
-                    <select name="Estado" id="Estado" [(ngModel)]="bine.Estado" style="width: 100%;" class="form-control">
+                    <select name="Estado" id="Estado" [(ngModel)]="bine.Estado" style="width: 100%;" class="form-control" minlength="0" required="">
                             <option value="0">0</option>
                             <Option value="1">1</Option>
                           </select>
     
                     <input type="text" class="form-control" [(ngModel)]="bine.Referencia" name="referencia"
-                    placeholder="Referencia" class="form-control" id="ref">
+                    placeholder="Referencia" class="form-control" id="ref" minlength="0" required="">
     
-                    <select name="unidadmedida" id="unidadmedida" [(ngModel)]="bine.UnidadPrincipal" style="width: 100%;" class="form-control">
+                    <select name="unidadmedida" id="unidadmedida" [(ngModel)]="bine.UnidadPrincipal" style="width: 100%;" class="form-control" minlength="0" required="">
                             <option>bolsa</option>
                             <Option>caja</Option>
                             <Option>otra presentacion</Option>
                           </select>
 
                           <input type="number" class="form-control" [(ngModel)]="bine.Cantidad" name="cantidad"
-                    placeholder="Cantidad " class="form-control" id="ref">
+                    placeholder="Cantidad " class="form-control" id="ref" minlength="0" required="">
 
 
                     <input type="text" class="form-control" [(ngModel)]="bine.UnidadSecundaria" name="unidadmedidas"
-                    placeholder="Unidad Medida Secundaria" class="form-control" id="uni">
+                    placeholder="Unidad Medida Secundaria" class="form-control" id="uni" minlength="0" required="">
     
       
               <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->

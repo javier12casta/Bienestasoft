@@ -5,7 +5,7 @@
       <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
         <div class="card" padding>
           <div class="card-body" padding>
-            <form>
+            <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
 
                     <h1>Crear Inventario</h1>
 
@@ -13,13 +13,13 @@
                     <span >Nombre</span>
                         <h2></h2>
                         <input type="text" class="form-control" [(ngModel)]="x.Nombre" name="nom"
-                        placeholder="Nombre" class="form-control" id="inputdoc">
+                        placeholder="Nombre" class="form-control" id="inputdoc" minlength="0" required="">
 
                         <span >unidad de medida</span>
                         <h2></h2>
            
                         <br>
-                        <select name="UnidadPrincipal" [(ngModel)]="x.unidad" (change)="onChange($event)" class="select-css">
+                        <select name="UnidadPrincipal" [(ngModel)]="x.unidad" (change)="onChange($event)" class="select-css" minlength="0" required="">
                          <option [value]="item" *ngFor="let item of unidadmedida">{{item}} </option>
                        </select>
                        <h2></h2>
@@ -28,7 +28,7 @@
                     <span >Cantidad</span>
                         <h2></h2>
                         <input type="number" class="form-control" [(ngModel)]="x.Cantidad" name="can"
-                        placeholder="Cantidad" class="form-control" id="inputdoc">
+                        placeholder="Cantidad" class="form-control" id="inputdoc" minlength="0" required="">
 
                         <h2></h2>
                         <div id="unidad" hidden [hidden]="habilitado">
@@ -36,7 +36,7 @@
                           <span>Capacidad liquida</span>
                           <h2></h2>
                           <input type="number" class="form-control" [(ngModel)]="x.Cantidad2" name="Cantidad2" placeholder="Capacidad liquida"
-                            class="form-control" id="inputcap">
+                            class="form-control" id="inputcap" minlength="0" required="">
                 
                           <h2></h2>
                         </div>

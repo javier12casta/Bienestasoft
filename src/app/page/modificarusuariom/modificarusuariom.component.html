@@ -7,74 +7,74 @@
 <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
   <div class="card" padding>
     <div class="card-body" padding>
-      <form>
+      <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
         <div class="form-group">
 
        <select name="idCentrosZonales" class="select-css" style="width: 100%;" (change)="onChange($event)" [(ngModel)]="usu.idCentrosZonales"
-			options="options" placeholder="nivel" [hidden]="habilitado">
+			options="options" placeholder="nivel" [hidden]="habilitado" minlength="0" required="" class="form-control">
 			<option *ngFor="let did of cen " [value]="did.idCentrosZonales">{{did.NombreCentroZonal }} </option>
 	
       </select>
       
       <select name="idPuntoEntrega" class="select-css" style="width: 100%;" (change)="onChange($event)" [(ngModel)]="usu.idPuntoEntrega"
-			options="options" placeholder="nivel" [hidden]="habilitado1">
+			options="options" placeholder="nivel" [hidden]="habilitado1" minlength="0" required="">
 			<option *ngFor="let dodo of pe" [value]="dodo.idPuntoEntrega">{{dodo.NombrePE }} </option>
 	
 		  </select>
 
 		  <select name="idUDS" class="select-css" style="width: 100%;" (change)="onChange($event)" [(ngModel)]="usu.idUDS" 
-			options="options" placeholder="nivel" [hidden]="habilitado2">
+			options="options" placeholder="nivel" [hidden]="habilitado2" minlength="0" required="">
 			<option *ngFor="let doso1 of ud" [value]="doso1.idUDS">{{doso1.NombreUDS }} </option>
 	
 		  </select>
       
           <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
-          <select name="Estado" [(ngModel)]="usu.Estado" style="width: 100%;" class="form-control">
+          <select name="Estado" [(ngModel)]="usu.Estado" style="width: 100%;" class="form-control" minlength="0" required="">
             <option [value]="1">Habilitado</option>
             <Option [value]="0">Inhabilitado</Option>
           </select>
           <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
-          <select name="tipodocumento" [(ngModel)]="usu.idTipoDocumento" id="tipodocumento" style="width: 100%;" class="form-control">
+          <select name="tipodocumento" [(ngModel)]="usu.idTipoDocumento" id="tipodocumento" style="width: 100%;" class="form-control" minlength="0" required="">
             <option value="1">CC</option>
             <Option value="2">CE</Option>
             <Option value="3">PA</Option>
           </select>
 
           <input type="number" class="form-control" [(ngModel)]="usu.NumeroDocumento" name="numerodoc"
-            placeholder="numero Documento" class="form-control" id="inputdoc">
+            placeholder="numero Documento" class="form-control" id="inputdoc" minlength="0" required="">
 
           <input type="text" class="form-control" [(ngModel)]="usu.Nombres" name="nombre" placeholder="Nombres"
-            class="form-control" id="nom">
+            class="form-control" id="nom" minlength="0" required="">
 
           <input type="text" class="form-control" [(ngModel)]="usu.Apellidos" name="apellidos" placeholder="Apellidos"
-            class="form-control" id="app">
+            class="form-control" id="app" minlength="0" required="">
 
           <input type="date" class="form-control" [(ngModel)]="usu.FechaIngreso" name="fechai" placeholder="Fecha"
-            min="2018-01-01" max="2050-12-31" class="form-control">
+            min="2018-01-01" max="2050-12-31" class="form-control" minlength="0" required="">
 
           <input type="text" class="form-control" [(ngModel)]="usu.NombreUsuarioSistema" name="Usuario"
-            placeholder="Usuario Sistema" class="form-control" id="usu">
+            placeholder="Usuario Sistema" class="form-control" id="usu" minlength="0" required="">
 
           <input type="text" class="form-control" [(ngModel)]="usu.Direccion" name="Nombredireccion"
-            placeholder="Direccion" class="form-control">
+            placeholder="Direccion" class="form-control" minlength="0" required="">
 
           <input type="number" class="form-control" [(ngModel)]="usu.TelefonoFijo" name="telefonof1"
-            placeholder="Telefono fijo 1" class="form-control">
+            placeholder="Telefono fijo 1" class="form-control" minlength="0" required="">
 
           <input type="number" class="form-control" [(ngModel)]="usu.TelefonoFijo2" name="telefonof2"
-            placeholder="Telefono fijo 2" class="form-control">
+            placeholder="Telefono fijo 2" class="form-control" >
 
           <input type="number" class="form-control" [(ngModel)]="usu.TelefonoMovil" name="telefonom1"
-            placeholder="Telefono movil 1" class="form-control">
+            placeholder="Telefono movil 1" class="form-control" minlength="0" required="">
 
           <input type="number" class="form-control" [(ngModel)]="usu.TelefonoMovil2" name="telefonom2"
-            placeholder="Telefono movil 2" class="form-control">
+            placeholder="Telefono movil 2" class="form-control" >
 
           <input type="text" class="form-control" [(ngModel)]="usu.Email" name="email" placeholder="Email"
-            class="form-control">
+            class="form-control" minlength="0" required="">
 
             <select name="idtipousuario" class="select-css" style="width: 100%;" [(ngModel)]="usu.TipoUsuario"
-            options="options" placeholder="tipo usuario">
+            options="options" placeholder="tipo usuario" minlength="0" required="">
             <option *ngFor="let do of rol" [value]="do.idRolPersona">{{do.RolPersona  }} </option>
             </select>
             

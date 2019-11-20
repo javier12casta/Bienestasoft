@@ -5,33 +5,37 @@
   <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
 	<div class="card" padding>
 	  <div class="card-body" padding>
-		<form>
+		<form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
 			
 				<h1>Crear Usuarios</h1>
 
 				<span >Seleccionar nivel</span>
 			   <h2></h2>
 			   
-			   <select name="estadomaestro" [(ngModel)]="nivel" (change)="onChange($event)" class="select-css">
+			   <select name="estadomaestro" [(ngModel)]="nivel" (change)="onChange($event)" class="select-css" 
+			   minlength="0" required="" class="form-control">
 					<option >Centrozonal</option>
 					<Option>Punto de entrega</Option>
 					<Option >Unidad de servicio</Option>
 		    </select>
 			<h2></h2>
 			<select name="idnivel1" class="select-css" style="width: 100%;" [(ngModel)]="x.idCentrosZonales"
-			options="options" placeholder="nivel" [hidden]="habilitado">
+			options="options" placeholder="nivel" [hidden]="habilitado" 
+			minlength="0" required="">
 			<option *ngFor="let do of cen " [value]="do.idCentrosZonales">{{do.NombreCentroZonal }} </option>
 	
 		  </select>
 
 		  <select name="idnivel2" class="select-css" style="width: 100%;" [(ngModel)]="x.idPuntoEntrega"
-			options="options" placeholder="nivel" [hidden]="habilitado1">
+			options="options" placeholder="nivel" [hidden]="habilitado1" 
+			minlength="0" required="">
 			<option *ngFor="let do of pe" [value]="do.idPuntoEntrega">{{do.NombrePE }} </option>
 	
 		  </select>
 
 		  <select name="idnivel3" class="select-css" style="width: 100%;" [(ngModel)]="x.idUDS" 
-			options="options" placeholder="nivel" [hidden]="habilitado2">
+			options="options" placeholder="nivel" [hidden]="habilitado2" 
+			minlength="0" required="">
 			<option *ngFor="let do of ud" [value]="do.idUDS">{{do.NombreUDS }} </option>
 	
 		  </select>
@@ -44,7 +48,8 @@
 			   <span  >Estado del dato Maestro</span>
 			   <h2></h2>
 			   
-			   <select name="estadomaestro" [(ngModel)]="x.Estado" class="select-css">
+			   <select name="estadomaestro" [(ngModel)]="x.Estado" class="select-css" 
+			   minlength="0" required="" class="form-control">
 					<option value="1"> Habilitar</option>
 					<Option value="0">Inhabilitar</Option>
 		 </select>
@@ -54,7 +59,8 @@
 			   <h2></h2>
 			   
 			   <select name="idRegional" class="select-css" style="width: 100%;" [(ngModel)]="x.idTipoDocumento"
-			   options="options" placeholder="tipo documento">
+			   options="options" placeholder="tipo documento" 
+			   minlength="0" required="" class="form-control">
 			   <option *ngFor="let do of doc" [value]="do.idTipoDocumento">{{do.NombreTipo }} </option>
 			 </select>
 				  
@@ -63,7 +69,8 @@
 		   <span >Numero de Documento</span>
 			   <h2></h2>
 			   <input type="number" class="form-control" [(ngModel)]="x.NumeroDocumento" name="numerodoc"
-			   placeholder="numero Documento" class="form-control" id="inputdoc">
+			   placeholder="numero Documento" class="form-control" id="inputdoc" 
+			   minlength="0" required="">
 		   
 			   
 	   
@@ -71,18 +78,21 @@
 			   <span >Nombres</span>
 			   <h2></h2>
 			   <input type="text" class="form-control" [(ngModel)]="x.Nombres" name="nombre"
-			   placeholder="Nombres" class="form-control" id="nom">
+			   placeholder="Nombres" class="form-control" id="nom" 
+			   minlength="0" required="">
 		 
 			   <h2></h2>
 			   <span >Apellidos</span>
 			   <h2></h2>
 			   <input type="text" class="form-control" [(ngModel)]="x.Apellidos" name="apellidos"
-			   placeholder="Apellidos" class="form-control" id="app">
+			   placeholder="Apellidos" class="form-control" id="app" 
+			   minlength="0" required="">
 		   <h2></h2>
 		 
 			   <span >Fecha de Ingreso</span>
 			   <h2></h2>
-			   <input type="date" class="form-control" [(ngModel)]="x.FechaIngreso" name="fechai" placeholder="Fecha" min="1900-01-01" max="2050-12-31" class="form-control">
+			   <input type="date" class="form-control" [(ngModel)]="x.FechaIngreso" name="fechai" placeholder="Fecha" min="1900-01-01" max="2050-12-31" class="form-control" 
+			   minlength="0" required="">
 		   
 				<h2></h2>
 				{{today}}
@@ -90,21 +100,24 @@
 				<span  >Usuario en el sistema</span>
 		 <h2></h2>
 		 <input type="text" class="form-control" [(ngModel)]="x.NombreUsuarioSistema" name="Usuario"
-			   placeholder="Usuario Sistema" class="form-control" id="usu">
+			   placeholder="Usuario Sistema" class="form-control" id="usu" 
+			   minlength="0" required="">
 	   
 		 <h2></h2>
 		 <span >Tipo Usuario</span>
 		 <h2></h2>
 		 
 		 <select name="idtipousuario" class="select-css" style="width: 100%;" [(ngModel)]="x.TipoUsuario"
-		 options="options" placeholder="tipo usuario">
+		 options="options" placeholder="tipo usuario" 
+		 minlength="0" required="" class="form-control">
 		 <option *ngFor="let do of rol" [value]="do.idRolPersona">{{do.RolPersona  }} </option>
 	   </select>
 
 	   <span  >Contraseña</span>
 	   <h2></h2>
 	   <input type="password" class="form-control" [(ngModel)]="x.password" name="password"
-			 placeholder="Contraseña" class="form-control" id="psw">
+			 placeholder="Contraseña" class="form-control" id="psw" 
+			 minlength="0" required="">
 	 
 	   <h2></h2>
 
@@ -117,7 +130,8 @@
 				 
 				 
 				 <input type="text" class="form-control" [(ngModel)]="x.Direccion" name="Nombredireccion"
-							 placeholder="Direccion" class="form-control">
+							 placeholder="Direccion" class="form-control" 
+							 minlength="0" required="">
 				 
 				 
 				 <h2></h2>
@@ -125,7 +139,8 @@
 				 <h2></h2>
 				 
 				 <input type="number" class="form-control" [(ngModel)]="x.TelefonoFijo" name="telefonof1"
-							 placeholder="Telefono fijo 1" class="form-control">
+							 placeholder="Telefono fijo 1" class="form-control" 
+							 minlength="0" required="">
 				 
 				 <h2></h2>
 				 <span >Telefono Fijo 2</span>
@@ -136,7 +151,8 @@
 				 <span >Telefono Movil 1</span>
 				 <h2></h2>
 				 <input type="number" class="form-control" [(ngModel)]="x.TelefonoMovil" name="telefonom1"
-							 placeholder="Telefono movil 1" class="form-control">
+							 placeholder="Telefono movil 1" class="form-control" 
+							 minlength="0" required="">
 				 <h2></h2>
 				 <span >Telefono movil 2</span>
 				 <h2></h2>
@@ -146,7 +162,8 @@
 				 <span>Email</span>
 				 <h2></h2>
 				 <input type="text" class="form-control" [(ngModel)]="x.Email" name="email"
-				 placeholder="Email" class="form-control">
+				 placeholder="Email" class="form-control" 
+				 minlength="0" required="">
 				 
 					  <h2></h2>
 					  

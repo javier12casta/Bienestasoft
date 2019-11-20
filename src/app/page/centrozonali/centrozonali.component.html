@@ -5,7 +5,8 @@
 <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
   <div class="card" padding>
     <div class="card-body" padding>
-      <form>
+      <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
+        
         <div class="form-group">
 
           <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
@@ -14,7 +15,9 @@
             <Option value="0">Inhabilitar</Option>
           </select>
           <input type="text" class="form-control" [(ngModel)]="centros.NombreCentroZonal" name="NombreCentroZonal"
-            placeholder="Nombre Centro Zonal" class="form-control">
+            placeholder="Nombre Centro Zonal" class="form-control" minlength="1" required="">
+            <div class="valid-feedback"></div>
+            <div class="invalid-feedback">*</div>
           <!--select2 regional-->
           <select name="idRegional" class="Select2" style="width: 100%;" [(ngModel)]="centros.idRegional"
             options="options" placeholder="Regional">
@@ -31,11 +34,17 @@
             placeholder="Comuna o localidad"> 
             <option *ngFor="let comu of comunas" [value]="comunas.findIndex"></option>
           </select2> -->
-          <input type="text" class="form-control" name="Comuna" [(ngModel)]="centros.Comuna" placeholder="Comuna">
+          <input type="text" class="form-control" name="Comuna" [(ngModel)]="centros.Comuna" placeholder="Comuna" minlength="1" required="">
+          <div class="valid-feedback"></div>
+            <div class="invalid-feedback">*</div>
           <input type="text" class="form-control" name="CodigoExternoJcz" [(ngModel)]="centros.CodigoExternoJcz"
-            placeholder="CodigoExternoJcz">
+            placeholder="CodigoExternoJcz" minlength="1" required="">
+            <div class="valid-feedback"></div>
+            <div class="invalid-feedback">*</div>
           <input type="number" class="form-control" name="CodigoExternoCZ" [(ngModel)]="centros.CodigoExternoCZ"
-            placeholder="CodigoExternoCZ">
+            placeholder="CodigoExternoCZ" min="0" required="">
+            <div class="valid-feedback"></div>
+            <div class="invalid-feedback">*</div>
         </div>
         <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()" routerLink="/centrozonal"-->
         <button class="btn btn-success btn-block" type="submit" (click)="insertDatos()" routerLink="/centrozonal">

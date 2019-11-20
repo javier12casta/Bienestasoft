@@ -5,7 +5,7 @@
 <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
   <div class="card" padding>
     <div class="card-body" padding>
-      <form>
+      <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
         <div class="form-group">
           <!--Select 2 Centro Zonal-->
           <label >Centro Zonal</label>
@@ -19,21 +19,30 @@
             <Option value="0">Inhabilitar</Option>
           </select>
           <label> Nombre PE</label>
-          <input type="text" class="form-control" name="NombrePE" placeholder="Nombre punto de entrega" [(ngModel)]="puntos.NombrePE">
+          <input type="text" class="form-control" name="NombrePE" placeholder="Nombre punto de entrega" [(ngModel)]="puntos.NombrePE" minlength="0" required="">
+ 
+            <div class="invalid-feedback">*</div>
           <label>Codigo Externo PE</label>
-          <input type="number" class="form-control" name="CodigoExternoPE" placeholder="Codigo externo PE" [(ngModel)]="puntos.CodigoExternoPE">
+          <input type="number" class="form-control" name="CodigoExternoPE" placeholder="Codigo externo PE" [(ngModel)]="puntos.CodigoExternoPE" minlength="0" required="">
+          <div class="invalid-feedback">*</div>
           <label> CodigoInternoPE </label>
-          <input type="text" class="form-control" name="CodigoInternoPE" placeholder="Codigo interno PE" [(ngModel)]="puntos.CodigoInternoPE">
+          <input type="text" class="form-control" name="CodigoInternoPE" placeholder="Codigo interno PE" [(ngModel)]="puntos.CodigoInternoPE" minlength="0" required="">
+          <div class="invalid-feedback">*</div>
           <label>Responsable</label>
-          <input type="text" class="form-control" name="Responsable" placeholder="Responsable" [(ngModel)]="puntos.Responsable">
+          <input type="text" class="form-control" name="Responsable" placeholder="Responsable" [(ngModel)]="puntos.Responsable" minlength="0" required="">
+          <div class="invalid-feedback">*</div>
           <label> Comuna o vereda </label>
-          <input type="text" class="form-control" name="Comuna" placeholder="Comuna o vereda" [(ngModel)]="puntos.Comuna">
+          <input type="text" class="form-control" name="Comuna" placeholder="Comuna o vereda" [(ngModel)]="puntos.Comuna" minlength="0" required="">
+          <div class="invalid-feedback">*</div>
           <label>Direccion PE</label>
-          <input type="text" class="form-control" name="Direccion" placeholder="Direccion PE" [(ngModel)]="puntos.Direccion">
+          <input type="text" class="form-control" name="Direccion" placeholder="Direccion PE" [(ngModel)]="puntos.Direccion" minlength="0" required="">
+          <div class="invalid-feedback">*</div>
           <label>Barrio PE</label>
-          <input type="text" class="form-control" name="BarrioPE" placeholder="Barrio PE" [(ngModel)]="puntos.BarrioPE">
+          <input type="text" class="form-control" name="BarrioPE" placeholder="Barrio PE" [(ngModel)]="puntos.BarrioPE" minlength="0" required="">
+            <div class="invalid-feedback">*</div>
           <label>Telefono</label>
-          <input type="tel" class="form-control" name="Telefono" placeholder="Telefono PE" [(ngModel)]="puntos.Telefono">
+          <input type="tel" class="form-control" name="Telefono" placeholder="Telefono PE" [(ngModel)]="puntos.Telefono" minlength="0" required="">
+          <div class="invalid-feedback">*</div>
         </div>
 
         <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"  -->

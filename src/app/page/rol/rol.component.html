@@ -5,7 +5,7 @@
   <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
 	<div class="card" padding>
 	  <div class="card-body" padding>
-		<form>
+		<form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
 				<h1>Crear Rol</h1>
 		  <div class="form-group">
 
@@ -21,8 +21,8 @@
 			<h2></h2>
 			<span >Tipo de rol</span>
 			<h2></h2>
-			<input type="text" name="RolPersona" [(ngModel)]="roles.RolPersona" placeholder="Nombre de Rol"
-				required autofocus>
+			<input type="text" class="form-control" name="RolPersona" [(ngModel)]="roles.RolPersona"  minlength="0" required="" placeholder="Nombre de Rol"
+				required autofocus >
 			<h2></h2>
 			
 			

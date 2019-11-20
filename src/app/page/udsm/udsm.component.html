@@ -5,7 +5,7 @@
   <div class="col-md-4 offset-md-4">
     <div class="card">
       <div class="card-body">
-        <form>
+        <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
           <div class="form-group padding">
             <!-- select centro zonal-->
             
@@ -16,19 +16,19 @@
               <Option value="0">Inhabilitar</Option> 
             </select>
             <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
-            <input type="text" class="form-control" name="UDS" placeholder="Nombre UDS" [(ngModel)]="unidad.NombreUDS" required>
-            <input type="number" class="form-control" name="Codigo Externo UDS" placeholder="Codigo Externo UDS"  [(ngModel)]="unidad.CodigoExternoUDS" required>
-            <input type="text" class="form-control" name="Codigo Interno UDS" placeholder="Codigo Interno UDS"  [(ngModel)]="unidad.CodigoInternoUDS" required>
-            <input type="text" class="form-control" name="Responsable UDS" placeholder="Responsable UDS" [(ngModel)]="unidad.ReponsableUDS" required>
+            <input type="text" class="form-control" name="UDS" placeholder="Nombre UDS" [(ngModel)]="unidad.NombreUDS" minlength="0" required="">
+            <input type="number" class="form-control" name="Codigo Externo UDS" placeholder="Codigo Externo UDS"  [(ngModel)]="unidad.CodigoExternoUDS" minlength="0" required="">
+            <input type="text" class="form-control" name="Codigo Interno UDS" placeholder="Codigo Interno UDS"  [(ngModel)]="unidad.CodigoInternoUDS" minlength="0" required="">
+            <input type="text" class="form-control" name="Responsable UDS" placeholder="Responsable UDS" [(ngModel)]="unidad.ReponsableUDS" minlength="0" required="">
             <input type="text" class="form-control" name="Localidad, Comuna o Vereda"
-              placeholder="Localidad, Vereda o Comuna" [(ngModel)]="unidad.Comuna" required>
-            <input type="text" class="form-control" name="Direccion" placeholder="Direccion" [(ngModel)]="unidad.Direccion" required>
+              placeholder="Localidad, Vereda o Comuna" [(ngModel)]="unidad.Comuna" minlength="0" required="">
+            <input type="text" class="form-control" name="Direccion" placeholder="Direccion" [(ngModel)]="unidad.Direccion" minlength="0" required="">
   
-            <input type="text" class="form-control" name="Barrio" placeholder="Barrio"  [(ngModel)]="unidad.Barrio" required>
-            <input type="tel" class="form-control" name="Telefono" placeholder="Telefono" [(ngModel)]="unidad.Telefono" required>
+            <input type="text" class="form-control" name="Barrio" placeholder="Barrio"  [(ngModel)]="unidad.Barrio" minlength="0" required="">
+            <input type="tel" class="form-control" name="Telefono" placeholder="Telefono" [(ngModel)]="unidad.Telefono" minlength="0" required="">
 
-            <input type="number" class="form-control" name="idp" placeholder="punto de entrega"  [(ngModel)]="unidad.idPuntoEntrega" required>
-            <input type="number" class="form-control" name="idc" placeholder="centro zonal" [(ngModel)]="unidad.idCentrosZonales" required>
+            <input type="number" class="form-control" name="idp" placeholder="punto de entrega"  [(ngModel)]="unidad.idPuntoEntrega" minlength="0" required="">
+            <input type="number" class="form-control" name="idc" placeholder="centro zonal" [(ngModel)]="unidad.idCentrosZonales" minlength="0" required="">
   
           </div>
           <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"  -->

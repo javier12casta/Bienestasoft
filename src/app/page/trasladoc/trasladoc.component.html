@@ -5,7 +5,7 @@
   <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
     <div class="card" padding>
       <div class="card-body" padding>
-        <form>
+        <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
           <div class="form-group">
   
           
@@ -16,7 +16,7 @@
             <h2></h2>
 
             <select name="idreferencia" class="select-css" style="width: 100%;" [(ngModel)]="sal.idTipoBienesterina"
-            options="options" placeholder="referencia">
+            options="options" placeholder="referencia" minlength="0" required="">
             <option *ngFor="let ud of tip" [value]="ud.idTipoBienesterina ">{{ud.TipoBienesterina }} </option>
           </select>
 
@@ -26,7 +26,7 @@
           <h2></h2>
 
           <select name="idcentrodistribucion" class="select-css" style="width: 100%;" [(ngModel)]="sal.idCentroDistribucion"
-          options="options" placeholder="almacen">
+          options="options" placeholder="almacen" minlength="0" required="">
           <option *ngFor="let ud of cen" [value]="ud.idCentroDistribucion">{{ud.Nombre }} </option>
         </select>
 
@@ -36,7 +36,7 @@
         <h2></h2>
 
         <select name="idalmacen" class="select-css" style="width: 100%;" [(ngModel)]="sal.idAlmacenesOrigen "
-        options="options" placeholder="almacen">
+        options="options" placeholder="almacen" minlength="0" required="">
         <option *ngFor="let ud of alm" [value]="ud.idAlmacenes">{{ud.Nombre }} </option>
       </select>
 
@@ -45,14 +45,14 @@
       <span >lote</span>
       <h2></h2>
       <input type="text" class="form-control" [(ngModel)]="sal.lote" name="cane"
-      placeholder="Lote" class="form-control" id="inputen" required>
+      placeholder="Lote" class="form-control" id="inputen" minlength="0" required="">
   
   <h2></h2>
 
 
             <span >Fecha de vencimiento </span>
                 <h2></h2>
-            <input type="date" class="form-control" [(ngModel)]="sal.fechavencimiento" name="fechai" placeholder="Fecha" min="2018-01-01" max="2050-12-31" class="form-control" required>
+            <input type="date" class="form-control" [(ngModel)]="sal.fechavencimiento" name="fechai" placeholder="Fecha" min="2018-01-01" max="2050-12-31" class="form-control" minlength="0" required="">
            
             <h2></h2>
 
@@ -63,7 +63,7 @@
         <h2></h2>
 
         <select name="idalmacen" class="select-css" style="width: 100%;" [(ngModel)]="sal.unidad"
-        options="options" placeholder="almacen">
+        options="options" placeholder="almacen" minlength="0" required="">
         <option *ngFor="let ud of tip" [value]="ud.idTipoBienesterina">{{ud.TipoBienesterina }} </option>
       </select>
 
@@ -73,7 +73,7 @@
           <h2></h2>
 
           <select name="idcentrodistribucion" class="select-css" style="width: 100%;" [(ngModel)]="sal.idAlmacenesDestino"
-          options="options" placeholder="almacen">
+          options="options" placeholder="almacen" minlength="0" required="">
           <option *ngFor="let ud of cen" [value]="ud.idCentroDistribucion">{{ud.Nombre }} </option>
         </select>
 
@@ -81,7 +81,7 @@
 
         <span >Fecha de registro </span>
         <h2></h2>
-    <input type="date" class="form-control" [(ngModel)]="sal.fecharegistro" name="fechai" placeholder="Fecha" min="2018-01-01" max="2050-12-31" class="form-control" required>
+    <input type="date" class="form-control" [(ngModel)]="sal.fecharegistro" name="fechai" placeholder="Fecha" min="2018-01-01" max="2050-12-31" class="form-control" minlength="0" required="">
    
     <h2></h2>
 

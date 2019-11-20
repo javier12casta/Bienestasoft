@@ -5,32 +5,32 @@
 <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
   <div class="card" padding>
     <div class="card-body" padding>
-      <form>
+      <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
         <h1>Crear Almacen </h1>
         <div class="form-group">
 
           <span>Numero Externo</span>
           <h2></h2>
           <input type="number" class="form-control" [(ngModel)]="x.NumeroExterno " name="numeroex"
-            placeholder="numero Externo" class="form-control" id="inputex">
+            placeholder="numero Externo" class="form-control" id="inputex" minlength="0" required="">
 
           <h2></h2>
 
           <span>Nombre</span>
           <h2></h2>
           <input type="text" class="form-control" [(ngModel)]="x.Nombre" name="nombre" placeholder="Nombre"
-            class="form-control" id="inputnom">
+            class="form-control" id="inputnom" minlength="0" required="">
 
           <h2></h2>
 
           <span>Responsable</span>
           <h2></h2>
           <input type="text" class="form-control" [(ngModel)]="x.Responsable" name="res" placeholder="Responsable"
-            class="form-control" id="inputres">
+            class="form-control" id="inputres" minlength="0" required="">
           <h2></h2>
           <span>Unidad de medida</span>
           <h2></h2>
-          <select name="unidadmedida" [(ngModel)]="x.UnidadMedida" (change)="onChange($event)" class="select-css">
+          <select name="unidadmedida" [(ngModel)]="x.UnidadMedida" (change)="onChange($event)" class="select-css" minlength="0" required="" class="form-control">
             <option [value]="item" *ngFor="let item of unidadmedida">{{item}} </option>
           </select>
           <h2></h2>
@@ -38,7 +38,7 @@
           <span>Capacidad</span>
           <h2></h2>
           <input type="number" class="form-control" [(ngModel)]="x.Capacidad" name="cap" placeholder="Capacidad"
-            class="form-control" id="inputcap">
+            class="form-control" id="inputcap" minlength="0" required="">
 
           <h2></h2>
           
@@ -48,7 +48,7 @@
             <span>Capacidad liquida</span>
             <h2></h2>
             <input type="number" class="form-control" [(ngModel)]="x.Capacidad2" name="Capacidad2" placeholder="Capacidad 2"
-              class="form-control" id="inputcap">
+              class="form-control" id="inputcap" minlength="0" required="">
   
             <h2></h2>
           </div>
@@ -57,7 +57,7 @@
           <span>Estado del dato Maestro</span>
           <h2></h2>
 
-          <select name="estadomaestro" [(ngModel)]="x.Estado" class="select-css">
+          <select name="estadomaestro" [(ngModel)]="x.Estado" class="select-css" minlength="0" required="" class="form-control">
             <option [value]="item" *ngFor="let item of listamaestro">{{item}} </option>
           </select>
 
@@ -68,7 +68,7 @@
           <h2></h2>
 
           <select name="idRegional" class="select-css" style="width: 100%;" [(ngModel)]="x.idCentroDistribucion"
-            options="options" placeholder="centro de distribucion">
+            options="options" placeholder="centro de distribucion" minlength="0" required="" class="form-control">
             <option *ngFor="let do of cen" [value]="do.idCentroDistribucion">{{do.Nombre  }} </option>
           </select>
           <h2></h2>

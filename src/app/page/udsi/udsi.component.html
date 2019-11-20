@@ -5,7 +5,7 @@
 <div class="col-md-4 offset-md-4" padding>
   <div class="card">
     <div class="card-body">
-      <form>
+      <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
         <div class="form-group padding">
          
 
@@ -15,30 +15,30 @@
           </select>
           <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
           <input type="text" class="form-control" name="UDS" placeholder="Nombre UDS" [(ngModel)]="unidad.NombreUDS"
-            required>
+          minlength="0" required="">
           <input type="number" class="form-control" name="Codigo Externo UDS" placeholder="Codigo Externo UDS"
-            [(ngModel)]="unidad.CodigoExternoUDS" required>
+            [(ngModel)]="unidad.CodigoExternoUDS" minlength="0" required="">
           <input type="text" class="form-control" name="Codigo Interno UDS" placeholder="Codigo Interno UDS"
-            [(ngModel)]="unidad.CodigoInternoUDS" required>
+            [(ngModel)]="unidad.CodigoInternoUDS" minlength="0" required="">
           <input type="text" class="form-control" name="Responsable UDS" placeholder="Responsable UDS"
-            [(ngModel)]="unidad.ReponsableUDS" required>
+            [(ngModel)]="unidad.ReponsableUDS" minlength="0" required="">
           <input type="text" class="form-control" name="Localidad, Comuna o Vereda"
             placeholder="Localidad, Vereda o Comuna" [(ngModel)]="unidad.Comuna" required>
           <input type="text" class="form-control" name="Direccion" placeholder="Direccion"
-            [(ngModel)]="unidad.Direccion" required>
+            [(ngModel)]="unidad.Direccion" minlength="0" required="">
 
           <input type="text" class="form-control" name="Barrio" placeholder="Barrio" [(ngModel)]="unidad.Barrio"
-            required>
+          minlength="0" required="">
           <input type="tel" class="form-control" name="Telefono" placeholder="Telefono" [(ngModel)]="unidad.Telefono"
-            required>
+          minlength="0" required="">
 
             <select name="idpuntoentrega" class="select-css" style="width: 100%;" [(ngModel)]="unidad.idPuntoEntrega"
-            options="options" placeholder="Punto entrega">
+            options="options" placeholder="Punto entrega" minlength="0" required=""> 
             <option *ngFor="let do of puntos" [value]="do.idPuntoEntrega">{{do.NombrePE  }} </option>
             </select>
 
             <select name="idcentrozonal" class="select-css" style="width: 100%;" [(ngModel)]="unidad.idCentrosZonales"
-            options="options" placeholder="Punto entrega">
+            options="options" placeholder="Punto entrega" minlength="0" required="">
             <option *ngFor="let do of centros" [value]="do.idCentrosZonales">{{do.NombreCentroZonal  }} </option>
             </select>
 
