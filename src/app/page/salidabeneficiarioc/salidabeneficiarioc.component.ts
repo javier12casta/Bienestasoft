@@ -179,8 +179,8 @@ export class SalidabeneficiariocComponent implements OnInit {
     const Cantidadx = this.sal.cantidad;
     const cap = this.almacen.Capacidad;
     const cantidadinv = this.inventario.Cantidad;
-    const cantidadsuma = Cantidadx + cantidadinv;
-    if (cantidadsuma >= cap) {
+    const cantidadsuma = Cantidadx;
+    if (cantidadsuma >= cantidadinv) {
       this.showMenssage5();
     }
   }
@@ -188,10 +188,10 @@ export class SalidabeneficiariocComponent implements OnInit {
   //para saber que digita en la cantidad2
   onKey2($event) {
     const Cantidadx = this.sal.Cantidad2;
-    const cap2 = this.almacen.Capacidad2;
     const cantidadinv = this.inventario.Cantidad2;
-    const cantidadsuma = Cantidadx + cantidadinv;
-    if (cantidadsuma >= cap2) {
+    const cantidadsuma = Cantidadx;
+    console.log('inv', cantidadinv);
+    if (cantidadsuma >= cantidadinv) {
       this.showMenssage5();
     }
   }
@@ -237,15 +237,19 @@ export class SalidabeneficiariocComponent implements OnInit {
           this.inventario = Object(res);
           console.log(this.inventario);
           if (this.inventario.unidad == "g") {
-            this.inventario.unidad = "g";
             this.unidadmedida.pop();
             this.unidadmedida.pop();
+            this.unidadmedida.push('');
             this.unidadmedida.push('g');
           } else if (this.inventario.unidad == "ml") {
             this.unidadmedida.pop();
+            this.unidadmedida.pop();
+            this.unidadmedida.push('');
             this.unidadmedida.push("ml");
           } else if (this.inventario.unidad == "g y ml") {
             this.unidadmedida.pop();
+            this.unidadmedida.pop();
+            this.unidadmedida.push('');
             this.unidadmedida.push("g y ml");
           }
 

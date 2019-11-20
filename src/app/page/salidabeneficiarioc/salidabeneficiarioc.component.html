@@ -45,8 +45,8 @@
           <span> Inventario</span>
           <h2></h2>
 
-          <select name="idinv" class="select-css" style="width: 100%;" (change)="onChange3($event)" [(ngModel)]="idinv"
-            options="options" placeholder="inventario" (change)="onChange1($event)">
+          <select name="idinv" class="select-css" style="width: 100%;" [(ngModel)]="idinv"
+            options="options" placeholder="inventario" (change)="onChange1($event)" >
             <option *ngFor="let ud of inv" [value]="ud.idInventario">{{ud.Nombre }} </option>
           </select>
 
