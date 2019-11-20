@@ -199,12 +199,18 @@ export class RecepcionbienestarinaviComponent implements OnInit {
           if(this.almacen.UnidadMedida == "g"){
             console.log('entro g');
             this.unidadmedida.pop();
+            this.unidadmedida.pop();
+            this.unidadmedida.push('');
             this.unidadmedida.push('g');
           }else if(this.almacen.UnidadMedida == "ml"){
             this.unidadmedida.pop();
+            this.unidadmedida.pop();
+            this.unidadmedida.push('');
             this.unidadmedida.push("ml");
           }else if (this.almacen.UnidadMedida == "g y ml"){
             this.unidadmedida.pop();
+            this.unidadmedida.pop();
+            this.unidadmedida.push('');
             this.unidadmedida.push("g y ml");
           }
 
