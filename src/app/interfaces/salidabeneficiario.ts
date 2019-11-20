@@ -10,5 +10,5 @@ export interface Salidabeneficiario {
     idCentroDistribucion : number,
     idAlmacenes  : number,
     idTipoBienesterina : number,
-
+    Cantidad2?: number,
 }

@@ -71,7 +71,7 @@ export class SalidacentrocComponent implements OnInit {
     idCentroDistribucion: 0,
   };
   
-      idinv = 0;
+  idinv = 0;
     
 
   ngOnInit() {
