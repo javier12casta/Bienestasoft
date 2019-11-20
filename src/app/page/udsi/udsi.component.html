@@ -33,12 +33,12 @@
           minlength="0" required="">
 
             <select name="idpuntoentrega" class="select-css" style="width: 100%;" [(ngModel)]="unidad.idPuntoEntrega"
-            options="options" placeholder="Punto entrega" minlength="0" required=""> 
+            options="options" placeholder="Punto entrega" minlength="0" required="" class="form-control"> 
             <option *ngFor="let do of puntos" [value]="do.idPuntoEntrega">{{do.NombrePE  }} </option>
             </select>
 
             <select name="idcentrozonal" class="select-css" style="width: 100%;" [(ngModel)]="unidad.idCentrosZonales"
-            options="options" placeholder="Punto entrega" minlength="0" required="">
+            options="options" placeholder="Punto entrega" minlength="0" required="" class="form-control">
             <option *ngFor="let do of centros" [value]="do.idCentrosZonales">{{do.NombreCentroZonal  }} </option>
             </select>
 
