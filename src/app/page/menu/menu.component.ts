@@ -1218,7 +1218,7 @@ this.Usuarios.push(create);
     if (array[0] == "1") {
       var create = { name: "acudientes", route: "/acudientes", icon: "face" };
       this.beneficiarios.push(create);
-      var create = { name: "Crear beneficiarios ICBF", route: "/beneficiarios", icon: "face" };
+      var create = { name: "Crear beneficiarios ICBF", route: "/datosgeneralesbeneficiario", icon: "face" };
       this.beneficiarios.push(create);
 
       if (array[1] == "1") {
