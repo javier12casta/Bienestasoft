@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServicioService } from 'src/app/servicio.service';
 import { Centrozonal } from 'src/app/interfaces/centrozonal';
 import { Regional } from 'src/app/interfaces/regional';
+import { Centrozonalt } from 'src/app/interfaces/centrozonalt';
 
 @Component({
   selector: 'app-centrozonalin',
@@ -9,18 +10,13 @@ import { Regional } from 'src/app/interfaces/regional';
   styleUrls: ['./centrozonalin.component.css']
 })
 export class CentrozonalinComponent implements OnInit {
-  centros: Centrozonal[] = [];
-  regional: Regional = {
-    idRegional: 0,
-    Regional: '',
-  };
-
+  centros: Centrozonalt[] = [];
   constructor(private Service: ServicioService) { }
 
   //consultar Datos
   async ngOnInit() {
 
-    this.Service.getCentro()
+    this.Service.getCentroTabla()
       .subscribe(async (data) => {
         this.centros = data;
         console.log(data);

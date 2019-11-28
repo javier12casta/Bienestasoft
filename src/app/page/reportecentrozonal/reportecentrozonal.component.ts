@@ -4,6 +4,7 @@ import { ServicioService } from '../../servicio.service';
 import { Regional } from '../../interfaces/regional';
 import * as jspdf from 'jspdf'; 
 import html2canvas from 'html2canvas';
+import { Centrozonalt } from 'src/app/interfaces/centrozonalt';
 
 @Component({
   selector: 'app-reportecentrozonal',
@@ -12,18 +13,13 @@ import html2canvas from 'html2canvas';
 })
 export class ReportecentrozonalComponent implements OnInit {
 
-  centros: Centrozonal[] = [];
-  regional: Regional = {
-    idRegional: 0,
-    Regional: '',
-    
-  };
+  centros: Centrozonalt[] = [];
   
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {
 
-    this.Service.getCentro()
+    this.Service.getCentroTabla()
       .subscribe(async (data) => {
         this.centros = data;
         console.log(data);

@@ -9,41 +9,45 @@
         <div class="form-group">
 
           <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
+          <label>Estado</label>
           <select name="Estado" id="Estado" [(ngModel)]="centros.Estado" style="width: 100%;" class="form-control">
             <option value="1"> Habilitar</option>
             <Option value="0">Inhabilitar</Option>
           </select>
+          <br>
+          <label>Nombre centro zonal</label>
           <input type="text" class="form-control" [(ngModel)]="centros.NombreCentroZonal" name="NombreCentroZonal"
-            placeholder="Nombre Centro Zonal" class="form-control"minlength="1" required="">
-           
-            
+            placeholder="Nombre centro zonal" class="form-control" minlength="1" required="">
+          <br>
+          <label>Regional</label>
           <!--select2 regional-->
           <select name="idRegional" class="Select2" style="width: 100%;" [(ngModel)]="centros.idRegional"
             options="options" placeholder="Regional" class="form-control">
             <option *ngFor="let reg of regional" [value]="reg.idRegional">{{reg.Regional}} | {{reg.codigo}}</option>
           </select>
+          <br>
+          <label>Municipio</label>
           <!--select 2 Municipio-->
           <select name="idMunicipios" class="Select2" style="width: 100%;" [(ngModel)]="centros.idMunicipios"
             options="options" class="form-control">
             <option *ngFor="let muni of municipios" [value]="muni.idMunicipios"> {{muni.Municipio}} | {{muni.codigo}} |
               {{muni.codigoR}}</option>
           </select>
-          <!--select 2 Comunas-->
-          <!--           <select2 [data]="comunas" name="idComunas"  [(ngModel)]="centros.idComunas" [options]="options"
-              placeholder="Comuna o localidad"> 
-              <option *ngFor="let comu of comunas" [value]="comunas.findIndex"></option>
-            </select2> -->
-          <input type="text" class="form-control" name="Comuna" [(ngModel)]="centros.Comuna" placeholder="Comuna" minlength="1" required="">
-      
-            
+          <br>
+          <label>Comuna</label>
+          <input type="text" class="form-control" name="Comuna" [(ngModel)]="centros.Comuna" placeholder="Comuna"
+            minlength="1" required="">
+          <br>
+
+          <label>Codigo externo JCZ</label>
           <input type="text" class="form-control" name="CodigoExternoJcz" [(ngModel)]="centros.CodigoExternoJcz"
-            placeholder="CodigoExternoJcz" minlength="1" required="">
-         
-            
+            placeholder="Codigo externo JCZ" minlength="1" required="">
+          <br>
+          <label>Codigo externo CZ</label>
           <input type="number" class="form-control" name="CodigoExternoCZ" [(ngModel)]="centros.CodigoExternoCZ"
-            placeholder="CodigoExternoCZ" minlength="1" required="">
-          
-        
+            placeholder="Codigo externo CZ" minlength="1" required="">
+
+
         </div>
         <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
         <button class="btn btn-success btn-block" type="submit" (click)="updateDatos()" routerLink="/centrozonal">
