@@ -6,10 +6,9 @@
       <table class="table">
           <thead class="thead-green">
             <tr>
-              <th scope="col">idListasMaestro</th>
-              <th scope="col">EstadoDatoMaestro</th>
+              <th scope="col">#</th>
+              <th scope="col">Estado Dato Maestro</th>
               <th scope="col">Modalidad</th>
-              <th scope="col">idConsecutivosMaestro</th>
               <th scope="col">Servicio</th>
               
             </tr>
@@ -19,7 +18,6 @@
               <th scope="row">{{cen.idListasMaestro}}</th>
               <td>{{cen.EstadoDatoMaestro}}</td>
               <td>{{cen.Modalidad}}</td>
-              <td>{{cen.idConsecutivosMaestro}}</td>
               <td>{{cen.Servicio}}</td>
               <td>
                 <button class="btn btn-primary" [routerLink]="['/inhabilitarserviciomi', cen.idListasMaestro]">Inhabilitar</button>

@@ -12,6 +12,4 @@ export interface Acudientes {
     FechaIngreso : number,
     RegistroBiometrico :string,
 
-
-
   }

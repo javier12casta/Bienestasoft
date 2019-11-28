@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class ListaMaestrosBienestarinaComponent implements OnInit {
 
   lista = '';
-  listar:string[]=["servicio y modalidades","Referencias de Bienestarina","Lista de precios","Listado de cursos","Datos nutricionales"];
+  listar:string[]=["Servicio y Modalidades","Referencias de Bienestarina","Lista de Precios","Listado De Cursos","Datos Nutricionales"];
 
 
   constructor(private Service: ServicioService , private router:Router) { }
@@ -26,7 +26,7 @@ export class ListaMaestrosBienestarinaComponent implements OnInit {
 
   onClickMe() {
 
-  if(this.lista == 'servicio y modalidades'){
+  if(this.lista == 'Servicio y Modalidades'){
 
     this.router.navigate(['/serviciosymodalidadesv']);
 	
@@ -38,20 +38,20 @@ export class ListaMaestrosBienestarinaComponent implements OnInit {
     
   }
 
-  if(this.lista == 'Lista de precios'){
+  if(this.lista == 'Lista de Precios'){
 
     this.router.navigate(['/listapreciosv']);
     
   }
 
-  if(this.lista == 'Listado de cursos'){
+  if(this.lista == 'Listado De Cursos'){
 
     this.router.navigate(['/listadocursosv']);
     
   }
 
 
-  if(this.lista == 'Datos nutricionales' || this.lista == 'numero de cupos' ){
+  if(this.lista == 'Datos Nutricionales' || this.lista == 'numero de cupos' ){
 
     this.router.navigate(['/datosvariosv']);
     

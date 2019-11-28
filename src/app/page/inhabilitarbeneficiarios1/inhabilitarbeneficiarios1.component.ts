@@ -10,7 +10,7 @@ import { ServicioService } from '../../servicio.service';
   
   <nav class="navbar navbar-success bg-success">
   <td>
-  <button class="btn btn-dark" routerLink="/InhabilitarBeneficiario">Volver</button>
+  <button class="btn btn-dark" routerLink="/menu">Volver</button>
          
         </td>
 </nav>
@@ -18,27 +18,28 @@ import { ServicioService } from '../../servicio.service';
   <table class="table">
       <thead class="thead-green">
         <tr>
-          <th scope="col">idBeneficiarios</th>
-          <th scope="col">NumeroDocumento</th>
-          <th scope="col">FechaIngreso</th>
-          <th scope="col">FechaNacimiento</th>
-          <th scope="col">PrimerNombre</th>
-          <th scope="col">PrimerApellido</th>
-          <th scope="col">SegundoNombre</th>
-          <th scope="col">SegundoApellido</th>
-          <th scope="col">Direccion</th>
-          <th scope="col">Pais</th>
-          <th scope="col">Departamento</th>
-          <th scope="col">Municipio</th>
-          <th scope="col">TelefonoFijo</th>
-          <th scope="col">TelefonoFijo2</th>
-          <th scope="col">TelefonoMovil</th>
-          <th scope="col">TelefonoMovil2</th>
-          <th scope="col">Email</th>
-          <th scope="col">Estado</th>
-          <th scope="col">ServicioOmodalidad</th>
-          <th scope="col">idGenero</th>
-          <th scope="col">idTipoDocumento</th>
+        <th scope="col">#</th>
+        <th scope="col">Número Documento</th>
+        <th scope="col">Fecha Ingreso</th>
+        <th scope="col">Fecha Nacimiento</th>
+        <th scope="col">Primer Nombre</th>
+        <th scope="col">Primer Apellido</th>
+        <th scope="col">Segundo Nombre</th>
+        <th scope="col">Segundo Apellido</th>
+        <th scope="col">Dirección</th>
+        <th scope="col">País</th>
+        <th scope="col">Departamento</th>
+        <th scope="col">Municipio</th>
+        <th scope="col">Teléfono Fijo</th>
+        <th scope="col">Teléfono Fijo2</th>
+        <th scope="col">Teléfono Movil</th>
+        <th scope="col">Teléfono Movil2</th>
+        <th scope="col">Correo Electrónico</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Servicio O Modalidad</th>
+        <th scope="col">Genero</th>
+        <th scope="col">Tipo Documento</th>
+        <th scope="col">uds</th>
          
         </tr>
       </thead>
@@ -65,6 +66,7 @@ import { ServicioService } from '../../servicio.service';
           <td>{{cen.ServicioOmodalidad}}</td>
           <td>{{cen.idGenero}}</td>
           <td>{{cen.idTipoDocumento}}</td>
+          <td>{{cen.idUDS}}</td>
   
           <td>
             <button class="btn btn-primary" [routerLink]="['/InhabilitarBeneficiarioi', cen.idBeneficiarios]">Inhabilitar</button>

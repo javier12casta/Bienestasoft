@@ -6,7 +6,7 @@
         <div class="card" padding>
           <div class="card-body" padding>
             <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
-                    <h1>Crear Listas De Datos Maestros</h1>
+                    <h1>Referencia Bienestarina</h1>
               <div class="form-group">
 
                   <span  >Tipo </span>
@@ -20,12 +20,14 @@
                     <input type="number" class="form-control" [(ngModel)]="x.Codigo" name="cod"
                           placeholder="Codigo " class="form-control" id="codi" minlength="0" required="">
                     <h2></h2>
-                    <span  >Estado del dato Maestro</span>
+                    <span  >Estado Del Dato Maestro</span>
                     <h2></h2>
                     
-                    <select name="estadomaestro" [(ngModel)]="x.Estado" class="form-control" minlength="0" required="">
-                  <option [value]="item" *ngFor="let item of listamaestro">{{item}} </option>
-                  </select>
+
+                    <select name="EstadoDatoMaestro" id="EstadoDatoMaestro" [(ngModel)]="x.Estado" style="width: 100%;" class="form-control" minlength="0" required="">
+                      <option value="0">Inhabilitar</option>
+                      <option value="1">Habilitar</option>
+                    </select>
                   
                     <h2></h2>
                   
@@ -35,7 +37,7 @@
                           placeholder="Referencia" class="form-control" id="referencia" minlength="0" required="">
                     <h2></h2>
                   
-                    <span  >Unidad de medida principal</span>
+                    <span  >Unidad De Medida Principal</span>
                     <h2></h2>
                     
                     <select name="unidadm" [(ngModel)]="x.UnidadPrincipal" class="select-css" minlength="0" required="" class="form-control">
@@ -49,7 +51,7 @@
                           placeholder="Cantidad Equivalente" class="form-control" id="cantidadequivalente" minlength="0" required="">
                     <h2></h2>
                   
-                    <span  >Unidad de medida secundaria </span>
+                    <span  >Unidad De Medida Secundaria </span>
                     <h2></h2>
                     <select name="unidadsecundario" [(ngModel)]="x.UnidadSecundaria"  class="select-css" minlength="0" required="" class="form-control">
                     <option [value]="item" *ngFor="let item of unidadsecundario">{{item}} </option>

@@ -23,19 +23,19 @@ export class EntregaselComponent implements OnInit {
 
   validar(){
 
-    if(this.salida == 'Salida para centro de distribución'){
+    if(this.salida == 'Salida Para Centro De Distribución'){
 
       this.router.navigate(['/salidacentro']);
     
     }
 
-    if(this.salida == 'Salida para beneficiario ICBF'){
+    if(this.salida == 'Salida Para Beneficiario ICBF'){
 
       this.router.navigate(['/salidabeneficiario']);
     
     }
 
-    if(this.salida == 'Salida para consumo interno'){
+    if(this.salida == 'Salida Para Consumo Interno'){
 
       this.router.navigate(['/salidaconsumo']);
     

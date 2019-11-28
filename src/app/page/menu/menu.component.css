@@ -39,3 +39,14 @@ mat-sidenav{
 }
 
 .mat-toolbar { background: #0eb942; color: rgb(10, 10, 10); } 
+
+.material-cust-medium-button { 
+  text-decoration: none;
+    padding: 10px;
+    font-weight: 200;
+    font-size: 25px;
+    color: #000000;
+    background-color: #0eb942;
+    border-radius: 6px;
+    border: 2px solid rgb(16, 136, 80);
+} 

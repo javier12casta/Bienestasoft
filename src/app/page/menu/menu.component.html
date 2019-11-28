@@ -9,61 +9,61 @@
       
   </mat-toolbar>
   <!--contenido del menu-->
-  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0" >
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
       fixedTopGap="56">
       <mat-nav-list>
         <h3 matSubheader>Estructura Organizacional</h3>
-        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of estructura">
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of estructura" style="font-size:20px;">
           <mat-icon class="icon">{{nav.icon}}</mat-icon>
           {{nav.name}}
         </a>
-        <h3 matSubheader>Entrega y recepción</h3>
-        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of entrega">
+        <h3 matSubheader>Entrega y Recepción</h3>
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of entrega" style="font-size:20px;">
           <mat-icon class="icon">{{nav.icon}}</mat-icon>
           {{nav.name}}
         </a>
         <h3 matSubheader>Inventario</h3>
-        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of inventarios">
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of inventarios" style="font-size:20px;">
           <mat-icon class="icon">{{nav.icon}}</mat-icon>
           {{nav.name}}
         </a>
         <h3 matSubheader>Beneficiarios</h3>
-        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of beneficiarios">
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of beneficiarios" style="font-size:20px;">
           <mat-icon class="icon">{{nav.icon}}</mat-icon>
           {{nav.name}}
         </a>
       
         <h3 matSubheader>Rol</h3>
-        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of rol">
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of rol" style="font-size:20px;">
           <mat-icon class="icon">{{nav.icon}}</mat-icon>
           {{nav.name}}
         </a>
 
         <h3 matSubheader>Usuarios</h3>
-        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of Usuarios">
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of Usuarios" style="font-size:20px;">
           <mat-icon class="icon">{{nav.icon}}</mat-icon>
           {{nav.name}}
         </a>
 
         <h3 matSubheader>Datos Maestros </h3>
-        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of datos">
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of datos" style="font-size:20px;">
           <mat-icon class="icon">{{nav.icon}}</mat-icon>
           {{nav.name}}
         </a>
 
-        <h3 matSubheader>Centro de distribucion</h3>
-        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of centrod">
+        <h3 matSubheader>Centro De Distribución</h3>
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of centrod" style="font-size:20px;">
           <mat-icon class="icon">{{nav.icon}}</mat-icon>
           {{nav.name}}
         </a>
 
-        <h3 matSubheader>Almacen</h3>
-        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of almacen"> 
+        <h3 matSubheader>Almacén</h3>
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of almacen" style="font-size:20px;"> 
           <mat-icon class="icon">{{nav.icon}}</mat-icon>
           {{nav.name}}
         </a>
-        <button (click)="logout()" class="btn btn-success" style="position: absolute;" routerLink=’myRoute’ style="float: right;"> Cerrar sesión </button>
+        <button (click)="logout()" class="btn btn-success" class="material-cust-medium-button" style="position: absolute;"   routerLink=’myRoute’ style="float: right;"> Cerrar sesión </button>
       </mat-nav-list>
     </mat-sidenav>
 

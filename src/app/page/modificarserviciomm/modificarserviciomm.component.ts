@@ -47,10 +47,10 @@ export class ModificarserviciommComponent implements OnInit {
 
   showMenssage(){
     Swal.fire({
-      title: 'Modificado!',
+      title: 'Modificado',
       text: 'Dato Maestro Modificado',
       type: 'success',
-      confirmButtonText: 'Ok'
+      confirmButtonText: 'Entendido'
     });
   }
 

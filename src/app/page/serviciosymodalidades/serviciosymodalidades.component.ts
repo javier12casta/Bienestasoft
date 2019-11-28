@@ -43,10 +43,10 @@ export class ServiciosymodalidadesComponent implements OnInit {
 
   showMenssage(){
     Swal.fire({
-      title: 'Creado!',
+      title: 'Creado',
       text: 'Dato Maestro Creado',
       type: 'success',
-      confirmButtonText: 'Aceptar'
+      confirmButtonText: 'Entendido'
     }).then((result) => {
       if (result.value) {
         
