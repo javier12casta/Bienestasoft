@@ -90,8 +90,8 @@ export class CentrozonalmComponent implements OnInit {
     //mensajes de creacion
     showMenssage(){
       Swal.fire({
-        title: 'Modificado!',
-        text: 'Centro Zonal Modificado',
+        title: 'Modificado',
+        text: 'Centro zonal modificado',
         type: 'success',
         confirmButtonText: 'Entendido'
       });
@@ -100,7 +100,7 @@ export class CentrozonalmComponent implements OnInit {
   
   showMenssage2(){
     Swal.fire({
-      title: 'Error!',
+      title: 'Error',
       text: 'Error al modificar el centro zonal',
       type: 'error',
       confirmButtonText: 'Entendido'

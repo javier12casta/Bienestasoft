@@ -81,8 +81,8 @@ export class CentrozonaliComponent implements OnInit {
   //mensajes de creacion
   showMenssage(){
     Swal.fire({
-      title: 'Creado!',
-      text: 'Centro Zonal Creado',
+      title: 'Creado',
+      text: 'Centro zonal creado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {
@@ -97,7 +97,7 @@ export class CentrozonaliComponent implements OnInit {
 
 showMenssage2(){
   Swal.fire({
-    title: 'Error!',
+    title: 'Error',
     text: 'Error al crear centro zonal',
     type: 'error',
     confirmButtonText: 'Entendido'
