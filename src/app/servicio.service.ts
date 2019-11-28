@@ -44,6 +44,7 @@ import { Recuentoinventario} from './interfaces/recuentoinventario';
 import { Translado} from './interfaces/traslado';
 import { Acta} from './interfaces/acta';
 import { Biometrico } from './interfaces/biometrico';
+import { Centrozonalt } from './interfaces/centrozonalt';
 
 @Injectable({
   providedIn: 'root'
@@ -189,6 +190,11 @@ export class ServicioService {
   getCentro() {
     const path = `${this.api}/centrosZ`;
     return this.http.get<[Centrozonal]>(path);
+  }
+  //tabla 
+  getCentroTabla() {
+    const path = `${this.api}/centrosZ/tabla`;
+    return this.http.get<[Centrozonalt]>(path);
   }
   getCentroid(id: string) {
     return this.http.get(`${this.api}/centrosZ/${id}`);

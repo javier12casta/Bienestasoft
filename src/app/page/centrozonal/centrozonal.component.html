@@ -6,11 +6,11 @@
   <thead class="thead-green">
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Nombre Centro Zonal</th>
+      <th scope="col">Nombre centro zonal</th>
       <th scope="col">Municipios</th>
       <th scope="col">Comunas</th>
-      <th scope="col">Codigo Externo Jcz</th>
-      <th scope="col">Codigo Externo CZ</th>
+      <th scope="col">Codigo externo Jcz</th>
+      <th scope="col">Codigo externo CZ</th>
       <th scope="col">Estado</th>
       <th scope="col">Regional</th>
       <th scope="col">Modificar</th>
@@ -20,7 +20,7 @@
     <tr *ngFor="let cen of centros">
       <th scope="row">{{cen.idCentrosZonales}}</th>
       <td>{{cen.NombreCentroZonal}}</td>
-      <td>{{cen.idMunicipios}}</td>
+      <td>{{cen.Municipio}}</td>
       <td>{{cen.Comuna}}</td>
       <td>{{cen.CodigoExternoJcz}}</td>
       <td>{{cen.CodigoExternoCZ}}</td>
@@ -32,7 +32,7 @@
           Deshabilitado
         </div>
       </td>
-      <td>{{cen.idRegional}}</td>
+      <td>{{cen.Regional}}</td>
       <td>
         <button class="btn btn-primary" [routerLink]="['/centrozonalm', cen.idCentrosZonales]">Modificar</button>
       </td>

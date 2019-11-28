@@ -213,7 +213,6 @@ export class RecepcionbienestarinaviComponent implements OnInit {
             this.unidadmedida.push('');
             this.unidadmedida.push("g y ml");
           }
-
         }, err => {
           console.log(err);
         });
