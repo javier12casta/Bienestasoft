@@ -118,19 +118,19 @@ logout()
     var centrostr = this.permisos.perCentros;
     var array = centrostr.split("");
     if (array[0] == "1") {
-      var create = { name: "Crear Centro Zonal", route: "/centrozonali", icon: "public"  };
+      var create = { name: "Crear centro zonal", route: "/centrozonali", icon: "public"  };
       this.estructura.push(create);
       if (array[1] == "1") {
-        var create = { name: "Modificar Centro Zonal", route: "/centrozonal", icon: "public" };
+        var create = { name: "Modificar centro zonal", route: "/centrozonal", icon: "public" };
         this.estructura.push(create);
 
         if (array[2] == "1") {
           if (array[3] == "1") {
-            var create = { name: "Reporte Centro Zonal", route: "/reportecentrozonal", icon: "public" };
+            var create = { name: "Reporte centro zonal", route: "/reportecentrozonal", icon: "public" };
             this.estructura.push(create);
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar centro zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -142,7 +142,7 @@ logout()
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar centro zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -155,11 +155,11 @@ logout()
 
 
           if (array[3] == "1") {
-            var create = { name: "Reporte Centro Zonal", route: "/reportecentrozonal", icon: "public" };
+            var create = { name: "Reporte centro zonal", route: "/reportecentrozonal", icon: "public" };
             this.estructura.push(create);
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar centro zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -171,7 +171,7 @@ logout()
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar centro zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -186,11 +186,11 @@ logout()
 
         if (array[2] == "1") {
           if (array[3] == "1") {
-            var create = { name: "Reporte Centro Zonal", route: "/reportecentrozonal", icon: "public" };
+            var create = { name: "Reporte centro zonal", route: "/reportecentrozonal", icon: "public" };
             this.estructura.push(create);
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar centro zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -202,7 +202,7 @@ logout()
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar centro zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -215,11 +215,11 @@ logout()
         else if (array[2] == "0") {
 
           if (array[3] == "1") {
-            var create = { name: "Reporte Centro Zonal", route: "/reportecentrozonal", icon: "public" };
+            var create = { name: "Reporte centro zonal", route: "/reportecentrozonal", icon: "public" };
             this.estructura.push(create);
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar centro zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -230,7 +230,7 @@ logout()
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar centro zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -245,16 +245,16 @@ logout()
     } else if (array[0] == "0") {
 
       if (array[1] == "1") {
-        var create = { name: "Actualizar Centro Zonal", route: "/centrozonal", icon: "public" };
+        var create = { name: "Actualizar centro zonal", route: "/centrozonal", icon: "public" };
         this.estructura.push(create);
 
         if (array[2] == "1") {
           if (array[3] == "1") {
-            var create = { name: "Reporte Centro Zonal", route: "/reportecentrozonal", icon: "list_alt" };
+            var create = { name: "Reporte centro zonal", route: "/reportecentrozonal", icon: "list_alt" };
             this.estructura.push(create);
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar centro zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -266,7 +266,7 @@ logout()
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar centro zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -279,11 +279,11 @@ logout()
 
 
           if (array[3] == "1") {
-            var create = { name: "Reporte Centro Zonal", route: "/reportecentrozonal", icon: "list_alt" };
+            var create = { name: "Reporte centro zonal", route: "/reportecentrozonal", icon: "list_alt" };
             this.estructura.push(create);
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar centro zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -295,7 +295,7 @@ logout()
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar centro zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -310,11 +310,11 @@ logout()
 
         if (array[2] == "1") {
           if (array[3] == "1") {
-            var create = { name: "Reporte Centro Zonal", route: "/reportecentrozonal", icon: "list_alt" };
+            var create = { name: "Reporte centro zonal", route: "/reportecentrozonal", icon: "list_alt" };
             this.estructura.push(create);
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar centro zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -326,7 +326,7 @@ logout()
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar centro zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -339,11 +339,11 @@ logout()
         else if (array[2] == "0") {
 
           if (array[3] == "1") {
-            var create = { name: "Reporte Centro Zonal", route: "/reportecentrozonal", icon: "list_alt" };
+            var create = { name: "Reporte centro zonal", route: "/reportecentrozonal", icon: "list_alt" };
             this.estructura.push(create);
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar centro zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -354,7 +354,7 @@ logout()
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar centro zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -378,18 +378,18 @@ logout()
     //console.log('carga', array);
 
     if (array[0] == "1") {
-      var create = { name: "Crear Punto Entrega", route: "/puntoentregai", icon: "public" };
+      var create = { name: "Crear punto entrega", route: "/puntoentregai", icon: "public" };
       this.estructura.push(create);
       if (array[1] == "1") {
-        var create = { name: "Modificar Punto Entrega", route: "/puntoentrega", icon: "public" };
+        var create = { name: "Modificar punto entrega", route: "/puntoentrega", icon: "public" };
         this.estructura.push(create);
         if (array[2] == "1") {
           if (array[3] == "1") {
 
-            var create = { name: "Reporte Punto Entrega", route: "/reportepuntoentrega", icon: "face" };
+            var create = { name: "Reporte punto entrega", route: "/reportepuntoentrega", icon: "face" };
             this.estructura.push(create);
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              var create = { name: "Inhabilitar punto entrega", route: "/puntoentregain", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -401,7 +401,7 @@ logout()
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              var create = { name: "Inhabilitar punto entrega", route: "/puntoentregain", icon: "public" };
               this.estructura.push(create);
 
             }
@@ -417,11 +417,11 @@ logout()
           if (array[3] == "1") {
 
 
-            var create = { name: "Reporte Punto Entrega", route: "/reportepuntoentrega", icon: "face" };
+            var create = { name: "Reporte punto entrega", route: "/reportepuntoentrega", icon: "face" };
             this.estructura.push(create);
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              var create = { name: "Inhabilitar punto entrega", route: "/puntoentregain", icon: "public" };
               this.estructura.push(create);
 
             }
@@ -434,7 +434,7 @@ logout()
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              var create = { name: "Inhabilitar punto entrega", route: "/puntoentregain", icon: "public" };
               this.estructura.push(create);
 
             }
@@ -455,11 +455,11 @@ logout()
           if (array[3] == "1") {
 
 
-            var create = { name: "Reporte Punto Entrega", route: "/reportepuntoentrega", icon: "face" };
+            var create = { name: "Reporte punto entrega", route: "/reportepuntoentrega", icon: "face" };
             this.estructura.push(create);
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              var create = { name: "Inhabilitar punto entrega", route: "/puntoentregain", icon: "public" };
               this.estructura.push(create);
 
             }
@@ -472,7 +472,7 @@ logout()
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              var create = { name: "Inhabilitar punto entrega", route: "/puntoentregain", icon: "public" };
               this.estructura.push(create);
 
             }
@@ -489,11 +489,11 @@ logout()
           if (array[3] == "1") {
 
 
-            var create = { name: "Reporte Punto Entrega", route: "/reportepuntoentrega", icon: "face" };
+            var create = { name: "Reporte punto entrega", route: "/reportepuntoentrega", icon: "face" };
             this.estructura.push(create);
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              var create = { name: "Inhabilitar punto entrega", route: "/puntoentregain", icon: "public" };
               this.estructura.push(create);
 
             }
@@ -506,7 +506,7 @@ logout()
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              var create = { name: "Inhabilitar punto entrega", route: "/puntoentregain", icon: "public" };
               this.estructura.push(create);
 
             }
@@ -524,7 +524,7 @@ logout()
     else if (array[0] == "0") {
 
       if (array[1] == "1") {
-        var create = { name: "Modificar Punto Entrega", route: "/puntoentrega", icon: "public" };
+        var create = { name: "Modificar punto entrega", route: "/puntoentrega", icon: "public" };
         this.estructura.push(create);
 
         if (array[2] == "1") {
@@ -533,10 +533,10 @@ logout()
           if (array[3] == "1") {
 
 
-            var create = { name: "Reporte Punto Entrega", route: "/reportepuntoentrega", icon: "face" };
+            var create = { name: "Reporte punto entrega", route: "/reportepuntoentrega", icon: "face" };
             this.estructura.push(create);
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              var create = { name: "Inhabilitar punto entrega", route: "/puntoentregain", icon: "public" };
               this.estructura.push(create);
 
             }
@@ -548,7 +548,7 @@ logout()
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              var create = { name: "Inhabilitar punto entrega", route: "/puntoentregain", icon: "public" };
               this.estructura.push(create);
 
             }
@@ -564,11 +564,11 @@ logout()
           if (array[3] == "1") {
 
 
-            var create = { name: "Reporte Punto Entrega", route: "/reportepuntoentrega", icon: "face" };
+            var create = { name: "Reporte punto entrega", route: "/reportepuntoentrega", icon: "face" };
             this.estructura.push(create);
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              var create = { name: "Inhabilitar punto entrega", route: "/puntoentregain", icon: "public" };
               this.estructura.push(create);
 
             }
@@ -581,7 +581,7 @@ logout()
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              var create = { name: "Inhabilitar punto entrega", route: "/puntoentregain", icon: "public" };
               this.estructura.push(create);
 
             }
@@ -602,11 +602,11 @@ logout()
           if (array[3] == "1") {
 
 
-            var create = { name: "Reporte Punto Entrega", route: "/reportepuntoentrega", icon: "face" };
+            var create = { name: "Reporte punto entrega", route: "/reportepuntoentrega", icon: "face" };
             this.estructura.push(create);
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              var create = { name: "Inhabilitar punto entrega", route: "/puntoentregain", icon: "public" };
               this.estructura.push(create);
 
             }
@@ -619,7 +619,7 @@ logout()
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              var create = { name: "Inhabilitar punto entrega", route: "/puntoentregain", icon: "public" };
               this.estructura.push(create);
 
             }
@@ -635,11 +635,11 @@ logout()
           if (array[3] == "1") {
 
 
-            var create = { name: "Reporte Punto Entrega", route: "/reportepuntoentrega", icon: "face" };
+            var create = { name: "Reporte punto entrega", route: "/reportepuntoentrega", icon: "face" };
             this.estructura.push(create);
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              var create = { name: "Inhabilitar punto entrega", route: "/puntoentregain", icon: "public" };
               this.estructura.push(create);
 
             }
@@ -652,7 +652,7 @@ logout()
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Punto Entrega", route: "/puntoentregain", icon: "public" };
+              var create = { name: "Inhabilitar punto entrega", route: "/puntoentregain", icon: "public" };
               this.estructura.push(create);
 
             }
@@ -949,11 +949,11 @@ this.estructura.push(create);
     // console.log('carga', array);
 
     if (array[0] == "1") {
-      var create = { name: "Crear Usuarios", route: "/usuariosv", icon: "face" };
+      var create = { name: "Crear usuarios", route: "/usuariosv", icon: "face" };
       this.Usuarios.push(create);
 
       if (array[1] == "1") {
-        var create = { name: "Modificar Usuarios", route: "/modificarusuarios", icon: "face" };
+        var create = { name: "Modificar usuarios", route: "/modificarusuarios", icon: "face" };
         this.Usuarios.push(create);
 
 
@@ -961,10 +961,10 @@ this.estructura.push(create);
 
 
           if (array[3] == "1") {
-            var create = { name: "Reporte Usuarios", route: "/reporteusuarios", icon: "face" };
+            var create = { name: "Reporte usuarios", route: "/reporteusuarios", icon: "face" };
               this.Usuarios.push(create);
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+              var create = { name: "Inhabilitar usuarios", route: "/inhabilitarusuarios", icon: "face" };
 this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
@@ -976,7 +976,7 @@ this.Usuarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+              var create = { name: "Inhabilitar usuarios", route: "/inhabilitarusuarios", icon: "face" };
 this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
@@ -989,10 +989,10 @@ this.Usuarios.push(create);
 
 
           if (array[3] == "1") {
-            var create = { name: "Reporte Usuarios", route: "/reporteusuarios", icon: "face" };
+            var create = { name: "Reporte usuarios", route: "/reporteusuarios", icon: "face" };
               this.Usuarios.push(create);
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+              var create = { name: "Inhabilitar usuarios", route: "/inhabilitarusuarios", icon: "face" };
 this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1004,7 +1004,7 @@ this.Usuarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+              var create = { name: "Inhabilitar usuarios", route: "/inhabilitarusuarios", icon: "face" };
 this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1022,10 +1022,10 @@ this.Usuarios.push(create);
 
 
           if (array[3] == "1") {
-            var create = { name: "Reporte Usuarios", route: "/reporteusuarios", icon: "face" };
+            var create = { name: "Reporte usuarios", route: "/reporteusuarios", icon: "face" };
               this.Usuarios.push(create);
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+              var create = { name: "Inhabilitar usuarios", route: "/inhabilitarusuarios", icon: "face" };
 this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1037,7 +1037,7 @@ this.Usuarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+              var create = { name: "Inhabilitar usuarios", route: "/inhabilitarusuarios", icon: "face" };
 this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1051,10 +1051,10 @@ this.Usuarios.push(create);
 
 
           if (array[3] == "1") {
-            var create = { name: "Reporte Usuarios", route: "/reporteusuarios", icon: "face" };
+            var create = { name: "Reporte usuarios", route: "/reporteusuarios", icon: "face" };
               this.Usuarios.push(create);
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+              var create = { name: "Inhabilitar usuarios", route: "/inhabilitarusuarios", icon: "face" };
 this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1066,7 +1066,7 @@ this.Usuarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+              var create = { name: "Inhabilitar usuarios", route: "/inhabilitarusuarios", icon: "face" };
 this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1083,17 +1083,17 @@ this.Usuarios.push(create);
     else if (array[0] == "0") {
 
       if (array[1] == "1") {
-        var create = { name: "Modificar Usuarios", route: "/modificarusuarios", icon: "face" };
+        var create = { name: "Modificar usuarios", route: "/modificarusuarios", icon: "face" };
         this.Usuarios.push(create);
 
         if (array[2] == "1") {
 
 
           if (array[3] == "1") {
-            var create = { name: "Reporte Usuarios", route: "/reporteusuarios", icon: "face" };
+            var create = { name: "Reporte usuarios", route: "/reporteusuarios", icon: "face" };
               this.Usuarios.push(create);
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+              var create = { name: "Inhabilitar usuarios", route: "/inhabilitarusuarios", icon: "face" };
 this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1104,7 +1104,7 @@ this.Usuarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+              var create = { name: "Inhabilitar usuarios", route: "/inhabilitarusuarios", icon: "face" };
 this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1117,10 +1117,10 @@ this.Usuarios.push(create);
 
 
           if (array[3] == "1") {
-            var create = { name: "Reporte Usuarios", route: "/reporteusuarios", icon: "face" };
+            var create = { name: "Reporte usuarios", route: "/reporteusuarios", icon: "face" };
               this.Usuarios.push(create);
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+              var create = { name: "Inhabilitar usuarios", route: "/inhabilitarusuarios", icon: "face" };
 this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1132,7 +1132,7 @@ this.Usuarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+              var create = { name: "Inhabilitar usuarios", route: "/inhabilitarusuarios", icon: "face" };
 this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1150,10 +1150,10 @@ this.Usuarios.push(create);
 
 
           if (array[3] == "1") {
-            var create = { name: "Reporte Usuarios", route: "/reporteusuarios", icon: "face" };
+            var create = { name: "Reporte usuarios", route: "/reporteusuarios", icon: "face" };
               this.Usuarios.push(create);
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+              var create = { name: "Inhabilitar usuarios", route: "/inhabilitarusuarios", icon: "face" };
 this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1165,7 +1165,7 @@ this.Usuarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+              var create = { name: "Inhabilitar usuarios", route: "/inhabilitarusuarios", icon: "face" };
 this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1178,10 +1178,10 @@ this.Usuarios.push(create);
 
 
           if (array[3] == "1") {
-            var create = { name: "Reporte Usuarios", route: "/reporteusuarios", icon: "face" };
+            var create = { name: "Reporte usuarios", route: "/reporteusuarios", icon: "face" };
               this.Usuarios.push(create);
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+              var create = { name: "Inhabilitar usuarios", route: "/inhabilitarusuarios", icon: "face" };
 this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1193,7 +1193,7 @@ this.Usuarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Usuarios", route: "/inhabilitarusuarios", icon: "face" };
+              var create = { name: "Inhabilitar usuarios", route: "/inhabilitarusuarios", icon: "face" };
 this.Usuarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1218,21 +1218,21 @@ this.Usuarios.push(create);
     if (array[0] == "1") {
       var create = { name: "Acudientes", route: "/acudientes", icon: "face" };
       this.beneficiarios.push(create);
-      var create = { name: "Crear Beneficiarios ", route: "/beneficiariosm", icon: "face" };
+      var create = { name: "Crear beneficiarios ", route: "/beneficiariosm", icon: "face" };
       this.beneficiarios.push(create);
 
       if (array[1] == "1") {
-        var create = { name: "Modificar Beneficiarios  ", route: "/ModificarBeneficiario1", icon: "face" };
+        var create = { name: "Modificar beneficiarios  ", route: "/ModificarBeneficiario1", icon: "face" };
         this.beneficiarios.push(create);
 
         if (array[2] == "1") {
 
 
           if (array[3] == "1") {
-            var create = { name: "Reporte Beneficiarios ", route: "/reportebeneficiario", icon: "face" };
+            var create = { name: "Reporte beneficiarios ", route: "/reportebeneficiario", icon: "face" };
               this.beneficiarios.push(create);
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1244,7 +1244,7 @@ this.beneficiarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
 
             }
@@ -1258,13 +1258,13 @@ this.beneficiarios.push(create);
 
 
           if (array[3] == "1") {
-            var create = { name: "Reporte Beneficiarios ", route: "/reportebeneficiario", icon: "face" };
+            var create = { name: "Reporte beneficiarios ", route: "/reportebeneficiario", icon: "face" };
               this.beneficiarios.push(create);
 
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1276,7 +1276,7 @@ this.beneficiarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1294,13 +1294,13 @@ this.beneficiarios.push(create);
 
 
           if (array[3] == "1") {
-            var create = { name: "Reporte Beneficiarios ", route: "/reportebeneficiario", icon: "face" };
+            var create = { name: "Reporte beneficiarios ", route: "/reportebeneficiario", icon: "face" };
               this.beneficiarios.push(create);
 
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1312,7 +1312,7 @@ this.beneficiarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1326,10 +1326,10 @@ this.beneficiarios.push(create);
 
 
           if (array[3] == "1") {
-            var create = { name: "Reporte Beneficiarios ", route: "/reportebeneficiario", icon: "face" };
+            var create = { name: "Reporte beneficiarios ", route: "/reportebeneficiario", icon: "face" };
               this.beneficiarios.push(create);
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1341,7 +1341,7 @@ this.beneficiarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1358,19 +1358,19 @@ this.beneficiarios.push(create);
     else if (array[0] == "0") {
 
       if (array[1] == "1") {
-        var create = { name: "Modificar Beneficiarios ", route: "/ModificarBeneficiario1", icon: "face" };
+        var create = { name: "Modificar beneficiarios ", route: "/ModificarBeneficiario1", icon: "face" };
         this.beneficiarios.push(create);
 
         if (array[2] == "1") {
 
 
           if (array[3] == "1") {
-            var create = { name: "Reporte Beneficiarios ", route: "/reportebeneficiario", icon: "face" };
+            var create = { name: "Reporte beneficiarios ", route: "/reportebeneficiario", icon: "face" };
               this.beneficiarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1381,7 +1381,7 @@ this.beneficiarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1394,10 +1394,10 @@ this.beneficiarios.push(create);
 
 
           if (array[3] == "1") {
-            var create = { name: "Reporte Beneficiarios ", route: "/reportebeneficiario", icon: "face" };
+            var create = { name: "Reporte beneficiarios ", route: "/reportebeneficiario", icon: "face" };
               this.beneficiarios.push(create);
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1409,7 +1409,7 @@ this.beneficiarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1427,10 +1427,10 @@ this.beneficiarios.push(create);
 
 
           if (array[3] == "1") {
-            var create = { name: "Reporte Beneficiarios", route: "/reportebeneficiario", icon: "face" };
+            var create = { name: "Reporte beneficiarios", route: "/reportebeneficiario", icon: "face" };
               this.beneficiarios.push(create);
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1442,7 +1442,7 @@ this.beneficiarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1455,10 +1455,10 @@ this.beneficiarios.push(create);
 
 
           if (array[3] == "1") {
-            var create = { name: "Reporte Beneficiarios ", route: "/reportebeneficiario", icon: "face" };
+            var create = { name: "Reporte beneficiarios ", route: "/reportebeneficiario", icon: "face" };
               this.beneficiarios.push(create);
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1470,7 +1470,7 @@ this.beneficiarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1506,11 +1506,11 @@ var create = { name: "Devoluciones", route: "/devoluciones", icon: "list_alt" };
           
 
           if (array[3] == "1") {
-            var create = { name: "Reporte Devoluciones", route: "/reportedevolucion", icon: "list_alt" };
+            var create = { name: "Reporte devoluciones", route: "/reportedevolucion", icon: "list_alt" };
      this.entrega.push(create);
-var create = { name: "Reporte Entrega", route: "/reportentregab", icon: "list_alt" };
+var create = { name: "Reporte entrega", route: "/reportentregab", icon: "list_alt" };
      this.entrega.push(create);
-var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "list_alt" };
+var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "list_alt" };
      this.entrega.push(create);
             if (array[4] == "1") {
               
@@ -1536,11 +1536,11 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
           
 
           if (array[3] == "1") {
-            var create = { name: "Reporte Devoluciones", route: "/reportedevolucion", icon: "list_alt" };
+            var create = { name: "Reporte devoluciones", route: "/reportedevolucion", icon: "list_alt" };
      this.entrega.push(create);
-var create = { name: "Reporte Entrega", route: "/reportentregab", icon: "list_alt" };
+var create = { name: "Reporte entrega", route: "/reportentregab", icon: "list_alt" };
      this.entrega.push(create);
-var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "list_alt" };
+var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "list_alt" };
      this.entrega.push(create);
             if (array[4] == "1") {
               
@@ -1571,11 +1571,11 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
           
 
           if (array[3] == "1") {
-            var create = { name: "Reporte Devoluciones", route: "/reportedevolucion", icon: "list_alt" };
+            var create = { name: "Reporte devoluciones", route: "/reportedevolucion", icon: "list_alt" };
      this.entrega.push(create);
-var create = { name: "Reporte Entrega", route: "/reportentregab", icon: "list_alt" };
+var create = { name: "Reporte entrega", route: "/reportentregab", icon: "list_alt" };
      this.entrega.push(create);
-var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "list_alt" };
+var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "list_alt" };
      this.entrega.push(create);
             if (array[4] == "1") {
               
@@ -1602,11 +1602,11 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
           
 
           if (array[3] == "1") {
-            var create = { name: "Reporte Devoluciones", route: "/reportedevolucion", icon: "list_alt" };
+            var create = { name: "Reporte devoluciones", route: "/reportedevolucion", icon: "list_alt" };
      this.entrega.push(create);
-var create = { name: "Reporte Entrega", route: "/reportentregab", icon: "list_alt" };
+var create = { name: "Reporte entrega", route: "/reportentregab", icon: "list_alt" };
      this.entrega.push(create);
-var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "list_alt" };
+var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "list_alt" };
      this.entrega.push(create);
             if (array[4] == "1") {
               
@@ -1641,11 +1641,11 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
           
 
           if (array[3] == "1") {
-            var create = { name: "Reporte Devoluciones", route: "/reportedevolucion", icon: "list_alt" };
+            var create = { name: "Reporte devoluciones", route: "/reportedevolucion", icon: "list_alt" };
      this.entrega.push(create);
-var create = { name: "Reporte Entrega", route: "/reportentregab", icon: "list_alt" };
+var create = { name: "Reporte entrega", route: "/reportentregab", icon: "list_alt" };
      this.entrega.push(create);
-var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "list_alt" };
+var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "list_alt" };
      this.entrega.push(create);
             if (array[4] == "1") {
               
@@ -1670,11 +1670,11 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
           
 
           if (array[3] == "1") {
-            var create = { name: "Reporte Devoluciones", route: "/reportedevolucion", icon: "list_alt" };
+            var create = { name: "Reporte devoluciones", route: "/reportedevolucion", icon: "list_alt" };
      this.entrega.push(create);
-var create = { name: "Reporte Entrega", route: "/reportentregab", icon: "list_alt" };
+var create = { name: "Reporte entrega", route: "/reportentregab", icon: "list_alt" };
      this.entrega.push(create);
-var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "list_alt" };
+var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "list_alt" };
      this.entrega.push(create);
             if (array[4] == "1") {
               
@@ -1705,11 +1705,11 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
           
 
           if (array[3] == "1") {
-            var create = { name: "Reporte Devoluciones", route: "/reportedevolucion", icon: "list_alt" };
+            var create = { name: "Reporte devoluciones", route: "/reportedevolucion", icon: "list_alt" };
      this.entrega.push(create);
-var create = { name: "Reporte Entrega", route: "/reportentregab", icon: "list_alt" };
+var create = { name: "Reporte entrega", route: "/reportentregab", icon: "list_alt" };
      this.entrega.push(create);
-var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "list_alt" };
+var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "list_alt" };
      this.entrega.push(create);
             if (array[4] == "1") {
               
@@ -1735,11 +1735,11 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
           
 
           if (array[3] == "1") {
-            var create = { name: "Reporte Devoluciones", route: "/reportedevolucion", icon: "list_alt" };
+            var create = { name: "Reporte devoluciones", route: "/reportedevolucion", icon: "list_alt" };
      this.entrega.push(create);
-var create = { name: "Reporte Entrega", route: "/reportentregab", icon: "list_alt" };
+var create = { name: "Reporte entrega", route: "/reportentregab", icon: "list_alt" };
      this.entrega.push(create);
-var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "list_alt" };
+var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "list_alt" };
      this.entrega.push(create);
             if (array[4] == "1") {
               
@@ -1776,19 +1776,19 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
   //console.log('carga', array);
 
   if (array[0] == "1") {
-    var create = { name: "Crear Centro Distribución", route: "/centrodistribucion", icon: "face" };
+    var create = { name: "Crear centro distribución", route: "/centrodistribucion", icon: "face" };
      this.centrod.push(create);
     if (array[1] == "1") {
-      var create = { name: "Modificar Centro Distribución", route: "/modificarcentrod", icon: "face" };
+      var create = { name: "Modificar centro distribución", route: "/modificarcentrod", icon: "face" };
      this.centrod.push(create);
       if (array[2] == "1") {
         
 
         if (array[3] == "1") {
-          var create = { name: "Reporte Centro Distribución", route: "/reportecentrodistribucion", icon: "face" };
+          var create = { name: "Reporte centro distribución", route: "/reportecentrodistribucion", icon: "face" };
      this.centrod.push(create);
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar centro distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -1800,7 +1800,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
           
 
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar centro distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -1813,10 +1813,10 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
         
 
         if (array[3] == "1") {
-          var create = { name: "Reporte Centro Distribución", route: "/reportecentrodistribucion", icon: "face" };
+          var create = { name: "Reporte centro distribución", route: "/reportecentrodistribucion", icon: "face" };
      this.centrod.push(create);
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar centro distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -1828,7 +1828,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
           
 
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar centro distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -1846,10 +1846,10 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
         
 
         if (array[3] == "1") {
-          var create = { name: "Reporte Centro Distribución", route: "/reportecentrodistribucion", icon: "face" };
+          var create = { name: "Reporte centro distribución", route: "/reportecentrodistribucion", icon: "face" };
      this.centrod.push(create);
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar centro distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -1861,7 +1861,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
           
 
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar centro distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -1875,10 +1875,10 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
         
 
         if (array[3] == "1") {
-          var create = { name: "Reporte Centro Distribución", route: "/reportecentrodistribucion", icon: "face" };
+          var create = { name: "Reporte centro distribución", route: "/reportecentrodistribucion", icon: "face" };
      this.centrod.push(create);
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar centro distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -1890,7 +1890,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
           
 
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar centro distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -1907,16 +1907,16 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
   else if (array[0] == "0") {
     
     if (array[1] == "1") {
-      var create = { name: "Modificar Centro Distribución", route: "/modificarcentrod", icon: "face" };
+      var create = { name: "Modificar centro distribución", route: "/modificarcentrod", icon: "face" };
      this.centrod.push(create);
       if (array[2] == "1") {
         
 
         if (array[3] == "1") {
-          var create = { name: "Reporte Centro Distribución", route: "/reportecentrodistribucion", icon: "face" };
+          var create = { name: "Reporte centro distribución", route: "/reportecentrodistribucion", icon: "face" };
      this.centrod.push(create);
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar centro distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -1927,7 +1927,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
           
 
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar centro distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -1940,10 +1940,10 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
         
 
         if (array[3] == "1") {
-          var create = { name: "Reporte Centro Distribución", route: "/reportecentrodistribucion", icon: "face" };
+          var create = { name: "Reporte centro distribución", route: "/reportecentrodistribucion", icon: "face" };
      this.centrod.push(create);
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar centro distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -1955,7 +1955,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
           
 
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar centro distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -1973,10 +1973,10 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
         
 
         if (array[3] == "1") {
-          var create = { name: "Reporte Centro Distribución", route: "/reportecentrodistribucion", icon: "face" };
+          var create = { name: "Reporte centro distribución", route: "/reportecentrodistribucion", icon: "face" };
      this.centrod.push(create);
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar centro distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -1988,7 +1988,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
           
 
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar centro distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -2001,10 +2001,10 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
         
 
         if (array[3] == "1") {
-          var create = { name: "Reporte Centro Distribución", route: "/reportecentrodistribucion", icon: "face" };
+          var create = { name: "Reporte centro distribución", route: "/reportecentrodistribucion", icon: "face" };
      this.centrod.push(create);
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar centro distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -2016,7 +2016,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
           
 
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar centro distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -2048,7 +2048,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
        
 
        if (array[3] == "1") {
-         var create = { name: "Reporte Inventario", route: "/reporteinventario", icon: "store" };
+         var create = { name: "Reporte inventario", route: "/reporteinventario", icon: "store" };
     this.inventarios.push(create);
          if (array[4] == "1") {
            
@@ -2074,7 +2074,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
        
 
        if (array[3] == "1") {
-         var create = { name: "Reporte Inventario", route: "/reporteinventario", icon: "store" };
+         var create = { name: "Reporte inventario", route: "/reporteinventario", icon: "store" };
     this.inventarios.push(create);
          if (array[4] == "1") {
            
@@ -2105,7 +2105,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
        
 
        if (array[3] == "1") {
-         var create = { name: "Reporte Inventario", route: "/reporteinventario", icon: "store" };
+         var create = { name: "Reporte inventario", route: "/reporteinventario", icon: "store" };
     this.inventarios.push(create);
          if (array[4] == "1") {
            
@@ -2132,7 +2132,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
        
 
        if (array[3] == "1") {
-         var create = { name: "Reporte Inventario", route: "/reporteinventario", icon: "store" };
+         var create = { name: "Reporte inventario", route: "/reporteinventario", icon: "store" };
     this.inventarios.push(create);
          if (array[4] == "1") {
            
@@ -2167,7 +2167,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
        
 
        if (array[3] == "1") {
-         var create = { name: "Reporte Inventario", route: "/reporteinventario", icon: "store" };
+         var create = { name: "Reporte inventario", route: "/reporteinventario", icon: "store" };
     this.inventarios.push(create);
          if (array[4] == "1") {
            
@@ -2192,7 +2192,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
        
 
        if (array[3] == "1") {
-         var create = { name: "Reporte Inventario", route: "/reporteinventario", icon: "store" };
+         var create = { name: "Reporte inventario", route: "/reporteinventario", icon: "store" };
     this.inventarios.push(create);
          if (array[4] == "1") {
            
@@ -2223,7 +2223,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
        
 
        if (array[3] == "1") {
-         var create = { name: "Reporte Inventario", route: "/reporteinventario", icon: "store" };
+         var create = { name: "Reporte inventario", route: "/reporteinventario", icon: "store" };
     this.inventarios.push(create);
          if (array[4] == "1") {
            
@@ -2249,7 +2249,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
        
 
        if (array[3] == "1") {
-         var create = { name: "Reporte Inventario", route: "/reporteinventario", icon: "store" };
+         var create = { name: "Reporte inventario", route: "/reporteinventario", icon: "store" };
     this.inventarios.push(create);
          if (array[4] == "1") {
            
@@ -2285,10 +2285,10 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
   //console.log('carga', array);
 
   if (array[0] == "1") {
-     var create = { name: "Crear Rol", route: "/rol", icon: "face" };
+     var create = { name: "Crear rol", route: "/rol", icon: "face" };
      this.rol.push(create);
    if (array[1] == "1") {
-     var create = { name: "Modificar Rol", route: "/roli", icon: "face" };
+     var create = { name: "Modificar rol", route: "/roli", icon: "face" };
      this.rol.push(create);
 
 
@@ -2296,10 +2296,10 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
        
 
        if (array[3] == "1") {
-         var create = { name: "Reporte Rol", route: "/reporterol", icon: "face" };
+         var create = { name: "Reporte rol", route: "/reporterol", icon: "face" };
      this.rol.push(create);
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+           var create = { name: "Inhabilitar rol", route: "/rolin", icon: "face" };
      this.rol.push(create);
          }
          else if (array[4] == "0") {
@@ -2311,7 +2311,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
          
 
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+           var create = { name: "Inhabilitar rol", route: "/rolin", icon: "face" };
      this.rol.push(create);
          }
          else if (array[4] == "0") {
@@ -2324,10 +2324,10 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
        
 
        if (array[3] == "1") {
-         var create = { name: "Reporte Rol", route: "/reporterol", icon: "face" };
+         var create = { name: "Reporte rol", route: "/reporterol", icon: "face" };
      this.rol.push(create);
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+           var create = { name: "Inhabilitar rol", route: "/rolin", icon: "face" };
      this.rol.push(create);
          }
          else if (array[4] == "0") {
@@ -2339,7 +2339,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
          
 
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+           var create = { name: "Inhabilitar rol", route: "/rolin", icon: "face" };
      this.rol.push(create);
          }
          else if (array[4] == "0") {
@@ -2357,10 +2357,10 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
        
 
        if (array[3] == "1") {
-         var create = { name: "Reporte Rol", route: "/reporterol", icon: "face" };
+         var create = { name: "Reporte rol", route: "/reporterol", icon: "face" };
      this.rol.push(create);
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+           var create = { name: "Inhabilitar rol", route: "/rolin", icon: "face" };
      this.rol.push(create);
          }
          else if (array[4] == "0") {
@@ -2372,7 +2372,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
          
 
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+           var create = { name: "Inhabilitar rol", route: "/rolin", icon: "face" };
      this.rol.push(create);
          }
          else if (array[4] == "0") {
@@ -2386,10 +2386,10 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
        
 
        if (array[3] == "1") {
-         var create = { name: "Reporte Rol", route: "/reporterol", icon: "face" };
+         var create = { name: "Reporte rol", route: "/reporterol", icon: "face" };
      this.rol.push(create);
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+           var create = { name: "Inhabilitar rol", route: "/rolin", icon: "face" };
      this.rol.push(create);
          }
          else if (array[4] == "0") {
@@ -2401,7 +2401,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
          
 
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+           var create = { name: "Inhabilitar rol", route: "/rolin", icon: "face" };
      this.rol.push(create);
          }
          else if (array[4] == "0") {
@@ -2418,17 +2418,17 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
  else if (array[0] == "0") {
    
    if (array[1] == "1") {
-     var create = { name: "Modificar Rol", route: "/roli", icon: "face" };
+     var create = { name: "Modificar rol", route: "/roli", icon: "face" };
      this.rol.push(create);
 
      if (array[2] == "1") {
        
 
        if (array[3] == "1") {
-         var create = { name: "Reporte Rol", route: "/reporterol", icon: "face" };
+         var create = { name: "Reporte rol", route: "/reporterol", icon: "face" };
      this.rol.push(create);
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+           var create = { name: "Inhabilitar rol", route: "/rolin", icon: "face" };
      this.rol.push(create);
          }
          else if (array[4] == "0") {
@@ -2439,7 +2439,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
          
 
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+           var create = { name: "Inhabilitar rol", route: "/rolin", icon: "face" };
      this.rol.push(create);
          }
          else if (array[4] == "0") {
@@ -2452,10 +2452,10 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
        
 
        if (array[3] == "1") {
-         var create = { name: "Reporte Rol", route: "/reporterol", icon: "face" };
+         var create = { name: "Reporte rol", route: "/reporterol", icon: "face" };
      this.rol.push(create);
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+           var create = { name: "Inhabilitar rol", route: "/rolin", icon: "face" };
      this.rol.push(create);
          }
          else if (array[4] == "0") {
@@ -2467,7 +2467,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
          
 
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+           var create = { name: "Inhabilitar rol", route: "/rolin", icon: "face" };
      this.rol.push(create);
          }
          else if (array[4] == "0") {
@@ -2485,10 +2485,10 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
        
 
        if (array[3] == "1") {
-         var create = { name: "Reporte Rol", route: "/reporterol", icon: "face" };
+         var create = { name: "Reporte rol", route: "/reporterol", icon: "face" };
      this.rol.push(create);
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+           var create = { name: "Inhabilitar rol", route: "/rolin", icon: "face" };
      this.rol.push(create);
          }
          else if (array[4] == "0") {
@@ -2500,7 +2500,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
          
 
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+           var create = { name: "Inhabilitar rol", route: "/rolin", icon: "face" };
      this.rol.push(create);
          }
          else if (array[4] == "0") {
@@ -2513,10 +2513,10 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
        
 
        if (array[3] == "1") {
-         var create = { name: "Reporte Rol", route: "/reporterol", icon: "face" };
+         var create = { name: "Reporte rol", route: "/reporterol", icon: "face" };
      this.rol.push(create);
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+           var create = { name: "Inhabilitar rol", route: "/rolin", icon: "face" };
      this.rol.push(create);
          }
          else if (array[4] == "0") {
@@ -2528,7 +2528,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
          
 
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Rol", route: "/rolin", icon: "face" };
+           var create = { name: "Inhabilitar rol", route: "/rolin", icon: "face" };
      this.rol.push(create);
          }
          else if (array[4] == "0") {
@@ -2552,17 +2552,17 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
   // console.log('carga', array);
 
   if (array[0] == "1" ) {
-     var create = { name: "Crear Datos Maestros", route: "/listamaestros", icon: "face" };
+     var create = { name: "Crear datos maestros", route: "/listamaestros", icon: "face" };
     this.datos.push(create);
    if (array[1] == "1") {
-     var create = { name: "Modificar Datos Maestros", route: "/modificarlistamaestro", icon: "face" };
+     var create = { name: "Modificar datos maestros", route: "/modificarlistamaestro", icon: "face" };
     this.datos.push(create);
      if (array[2] == "1") {        
        if (array[3] == "1") {
-         var create = { name: "Reporte Datos Maestros", route: "/reportes", icon: "face" };
+         var create = { name: "Reporte datos maestros", route: "/reportes", icon: "face" };
     this.datos.push(create);
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+           var create = { name: "Inhabilitar datos maestros", route: "/listamaestrosinhabilitar", icon: "face" };
     this.datos.push(create);
          }
          else if (array[4] == "0") {
@@ -2574,7 +2574,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
          
 
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+           var create = { name: "Inhabilitar datos maestros", route: "/listamaestrosinhabilitar", icon: "face" };
     this.datos.push(create);
          }
          else if (array[4] == "0") {
@@ -2587,10 +2587,10 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
        
 
        if (array[3] == "1") {
-         var create = { name: "Reporte Datos Maestros", route: "/reportes", icon: "face" };
+         var create = { name: "Reporte datos maestros", route: "/reportes", icon: "face" };
     this.datos.push(create);
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+           var create = { name: "Inhabilitar datos maestros", route: "/listamaestrosinhabilitar", icon: "face" };
     this.datos.push(create);
          }
          else if (array[4] == "0") {
@@ -2602,7 +2602,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
          
 
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+           var create = { name: "Inhabilitar datos maestros", route: "/listamaestrosinhabilitar", icon: "face" };
     this.datos.push(create);
          }
          else if (array[4] == "0") {
@@ -2620,10 +2620,10 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
        
 
        if (array[3] == "1") {
-         var create = { name: "Reporte Datos Maestros", route: "/reportes", icon: "face" };
+         var create = { name: "Reporte datos maestros", route: "/reportes", icon: "face" };
     this.datos.push(create);
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+           var create = { name: "Inhabilitar datos maestros", route: "/listamaestrosinhabilitar", icon: "face" };
     this.datos.push(create);
          }
          else if (array[4] == "0") {
@@ -2635,7 +2635,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
          
 
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+           var create = { name: "Inhabilitar datos maestros", route: "/listamaestrosinhabilitar", icon: "face" };
     this.datos.push(create);
          }
          else if (array[4] == "0") {
@@ -2649,10 +2649,10 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
        
 
        if (array[3] == "1") {
-         var create = { name: "Reporte Datos Maestros", route: "/reportes", icon: "face" };
+         var create = { name: "Reporte datos maestros", route: "/reportes", icon: "face" };
     this.datos.push(create);
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+           var create = { name: "Inhabilitar datos maestros", route: "/listamaestrosinhabilitar", icon: "face" };
     this.datos.push(create);
          }
          else if (array[4] == "0") {
@@ -2664,7 +2664,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
          
 
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+           var create = { name: "Inhabilitar datos maestros", route: "/listamaestrosinhabilitar", icon: "face" };
     this.datos.push(create);
          }
          else if (array[4] == "0") {
@@ -2681,16 +2681,16 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
  else if (array[0] == "0") {
    
    if (array[1] == "1") {
-     var create = { name: "Modificar Datos Maestros", route: "/modificarlistamaestro", icon: "face" };
+     var create = { name: "Modificar datos maestros", route: "/modificarlistamaestro", icon: "face" };
     this.datos.push(create);
      if (array[2] == "1") {
        
 
        if (array[3] == "1") {
-         var create = { name: "Reporte Datos Maestros", route: "/reportes", icon: "face" };
+         var create = { name: "Reporte datos maestros", route: "/reportes", icon: "face" };
     this.datos.push(create);
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+           var create = { name: "Inhabilitar datos maestros", route: "/listamaestrosinhabilitar", icon: "face" };
     this.datos.push(create);
          }
          else if (array[4] == "0") {
@@ -2701,7 +2701,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
          
 
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+           var create = { name: "Inhabilitar datos maestros", route: "/listamaestrosinhabilitar", icon: "face" };
     this.datos.push(create);
          }
          else if (array[4] == "0") {
@@ -2714,10 +2714,10 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
        
 
        if (array[3] == "1") {
-         var create = { name: "Reporte Datos Maestros", route: "/reportes", icon: "face" };
+         var create = { name: "Reporte datos maestros", route: "/reportes", icon: "face" };
     this.datos.push(create);
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+           var create = { name: "Inhabilitar datos maestros", route: "/listamaestrosinhabilitar", icon: "face" };
     this.datos.push(create);
          }
          else if (array[4] == "0") {
@@ -2729,7 +2729,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
          
 
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+           var create = { name: "Inhabilitar datos maestros", route: "/listamaestrosinhabilitar", icon: "face" };
     this.datos.push(create);
          }
          else if (array[4] == "0") {
@@ -2747,10 +2747,10 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
        
 
        if (array[3] == "1") {
-         var create = { name: "Reporte Datos Maestros", route: "/reportes", icon: "face" };
+         var create = { name: "Reporte datos maestros", route: "/reportes", icon: "face" };
     this.datos.push(create);
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+           var create = { name: "Inhabilitar datos maestros", route: "/listamaestrosinhabilitar", icon: "face" };
     this.datos.push(create);
          }
          else if (array[4] == "0") {
@@ -2762,7 +2762,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
          
 
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+           var create = { name: "Inhabilitar datos maestros", route: "/listamaestrosinhabilitar", icon: "face" };
     this.datos.push(create);
          }
          else if (array[4] == "0") {
@@ -2775,10 +2775,10 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
        
 
        if (array[3] == "1") {
-         var create = { name: "Reporte Datos Maestros", route: "/reportes", icon: "face" };
+         var create = { name: "Reporte datos maestros", route: "/reportes", icon: "face" };
     this.datos.push(create);
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+           var create = { name: "Inhabilitar datos maestros", route: "/listamaestrosinhabilitar", icon: "face" };
     this.datos.push(create);
          }
          else if (array[4] == "0") {
@@ -2790,7 +2790,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
          
 
          if (array[4] == "1") {
-           var create = { name: "Inhabilitar Datos Maestros", route: "/listamaestrosinhabilitar", icon: "face" };
+           var create = { name: "Inhabilitar datos maestros", route: "/listamaestrosinhabilitar", icon: "face" };
     this.datos.push(create);
          }
          else if (array[4] == "0") {
@@ -2814,18 +2814,18 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
   //console.log('carga', array);
 
   if (array[0] == "1") {
-     var create = {name: "Crear Almacén", route:"/almacenc", icon:"store"};
+     var create = {name: "Crear almacén", route:"/almacenc", icon:"store"};
    this.almacen.push(create);
 
    if (array[1] == "1") {
-     var create = {name: "Modificar Almacén", route:"/modificaralmacen", icon:"store"};
+     var create = {name: "Modificar almacén", route:"/modificaralmacen", icon:"store"};
    this.almacen.push(create);
      if (array[2] == "1") {
             if (array[3] == "1") {
-         var create = {name: "Reporte Almacén", route:"/reportealmacen", icon:"list_alt"};
+         var create = {name: "Reporte almacén", route:"/reportealmacen", icon:"list_alt"};
    this.almacen.push(create);
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {
@@ -2837,7 +2837,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
          
 
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {
@@ -2850,10 +2850,10 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
        
 
        if (array[3] == "1") {
-         var create = {name: "Reporte Almacén", route:"/reportealmacen", icon:"list_alt"};
+         var create = {name: "Reporte almacén", route:"/reportealmacen", icon:"list_alt"};
    this.almacen.push(create);
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {
@@ -2865,7 +2865,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
          
 
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {
@@ -2883,10 +2883,10 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
        
 
        if (array[3] == "1") {
-         var create = {name: "Reporte Almacén", route:"/reportealmacen", icon:"list_alt"};
+         var create = {name: "Reporte almacén", route:"/reportealmacen", icon:"list_alt"};
    this.almacen.push(create);
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {
@@ -2898,7 +2898,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
          
 
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {
@@ -2912,10 +2912,10 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
        
 
        if (array[3] == "1") {
-        var create = {name: "Reporte Almacén", route:"/reportealmacen", icon:"list_alt"};
+        var create = {name: "Reporte almacén", route:"/reportealmacen", icon:"list_alt"};
    this.almacen.push(create);
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {
@@ -2927,7 +2927,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
          
 
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {
@@ -2944,16 +2944,16 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
  else if (array[0] == "0") {
    
    if (array[1] == "1") {
-     var create = {name: "Modificar Almacén", route:"/modificaralmacen", icon:"store"};
+     var create = {name: "Modificar almacén", route:"/modificaralmacen", icon:"store"};
    this.almacen.push(create);
      if (array[2] == "1") {
        
 
        if (array[3] == "1") {
-         var create = {name: "Reporte Almacén", route:"/reportealmacen", icon:"list_alt"};
+         var create = {name: "Reporte almacén", route:"/reportealmacen", icon:"list_alt"};
    this.almacen.push(create);
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {
@@ -2964,7 +2964,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
          
 
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {
@@ -2977,10 +2977,10 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
        
 
        if (array[3] == "1") {
-         var create = {name: "Reporte Almacén", route:"/reportealmacen", icon:"list_alt"};
+         var create = {name: "Reporte almacén", route:"/reportealmacen", icon:"list_alt"};
    this.almacen.push(create);
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {
@@ -2992,7 +2992,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
          
 
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {
@@ -3010,10 +3010,10 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
        
 
        if (array[3] == "1") {
-         var create = {name: "Reporte Almacén", route:"/reportealmacen", icon:"list_alt"};
+         var create = {name: "Reporte almacén", route:"/reportealmacen", icon:"list_alt"};
    this.almacen.push(create);
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {
@@ -3025,7 +3025,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
          
 
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {
@@ -3038,10 +3038,10 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
        
 
        if (array[3] == "1") {
-         var create = {name: "Reporte Almacén", route:"/reportealmacen", icon:"list_alt"};
+         var create = {name: "Reporte almacén", route:"/reportealmacen", icon:"list_alt"};
    this.almacen.push(create);
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {
@@ -3053,7 +3053,7 @@ var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "li
          
 
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {

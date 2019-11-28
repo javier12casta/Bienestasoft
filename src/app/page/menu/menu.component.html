@@ -13,53 +13,53 @@
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
       fixedTopGap="56">
       <mat-nav-list>
-        <h3 matSubheader style="color: black;">Estructura Organizacional</h3>
-        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of estructura">
+        <h3 matSubheader style="color: black;">Estructura organizacional</h3>
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of estructura" style="font-size:20px;">
           <mat-icon class="icon">{{nav.icon}}</mat-icon>
           {{nav.name}}
         </a>
         <h3 matSubheader style="color: black;">Entrega y recepción</h3>
-        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of entrega">
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of entrega" style="font-size:20px;">
           <mat-icon class="icon">{{nav.icon}}</mat-icon>
           {{nav.name}}
         </a>
         <h3 matSubheader style="color: black;">Inventario</h3>
-        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of inventarios">
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of inventarios" style="font-size:20px;">
           <mat-icon class="icon">{{nav.icon}}</mat-icon>
           {{nav.name}}
         </a>
         <h3 matSubheader style="color: black;">Beneficiarios</h3>
-        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of beneficiarios">
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of beneficiarios" style="font-size:20px;">
           <mat-icon class="icon">{{nav.icon}}</mat-icon>
           {{nav.name}}
         </a>
       
         <h3 matSubheader style="color: black;">Rol</h3>
-        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of rol">
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of rol" style="font-size:20px;">
           <mat-icon class="icon">{{nav.icon}}</mat-icon>
           {{nav.name}}
         </a>
 
         <h3 matSubheader style="color: black;">Usuarios</h3>
-        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of Usuarios">
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of Usuarios" style="font-size:20px;">
           <mat-icon class="icon">{{nav.icon}}</mat-icon>
           {{nav.name}}
         </a>
 
-        <h3 matSubheader style="color: black;">Datos Maestros </h3>
-        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of datos">
+        <h3 matSubheader style="color: black;">Datos maestros </h3>
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of datos" style="font-size:20px;">
           <mat-icon class="icon">{{nav.icon}}</mat-icon>
           {{nav.name}}
         </a>
 
         <h3 matSubheader style="color: black;">Centro de distribucion</h3>
-        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of centrod">
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of centrod" style="font-size:20px;">
           <mat-icon class="icon">{{nav.icon}}</mat-icon>
           {{nav.name}}
         </a>
 
         <h3 matSubheader style="color: black;">Almacen</h3>
-        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of almacen"> 
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of almacen" style="font-size:20px;"> 
           <mat-icon class="icon">{{nav.icon}}</mat-icon>
           {{nav.name}}
         </a>
