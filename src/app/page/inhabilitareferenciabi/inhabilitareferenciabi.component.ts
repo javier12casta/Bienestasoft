@@ -46,19 +46,19 @@ export class InhabilitareferenciabiComponent implements OnInit {
 
   showMenssage(){
     Swal.fire({
-      title: 'Inhabilitado!',
+      title: 'Inhabilitado',
       text: 'Dato Maestro Inhabilitado',
       type: 'success',
-      confirmButtonText: 'Ok'
+      confirmButtonText: 'Entendido'
     });
   }
 
   showMenssage1(){
     Swal.fire({
-      title: 'habilitado!',
+      title: 'habilitado',
       text: 'Dato Maestro habilitado',
       type: 'success',
-      confirmButtonText: 'Ok'
+      confirmButtonText: 'Entendido'
     });
   }
 

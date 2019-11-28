@@ -20,13 +20,13 @@ import { Centrodistribucion } from '../../interfaces/centrodistribucion';
 <table class="table">
     <thead class="thead-green">
       <tr>
-        <th scope="col">idCentroDistribucion </th>
-        <th scope="col">NumeroExterno</th>
+        <th scope="col"># </th>
+        <th scope="col">Número Externo</th>
         <th scope="col">Nombre</th>
         <th scope="col">Responsable</th>
-        <th scope="col">Direccion</th>
+        <th scope="col">Dirección</th>
         <th scope="col">Barrio</th>
-        <th scope="col">Telefono</th>
+        <th scope="col">Teléfono</th>
         <th scope="col">Estado</th>
         
       </tr>

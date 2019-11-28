@@ -42,10 +42,10 @@ export class InhabilitarlistapiComponent implements OnInit {
 
   showMenssage(){
     Swal.fire({
-      title: 'Inhabilitado!',
+      title: 'Inhabilitado',
       text: 'Dato Maestro Inhabilitado',
       type: 'success',
-      confirmButtonText: 'Ok'
+      confirmButtonText: 'Entendido'
     });
   }
 
@@ -54,7 +54,7 @@ export class InhabilitarlistapiComponent implements OnInit {
       title: 'habilitado!',
       text: 'Dato Maestro habilitado',
       type: 'success',
-      confirmButtonText: 'Ok'
+      confirmButtonText: 'Entendido'
     });
   }
 

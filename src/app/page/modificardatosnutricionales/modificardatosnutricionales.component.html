@@ -6,13 +6,12 @@
   <table class="table">
       <thead class="thead-green">
         <tr>
-          <th scope="col">idDatosVarios</th>
-          <th scope="col">CodigoInterno </th>
-          <th scope="col">EstadoDatoMaestro</th>
-          <th scope="col">DescripcionDelRegistro</th>
+          <th scope="col">#</th>
+          <th scope="col">Código Interno </th>
+          <th scope="col">Estado </th>
+          <th scope="col">Descripción Del Registro</th>
           <th scope="col">Valor</th>
-          <th scope="col">UnidadDeMedida</th>
-          <th scope="col">idDatosMaestros</th>
+          <th scope="col">Unidad De Medida</th>
         </tr>
       </thead>
       <tbody>
@@ -23,7 +22,6 @@
           <td>{{cen.DescripcionDelRegistro}}</td>
           <td>{{cen.Valor}}</td>
           <td>{{cen.UnidadDeMedida}}</td>
-          <td>{{cen.idDatosMaestros}}</td>
 
           <td>  
             <button class="btn btn-primary" [routerLink]="['/modificardatosnutricionalesm', cen.idDatosVarios]">Modificar</button>

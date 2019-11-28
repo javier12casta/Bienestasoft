@@ -49,10 +49,10 @@ export class CentrodistribucionciComponent implements OnInit {
 
   showMenssage(){
     Swal.fire({
-      title: 'Creado!',
-      text: 'Centro Distribucion Creado',
+      title: 'Creado',
+      text: 'Centro Distribución Creado',
       type: 'success',
-      confirmButtonText: 'Aceptar'
+      confirmButtonText: 'Entendido'
     }).then((result) => {
       if (result.value) {
         

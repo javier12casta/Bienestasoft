@@ -8,17 +8,17 @@
             <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
                     <h1>Servicio y Modalidades</h1>
               <div class="form-group">
-                    <span  >Estado del dato Maestro</span>
+                    <span  >Estado Del Dato Maestro</span>
                     <h2></h2>
                     
                     <select name="EstadoDatoMaestro" id="EstadoDatoMaestro" [(ngModel)]="x.EstadoDatoMaestro" style="width: 100%;" class="form-control" minlength="0" required="">
-                              <option value="0">0</option>
-                              <option value="1">1</option>
+                              <option value="0">Inhabilitar</option>
+                              <option value="1">Habilitar</option>
                             </select>
                   
                     <h2></h2>
                   
-                    <span >Codigo Servicio y modalidad</span>
+                    <span >Código Servicio y Modalidad</span>
                     <h2></h2>
                     <input type="text" class="form-control" [(ngModel)]="x.Servicio " name="codigo"
                           placeholder="Codigo Servicio y madalidad" class="form-control" minlength="0" required="">

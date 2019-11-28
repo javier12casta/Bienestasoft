@@ -6,26 +6,28 @@
         <div class="card" padding>
           <div class="card-body" padding>
             <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
-                    <h1>Datos varios</h1>
+                    <h1>Datos Varios</h1>
               <div class="form-group">
                 
-                    <span >Codigo Interno</span>
+                    <span >Código Interno</span>
   <h2></h2>
   <input type="number" class="form-control" [(ngModel)]="x.CodigoInterno" name="codigoi"
-  placeholder="Codigo Interno" class="form-control" id="codigointerno" minlength="0" required="">
+  placeholder="Código Interno" class="form-control" id="codigointerno" minlength="0" required="">
   <h2></h2>
-  <span  >Estado del dato Maestro</span>
+  <span  >Estado Del Dato Maestro</span>
   <h2></h2>
   
-  <select name="estadomaestro" [(ngModel)]="x.EstadoDatoMaestro" class="form-control" minlength="0" required="">
-<option [value]="item" *ngFor="let item of listamaestro">{{item}} </option>
-</select>
+  <select name="EstadoDatoMaestro" id="EstadoDatoMaestro" [(ngModel)]="x.EstadoDatoMaestro" style="width: 100%;" class="form-control" minlength="0" required="">
+    <option value="0">Inhabilitar</option>
+    <option value="1">Habilitar</option>
+  </select>
+
   
   <h2></h2>
-  <span >Descripcion del registro</span>
+  <span >Descripción Del Registro</span>
   <h2></h2>
   <input type="text" class="form-control" [(ngModel)]="x.DescripcionDelRegistro" name="descripcionr"
-  placeholder="Descripcion del registro" class="form-control" id="descripcionregistro" minlength="0" required="">
+  placeholder="Descripción del registro" class="form-control" id="descripcionregistro" minlength="0" required="">
   <h2></h2>
   <span >Valor</span>
   <h2></h2>
@@ -33,7 +35,7 @@
   placeholder="Valor" class="form-control" id="valor" minlength="0" required="">
 
   <h2></h2>
-<span >Unidad de medida</span>
+<span >Unidad De Medida</span>
 <h2></h2>
 
 <select name="unidad" [(ngModel)]="x.UnidadDeMedida" class="select-css" class="form-control" minlength="0" required="">

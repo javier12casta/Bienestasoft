@@ -6,22 +6,23 @@
         <div class="card" padding>
           <div class="card-body" padding>
             <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
-                    <h1>lista de precios</h1>
+                    <h1>Lista De Precios</h1>
                    <div class="form-group">
                 
-                        <span  >Codigo</span>
+                        <span  >Código</span>
                         <h2></h2>
                         <input type="number" class="form-control" [(ngModel)]="x.Codigo" name="cod"
                         placeholder="Codigo" class="form-control" id="codi" minlength="0" required="">
                         
-                        <span  >Estado del dato Maestro</span>
+                        <span  >Estado Del Dato Maestro</span>
                                <h2></h2>
                                
-                               <select name="estadomaestro" [(ngModel)]="x.Estado" class="select-css" class="form-control">
-                         <option [value]="item" *ngFor="let item of listamaestro">{{item}} </option>
-                         </select>
-                       
-                         <h2></h2>
+<select name="EstadoDatoMaestro" id="EstadoDatoMaestro" [(ngModel)]="x.Estado" style="width: 100%;" class="form-control" minlength="0" required="">
+                      <option value="0">Inhabilitar</option>
+                      <option value="1">Habilitar</option>
+                    </select>
+                               
+                    <h2></h2>
                            <span >Referencia</span>
                                <h2></h2>
                                <input type="text" class="form-control" [(ngModel)]="x.Referencia" name="ref"
@@ -56,7 +57,7 @@
                            
                            <h2></h2>
                          
-                               <span >Valor cop</span>
+                               <span >Valor Cop</span>
                                <h2></h2>
                                <input type="number" class="form-control" [(ngModel)]="x.ValorCop" name="valo"
                                placeholder="valor" class="form-control" id="cop" minlength="0" required="">

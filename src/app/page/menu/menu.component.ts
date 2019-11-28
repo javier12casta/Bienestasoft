@@ -118,7 +118,7 @@ logout()
     var centrostr = this.permisos.perCentros;
     var array = centrostr.split("");
     if (array[0] == "1") {
-      var create = { name: "Crear Centro Zonal", route: "/centrozonali", icon: "public" };
+      var create = { name: "Crear Centro Zonal", route: "/centrozonali", icon: "public"  };
       this.estructura.push(create);
       if (array[1] == "1") {
         var create = { name: "Modificar Centro Zonal", route: "/centrozonal", icon: "public" };
@@ -126,11 +126,11 @@ logout()
 
         if (array[2] == "1") {
           if (array[3] == "1") {
-            var create = { name: "Reporte centrozonal", route: "/reportecentrozonal", icon: "public" };
+            var create = { name: "Reporte Centro Zonal", route: "/reportecentrozonal", icon: "public" };
             this.estructura.push(create);
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -142,7 +142,7 @@ logout()
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -155,11 +155,11 @@ logout()
 
 
           if (array[3] == "1") {
-            var create = { name: "Reporte centrozonal", route: "/reportecentrozonal", icon: "public" };
+            var create = { name: "Reporte Centro Zonal", route: "/reportecentrozonal", icon: "public" };
             this.estructura.push(create);
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -171,7 +171,7 @@ logout()
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -186,11 +186,11 @@ logout()
 
         if (array[2] == "1") {
           if (array[3] == "1") {
-            var create = { name: "Reporte centrozonal", route: "/reportecentrozonal", icon: "public" };
+            var create = { name: "Reporte Centro Zonal", route: "/reportecentrozonal", icon: "public" };
             this.estructura.push(create);
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -202,7 +202,7 @@ logout()
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -215,11 +215,11 @@ logout()
         else if (array[2] == "0") {
 
           if (array[3] == "1") {
-            var create = { name: "Reporte centrozonal", route: "/reportecentrozonal", icon: "public" };
+            var create = { name: "Reporte Centro Zonal", route: "/reportecentrozonal", icon: "public" };
             this.estructura.push(create);
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -230,7 +230,7 @@ logout()
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -250,11 +250,11 @@ logout()
 
         if (array[2] == "1") {
           if (array[3] == "1") {
-            var create = { name: "Reporte centrozonal", route: "/reportecentrozonal", icon: "list_alt" };
+            var create = { name: "Reporte Centro Zonal", route: "/reportecentrozonal", icon: "list_alt" };
             this.estructura.push(create);
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -266,7 +266,7 @@ logout()
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -279,11 +279,11 @@ logout()
 
 
           if (array[3] == "1") {
-            var create = { name: "Reporte centrozonal", route: "/reportecentrozonal", icon: "list_alt" };
+            var create = { name: "Reporte Centro Zonal", route: "/reportecentrozonal", icon: "list_alt" };
             this.estructura.push(create);
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -295,7 +295,7 @@ logout()
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -310,11 +310,11 @@ logout()
 
         if (array[2] == "1") {
           if (array[3] == "1") {
-            var create = { name: "Reporte centrozonal", route: "/reportecentrozonal", icon: "list_alt" };
+            var create = { name: "Reporte Centro Zonal", route: "/reportecentrozonal", icon: "list_alt" };
             this.estructura.push(create);
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -326,7 +326,7 @@ logout()
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -339,11 +339,11 @@ logout()
         else if (array[2] == "0") {
 
           if (array[3] == "1") {
-            var create = { name: "Reporte centrozonal", route: "/reportecentrozonal", icon: "list_alt" };
+            var create = { name: "Reporte Centro Zonal", route: "/reportecentrozonal", icon: "list_alt" };
             this.estructura.push(create);
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -354,7 +354,7 @@ logout()
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar centrozonal", route: "/centrozonalin", icon: "public" };
+              var create = { name: "Inhabilitar Centro Zonal", route: "/centrozonalin", icon: "public" };
               this.estructura.push(create);
             }
             else if (array[4] == "0") {
@@ -949,7 +949,7 @@ this.estructura.push(create);
     // console.log('carga', array);
 
     if (array[0] == "1") {
-      var create = { name: "Crear usuarios", route: "/usuariosv", icon: "face" };
+      var create = { name: "Crear Usuarios", route: "/usuariosv", icon: "face" };
       this.Usuarios.push(create);
 
       if (array[1] == "1") {
@@ -1216,23 +1216,23 @@ this.Usuarios.push(create);
     // console.log('carga', array);
 
     if (array[0] == "1") {
-      var create = { name: "acudientes", route: "/acudientes", icon: "face" };
+      var create = { name: "Acudientes", route: "/acudientes", icon: "face" };
       this.beneficiarios.push(create);
-      var create = { name: "Crear beneficiarios ICBF", route: "/beneficiariosm", icon: "face" };
+      var create = { name: "Crear Beneficiarios ", route: "/beneficiariosm", icon: "face" };
       this.beneficiarios.push(create);
 
       if (array[1] == "1") {
-        var create = { name: "Modificar beneficiarios ICBF ", route: "/ModificarBeneficiario", icon: "face" };
+        var create = { name: "Modificar Beneficiarios  ", route: "/ModificarBeneficiario1", icon: "face" };
         this.beneficiarios.push(create);
 
         if (array[2] == "1") {
 
 
           if (array[3] == "1") {
-            var create = { name: "Reporte beneficiarios ICBF", route: "/reportebeneficiario", icon: "face" };
+            var create = { name: "Reporte Beneficiarios ", route: "/reportebeneficiario", icon: "face" };
               this.beneficiarios.push(create);
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1244,7 +1244,7 @@ this.beneficiarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
 
             }
@@ -1258,13 +1258,13 @@ this.beneficiarios.push(create);
 
 
           if (array[3] == "1") {
-            var create = { name: "Reporte beneficiarios ICBF", route: "/reportebeneficiario", icon: "face" };
+            var create = { name: "Reporte Beneficiarios ", route: "/reportebeneficiario", icon: "face" };
               this.beneficiarios.push(create);
 
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1276,7 +1276,7 @@ this.beneficiarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1294,13 +1294,13 @@ this.beneficiarios.push(create);
 
 
           if (array[3] == "1") {
-            var create = { name: "Reporte beneficiarios ICBF", route: "/reportebeneficiario", icon: "face" };
+            var create = { name: "Reporte Beneficiarios ", route: "/reportebeneficiario", icon: "face" };
               this.beneficiarios.push(create);
 
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1312,7 +1312,7 @@ this.beneficiarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1326,10 +1326,10 @@ this.beneficiarios.push(create);
 
 
           if (array[3] == "1") {
-            var create = { name: "Reporte beneficiarios ICBF", route: "/reportebeneficiario", icon: "face" };
+            var create = { name: "Reporte Beneficiarios ", route: "/reportebeneficiario", icon: "face" };
               this.beneficiarios.push(create);
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1341,7 +1341,7 @@ this.beneficiarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1358,19 +1358,19 @@ this.beneficiarios.push(create);
     else if (array[0] == "0") {
 
       if (array[1] == "1") {
-        var create = { name: "Modificar beneficiarios ICBF ", route: "/ModificarBeneficiario", icon: "face" };
+        var create = { name: "Modificar Beneficiarios ", route: "/ModificarBeneficiario1", icon: "face" };
         this.beneficiarios.push(create);
 
         if (array[2] == "1") {
 
 
           if (array[3] == "1") {
-            var create = { name: "Reporte beneficiarios ICBF", route: "/reportebeneficiario", icon: "face" };
+            var create = { name: "Reporte Beneficiarios ", route: "/reportebeneficiario", icon: "face" };
               this.beneficiarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1381,7 +1381,7 @@ this.beneficiarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1394,10 +1394,10 @@ this.beneficiarios.push(create);
 
 
           if (array[3] == "1") {
-            var create = { name: "Reporte beneficiarios ICBF", route: "/reportebeneficiario", icon: "face" };
+            var create = { name: "Reporte Beneficiarios ", route: "/reportebeneficiario", icon: "face" };
               this.beneficiarios.push(create);
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1409,7 +1409,7 @@ this.beneficiarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1427,10 +1427,10 @@ this.beneficiarios.push(create);
 
 
           if (array[3] == "1") {
-            var create = { name: "Reporte beneficiarios ICBF", route: "/reportebeneficiario", icon: "face" };
+            var create = { name: "Reporte Beneficiarios", route: "/reportebeneficiario", icon: "face" };
               this.beneficiarios.push(create);
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1442,7 +1442,7 @@ this.beneficiarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1455,10 +1455,10 @@ this.beneficiarios.push(create);
 
 
           if (array[3] == "1") {
-            var create = { name: "Reporte beneficiarios ICBF", route: "/reportebeneficiario", icon: "face" };
+            var create = { name: "Reporte Beneficiarios ", route: "/reportebeneficiario", icon: "face" };
               this.beneficiarios.push(create);
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1470,7 +1470,7 @@ this.beneficiarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ICBF", route: "/InhabilitarBeneficiario", icon: "face" };
+              var create = { name: "Inhabilitar Beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1495,9 +1495,9 @@ this.beneficiarios.push(create);
     if (array[0] == "1") {
       var create = { name: "Entrega", route: "/entregasel", icon: "list_alt" };
      this.entrega.push(create);
-var create = { name: "Recepcion", route: "/recepcion", icon: "list_alt" };
+var create = { name: "Recepción", route: "/recepcion", icon: "list_alt" };
      this.entrega.push(create);
-var create = { name: "devoluciones", route: "/devoluciones", icon: "list_alt" };
+var create = { name: "Devoluciones", route: "/devoluciones", icon: "list_alt" };
      this.entrega.push(create);
       if (array[1] == "1") {
         
@@ -1506,11 +1506,11 @@ var create = { name: "devoluciones", route: "/devoluciones", icon: "list_alt" };
           
 
           if (array[3] == "1") {
-            var create = { name: "Reporte devoluciones", route: "/reportedevolucion", icon: "list_alt" };
+            var create = { name: "Reporte Devoluciones", route: "/reportedevolucion", icon: "list_alt" };
      this.entrega.push(create);
 var create = { name: "Reporte Entrega", route: "/reportentregab", icon: "list_alt" };
      this.entrega.push(create);
-var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "list_alt" };
+var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "list_alt" };
      this.entrega.push(create);
             if (array[4] == "1") {
               
@@ -1536,11 +1536,11 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
           
 
           if (array[3] == "1") {
-            var create = { name: "Reporte devoluciones", route: "/reportedevolucion", icon: "list_alt" };
+            var create = { name: "Reporte Devoluciones", route: "/reportedevolucion", icon: "list_alt" };
      this.entrega.push(create);
 var create = { name: "Reporte Entrega", route: "/reportentregab", icon: "list_alt" };
      this.entrega.push(create);
-var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "list_alt" };
+var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "list_alt" };
      this.entrega.push(create);
             if (array[4] == "1") {
               
@@ -1571,11 +1571,11 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
           
 
           if (array[3] == "1") {
-            var create = { name: "Reporte devoluciones", route: "/reportedevolucion", icon: "list_alt" };
+            var create = { name: "Reporte Devoluciones", route: "/reportedevolucion", icon: "list_alt" };
      this.entrega.push(create);
 var create = { name: "Reporte Entrega", route: "/reportentregab", icon: "list_alt" };
      this.entrega.push(create);
-var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "list_alt" };
+var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "list_alt" };
      this.entrega.push(create);
             if (array[4] == "1") {
               
@@ -1602,11 +1602,11 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
           
 
           if (array[3] == "1") {
-            var create = { name: "Reporte devoluciones", route: "/reportedevolucion", icon: "list_alt" };
+            var create = { name: "Reporte Devoluciones", route: "/reportedevolucion", icon: "list_alt" };
      this.entrega.push(create);
 var create = { name: "Reporte Entrega", route: "/reportentregab", icon: "list_alt" };
      this.entrega.push(create);
-var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "list_alt" };
+var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "list_alt" };
      this.entrega.push(create);
             if (array[4] == "1") {
               
@@ -1641,11 +1641,11 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
           
 
           if (array[3] == "1") {
-            var create = { name: "Reporte devoluciones", route: "/reportedevolucion", icon: "list_alt" };
+            var create = { name: "Reporte Devoluciones", route: "/reportedevolucion", icon: "list_alt" };
      this.entrega.push(create);
 var create = { name: "Reporte Entrega", route: "/reportentregab", icon: "list_alt" };
      this.entrega.push(create);
-var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "list_alt" };
+var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "list_alt" };
      this.entrega.push(create);
             if (array[4] == "1") {
               
@@ -1670,11 +1670,11 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
           
 
           if (array[3] == "1") {
-            var create = { name: "Reporte devoluciones", route: "/reportedevolucion", icon: "list_alt" };
+            var create = { name: "Reporte Devoluciones", route: "/reportedevolucion", icon: "list_alt" };
      this.entrega.push(create);
 var create = { name: "Reporte Entrega", route: "/reportentregab", icon: "list_alt" };
      this.entrega.push(create);
-var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "list_alt" };
+var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "list_alt" };
      this.entrega.push(create);
             if (array[4] == "1") {
               
@@ -1705,11 +1705,11 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
           
 
           if (array[3] == "1") {
-            var create = { name: "Reporte devoluciones", route: "/reportedevolucion", icon: "list_alt" };
+            var create = { name: "Reporte Devoluciones", route: "/reportedevolucion", icon: "list_alt" };
      this.entrega.push(create);
 var create = { name: "Reporte Entrega", route: "/reportentregab", icon: "list_alt" };
      this.entrega.push(create);
-var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "list_alt" };
+var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "list_alt" };
      this.entrega.push(create);
             if (array[4] == "1") {
               
@@ -1735,11 +1735,11 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
           
 
           if (array[3] == "1") {
-            var create = { name: "Reporte devoluciones", route: "/reportedevolucion", icon: "list_alt" };
+            var create = { name: "Reporte Devoluciones", route: "/reportedevolucion", icon: "list_alt" };
      this.entrega.push(create);
 var create = { name: "Reporte Entrega", route: "/reportentregab", icon: "list_alt" };
      this.entrega.push(create);
-var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "list_alt" };
+var create = { name: "Reporte Recepción", route: "/reporterecepcion", icon: "list_alt" };
      this.entrega.push(create);
             if (array[4] == "1") {
               
@@ -1776,19 +1776,19 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
   //console.log('carga', array);
 
   if (array[0] == "1") {
-    var create = { name: "Crear Centro Distribucion", route: "/centrodistribucion", icon: "face" };
+    var create = { name: "Crear Centro Distribución", route: "/centrodistribucion", icon: "face" };
      this.centrod.push(create);
     if (array[1] == "1") {
-      var create = { name: "Modificar Centro Distribucion", route: "/modificarcentrod", icon: "face" };
+      var create = { name: "Modificar Centro Distribución", route: "/modificarcentrod", icon: "face" };
      this.centrod.push(create);
       if (array[2] == "1") {
         
 
         if (array[3] == "1") {
-          var create = { name: "Reporte Centro Distribucion", route: "/reportecentrodistribucion", icon: "face" };
+          var create = { name: "Reporte Centro Distribución", route: "/reportecentrodistribucion", icon: "face" };
      this.centrod.push(create);
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -1800,7 +1800,7 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
           
 
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -1813,10 +1813,10 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
         
 
         if (array[3] == "1") {
-          var create = { name: "Reporte Centro Distribucion", route: "/reportecentrodistribucion", icon: "face" };
+          var create = { name: "Reporte Centro Distribución", route: "/reportecentrodistribucion", icon: "face" };
      this.centrod.push(create);
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -1828,7 +1828,7 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
           
 
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -1846,10 +1846,10 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
         
 
         if (array[3] == "1") {
-          var create = { name: "Reporte Centro Distribucion", route: "/reportecentrodistribucion", icon: "face" };
+          var create = { name: "Reporte Centro Distribución", route: "/reportecentrodistribucion", icon: "face" };
      this.centrod.push(create);
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -1861,7 +1861,7 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
           
 
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -1875,10 +1875,10 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
         
 
         if (array[3] == "1") {
-          var create = { name: "Reporte Centro Distribucion", route: "/reportecentrodistribucion", icon: "face" };
+          var create = { name: "Reporte Centro Distribución", route: "/reportecentrodistribucion", icon: "face" };
      this.centrod.push(create);
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -1890,7 +1890,7 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
           
 
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -1907,16 +1907,16 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
   else if (array[0] == "0") {
     
     if (array[1] == "1") {
-      var create = { name: "Modificar Centro Distribucion", route: "/modificarcentrod", icon: "face" };
+      var create = { name: "Modificar Centro Distribución", route: "/modificarcentrod", icon: "face" };
      this.centrod.push(create);
       if (array[2] == "1") {
         
 
         if (array[3] == "1") {
-          var create = { name: "Reporte Centro Distribucion", route: "/reportecentrodistribucion", icon: "face" };
+          var create = { name: "Reporte Centro Distribución", route: "/reportecentrodistribucion", icon: "face" };
      this.centrod.push(create);
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -1927,7 +1927,7 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
           
 
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -1940,10 +1940,10 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
         
 
         if (array[3] == "1") {
-          var create = { name: "Reporte Centro Distribucion", route: "/reportecentrodistribucion", icon: "face" };
+          var create = { name: "Reporte Centro Distribución", route: "/reportecentrodistribucion", icon: "face" };
      this.centrod.push(create);
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -1955,7 +1955,7 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
           
 
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -1973,10 +1973,10 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
         
 
         if (array[3] == "1") {
-          var create = { name: "Reporte Centro Distribucion", route: "/reportecentrodistribucion", icon: "face" };
+          var create = { name: "Reporte Centro Distribución", route: "/reportecentrodistribucion", icon: "face" };
      this.centrod.push(create);
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -1988,7 +1988,7 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
           
 
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -2001,10 +2001,10 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
         
 
         if (array[3] == "1") {
-          var create = { name: "Reporte Centro Distribucion", route: "/reportecentrodistribucion", icon: "face" };
+          var create = { name: "Reporte Centro Distribución", route: "/reportecentrodistribucion", icon: "face" };
      this.centrod.push(create);
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -2016,7 +2016,7 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
           
 
           if (array[4] == "1") {
-            var create = { name: "Inhabilitar Centro Distribucion", route: "/inhabilitarcentrod", icon: "face" };
+            var create = { name: "Inhabilitar Centro Distribución", route: "/inhabilitarcentrod", icon: "face" };
      this.centrod.push(create);
           }
           else if (array[4] == "0") {
@@ -2814,18 +2814,18 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
   //console.log('carga', array);
 
   if (array[0] == "1") {
-     var create = {name: "Crear Almacen", route:"/almacenc", icon:"store"};
+     var create = {name: "Crear Almacén", route:"/almacenc", icon:"store"};
    this.almacen.push(create);
 
    if (array[1] == "1") {
-     var create = {name: "Modificar Almacen", route:"/modificaralmacen", icon:"store"};
+     var create = {name: "Modificar Almacén", route:"/modificaralmacen", icon:"store"};
    this.almacen.push(create);
      if (array[2] == "1") {
             if (array[3] == "1") {
-         var create = {name: "Reporte Almacen", route:"/reportealmacen", icon:"list_alt"};
+         var create = {name: "Reporte Almacén", route:"/reportealmacen", icon:"list_alt"};
    this.almacen.push(create);
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {
@@ -2837,7 +2837,7 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
          
 
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {
@@ -2850,10 +2850,10 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
        
 
        if (array[3] == "1") {
-         var create = {name: "Reporte Almacen", route:"/reportealmacen", icon:"list_alt"};
+         var create = {name: "Reporte Almacén", route:"/reportealmacen", icon:"list_alt"};
    this.almacen.push(create);
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {
@@ -2865,7 +2865,7 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
          
 
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {
@@ -2883,10 +2883,10 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
        
 
        if (array[3] == "1") {
-         var create = {name: "Reporte Almacen", route:"/reportealmacen", icon:"list_alt"};
+         var create = {name: "Reporte Almacén", route:"/reportealmacen", icon:"list_alt"};
    this.almacen.push(create);
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {
@@ -2898,7 +2898,7 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
          
 
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {
@@ -2912,10 +2912,10 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
        
 
        if (array[3] == "1") {
-        var create = {name: "Reporte Almacen", route:"/reportealmacen", icon:"list_alt"};
+        var create = {name: "Reporte Almacén", route:"/reportealmacen", icon:"list_alt"};
    this.almacen.push(create);
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {
@@ -2927,7 +2927,7 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
          
 
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {
@@ -2944,16 +2944,16 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
  else if (array[0] == "0") {
    
    if (array[1] == "1") {
-     var create = {name: "Modificar Almacen", route:"/modificaralmacen", icon:"store"};
+     var create = {name: "Modificar Almacén", route:"/modificaralmacen", icon:"store"};
    this.almacen.push(create);
      if (array[2] == "1") {
        
 
        if (array[3] == "1") {
-         var create = {name: "Reporte Almacen", route:"/reportealmacen", icon:"list_alt"};
+         var create = {name: "Reporte Almacén", route:"/reportealmacen", icon:"list_alt"};
    this.almacen.push(create);
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {
@@ -2964,7 +2964,7 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
          
 
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {
@@ -2977,10 +2977,10 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
        
 
        if (array[3] == "1") {
-         var create = {name: "Reporte Almacen", route:"/reportealmacen", icon:"list_alt"};
+         var create = {name: "Reporte Almacén", route:"/reportealmacen", icon:"list_alt"};
    this.almacen.push(create);
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {
@@ -2992,7 +2992,7 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
          
 
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {
@@ -3010,10 +3010,10 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
        
 
        if (array[3] == "1") {
-         var create = {name: "Reporte Almacen", route:"/reportealmacen", icon:"list_alt"};
+         var create = {name: "Reporte Almacén", route:"/reportealmacen", icon:"list_alt"};
    this.almacen.push(create);
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {
@@ -3025,7 +3025,7 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
          
 
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {
@@ -3038,10 +3038,10 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
        
 
        if (array[3] == "1") {
-         var create = {name: "Reporte Almacen", route:"/reportealmacen", icon:"list_alt"};
+         var create = {name: "Reporte Almacén", route:"/reportealmacen", icon:"list_alt"};
    this.almacen.push(create);
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {
@@ -3053,7 +3053,7 @@ var create = { name: "Reporte Recepcion", route: "/reporterecepcion", icon: "lis
          
 
          if (array[4] == "1") {
-           var create = {name: "Inhabilitar Almacen", route:"/inhabilitaralmacen", icon:"store"};
+           var create = {name: "Inhabilitar Almacén", route:"/inhabilitaralmacen", icon:"store"};
    this.almacen.push(create);
          }
          else if (array[4] == "0") {

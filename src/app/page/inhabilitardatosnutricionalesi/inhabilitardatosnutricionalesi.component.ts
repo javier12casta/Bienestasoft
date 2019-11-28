@@ -43,19 +43,19 @@ export class InhabilitardatosnutricionalesiComponent implements OnInit {
 
   showMenssage(){
     Swal.fire({
-      title: 'Inhabilitado!',
+      title: 'Inhabilitado',
       text: 'dato maestro Inhabilitado',
       type: 'success',
-      confirmButtonText: 'Ok'
+      confirmButtonText: 'Entendido'
     });
   }
 
   showMenssage1(){
     Swal.fire({
-      title: 'habilitado!',
+      title: 'habilitado',
       text: 'dato maestro habilitado',
       type: 'success',
-      confirmButtonText: 'Ok'
+      confirmButtonText: 'Entendido'
     });
   }
 

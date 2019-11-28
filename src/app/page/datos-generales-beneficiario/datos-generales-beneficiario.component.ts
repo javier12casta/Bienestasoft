@@ -68,10 +68,10 @@ export class DatosGeneralesBeneficiarioComponent implements OnInit {
   showMenssage(){
 
     Swal.fire({
-      title: 'Creado!',
+      title: 'Creado',
       text: 'Beneficiario Creado',
       type: 'success',
-      confirmButtonText: 'Ok'
+      confirmButtonText: 'Entendido'
        }).then((result) => {
         if (result.value) {
           

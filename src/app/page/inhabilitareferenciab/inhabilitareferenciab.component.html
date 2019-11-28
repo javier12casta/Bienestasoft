@@ -6,15 +6,15 @@
       <table class="table">
           <thead class="thead-green">
             <tr>
-              <th scope="col">idTipoBienesterina</th>
-              <th scope="col">TipoBienesterina</th>
+              <th scope="col">#</th>
+              <th scope="col">Tipo Bienesterina</th>
               <th scope="col">Codigo</th>
               <th scope="col">Estado</th>
               <th scope="col">Referencia</th>
-              <th scope="col">UnidadPrincipal</th>
+              <th scope="col">Unidad Principal</th>
               <th scope="col">Cantidad</th>
-              <th scope="col">UnidadSecundaria</th>
-              <th scope="col">idConsecutivosMaestro</th>
+              <th scope="col">Unidad Secundaria</th>
+
             </tr>
           </thead>
           <tbody>
@@ -27,7 +27,6 @@
               <td>{{cen.UnidadPrincipal}}</td>
               <td>{{cen.Cantidad}}</td>
               <td>{{cen.UnidadSecundaria}}</td>
-              <td>{{cen.idConsecutivosMaestro}}</td>
               <td>
                 <button class="btn btn-primary" [routerLink]="['/inhabilitareferenciabi', cen.idTipoBienesterina]">Inhabilitar</button>
               </td>

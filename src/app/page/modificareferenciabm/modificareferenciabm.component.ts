@@ -50,10 +50,10 @@ export class ModificareferenciabmComponent implements OnInit {
 
   showMenssage(){
     Swal.fire({
-      title: 'Modificado!',
+      title: 'Modificado',
       text: 'Dsto Maestro Modificado',
       type: 'success',
-      confirmButtonText: 'Ok'
+      confirmButtonText: 'Entendido'
     });
   }
 

@@ -14,7 +14,10 @@ export class SalidacentroComponent implements OnInit {
 
   constructor(private Service: ServicioService) { }
 
+ 
   ngOnInit() {
+
+
 
     this.Service.getsalidacentro()
       .subscribe( (data) => {
@@ -23,6 +26,9 @@ export class SalidacentroComponent implements OnInit {
         console.log('funciona');
       }
       );
+
+    
+     
 
   }
 
