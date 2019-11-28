@@ -6,7 +6,7 @@
     <thead class="thead-green">
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Número Externo</th>
+        <th scope="col">Número externo</th>
         <th scope="col">Nombre</th>
         <th scope="col">Responsable</th>
         <th scope="col">Dirección</th>
@@ -25,7 +25,16 @@
           <td>{{cen.Direccion}}</td>
           <td>{{cen.Barrio}}</td>
           <td>{{cen.Telefono}}</td>
-          <td>{{cen.Estado}}</td>       
+          <td>
+            
+              <div *ngIf="cen.Estado == 1">
+                  Habilitado
+                </div>
+                <div *ngIf="cen.Estado == 0">
+                  Deshabilitado
+                </div>
+            
+            </td>       
           <td>
             <button class="btn btn-primary" [routerLink]="['/inhabilitarcentrom', cen.idCentroDistribucion]">inhabilitar</button>
           </td>

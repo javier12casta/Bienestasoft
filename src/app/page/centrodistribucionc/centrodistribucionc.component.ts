@@ -21,7 +21,7 @@ import { Centrodistribucion } from '../../interfaces/centrodistribucion';
     <thead class="thead-green">
       <tr>
         <th scope="col"># </th>
-        <th scope="col">Número Externo</th>
+        <th scope="col">Número externo</th>
         <th scope="col">Nombre</th>
         <th scope="col">Responsable</th>
         <th scope="col">Dirección</th>
@@ -40,7 +40,14 @@ import { Centrodistribucion } from '../../interfaces/centrodistribucion';
         <td>{{centro.Direccion }}</td>
         <td>{{centro.Barrio }}</td>
         <td>{{centro.Telefono }}</td>
-        <td>{{centro.Estado }}</td>
+        <td>
+        <div *ngIf="centro.Estado == 1">
+        Habilitado
+      </div>
+      <div *ngIf="centro.Estado== 0">
+        Deshabilitado
+      </div>
+      </td>
             
       </tr>
     </tbody>

@@ -16,7 +16,7 @@ import { ServicioService } from '../../servicio.service';
     <thead class="thead-green">
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Número Externo</th>
+        <th scope="col">Número externo</th>
         <th scope="col">Nombre</th>
         <th scope="col">Responsable </th>
         <th scope="col">Dirección </th>
@@ -35,7 +35,15 @@ import { ServicioService } from '../../servicio.service';
         <td>{{usu.Direccion}}</td>
         <td>{{usu.Barrio}}</td>
         <td>{{usu.Telefono}}</td>
-        <td>{{usu.Estado}}</td>    
+        <td>
+        
+        <div *ngIf="usu.Estado == 1">
+        Habilitado
+      </div>
+      <div *ngIf="usu.Estado== 0">
+        Deshabilitado
+      </div>
+        </td>    
         <td>
           <button class="btn btn-primary" [routerLink]="['/modificarcentrom', usu.idCentroDistribucion]">Modificar</button>
         </td>

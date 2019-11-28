@@ -7,11 +7,11 @@
     <thead class="thead-green">
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Nombre Agente  </th>
-        <th scope="col">Número Documento </th>
+        <th scope="col">Nombre agente  </th>
+        <th scope="col">Número documento </th>
         <th scope="col">Fecha </th>
         <th scope="col">Estado </th>
-        <th scope="col">Tipo Documento </th>
+        <th scope="col">Tipo documento </th>
         <th scope="col">Beneficiarios</th>
       </tr>
     </thead>
@@ -22,8 +22,33 @@
         <td>{{ser.NombreAgenteE  }}</td>
         <td>{{ser.NumeroDocumento }}</td>
         <td>{{ser.Fecha  }}</td>
-        <td>{{ser.Estado }}</td>
-        <td >{{ser.idTipoDocumento }}</td>
+        <td>
+          
+            <div *ngIf="ser.Estado == 1">
+                Habilitado
+              </div>
+              <div *ngIf="ser.Estado == 0">
+                Deshabilitado
+              </div>
+          
+          
+        </td>
+        <td >
+          
+            <div *ngIf="ser.idTipoDocumento == 1">
+                Cedula de ciudadanía
+              </div>
+              <div *ngIf="ser.idTipoDocumento == 2">
+                  Cedula de Extranjeria
+              </div>
+              <div *ngIf="ser.idTipoDocumento == 3">
+                  Registro Civil 
+                </div>
+                <div *ngIf="ser.idTipoDocumento == 4">
+                    Tarjeta de Identidad
+                  </div>
+          
+         </td>
         <td>{{ser.idBenefiarios }}</td>
       </tr>
 
