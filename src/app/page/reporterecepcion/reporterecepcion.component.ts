@@ -3,6 +3,7 @@ import { Recepcion } from 'src/app/interfaces/recepcion';
 import { ServicioService } from '../../servicio.service';
 import * as jspdf from 'jspdf'; 
 import html2canvas from 'html2canvas';
+import { Recepciont } from 'src/app/interfaces/recepciont';
 
 @Component({
   selector: 'app-reporterecepcion',
@@ -11,13 +12,13 @@ import html2canvas from 'html2canvas';
 })
 export class ReporterecepcionComponent implements OnInit {
 
-  rec: Recepcion[] = [];
+  rec: Recepciont[] = [];
 
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {
 
-    this.Service.getrecepcion()
+    this.Service.getrecepciontabla()
     .subscribe(async (data) => {
       this.rec = data;
       console.log(data);

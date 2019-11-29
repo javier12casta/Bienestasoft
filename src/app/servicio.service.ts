@@ -47,6 +47,7 @@ import { Biometrico } from './interfaces/biometrico';
 import { Centrozonalt } from './interfaces/centrozonalt';
 import { Salidabeneficiariot } from './interfaces/salidabeneficiariot';
 import { Salidaconsumot } from './interfaces/salidaconsumot';
+import { Recepciont } from './interfaces/recepciont';
 
 @Injectable({
   providedIn: 'root'
@@ -528,6 +529,11 @@ export class ServicioService {
   getrecepcion() {
     const path = `${this.api}/bienestarina`;
     return this.http.get<[Recepcion]>(path);
+  }
+
+  getrecepciontabla() {
+    const path = `${this.api}/bienestarina/tabla`;
+    return this.http.get<[Recepciont]>(path);
   }
 
   postrecepcion(recep: Recepcion) {

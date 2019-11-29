@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Recepcion } from 'src/app/interfaces/recepcion';
 import { ServicioService } from '../../servicio.service';
+import { Recepciont } from 'src/app/interfaces/recepciont';
 
 
 @Component({
@@ -10,14 +11,14 @@ import { ServicioService } from '../../servicio.service';
 })
 export class RecepcionbienestarinavComponent implements OnInit {
 
-  rec: Recepcion[] = [];
+  rec: Recepciont[] = [];
 
 
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {
 
-    this.Service.getrecepcion()
+    this.Service.getrecepciontabla()
     .subscribe(async (data) => {
       this.rec = data;
       console.log(data);
