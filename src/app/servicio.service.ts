@@ -46,6 +46,7 @@ import { Acta} from './interfaces/acta';
 import { Biometrico } from './interfaces/biometrico';
 import { Centrozonalt } from './interfaces/centrozonalt';
 import { Salidabeneficiariot } from './interfaces/salidabeneficiariot';
+import { Salidaconsumot } from './interfaces/salidaconsumot';
 
 @Injectable({
   providedIn: 'root'
@@ -599,10 +600,13 @@ export class ServicioService {
   }
 
   getsalidaconsumo(){
-
     const path = `${this.api}/entregaconsumo`;
     return this.http.get<[Salidaconsumo]>(path);
-
+  }
+  //tabla
+  getsalidaconsumoTabla(){
+    const path = `${this.api}/entregaconsumo/tabla`;
+    return this.http.get<[Salidaconsumot]>(path);
   }
 
   postsalidaconsumo(recep: Salidaconsumo) {
