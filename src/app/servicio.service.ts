@@ -11,6 +11,7 @@ import { Puntoentrega } from './interfaces/puntoentrega';
 import { Usuarios } from './interfaces/usuarios';
 import { InUsuarios } from './interfaces/inhabilitarusuarios';
 import { Beneficiario } from './interfaces/beneficiario';
+import { Beneficiariot } from './interfaces/beneficiariot';
 import { InBeneficiario } from './interfaces/inhabilitarBenefiario';
 import { Uds } from './interfaces/uds';
 import { MaestroBienestarina } from './interfaces/maestrosBienestarina';
@@ -47,6 +48,8 @@ import { Biometrico } from './interfaces/biometrico';
 import { Centrozonalt } from './interfaces/centrozonalt';
 import { Salidabeneficiariot } from './interfaces/salidabeneficiariot';
 import { Salidaconsumot } from './interfaces/salidaconsumot';
+import { Listadocursost } from './interfaces/listadocursost';
+import { AcudientesA } from './interfaces/AcudienteA';
 
 @Injectable({
   providedIn: 'root'
@@ -310,6 +313,11 @@ export class ServicioService {
     return this.http.get<[Beneficiario]>(path);
   }
 
+  getBeneficiariost() {
+    const path = `${this.api}/beneficiario/tablab`;
+    return this.http.get<[Beneficiariot]>(path);
+  }
+
   getBeneficiariosid(id: string) {
     return this.http.get(`${this.api}/beneficiario/${id}`);
   }
@@ -336,6 +344,11 @@ export class ServicioService {
   getAcudientes() {
     const path = `${this.api}/acudiente`;
     return this.http.get<[Acudientes]>(path);
+  }
+
+  getAcudientesA() {
+    const path = `${this.api}/acudiente/tablaA`;
+    return this.http.get<[AcudientesA]>(path);
   }
 
   putAcudientes(id: string | number, Nombre: Acudientes) {

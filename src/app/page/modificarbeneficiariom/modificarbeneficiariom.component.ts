@@ -74,10 +74,10 @@ export class ModificarbeneficiariomComponent implements OnInit {
 
   showMenssage(){
     Swal.fire({
-      title: 'Modificado!',
+      title: 'Modificado',
       text: 'Beneficiario Modificado',
       type: 'success',
-      confirmButtonText: 'Ok'
+      confirmButtonText: 'Entendido'
     }).then((result) => {
       if (result.value) {
         

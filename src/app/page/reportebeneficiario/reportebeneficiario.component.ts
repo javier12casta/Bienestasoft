@@ -5,7 +5,7 @@ import * as jspdf from 'jspdf';
 import html2canvas from 'html2canvas';
 import { Regional } from '../../interfaces/regional';
 import { UserOptions } from 'jspdf';
-
+import { Beneficiariot } from '../../interfaces/beneficiariot';
 
 
 @Component({
@@ -18,7 +18,7 @@ import { UserOptions } from 'jspdf';
 export class ReportebeneficiarioComponent implements OnInit {
 
   benefi: Beneficiario[] = [];
-
+  bene: Beneficiariot[] = [];
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {
@@ -31,7 +31,13 @@ export class ReportebeneficiarioComponent implements OnInit {
     }
     );
 
-
+    this.Service.getBeneficiariost()
+    .subscribe(async (data) => {
+      this.bene = data;
+      console.log(data);
+    }
+    );
+    
   }
 
   Generareporte(){

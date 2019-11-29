@@ -10,7 +10,7 @@
 
     
               <select name="idnivel" class="Select2" style="width: 100%;" [(ngModel)]="ben.idUDS"
-                options="options" placeholder="uds" minlength="0" required="">
+                options="options" placeholder="uds" minlength="0" required="" class="form-control">
                 <option *ngFor="let uds of ud" [value]="uds.idUDS">{{uds.NombreUDS }}</option>
                 </select>
                 <h2></h2>

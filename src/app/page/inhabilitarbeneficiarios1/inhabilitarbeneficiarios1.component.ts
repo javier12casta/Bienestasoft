@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Beneficiario } from '../../interfaces/beneficiario';
 import { ServicioService } from '../../servicio.service';
+import { Beneficiariot } from '../../interfaces/beneficiariot';
 
 @Component({
   selector: 'app-inhabilitarbeneficiarios1',
@@ -19,36 +20,36 @@ import { ServicioService } from '../../servicio.service';
       <thead class="thead-green">
         <tr>
         <th scope="col">#</th>
-        <th scope="col">Número Documento</th>
-        <th scope="col">Fecha Ingreso</th>
-        <th scope="col">Fecha Nacimiento</th>
-        <th scope="col">Primer Nombre</th>
-        <th scope="col">Primer Apellido</th>
-        <th scope="col">Segundo Nombre</th>
-        <th scope="col">Segundo Apellido</th>
+        <th scope="col">Número documento</th>
+        <th scope="col">Fecha ingreso</th>
+        <th scope="col">Fecha nacimiento</th>
+        <th scope="col">Primer nombre</th>
+        <th scope="col">Primer apellido</th>
+        <th scope="col">Segundo nombre</th>
+        <th scope="col">Segundo apellido</th>
         <th scope="col">Dirección</th>
         <th scope="col">País</th>
         <th scope="col">Departamento</th>
         <th scope="col">Municipio</th>
-        <th scope="col">Teléfono Fijo</th>
-        <th scope="col">Teléfono Fijo2</th>
-        <th scope="col">Teléfono Movil</th>
-        <th scope="col">Teléfono Movil2</th>
-        <th scope="col">Correo Electrónico</th>
+        <th scope="col">Teléfono fijo</th>
+        <th scope="col">Teléfono fijo2</th>
+        <th scope="col">Teléfono movil</th>
+        <th scope="col">Teléfono movil2</th>
+        <th scope="col">Correo electrónico</th>
         <th scope="col">Estado</th>
-        <th scope="col">Servicio O Modalidad</th>
-        <th scope="col">Genero</th>
-        <th scope="col">Tipo Documento</th>
-        <th scope="col">uds</th>
+        <th scope="col">Servicio o modalidad</th>
+        <th scope="col">Género</th>
+        <th scope="col">Tipo documento</th>
+        <th scope="col">UDS</th>
          
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let cen of benefi">
+        <tr *ngFor="let cen of bene">
           <th scope="row">{{cen.idBeneficiarios}}</th>
           <td>{{cen.NumeroDocumento}}</td>
-          <td>{{cen.FechaIngreso}}</td>
-          <td>{{cen.FechaNacimiento}}</td>
+          <td>{{cen.FechaI}}</td>
+          <td>{{cen.FechaN}}</td>
           <td>{{cen.PrimerNombre}}</td>
           <td>{{cen.PrimerApellido}}</td>
           <td>{{cen.SegundoNombre}}</td>
@@ -62,11 +63,20 @@ import { ServicioService } from '../../servicio.service';
           <td>{{cen.TelefonoMovil}}</td>
           <td>{{cen.TelefonoMovil2}}</td>
           <td>{{cen.Email}}</td>
-          <td>{{cen.Estado}}</td>
+          <td>
+          
+          <div *ngIf="cen.Estado == 1">
+          Habilitado
+        </div>
+        <div *ngIf="cen.Estado == 0">
+          Deshabilitado
+        </div>
+
+         </td>
           <td>{{cen.ServicioOmodalidad}}</td>
-          <td>{{cen.idGenero}}</td>
-          <td>{{cen.idTipoDocumento}}</td>
-          <td>{{cen.idUDS}}</td>
+          <td>{{cen.NombreGenero}}</td>
+          <td>{{cen.NombreTipo}}</td>
+          <td>{{cen.NombreUDS}}</td>
   
           <td>
             <button class="btn btn-primary" [routerLink]="['/InhabilitarBeneficiarioi', cen.idBeneficiarios]">Inhabilitar</button>
@@ -80,7 +90,7 @@ import { ServicioService } from '../../servicio.service';
 export class Inhabilitarbeneficiarios1Component implements OnInit {
 
   benefi: Beneficiario[] = [];
-
+  bene: Beneficiariot[] = [];
   constructor(private Service: ServicioService) { }
 
   
@@ -95,6 +105,12 @@ export class Inhabilitarbeneficiarios1Component implements OnInit {
     }
     );
 
+    this.Service.getBeneficiariost()
+    .subscribe(async (data) => {
+      this.bene = data;
+      console.log(data);
+    }
+    );
   }
 
 }

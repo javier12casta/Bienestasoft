@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../../servicio.service';
 import { Beneficiario } from '../../interfaces/beneficiario';
+import { Beneficiariot } from '../../interfaces/beneficiariot';
 
 @Component({
   selector: 'app-beneficiariosm',
@@ -46,16 +47,15 @@ import { Beneficiario } from '../../interfaces/beneficiario';
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let centro of ben">
+      <tr *ngFor="let centro of bene">
         <th scope="row">{{centro.idBeneficiarios}}</th>
         <td>{{centro.NumeroDocumento }}</td>
-        <td>{{centro.FechaIngreso  }}</td>
-        <td>{{centro.FechaNacimiento }}</td>
+        <td>{{centro.FechaI  }}</td>
+        <td>{{centro.FechaN }}</td>
         <td>{{centro.PrimerNombre }}</td>
         <td>{{centro.PrimerApellido }}</td>
         <td>{{centro.SegundoNombre }}</td>
         <td>{{centro.SegundoApellido }}</td>
-
         <td>{{centro.Direccion}}</td>
         <td>{{centro.Pais }}</td>
         <td>{{centro.Departamento  }}</td>
@@ -65,11 +65,20 @@ import { Beneficiario } from '../../interfaces/beneficiario';
         <td>{{centro.TelefonoMovil }}</td>
         <td>{{centro.TelefonoMovil2 }}</td>
         <td>{{centro.Email }}</td>
-        <td>{{centro.Estado  }}</td>
+        <td>
+        
+        <div *ngIf="centro.Estado == 1">
+        Habilitado
+      </div>
+      <div *ngIf="centro.Estado == 0">
+        Deshabilitado
+      </div>
+        
+       </td>
         <td>{{centro.ServicioOmodalidad }}</td>
-        <td>{{centro.idGenero  }}</td>
-        <td>{{centro.idTipoDocumento }}</td>
-        <td>{{centro.idUDS }}</td>
+        <td>{{centro.NombreGenero  }}</td>
+        <td>{{centro.NombreTipo }}</td>
+        <td>{{centro.NombreUDS }}</td>
       
             
       </tr>
@@ -82,6 +91,7 @@ import { Beneficiario } from '../../interfaces/beneficiario';
 export class BeneficiariosmComponent implements OnInit {
 
   ben: Beneficiario[] = [];
+  bene: Beneficiariot[] = [];
 
   constructor(private Service: ServicioService) { }
 
@@ -90,6 +100,13 @@ export class BeneficiariosmComponent implements OnInit {
     this.Service.getBeneficiarios()
       .subscribe(async (data) => {
         this.ben = data;
+        console.log(data);
+      }
+      );
+
+      this.Service.getBeneficiariost()
+      .subscribe(async (data) => {
+        this.bene = data;
         console.log(data);
       }
       );

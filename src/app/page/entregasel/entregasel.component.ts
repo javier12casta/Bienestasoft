@@ -29,7 +29,7 @@ export class EntregaselComponent implements OnInit {
     
     }
 
-    if(this.salida == 'Salida para beneficiario ICBF'){
+    if(this.salida == 'Salida para beneficiario'){
 
       this.router.navigate(['/salidabeneficiario']);
     
