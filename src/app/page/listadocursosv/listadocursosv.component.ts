@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServicioService } from 'src/app/servicio.service';
 import { Listadocursos } from 'src/app/interfaces/listadocursos';
 import Swal from 'sweetalert2';
+import { Listadocursost } from 'src/app/interfaces/listadocursost';
 
 @Component({
   selector: 'app-listadocursosv',
@@ -11,7 +12,7 @@ import Swal from 'sweetalert2';
 export class ListadocursosvComponent implements OnInit {
 
   servic: Listadocursos[] = [];
-  listad;
+  listad: Listadocursost[] = [];
 
   constructor(private Service: ServicioService) { }
 
@@ -24,32 +25,16 @@ export class ListadocursosvComponent implements OnInit {
       console.log('funciona');
     }
     );
-   this.VerificarDocumento();
-  }
-
-  VerificarDocumento(){
-
-  for(let er of this.servic){
-
-    if(er.idTipoDocumento == 2){
-
-      Swal.fire({
-        title: 'Creado',
-        text: 'Dato Maestro Creado',
-        type: 'success',
-      confirmButtonText: 'Entendido'
-    }).then((result) => {
-      if (result.value) {
-        
-    
-      
-      }
-      });
-
-    }
   
-
-  }   
+    this.Service.getlistadocursostabla()
+    .subscribe(async (data) => {
+      this.listad = data; 
+      console.log(data);
+      console.log('funciona');
+    }
+    );
 
   }
+
+  
 }

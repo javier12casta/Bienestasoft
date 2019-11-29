@@ -427,6 +427,11 @@ export class ServicioService {
     return this.http.get<[Listadocursos]>(path);
   }
 
+  getlistadocursostabla() {
+    const path = `${this.api}/listaC/tablac`;
+    return this.http.get<[Listadocursost]>(path);
+  }
+
   getlistadocursossid(id: string) {
     return this.http.get(`${this.api}/listaC/${id}`);
   }

@@ -7,13 +7,13 @@
           <thead class="thead-green">
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Tipo Bienesterina</th>
-              <th scope="col">Codigo</th>
+              <th scope="col">Tipo bienesterina</th>
+              <th scope="col">Código</th>
               <th scope="col">Estado</th>
               <th scope="col">Referencia</th>
-              <th scope="col">Unidad Principal</th>
+              <th scope="col">Presentación</th>
               <th scope="col">Cantidad</th>
-              <th scope="col">Unidad Secundaria</th>
+              <th scope="col">Unidad </th>
 
             </tr>
           </thead>
@@ -22,7 +22,16 @@
               <th scope="row">{{cen.idTipoBienesterina}}</th>
               <td>{{cen.TipoBienesterina}}</td>
               <td>{{cen.Codigo}}</td>
-              <td>{{cen.Estado}}</td>
+              <td>
+                
+                  <div *ngIf="cen.Estado == 1">
+                      Habilitado
+                    </div>
+                    <div *ngIf="cen.Estado == 0">
+                      Deshabilitado
+                    </div>
+                
+                </td>
               <td>{{cen.Referencia}}</td>
               <td>{{cen.UnidadPrincipal}}</td>
               <td>{{cen.Cantidad}}</td>

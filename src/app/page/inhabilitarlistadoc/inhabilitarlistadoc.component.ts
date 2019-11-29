@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../../servicio.service';
 import { Listadocursos } from '../../interfaces/listadocursos';
+import { Listadocursost } from 'src/app/interfaces/listadocursost';
 
 @Component({
   selector: 'app-inhabilitarlistadoc',
@@ -10,6 +11,7 @@ import { Listadocursos } from '../../interfaces/listadocursos';
 export class InhabilitarlistadocComponent implements OnInit {
 
   listadoc: Listadocursos[] = [];
+  listad: Listadocursost[] = [];
 
   constructor(private Service: ServicioService) { }
 
@@ -23,6 +25,13 @@ export class InhabilitarlistadocComponent implements OnInit {
       }
       );
       
+      this.Service.getlistadocursostabla()
+    .subscribe(async (data) => {
+      this.listad = data; 
+      console.log(data);
+      console.log('funciona');
+    }
+    );
   }
 
 }

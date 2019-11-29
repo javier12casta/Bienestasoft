@@ -10,7 +10,7 @@
         <th scope="col">Referencia  </th>
         <th scope="col">Mes </th>
         <th scope="col">Año </th>
-        <th scope="col">Valor Cop </th>
+        <th scope="col">Valor COP </th>
         <th scope="col">Estado  </th>
         <th scope="col">Código  </th>
       </tr>
@@ -22,7 +22,15 @@
         <td>{{ser.Mes  }}</td>
         <td>{{ser.Ano  }}</td>
         <td>{{ser.ValorCop }}</td>
-        <td>{{ser.Estado}}</td>
+        <td>
+            <div *ngIf="ser.Estado == 1">
+                Habilitado
+              </div>
+              <div *ngIf="ser.Estado == 0">
+                Deshabilitado
+              </div>
+          
+          </td>
         <td>{{ser.Codigo }}</td>
  
       </tr>
