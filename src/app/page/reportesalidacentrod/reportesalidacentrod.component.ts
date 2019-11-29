@@ -3,6 +3,7 @@ import { Salidacentro} from '../../interfaces/salidacentro';
 import { ServicioService } from '../../servicio.service';
 import * as jspdf from 'jspdf'; 
 import html2canvas from 'html2canvas';
+import { Salidacentrot } from 'src/app/interfaces/salidacentrot';
 
 @Component({
   selector: 'app-reportesalidacentrod',
@@ -10,15 +11,15 @@ import html2canvas from 'html2canvas';
   styleUrls: ['./reportesalidacentrod.component.css']
 })
 export class ReportesalidacentrodComponent implements OnInit {
-  centroD: Salidacentro[] = [];
+  centroD: Salidacentrot[] = [];
 
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {
 
-    this.Service.getsalidacentro()
+    this.Service.getsalidacentroTabla()
       .subscribe( (data) => {
-        this.centroD = data;
+        this.centroD = Object(data);
         console.log(data);
         console.log('funciona');
       }

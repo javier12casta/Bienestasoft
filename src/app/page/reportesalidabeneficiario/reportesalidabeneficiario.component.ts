@@ -3,6 +3,7 @@ import { Salidabeneficiario} from '../../interfaces/salidabeneficiario';
 import { ServicioService } from '../../servicio.service';
 import * as jspdf from 'jspdf'; 
 import html2canvas from 'html2canvas';
+import { Salidabeneficiariot } from 'src/app/interfaces/salidabeneficiariot';
 
 @Component({
   selector: 'app-reportesalidabeneficiario',
@@ -11,15 +12,15 @@ import html2canvas from 'html2canvas';
 })
 export class ReportesalidabeneficiarioComponent implements OnInit {
 
-  centroB: Salidabeneficiario[] = [];
+  centroB: Salidabeneficiariot[] = [];
 
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {
 
-    this.Service.getsalidabeneficiario()
+    this.Service.getsalidabeneficiarioTabla()
     .subscribe( (data) => {
-      this.centroB = data;
+      this.centroB = Object(data);
       console.log(data);
       console.log('funciona');
     }
