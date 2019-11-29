@@ -62,8 +62,8 @@ export class RolmComponent implements OnInit {
       //mensajes de asigancion
   showMenssage2() {
     Swal.fire({
-      title: 'Actualizado!',
-      text: 'El rol a sido actualizado',
+      title: 'Actualizado',
+      text: 'El rol ha sido actualizado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((res) => {
@@ -76,7 +76,7 @@ export class RolmComponent implements OnInit {
   
   showMenssage3() {
     Swal.fire({
-      title: 'Error!',
+      title: 'Error',
       text: 'Error al guardar ',
       type: 'error',
       confirmButtonText: 'Entendido'

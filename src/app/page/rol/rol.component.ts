@@ -68,8 +68,8 @@ export class RolComponent implements OnInit {
     //mensajes de asigancion
     showMenssage() {
       Swal.fire({
-        title: 'Creado!',
-        text: 'El rol a sido creado',
+        title: 'Creado',
+        text: 'El rol ha sido creado',
         type: 'success',
         confirmButtonText: 'Entendido'
       }).then((res) => {
@@ -84,7 +84,7 @@ export class RolComponent implements OnInit {
   
   showMenssage3() {
     Swal.fire({
-      title: 'Error!',
+      title: 'Error',
       text: 'Error al guardar ',
       type: 'error',
       confirmButtonText: 'Entendido'
