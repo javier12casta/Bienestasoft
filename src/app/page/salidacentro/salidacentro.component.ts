@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Salidacentro} from '../../interfaces/salidacentro';
 import { ServicioService } from '../../servicio.service';
+import { Salidacentrot } from 'src/app/interfaces/salidacentrot';
 
 
 @Component({
@@ -10,7 +10,7 @@ import { ServicioService } from '../../servicio.service';
 })
 export class SalidacentroComponent implements OnInit {
 
-  centroD: Salidacentro[] = [];
+  centroD: Salidacentrot[] = [];
 
   constructor(private Service: ServicioService) { }
 
@@ -19,9 +19,9 @@ export class SalidacentroComponent implements OnInit {
 
 
 
-    this.Service.getsalidacentro()
+    this.Service.getsalidacentroTabla()
       .subscribe( (data) => {
-        this.centroD = data;
+        this.centroD = Object(data);
         console.log(data);
         console.log('funciona');
       }

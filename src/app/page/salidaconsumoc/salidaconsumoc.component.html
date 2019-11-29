@@ -9,10 +9,10 @@
         <div class="form-group">
 
 
-          <h1>Salida Consumo interno </h1>
+          <h1>Salida consumo interno </h1>
           <h2></h2>
 
-          <span>Referencia Bienestarina</span>
+          <span>Referencia bienestarina</span>
           <h2></h2>
 
           <select name="idreferencia" class="select-css" style="width: 100%;" [(ngModel)]="sal.idTipoBienesterina"
@@ -22,22 +22,22 @@
 
           <h2></h2>
 
-          <span>Centro de distribucion </span>
+          <span>Centro de distribución </span>
           <h2></h2>
 
           <select name="idcentrodistribucion" class="select-css" style="width: 100%;"
-            [(ngModel)]="sal.idCentroDistribucion" options="options" placeholder="almacen" minlength="0" required=""
+            [(ngModel)]="sal.idCentroDistribucion" options="options" minlength="0" required=""
             class="form-control">
             <option *ngFor="let ud of cen" [value]="ud.idCentroDistribucion">{{ud.Nombre }} </option>
           </select>
 
           <h2></h2>
 
-          <span>Almacen </span>
+          <span>Almacén </span>
           <h2></h2>
 
           <select name="idalmacen" class="select-css" style="width: 100%;" [(ngModel)]="sal.idAlmacenes"
-            options="options" placeholder="almacen" minlength="0" required="" class="form-control">
+            options="options" minlength="0" required="" class="form-control">
             <option *ngFor="let ud of alm" [value]="ud.idAlmacenes">{{ud.Nombre }} </option>
           </select>
 
@@ -47,15 +47,15 @@
           <h2></h2>
 
           <select name="idinv" class="select-css" style="width: 100%;" (change)="onChange3($event)" [(ngModel)]="idinv"
-            options="options" placeholder="inventario" (change)="onChange1($event)" minlength="0" required=""
+            options="options" (change)="onChange1($event)" minlength="0" required=""
             class="form-control">
             <option *ngFor="let ud of inv" [value]="ud.idInventario">{{ud.Nombre }} </option>
           </select>
 
 
-          <span>lote</span>
+          <span>Lote</span>
           <h2></h2>
-          <input type="text" class="form-control" [(ngModel)]="sal.lote" name="cane" placeholder="Cantidad Entregada"
+          <input type="text" class="form-control" [(ngModel)]="sal.lote" name="cane" placeholder="Lote"
             class="form-control" id="inputen" minlength="0" required="">
 
           <h2></h2>
@@ -63,7 +63,7 @@
 
           <span>Fecha de vencimiento </span>
           <h2></h2>
-          <input type="date" class="form-control" [(ngModel)]="sal.fechavencimiento" name="fechai" placeholder="Fecha"
+          <input type="date" class="form-control" [(ngModel)]="sal.fechavencimiento" name="fechai" placeholder="Fecha de vencimiento"
             min="2018-01-01" max="2050-12-31" class="form-control" minlength="0" required="">
 
           <h2></h2>
@@ -82,16 +82,16 @@
           <span>Cantidad</span>
           <h2></h2>
           <input type="number" class="form-control" [(ngModel)]="sal.cantidad" name="cane"
-            placeholder="Cantidad Entregada" class="form-control" (keyup)="onKey($event)" id="inputen" minlength="0" required="">
+            placeholder="Cantidad" class="form-control" (keyup)="onKey($event)" id="inputen" minlength="0" required="">
 
           <h2></h2>
 
           <div id="unidad" [hidden]="habilitado">
             <h2></h2>
-            <span>Capacidad liquida</span>
+            <span>Capacidad líquida</span>
             <h2></h2>
             <input type="number" class="form-control" [(ngModel)]="sal.cantidad2" name="cantidad2"
-              placeholder="Capacidad liquida" (keyup)="onKey2($event)" class="form-control" id="inputcap" minlength="0"
+              placeholder="Capacidad líquida" (keyup)="onKey2($event)" class="form-control" id="inputcap" minlength="0"
               required="" class="form-control">
 
             <h2></h2>
@@ -99,12 +99,12 @@
 
           <span>Fecha de registro </span>
           <h2></h2>
-          <input type="date" class="form-control" [(ngModel)]="sal.fecharegistro" name="fechai" placeholder="Fecha"
+          <input type="date" class="form-control" [(ngModel)]="sal.fecharegistro" name="fechai" placeholder="Fecha de registro"
             min="1940-01-01" max="2050-12-31" class="form-control" minlength="0" required="">
 
           <h2></h2>
 
-          <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
+          <button (click)="onClickMe()" class="btn btn-success btn-block">Aceptar</button>
 
           <h2></h2>
 

@@ -46,11 +46,11 @@ export class SalidacentrocComponent implements OnInit {
     sal: Salidacentro = {
 
       lote  : '',
-      fechavencimiento  : 0,
+      fechavencimiento  : null,
       cantidad  : 0,
       cantidad2 : 0,
       unidad  : '',
-      fecharegistro  : 0,
+      fecharegistro  : null,
       idCentroDistribucionOrigen  : 0,
       idCentroDistribucionDestino  : 0,
       idAlmacen  : 0,
@@ -95,7 +95,7 @@ export class SalidacentrocComponent implements OnInit {
       this.Service.getalmacen()
       .subscribe(async (data) => {
         this.alm = data;
-        //console.log(data);
+        console.log("Almacen",data);
         //console.log('funciona');
       }
       );
@@ -135,10 +135,10 @@ export class SalidacentrocComponent implements OnInit {
 
   showMenssage(){
     Swal.fire({
-      title: 'Creado!',
-      text: 'salida centro de distribucion Creado',
+      title: 'Creado',
+      text: 'Salida centro de distribución Creado',
       type: 'success',
-      confirmButtonText: 'Aceptar'
+      confirmButtonText: 'Entendido'
     }).then((result) => {
       if (result.value) {
         
@@ -151,10 +151,10 @@ export class SalidacentrocComponent implements OnInit {
 
   showMenssage4(){
     Swal.fire({
-      title: 'Creado!',
-      text: 'entro',
+      title: 'Creado',
+      text: 'Creado',
       type: 'success',
-      confirmButtonText: 'Aceptar'
+      confirmButtonText: 'Entendido'
     }).then((result) => {
       if (result.value) {
         
@@ -167,29 +167,28 @@ export class SalidacentrocComponent implements OnInit {
   showMenssage5() {
     Swal.fire({
       title: 'Advertencia',
-      text: 'La Cantidad ingresada supera la capacidad',
+      text: 'La cantidad ingresada supera la capacidad',
       type: 'warning',
       confirmButtonText: 'Entendido'
     });
   }
 //Para saber que digita en el campo cantidad
   onKey($event) {
-    const Cantidadx = this.sal.cantidad;
-    const cap = this.almacen.Capacidad;
+    const cap = this.almacen.Capacidad
+    const can = this.sal.cantidad
     const cantidadinv = this.inventario.Cantidad;
-    const cantidadsuma = cantidadinv;
-    if (cantidadsuma >= cantidadinv) {
+    const cantidadsuma = cantidadinv + can;
+    if (cantidadsuma >= cap) {
       this.showMenssage5();
     }
   }
 
   //para saber que digita en la cantidad2
   onKey2($event) {
-    const Cantidadx = this.sal.cantidad2;
-    const cap2 = this.almacen.Capacidad2;
+    const cap = this.almacen.Capacidad2
     const cantidadinv = this.inventario.Cantidad2;
     const cantidadsuma = cantidadinv;
-    if (cantidadsuma >= cantidadinv) {
+    if (cantidadsuma >= cap) {
       this.showMenssage5();
     }
   }

@@ -814,8 +814,8 @@ export class PermisosComponent implements OnInit {
   //mensajes de asigancion
   showMenssage() {
     Swal.fire({
-      title: 'Asignados!',
-      text: 'Permisos Asignados',
+      title: 'Asignados',
+      text: 'Permisos asignados',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((res) => {

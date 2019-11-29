@@ -81,7 +81,7 @@ export class RolinhComponent implements OnInit {
 
   showMenssage4() {
     Swal.fire({
-      title: 'Error!',
+      title: 'Error',
       text: 'No es posible inhabilitar el rol',
       type: 'error',
       confirmButtonText: 'Entendido'
@@ -106,8 +106,8 @@ export class RolinhComponent implements OnInit {
 
   showMenssage() {
     Swal.fire({
-      title: 'Habilitado!',
-      text: 'Rol habilitado',
+      title: 'Habilitado',
+      text: 'El rol ha  sido habilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((res) => {
@@ -121,8 +121,8 @@ export class RolinhComponent implements OnInit {
       //mensajes de asigancion
   showMenssage2() {
     Swal.fire({
-      title: 'Actualizado!',
-      text: 'El rol a sido actualizado',
+      title: 'Actualizado',
+      text: 'El rol ha sido actualizado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((res) => {
@@ -135,7 +135,7 @@ export class RolinhComponent implements OnInit {
   
   showMenssage3() {
     Swal.fire({
-      title: 'Error!',
+      title: 'Error',
       text: 'Error al guardar ',
       type: 'error',
       confirmButtonText: 'Entendido'
@@ -143,8 +143,8 @@ export class RolinhComponent implements OnInit {
   }
   showMenssage5() {
     Swal.fire({
-      title: 'Inhabilitado!',
-      text: 'Rol inhabilitado',
+      title: 'Inhabilitado',
+      text: 'El rol ha sido inhabilitado',
       type: 'error',
       confirmButtonText: 'Entendido'
     }).then((res) => {

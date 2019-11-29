@@ -10,13 +10,13 @@
           <h1>Crear Recepcion </h1>
 
                 <div class="form-group">
-                <span >Fecha de Recepcion</span>
+                <span >Fecha de recepción</span>
                 <h2></h2>
                 <input type="date" class="form-control" [(ngModel)]="x.FechaRecepcion" name="fechai" placeholder="Fecha" min="1900-01-01" max="2050-12-31" class="form-control" 
                 minlength="0" required="">
             
                 <h2></h2>
-                <span >almacen</span>
+                <span >Almacén</span>
                 <h2></h2>
                 
                 <select name="idAlmacenes" class="select-css" style="width: 100%;" [(ngModel)]="x.idAlmacenes"
@@ -26,7 +26,7 @@
               </select>
 
               <h2></h2>
-			   <span >centro distribucion</span>
+			   <span >Centro distribución</span>
 			   <h2></h2>
 			   <select name="idRegional" class="select-css" style="width: 100%;" [(ngModel)]="x.idCentroDistribucion"
 			   options="options" placeholder="centro distribucion" 
@@ -35,7 +35,7 @@
              </select>
              
              <h2></h2>
-			   <span >Tipo Bienestarina</span>
+			   <span >Tipo bienestarina</span>
 			   <h2></h2>
 			   
 			   <select name="idTipoBienesterina" class="select-css" style="width: 100%;" [(ngModel)]="x.idTipoBienesterina"
@@ -60,12 +60,12 @@
              <input type="text" class="form-control" [(ngModel)]="x.lote" name="nombre"
              placeholder="Lote" id="nom" minlength="0" required="">
        
-             <span >Fecha de Vencimiento</span>
+             <span >Fecha de vencimiento</span>
              <h2></h2>
              <input type="date" class="form-control" [(ngModel)]="x.FechaVencimiento" name="fechai" placeholder="Fecha" min="1900-01-01" max="2050-12-31" class="form-control" 
              minlength="0" required="">
               
-             <span >unidad de medida</span>
+             <span >Unidad de medida</span>
              <h2></h2>
 
         
@@ -85,7 +85,7 @@
          
              <div id="unidad" hidden [hidden]="habilitado">
               <h2></h2>
-              <span>Capacidad liquida</span>
+              <span>Cantidad líquida</span>
               <h2></h2>
               <input type="number" class="form-control" [(ngModel)]="x.Cantidad2" name="Cantidad2"
               placeholder="Capacidad liquida" (keyup)="onKey2($event)" class="form-control" id="inputcap">
@@ -96,7 +96,7 @@
             
               </div>
 
-             <span >Numero de acta</span>
+             <span >Número de acta</span>
              <h2></h2>
              <input type="text" class="form-control"  name="acta"
              placeholder="Numero de acta " class="form-control" id="nom" [(ngModel)]="y.numero" 

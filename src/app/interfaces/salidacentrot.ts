@@ -1,4 +1,4 @@
-export interface Salidacentro {
+export interface Salidacentrot {
     identregacentrodistribucion?: number,
     lote:string,
     fechavencimiento : Date,
@@ -6,9 +6,8 @@ export interface Salidacentro {
     cantidad2 ?  : number,
     unidad : string,
     fecharegistro : Date,
-    idCentroDistribucionOrigen:number,
-    idCentroDistribucionDestino : number,
-    idAlmacen  : number,
-    idTipoBienesterina : number,
+    centroorigen: string,
+    centrodestino: string,
+    Nombreal: string,
+    TipoBienesterina : string,
 }
-    

@@ -137,10 +137,10 @@ export class RecepcionbienestarinaviComponent implements OnInit {
 
   showMenssage() {
     Swal.fire({
-      title: 'Creado!',
-      text: 'Recepcion Creada',
+      title: 'Creado',
+      text: 'Recepción creada',
       type: 'success',
-      confirmButtonText: 'Ok'
+      confirmButtonText: 'Entendido'
     }).then((result) => {
       if (result.value) {
 
@@ -153,7 +153,7 @@ export class RecepcionbienestarinaviComponent implements OnInit {
 
   showMenssage3() {
     Swal.fire({
-      title: 'Error!',
+      title: 'Error',
       text: 'campos erroneos o vacios',
       type: 'error',
       confirmButtonText: 'Entendido'
@@ -163,14 +163,16 @@ export class RecepcionbienestarinaviComponent implements OnInit {
   showMenssage4() {
     Swal.fire({
       title: 'Advertencia',
-      text: 'esta seguro de registrar los datos',
-      type: 'warning',
-      confirmButtonText: 'Entendido'
+      text: '¿Esta seguro de registrar los datos?',
+      type: 'question',
+      showCancelButton: true,
+      confirmButtonText: 'Continuar',
+      cancelButtonText: 'Cancelar',
+      cancelButtonColor: '#d33',
+      confirmButtonColor: '#28a745',
     }).then((result) => {
       if (result.value) {
-
         this.onClickMe();
-
       }
 
 

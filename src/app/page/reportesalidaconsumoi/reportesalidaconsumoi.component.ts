@@ -3,6 +3,7 @@ import { Salidaconsumo} from '../../interfaces/salidaconsumo';
 import { ServicioService } from '../../servicio.service';
 import * as jspdf from 'jspdf'; 
 import html2canvas from 'html2canvas';
+import { Salidaconsumot } from 'src/app/interfaces/salidaconsumot';
 
 @Component({
   selector: 'app-reportesalidaconsumoi',
@@ -11,15 +12,15 @@ import html2canvas from 'html2canvas';
 })
 export class ReportesalidaconsumoiComponent implements OnInit {
 
-  centroC: Salidaconsumo[] = [];
+  centroC: Salidaconsumot[] = [];
 
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {
 
-     this.Service.getsalidaconsumo()
+     this.Service.getsalidaconsumoTabla()
     .subscribe( (data) => {
-      this.centroC = data;
+      this.centroC = Object(data);
       console.log(data);
       console.log('funciona');
     }

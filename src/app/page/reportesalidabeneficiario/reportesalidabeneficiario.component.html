@@ -6,15 +6,15 @@
     <thead class="thead-green" >
       <tr>
         <th scope="col">#</th>
-        <th scope="col">lote </th>
-        <th scope="col">fechavencimiento</th>
-        <th scope="col">cantidad</th>
-        <th scope="col">unidad</th>
-        <th scope="col"># Acudientes</th>
-        <th scope="col"># Beneficiarios </th>
-        <th scope="col"># CentroDistribucion</th>
-        <th scope="col"># Almacenes</th>
-        <th scope="col"># TipoBienesterina</th>
+        <th scope="col">Lote</th>
+        <th scope="col">Fecha vencimiento</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Unidad</th>
+        <th scope="col">Acudientes</th>
+        <th scope="col">Beneficiarios </th>
+        <th scope="col">Centro distribución</th>
+        <th scope="col">Almacenés</th>
+        <th scope="col">Tipo bienesterina</th>
       </tr>
     </thead>
     <tbody>
@@ -24,16 +24,16 @@
         <td>{{sal.fechavencimiento}}</td>
         <td>{{sal.cantidad}}</td>
         <td>{{sal.unidad}}</td>
-        <td>{{sal.idAcudientes}}</td>
-        <td>{{sal.idBeneficiarios}}</td>
-        <td>{{sal.idCentroDistribucion}}</td>
-        <td>{{sal.idAlmacenes  }}</td>
-        <td>{{sal.idTipoBienesterina}}</td>
+        <td>{{sal.NombrePadre}}</td>
+        <td>{{sal.Nombrecompleto}}</td>
+        <td>{{sal.centrodistribucion}}</td>
+        <td>{{sal.almacenes  }}</td>
+        <td>{{sal.TipoBienesterina}}</td>
 
       </tr>
     </tbody>
   </table>
 
   <div class="trans">
-    <button class="btn btn-dark" (click)="Generareporte()">Generar Reporte</button>
+    <button class="btn btn-dark" (click)="Generareporte()">Generar reporte</button>
   </div>

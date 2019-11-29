@@ -54,7 +54,7 @@ export class SalidaconsumocComponent implements OnInit {
 
       lote  : '',
       fechavencimiento  : 0,
-      cantidad  : 0,
+      cantidad  : null,
       cantidad2: 0,
       unidad  : '',
       fecharegistro  : 0,
@@ -130,10 +130,10 @@ export class SalidaconsumocComponent implements OnInit {
 
   showMenssage(){
     Swal.fire({
-      title: 'Creado!',
-      text: 'salida consumo Creado',
+      title: 'Creado',
+      text: 'Salida para consumo creado',
       type: 'success',
-      confirmButtonText: 'Aceptar'
+      confirmButtonText: 'Entendido'
     }).then((result) => {
       if (result.value) {
         
@@ -147,7 +147,7 @@ export class SalidaconsumocComponent implements OnInit {
   showMenssage5() {
     Swal.fire({
       title: 'Advertencia',
-      text: 'La Cantidad ingresada supera la capacidad',
+      text: 'La cantidad ingresada supera la capacidad',
       type: 'warning',
       confirmButtonText: 'Entendido'
     });

@@ -17,13 +17,11 @@
 
                         <span >unidad de medida</span>
                         <h2></h2>
-           
-                        <br>
-                        <select name="UnidadPrincipal" [(ngModel)]="x.unidad" (change)="onChange($event)" class="select-css" minlength="0" required="">
+                        <select name="UnidadPrincipal" [(ngModel)]="x.unidad" (change)="onChange($event)" class="form-control" minlength="0" required="">
                          <option [value]="item" *ngFor="let item of unidadmedida">{{item}} </option>
                        </select>
                        <h2></h2>
-                    
+
                         <h2></h2>
                     <span >Cantidad</span>
                         <h2></h2>

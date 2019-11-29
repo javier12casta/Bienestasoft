@@ -153,7 +153,7 @@ export class SalidabeneficiariocComponent implements OnInit {
   showMenssage() {
     Swal.fire({
       title: 'Creado',
-      text: 'Salida Beneficiario Creado',
+      text: 'Salida beneficiario creado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {
@@ -169,7 +169,7 @@ export class SalidabeneficiariocComponent implements OnInit {
   showMenssage5() {
     Swal.fire({
       title: 'Advertencia',
-      text: 'La Cantidad Ingresada Supera La Capacidad',
+      text: 'La cantidad ingresada supera la capacidad',
       type: 'warning',
       confirmButtonText: 'Entendido'
     });

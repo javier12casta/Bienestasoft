@@ -45,7 +45,8 @@ import { Translado} from './interfaces/traslado';
 import { Acta} from './interfaces/acta';
 import { Biometrico } from './interfaces/biometrico';
 import { Centrozonalt } from './interfaces/centrozonalt';
-import { Listadocursost } from './interfaces/listadocursost';
+import { Salidabeneficiariot } from './interfaces/salidabeneficiariot';
+import { Salidaconsumot } from './interfaces/salidaconsumot';
 
 @Injectable({
   providedIn: 'root'
@@ -573,6 +574,10 @@ export class ServicioService {
     return this.http.get<[Salidacentro]>(path);
   }
 
+  getsalidacentroTabla() {
+    const path = `${this.api}/entregacentrod/tabla`;
+    return this.http.get<[Salidacentro]>(path);
+  }
   postsalidacentro(recep: Salidacentro) {
 
     const path = `${this.api}/entregacentrod`;
@@ -582,10 +587,14 @@ export class ServicioService {
 
 
   getsalidabeneficiario(){
-
     const path = `${this.api}/entregabeneficiario`;
     return this.http.get<[Salidabeneficiario]>(path);
+  }
 
+  //tabla
+  getsalidabeneficiarioTabla(){
+    const path = `${this.api}/entregabeneficiario/tabla`;
+    return this.http.get<[Salidabeneficiariot]>(path);
   }
 
   postsalidabeneficiario(recep: Salidabeneficiario) {
@@ -596,10 +605,13 @@ export class ServicioService {
   }
 
   getsalidaconsumo(){
-
     const path = `${this.api}/entregaconsumo`;
     return this.http.get<[Salidaconsumo]>(path);
-
+  }
+  //tabla
+  getsalidaconsumoTabla(){
+    const path = `${this.api}/entregaconsumo/tabla`;
+    return this.http.get<[Salidaconsumot]>(path);
   }
 
   postsalidaconsumo(recep: Salidaconsumo) {
