@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Salidabeneficiario} from '../../interfaces/salidabeneficiario';
 import { ServicioService } from '../../servicio.service';
+import { Salidabeneficiariot } from 'src/app/interfaces/salidabeneficiariot';
 
 @Component({
   selector: 'app-salidabeneficiario',
@@ -9,15 +10,15 @@ import { ServicioService } from '../../servicio.service';
 })
 export class SalidabeneficiarioComponent implements OnInit {
 
-  centroB: Salidabeneficiario[] = [];
+  centroB: Salidabeneficiariot[] = [];
 
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {
 
-    this.Service.getsalidabeneficiario()
+    this.Service.getsalidabeneficiarioTabla()
     .subscribe( (data) => {
-      this.centroB = data;
+      this.centroB = Object(data);
       console.log(data);
       console.log('funciona');
     }
