@@ -11,7 +11,7 @@ export class InventarioComponent implements OnInit {
 
 
   lista = '';
-  listar:string[]=["Crear Inventario","Traslado entre almacenes","Recuento de inventario"];
+  listar:string[]=["Crear inventario","Traslado entre almacenes","Recuento de inventario"];
 
 
 
@@ -23,7 +23,7 @@ export class InventarioComponent implements OnInit {
 
   onClickMe() {
 
-    if(this.lista == 'Crear Inventario'){
+    if(this.lista == 'Crear inventario'){
   
       this.router.navigate(['/inventariov']);
       

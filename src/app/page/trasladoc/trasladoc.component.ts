@@ -88,8 +88,8 @@ export class TrasladocComponent implements OnInit {
 
   showMenssage(){
     Swal.fire({
-      title: 'Creado!',
-      text: 'traslado Creado',
+      title: 'Creado',
+      text: 'Traslado creado',
       type: 'success',
       confirmButtonText: 'Aceptar'
     }).then((result) => {

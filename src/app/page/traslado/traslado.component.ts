@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Translado} from '../../interfaces/traslado';
 import { ServicioService } from '../../servicio.service';
+import { Trasladost } from 'src/app/interfaces/trasladost';
 
 @Component({
   selector: 'app-traslado',
@@ -9,13 +10,13 @@ import { ServicioService } from '../../servicio.service';
 })
 export class TrasladoComponent implements OnInit {
 
-  translado: Translado[] = [];
+  translado: Trasladost[] = [];
 
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {
 
-    this.Service.getraslados()
+    this.Service.getrasladostabla()
     .subscribe( (data) => {
       this.translado = data;
       console.log(data);

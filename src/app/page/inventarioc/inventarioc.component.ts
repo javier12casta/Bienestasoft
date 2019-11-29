@@ -18,8 +18,8 @@ export class InventariocComponent implements OnInit {
   x : Inventario = {
     
     Nombre : '',
-    Cantidad : 0,
-    Cantidad2 : 0,
+    Cantidad : null,
+    Cantidad2 : null,
     unidad:'',
   };
   unidadmedida:string[]=["g","ml", "g y ml"];
@@ -57,10 +57,10 @@ export class InventariocComponent implements OnInit {
 
   showMenssage(){
     Swal.fire({
-      title: 'Creado!',
-      text: 'Inventario Creado',
+      title: 'Creado',
+      text: 'Inventario creado',
       type: 'success',
-	  confirmButtonText: 'Ok'
+	  confirmButtonText: 'Entendido'
 	}).then((result) => {
 		if (result.value) {
 		  
@@ -73,7 +73,7 @@ export class InventariocComponent implements OnInit {
 
   showMenssage3(){
 	Swal.fire({
-	  title: 'Error!',
+	  title: 'Error',
 	  text: 'campos erroneos o vacios',
 	  type: 'error',
 	  confirmButtonText: 'Entendido'
@@ -83,9 +83,13 @@ export class InventariocComponent implements OnInit {
   showMenssage4(){
     Swal.fire({
       title: 'Advertencia',
-      text: 'esta seguro de registrar los datos',
-      type: 'warning',
-      confirmButtonText: 'Entendido'
+      text: '¿Esta seguro de registrar los datos?',
+      type: 'question',
+      showCancelButton: true,
+      confirmButtonText: 'Continuar',
+      cancelButtonText: 'Cancelar',
+      cancelButtonColor: '#d33',
+      confirmButtonColor: '#28a745',
       }).then((result) => {
       if (result.value) {
         

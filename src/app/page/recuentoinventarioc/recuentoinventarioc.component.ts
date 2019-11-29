@@ -29,7 +29,7 @@ export class RecuentoinventariocComponent implements OnInit {
 
     sal: Recuentoinventario = {
 
-      lote : '',
+      lote : null,
       FechaVencimiento : 0,
       unidadmedida1  : '',
       cantidad: 0,
@@ -87,8 +87,8 @@ export class RecuentoinventariocComponent implements OnInit {
 
   showMenssage(){
     Swal.fire({
-      title: 'Creado!',
-      text: 'Recuento Creado',
+      title: 'Creado',
+      text: 'Recuento creado',
       type: 'success',
       confirmButtonText: 'Aceptar'
     }).then((result) => {

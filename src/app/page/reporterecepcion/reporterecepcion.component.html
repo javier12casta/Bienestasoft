@@ -3,33 +3,33 @@
 
   </nav>
   
-  <table class="table"  id="contentToConvert">
+  <table class="table">
     <thead class="thead-green">
       <tr>
         <th scope="col">#</th>
         <th scope="col">lote </th>
-        <th scope="col">FechaVencimiento </th>
+        <th scope="col">Fecha vencimiento </th>
         <th scope="col">Cantidad </th>
         <th scope="col">UnidadPrincipal  </th>
-        <th scope="col">FechaRecepcion  </th>
-        <th scope="col">idTipoBienesterina </th>
-        <th scope="col">idInventario </th>
-        <th scope="col">idAlmacenes </th>
-        <th scope="col">idCentroDistribucion </th>
+        <th scope="col">Fecha recepción  </th>
+        <th scope="col">Tipo bienesterina </th>
+        <th scope="col">Inventario </th>
+        <th scope="col">Almacén </th>
+        <th scope="col">Centro distribución </th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let ser of rec">
-        <th scope="row">{{ser.idTipoBienesterina}}</th>
-        <td>{{ser.lote   }}</td>
+        <th scope="row">{{ser.idBienestarina}}</th>
+        <td>{{ser.lote}}</td>
         <td>{{ser.FechaVencimiento   }}</td>
         <td>{{ser.Cantidad   }}</td>
         <td>{{ser.UnidadPrincipal  }}</td>
         <td>{{ser.FechaRecepcion   }}</td>
-        <td>{{ser.idTipoBienesterina  }}</td>
-        <td>{{ser.idInventario  }}</td>
-        <td>{{ser.idAlmacenes }}</td>
-        <td>{{ser.idCentroDistribucion }}</td>
+        <td>{{ser.TipoBienesterina  }}</td>
+        <td>{{ser.inventario  }}</td>
+        <td>{{ser.almacenes }}</td>
+        <td>{{ser.centrodistribucion}}</td>
       </tr>
     </tbody>
   </table>

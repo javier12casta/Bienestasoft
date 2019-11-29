@@ -48,8 +48,14 @@ import { Biometrico } from './interfaces/biometrico';
 import { Centrozonalt } from './interfaces/centrozonalt';
 import { Salidabeneficiariot } from './interfaces/salidabeneficiariot';
 import { Salidaconsumot } from './interfaces/salidaconsumot';
+
 import { Listadocursost } from './interfaces/listadocursost';
 import { AcudientesA } from './interfaces/AcudienteA';
+
+import { Recepciont } from './interfaces/recepciont';
+import { Trasladost } from './interfaces/trasladost';
+import { Recuentoinventariot } from './interfaces/recuentoinventariot';
+
 
 @Injectable({
   providedIn: 'root'
@@ -548,6 +554,11 @@ export class ServicioService {
     return this.http.get<[Recepcion]>(path);
   }
 
+  getrecepciontabla() {
+    const path = `${this.api}/bienestarina/tabla`;
+    return this.http.get<[Recepciont]>(path);
+  }
+
   postrecepcion(recep: Recepcion) {
 
     const path = `${this.api}/bienestarina`;
@@ -649,10 +660,13 @@ export class ServicioService {
   }
 
   getrecuento(){
-
     const path = `${this.api}/recuento`;
     return this.http.get<[Recuentoinventario]>(path);
+  }
 
+  getrecuentotabla(){
+    const path = `${this.api}/recuento/tabla`;
+    return this.http.get<[Recuentoinventariot]>(path);
   }
 
   postrecuento(recep: Recuentoinventario) {
@@ -663,10 +677,13 @@ export class ServicioService {
   }
 
   getraslados(){
-
     const path = `${this.api}/traslados`;
     return this.http.get<[Translado]>(path);
+  }
 
+  getrasladostabla(){
+    const path = `${this.api}/traslados/tabla`;
+    return this.http.get<[Trasladost]>(path);
   }
 
   postraslados(recep: Translado) {

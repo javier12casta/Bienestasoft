@@ -7,15 +7,15 @@
           <div class="card-body" padding>
             <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
 
-                    <h1>Crear Inventario</h1>
+                    <h1>Crear inventario</h1>
 
                     <h2></h2>
-                    <span >Nombre</span>
+                    <span >Nombre inventario</span>
                         <h2></h2>
                         <input type="text" class="form-control" [(ngModel)]="x.Nombre" name="nom"
-                        placeholder="Nombre" class="form-control" id="inputdoc" minlength="0" required="">
+                        placeholder="Nombre inventario" class="form-control" id="inputdoc" minlength="0" required="">
 
-                        <span >unidad de medida</span>
+                        <span >Unidad de medida</span>
                         <h2></h2>
                         <select name="UnidadPrincipal" [(ngModel)]="x.unidad" (change)="onChange($event)" class="form-control" minlength="0" required="">
                          <option [value]="item" *ngFor="let item of unidadmedida">{{item}} </option>
@@ -31,20 +31,16 @@
                         <h2></h2>
                         <div id="unidad" hidden [hidden]="habilitado">
                           <h2></h2>
-                          <span>Capacidad liquida</span>
+                          <span>Capacidad líquida</span>
                           <h2></h2>
-                          <input type="number" class="form-control" [(ngModel)]="x.Cantidad2" name="Cantidad2" placeholder="Capacidad liquida"
+                          <input type="number" class="form-control" [(ngModel)]="x.Cantidad2" name="Cantidad2" placeholder="Cantidad líquida"
                             class="form-control" id="inputcap" minlength="0" required="">
                 
                           <h2></h2>
                         </div>
-					  
-						 
-					  <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
-						 
-					  <h2></h2>
 
-              
+					  <button (click)="onClickMe()" class="btn btn-success btn-block">Aceptar</button>
+					  <h2></h2>
             </form>
         </div>
       </div>

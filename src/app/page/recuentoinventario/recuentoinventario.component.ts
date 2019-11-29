@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Recuentoinventario } from 'src/app/interfaces/recuentoinventario';
 import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
+import { Recuentoinventariot } from 'src/app/interfaces/recuentoinventariot';
 
 @Component({
   selector: 'app-recuentoinventario',
@@ -10,14 +11,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class RecuentoinventarioComponent implements OnInit {
 
-  recuento:Recuentoinventario[] = [];
+  recuento:Recuentoinventariot[] = [];
 
   constructor(private activeRoute: ActivatedRoute,
     private Service: ServicioService) { }
 
   ngOnInit() {
 
-    this.Service.getrecuento()
+    this.Service.getrecuentotabla()
     .subscribe(async (data) => {
       this.recuento = data;
       console.log(data);
