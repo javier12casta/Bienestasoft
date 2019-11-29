@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../../servicio.service';
 import { Listadocursos } from '../../interfaces/listadocursos';
+import { Listadocursost } from 'src/app/interfaces/listadocursost';
 @Component({
   selector: 'app-modificarlistadoc',
   templateUrl: './modificarlistadoc.component.html',
@@ -8,7 +9,7 @@ import { Listadocursos } from '../../interfaces/listadocursos';
 })
 export class ModificarlistadocComponent implements OnInit {
   listadoc: Listadocursos[] = [];
-  
+  listad: Listadocursost[] = [];
 
 
   constructor(private Service: ServicioService) { }
@@ -22,7 +23,17 @@ export class ModificarlistadocComponent implements OnInit {
         console.log('funciona');
       }
       );
+
+      this.Service.getlistadocursostabla()
+    .subscribe(async (data) => {
+      this.listad = data; 
+      console.log(data);
+      console.log('funciona');
+    }
+    );
   }
+
+  
 
   }
 

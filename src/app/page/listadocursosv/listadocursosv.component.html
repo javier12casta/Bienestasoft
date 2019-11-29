@@ -16,7 +16,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let ser of servic">
+      <tr *ngFor="let ser of listad">
     
         <th scope="row">{{ser.idListadoCursos}}</th>
         <td>{{ser.NombreAgenteE  }}</td>
@@ -34,22 +34,12 @@
           
         </td>
         <td >
+          {{ser.tipodocumento}}  
+        </td>
+        <td>
+            
           
-            <div *ngIf="ser.idTipoDocumento == 1">
-                Cedula de ciudadanía
-              </div>
-              <div *ngIf="ser.idTipoDocumento == 2">
-                  Cedula de Extranjeria
-              </div>
-              <div *ngIf="ser.idTipoDocumento == 3">
-                  Registro Civil 
-                </div>
-                <div *ngIf="ser.idTipoDocumento == 4">
-                    Tarjeta de Identidad
-                  </div>
-          
-         </td>
-        <td>{{ser.idBenefiarios }}</td>
+          {{ser.nombrecompleto }}</td>
       </tr>
 
     </tbody>

@@ -3,6 +3,7 @@ import { ServicioService } from '../../servicio.service';
 import { Listadocursos } from '../../interfaces/listadocursos';
 import * as jspdf from 'jspdf'; 
 import html2canvas from 'html2canvas';
+import { Listadocursost } from 'src/app/interfaces/listadocursost';
 
 @Component({
   selector: 'app-reportelistadocursos',
@@ -12,6 +13,7 @@ import html2canvas from 'html2canvas';
 export class ReportelistadocursosComponent implements OnInit {
 
   listadoc: Listadocursos[] = [];
+  listad: Listadocursost[] = [];
 
   constructor(private Service: ServicioService) { }
 
@@ -24,6 +26,14 @@ export class ReportelistadocursosComponent implements OnInit {
         console.log('funciona');
       }
       );
+
+      this.Service.getlistadocursostabla()
+    .subscribe(async (data) => {
+      this.listad = data; 
+      console.log(data);
+      console.log('funciona');
+    }
+    );
 
   }
 

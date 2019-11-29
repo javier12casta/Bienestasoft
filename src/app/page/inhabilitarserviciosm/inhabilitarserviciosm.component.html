@@ -7,7 +7,7 @@
           <thead class="thead-green">
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Estado Dato Maestro</th>
+              <th scope="col">Estado </th>
               <th scope="col">Modalidad</th>
               <th scope="col">Servicio</th>
               
@@ -16,7 +16,16 @@
           <tbody>
             <tr *ngFor="let cen of serviciom">
               <th scope="row">{{cen.idListasMaestro}}</th>
-              <td>{{cen.EstadoDatoMaestro}}</td>
+              <td>
+                  <div *ngIf="cen.EstadoDatoMaestro == 1">
+                      Habilitado
+                    </div>
+                    <div *ngIf="cen.EstadoDatoMaestro == 0">
+                      Deshabilitado
+                    </div>
+                
+                
+               </td>
               <td>{{cen.Modalidad}}</td>
               <td>{{cen.Servicio}}</td>
               <td>

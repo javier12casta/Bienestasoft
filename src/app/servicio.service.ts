@@ -45,6 +45,7 @@ import { Translado} from './interfaces/traslado';
 import { Acta} from './interfaces/acta';
 import { Biometrico } from './interfaces/biometrico';
 import { Centrozonalt } from './interfaces/centrozonalt';
+import { Listadocursost } from './interfaces/listadocursost';
 
 @Injectable({
   providedIn: 'root'
@@ -422,6 +423,11 @@ export class ServicioService {
   getlistadocursos() {
     const path = `${this.api}/listaC`;
     return this.http.get<[Listadocursos]>(path);
+  }
+
+  getlistadocursostabla() {
+    const path = `${this.api}/listaC/tablac`;
+    return this.http.get<[Listadocursost]>(path);
   }
 
   getlistadocursossid(id: string) {
