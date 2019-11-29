@@ -9,10 +9,10 @@
         <div class="form-group">
 
 
-          <h1>Salida para beneficiario icbf </h1>
+          <h1>Salida para beneficiario ICBF </h1>
           <h2></h2>
 
-          <span>Referencia Bienestarina</span>
+          <span>Referencia bienestarina</span>
           <h2></h2>
 
           <select name="idreferencia" class="select-css" style="width: 100%;" [(ngModel)]="sal.idTipoBienesterina"
@@ -22,7 +22,7 @@
 
           <br>
 
-          <span>Centro de distribucion de origen</span>
+          <span>Centro de distribución de origen</span>
           <h2></h2>
 
           <select name="idcentrodistribucion" class="select-css" style="width: 100%;"
@@ -32,7 +32,7 @@
 
           <h2></h2>
 
-          <span>Almacen de origen</span>
+          <span>Almacén de origen</span>
           <h2></h2>
 
           <select name="idalmacen" class="select-css" style="width: 100%;" [(ngModel)]="sal.idAlmacenes"
@@ -52,9 +52,9 @@
 
           <h2></h2>
 
-          <span>lote</span>
+          <span>Lote</span>
           <h2></h2>
-          <input type="text" class="form-control" [(ngModel)]="sal.lote" name="cane" placeholder="lote"
+          <input type="text" class="form-control" [(ngModel)]="sal.lote" name="cane" placeholder="Lote"
             class="form-control" id="inputen"  minlength="0" required="" class="form-control">
 
           <h2></h2>
@@ -80,36 +80,36 @@
           <span>Cantidad</span>
           <h2></h2>
           <input type="number" class="form-control" [(ngModel)]="sal.cantidad" name="cantidad" (keyup)="onKey($event)"
-            placeholder="Cantidad Entregada" class="form-control" id="inputen" required="" class="form-control">
+            placeholder="Cantidad" class="form-control" id="inputen" required="" class="form-control">
 
           <h2></h2>
 
           <div id="unidad" [hidden]="habilitado">
             <h2></h2>
-            <span>Capacidad liquida</span>
+            <span>Cantidad liquida</span>
             <h2></h2>
             <input type="number" class="form-control" [(ngModel)]="sal.Cantidad2" name="Cantidad2"
-              placeholder="Capacidad liquida" (keyup)="onKey2($event)" class="form-control" id="inputcap" minlength="0" required="" class="form-control">
+              placeholder="Cantidad líquida" (keyup)="onKey2($event)" class="form-control" id="inputcap" minlength="0" required="" class="form-control">
 
             <h2></h2>
           </div>
 
-          <span>Beneficiario icbf</span>
+          <span>Beneficiario ICBF</span>
           <h2></h2>
 
           <select name="idbenicbf" class="select-css" style="width: 100%;" [(ngModel)]="sal.idBeneficiarios"
-            options="options" placeholder="almacen" minlength="0" required="" class="form-control">
+            options="options" placeholder="" minlength="0" required="" class="form-control">
             <option *ngFor="let ud of ben" [value]="ud.idBeneficiarios">{{ud.PrimerNombre || ud.PrimerApellido}}
             </option>
           </select>
 
           <h2></h2>
 
-          <span>Acudiente icbf </span>
+          <span>Acudiente ICBF </span>
           <h2></h2>
 
           <select name="idacuicbf" class="select-css" style="width: 100%;" [(ngModel)]="sal.idAcudientes"
-            options="options" placeholder="almacen" minlength="0" required="" class="form-control">
+            options="options" placeholder="" minlength="0" required="" class="form-control">
             <option *ngFor="let ud of acu" [value]="ud.idAcudientes">{{ud.Nombres || ud.Apellidos}} </option>
           </select>
 

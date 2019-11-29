@@ -567,6 +567,10 @@ export class ServicioService {
     return this.http.get<[Salidacentro]>(path);
   }
 
+  getsalidacentroTabla() {
+    const path = `${this.api}/entregacentrod/tabla`;
+    return this.http.get<[Salidacentro]>(path);
+  }
   postsalidacentro(recep: Salidacentro) {
 
     const path = `${this.api}/entregacentrod`;
