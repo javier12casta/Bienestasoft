@@ -15,23 +15,24 @@ import { ServicioService } from '../../servicio.service';
 <table class="table">
     <thead class="thead-green">
       <tr>
-        <th scope="col">idUsuarios</th>
-        <th scope="col">Nombres</th>
-        <th scope="col">Apellidos</th>
-        <th scope="col">Estado</th>
-        <th scope="col">NumeroDocumento</th>
-        <th scope="col">FechaIngreso</th>
-        <th scope="col">NombreUsuarioSistema</th>
-        <th scope="col">Direccion</th>
-        <th scope="col">TelefonoFijo</th>
-        <th scope="col">TelefonoFijo2</th>
-        <th scope="col">TelefonoMovil</th>
-        <th scope="col">TelefonoMovil2</th>
-        <th scope="col">Email</th>
-        <th scope="col">idPersonalICBF</th>
-        <th scope="col">idUDS</th>
-        <th scope="col">idTipoDocumento</th>
-        <th scope="col">TipoUsuario</th>
+      <th scope="col">#</th>
+      <th scope="col">Nombres</th>
+      <th scope="col">Apellidos</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Numero documento</th>
+      <th scope="col">Fecha ingreso</th>
+      <th scope="col">Nombre usuario sistema</th>
+      <th scope="col">Dirección</th>
+      <th scope="col">Teléfono fijo</th>
+      <th scope="col">Teléfono fijo2</th>
+      <th scope="col">Teléfono movil</th>
+      <th scope="col">Teléfono movil2</th>
+      <th scope="col">Correo electrónico</th>
+      <th scope="col">UDS</th>
+      <th scope="col">Tipo documento</th>
+      <th scope="col">Tipo usuario</th>
+      <th scope="col">Centro zonal</th>
+      <th scope="col">Punto entrega</th>
       </tr>
     </thead>
     <tbody>
@@ -49,11 +50,11 @@ import { ServicioService } from '../../servicio.service';
         <td>{{usu.TelefonoMovil}}</td>
         <td>{{usu.TelefonoMovil2}}</td>
         <td>{{usu.Email}}</td>
-        <td>{{usu.idRolPersona}}</td>
-        <td>{{usu.idPersonalICBF}}</td>
         <td>{{usu.idUDS}}</td>
         <td>{{usu.idTipoDocumento}}</td>
         <td>{{usu.TipoUsuario}}</td>
+        <td>{{usu.idCentrosZonales}}</td>
+        <td>{{usu.idPuntoEntrega}}</td>
         <td>
           <button class="btn btn-primary" [routerLink]="['/inhabilitarusuariosi', usu.idUsuarios]">Inhabilitar</button>
         </td>
@@ -61,6 +62,12 @@ import { ServicioService } from '../../servicio.service';
     </tbody>
   </table>
  
+
+
+
+
+  
+
   `
 })
 export class Inhabilitarusuarios1Component implements OnInit {

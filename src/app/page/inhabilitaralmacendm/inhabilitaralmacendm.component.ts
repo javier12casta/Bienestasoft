@@ -47,10 +47,10 @@ export class InhabilitaralmacendmComponent implements OnInit {
 
   showMenssage(){
     Swal.fire({
-      title: 'Inhabilitado!',
-      text: 'almacen Inhabilitado',
+      title: 'Inhabilitado',
+      text: 'Almacen Inhabilitado',
       type: 'success',
-      confirmButtonText: 'Ok'
+      confirmButtonText: 'Entendido'
     }).then((result) => {
       if (result.value) {
         
@@ -62,10 +62,10 @@ export class InhabilitaralmacendmComponent implements OnInit {
 
   showMenssage1(){
     Swal.fire({
-      title: 'habilitado!',
-      text: 'almacen habilitado',
+      title: 'habilitado',
+      text: 'Almacen habilitado',
       type: 'success',
-      confirmButtonText: 'Ok'
+      confirmButtonText: 'Entendido'
     }).then((result) => {
       if (result.value) {
         

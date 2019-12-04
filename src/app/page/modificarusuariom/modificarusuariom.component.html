@@ -40,8 +40,8 @@
             <Option value="3">PA</Option>
           </select>
 
-          <input type="number" class="form-control" [(ngModel)]="usu.NumeroDocumento" name="numerodoc"
-            placeholder="numero Documento" class="form-control" id="inputdoc" minlength="0" required="">
+          <input type="text" class="form-control" [(ngModel)]="usu.NumeroDocumento" name="numerodoc"
+            placeholder="número documento" class="form-control" id="inputdoc" minlength="0" required="">
 
           <input type="text" class="form-control" [(ngModel)]="usu.Nombres" name="nombre" placeholder="Nombres"
             class="form-control" id="nom" minlength="0" required="">
@@ -55,20 +55,24 @@
           <input type="text" class="form-control" [(ngModel)]="usu.NombreUsuarioSistema" name="Usuario"
             placeholder="Usuario Sistema" class="form-control" id="usu" minlength="0" required="">
 
+            <input type="text" class="form-control" [(ngModel)]="usu.password" name="numerodoc"
+            placeholder="Contraseña" class="form-control" id="inputdoc" minlength="0" required="">
+
+
           <input type="text" class="form-control" [(ngModel)]="usu.Direccion" name="Nombredireccion"
-            placeholder="Direccion" class="form-control" minlength="0" required="">
+            placeholder="Dirección" class="form-control" minlength="0" required="">
 
           <input type="number" class="form-control" [(ngModel)]="usu.TelefonoFijo" name="telefonof1"
-            placeholder="Telefono fijo 1" class="form-control" minlength="0" required="">
+            placeholder="Teléfono fijo 1" class="form-control" minlength="0" required="">
 
           <input type="number" class="form-control" [(ngModel)]="usu.TelefonoFijo2" name="telefonof2"
-            placeholder="Telefono fijo 2" class="form-control" >
+            placeholder="Teléfono fijo 2" class="form-control" >
 
           <input type="number" class="form-control" [(ngModel)]="usu.TelefonoMovil" name="telefonom1"
-            placeholder="Telefono movil 1" class="form-control" minlength="0" required="">
+            placeholder="Teléfono movil 1" class="form-control" minlength="0" required="">
 
           <input type="number" class="form-control" [(ngModel)]="usu.TelefonoMovil2" name="telefonom2"
-            placeholder="Telefono movil 2" class="form-control" >
+            placeholder="Teléfono movil 2" class="form-control" >
 
           <input type="text" class="form-control" [(ngModel)]="usu.Email" name="email" placeholder="Email"
             class="form-control" minlength="0" required="">

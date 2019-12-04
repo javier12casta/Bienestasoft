@@ -88,8 +88,8 @@ export class UdsmComponent implements OnInit {
   //mensajes de creacion
   showMenssage() {
     Swal.fire({
-      title: 'Modificado!',
-      text: 'UDS modificado',
+      title: 'Modificado',
+      text: 'Uds modificado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {
@@ -105,8 +105,8 @@ export class UdsmComponent implements OnInit {
 
   showMenssage2() {
     Swal.fire({
-      title: 'Error!',
-      text: 'Error al modificar la UDS',
+      title: 'Error',
+      text: 'Error al modificar la Uds',
       type: 'error',
       confirmButtonText: 'Entendido'
     }).then((result) => {

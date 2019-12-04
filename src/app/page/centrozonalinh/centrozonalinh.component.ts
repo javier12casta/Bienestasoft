@@ -171,8 +171,8 @@ export class CentrozonalinhComponent implements OnInit {
   //mensajes de creacion
   showMenssage() {
     Swal.fire({
-      title: 'Habilitado!',
-      text: 'Centro Zonal habilitado',
+      title: 'Habilitado',
+      text: 'Centro zonal habilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((res) => {
@@ -186,7 +186,7 @@ export class CentrozonalinhComponent implements OnInit {
 
   showMenssage2() {
     Swal.fire({
-      title: 'Error!',
+      title: 'Error',
       text: 'Error al inhabilitar el centro zonal',
       type: 'error',
       confirmButtonText: 'Entendido'
@@ -194,7 +194,7 @@ export class CentrozonalinhComponent implements OnInit {
   }
   showMenssage3() {
     Swal.fire({
-      title: 'Error!',
+      title: 'Error',
       text: 'No es posible inhabilitar el centro zonal',
       type: 'error',
       confirmButtonText: 'Entendido'
@@ -202,7 +202,7 @@ export class CentrozonalinhComponent implements OnInit {
   }
   showMenssage4() {
     Swal.fire({
-      title: 'Inhabilitado!',
+      title: 'Inhabilitado',
       text: 'centro zonal inhabilitado',
       type: 'error',
       confirmButtonText: 'Entendido'

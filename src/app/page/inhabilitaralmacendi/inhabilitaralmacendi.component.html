@@ -6,14 +6,14 @@
   <table class="table">
     <thead class="thead-green">
       <tr>
-        <th scope="col">idAlmacenes</th>
-        <th scope="col">NumeroExterno </th>
-        <th scope="col">NombreCentroDistribucion</th>
+        <th scope="col">#</th>
+        <th scope="col">Número externo </th>
+        <th scope="col">Nombre almacén </th>
         <th scope="col">Responsable</th>
-        <th scope="col"> Capacidad</th>
-        <th scope="col">UnidadMedida</th>
+        <th scope="col"> Cantidad</th>
+        <th scope="col">Unidad medida</th>
         <th scope="col">Estado</th>
-        <th scope="col">idCentroDistribucion</th>
+        <th scope="col">Centro distribución</th>
        
       </tr>
     </thead>
@@ -21,11 +21,21 @@
             <tr *ngFor="let cen of almac">
                     <th scope="row">{{cen.idAlmacenes}}</th>
                     <td>{{cen.NumeroExterno}}</td>
-                    <td>{{cen.NombreCentroDistribucion}}</td>
+                    <td>{{cen.Nombre}}</td>
                     <td>{{cen.Responsable}}</td>
           <td>{{cen.Capacidad}}</td>
           <td>{{cen.UnidadMedida}}</td>
-          <td>{{cen.Estado}}</td>
+          <td>
+            
+              <div *ngIf="cen.Estado == 1">
+                  Habilitado
+                </div>
+                <div *ngIf="cen.Estado== 0">
+                  Deshabilitado
+                </div>
+                  
+                
+                </td>
           <td>{{cen.idCentroDistribucion}}</td>       
           <td>
             <button class="btn btn-primary" [routerLink]="['/inhabilitaralmacenm', cen.idAlmacenes]">inhabilitar</button>

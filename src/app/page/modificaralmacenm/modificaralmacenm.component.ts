@@ -66,10 +66,10 @@ export class ModificaralmacenmComponent implements OnInit {
 
   showMenssage(){
     Swal.fire({
-      title: 'Modificado!',
-      text: 'Almacen Modificado',
+      title: 'Modificado',
+      text: 'Almacen modificado',
       type: 'success',
-      confirmButtonText: 'Ok'
+      confirmButtonText: 'Entendido'
     }).then((result) => {
       if (result.value) {
         

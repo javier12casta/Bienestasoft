@@ -21,14 +21,14 @@ import { Almacen} from '../../interfaces/almacen';
 <table class="table">
     <thead class="thead-green">
       <tr>
-        <th scope="col">idAlmacenes </th>
-        <th scope="col">NumeroExterno </th>
-        <th scope="col">Nombre</th>
+        <th scope="col"># </th>
+        <th scope="col">Número externo </th>
+        <th scope="col">Nombre almacén </th>
         <th scope="col">Responsable </th>
-        <th scope="col">Capacidad </th>
-        <th scope="col">UnidadMedida </th>
+        <th scope="col">Cantidad </th>
+        <th scope="col">Unidad medida </th>
         <th scope="col">Estado </th>
-        <th scope="col">idCentroDistribucion</th>
+        <th scope="col">Centro distribución</th>
         
       </tr>
     </thead>
@@ -40,7 +40,16 @@ import { Almacen} from '../../interfaces/almacen';
         <td>{{al.Responsable }}</td>
         <td>{{al.Capacidad }}</td>
         <td>{{al.UnidadMedida }}</td>
-        <td>{{al.Estado }}</td>
+        <td>
+        
+        <div *ngIf="al.Estado == 1">
+          Habilitado
+        </div>
+        <div *ngIf="al.Estado== 0">
+          Deshabilitado
+        </div>
+        
+        </td>
         <td>{{al.idCentroDistribucion }}</td>
             
       </tr>

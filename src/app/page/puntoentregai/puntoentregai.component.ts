@@ -62,7 +62,7 @@ export class PuntoentregaiComponent implements OnInit {
   //mensajes de creacion
   showMenssage() {
     Swal.fire({
-      title: 'Creado!',
+      title: 'Creado',
       text: 'Punto de entrega Creado',
       type: 'success',
       confirmButtonText: 'Entendido'
@@ -78,7 +78,7 @@ export class PuntoentregaiComponent implements OnInit {
 
   showMenssage2() {
     Swal.fire({
-      title: 'Error!',
+      title: 'Error',
       text: 'Error al crear el punto de entrega',
       type: 'error',
       confirmButtonText: 'Entendido'
