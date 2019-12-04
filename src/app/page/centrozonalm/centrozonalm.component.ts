@@ -8,6 +8,7 @@ import { Comuna } from '../../interfaces/comuna';
 import { Regional } from '../../interfaces/regional';
 import { Barrio } from '../../interfaces/barrio';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-centrozonalm',
@@ -22,6 +23,7 @@ export class CentrozonalmComponent implements OnInit {
   constructor(
     private activeRoute: ActivatedRoute,
     private Service: ServicioService,
+    private router:Router
   ) {
   } 
 
@@ -94,7 +96,14 @@ export class CentrozonalmComponent implements OnInit {
         text: 'Centro zonal modificado',
         type: 'success',
         confirmButtonText: 'Entendido'
+      }).then((result) => {
+        if (result.value) {
+          
+          this.router.navigate(['/centrozonal']);
+      
+        }
       });
+    
     }
   //Mensaje de error
   

@@ -80,7 +80,7 @@ export class UdsiComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         
-        this.router.navigate(['/uds']);
+        this.router.navigate(['/udsv']);
     
       }
     });
@@ -96,7 +96,7 @@ export class UdsiComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         
-        this.router.navigate(['/uds']);
+        this.router.navigate(['/udsv']);
     
       }
     });

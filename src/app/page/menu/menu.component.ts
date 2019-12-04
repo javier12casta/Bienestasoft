@@ -14,7 +14,6 @@ import { Usuarios } from 'src/app/interfaces/usuarios';
 })
 export class MenuComponent implements OnInit {
 
-
   mobileQuery: MediaQueryList;
 
   user: Usuarios = {
@@ -118,7 +117,7 @@ logout()
     var centrostr = this.permisos.perCentros;
     var array = centrostr.split("");
     if (array[0] == "1") {
-      var create = { name: "Crear centro zonal", route: "/centrozonali", icon: "public"  };
+      var create = { name: "Crear centro zonal", route: "/centrozonaliv", icon: "public"  };
       this.estructura.push(create);
       if (array[1] == "1") {
         var create = { name: "Modificar centro zonal", route: "/centrozonal", icon: "public" };
@@ -378,7 +377,7 @@ logout()
     //console.log('carga', array);
 
     if (array[0] == "1") {
-      var create = { name: "Crear punto entrega", route: "/puntoentregai", icon: "public" };
+      var create = { name: "Crear punto entrega", route: "/puntoentregav", icon: "public" };
       this.estructura.push(create);
       if (array[1] == "1") {
         var create = { name: "Modificar punto entrega", route: "/puntoentrega", icon: "public" };
@@ -676,7 +675,7 @@ logout()
     //console.log('carga', array);
 
     if (array[0] == "1") {
-      var create = { name: "Crear UDS", route: "/udsi", icon: "public" };
+      var create = { name: "Crear UDS", route: "/udsv", icon: "public" };
       this.estructura.push(create);
 
       if (array[1] == "1") {
@@ -949,7 +948,7 @@ this.estructura.push(create);
     // console.log('carga', array);
 
     if (array[0] == "1") {
-      var create = { name: "Crear usuarios", route: "/usuariosv", icon: "face" };
+      var create = { name: "Crear usuarios", route: "/usuarios", icon: "face" };
       this.Usuarios.push(create);
 
       if (array[1] == "1") {
@@ -2285,7 +2284,7 @@ var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "li
   //console.log('carga', array);
 
   if (array[0] == "1") {
-     var create = { name: "Crear rol", route: "/rol", icon: "face" };
+     var create = { name: "Crear rol", route: "/rolv", icon: "face" };
      this.rol.push(create);
    if (array[1] == "1") {
      var create = { name: "Modificar rol", route: "/roli", icon: "face" };
@@ -2814,7 +2813,7 @@ var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "li
   //console.log('carga', array);
 
   if (array[0] == "1") {
-     var create = {name: "Crear almacén", route:"/almacenc", icon:"store"};
+     var create = {name: "Crear almacén", route:"/crearalmacen", icon:"store"};
    this.almacen.push(create);
 
    if (array[1] == "1") {

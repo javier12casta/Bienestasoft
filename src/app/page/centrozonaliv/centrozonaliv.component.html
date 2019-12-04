@@ -1,1 +1,44 @@
-<p>centrozonaliv works!</p>
+<nav class="navbar navbar-success bg-success">
+    <div>
+            <button class="btn btn-dark" routerLink="/menu">Volver</button>   
+    </div>
+
+    <div>
+            <button class="btn btn-dark" routerLink="/centrozonali">Crear</button>   
+    </div>
+   
+  </nav>
+  
+  <table class="table">
+    <thead class="thead-green">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre centro zonal</th>
+        <th scope="col">Municipios</th>
+        <th scope="col">Comunas</th>
+        <th scope="col">Código externo JCZ</th>
+        <th scope="col">código externo ICBF centro zonal</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Regional</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cen of centros">
+        <th scope="row">{{cen.idCentrosZonales}}</th>
+        <td>{{cen.NombreCentroZonal}}</td>
+        <td>{{cen.Municipio}}</td>
+        <td>{{cen.Comuna}}</td>
+        <td>{{cen.CodigoExternoJcz}}</td>
+        <td>{{cen.CodigoExternoCZ}}</td>
+        <td>
+          <div *ngIf="cen.Estado == 1">
+            Habilitado
+          </div>
+          <div *ngIf="cen.Estado== 0">
+            Deshabilitado
+          </div>
+        </td>
+        <td>{{cen.Regional}}</td>
+      </tr>
+    </tbody>
+  </table>

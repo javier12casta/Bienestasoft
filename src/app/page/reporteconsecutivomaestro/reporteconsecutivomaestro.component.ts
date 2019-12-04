@@ -1,29 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../../servicio.service';
-import { Datosvarios } from '../../interfaces/datosvarios';
+import { ActivatedRoute } from '@angular/router';
+import { Consecutivomaestro } from '../../interfaces/consecutivomaestro';
 import * as jspdf from 'jspdf'; 
 import html2canvas from 'html2canvas';
 
 @Component({
-  selector: 'app-reportedatosnutricionales',
-  templateUrl: './reportedatosnutricionales.component.html',
-  styleUrls: ['./reportedatosnutricionales.component.css']
+  selector: 'app-reporteconsecutivomaestro',
+  templateUrl: './reporteconsecutivomaestro.component.html',
+  styleUrls: ['./reporteconsecutivomaestro.component.css']
 })
-export class ReportedatosnutricionalesComponent implements OnInit {
+export class ReporteconsecutivomaestroComponent implements OnInit {
 
-  datosv: Datosvarios[] = [];
+  unidadt: Consecutivomaestro []= [];
 
-  constructor(private Service: ServicioService) { }
+  constructor(private Service: ServicioService,) { }
 
   ngOnInit() {
 
-    this.Service.getdatosvarios()
-      .subscribe(async (data) => {
-        this.datosv = data;
-        console.log(data);
-        console.log('funciona');
-      }
-      );
+    this.Service.getconsecutivomaestro()
+    .subscribe( async (res)=> {
+      this.unidadt = res
+    }, err => {
+      console.log(err);
+    });
 
 
   }
@@ -42,7 +42,7 @@ export class ReportedatosnutricionalesComponent implements OnInit {
     let pdf = new jspdf('p', 'mm', 'a4'); // A4 size page of PDF
     var position = 0;
     pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
-    pdf.save('reportedatosnutricionales.pdf'); // Generated PDF
+    pdf.save('reporteconsecutivomaestro.pdf'); // Generated PDF
     });
        
     

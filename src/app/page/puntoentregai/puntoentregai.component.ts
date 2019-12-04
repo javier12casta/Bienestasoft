@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Centrozonal } from '../..//interfaces/centrozonal';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-puntoentregai',
   templateUrl: './puntoentregai.component.html',
@@ -69,7 +70,7 @@ export class PuntoentregaiComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         
-        this.router.navigate(['/puntoentrega']);
+        this.router.navigate(['/puntoentregav']);
     
       }
     });
