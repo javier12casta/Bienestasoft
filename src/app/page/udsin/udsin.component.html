@@ -5,36 +5,44 @@
   <table class="table">
       <thead class="thead-green">
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">Nombre UDS</th>
-          <th scope="col">Codigo Interno UDS</th>
-          <th scope="col">Direccion</th> 
-          <th scope="col">Responsable</th>
-          <th scope="col">Estado</th>
-          <th scope="col">Telefono</th>
-          <th scope="col">Codigo Externo UDS</th>
-          <th scope="col"># punto de entrega</th>
-          <th scope="col"># centro zonal</th>
-          <th scope="col">Localidad, Municipio, Vereda</th>
-          <th scope="col">Barrio</th>
-          <th scope="col">Inhabilitar</th>
+            <th scope="col">#</th>
+            <th scope="col">Nombre UDS</th>
+            <th scope="col">Código interno UDS</th>
+            <th scope="col">Dirección</th> 
+            <th scope="col">Responsable</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Teléfono</th>
+            <th scope="col">Código externo UDS</th>
+            <th scope="col">punto de entrega</th>
+            <th scope="col">centro zonal</th>
+            <th scope="col">Localidad, municipio, vereda</th>
+      
          
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let uni of unidad">
-          <td>{{uni.idUDS}}</td>
-          <td>{{uni.NombreUDS}}</td>
-          <td>{{uni.CodigoInternoUDS}}</td>
-          <td>{{uni.Direccion}}</td>
-          <td>{{uni.ReponsableUDS}}</td>
-          <td>{{uni.Estado}}</td>
-          <td>{{uni.Telefono}}</td>
-          <td>{{uni.CodigoExternoUDS}}</td>
-          <td>{{uni.idPuntoEntrega}}</td>
-          <td>{{uni.idCentrosZonales}}</td>
-          <td>{{uni.Comuna}}</td>
-          <td>{{uni.Barrio}}</td>
+        <tr *ngFor="let uni of unidadt">
+            <td>{{uni.idUDS}}</td>
+            <td>{{uni.NombreUDS}}</td>
+            <td>{{uni.CodigoInternoUDS}}</td>
+            <td>{{uni.Direccion}}</td>
+            <td>{{uni.ReponsableUDS}}</td>
+            <td>
+              
+                <div *ngIf="uni.Estado == 1">
+                    Habilitado
+                  </div>
+                  <div *ngIf="uni.Estado== 0">
+                    Deshabilitado
+                  </div>
+              
+              </td>
+            <td>{{uni.Telefono}}</td>
+            <td>{{uni.CodigoExternoUDS}}</td>
+            <td>{{uni.NombrePE}}</td>
+            <td>{{uni.NombreCentroZonal}}</td>
+            <td>{{uni.Comuna}}</td>
+         
           <td>
             <button class="btn btn-primary" [routerLink]="['/inhabilitaruds', uni.idUDS]">Inhabilitar</button>
           </td>

@@ -165,7 +165,7 @@ export class PuntoentregainhComponent implements OnInit {
 
   showMenssage() {
     Swal.fire({
-      title: 'Habilitado!',
+      title: 'Habilitado',
       text: 'Punto de entrega Habilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
@@ -182,7 +182,7 @@ export class PuntoentregainhComponent implements OnInit {
 
   showMenssage2() {
     Swal.fire({
-      title: 'Error!',
+      title: 'Error',
       text: 'Error al modificar el punto de entrega',
       type: 'error',
       confirmButtonText: 'Entendido'
@@ -194,7 +194,7 @@ export class PuntoentregainhComponent implements OnInit {
   }
   showMenssage4() {
     Swal.fire({
-      title: 'Inhabilitado!',
+      title: 'Inhabilitado',
       text: 'Punto de entrega inhabilitado',
       type: 'error',
       confirmButtonText: 'Entendido'
@@ -210,7 +210,7 @@ export class PuntoentregainhComponent implements OnInit {
 
   showMenssage3() {
     Swal.fire({
-      title: 'Error!',
+      title: 'Error',
       text: 'No es posible inhabilitar el punto de entrega',
       type: 'error',
       confirmButtonText: 'Entendido'

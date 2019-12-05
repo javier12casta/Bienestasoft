@@ -19,22 +19,22 @@ import { ServicioService } from '../../servicio.service';
       <th scope="col">Nombres</th>
       <th scope="col">Apellidos</th>
       <th scope="col">Estado</th>
-      <th scope="col">NumeroDocumento</th>
-      <th scope="col">FechaIngreso</th>
-      <th scope="col">NombreUsuarioSistema</th>
+      <th scope="col">Número documento</th>
+      <th scope="col">Fecha ingreso</th>
+      <th scope="col">Nombre usuario sistema</th>
       <th scope="col">password</th>
-      <th scope="col">Direccion</th>
-      <th scope="col">TelefonoFijo</th>
-      <th scope="col">TelefonoFijo2</th>
-      <th scope="col">TelefonoMovil</th>
-      <th scope="col">TelefonoMovil2</th>
-      <th scope="col">Email</th>
+      <th scope="col">Dirección</th>
+      <th scope="col">Teléfono fijo</th>
+      <th scope="col">Telefono fijo2</th>
+      <th scope="col">Telefono movil</th>
+      <th scope="col">Telefono movil2</th>
+      <th scope="col">Correo electrónico</th>
       <th scope="col">UDS</th>
-      <th scope="col">TipoDocumento</th>
-      <th scope="col">TipoUsuario</th>
+      <th scope="col">Tipo documento</th>
+      <th scope="col">Tipo usuario</th>
       
-      <th scope="col">centros zonales</th>
-      <th scope="col">punto entrega</th>
+      <th scope="col">Centro zonal</th>
+      <th scope="col">Punto entrega</th>
       </tr>
     </thead>
     <tbody>

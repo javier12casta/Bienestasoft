@@ -81,7 +81,7 @@ export class PuntoentregamComponent implements OnInit {
   //mensajes de creacion
   showMenssage() {
     Swal.fire({
-      title: 'Modificado!',
+      title: 'Modificado',
       text: 'Punto de entrega modificado',
       type: 'success',
       confirmButtonText: 'Entendido'
@@ -95,7 +95,7 @@ export class PuntoentregamComponent implements OnInit {
 
   showMenssage2() {
     Swal.fire({
-      title: 'Error!',
+      title: 'Error',
       text: 'Error al modificar el punto de entrega',
       type: 'error',
       confirmButtonText: 'Entendido'

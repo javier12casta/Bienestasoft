@@ -128,14 +128,14 @@ export class InhabilitarudsComponent implements OnInit {
 
   showMenssage() {
     Swal.fire({
-      title: 'Inhabilitado!',
-      text: 'uds Inhabilitado',
+      title: 'Inhabilitado',
+      text: 'Uds Inhabilitado',
       type: 'success',
-      confirmButtonText: 'Ok'
+      confirmButtonText: 'Entendido'
     }).then((result) => {
       if (result.value) {
 
-        this.router.navigate(['/uds']);
+        this.router.navigate(['/udsin']);
 
       }
     });
@@ -143,14 +143,14 @@ export class InhabilitarudsComponent implements OnInit {
 
   showMenssage1() {
     Swal.fire({
-      title: 'habilitado!',
-      text: 'uds habilitado',
+      title: 'habilitado',
+      text: 'Uds habilitado',
       type: 'success',
-      confirmButtonText: 'Ok'
+      confirmButtonText: 'Entendido'
     }).then((result) => {
       if (result.value) {
 
-        this.router.navigate(['/uds']);
+        this.router.navigate(['/udsin']);
 
       }
     });
@@ -165,7 +165,7 @@ export class InhabilitarudsComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
 
-        this.router.navigate(['/uds']);
+        this.router.navigate(['/udsin']);
 
       }
     });

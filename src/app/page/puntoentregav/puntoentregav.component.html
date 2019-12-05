@@ -1,0 +1,51 @@
+<nav class="navbar navbar-success bg-success">
+    <div>
+        <button class="btn btn-dark" routerLink="/menu"> Volver </button>
+    </div>
+        <div>
+
+        <button class="btn btn-dark" routerLink="/puntoentregai"> Crear </button>
+
+        </div>
+      </nav>
+      
+      <table class="table">
+        <thead class="thead-green">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Centro zonal</th>
+            <th scope="col">Nombre PE</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Código externo PE</th>
+            <th scope="col">Código interno PE</th>
+            <th scope="col">Responsable</th>
+            <th scope="col">Comuna o vereda</th>
+            <th scope="col">Dirección PE</th>
+            <th scope="col">Barrio PE</th>
+            <th scope="col">Teléfono</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pun of puntot">
+            <th scope="row">{{pun.idPuntoEntrega}}</th>
+            <td>{{pun.NombreCentroZonal}}</td>
+            <td>{{pun.NombrePE}}</td>
+            <td>
+              <div *ngIf="pun.Estado == 1">
+                Habilitado
+              </div>
+              <div *ngIf="pun.Estado== 0">
+                Deshabilitado
+              </div>
+            </td>
+            <td>{{pun.CodigoExternoPE}}</td>
+            <td>{{pun.CodigoInternoPE}}</td>
+            <td>{{pun.Responsable}}</td>
+            <td>{{pun.Comuna}}</td>
+            <td>{{pun.Direccion}}</td>
+            <td>{{pun.BarrioPE}}</td>
+            <td>{{pun.Telefono}}</td>
+            
+          </tr>
+        </tbody>
+      </table>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Uds } from 'src/app/interfaces/uds';
 import { ServicioService } from 'src/app/servicio.service';
+import { Udst} from '../../interfaces/udst';
 
 @Component({
   selector: 'app-udsin',
@@ -10,6 +11,7 @@ import { ServicioService } from 'src/app/servicio.service';
 export class UdsinComponent implements OnInit {
 
   unidad: Uds []= [];
+  unidadt: Udst []= [];
   
   constructor(
     private Service: ServicioService,
@@ -23,6 +25,14 @@ export class UdsinComponent implements OnInit {
     }, err => {
       console.log(err);
     });
+
+    this.Service.getUdsTabla()
+    .subscribe( async (res)=> {
+      this.unidadt = res
+    }, err => {
+      console.log(err);
+    });
+
   }
 
 }

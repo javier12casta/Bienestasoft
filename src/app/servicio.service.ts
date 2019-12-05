@@ -55,6 +55,9 @@ import { AcudientesA } from './interfaces/AcudienteA';
 import { Recepciont } from './interfaces/recepciont';
 import { Trasladost } from './interfaces/trasladost';
 import { Recuentoinventariot } from './interfaces/recuentoinventariot';
+import { Puntoentregat } from './interfaces/puntoentregat';
+import {Udst } from './interfaces/udst';
+import {Consecutivomaestro } from './interfaces/consecutivomaestro';
 
 
 @Injectable({
@@ -247,6 +250,12 @@ export class ServicioService {
   getPuntoid(id: string) {
     return this.http.get(`${this.api}/punto/${id}`);
   }
+
+  getPuntoTabla() {
+    const path = `${this.api}/punto/tablap`;
+    return this.http.get<[Puntoentregat]>(path);
+  }
+
   //----Metodo Crear
   postPunto(punto: Puntoentrega) {
     //const path = ;
@@ -474,6 +483,11 @@ export class ServicioService {
   }
   getUdsid(id: string) {
     return this.http.get(`${this.api}/uds/${id}`);
+  }
+
+  getUdsTabla() {
+    const path = `${this.api}/uds/tablau`;
+    return this.http.get<[Udst]>(path);
   }
 
   getUds() {
@@ -711,6 +725,11 @@ export class ServicioService {
   gethuella(){
     const path = `${this.api}/biometrico`;
     return this.http.get<[Biometrico]>(path);
+  }
+
+  getconsecutivomaestro(){
+    const path = `${this.api}/consecutivoM`;
+    return this.http.get<[Consecutivomaestro]>(path);
   }
 
 

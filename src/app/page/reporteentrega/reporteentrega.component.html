@@ -6,22 +6,22 @@
     <thead class="thead-green">
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Centro Zonal</th>
+        <th scope="col">Centro zonal</th>
         <th scope="col">Nombre PE</th>
         <th scope="col">Estado</th>
-        <th scope="col">Codigo Externo PE</th>
-        <th scope="col">Codigo Interno PE</th>
+        <th scope="col">Código externo PE</th>
+        <th scope="col">Código interno PE</th>
         <th scope="col">Responsable</th>
-        <th scope="col">Comuna o Vereda</th>
-        <th scope="col">Direccion PE</th>
+        <th scope="col">Comuna o vereda</th>
+        <th scope="col">Dirección PE</th>
         <th scope="col">Barrio PE</th>
-        <th scope="col">Telefono</th>
+        <th scope="col">Teléfono</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let pun of punto">
+      <tr *ngFor="let pun of puntot">
         <th scope="row">{{pun.idPuntoEntrega}}</th>
-        <td>{{pun.idCentrosZonales}}</td>
+        <td>{{pun.NombreCentroZonal}}</td>
         <td>{{pun.NombrePE}}</td>
         <td>
           <div *ngIf="pun.Estado == 1">

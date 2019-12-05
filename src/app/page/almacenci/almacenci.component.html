@@ -6,17 +6,17 @@
   <div class="card" padding>
     <div class="card-body" padding>
       <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
-        <h1>Crear Almacen </h1>
+        <h1>Crear almacen </h1>
         <div class="form-group">
 
-          <span>Numero Externo</span>
+          <span>Número externo</span>
           <h2></h2>
           <input type="number" class="form-control" [(ngModel)]="x.NumeroExterno " name="numeroex"
-            placeholder="numero Externo" class="form-control" id="inputex" minlength="0" required="">
+            placeholder="Número externo" class="form-control" id="inputex" minlength="0" required="">
 
           <h2></h2>
 
-          <span>Nombre</span>
+          <span>Nombre almacén</span>
           <h2></h2>
           <input type="text" class="form-control" [(ngModel)]="x.Nombre" name="nombre" placeholder="Nombre"
             class="form-control" id="inputnom" minlength="0" required="">
@@ -35,7 +35,7 @@
           </select>
           <h2></h2>
           
-          <span>Capacidad</span>
+          <span>Cantidad</span>
           <h2></h2>
           <input type="number" class="form-control" [(ngModel)]="x.Capacidad" name="cap" placeholder="Capacidad"
             class="form-control" id="inputcap" minlength="0" required="">
@@ -45,7 +45,7 @@
           
           <div id="unidad" hidden [hidden]="habilitado">
             <h2></h2>
-            <span>Capacidad liquida</span>
+            <span>Capacidad liquída</span>
             <h2></h2>
             <input type="number" class="form-control" [(ngModel)]="x.Capacidad2" name="Capacidad2" placeholder="Capacidad 2"
               class="form-control" id="inputcap" minlength="0" required="">
@@ -54,7 +54,7 @@
           </div>
 
 
-          <span>Estado del dato Maestro</span>
+          <span>Estado del dato maestro</span>
           <h2></h2>
 
           <select name="estadomaestro" [(ngModel)]="x.Estado" class="select-css" minlength="0" required="" class="form-control">
@@ -64,7 +64,7 @@
 
           <h2></h2>
 
-          <span>Ceentro de distribucion</span>
+          <span>Centro de distribución</span>
           <h2></h2>
 
           <select name="idRegional" class="select-css" style="width: 100%;" [(ngModel)]="x.idCentroDistribucion"

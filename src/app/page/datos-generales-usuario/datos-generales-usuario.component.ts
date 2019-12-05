@@ -102,10 +102,10 @@ this.showMenssage3();
 
    showMenssage(){
     Swal.fire({
-      title: 'Creado!',
-      text: 'Usuario Creado',
+      title: 'Creado',
+      text: 'Usuario creado',
       type: 'success',
-	  confirmButtonText: 'Ok'
+	  confirmButtonText: 'Entendido'
 	}).then((result) => {
 		if (result.value) {
 		  

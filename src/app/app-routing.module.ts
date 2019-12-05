@@ -166,6 +166,13 @@ import { UdsinComponent } from './page/udsin/udsin.component';
 import { RolinComponent } from './page/rolin/rolin.component';
 import { RolinhComponent } from './page/rolinh/rolinh.component';
 import { RolmComponent } from './page/rolm/rolm.component';
+import { CentrozonalivComponent } from './page/centrozonaliv/centrozonaliv.component';
+import { PuntoentregavComponent } from './page/puntoentregav/puntoentregav.component';
+import { UdsvComponent } from './page/udsv/udsv.component';
+import { RolvComponent } from './page/rolv/rolv.component';
+import { CrearalmacenComponent} from './page/crearalmacen/crearalmacen.component';
+import { ConsecutivomaestrovComponent} from './page/consecutivomaestrov/consecutivomaestrov.component';
+import { ReporteconsecutivomaestroComponent} from './page/reporteconsecutivomaestro/reporteconsecutivomaestro.component';
 
 const routes: Routes = [
   {path:'', component: LoginComponent},
@@ -354,9 +361,16 @@ const routes: Routes = [
   {path:'reportentregacentrodistribucion', component: ReportesalidacentrodComponent},
   {path:'reporteentregaconsumo', component:ReportesalidaconsumoiComponent },
   {path:'reporteentregabeneficiario', component:  ReportesalidabeneficiarioComponent },
+  {path:'centrozonaliv', component:   CentrozonalivComponent },
+  {path:'puntoentregav', component:   PuntoentregavComponent },
+  {path:'udsv', component:  UdsvComponent },
+  {path:'rolv', component:  RolvComponent },
+  {path:'crearalmacen', component:   CrearalmacenComponent },
+  {path:'consecutivomaestrov', component:    ConsecutivomaestrovComponent },
+  {path:'reporteconsecutivomaestro', component:   ReporteconsecutivomaestroComponent},
 
   
-
+ 
 ];
 
 @NgModule({

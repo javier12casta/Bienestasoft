@@ -821,7 +821,7 @@ export class PermisosComponent implements OnInit {
     }).then((res) => {
       if (res.value) {
         console.log('confirmed');
-        this.router.navigate(['/roli']);
+        this.router.navigate(['/rolv']);
       }
     });
   }

@@ -8,7 +8,7 @@
       <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
         <div class="form-group">
           <!--Select 2 Centro Zonal-->
-          <label >Centro Zonal</label>
+          <label >Centro zonal</label>
           <select name="idCentrosZonales" placeholder="Centro Zonal" class="form-control" [(ngModel)]="puntos.idCentrosZonales">
             <option *ngFor="let cen of centros" [value]="cen.idCentrosZonales"> {{cen.NombreCentroZonal}}</option>
           </select>
@@ -22,10 +22,10 @@
           <input type="text" class="form-control" name="NombrePE" placeholder="Nombre punto de entrega" [(ngModel)]="puntos.NombrePE" minlength="0" required="">
  
            
-          <label>Codigo Externo PE</label>
+          <label>Código externo PE</label>
           <input type="number" class="form-control" name="CodigoExternoPE" placeholder="Codigo externo PE" [(ngModel)]="puntos.CodigoExternoPE" minlength="0" required="">
          
-          <label> CodigoInternoPE </label>
+          <label>Código interno PE </label>
           <input type="text" class="form-control" name="CodigoInternoPE" placeholder="Codigo interno PE" [(ngModel)]="puntos.CodigoInternoPE" minlength="0" required="">
           
           <label>Responsable</label>
@@ -34,13 +34,13 @@
           <label> Comuna o vereda </label>
           <input type="text" class="form-control" name="Comuna" placeholder="Comuna o vereda" [(ngModel)]="puntos.Comuna" minlength="0" required="">
           
-          <label>Direccion PE</label>
+          <label>Dirección PE</label>
           <input type="text" class="form-control" name="Direccion" placeholder="Direccion PE" [(ngModel)]="puntos.Direccion" minlength="0" required="">
           
           <label>Barrio PE</label>
           <input type="text" class="form-control" name="BarrioPE" placeholder="Barrio PE" [(ngModel)]="puntos.BarrioPE" minlength="0" required="">
             
-          <label>Telefono</label>
+          <label>Teléfono</label>
           <input type="tel" class="form-control" name="Telefono" placeholder="Telefono PE" [(ngModel)]="puntos.Telefono" minlength="0" required="">
          
         </div>

@@ -15,14 +15,14 @@ import { ServicioService } from '../../servicio.service';
 <table class="table">
     <thead class="thead-green">
       <tr>
-        <th scope="col">idAlmacenes</th>
-        <th scope="col">NumeroExterno</th>
-        <th scope="col">Nombre</th>
+        <th scope="col">#</th>
+        <th scope="col">Número externo</th>
+        <th scope="col">Nombre almacén</th>
         <th scope="col">Responsable</th>
-        <th scope="col">Capacidad</th>
-        <th scope="col">UnidadMedida</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Unidad medida</th>
         <th scope="col">Estado</th>
-        <th scope="col">idCentroDistribucion</th>
+        <th scope="col">Centro Distribución</th>
        
       </tr>
     </thead>
@@ -34,7 +34,17 @@ import { ServicioService } from '../../servicio.service';
         <td>{{usu.Responsable}}</td>
         <td>{{usu.Capacidad}}</td>
         <td>{{usu.UnidadMedida}}</td>
-        <td>{{usu.Estado}}</td>
+        <td>
+        
+        <div *ngIf="usu.Estado == 1">
+        Habilitado
+      </div>
+      <div *ngIf="usu.Estadoo== 0">
+        Deshabilitado
+      </div>
+        
+        
+        </td>
         <td>{{usu.idCentroDistribucion}}</td>    
         <td>
           <button class="btn btn-primary" [routerLink]="['/modificaralmacenm', usu.idAlmacenes]">Modificar</button>

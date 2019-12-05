@@ -1,0 +1,36 @@
+<nav class="navbar navbar-success bg-success">
+    <div>
+            <button class="btn btn-dark" routerLink="/menu"> Volver</button>
+    </div>
+
+    <div>
+
+            <button class="btn btn-dark" routerLink="/rol"> Crear</button>
+        </div>
+       
+      </nav>
+      
+      <table class="table">
+        <thead class="thead-green">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre rol</th>
+            <th scope="col">Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let rol of roles">
+            <th scope="row">{{rol.idRolPersona}}</th>
+            <td>{{rol.RolPersona}}</td>
+            <!-- <td>{{rol.Estado}}</td>-->
+            <td>
+              <div *ngIf="rol.Estado == 1">
+                Habilitado
+              </div>
+              <div *ngIf="rol.Estado == 0">
+                Deshabilitado
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>

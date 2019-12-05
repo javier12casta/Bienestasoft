@@ -3,6 +3,7 @@ import { ServicioService } from '../../servicio.service';
 import { Puntoentrega } from '../../interfaces/puntoentrega';
 import * as jspdf from 'jspdf'; 
 import html2canvas from 'html2canvas';
+import {Puntoentregat } from '../../interfaces/puntoentregat';
 
 @Component({
   selector: 'app-reporteentrega',
@@ -11,6 +12,7 @@ import html2canvas from 'html2canvas';
 })
 export class ReporteentregaComponent implements OnInit {
   punto: Puntoentrega [] = [];
+  puntot: Puntoentregat [] = [];
   constructor(private service: ServicioService) { }
 
   ngOnInit() {
@@ -21,6 +23,15 @@ export class ReporteentregaComponent implements OnInit {
     }, err => {
       console.log(err);
     });
+
+
+    this.service.getPuntoTabla()
+  .subscribe(res => {
+    this.puntot = res;
+  }, err => {
+    console.log(err);
+  });
+
 
   }
 

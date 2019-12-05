@@ -77,10 +77,10 @@ export class AlmacenciComponent implements OnInit {
 
   showMenssage(){
     Swal.fire({
-      title: 'Creado!',
+      title: 'Creado',
       text: 'Almacen Creado',
       type: 'success',
-      confirmButtonText: 'Aceptar'
+      confirmButtonText: 'Entendido'
     }).then((result) => {
       if (result.value) {
         

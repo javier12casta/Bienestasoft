@@ -88,7 +88,7 @@ export class CentrozonaliComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         
-        this.router.navigate(['/centrozonal']);
+        this.router.navigate(['/centrozonaliv']);
     
       }
     });

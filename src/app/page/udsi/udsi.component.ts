@@ -73,14 +73,14 @@ export class UdsiComponent implements OnInit {
   //mensajes de creacion
   showMenssage() {
     Swal.fire({
-      title: 'Creado!',
-      text: 'UDS creada',
+      title: 'Creado',
+      text: 'Uds creada',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {
       if (result.value) {
         
-        this.router.navigate(['/uds']);
+        this.router.navigate(['/udsv']);
     
       }
     });
@@ -89,14 +89,14 @@ export class UdsiComponent implements OnInit {
 
   showMenssage2() {
     Swal.fire({
-      title: 'Error!',
-      text: 'Error al crear la UDS',
+      title: 'Error',
+      text: 'Error al crear la Uds',
       type: 'error',
       confirmButtonText: 'Entendido'
     }).then((result) => {
       if (result.value) {
         
-        this.router.navigate(['/uds']);
+        this.router.navigate(['/udsv']);
     
       }
     });
