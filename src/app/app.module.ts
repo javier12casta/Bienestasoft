@@ -183,6 +183,7 @@ import { RolinComponent } from './page/rolin/rolin.component';
 import { RolinhComponent } from './page/rolinh/rolinh.component';
 import { RolmComponent } from './page/rolm/rolm.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -356,6 +357,7 @@ import { RolmComponent } from './page/rolm/rolm.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     //Material Imports Module
     BrowserAnimationsModule,
     MatSidenavModule,
@@ -364,7 +366,6 @@ import { RolmComponent } from './page/rolm/rolm.component';
     MatIconModule,
     MatListModule,
     HttpClientModule,
-    FormsModule,
     MatInputModule,
     MatButtonModule,
     MatTreeModule,
