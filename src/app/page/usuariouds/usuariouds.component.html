@@ -9,14 +9,14 @@
 			
 				<h1>Crear usuarios</h1>
 
-				<span >Seleccione Punto de entrega</span>
+				<span >Seleccione UDS</span>
 			   <h2></h2>
 			   
 			   
-			<select name="idnivel1" class="form-control" style="width: 100%;" [(ngModel)]="x.idPuntoEntrega"
+			<select name="idnivel1" class="form-control" style="width: 100%;" [(ngModel)]="x.idUDS"
 			options="options" placeholder="nivel" 
 			minlength="0" required="">
-			<option *ngFor="let do of pe" [value]="do.idPuntoEntrega">{{do.NombrePE }} </option>
+			<option *ngFor="let do of ud " [value]="do.idUDS">{{do.NombreUDS }} </option>
 	
 		  </select>
 
@@ -163,7 +163,4 @@
 	</div>
   </div>
 </div>
-
-
-
 

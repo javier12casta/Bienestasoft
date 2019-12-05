@@ -23,7 +23,8 @@
         <th scope="col">Correo electrónico</th>
         <th scope="col">Tipo documento</th>
         <th scope="col">Tipo usuario</th>
-        <th scope="col">Centro zonal</th>
+      <th scope="col">Punto entrega</th>
+
         </tr>
       </thead>
       <tbody>
@@ -44,10 +45,10 @@
         <td>{{usu.Email}}</td>
         <td>{{usu.NombreTipo}}</td>
         <td>{{usu.RolPersona}}</td>
-        <td>{{usu.NombreCentroZonal}}</td>
+        <td>{{usu.NombrePE}}</td>
         
           <td>
-            <button class="btn btn-primary" [routerLink]="['/modificarusuariom', usu.idUsuarios]">Modificar</button>
+            <button class="btn btn-primary" [routerLink]="['/modificarusuariov2m', usu.idUsuarios]">Modificar</button>
           </td>
         </tr>
       </tbody>

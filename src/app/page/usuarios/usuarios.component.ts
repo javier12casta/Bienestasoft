@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ServicioService } from '../../servicio.service';
-import {Router} from '@angular/router'
 import { Regional } from 'src/app/interfaces/regional';
+import { ServicioService } from 'src/app/servicio.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-usuarios',
@@ -10,11 +10,12 @@ import { Regional } from 'src/app/interfaces/regional';
 
 })
 export class UsuariosComponent implements OnInit {
+  listau = '';
   lista:string[]=["Centro Zonal","Punto De Entrega","Unidad de servicio"];
   datosgenerales: string[];
   seleccionado='';
   resultado='';
-  constructor() 
+  constructor(private Service: ServicioService , private router:Router) 
   {
   }
 
@@ -26,8 +27,23 @@ export class UsuariosComponent implements OnInit {
 
   siguiente(){
 
-  this.clickMessage = 'funciona';
-  this.resultado = this.seleccionado ;
+    if(this.listau == 'Centro Zonal'){
+
+      this.router.navigate(['/usuariosv']);
+    
+    }
+  
+    if(this.listau == 'Punto De Entrega'){
+  
+      this.router.navigate(['/usuariosv1']);
+      
+    }
+  
+    if(this.listau == 'Unidad de servicio'){
+  
+      this.router.navigate(['/usuariosv2']);
+      
+    }
   
   
 
