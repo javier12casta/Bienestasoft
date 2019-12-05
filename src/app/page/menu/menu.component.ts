@@ -2553,6 +2553,10 @@ var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "li
   if (array[0] == "1" ) {
      var create = { name: "Crear datos maestros", route: "/listamaestros", icon: "face" };
     this.datos.push(create);
+    var create = { name: "Reporte consecutivo maestros", route: "/reporteconsecutivomaestro", icon: "face" };
+    this.datos.push(create);
+    var create = { name: "Ver consecutivos maestros", route: "/consecutivomaestrov", icon: "face" };
+    this.datos.push(create);
    if (array[1] == "1") {
      var create = { name: "Modificar datos maestros", route: "/modificarlistamaestro", icon: "face" };
     this.datos.push(create);
