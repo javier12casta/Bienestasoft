@@ -1,30 +1,25 @@
-import { Component, OnInit , Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Usuarios } from 'src/app/interfaces/usuarios';
 import { Tipodocumento } from 'src/app/interfaces/tipodocumento';
 import { Rol } from 'src/app/interfaces/rol';
-import { Centrozonal } from 'src/app/interfaces/centrozonal';
-import {Puntoentrega } from 'src/app/interfaces/puntoentrega';
+
 import { Uds } from 'src/app/interfaces/uds';
 import { ServicioService } from 'src/app/servicio.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 
-
 @Component({
-  selector: 'app-datos-generales-usuario',
-  templateUrl: './datos-generales-usuario.component.html',
-  styleUrls: ['./datos-generales-usuario.component.css']
-
+  selector: 'app-usuariouds',
+  templateUrl: './usuariouds.component.html',
+  styleUrls: ['./usuariouds.component.css']
 })
-export class DatosGeneralesUsuarioComponent implements OnInit {
+export class UsuarioudsComponent implements OnInit {
 
   listamaestro:string[]=["0","1"];
   listat:string[]=["PE","UDS","ADMINISTRADOR"];
   listar:string[]=["1","2","3","4","5","6","7","8","9","10"];
   public doc: Tipodocumento[] = [];
   public rol: Rol[] = [];
-  public cen: Centrozonal[] = [];
-  public pe: Puntoentrega[] = [];
   public ud: Uds[] = [];
   habilitado = true;
   habilitado1 = true;
@@ -88,6 +83,13 @@ this.showMenssage3();
 	  console.log(err);
   });
   
+  this.Service.getUds()
+	.subscribe(res => {
+	  this.ud = res;
+	}, err => {
+	  console.log(err);
+  });
+
 
   this.Service.ObtenerRoles()
 	.subscribe(res => {
@@ -96,12 +98,7 @@ this.showMenssage3();
 	  console.log(err);
   });
 
-  this.Service.getCentro()
-    .subscribe(res => {
-      this.cen = res;
-    }, err => {
-      console.log(err);
-    });
+  
     
 
    }
@@ -116,7 +113,7 @@ this.showMenssage3();
 	}).then((result) => {
 		if (result.value) {
 		  
-		  this.router.navigate(['/usuariosv']);
+		  this.router.navigate(['/usuariosv2']);
   
 		}
   
@@ -133,6 +130,7 @@ this.showMenssage3();
 	}
 
  
+
 
 
 }

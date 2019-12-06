@@ -173,6 +173,13 @@ import { RolvComponent } from './page/rolv/rolv.component';
 import { CrearalmacenComponent} from './page/crearalmacen/crearalmacen.component';
 import { ConsecutivomaestrovComponent} from './page/consecutivomaestrov/consecutivomaestrov.component';
 import { ReporteconsecutivomaestroComponent} from './page/reporteconsecutivomaestro/reporteconsecutivomaestro.component';
+import { Usuariov1Component} from './page/usuariov1/usuariov1.component';
+import { Usuariov2Component} from './page/usuariov2/usuariov2.component';
+import { UsuarioudsComponent} from './page/usuariouds/usuariouds.component';
+import { Modificarusuariosv2Component} from './page/modificarusuariosv2/modificarusuariosv2.component';
+import { Modificarusuariosv2mComponent} from './page/modificarusuariosv2m/modificarusuariosv2m.component';
+import { Modificarusuariosv3Component} from './page/modificarusuariosv3/modificarusuariosv3.component';
+import { Modificarusuariosv3mComponent} from './page/modificarusuariosv3m/modificarusuariosv3m.component';
 
 const routes: Routes = [
   {path:'', component: LoginComponent},
@@ -368,6 +375,14 @@ const routes: Routes = [
   {path:'crearalmacen', component:   CrearalmacenComponent },
   {path:'consecutivomaestrov', component:    ConsecutivomaestrovComponent },
   {path:'reporteconsecutivomaestro', component:   ReporteconsecutivomaestroComponent},
+  {path:'usuariosv1', component:    Usuariov1Component},
+  {path:'usuariosv2', component:    Usuariov2Component},
+  
+  {path:'usuariouds', component:    UsuarioudsComponent},
+  {path:'modificarusuariov2', component:    Modificarusuariosv2Component},
+  {path:'modificarusuariov2m', component:    Modificarusuariosv2mComponent},
+  {path:'modificarusuariov3', component:    Modificarusuariosv3Component},
+  {path:'modificarusuariov3m', component:    Modificarusuariosv3mComponent},
 
   
  

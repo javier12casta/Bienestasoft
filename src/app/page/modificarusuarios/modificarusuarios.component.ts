@@ -12,10 +12,31 @@ import { Router } from '@angular/router';
 })
 export class ModificarusuariosComponent implements OnInit {
 
+  listau = '';
+  lista:string[]=["Centro Zonal","Punto De Entrega","Unidad de servicio"];
 
   onClickMe() {
     
-  this.router.navigate(['/modificarusuarios1']);
+    if(this.listau == 'Centro Zonal'){
+
+      this.router.navigate(['/modificarusuarios1']);
+    
+    }
+  
+    if(this.listau == 'Punto De Entrega'){
+  
+      this.router.navigate(['modificarusuariov2']);
+      
+    }
+  
+    if(this.listau == 'Unidad de servicio'){
+  
+      this.router.navigate(['modificarusuariov3']);
+      
+    }
+
+
+  
 
   }
   constructor(private Service:ServicioService , private router:Router) { }

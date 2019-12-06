@@ -3,11 +3,11 @@ import { Usuariost } from '../../interfaces/usuariost';
 import { ServicioService } from '../../servicio.service';
 
 @Component({
-  selector: 'app-modificarusuarios1',
-  templateUrl: './modificarusuarios1.component.html',
-  styleUrls: ['./modificarusuarios1.component.css'],
+  selector: 'app-usuariov1',
+  templateUrl: './usuariov1.component.html',
+  styleUrls: ['./usuariov1.component.css']
 })
-export class Modificarusuarios1Component implements OnInit {
+export class Usuariov1Component implements OnInit {
 
   usua: Usuariost[] = [];
 
@@ -15,12 +15,13 @@ export class Modificarusuarios1Component implements OnInit {
 
   ngOnInit() {
 
-    this.Service.getUsuariosc()
+    this.Service.getUsuariosp()
       .subscribe(async (data) => {
         this.usua = data;
         console.log(data);
       }
       );
+
 
   }
 

@@ -5,6 +5,7 @@ import { Barrio } from './interfaces/barrio';
 import { Comuna } from './interfaces/comuna';
 import { Municipio } from './interfaces/municipio';
 import { Centrozonal } from './interfaces/centrozonal';
+import { duplicadosz } from './interfaces/duplicadosz';
 import { Regional } from './interfaces/regional';
 import { Observable } from 'rxjs';
 import { Puntoentrega } from './interfaces/puntoentrega';
@@ -58,6 +59,7 @@ import { Recuentoinventariot } from './interfaces/recuentoinventariot';
 import { Puntoentregat } from './interfaces/puntoentregat';
 import {Udst } from './interfaces/udst';
 import {Consecutivomaestro } from './interfaces/consecutivomaestro';
+import {Usuariost } from './interfaces/usuariost';
 
 
 @Injectable({
@@ -205,6 +207,14 @@ export class ServicioService {
     const path = `${this.api}/centrosZ`;
     return this.http.get<[Centrozonal]>(path);
   }
+
+
+  getduplicadoz() {
+    const path = `${this.api}/centrosZ/duplicadosz`;
+    return this.http.get<[duplicadosz]>(path);
+  }
+
+  
   //tabla 
   getCentroTabla() {
     const path = `${this.api}/centrosZ/tabla`;
@@ -277,6 +287,24 @@ export class ServicioService {
     const path = `${this.api}/usuario`;
     return this.http.get<[Usuarios]>(path);
   }
+
+  getUsuariosc() {
+    const path = `${this.api}/usuario/tablausuariosc`;
+    return this.http.get<[Usuariost]>(path);
+  }
+
+  getUsuariosp() {
+    const path = `${this.api}/usuario/tablausuariosp`;
+    return this.http.get<[Usuariost]>(path);
+  }
+
+  getUsuariosu() {
+    const path = `${this.api}/usuario/tablausuariosu`;
+    return this.http.get<[Usuariost]>(path);
+  }
+
+  
+
   getUsuariosid(id: string) {
     return this.http.get(`${this.api}/usuario/${id}`);
   }
@@ -289,6 +317,8 @@ export class ServicioService {
     return this.http.put<InUsuarios>(`${this.api}/usuario/${id}`, Nombre);
   }
 
+
+ 
 
 
   postMaestrosBienestrina(usu: MaestroBienestarina) {
@@ -732,5 +762,7 @@ export class ServicioService {
     return this.http.get<[Consecutivomaestro]>(path);
   }
 
+
+ 
 
 }

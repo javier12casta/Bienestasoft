@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Uds } from '../../interfaces/uds';
 import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
-import { Centrozonal } from 'src/app/interfaces/centrozonal';
-import { Puntoentrega } from 'src/app/interfaces/puntoentrega';
+import { Centrozonalt } from 'src/app/interfaces/centrozonalt';
+import { Puntoentregat } from 'src/app/interfaces/puntoentregat';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 
@@ -14,8 +14,8 @@ import { Router } from '@angular/router';
 })
 export class UdsmComponent implements OnInit {
 
-  centros: Centrozonal[] = [];
-  puntos: Puntoentrega[] = [];
+  centros: Centrozonalt[] = [];
+  puntos: Puntoentregat[] = [];
 
   unidad: Uds = {
     idUDS: 0,
@@ -55,14 +55,14 @@ export class UdsmComponent implements OnInit {
         );
     }
     //Traer Centros zonales
-    this.Service.getCentro()
+    this.Service.getCentroTabla()
       .subscribe(res => {
         this.centros = res;
       }, err => {
         console.log(err);
       });
     //Traer puntos de entrega
-    this.Service.getPunto()
+    this.Service.getPuntoTabla()
       .subscribe(res => {
         this.puntos = res;
       }, err => {

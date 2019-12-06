@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Centrozonal } from 'src/app/interfaces/centrozonal';
 import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
-
+import { duplicadosz } from '../../interfaces/duplicadosz';
 import { Municipio } from '../../interfaces/municipio';
 import { Regional } from '../../interfaces/regional';
 import { Select2OptionData } from 'ng2-select2';
@@ -18,7 +18,10 @@ export class CentrozonaliComponent implements OnInit {
   //public exampleData: Array<Select2OptionData>;
   public regional: Regional[] = [];
   municipios: Municipio[] = [];
+  dup: duplicadosz[] = [];
+  x;
   public options: Select2Options;
+
 
 
   constructor(
@@ -55,6 +58,19 @@ export class CentrozonaliComponent implements OnInit {
       }, err => {
         console.log(err);
       });
+
+      
+
+
+
+       this.Service.getduplicadoz()
+  .subscribe(res => {
+    this.dup = res;
+  }, err => {
+    console.log(err);
+  });
+
+
     //opciones del select ----------------------------------------
     this.options = {
       multiple: false,
@@ -63,8 +79,31 @@ export class CentrozonaliComponent implements OnInit {
     }
   }
 
+Validar(){
+
+  for(let d of this.dup){
+
+    this.x = d.cantidadD;
+   
+  }
+
+
+  if(this.x > 1){
+
+    this.showMenssage();
+
+  }else{
+
+   this.insertDatos();
+
+  }
+
+}
+
+
+
   //insertar Datos ------------------------------------------------
-  insertDatos(Centrozonal: string) {
+  insertDatos() {
     delete this.centros.idCentrosZonales;
     this.Service.postCentro(this.centros).subscribe(res => {
       console.log(this.centros);

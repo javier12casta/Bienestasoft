@@ -27,8 +27,17 @@
             <input type="text" class="form-control" name="Barrio" placeholder="Barrio"  [(ngModel)]="unidad.Barrio" minlength="0" required="">
             <input type="tel" class="form-control" name="Telefono" placeholder="Telefono" [(ngModel)]="unidad.Telefono" minlength="0" required="">
 
-            <input type="number" class="form-control" name="idp" placeholder="punto de entrega"  [(ngModel)]="unidad.idPuntoEntrega" minlength="0" required="">
-            <input type="number" class="form-control" name="idc" placeholder="centro zonal" [(ngModel)]="unidad.idCentrosZonales" minlength="0" required="">
+
+            <select name="idpuntoentrega" class="select-css" style="width: 100%;" [(ngModel)]="unidad.idPuntoEntrega"
+            options="options" placeholder="Punto entrega" minlength="0" required="" class="form-control"> 
+            <option *ngFor="let do of puntos" [value]="do.idPuntoEntrega">{{do.NombrePE  }} </option>
+            </select>
+
+            <select name="idcentrozonal" class="select-css" style="width: 100%;" [(ngModel)]="unidad.idCentrosZonales"
+            options="options" placeholder="Punto entrega" minlength="0" required="" class="form-control">
+            <option *ngFor="let do of centros" [value]="do.idCentrosZonales">{{do.NombreCentroZonal  }} </option>
+            </select>
+
   
           </div>
           <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"  -->

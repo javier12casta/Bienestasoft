@@ -191,6 +191,13 @@ import { ConsecutivomaestrovComponent } from './page/consecutivomaestrov/consecu
 import { ReporteconsecutivomaestroComponent } from './page/reporteconsecutivomaestro/reporteconsecutivomaestro.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { Usuariov1Component } from './page/usuariov1/usuariov1.component';
+import { Usuariov2Component } from './page/usuariov2/usuariov2.component';
+import { UsuarioudsComponent } from './page/usuariouds/usuariouds.component';
+import { Modificarusuariosv2Component } from './page/modificarusuariosv2/modificarusuariosv2.component';
+import { Modificarusuariosv3Component } from './page/modificarusuariosv3/modificarusuariosv3.component';
+import { Modificarusuariosv2mComponent } from './page/modificarusuariosv2m/modificarusuariosv2m.component';
+import { Modificarusuariosv3mComponent } from './page/modificarusuariosv3m/modificarusuariosv3m.component';
 
 @NgModule({
   declarations: [
@@ -358,6 +365,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     CrearalmacenComponent,
     ConsecutivomaestrovComponent,
     ReporteconsecutivomaestroComponent,
+    Usuariov1Component,
+    Usuariov2Component,
+    UsuarioudsComponent,
+    Modificarusuariosv2Component,
+    Modificarusuariosv3Component,
+    Modificarusuariosv2mComponent,
+    Modificarusuariosv3mComponent,
 
     
     

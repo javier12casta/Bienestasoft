@@ -53,10 +53,13 @@
             placeholder="código externo ICBF centro zonal" min="0" required="">
 
         </div>
+
+     
         <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()" routerLink="/centrozonal"-->
-        <button class="btn btn-success btn-block" type="submit" (click)="insertDatos()" routerLink="/centrozonal">
+        <button class="btn btn-success btn-block" type="submit" (click)="Validar()" routerLink="/centrozonal">
           Guardar
         </button>
+        {{x}}
       </form>
     </div>
   </div>
