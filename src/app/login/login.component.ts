@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ServicioService } from '../servicio.service';
 import { Usuarios } from '../interfaces/usuarios';
@@ -15,7 +15,7 @@ import { delay } from 'q';
 })
 export class LoginComponent implements OnInit {
 
-  user : Usuarios = {
+  user: Usuarios = {
     idUsuarios: 1,
     Nombres: "",
     Apellidos: "",
@@ -29,75 +29,102 @@ export class LoginComponent implements OnInit {
     TelefonoMovil: 0,
     TelefonoMovil2: 0,
     Email: "",
-    idPuntoEntrega : null,
+    idPuntoEntrega: null,
     idUDS: null,
     idTipoDocumento: 1,
     TipoUsuario: "",
     password: ""
-}
-
-  constructor(
-    private Service: ServicioService , 
-    private router:Router,
-    private auth: AuthserviceService,
-    )
-     { 
-
-     }
-  
-  ngOnInit() {
-    
   }
 
+  constructor(
+    private Service: ServicioService,
+    private router: Router,
+    private auth: AuthserviceService,
+    private fb: FormBuilder
+  ) {
+
+  }
+
+  //----Validaciones de campos
+  loginForm: FormGroup;
+  submitted = false;
+
+  onSubmit() {
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.loginForm.valid) {
+      this.login();
+    }else{
+      this.onReset();
+    }
+
+    // display form values on success
+    console.log('Formulario', this.loginForm.value);
+  }
+
+  onReset() {
+    this.submitted = false;
+    this.loginForm.reset();
+  }
+
+  ngOnInit() {
+    this.loginForm = this.fb.group({
+      user: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(20),Validators.pattern('^[0-9 a-z A-Z]*$')]],
+      password: ['', [Validators.required, Validators.minLength(6),Validators.maxLength(20),Validators.pattern('^[0-9 a-z A-Z]*$')]],
+    });
+  }
+
+  get f() { return this.loginForm.controls; }
+//--------------------------------------------------------------------------------------------------
 
   usuario: User = {
     NombreUsuarioSistema: '',
     password: '',
   };
 
-  login()
-  {
+  login() {
+    console.log('usuario',this.usuario.NombreUsuarioSistema);
     this.auth.getAuthUser(this.usuario.NombreUsuarioSistema).subscribe(res => {
       this.user = Object(res);
-      //console.log('usuario',this.user);
+      
       delay(1000);
       this.validarLogin();
-    },err =>{
+    }, err => {
       this.showMenssage2();
     });
-    
+
   }
 
-  validarLogin(){
-    if (this.usuario.NombreUsuarioSistema == "" || this.usuario.password == "")
-    {
+  validarLogin() {
+    if (this.usuario.NombreUsuarioSistema == "" || this.usuario.password == "") {
       this.showMenssagelog();
       this.router.navigate(['/login']);
-    }else if (this.usuario.NombreUsuarioSistema == this.user.NombreUsuarioSistema && this.usuario.password == this.user.password){
-        this.grabarStorage();
-        this.router.navigate(['/menu']);
-      }else {
-        this.showMenssage2();
-      }
+    } else if (this.usuario.NombreUsuarioSistema == this.user.NombreUsuarioSistema && this.usuario.password == this.user.password) {
+      this.grabarStorage();
+      this.router.navigate(['/menu']);
+    } else {
+      this.showMenssage2();
+    }
   }
 
-  grabarStorage(){
-   let persona = this.user;
-   localStorage.setItem("persona",JSON.stringify(persona));
+  grabarStorage() {
+    let persona = this.user;
+    localStorage.setItem("persona", JSON.stringify(persona));
   }
 
-  showMenssage2(){
+  showMenssage2() {
     Swal.fire({
-      title: 'Error al iniciar session!',
+      title: 'Error al iniciar session',
       text: 'Verifica tus credenciales',
       type: 'error',
       confirmButtonText: 'Entendido'
     });
   }
 
-  showMenssagelog(){
+  showMenssagelog() {
     Swal.fire({
-      title: 'Campos vacios!',
+      title: 'Campos vacios',
       text: 'Ingresa tus datos',
       type: 'warning',
       confirmButtonText: 'Entendido'
