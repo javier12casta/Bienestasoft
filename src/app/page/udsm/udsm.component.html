@@ -1,50 +1,172 @@
 <mat-toolbar>
-    <button class="btn btn-dark" routerLink="/uds">Volver</button>
-  </mat-toolbar>
-  
-  <div class="col-md-4 offset-md-4">
-    <div class="card">
-      <div class="card-body">
-        <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
-          <div class="form-group padding">
-            <!-- select centro zonal-->
-            
-  
-            <select required name="Estado" [(ngModel)]="unidad.Estado" style="width: 100%;"
-              class="form-control">
-              <option value="1"> Habilitar</option>
-              <Option value="0">Inhabilitar</Option> 
-            </select>
-            <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
-            <input type="text" class="form-control" name="UDS" placeholder="Nombre UDS" [(ngModel)]="unidad.NombreUDS" minlength="0" required="">
-            <input type="number" class="form-control" name="Codigo Externo UDS" placeholder="Codigo Externo UDS"  [(ngModel)]="unidad.CodigoExternoUDS" minlength="0" required="">
-            <input type="text" class="form-control" name="Codigo Interno UDS" placeholder="Codigo Interno UDS"  [(ngModel)]="unidad.CodigoInternoUDS" minlength="0" required="">
-            <input type="text" class="form-control" name="Responsable UDS" placeholder="Responsable UDS" [(ngModel)]="unidad.ReponsableUDS" minlength="0" required="">
-            <input type="text" class="form-control" name="Localidad, Comuna o Vereda"
-              placeholder="Localidad, Vereda o Comuna" [(ngModel)]="unidad.Comuna" minlength="0" required="">
-            <input type="text" class="form-control" name="Direccion" placeholder="Direccion" [(ngModel)]="unidad.Direccion" minlength="0" required="">
-  
-            <input type="text" class="form-control" name="Barrio" placeholder="Barrio"  [(ngModel)]="unidad.Barrio" minlength="0" required="">
-            <input type="tel" class="form-control" name="Telefono" placeholder="Telefono" [(ngModel)]="unidad.Telefono" minlength="0" required="">
+  <button class="btn btn-dark" routerLink="/uds">Volver</button>
+</mat-toolbar>
+
+<div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+  <div class="card" padding>
+    <div class="card-body" padding>
 
 
-            <select name="idpuntoentrega" class="select-css" style="width: 100%;" [(ngModel)]="unidad.idPuntoEntrega"
-            options="options" placeholder="Punto entrega" minlength="0" required="" class="form-control"> 
-            <option *ngFor="let do of puntos" [value]="do.idPuntoEntrega">{{do.NombrePE  }} </option>
-            </select>
+      <form [formGroup]="udForm" (ngSubmit)="onSubmit()">
 
-            <select name="idcentrozonal" class="select-css" style="width: 100%;" [(ngModel)]="unidad.idCentrosZonales"
-            options="options" placeholder="Punto entrega" minlength="0" required="" class="form-control">
-            <option *ngFor="let do of centros" [value]="do.idCentrosZonales">{{do.NombreCentroZonal  }} </option>
-            </select>
-
-  
+        <div class="form-group">
+          <label>Centro zonal</label>
+          <select formControlName="idCentrosZonales" class="form-control" [(ngModel)]="unidad.idCentrosZonales"
+            [ngClass]="{ 'is-invalid': submitted && f.idCentrosZonales.errors }">
+            <option *ngFor="let cen of centros" [value]="cen.idCentrosZonales">{{cen.NombreCentroZonal}}</option>
+          </select>
+          <div *ngIf="submitted && f.idCentrosZonales.errors" class="invalid-feedback">
+            <div *ngIf="f.idCentrosZonales.errors.required">Centro zonal es requerido</div>
           </div>
-          <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"  -->
-          <button class="btn btn-success" (click)="updateDatos()" type="submit">
-            Guardar
-          </button> 
-        </form>
-      </div>
+        </div>
+
+        <div class="form-group">
+          <label>Punto de entrega</label>
+          <select formControlName="idPuntoEntrega" class="form-control" [(ngModel)]="unidad.idPuntoEntrega"
+            [ngClass]="{ 'is-invalid': submitted && f.idPuntoEntrega.errors }">
+            <option *ngFor="let pun of puntos" [value]="pun.idPuntoEntrega">{{pun.NombrePE}}</option>
+          </select>
+          <div *ngIf="submitted && f.idPuntoEntrega.errors" class="invalid-feedback">
+            <div *ngIf="f.idPuntoEntrega.errors.required">Punto de entrega es requerido</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Estado</label>
+          <select formControlName="Estado" class="form-control" [(ngModel)]="unidad.Estado"
+            [ngClass]="{ 'is-invalid': submitted && f.Estado.errors }">
+            <option value="1">Habilitado</option>
+            <option value="0">Inhabilitado</option>
+
+          </select>
+          <div *ngIf="submitted && f.Estado.errors" class="invalid-feedback">
+            <div *ngIf="f.Estado.errors.required">Estado es requerido</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Nombre unidad de servicio</label>
+          <input type="text" placeholder="Nombre unidad de servicio" formControlName="NombreUDS" class="form-control"
+            [(ngModel)]="unidad.NombreUDS" [ngClass]="{ 'is-invalid': submitted && f.NombreUDS.errors }" />
+
+          <div *ngIf="submitted && f.NombreUDS.errors" class="invalid-feedback">
+            <div *ngIf="f.NombreUDS.errors.required"> Nombre unidad de servicio es requerido</div>
+            <div *ngIf="f.NombreUDS.errors.pattern"> Nombre unidad de servicio solo puede contener letras minusculas o
+              mayúsculas</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Código externo unidad de servicio</label>
+
+          <input type="text" placeholder="Código externo unidad de servicio" formControlName="CodigoExternoUDS"
+            class="form-control" [(ngModel)]="unidad.CodigoExternoUDS"
+            [ngClass]="{ 'is-invalid': submitted && f.CodigoExternoUDS.errors }" />
+
+          <div *ngIf="submitted && f.CodigoExternoUDS.errors" class="invalid-feedback">
+            <div *ngIf="f.CodigoExternoUDS.errors.required">Código externo unidad de servicio es requiredo</div>
+            <div *ngIf="f.CodigoExternoUDS.errors.minlength"> Código externo unidad de servicio debe contener minimo 13
+              caracteres</div>
+            <div *ngIf="f.CodigoExternoUDS.errors.pattern"> Código externo unidad de servicio solo puede conterner
+              numeros
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Código interno unidad de servicio</label>
+
+          <input type="text" placeholder="Código interno unidad de servicio" formControlName="CodigoInternoUDS"
+            class="form-control" [(ngModel)]="unidad.CodigoInternoUDS"
+            [ngClass]="{ 'is-invalid': submitted && f.CodigoInternoUDS.errors }" />
+
+          <div *ngIf="submitted && f.CodigoInternoUDS.errors" class="invalid-feedback">
+            <div *ngIf="f.CodigoInternoUDS.errors.required">Código interno unidad de servicio es requiredo</div>
+            <div *ngIf="f.CodigoInternoUDS.errors.pattern"> Código interno unidad de serviciosolo puede contener numeros
+              y
+              letras minusculas o
+              mayusculas</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Responsable unidad de servicio</label>
+
+          <input type="text" placeholder="Responsable unidad de servicio" formControlName="ReponsableUDS"
+            class="form-control" [(ngModel)]="unidad.ReponsableUDS"
+            [ngClass]="{ 'is-invalid': submitted && f.ReponsableUDS.errors }" />
+
+          <div *ngIf="submitted && f.ReponsableUDS.errors" class="invalid-feedback">
+            <div *ngIf="f.ReponsableUDS.errors.required">Responsable unidad de servicio es requiredo</div>
+            <div *ngIf="f.ReponsableUDS.errors.pattern">Responsable unidad de servicio solo puede conterner letras
+              minusculas o
+              mayusculas</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Localidad, comuna o vereda</label>
+
+          <input type="text" placeholder="Localidad, comuna o vereda" formControlName="Comuna" class="form-control"
+            [(ngModel)]="unidad.Comuna" [ngClass]="{ 'is-invalid': submitted && f.Comuna.errors }" />
+
+          <div *ngIf="submitted && f.Comuna.errors" class="invalid-feedback">
+            <div *ngIf="f.Comuna.errors.required">Localidad, comuna o vereda es requiredo</div>
+            <div *ngIf="f.Comuna.errors.pattern">Localidad, comuna o vereda solo puede conterner letras minusculas o
+              mayusculas</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Dirección unidad de servicio</label>
+
+          <input type="text" placeholder="Dirección unidad de servicio " formControlName="Direccion"
+            class="form-control" [(ngModel)]="unidad.Direccion"
+            [ngClass]="{ 'is-invalid': submitted && f.Direccion.errors }" />
+
+          <div *ngIf="submitted && f.Direccion.errors" class="invalid-feedback">
+            <div *ngIf="f.Direccion.errors.required">Dirección unidad de servicio es requiredo</div>
+            <div *ngIf="f.Direccion.errors.pattern">Dirección unidad de servicio solo puede conterner - # numeros y
+              letras
+              minusculas o
+              mayusculasletras minusculas o
+              mayúsculas </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Barrio unidad de servicio</label>
+
+          <input type="text" placeholder="Barrio unidad de servicio" formControlName="Barrio" class="form-control"
+            [(ngModel)]="unidad.Barrio" [ngClass]="{ 'is-invalid': submitted && f.Barrio.errors }" />
+
+          <div *ngIf="submitted && f.Barrio.errors" class="invalid-feedback">
+            <div *ngIf="f.Barrio.errors.required">Barrio unidad de servicio es requiredo</div>
+            <div *ngIf="f.Barrio.errors.pattern">Barrio unidad de servicio solo puede conterner numeros</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Teléfono unidad de servicio</label>
+
+          <input type="text" placeholder="Teléfono unidad de servicio" formControlName="Telefono" class="form-control"
+            [(ngModel)]="unidad.Telefono" [ngClass]="{ 'is-invalid': submitted && f.Telefono.errors }" />
+
+          <div *ngIf="submitted && f.Telefono.errors" class="invalid-feedback">
+            <div *ngIf="f.Telefono.errors.required">Teléfono unidad de servicio es requiredo</div>
+            <div *ngIf="f.Telefono.errors.minlength"> Teléfono unidad de servicio debe contener minimo 10 caracteres
+            </div>
+            <div *ngIf="f.Telefono.errors.pattern">Teléfono unidad de servicio solo puede conterner numeros</div>
+          </div>
+        </div>
+
+        <br />
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-success btn-block">Guardar</button>
+        </div>
+
+      </form>
     </div>
   </div>
+</div>

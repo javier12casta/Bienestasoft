@@ -1,53 +1,88 @@
-<nav class="navbar navbar-success bg-success" style="height: 60px;">
-  <a class="navbar-brand">
-    <img src="../../assets/Bienestasoftlogo.png" width="45" height="45">
-    Bienvenidos
-  </a>
+<nav class="navbar navbar-success navbar-expand-md bg-success" style="height: 65px;">
+  <div class="navbar-brand">
+    <a> <img src="../../assets/icbf-logo.png"
+        style="width: 50px; height: 50px; margin-left: 10px; margin-top: 10px; margin-bottom: 0px;"
+        class="rounded float-center"></a>
+    <a class="navbar-brand" style="font-size:30px;">Bienvenidos</a>
+  </div>
 </nav>
-<div class="container" style="justify-content: center; margin-right:auto; margin-left: auto; padding-bottom: 50px;">
-  <div class="container text-center" style="justify-content: center; margin-left: auto; margin-right: auto;">
-    <img src="../../assets/Udeclogo.png" style="width: 300px; height: 130px; margin-right:10px; margin-top: 10px;" class="rounded float-center">
-    <img src="../../assets/Unallogo.png" style="width: 250px; height: 150px; margin-left: 10px; margin-top: 10px;" class="rounded float-center">
-</div>
-  <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
 
-    <div class="card card-container" >
-      <img id="profile-img" width="200" height="200" class="profile-img-card" src="../../assets/login icon.svg" />
+<div class="login-clean">
 
-      <div class="form-group">
-         <div> </div>
+  <div class="row align-items-start">
 
-        <label for="NombreUsuarioSistema">Nombre de usuario</label>
-        <input type="text" class="form-control" name="NombreUsuarioSistema" minlength="6" maxlength="20"
-          [(ngModel)]="usuario.NombreUsuarioSistema" placeholder="Nombre de usuario" required="">
-
-        <div class="valid-feedback"></div>
-        <div class="invalid-feedback">Completa este campo</div>
-
-        <label for="password">Contraseña</label>
-        <input type="password" class="form-control" name="password" minlength="6" maxlength="20"
-          [(ngModel)]="usuario.password" placeholder="Contraseña" required="">
-
-        <div class="valid-feedback"></div>
-        <div class="invalid-feedback">Completa este campo</div>
-
-      </div>
-      
-
-      <input type="submit" class="btn btn-success btn-block" (click)="login()" value="Iniciar sesión">
-
+    <div class="col">
+      <img src="../../assets/Unallogo.png" style="width: 150px; height: 100px; margin-left: 40px; margin-right: auto;">
+      <img src="../../assets/Udeclogo.png" style="width: 250px; height: 100px; margin-left: 5px; margin-right: auto;">
     </div>
 
-  </form>
-</div>
+    <div class="col">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <img src="../../assets/Bienestasoftlogo.png" class="profile-img-card">
+        <div class="form-group">
+          <label>Nombre de usuario</label>
+          <input type="text" formControlName="user" class="form-control" [(ngModel)]="usuario.NombreUsuarioSistema"
+            [ngClass]="{ 'is-invalid': submitted && f.user.errors }" />
 
-<div style="margin-bottom: 0px; position: unset;  bottom: 0px;">
-    <footer id="sticky-footer" class="text-white-50" style="margin-bottom: 0px; bottom: 0px;">
-        <div class="container text-center" style="justify-content: center;  bottom: 0px; margin-left: auto; margin-right: auto; margin-bottom: 0px;">
-            <img src="../../assets/sara.png" style="width: 70px; height: 60px; margin-right:10px; margin-top: 10px; margin-bottom: 0px;" class="rounded float-center">
-            <img src="../../assets/sepro.png" style="width: 60px; height: 60px; margin-left: 10px; margin-top: 10px; margin-bottom: 0px;" class="rounded float-center">
-            <img src="../../assets/upslogo.png" style="width: 65px; height: 65px; margin-left: 10px; margin-top: 10px; margin-bottom: 0px;" class="rounded float-center">
+          <div *ngIf="submitted && f.user.errors" class="invalid-feedback">
+            <div *ngIf="f.user.errors.required"> Nombre de usuario es requerido</div>
+            <div *ngIf="f.user.errors.minlength"> Nombre de usuario debe contener minimo 6 caracteres</div>
+            <div *ngIf="f.user.errors.maxlength"> Nombre de usuario debe contener menos de 20 caracteres</div>
+            <div *ngIf="f.user.errors.pattern"> Nombre de usuario solo puede contener numeros y letras minusculas o
+              mayusculas</div>
+          </div>
         </div>
-      </footer>
+
+        <div class="form-group">
+          <label>Contraseña</label>
+
+          <input type="password" formControlName="password" class="form-control" [(ngModel)]="usuario.password"
+            [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Contraseña es requireda</div>
+            <div *ngIf="f.password.errors.minlength"> La contraseña debe contener minimo 6 caracteres</div>
+            <div *ngIf="f.password.errors.maxlength">La contraseña debe contener menos de 20 caracteres</div>
+            <div *ngIf="f.password.errors.pattern"> La contraseña solo puede contener numeros y letras minusculas o
+              mayusculas</div>
+          </div>
+        </div>
+        <br />
+        <div class="text-center">
+          <button type="submit" class="btn btn-success btn-block">Iniciar sesión</button>
+        </div>
+
+      </form>
+    </div>
+
+    <div class="card col" style="width: 18rem; margin-left: 5px; margin-right: 50px;">
+      <img class="card-img-top" src="../../assets/descripcion.svg" style="width: 80px; height: 80px;"
+        alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Descripción</h5>
+        <p class="card-text">Aplicativo web para el seguimiento y trazabilidad del alimento
+          Bienestarina Mas® en cuanto a su distribución y entrega a los usuarios beneficiarios en los
+          municipios de Chía y Soacha.</p>
+      </div>
+    </div>
+
+  </div>
+
 </div>
 
+<div class="bg-success footer-basic">
+  <footer style="justify-content: center;">
+    <div class="container text-center"
+      style="justify-content: center; bottom: 0px; margin-left: auto; margin-right: auto; margin-bottom: 0px;">
+      <a> <img src="../../assets/sara.png"
+          style="width: 70px; height: 60px; margin-right:10px; margin-top: 10px; margin-bottom: 0px;"
+          class="rounded float-center"> </a>
+      <a><img src="../../assets/sepro.png"
+          style="width: 60px; height: 60px; margin-left: 10px; margin-top: 10px; margin-bottom: 0px;"
+          class="rounded float-center"></a>
+      <a><img src="../../assets/upslogo.png"
+          style="width: 65px; height: 65px; margin-left: 10px; margin-top: 10px; margin-bottom: 0px;"
+          class="rounded float-center"></a>
+    </div>
+  </footer>
+</div>
