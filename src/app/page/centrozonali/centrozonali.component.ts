@@ -8,6 +8,7 @@ import { Regional } from '../../interfaces/regional';
 import { Select2OptionData } from 'ng2-select2';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-centrozonali',
@@ -27,7 +28,8 @@ export class CentrozonaliComponent implements OnInit {
   constructor(
     private activeRoute: ActivatedRoute,
     private Service: ServicioService, 
-    private router:Router
+    private router:Router,
+    private fb: FormBuilder
   ) {
   }
 
@@ -41,8 +43,36 @@ export class CentrozonaliComponent implements OnInit {
     Estado: 1, 
     idRegional: 1,
   };
+  
+  //----Validaciones de campos
+  czForm: FormGroup;
+  submitted = false;
+
+  onSubmit() {
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.czForm.valid) {
+       this.Validar();
+    }else{
+    }
+
+    // display form values on success
+    console.log('Formulario', this.czForm.value);
+  }
 
   ngOnInit() {
+    //Validador--------------------
+    this.czForm = this.fb.group({
+      Estado: ['', Validators.required],
+      NombreCentroZonal: ['', [Validators.required,Validators.pattern('^[a-z A-Z á é í ó ú]*$')]],
+      idRegional: ['', Validators.required],
+      idMunicipios: ['', Validators.required],
+      Comuna: ['', [Validators.required,Validators.pattern('^[a-z A-Z á é í ó ú]*$')]],
+      CodigoExternoJcz: ['', [Validators.required,Validators.pattern('^[a-z A-Z 0-9]*$')]],
+      CodigoExternoCZ: ['', [Validators.required, Validators.minLength(4),Validators.maxLength(4),Validators.pattern('^[0-9]*$')]],
+    });
+
     // Traer Muinicipios ---------------------------------------
     this.Service.getMunicipio()
       .subscribe(res => {
@@ -59,10 +89,6 @@ export class CentrozonaliComponent implements OnInit {
         console.log(err);
       });
 
-      
-
-
-
        this.Service.getduplicadoz()
   .subscribe(res => {
     this.dup = res;
@@ -71,13 +97,17 @@ export class CentrozonaliComponent implements OnInit {
   });
 
 
-    //opciones del select ----------------------------------------
-    this.options = {
-      multiple: false,
-      theme: 'classic',
-      closeOnSelect: false
-    }
+
   }
+
+  onReset() {
+    this.submitted = false;
+    this.czForm.reset();
+  }
+
+  get f() { return this.czForm.controls; }
+
+  //-----------------------------------------
 
 Validar(){
 
@@ -126,9 +156,7 @@ Validar(){
       confirmButtonText: 'Entendido'
     }).then((result) => {
       if (result.value) {
-        
         this.router.navigate(['/centrozonaliv']);
-    
       }
     });
   }

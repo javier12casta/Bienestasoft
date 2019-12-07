@@ -9,6 +9,7 @@ import { Regional } from '../../interfaces/regional';
 import { Barrio } from '../../interfaces/barrio';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-centrozonalm',
@@ -23,7 +24,8 @@ export class CentrozonalmComponent implements OnInit {
   constructor(
     private activeRoute: ActivatedRoute,
     private Service: ServicioService,
-    private router:Router
+    private router:Router,
+    private fb: FormBuilder
   ) {
   } 
 
@@ -37,6 +39,23 @@ export class CentrozonalmComponent implements OnInit {
     Estado: 1,
     idRegional: 2,
   };
+
+    //----Validaciones de campos
+    czForm: FormGroup;
+    submitted = false;
+  
+    onSubmit() {
+      this.submitted = true;
+  
+      // stop here if form is invalid
+      if (this.czForm.valid) {
+         this.updateDatos();
+      }else{
+      }
+  
+      // display form values on success
+      console.log('Formulario', this.czForm.value);
+    }
 
   ngOnInit() {
 
@@ -52,6 +71,16 @@ export class CentrozonalmComponent implements OnInit {
         }
         );
     }
+        //Validador--------------------
+        this.czForm = this.fb.group({
+          Estado: ['', Validators.required],
+          NombreCentroZonal: ['', [Validators.required,Validators.pattern('^[a-z A-Z á é í ó ú]*$')]],
+          idRegional: ['', Validators.required],
+          idMunicipios: ['', Validators.required],
+          Comuna: ['', [Validators.required,Validators.pattern('^[a-z A-Z á é í ó ú]*$')]],
+          CodigoExternoJcz: ['', [Validators.required,Validators.pattern('^[a-z A-Z 0-9]*$')]],
+          CodigoExternoCZ: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(4),Validators.pattern('^[0-9]*$')]],
+        });
     // Traer Muinicipios ---------------------------------------
     this.Service.getMunicipio()
       .subscribe(res => {
@@ -74,6 +103,15 @@ export class CentrozonalmComponent implements OnInit {
       closeOnSelect: false
     }
   }
+
+  onReset() {
+    this.submitted = false;
+    this.czForm.reset();
+  }
+
+  get f() { return this.czForm.controls; }
+
+  //-----------------------------------------
 
   // Actualizar Datos---------------------------------------------
   updateDatos() {

@@ -6,6 +6,7 @@ import { Centrozonalt } from 'src/app/interfaces/centrozonalt';
 import { Puntoentregat } from 'src/app/interfaces/puntoentregat';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-udsm',
@@ -35,9 +36,28 @@ export class UdsmComponent implements OnInit {
   constructor(
     private Service: ServicioService,
     private activeRoute: ActivatedRoute,
-    private router:Router
+    private router:Router,
+    private fb: FormBuilder
 
   ) { }
+
+   //----Validaciones de campos
+   udForm: FormGroup;
+   submitted = false;
+   onSubmit() {
+     this.submitted = true;
+ 
+     // stop here if form is invalid
+     if (this.udForm.valid) {
+       this.updateDatos();
+     } else {
+     }
+ 
+     // display form values on success
+     console.log('Formulario', this.udForm.value);
+   }
+   
+
 
   modificar = false;
   ngOnInit() {
@@ -68,7 +88,30 @@ export class UdsmComponent implements OnInit {
       }, err => {
         console.log(err);
       });
+
+      //Validador--------------------
+   this.udForm = this.fb.group({
+    idCentrosZonales: ['', Validators.required],
+    idPuntoEntrega: ['', Validators.required],
+    Estado: ['', Validators.required],
+    NombreUDS: ['', [Validators.required, Validators.pattern('^[a-z A-Z á é í ó ú]*$')]],
+    CodigoExternoUDS: ['', [Validators.required, Validators.minLength(13), Validators.maxLength(13), Validators.pattern('^[0-9]*$')]],
+    CodigoInternoUDS: ['', [Validators.required, Validators.pattern('^[a-z A-Z 0-9]*$')]],
+    ReponsableUDS: ['', [Validators.required, Validators.pattern('^[a-z A-Z á é í ó ú]*$')]],
+    Comuna: ['', [Validators.required, Validators.pattern('^[a-z A-Z á é í ó ú]*$')]],
+    Direccion: ['', [Validators.required, Validators.pattern('^[a-z A-Z 0-9 á é í ó ú \-\_\´\¨\.\ #]*$')]],
+    Barrio: ['', [Validators.required, Validators.pattern('^[a-z A-Z 0-9 á é í ó ú]*$')]],
+    Telefono: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('^[0-9]*$')]],
+  });
+
   }
+
+  onReset() {
+    this.submitted = false;
+    this.udForm.reset();
+  }
+
+  get f() { return this.udForm.controls; }
 
   // Actualizar Datos---------------------------------------------
   updateDatos() {
