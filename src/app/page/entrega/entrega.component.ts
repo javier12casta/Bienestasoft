@@ -11,7 +11,9 @@ import { ServicioService } from '../../servicio.service';
 export class EntregaComponent implements OnInit {
 
   entrega: Entrega[] = [];
- 
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
+  Nombrereporte = 'Reporte centro zonal';
 
   constructor(private Service: ServicioService) { }
 

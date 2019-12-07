@@ -1,0 +1,63 @@
+<nav class="navbar navbar-success bg-success">
+    <button class="btn btn-dark" routerLink="/modificaralmaceni">Volver</button>
+  </nav>
+  
+  <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+    <div class="card" padding>
+      <div class="card-body" padding>
+        <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
+          <div class="form-group">
+  
+  
+            <input type="number" class="form-control" [(ngModel)]="almac.NumeroExterno" name="numeroext"
+              placeholder="Número Externo" class="form-control" id="inputnext" minlength="0" required="">
+  
+            <input type="text" class="form-control" [(ngModel)]="almac.Nombre" name="nombre" placeholder="Nombre "
+              class="form-control" id="nom" minlength="0" required="">
+  
+            <input type="text" class="form-control" [(ngModel)]="almac.Responsable" name="res" placeholder="Responsable"
+              class="form-control" id="app" minlength="0" required="">
+  
+            <input type="text" class="form-control" [(ngModel)]="almac.Capacidad " name="cap" placeholder="Capacidad"
+              class="form-control" id="usu" minlength="0" required="">
+  
+            <div id="unidad" hidden [hidden]="habilitado">
+              <input type="number" class="form-control" [(ngModel)]="almac.Capacidad2" name="Capacidad2"
+                placeholder="Capacidad 2" class="form-control" id="inputcap" minlength="0" required="">
+            </div>
+  
+            <input type="text" class="form-control" (change)="onChange($event)" [(ngModel)]="almac.UnidadMedida"
+              name="UnidadMedida" placeholder="Unidad de medida" minlength="0" required="">
+  
+            <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
+            <select name="Estado" [(ngModel)]="almac.Estado" style="width: 100%;" class="form-control" minlength="0" required="">
+              <option [value]="1">Habilitado</option>
+              <Option [value]="0">Inhabilitado</Option>
+            </select>
+            
+  
+              <select name="idnivel2" class="form-control" style="width: 100%;" [(ngModel)]="almac.idCentroDistribucion"
+              options="options" placeholder="nivel" 
+              minlength="0" required="">
+              <option *ngFor="let do of centrod" [value]="do.idCentroDistribucion">{{do.Nombre }} </option>
+          
+              </select>
+  
+  
+              <select name="idnivel1" class="form-control" style="width: 100%;" [(ngModel)]="almac.idPuntoEntrega"
+              options="options" placeholder="nivel" 
+              minlength="0" required="">
+              <option *ngFor="let do of cen" [value]="do.idPuntoEntrega">{{do.NombrePE }} </option>
+          
+              </select>
+  
+  
+            <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
+            <button class="btn btn-success btn-block" type="submit" (click)="updateDatos()">
+              Guardar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

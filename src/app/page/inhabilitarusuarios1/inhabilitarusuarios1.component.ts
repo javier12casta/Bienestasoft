@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuarios } from '../../interfaces/usuarios';
+import { Usuariost } from '../../interfaces/usuariost';
 import { ServicioService } from '../../servicio.service';
 
 @Component({
@@ -28,11 +28,10 @@ import { ServicioService } from '../../servicio.service';
       <th scope="col">Teléfono movil</th>
       <th scope="col">Teléfono movil2</th>
       <th scope="col">Correo electrónico</th>
-      <th scope="col">UDS</th>
       <th scope="col">Tipo documento</th>
       <th scope="col">Tipo usuario</th>
       <th scope="col">Centro zonal</th>
-      <th scope="col">Punto entrega</th>
+
       </tr>
     </thead>
     <tbody>
@@ -50,11 +49,10 @@ import { ServicioService } from '../../servicio.service';
         <td>{{usu.TelefonoMovil}}</td>
         <td>{{usu.TelefonoMovil2}}</td>
         <td>{{usu.Email}}</td>
-        <td>{{usu.idUDS}}</td>
-        <td>{{usu.idTipoDocumento}}</td>
-        <td>{{usu.TipoUsuario}}</td>
-        <td>{{usu.idCentrosZonales}}</td>
-        <td>{{usu.idPuntoEntrega}}</td>
+
+        <td>{{usu.NombreTipo}}</td>
+        <td>{{usu.RolPersona}}</td>
+        <td>{{usu.NombreCentroZonal}}</td>
         <td>
           <button class="btn btn-primary" [routerLink]="['/inhabilitarusuariosi', usu.idUsuarios]">Inhabilitar</button>
         </td>
@@ -72,18 +70,18 @@ import { ServicioService } from '../../servicio.service';
 })
 export class Inhabilitarusuarios1Component implements OnInit {
 
-  usua: Usuarios[] = [];
+  usua: Usuariost[] = [];
 
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {
 
-    this.Service.getUsuarios()
-    .subscribe(async (data) => {
-      this.usua = data;
-      console.log(data);
-    }
-    );
+    this.Service.getUsuariosc()
+      .subscribe(async (data) => {
+        this.usua = data;
+        console.log(data);
+      }
+      );
 
   }
 

@@ -36,6 +36,13 @@
               <option [value]="1">Habilitado</option>
               <Option [value]="0">Inhabilitado</Option>
             </select>
+
+            <select name="idnivel1" class="form-control" style="width: 100%;" [(ngModel)]="cend.idCentrosZonales"
+            options="options" placeholder="nivel" 
+            minlength="0" required="">
+            <option *ngFor="let do of cen " [value]="do.idCentrosZonales">{{do.NombreCentroZonal }} </option>
+        
+            </select>
            
 
           <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->

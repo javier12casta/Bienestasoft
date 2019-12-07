@@ -16,11 +16,10 @@
             <th scope="col">Teléfono movil</th>
             <th scope="col">Teléfono movil2</th>
             <th scope="col">Correo electrónico</th>
-            <th scope="col">UDS</th>
             <th scope="col">Tipo documento</th>
             <th scope="col">Tipo usuario</th>
             <th scope="col">Centro zonal</th>
-            <th scope="col">Punto entrega</th>
+ 
           </tr>
         </thead>
         <tbody>
@@ -39,11 +38,10 @@
             <td>{{cen.TelefonoMovil2}}</td>
             <td>{{cen.Email}}</td>
             <td>{{cen.idPersonalICBF}}</td>
-            <td>{{cen.idUDS}}</td>
             <td>{{cen.idTipoDocumento}}</td>
             <td>{{cen.TipoUsuario}}</td>
             <td>{{cen.idCentrosZonales}}</td>
-            <td>{{cen.idPuntoEntrega}}</td>
+
             <td>
               <button class="btn btn-primary" [routerLink]="['/ModificarBeneficiariom', cen.idUsuarios]">Modificar</button>
             </td>

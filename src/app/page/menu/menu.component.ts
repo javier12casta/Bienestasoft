@@ -1217,11 +1217,11 @@ this.Usuarios.push(create);
     if (array[0] == "1") {
       var create = { name: "Acudientes", route: "/acudientes", icon: "face" };
       this.beneficiarios.push(create);
-      var create = { name: "Crear beneficiarios ", route: "/beneficiariosm", icon: "face" };
+      var create = { name: "Crear beneficiarios ", route: "/nivelbeneficiario", icon: "face" };
       this.beneficiarios.push(create);
 
       if (array[1] == "1") {
-        var create = { name: "Modificar beneficiarios  ", route: "/ModificarBeneficiario1", icon: "face" };
+        var create = { name: "Modificar beneficiarios  ", route: "/modificarnivelbeneficiario", icon: "face" };
         this.beneficiarios.push(create);
 
         if (array[2] == "1") {
@@ -1231,7 +1231,7 @@ this.Usuarios.push(create);
             var create = { name: "Reporte beneficiarios ", route: "/reportebeneficiario", icon: "face" };
               this.beneficiarios.push(create);
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/inhabilitarnivelbeneficiario", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1243,7 +1243,7 @@ this.beneficiarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/inhabilitarnivelbeneficiario", icon: "face" };
 this.beneficiarios.push(create);
 
             }
@@ -1263,7 +1263,7 @@ this.beneficiarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/inhabilitarnivelbeneficiario", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1275,7 +1275,7 @@ this.beneficiarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/inhabilitarnivelbeneficiario", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1299,7 +1299,7 @@ this.beneficiarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/inhabilitarnivelbeneficiario", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1311,7 +1311,7 @@ this.beneficiarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/inhabilitarnivelbeneficiario", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1328,7 +1328,7 @@ this.beneficiarios.push(create);
             var create = { name: "Reporte beneficiarios ", route: "/reportebeneficiario", icon: "face" };
               this.beneficiarios.push(create);
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/inhabilitarnivelbeneficiario", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1340,7 +1340,7 @@ this.beneficiarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/inhabilitarnivelbeneficiario", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1357,7 +1357,7 @@ this.beneficiarios.push(create);
     else if (array[0] == "0") {
 
       if (array[1] == "1") {
-        var create = { name: "Modificar beneficiarios ", route: "/ModificarBeneficiario1", icon: "face" };
+        var create = { name: "Modificar beneficiarios ", route: "/inhabilitarnivelbeneficiario", icon: "face" };
         this.beneficiarios.push(create);
 
         if (array[2] == "1") {
@@ -1369,7 +1369,7 @@ this.beneficiarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/inhabilitarnivelbeneficiario", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1380,7 +1380,7 @@ this.beneficiarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/inhabilitarnivelbeneficiario", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1396,7 +1396,7 @@ this.beneficiarios.push(create);
             var create = { name: "Reporte beneficiarios ", route: "/reportebeneficiario", icon: "face" };
               this.beneficiarios.push(create);
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/inhabilitarnivelbeneficiario", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1408,7 +1408,7 @@ this.beneficiarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/inhabilitarnivelbeneficiario", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1429,7 +1429,7 @@ this.beneficiarios.push(create);
             var create = { name: "Reporte beneficiarios", route: "/reportebeneficiario", icon: "face" };
               this.beneficiarios.push(create);
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/inhabilitarnivelbeneficiario", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1441,7 +1441,7 @@ this.beneficiarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/inhabilitarnivelbeneficiario", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1457,7 +1457,7 @@ this.beneficiarios.push(create);
             var create = { name: "Reporte beneficiarios ", route: "/reportebeneficiario", icon: "face" };
               this.beneficiarios.push(create);
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/inhabilitarnivelbeneficiario", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {
@@ -1469,7 +1469,7 @@ this.beneficiarios.push(create);
 
 
             if (array[4] == "1") {
-              var create = { name: "Inhabilitar beneficiarios ", route: "/InhabilitarBeneficiario1", icon: "face" };
+              var create = { name: "Inhabilitar beneficiarios ", route: "/inhabilitarnivelbeneficiario", icon: "face" };
 this.beneficiarios.push(create);
             }
             else if (array[4] == "0") {

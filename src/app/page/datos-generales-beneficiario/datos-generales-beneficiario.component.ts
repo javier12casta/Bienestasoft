@@ -5,7 +5,7 @@ import { Acudientes } from 'src/app/interfaces/acudiente';
 import Swal from 'sweetalert2';
 import { Regional } from '../../interfaces/regional';
 import { Genero } from '../../interfaces/genero';
-import { Uds } from '../../interfaces/uds';
+import { Centrozonal } from '../../interfaces/centrozonal';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Biometrico } from 'src/app/interfaces/biometrico';
 import { delay } from 'q';
@@ -20,7 +20,7 @@ export class DatosGeneralesBeneficiarioComponent implements OnInit {
 
   public reg: Regional[] = [];
   public gen: Genero[] = [];
-  public ud: Uds[] = [];
+  public cen: Centrozonal[] = [];
 
   x : Beneficiario = {
 
@@ -132,9 +132,9 @@ export class DatosGeneralesBeneficiarioComponent implements OnInit {
    console.log(err);
  });
 
- this.Service.getUds()
+ this.Service.getCentro()
  .subscribe(res => {
-   this.ud= res;
+   this.cen= res;
  }, err => {
    console.log(err);
  });

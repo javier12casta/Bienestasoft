@@ -23,6 +23,7 @@ import { ServicioService } from '../../servicio.service';
         <th scope="col">Barrio </th>
         <th scope="col"> Teléfono </th>
         <th scope="col">Estado </th>
+        <th scope="col">Centro zonal </th>
        
       </tr>
     </thead>
@@ -43,7 +44,8 @@ import { ServicioService } from '../../servicio.service';
       <div *ngIf="usu.Estado== 0">
         Deshabilitado
       </div>
-        </td>    
+        </td>
+        <td>{{usu.NombreCentroZonal}}</td>    
         <td>
           <button class="btn btn-primary" [routerLink]="['/modificarcentrom', usu.idCentroDistribucion]">Modificar</button>
         </td>
@@ -62,7 +64,7 @@ export class ModificarcentrodiComponent implements OnInit {
 
   ngOnInit() {
 
-    this.Service.getcentrodistribucion()
+    this.Service.getCentrodistribucionc()
       .subscribe(async (data) => {
         this.cen = data;
         console.log(data);

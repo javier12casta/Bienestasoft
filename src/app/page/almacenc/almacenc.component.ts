@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../../servicio.service';
-import { Almacen} from '../../interfaces/almacen';
+import { Almacent} from '../../interfaces/almacent';
 
 
 @Component({
@@ -29,6 +29,7 @@ import { Almacen} from '../../interfaces/almacen';
         <th scope="col">Unidad medida </th>
         <th scope="col">Estado </th>
         <th scope="col">Centro distribución</th>
+        <th scope="col">Centro zonal</th>
         
       </tr>
     </thead>
@@ -50,7 +51,8 @@ import { Almacen} from '../../interfaces/almacen';
         </div>
         
         </td>
-        <td>{{al.idCentroDistribucion }}</td>
+        <td>{{al.Nombre }}</td>
+        <td>{{al.NombreCentroZonal}}</td>
             
       </tr>
     </tbody>
@@ -61,20 +63,18 @@ import { Almacen} from '../../interfaces/almacen';
 })
 export class AlmacencComponent implements OnInit {
 
-  alm:Almacen[] = [];
+  alm:Almacent[] = [];
 
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {
 
-    this.Service.getalmacen()
+    this.Service.getAlmacenc()
       .subscribe(async (data) => {
         this.alm = data;
         console.log(data);
       }
-      );
-
-      
+      );   
   }
 
 }

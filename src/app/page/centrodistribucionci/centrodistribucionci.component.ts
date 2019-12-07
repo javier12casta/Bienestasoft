@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Centrodistribucion } from 'src/app/interfaces/centrodistribucion';
+import { Centrozonal } from 'src/app/interfaces/centrozonal';
 import { ServicioService } from 'src/app/servicio.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
@@ -14,6 +15,7 @@ import { Router } from '@angular/router';
 export class CentrodistribucionciComponent implements OnInit {
 
   listamaestro:string[]=["0","1"];
+  public cen: Centrozonal[] = [];
 
   x : Centrodistribucion = {
     
@@ -24,6 +26,9 @@ export class CentrodistribucionciComponent implements OnInit {
     Barrio : '',
     Telefono : 0,
     Estado : 0,
+    idUDS : null,
+    idCentrosZonales : null,
+    idPuntoEntrega : null,
 
   };
 
@@ -43,7 +48,13 @@ export class CentrodistribucionciComponent implements OnInit {
   constructor(private Service: ServicioService,private router:Router) { }
 
   ngOnInit() {
-
+    
+    this.Service.getCentro()
+    .subscribe(res => {
+      this.cen = res;
+    }, err => {
+      console.log(err);
+    });
    
   }
 

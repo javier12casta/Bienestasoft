@@ -4,7 +4,7 @@ import { Centrodistribucion } from 'src/app/interfaces/centrodistribucion';
 import { ServicioService } from 'src/app/servicio.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
-
+import { Centrozonal } from 'src/app/interfaces/centrozonal';
 
 
 @Component({
@@ -17,6 +17,7 @@ export class AlmacenciComponent implements OnInit {
   listamaestro:string[]=["0","1"];
   unidadmedida:string[]=["g","ml", "g y ml"];
   public cen: Centrodistribucion[] = [];
+  public cen1: Centrozonal[] = [];
   campo: [];
 
   x : Almacen = {
@@ -71,6 +72,14 @@ export class AlmacenciComponent implements OnInit {
     }, err => {
       console.log(err);
     });
+
+    
+  this.Service.getCentro()
+  .subscribe(res => {
+    this.cen1 = res;
+  }, err => {
+    console.log(err);
+  });
 
 
   }

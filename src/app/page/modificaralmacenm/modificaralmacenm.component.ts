@@ -4,6 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Almacen } from '../../interfaces/almacen';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { Centrozonal } from 'src/app/interfaces/centrozonal';
+import { Centrodistribucion } from '../../interfaces/centrodistribucion';
 
 @Component({
   selector: 'app-modificaralmacenm',
@@ -13,7 +15,8 @@ import { Router } from '@angular/router';
 export class ModificaralmacenmComponent implements OnInit {
 
   public almc: Almacen[] = [];
-
+  public cen: Centrozonal[] = [];
+  public centrod: Centrodistribucion[] = [];
 
   constructor(private activeRoute: ActivatedRoute,
     private Service: ServicioService,private router:Router) { }
@@ -34,6 +37,22 @@ export class ModificaralmacenmComponent implements OnInit {
 
   ngOnInit() {
 
+    
+    this.Service.getCentro()
+    .subscribe(res => {
+      this.cen = res;
+    }, err => {
+      console.log(err);
+    });
+
+    this.Service.getcentrodistribucion()
+    .subscribe(res => {
+      this.centrod = res;
+    }, err => {
+      console.log(err);
+    });
+
+    
     const params = this.activeRoute.snapshot.params;
     console.log(params);
     if (params.id) {
@@ -47,22 +66,10 @@ export class ModificaralmacenmComponent implements OnInit {
         );
     }
 
+
   }
 
-  habilitado = true;
 
-  onChange($event) {
-   
-   if(this.almac.UnidadMedida == "g y ml"){
-     this.habilitado = false;
-
-   }else if (this.almac.UnidadMedida == "g") {
-     this.habilitado = true;
-   }else if (this.almac.UnidadMedida == "ml") {
-     this.habilitado = true;
-   }
-    
- }
 
   showMenssage(){
     Swal.fire({

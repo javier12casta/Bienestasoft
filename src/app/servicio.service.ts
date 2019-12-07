@@ -27,6 +27,7 @@ import { InLprecios } from './interfaces/inhabilitarlistaprecio';
 import { InListadocursos } from './interfaces/inhabilitarlistadocursos';
 import { Centrodistribucion } from './interfaces/centrodistribucion';
 import { Almacen } from './interfaces/almacen';
+import { Almacent } from './interfaces/almacent';
 import { InAlmacen } from './interfaces/inhabilitaralmacen';
 import { InCentrodistribucion } from './interfaces/inhabilitarcentrodistribucion';
 import { Entrega } from './interfaces/entrega';
@@ -60,7 +61,7 @@ import { Puntoentregat } from './interfaces/puntoentregat';
 import {Udst } from './interfaces/udst';
 import {Consecutivomaestro } from './interfaces/consecutivomaestro';
 import {Usuariost } from './interfaces/usuariost';
-
+import {Centrodistribuciont } from './interfaces/centrodistribuciont';
 
 @Injectable({
   providedIn: 'root'
@@ -358,8 +359,18 @@ export class ServicioService {
     return this.http.get<[Beneficiario]>(path);
   }
 
-  getBeneficiariost() {
-    const path = `${this.api}/beneficiario/tablab`;
+  getBeneficiariosu() {
+    const path = `${this.api}/beneficiario/beneficiariosu`;
+    return this.http.get<[Beneficiariot]>(path);
+  }
+
+  getBeneficiariosc() {
+    const path = `${this.api}/beneficiario/beneficiariosc`;
+    return this.http.get<[Beneficiariot]>(path);
+  }
+
+  getBeneficiariosp() {
+    const path = `${this.api}/beneficiario/beneficiariosp`;
     return this.http.get<[Beneficiariot]>(path);
   }
 
@@ -543,6 +554,24 @@ export class ServicioService {
     return this.http.get<[Centrodistribucion]>(path);
   }
 
+
+  getCentrodistribucionc() {
+    const path = `${this.api}/centrosD/centrodistribucionc`;
+    return this.http.get<[Centrodistribuciont]>(path);
+  }
+
+  getCentrodistribucionp() {
+    const path = `${this.api}/centrosD/centrodistribucionp`;
+    return this.http.get<[Centrodistribuciont]>(path);
+  }
+
+  getCentrodistribucionu() {
+    const path = `${this.api}/centrosD/centrodistribucionu`;
+    return this.http.get<[Centrodistribuciont]>(path);
+  }
+
+
+
   putcentrodistribucion(id: string | number, cent: Centrodistribucion) {
     return this.http.put<Centrodistribucion>(`${this.api}/centrosD/${id}`, cent);
   }
@@ -567,6 +596,23 @@ export class ServicioService {
     const path = `${this.api}/almacen`;
     return this.http.get<[Almacen]>(path);
   }
+
+  getAlmacenc() {
+    const path = `${this.api}/almacen/almacenesc`;
+    return this.http.get<[Almacent]>(path);
+  }
+
+  getAlmacenp() {
+    const path = `${this.api}/almacen/almacenesp`;
+    return this.http.get<[Almacent]>(path);
+  }
+
+  getAlmacenu() {
+    const path = `${this.api}/almacen/almacenesu`;
+    return this.http.get<[Almacent]>(path);
+  }
+
+
 
   putalmacen(id: string | number, cent: Almacen) {
     return this.http.put<Almacen>(`${this.api}/almacen/${id}`, cent);

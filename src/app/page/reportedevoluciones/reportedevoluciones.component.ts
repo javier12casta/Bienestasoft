@@ -12,6 +12,9 @@ import html2canvas from 'html2canvas';
 export class ReportedevolucionesComponent implements OnInit {
 
   devolucion: Devoluciones[] = [];
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
+  Nombrereporte = 'Reporte devoluciones';
 
   constructor(private Service: ServicioService) { }
 

@@ -9,6 +9,17 @@
                     <h1>Crear centro distribución </h1>
               <div class="form-group">
 
+                  <span >Seleccione centro zonal</span>
+                  <h2></h2>
+                  
+                  
+               <select name="idnivel1" class="form-control" style="width: 100%;" [(ngModel)]="x.idCentrosZonales"
+               options="options" placeholder="nivel" 
+               minlength="0" required="">
+               <option *ngFor="let do of cen " [value]="do.idCentrosZonales">{{do.NombreCentroZonal }} </option>
+           
+               </select>
+
                     <span >Número externo</span>
                     <h2></h2>
                     <input type="number" class="form-control" [(ngModel)]="x.NumeroExterno" name="numeroex"

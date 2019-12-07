@@ -1,0 +1,46 @@
+
+  <nav class="navbar navbar-success bg-success">
+        <button class="btn btn-dark" routerLink="/modificarcentrod">Volver</button>
+      </nav>
+      
+      <table class="table">
+          <thead class="thead-green">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Número externo</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Responsable </th>
+              <th scope="col">Dirección </th>
+              <th scope="col">Barrio </th>
+              <th scope="col"> Teléfono </th>
+              <th scope="col">Estado </th>
+              <th scope="col">UDS </th>
+             
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let usu of cen">
+              <th scope="row">{{usu.idCentroDistribucion}}</th>
+              <td>{{usu.NumeroExterno}}</td>
+              <td>{{usu.Nombre}}</td>
+              <td>{{usu.Responsable}}</td>
+              <td>{{usu.Direccion}}</td>
+              <td>{{usu.Barrio}}</td>
+              <td>{{usu.Telefono}}</td>
+              <td>
+              
+              <div *ngIf="usu.Estado == 1">
+              Habilitado
+            </div>
+            <div *ngIf="usu.Estado== 0">
+              Deshabilitado
+            </div>
+              </td>
+              <td>{{usu.NombreUDS}}</td>    
+              <td>
+                <button class="btn btn-primary" [routerLink]="['/modificarcentroui', usu.idCentroDistribucion]">Modificar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+

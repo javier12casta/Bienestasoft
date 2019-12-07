@@ -12,6 +12,9 @@ import { Salidacentrot } from 'src/app/interfaces/salidacentrot';
 })
 export class ReportesalidacentrodComponent implements OnInit {
   centroD: Salidacentrot[] = [];
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
+  Nombrereporte = 'Reporte centro zonal';
 
   constructor(private Service: ServicioService) { }
 

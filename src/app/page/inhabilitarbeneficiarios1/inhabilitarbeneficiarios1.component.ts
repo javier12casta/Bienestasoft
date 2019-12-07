@@ -40,7 +40,7 @@ import { Beneficiariot } from '../../interfaces/beneficiariot';
         <th scope="col">Servicio o modalidad</th>
         <th scope="col">Género</th>
         <th scope="col">Tipo documento</th>
-        <th scope="col">UDS</th>
+        <th scope="col">Centro zonal</th>
          
         </tr>
       </thead>
@@ -76,7 +76,7 @@ import { Beneficiariot } from '../../interfaces/beneficiariot';
           <td>{{cen.ServicioOmodalidad}}</td>
           <td>{{cen.NombreGenero}}</td>
           <td>{{cen.NombreTipo}}</td>
-          <td>{{cen.NombreUDS}}</td>
+          <td>{{cen.NombreCentroZonal}}</td>
   
           <td>
             <button class="btn btn-primary" [routerLink]="['/InhabilitarBeneficiarioi', cen.idBeneficiarios]">Inhabilitar</button>
@@ -97,15 +97,9 @@ export class Inhabilitarbeneficiarios1Component implements OnInit {
   ngOnInit() {
 
 
-    this.Service.getBeneficiarios()
-    .subscribe(async (data) => {
-      this.benefi = data;
-      console.log(data);
-      console.log('funciona');
-    }
-    );
+   
 
-    this.Service.getBeneficiariost()
+    this.Service.getBeneficiariosc()
     .subscribe(async (data) => {
       this.bene = data;
       console.log(data);

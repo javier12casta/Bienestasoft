@@ -1,0 +1,99 @@
+<nav class="navbar navbar-success bg-success">
+    <button class="btn btn-dark" routerLink="/modificarusuarios1">Volver</button>
+  </nav>
+  
+  <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+    <div class="card" padding>
+      <div class="card-body" padding>
+        <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
+          <div class="form-group">
+
+    
+              <select name="idnivel" class="Select2" style="width: 100%;" [(ngModel)]="ben.idUDS"
+                options="options" placeholder="uds" minlength="0" required="" class="form-control">
+                <option *ngFor="let pe of ud" [value]="pe.idUDS">{{pe.NombreUDS }}</option>
+                </select>
+                <h2></h2>
+
+                <input type="number" class="form-control" [(ngModel)]="ben.NumeroDocumento" name="numerodoc"
+                placeholder="numero Documento" class="form-control" id="inputdoc" minlength="0" required="">
+
+                <input type="date" class="form-control" [(ngModel)]="ben.FechaIngreso" name="fechai" placeholder="Fecha Ingreso" min="2018-01-01" max="2050-12-31" class="form-control" minlength="0" required="">
+    
+                <input type="date" class="form-control" [(ngModel)]="ben.FechaNacimiento" name="fechan" placeholder="Fecha Nacimiento" min="2018-01-01" max="2050-12-31" class="form-control" minlength="0" required="">
+    
+                <input type="text" class="form-control" [(ngModel)]="ben.PrimerNombre" name="pnombre"
+                placeholder="Primer Nombre" class="form-control" id="nom" minlength="0" required="">
+
+                <input type="text" class="form-control" [(ngModel)]="ben.PrimerApellido" name="papellido"
+                placeholder="Primer Apellido" class="form-control" id="app" minlength="0" required="">
+
+                <input type="text" class="form-control" [(ngModel)]="ben.SegundoNombre" name="snombre"
+                placeholder="segundo Nombre" class="form-control" id="nom" minlength="0" required="">
+
+                <input type="text" class="form-control" [(ngModel)]="ben.SegundoApellido" name="sapellido"
+                placeholder="Segundo Apellido" class="form-control" id="app" > 
+
+                <input type="text" class="form-control" [(ngModel)]="ben.Direccion" name="Nombredireccion"
+                placeholder="Direccion" class="form-control" minlength="0" required="">
+
+                <input type="text" class="form-control" [(ngModel)]="ben.Pais" name="pais"
+                placeholder="Pais" class="form-control" minlength="0" required="">
+
+                <input type="text" class="form-control" [(ngModel)]="ben.Departamento" name="departamento"
+                placeholder="Departamento" class="form-control" minlength="0" required="">
+
+                <input type="text" class="form-control" [(ngModel)]="ben.Municipio" name="municipio"
+                placeholder="municipio" class="form-control" minlength="0" required="">
+
+                <input type="number" class="form-control" [(ngModel)]="ben.TelefonoFijo" name="telefonof1"
+                placeholder="Telefono fijo 1" class="form-control" minlength="0" required="">
+      
+                <input type="number" class="form-control" [(ngModel)]="ben.TelefonoFijo2" name="telefonof2"
+                placeholder="Telefono fijo 2" class="form-control" >
+                  
+               <input type="number" class="form-control" [(ngModel)]="ben.TelefonoMovil" name="telefonom1"
+                placeholder="Telefono movil 1" class="form-control" minlength="0" required="">
+                  
+                  <input type="number" class="form-control" [(ngModel)]="ben.TelefonoMovil2" name="telefonom2"
+                  placeholder="Telefono movil 2" class="form-control" >
+              
+                  <input type="text" class="form-control" [(ngModel)]="ben.Email" name="email112"
+                  placeholder="Email" class="form-control" minlength="0" required="">
+
+  
+            <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
+            <select name="Estado" id="Estado" [(ngModel)]="ben.Estado" style="width: 100%;" class="form-control" minlength="0" required="">
+              <option value="0">Inhabilitado</option>
+              <Option value="1">Habilitado</Option>
+            </select>
+
+            <input type="text" class="form-control" [(ngModel)]="ben.ServicioOmodalidad" name="servicio"
+            placeholder="Servicio o Modalidad" class="form-control" minlength="0" required="">
+
+
+
+             <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
+             <select name="genero" id="generoc" [(ngModel)]="ben.idGenero" style="width: 100%;" class="form-control" minlength="0" required="">
+              <option value="1">hombre</option>
+              <Option value="2">Mujer</Option>
+            </select>
+  
+            <select name="tipodocumento" id="tipodoc" [(ngModel)]="ben.idTipoDocumento" style="width: 100%;" class="form-control" minlength="0" required="">
+                    <option value="1">CC</option>
+                    <Option value="2">CE</Option>
+                    <Option value="3">PA</Option>
+                  </select>
+  
+          <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
+          <button class="btn btn-success btn-block" type="submit" (click)="updateDatos()">
+            Guardar
+          </button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+
+

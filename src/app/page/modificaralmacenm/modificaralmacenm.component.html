@@ -34,9 +34,23 @@
             <option [value]="1">Habilitado</option>
             <Option [value]="0">Inhabilitado</Option>
           </select>
+          
 
-          <input type="text" class="form-control" [(ngModel)]="almac.idCentroDistribucion " name="cend"
-            placeholder="centro de distribución" class="form-control" id="usu" minlength="0" required="">
+            <select name="idnivel2" class="form-control" style="width: 100%;" [(ngModel)]="almac.idCentroDistribucion"
+            options="options" placeholder="nivel" 
+            minlength="0" required="">
+            <option *ngFor="let do of centrod" [value]="do.idCentroDistribucion">{{do.Nombre }} </option>
+        
+            </select>
+
+
+            <select name="idnivel1" class="form-control" style="width: 100%;" [(ngModel)]="almac.idCentrosZonales"
+            options="options" placeholder="nivel" 
+            minlength="0" required="">
+            <option *ngFor="let do of cen" [value]="do.idCentrosZonales">{{do.NombreCentroZonal }} </option>
+        
+            </select>
+
 
           <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
           <button class="btn btn-success btn-block" type="submit" (click)="updateDatos()"

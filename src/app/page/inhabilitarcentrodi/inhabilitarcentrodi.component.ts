@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Centrodistribucion} from '../../interfaces/centrodistribucion';
+import { Centrodistribuciont} from '../../interfaces/centrodistribuciont';
 import { ServicioService } from '../../servicio.service';
 
 
@@ -9,19 +9,18 @@ import { ServicioService } from '../../servicio.service';
   styleUrls: ['./inhabilitarcentrodi.component.css']
 })
 export class InhabilitarcentrodiComponent implements OnInit {
-  centrodt: Centrodistribucion[] = [];
+  centrodt: Centrodistribuciont[] = [];
 
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {
 
-    this.Service.getcentrodistribucion()
-    .subscribe(async (data) => {
-      this.centrodt = data;
-      console.log(data);
-      console.log('funciona');
-    }
-    );
+    this.Service.getCentrodistribucionc()
+      .subscribe(async (data) => {
+        this.centrodt = data;
+        console.log(data);
+      }
+      );
 
 
   }

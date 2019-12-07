@@ -198,6 +198,50 @@ import { Modificarusuariosv2Component } from './page/modificarusuariosv2/modific
 import { Modificarusuariosv3Component } from './page/modificarusuariosv3/modificarusuariosv3.component';
 import { Modificarusuariosv2mComponent } from './page/modificarusuariosv2m/modificarusuariosv2m.component';
 import { Modificarusuariosv3mComponent } from './page/modificarusuariosv3m/modificarusuariosv3m.component';
+import { Inhabilitarusuarios2Component } from './page/inhabilitarusuarios2/inhabilitarusuarios2.component';
+import { Inhabilitarusuarios3Component } from './page/inhabilitarusuarios3/inhabilitarusuarios3.component';
+import { InhabilitarusuariospComponent } from './page/inhabilitarusuariosp/inhabilitarusuariosp.component';
+import { InhabilitarusuariosuComponent } from './page/inhabilitarusuariosu/inhabilitarusuariosu.component';
+import { CentrodistribucionpComponent } from './page/centrodistribucionp/centrodistribucionp.component';
+import { CentrodistribuciondComponent } from './page/centrodistribuciond/centrodistribuciond.component';
+import { CentrodistribucionpiComponent } from './page/centrodistribucionpi/centrodistribucionpi.component';
+import { CentrodistribucionuiComponent } from './page/centrodistribucionui/centrodistribucionui.component';
+import { ModificarcentropComponent } from './page/modificarcentrop/modificarcentrop.component';
+import { ModificarcentropiComponent } from './page/modificarcentropi/modificarcentropi.component';
+import { ModificarcentrouComponent } from './page/modificarcentrou/modificarcentrou.component';
+import { ModificarcentrouiComponent } from './page/modificarcentroui/modificarcentroui.component';
+import { InhabilitarcentropComponent } from './page/inhabilitarcentrop/inhabilitarcentrop.component';
+import { InhabilitarcentropiComponent } from './page/inhabilitarcentropi/inhabilitarcentropi.component';
+import { InhabilitarcentrouComponent } from './page/inhabilitarcentrou/inhabilitarcentrou.component';
+import { InhabilitarcentrouiComponent } from './page/inhabilitarcentroui/inhabilitarcentroui.component';
+import { NivelalmacenComponent } from './page/nivelalmacen/nivelalmacen.component';
+import { AlmacenpComponent } from './page/almacenp/almacenp.component';
+import { AlmacenuComponent } from './page/almacenu/almacenu.component';
+import { AlmacenpiComponent } from './page/almacenpi/almacenpi.component';
+import { AlmacenuiComponent } from './page/almacenui/almacenui.component';
+import { ModificaralmacenpComponent } from './page/modificaralmacenp/modificaralmacenp.component';
+import { ModificaralmacenpiComponent } from './page/modificaralmacenpi/modificaralmacenpi.component';
+import { ModificaralmacenuComponent } from './page/modificaralmacenu/modificaralmacenu.component';
+import { ModificaralmacenuiComponent } from './page/modificaralmacenui/modificaralmacenui.component';
+import { InhabilitaralmacenpComponent } from './page/inhabilitaralmacenp/inhabilitaralmacenp.component';
+import { InhabilitaralmacenpiComponent } from './page/inhabilitaralmacenpi/inhabilitaralmacenpi.component';
+import { InhabilitaralmacenuComponent } from './page/inhabilitaralmacenu/inhabilitaralmacenu.component';
+import { InhabilitaralmacenuiComponent } from './page/inhabilitaralmacenui/inhabilitaralmacenui.component';
+import { NivelbeneficiarioComponent } from './page/nivelbeneficiario/nivelbeneficiario.component';
+import { BeneficiariosmpComponent } from './page/beneficiariosmp/beneficiariosmp.component';
+import { BeneficiariosmpiComponent } from './page/beneficiariosmpi/beneficiariosmpi.component';
+import { BeneficiariosmuComponent } from './page/beneficiariosmu/beneficiariosmu.component';
+import { BeneficiariosmuiComponent } from './page/beneficiariosmui/beneficiariosmui.component';
+import { ModificarnivelbeneficiarioComponent } from './page/modificarnivelbeneficiario/modificarnivelbeneficiario.component';
+import { ModificarBeneficiariopComponent } from './page/modificar-beneficiariop/modificar-beneficiariop.component';
+import { ModificarBeneficiariouComponent } from './page/modificar-beneficiariou/modificar-beneficiariou.component';
+import { ModificarBeneficiariopiComponent } from './page/modificar-beneficiariopi/modificar-beneficiariopi.component';
+import { ModificarBeneficiariouiComponent } from './page/modificar-beneficiarioui/modificar-beneficiarioui.component';
+import { InhabilitarnivelbeneficiarioComponent } from './page/inhabilitarnivelbeneficiario/inhabilitarnivelbeneficiario.component';
+import { InhabilitarbeneficiariopComponent } from './page/inhabilitarbeneficiariop/inhabilitarbeneficiariop.component';
+import { InhabilitarbeneficiariopiComponent } from './page/inhabilitarbeneficiariopi/inhabilitarbeneficiariopi.component';
+import { InhabilitarbeneficiariouComponent } from './page/inhabilitarbeneficiariou/inhabilitarbeneficiariou.component';
+import { InhabilitarbeneficiariouiComponent } from './page/inhabilitarbeneficiarioui/inhabilitarbeneficiarioui.component';
 
 @NgModule({
   declarations: [
@@ -372,6 +416,50 @@ import { Modificarusuariosv3mComponent } from './page/modificarusuariosv3m/modif
     Modificarusuariosv3Component,
     Modificarusuariosv2mComponent,
     Modificarusuariosv3mComponent,
+    Inhabilitarusuarios2Component,
+    Inhabilitarusuarios3Component,
+    InhabilitarusuariospComponent,
+    InhabilitarusuariosuComponent,
+    CentrodistribucionpComponent,
+    CentrodistribuciondComponent,
+    CentrodistribucionpiComponent,
+    CentrodistribucionuiComponent,
+    ModificarcentropComponent,
+    ModificarcentropiComponent,
+    ModificarcentrouComponent,
+    ModificarcentrouiComponent,
+    InhabilitarcentropComponent,
+    InhabilitarcentropiComponent,
+    InhabilitarcentrouComponent,
+    InhabilitarcentrouiComponent,
+    NivelalmacenComponent,
+    AlmacenpComponent,
+    AlmacenuComponent,
+    AlmacenpiComponent,
+    AlmacenuiComponent,
+    ModificaralmacenpComponent,
+    ModificaralmacenpiComponent,
+    ModificaralmacenuComponent,
+    ModificaralmacenuiComponent,
+    InhabilitaralmacenpComponent,
+    InhabilitaralmacenpiComponent,
+    InhabilitaralmacenuComponent,
+    InhabilitaralmacenuiComponent,
+    NivelbeneficiarioComponent,
+    BeneficiariosmpComponent,
+    BeneficiariosmpiComponent,
+    BeneficiariosmuComponent,
+    BeneficiariosmuiComponent,
+    ModificarnivelbeneficiarioComponent,
+    ModificarBeneficiariopComponent,
+    ModificarBeneficiariouComponent,
+    ModificarBeneficiariopiComponent,
+    ModificarBeneficiariouiComponent,
+    InhabilitarnivelbeneficiarioComponent,
+    InhabilitarbeneficiariopComponent,
+    InhabilitarbeneficiariopiComponent,
+    InhabilitarbeneficiariouComponent,
+    InhabilitarbeneficiariouiComponent,
 
     
     

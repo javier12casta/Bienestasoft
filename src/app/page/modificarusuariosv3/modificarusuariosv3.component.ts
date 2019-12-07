@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Usuariost } from '../../interfaces/usuariost';
+import { ServicioService } from '../../servicio.service';
 
 @Component({
   selector: 'app-modificarusuariosv3',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Modificarusuariosv3Component implements OnInit {
 
-  constructor() { }
+  usua: Usuariost[] = [];
+
+
+  constructor(private Service: ServicioService) { }
 
   ngOnInit() {
+
+    this.Service.getUsuariosu()
+    .subscribe(async (data) => {
+      this.usua = data;
+      console.log(data);
+    }
+    );
+
+    
   }
 
 }

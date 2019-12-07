@@ -8,5 +8,8 @@ export interface Centrodistribucion {
     Barrio : string,
     Telefono : number,
     Estado : number,
+    idCentrosZonales ?: number,
+    idPuntoEntrega ?: number,
+    idUDS ?: number
 
 }

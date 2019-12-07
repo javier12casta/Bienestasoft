@@ -8,12 +8,12 @@
 			<form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
 			  <div class="form-group">
 
-				<h1  >Nivel </h1>
+				<span  >Seleccione centro zonal </span>
 					<h2></h2>
 
-					<select name="idnivel" class="Select2" style="width: 100%;" [(ngModel)]="x.idUDS"
+					<select name="idnivel" class="Select2" style="width: 100%;" [(ngModel)]="x.idCentrosZonales"
 						options="options" placeholder="uds" minlength="0" required="" class="form-control">
-						<option *ngFor="let udss of ud" [value]="udss.idUDS">{{udss.NombreUDS }}</option>
+						<option *ngFor="let ud of cen" [value]="ud.idCentrosZonales">{{ud.NombreCentroZonal }}</option>
 					  </select>
 					  <h2></h2>	
 					<h1>Datos generales beneficiario</h1>

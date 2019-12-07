@@ -3,6 +3,8 @@ import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 import { Centrodistribucion } from '../../interfaces/centrodistribucion';
 import Swal from 'sweetalert2';
+import { Centrozonal } from 'src/app/interfaces/centrozonal';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modificarcentrom',
@@ -12,9 +14,10 @@ import Swal from 'sweetalert2';
 export class ModificarcentromComponent implements OnInit {
 
   public centrod: Centrodistribucion[] = [];
+  public cen: Centrozonal[] = [];
 
   constructor( private activeRoute: ActivatedRoute,
-    private Service: ServicioService,) { }
+    private Service: ServicioService,private router:Router) { }
 
 
     cend: Centrodistribucion = {
@@ -45,6 +48,14 @@ export class ModificarcentromComponent implements OnInit {
         );
     }
 
+    this.Service.getCentro()
+    .subscribe(res => {
+      this.cen = res;
+    }, err => {
+      console.log(err);
+    });
+   
+
 
   }
 
@@ -54,6 +65,12 @@ export class ModificarcentromComponent implements OnInit {
       text: 'Centro Distribucion Modificado',
       type: 'success',
       confirmButtonText: 'Ok'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/modificarcentroi']);
+    
+      }
     });
   }
 

@@ -13,6 +13,9 @@ import {Puntoentregat } from '../../interfaces/puntoentregat';
 export class ReporteentregaComponent implements OnInit {
   punto: Puntoentrega [] = [];
   puntot: Puntoentregat [] = [];
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
+  Nombrereporte = 'Reporte punto de entrega';
   constructor(private service: ServicioService) { }
 
   ngOnInit() {

@@ -71,7 +71,7 @@ export class InhabilitarcentrodmComponent implements OnInit {
   showMenssage4() {
     Swal.fire({
       title: 'Error!',
-      text: 'No es posible inhabilitar la UDS',
+      text: 'No es posible inhabilitar el centro de distribucion',
       type: 'error',
       confirmButtonText: 'Entendido'
     });

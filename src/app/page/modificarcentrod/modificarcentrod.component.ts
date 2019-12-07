@@ -9,11 +9,32 @@ import { Router } from '@angular/router';
 
 })
 export class ModificarcentrodComponent implements OnInit {
+  listau = '';
+  lista:string[]=["Centro Zonal","Punto De Entrega","Unidad de servicio"];
 
   onClickMe() {
-    
-    this.router.navigate(['/modificarcentroi']);
   
+
+    
+    if(this.listau == 'Centro Zonal'){
+
+      this.router.navigate(['/modificarcentroi']);
+    
+    }
+  
+    if(this.listau == 'Punto De Entrega'){
+  
+      this.router.navigate(['/modificarcentrop']);
+      
+    }
+  
+    if(this.listau == 'Unidad de servicio'){
+  
+      this.router.navigate(['/modificarcentrou']);
+      
+    }
+
+
     }
 
   constructor(private Service:ServicioService , private router:Router) { }

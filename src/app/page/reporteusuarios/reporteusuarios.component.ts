@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuarios } from '../../interfaces/usuarios';
+import { Usuariost } from '../../interfaces/usuariost';
 import { ServicioService } from '../../servicio.service';
 import * as jspdf from 'jspdf'; 
 import html2canvas from 'html2canvas';
+
 
 @Component({
   selector: 'app-reporteusuarios',
@@ -11,13 +12,27 @@ import html2canvas from 'html2canvas';
 })
 export class ReporteusuariosComponent implements OnInit {
 
-  usua: Usuarios[] = [];
+  usua: Usuariost[] = [];
 
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {
 
-    this.Service.getUsuarios()
+    this.Service.getUsuariosc()
+    .subscribe(async (data) => {
+      this.usua = data;
+      console.log(data);
+    }
+    );
+
+    this.Service.getUsuariosp()
+    .subscribe(async (data) => {
+      this.usua = data;
+      console.log(data);
+    }
+    );
+
+    this.Service.getUsuariosu()
     .subscribe(async (data) => {
       this.usua = data;
       console.log(data);

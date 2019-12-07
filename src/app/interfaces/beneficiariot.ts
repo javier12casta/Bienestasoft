@@ -21,6 +21,8 @@ export interface Beneficiariot {
     NombreTipo: string,
     SegundoApellido?: string,
     ServicioOmodalidad : string,
+    NombreCentroZonal?: string,
+    NombrePE?: string,
     NombreUDS?: string,
 
   }

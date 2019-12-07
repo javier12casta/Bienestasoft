@@ -14,6 +14,7 @@
         <th scope="col">Unidad medida</th>
         <th scope="col">Estado</th>
         <th scope="col">Centro distribución</th>
+        <th scope="col">Centro zonal</th>
        
       </tr>
     </thead>
@@ -36,7 +37,8 @@
                   
                 
                 </td>
-          <td>{{cen.idCentroDistribucion}}</td>       
+          <td>{{cen.Nombrecentrodistribucion}}</td>   
+          <td>{{cen.NombreCentroZonal}}</td>       
           <td>
             <button class="btn btn-primary" [routerLink]="['/inhabilitaralmacenm', cen.idAlmacenes]">inhabilitar</button>
           </td>

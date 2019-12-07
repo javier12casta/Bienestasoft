@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../../servicio.service';
-import { Centrodistribucion } from '../../interfaces/centrodistribucion';
+import { Centrodistribuciont } from 'src/app/interfaces/centrodistribuciont';
 
 @Component({
   selector: 'app-centrodistribucionc',
@@ -28,6 +28,7 @@ import { Centrodistribucion } from '../../interfaces/centrodistribucion';
         <th scope="col">Barrio</th>
         <th scope="col">Teléfono</th>
         <th scope="col">Estado</th>
+        <th scope="col">Centro Zonal</th>
         
       </tr>
     </thead>
@@ -48,6 +49,7 @@ import { Centrodistribucion } from '../../interfaces/centrodistribucion';
         Deshabilitado
       </div>
       </td>
+      <td>{{centro.NombreCentroZonal }}</td>
             
       </tr>
     </tbody>
@@ -59,13 +61,13 @@ import { Centrodistribucion } from '../../interfaces/centrodistribucion';
 })
 export class CentrodistribucioncComponent implements OnInit {
 
- cen: Centrodistribucion[] = [];
+ cen: Centrodistribuciont[] = [];
 
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {
 
-    this.Service.getcentrodistribucion()
+    this.Service.getCentrodistribucionc()
       .subscribe(async (data) => {
         this.cen = data;
         console.log(data);

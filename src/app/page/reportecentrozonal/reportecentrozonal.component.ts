@@ -14,7 +14,10 @@ import { Centrozonalt } from 'src/app/interfaces/centrozonalt';
 export class ReportecentrozonalComponent implements OnInit {
 
   centros: Centrozonalt[] = [];
-  
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
+  Nombrereporte = 'Reporte centro zonal';
+
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {
@@ -26,7 +29,6 @@ export class ReportecentrozonalComponent implements OnInit {
         console.log('funciona');
       }
       );
-
 
   }
 

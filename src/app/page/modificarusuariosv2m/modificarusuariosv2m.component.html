@@ -1,1 +1,85 @@
-<p>modificarusuariosv2m works!</p>
+
+<nav class="navbar navbar-success bg-success">
+        <button class="btn btn-dark" routerLink="/modificarusuariosv2">Volver</button>
+      </nav>
+      
+      <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+        <div class="card" padding>
+          <div class="card-body" padding>
+            <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
+              <div class="form-group">
+    
+            
+            <select name="idPuntoEntrega" class="select-css" style="width: 100%;" (change)="onChange($event)" [(ngModel)]="usu.idPuntoEntrega"
+                  options="options" placeholder="nivel"  minlength="0" required="">
+                  <option *ngFor="let dodo of pe" [value]="dodo.idPuntoEntrega">{{dodo.NombrePE }} </option>
+          
+                </select>
+      
+                
+            
+                <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
+                <select name="Estado" [(ngModel)]="usu.Estado" style="width: 100%;" class="form-control" minlength="0" required="">
+                  <option [value]="1">Habilitado</option>
+                  <Option [value]="0">Inhabilitado</Option>
+                </select>
+                <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
+                <select name="tipodocumento" [(ngModel)]="usu.idTipoDocumento" id="tipodocumento" style="width: 100%;" class="form-control" minlength="0" required="">
+                  <option value="1">CC</option>
+                  <Option value="2">CE</Option>
+                  <Option value="3">PA</Option>
+                </select>
+      
+                <input type="text" class="form-control" [(ngModel)]="usu.NumeroDocumento" name="numerodoc"
+                  placeholder="número documento" class="form-control" id="inputdoc" minlength="0" required="">
+      
+                <input type="text" class="form-control" [(ngModel)]="usu.Nombres" name="nombre" placeholder="Nombres"
+                  class="form-control" id="nom" minlength="0" required="">
+      
+                <input type="text" class="form-control" [(ngModel)]="usu.Apellidos" name="apellidos" placeholder="Apellidos"
+                  class="form-control" id="app" minlength="0" required="">
+      
+                <input type="date" class="form-control" [(ngModel)]="usu.FechaIngreso" name="fechai" placeholder="Fecha"
+                  min="2018-01-01" max="2050-12-31" class="form-control" minlength="0" required="">
+      
+                <input type="text" class="form-control" [(ngModel)]="usu.NombreUsuarioSistema" name="Usuario"
+                  placeholder="Usuario Sistema" class="form-control" id="usu" minlength="0" required="">
+      
+                  <input type="text" class="form-control" [(ngModel)]="usu.password" name="numerodoc"
+                  placeholder="Contraseña" class="form-control" id="inputdoc" minlength="0" required="">
+      
+      
+                <input type="text" class="form-control" [(ngModel)]="usu.Direccion" name="Nombredireccion"
+                  placeholder="Dirección" class="form-control" minlength="0" required="">
+      
+                <input type="number" class="form-control" [(ngModel)]="usu.TelefonoFijo" name="telefonof1"
+                  placeholder="Teléfono fijo 1" class="form-control" minlength="0" required="">
+      
+                <input type="number" class="form-control" [(ngModel)]="usu.TelefonoFijo2" name="telefonof2"
+                  placeholder="Teléfono fijo 2" class="form-control" >
+      
+                <input type="number" class="form-control" [(ngModel)]="usu.TelefonoMovil" name="telefonom1"
+                  placeholder="Teléfono movil 1" class="form-control" minlength="0" required="">
+      
+                <input type="number" class="form-control" [(ngModel)]="usu.TelefonoMovil2" name="telefonom2"
+                  placeholder="Teléfono movil 2" class="form-control" >
+      
+                <input type="text" class="form-control" [(ngModel)]="usu.Email" name="email" placeholder="Email"
+                  class="form-control" minlength="0" required="">
+      
+                  <select name="idtipousuario" class="select-css" style="width: 100%;" [(ngModel)]="usu.TipoUsuario"
+                  options="options" placeholder="tipo usuario" minlength="0" required="">
+                  <option *ngFor="let do of rol" [value]="do.idRolPersona">{{do.RolPersona  }} </option>
+                  </select>
+                  
+              
+              <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
+              <button class="btn btn-success btn-block" type="submit" (click)="updateDatos()"
+                routerLink="/modificarusuarios1">
+                Guardar
+              </button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>

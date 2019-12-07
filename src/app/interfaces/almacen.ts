@@ -8,4 +8,7 @@ export interface Almacen {
     UnidadMedida  : string,
     Estado  : number,
     idCentroDistribucion? : number,
+    idCentrosZonales ? :number,
+    idPuntoEntrega ?: number,
+    idUDS ?: number,
 }

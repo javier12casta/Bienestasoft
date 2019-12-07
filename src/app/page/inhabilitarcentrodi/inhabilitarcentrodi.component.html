@@ -13,6 +13,7 @@
         <th scope="col">Barrio </th>
         <th scope="col">Teléfono</th>
         <th scope="col">Estado </th>
+        <th scope="col">Centro zonal </th>
        
       </tr>
     </thead>
@@ -34,7 +35,8 @@
                   Deshabilitado
                 </div>
             
-            </td>       
+            </td>   
+            <td>{{cen.NombreCentroZonal}}</td>    
           <td>
             <button class="btn btn-primary" [routerLink]="['/inhabilitarcentrom', cen.idCentroDistribucion]">inhabilitar</button>
           </td>

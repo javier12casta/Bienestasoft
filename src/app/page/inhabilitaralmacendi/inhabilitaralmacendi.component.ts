@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Almacen} from '../../interfaces/almacen';
+import { Almacent} from '../../interfaces/almacent';
+import { Centrozonal} from '../../interfaces/centrozonal';
 import { ServicioService } from '../../servicio.service';
 
 @Component({
@@ -9,19 +10,22 @@ import { ServicioService } from '../../servicio.service';
 })
 export class InhabilitaralmacendiComponent implements OnInit {
 
-  almac: Almacen[] = [];
+  almac: Almacent[] = [];
+  cen: Centrozonal[] = [];
 
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {
 
-    this.Service.getalmacen()
+    this.Service.getAlmacenc()
     .subscribe(async (data) => {
       this.almac = data;
       console.log(data);
       console.log('funciona');
     }
     );
+
+  
     
   }
 

@@ -31,7 +31,7 @@ export class ReportebeneficiarioComponent implements OnInit {
     }
     );
 
-    this.Service.getBeneficiariost()
+    this.Service.getBeneficiariosc()
     .subscribe(async (data) => {
       this.bene = data;
       console.log(data);
