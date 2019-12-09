@@ -9,7 +9,7 @@ import { Beneficiariot } from '../../interfaces/beneficiariot';
   styleUrls: ['./inhabilitarbeneficiarios1.component.css'],
   template: `
   
-  <nav class="navbar navbar-success bg-success">
+  <nav class="navbar navbar-fixed-top">
   <td>
   <button class="btn btn-dark" routerLink="/menu">Volver</button>
          

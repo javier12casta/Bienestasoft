@@ -3,36 +3,43 @@
 </nav>
 
 <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
-	<div class="card" padding>
-		<div class="card-body" padding>
-			<form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
-				<h1>Crear Rol</h1>
-				<div class="form-group">
-
-
-					<span>Estado del dato Maestro</span>
-					<h2></h2>
-					<!-- name= "al campo de la tabla" [(ngModel)]="Roles.(Nombre de la columna)"-->
-					<select name="Estado" id="Estado" [(ngModel)]="roles.Estado" style="width: 100%;"
-						class="form-control">
-						<option value="1"> Habilitar</option>
-						<Option value="0">Inhabilitar</Option>
-					</select>
-
-					<h2></h2>
-					<span>Tipo de rol</span>
-					<h2></h2>
-					<input type="text" class="form-control" name="RolPersona" [(ngModel)]="roles.RolPersona"
-						minlength="0" required="" placeholder="Nombre del rol" required autofocus>
-					<h2></h2>
-
-
-					<button class="btn btn-success" (click)="insertDatos()" type="submit">
-						Guardar
-					</button>
-
-				</div>
-			</form>
-		</div>
-	</div>
-</div>
+    <div class="card" padding>
+      <div class="card-body" padding>
+  
+  
+        <form [formGroup]="rolForm" (ngSubmit)="onSubmit()">
+  
+            <div class="form-group">
+                <label>Estado del dato maestro</label>
+                <select formControlName="Estado" class="form-control" [(ngModel)]="roles.Estado" [ngClass]="{ 'is-invalid': submitted && f.Estado.errors }">
+                    <option value="1">Habilitado</option>
+                    <option value="0">Inhabilitado</option>
+  
+                </select>
+                <div *ngIf="submitted && f.Estado.errors" class="invalid-feedback">
+                    <div *ngIf="f.Estado.errors.required">Estado es requerido</div>
+                </div>
+            </div>
+  
+          <div class="form-group">
+            <label>Tipo rol</label>
+            <input type="text" placeholder="Nombre del tipo de rol" formControlName="RolPersona" class="form-control" [(ngModel)]="roles.RolPersona"
+              [ngClass]="{ 'is-invalid': submitted && f.RolPersona.errors }" />
+  
+            <div *ngIf="submitted && f.RolPersona.errors" class="invalid-feedback">
+              <div *ngIf="f.RolPersona.errors.required"> Nombre del tipo de rol es requerido</div>
+              <div *ngIf="f.RolPersona.errors.pattern"> Nombre del tipo de rol solo puede contener letras minusculas o
+                mayúsculas, no se admiten los espacios</div>
+            </div>
+          </div>
+          
+          <br/>
+  
+          <div class="text-center">
+            <button type="submit" class="btn btn-success btn-block">Guardar</button>
+          </div>
+  
+        </form>
+      </div>
+    </div>
+  </div>

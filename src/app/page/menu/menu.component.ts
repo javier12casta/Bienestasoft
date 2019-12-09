@@ -2551,14 +2551,32 @@ var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "li
   // console.log('carga', array);
 
   if (array[0] == "1" ) {
-     var create = { name: "Crear datos maestros", route: "/listamaestros", icon: "face" };
+     var create = { name: "Crear servicio y modalidad", route: "/serviciosymodalidadesv", icon: "face" };
     this.datos.push(create);
+    var create = { name: "Crear referencia bienestarina", route: "/referenciasbienestarinav", icon: "face" };
+    this.datos.push(create);
+    var create = { name: "Crear listado de precios", route: "/listapreciosv", icon: "face" };
+    this.datos.push(create);
+    var create = { name: "Crear listado de cursos", route: "/listadocursosv", icon: "face" };
+    this.datos.push(create);
+    var create = { name: "Crear datos varios", route: "/datosvariosv", icon: "face" };
+    this.datos.push(create);
+
+
     var create = { name: "Reporte consecutivo maestros", route: "/reporteconsecutivomaestro", icon: "face" };
     this.datos.push(create);
     var create = { name: "Ver consecutivos maestros", route: "/consecutivomaestrov", icon: "face" };
     this.datos.push(create);
    if (array[1] == "1") {
-     var create = { name: "Modificar datos maestros", route: "/modificarlistamaestro", icon: "face" };
+     var create = { name: "Modificar servicio y modalidad", route: "/modificarserviciom", icon: "face" };
+    this.datos.push(create);
+    var create = { name: "Modificar referencia bienestarina", route: "/modificarreferenciab", icon: "face" };
+    this.datos.push(create);
+    var create = { name: "Modificar listado de precios", route: "/modificarlistac", icon: "face" };
+    this.datos.push(create);
+    var create = { name: "Modificar listado de cursos", route: "/modificarlistadoc", icon: "face" };
+    this.datos.push(create);
+    var create = { name: "Modificar datos varios", route: "/modificardatosnutricionales", icon: "face" };
     this.datos.push(create);
      if (array[2] == "1") {        
        if (array[3] == "1") {
@@ -2684,7 +2702,15 @@ var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "li
  else if (array[0] == "0") {
    
    if (array[1] == "1") {
-     var create = { name: "Modificar datos maestros", route: "/modificarlistamaestro", icon: "face" };
+    var create = { name: "Modificar servicio y modalidad", route: "/modificarserviciom", icon: "face" };
+    this.datos.push(create);
+    var create = { name: "Modificar referencia bienestarina", route: "/modificarreferenciab", icon: "face" };
+    this.datos.push(create);
+    var create = { name: "Modificar listado de precios", route: "/modificarlistac", icon: "face" };
+    this.datos.push(create);
+    var create = { name: "Modificar listado de cursos", route: "/modificarlistadoc", icon: "face" };
+    this.datos.push(create);
+    var create = { name: "Modificar datos varios", route: "/modificardatosnutricionales", icon: "face" };
     this.datos.push(create);
      if (array[2] == "1") {
        

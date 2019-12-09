@@ -1,78 +1,79 @@
 <nav class="navbar navbar-success bg-success">
-        <button class="btn btn-dark" routerLink="/listapreciosv">Volver</button>
-      </nav>
-      
-      <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
-        <div class="card" padding>
-          <div class="card-body" padding>
-            <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
-                    <h1>Lista de precios</h1>
-                   <div class="form-group">
-                
-                        <span  >Código</span>
-                        <h2></h2>
-                        <input type="number" class="form-control" [(ngModel)]="x.Codigo" name="cod"
-                        placeholder="Código" class="form-control" id="codi" minlength="0" required="">
-                        
-                        <span  >Estado del dato maestro</span>
-                               <h2></h2>
-                               
-<select name="EstadoDatoMaestro" id="EstadoDatoMaestro" [(ngModel)]="x.Estado" style="width: 100%;" class="form-control" minlength="0" required="">
-                      <option value="0">Deshabilitado</option>
-                      <option value="1">Habilitado</option>
-                    </select>
-                               
-                    <h2></h2>
-                           <span >Referencia</span>
-                               <h2></h2>
-                               <input type="text" class="form-control" [(ngModel)]="x.Referencia" name="ref"
-                           placeholder="Referencia" class="form-control" id="refer" minlength="0" required="">
-                           
-                           <h2></h2>
-                               <span >Mes</span>
-                               <h2></h2>
+  <button class="btn btn-dark" routerLink="/listapreciosv">Volver</button>
+</nav>
 
-                               <select name="mes" [(ngModel)]="x.Mes" class="form-control">
-                                  <option >Enero</option>
-                                  <Option>Febrero</Option>
-                                  <Option >Marzo</Option>
-                                  <Option >Abril</Option>
-                                  <Option >Mayo</Option>
-                                  <Option >Junio</Option>
-                                  <Option >Julio</Option>
-                                  <Option >Agosto</Option>
-                                  <Option >Septiembre</Option>
-                                  <Option >Octubre</Option>
-                                  <Option >Noviembre</Option>
-                                  <Option >Diciembre</Option>
-                                </select>
+<div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+  <div class="card" padding>
+    <div class="card-body" padding>
+      <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
+        <h1>Lista de precios</h1>
+        <div class="form-group">
 
-                           
-                           <h2></h2>
-                               <span>año</span>
-                               <h2></h2>
-                           
-                              
-                               
+          <span>Código</span>
+          <h2></h2>
+          <select name="Codigo" id="Codigo" [(ngModel)]="x.Codigo" style="width: 100%;"
+            class="form-control" minlength="0" required="" (change)="onFilterChange($event)">
+            <option *ngFor="let re of referencia" [value]="re.Codigo">{{re.Codigo}}</option>
+          </select>
+          <span>Estado del dato maestro</span>
+          <h2></h2>
 
-                           <input type="number" class="form-control" [(ngModel)]="x.Ano" name="ano"
-                               placeholder="Año " class="form-control" id="ano" minlength="0" required="">
-                           
-                           <h2></h2>
-                         
-                               <span >Valor COP</span>
-                               <h2></h2>
-                               <input type="number" class="form-control" [(ngModel)]="x.ValorCop" name="valo"
-                               placeholder="valor" class="form-control" id="cop" minlength="0" required="">
-                                <h2></h2>
-                                
-                                      <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
-                                         
-                                      <h2></h2>
-    
-                </div>
-                </form>
-            </div>
-          </div>
+          <select name="EstadoDatoMaestro" id="EstadoDatoMaestro" [(ngModel)]="x.Estado" style="width: 100%;"
+            class="form-control" minlength="0" required="">
+            <option value="0">Deshabilitado</option>
+            <option value="1">Habilitado</option>
+          </select>
+
+          <h2></h2>
+          <span>Referencia</span>
+          <h2></h2>
+          <input type="text" class="form-control" [(ngModel)]="x.Referencia" name="ref" placeholder="Referencia"
+            class="form-control" id="refer" minlength="0" required="">
+
+          <h2></h2>
+          <span>Mes</span>
+          <h2></h2>
+
+          <select name="mes" [(ngModel)]="x.Mes" class="form-control">
+            <option>Enero</option>
+            <Option>Febrero</Option>
+            <Option>Marzo</Option>
+            <Option>Abril</Option>
+            <Option>Mayo</Option>
+            <Option>Junio</Option>
+            <Option>Julio</Option>
+            <Option>Agosto</Option>
+            <Option>Septiembre</Option>
+            <Option>Octubre</Option>
+            <Option>Noviembre</Option>
+            <Option>Diciembre</Option>
+          </select>
+
+
+          <h2></h2>
+          <span>año</span>
+          <h2></h2>
+
+
+
+
+          <input type="number" class="form-control" [(ngModel)]="x.Ano" name="ano" placeholder="Año "
+            class="form-control" id="ano" minlength="0" required="">
+
+          <h2></h2>
+
+          <span>Valor COP</span>
+          <h2></h2>
+          <input type="number" class="form-control" [(ngModel)]="x.ValorCop" name="valo" placeholder="valor"
+            class="form-control" id="cop" minlength="0" required="">
+          <h2></h2>
+
+          <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
+
+          <h2></h2>
+
         </div>
-    
+      </form>
+    </div>
+  </div>
+</div>

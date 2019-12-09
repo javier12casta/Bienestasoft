@@ -3,6 +3,7 @@ import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Rol } from 'src/app/interfaces/rol';
 import Swal from 'sweetalert2';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-rol',
@@ -15,6 +16,7 @@ export class RolComponent implements OnInit {
     private activeRoute: ActivatedRoute,
     private Service: ServicioService,
     private router:Router,
+    private fb: FormBuilder
     ) { 
     
   }
@@ -24,6 +26,23 @@ export class RolComponent implements OnInit {
     Estado: 1,
     
   }; 
+
+
+   //----Validaciones de campos
+   rolForm: FormGroup;
+   submitted = false;
+ 
+   onSubmit() {
+     this.submitted = true;
+ 
+     // stop here if form is invalid
+     if (this.rolForm.valid) {
+        this.insertDatos();        
+     } else if(this.rolForm.invalid) {
+       this.showMenssagenull();
+     }
+
+    }
   modificar = false; 
 
   ngOnInit() {
@@ -42,6 +61,11 @@ export class RolComponent implements OnInit {
         );
     }
 
+    //Validador--------------------
+    this.rolForm = this.fb.group({
+      Estado: ['', Validators.required],
+      RolPersona: ['', [Validators.required,Validators.pattern('^[a-zA-Zñáéíóú]*$')]],
+});
     
 
   }
@@ -87,6 +111,15 @@ export class RolComponent implements OnInit {
       title: 'Error',
       text: 'Error al guardar ',
       type: 'error',
+      confirmButtonText: 'Entendido'
+    });
+  }
+
+  showMenssagenull() {
+    Swal.fire({
+      title: 'Error',
+      text: 'Campos vacios',
+      type: 'warning',
       confirmButtonText: 'Entendido'
     });
   }
