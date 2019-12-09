@@ -10,6 +10,8 @@ import { ServicioService } from '../../servicio.service';
 export class DevolucionesComponent implements OnInit {
 
   devolucion: Devoluciones[] = [];
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
 
   constructor(private Service: ServicioService) { }
 

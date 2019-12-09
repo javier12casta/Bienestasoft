@@ -12,6 +12,9 @@ import html2canvas from 'html2canvas';
 export class ReportereferenciabienestarinaComponent implements OnInit {
 
   tbienestarina: TipoBienestarina[] = [];
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
+  Nombrereporte = 'Reporte referencias bienestarina';
 
   constructor(private Service: ServicioService) { }
 

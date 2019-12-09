@@ -151,7 +151,7 @@ Validar(){
   showMenssage(){
     Swal.fire({
       title: 'Creado',
-      text: 'Centro zonal creado',
+      text: 'Centro zonal creado ',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {

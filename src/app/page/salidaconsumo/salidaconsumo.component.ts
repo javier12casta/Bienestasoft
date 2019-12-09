@@ -11,6 +11,8 @@ import { Salidaconsumot } from 'src/app/interfaces/salidaconsumot';
 export class SalidaconsumoComponent implements OnInit {
 
   centroC: Salidaconsumot[] = [];
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
 
   constructor(private Service: ServicioService) { }
 

@@ -21,7 +21,7 @@ import { Router } from '@angular/router';
 
 
 export class DatosContactoUsuarioComponent implements OnInit {
-
+  tipo = "password";
 
   listamaestro:string[]=["0","1"];
   listat:string[]=["PE","UDS","ADMINISTRADOR"];
@@ -138,7 +138,20 @@ this.showMenssage3();
 	});
 	}
 
- 
+  ver(){
+
+    if(this.tipo == "password"){
+
+      this.tipo = "text";
+
+    }else{
+
+      this.tipo = "password";
+
+    }
+
+
+  }
 
 }
 

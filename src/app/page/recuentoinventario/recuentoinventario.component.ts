@@ -12,7 +12,8 @@ import { Recuentoinventariot } from 'src/app/interfaces/recuentoinventariot';
 export class RecuentoinventarioComponent implements OnInit {
 
   recuento:Recuentoinventariot[] = [];
-
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
   constructor(private activeRoute: ActivatedRoute,
     private Service: ServicioService) { }
 

@@ -11,6 +11,9 @@ import { Centrozonalt } from 'src/app/interfaces/centrozonalt';
 })
 export class CentrozonalivComponent implements OnInit {
   centros: Centrozonalt[] = [];
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
+
 
   constructor(private Service: ServicioService) { }
 

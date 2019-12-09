@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Beneficiario } from '../../interfaces/beneficiario';
+import { Beneficiarior } from '../../interfaces/beneficiarior';
 import { ServicioService } from '../../servicio.service';
 import * as jspdf from 'jspdf'; 
 import html2canvas from 'html2canvas';
@@ -17,13 +17,16 @@ import { Beneficiariot } from '../../interfaces/beneficiariot';
 })
 export class ReportebeneficiarioComponent implements OnInit {
 
-  benefi: Beneficiario[] = [];
-  bene: Beneficiariot[] = [];
+  benefi: Beneficiarior[] = [];
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
+  Nombrereporte = 'Reporte beneficiario';
+
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {
 
-    this.Service.getBeneficiarios()
+    this.Service.getBeneficiariosr()
     .subscribe(async (data) => {
       this.benefi = data;
       console.log(data);
@@ -31,13 +34,7 @@ export class ReportebeneficiarioComponent implements OnInit {
     }
     );
 
-    this.Service.getBeneficiariosc()
-    .subscribe(async (data) => {
-      this.bene = data;
-      console.log(data);
-    }
-    );
-    
+  
   }
 
   Generareporte(){

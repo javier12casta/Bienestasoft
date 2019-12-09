@@ -14,6 +14,18 @@ import { Beneficiariot } from '../../interfaces/beneficiariot';
   <button class="btn btn-dark" routerLink="/menu">Volver</button>
          
         </td>
+
+        <div>
+          <label>Inhabilitar beneficiario centro zonal</label>
+      
+      {{fecha}}  
+      </div>
+      
+      <div>
+        
+      </div>
+
+
 </nav>
 
   <table class="table">
@@ -91,6 +103,9 @@ export class Inhabilitarbeneficiarios1Component implements OnInit {
 
   benefi: Beneficiario[] = [];
   bene: Beneficiariot[] = [];
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
+  
   constructor(private Service: ServicioService) { }
 
   

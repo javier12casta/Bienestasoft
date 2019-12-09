@@ -4,16 +4,27 @@
   
   <table class="table" id="contentToConvert">
       <thead class="thead-green">
+          {{Nombrereporte}}       {{fecha}}
         <tr>
           <th scope="col">#</th>
           <th scope="col">Estado </th>
-          <th scope="col">RolPersona </th>
+          <th scope="col">Rol </th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let cen of trol">
           <th scope="row">{{cen.idRolPersona}}</th>
-          <td>{{cen.Estado}}</td>
+          <td>
+            
+              <div *ngIf="cen.Estado == 1">
+                  Habilitado
+                </div>
+                <div *ngIf="cen.Estado == 0">
+                  Deshabilitado
+                </div>
+            
+            
+            </td>
           <td>{{cen.RolPersona}}</td>
         </tr>
       </tbody>

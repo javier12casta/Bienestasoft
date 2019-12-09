@@ -20,6 +20,9 @@ export class ReporteinventarioComponent implements OnInit {
   centro: Centrozonal [] = [];
   mun: Municipio [] = [];
   pre: Lprecios [] = [];
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
+  Nombrereporte = 'Reporte inventario';
 
   constructor(private service: ServicioService) { }
 

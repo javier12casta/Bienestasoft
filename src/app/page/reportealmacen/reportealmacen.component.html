@@ -4,6 +4,7 @@
   
   <table class="table" id="contentToConvert">
       <thead class="thead-green">
+          {{Nombrereporte}}       {{fecha}}
         <tr>
           <th scope="col">#</th>
           <th scope="col">Número externo</th>
@@ -28,13 +29,13 @@
               <div *ngIf="usu.Estado == 1">
                   Habilitado
                 </div>
-                <div *ngIf="usu.Estadoo== 0">
+                <div *ngIf="usu.Estado== 0">
                   Deshabilitado
                 </div>
                   
             
             </td>
-          <td>{{usu.idCentroDistribucion}}</td>    
+          <td>{{usu.centro}}</td>    
         </tr>
       </tbody>
     </table>

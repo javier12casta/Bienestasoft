@@ -10,6 +10,15 @@ import { ServicioService } from '../../servicio.service';
 
   <nav class="navbar navbar-success bg-success">
   <button class="btn btn-dark" routerLink="/inhabilitarusuarios">Volver</button>
+  <div>
+          <label>Inhabilitar usuarios centro zonal</label>
+      
+      {{fecha}}  
+      </div>
+      
+      <div>
+        
+      </div>
 </nav>
 
 <table class="table">
@@ -22,6 +31,7 @@ import { ServicioService } from '../../servicio.service';
       <th scope="col">Numero documento</th>
       <th scope="col">Fecha ingreso</th>
       <th scope="col">Nombre usuario sistema</th>
+      <th scope="col">Contraseña</th>
       <th scope="col">Dirección</th>
       <th scope="col">Teléfono fijo</th>
       <th scope="col">Teléfono fijo2</th>
@@ -43,6 +53,7 @@ import { ServicioService } from '../../servicio.service';
         <td>{{usu.NumeroDocumento}}</td>
         <td>{{usu.FechaIngreso}}</td>
         <td>{{usu.NombreUsuarioSistema}}</td>
+        <td>*******</td>
         <td>{{usu.Direccion}}</td>
         <td>{{usu.TelefonoFijo}}</td>
         <td>{{usu.TelefonoFijo2}}</td>
@@ -71,7 +82,9 @@ import { ServicioService } from '../../servicio.service';
 export class Inhabilitarusuarios1Component implements OnInit {
 
   usua: Usuariost[] = [];
-
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
+  
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {

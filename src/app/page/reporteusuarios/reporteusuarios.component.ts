@@ -13,31 +13,22 @@ import html2canvas from 'html2canvas';
 export class ReporteusuariosComponent implements OnInit {
 
   usua: Usuariost[] = [];
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
+  Nombrereporte = 'Reporte usuarios';
 
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {
 
-    this.Service.getUsuariosc()
+    this.Service.getUsuariosr()
     .subscribe(async (data) => {
       this.usua = data;
       console.log(data);
     }
     );
 
-    this.Service.getUsuariosp()
-    .subscribe(async (data) => {
-      this.usua = data;
-      console.log(data);
-    }
-    );
-
-    this.Service.getUsuariosu()
-    .subscribe(async (data) => {
-      this.usua = data;
-      console.log(data);
-    }
-    );
+    
 
 
   }

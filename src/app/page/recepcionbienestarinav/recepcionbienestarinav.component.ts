@@ -12,7 +12,8 @@ import { Recepciont } from 'src/app/interfaces/recepciont';
 export class RecepcionbienestarinavComponent implements OnInit {
 
   rec: Recepciont[] = [];
-
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
 
   constructor(private Service: ServicioService) { }
 

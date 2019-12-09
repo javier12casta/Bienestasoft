@@ -12,6 +12,8 @@ import {Puntoentregat } from '../../interfaces/puntoentregat';
 export class PuntoentregavComponent implements OnInit {
   punto: Puntoentrega [] = [];
   puntot: Puntoentregat [] = [];
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
   constructor(private service: ServicioService ) { }
 
   ngOnInit() {

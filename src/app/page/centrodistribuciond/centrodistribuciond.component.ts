@@ -10,7 +10,8 @@ import { Centrodistribuciont } from 'src/app/interfaces/centrodistribuciont';
 export class CentrodistribuciondComponent implements OnInit {
 
   cen: Centrodistribuciont[] = [];
-
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
 
   constructor(private Service: ServicioService) { }
 

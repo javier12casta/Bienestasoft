@@ -12,7 +12,8 @@ export class InhabilitaralmacendiComponent implements OnInit {
 
   almac: Almacent[] = [];
   cen: Centrozonal[] = [];
-
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {

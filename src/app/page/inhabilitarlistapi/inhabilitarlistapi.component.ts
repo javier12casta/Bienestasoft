@@ -3,7 +3,7 @@ import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 import { InLprecios } from '../../interfaces/inhabilitarlistaprecio';
 import Swal from 'sweetalert2';
-
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-inhabilitarlistapi',
@@ -15,7 +15,7 @@ export class InhabilitarlistapiComponent implements OnInit {
   public precio: InLprecios[] = [];
 
   constructor(private activeRoute: ActivatedRoute,
-    private Service: ServicioService,) { }
+    private Service: ServicioService, private router: Router) { }
 
     pre: InLprecios = {
 
@@ -46,6 +46,13 @@ export class InhabilitarlistapiComponent implements OnInit {
       text: 'Dato Maestro Inhabilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
+    }).then((result) => {
+      if (result.value) {
+
+        this.router.navigate(['/inhabilitarlistap']);
+        window.location.reload();
+
+      }
     });
   }
 
@@ -55,6 +62,13 @@ export class InhabilitarlistapiComponent implements OnInit {
       text: 'Dato Maestro habilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
+    }).then((result) => {
+      if (result.value) {
+
+      this.router.navigate(['/inhabilitarlistap']);
+      window.location.reload();
+
+      }
     });
   }
 

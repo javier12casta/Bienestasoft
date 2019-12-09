@@ -7,6 +7,7 @@
   
   <table class="table" id="contentToConvert"> 
       <thead class="thead-green">
+          {{Nombrereporte}}       {{fecha}}
         <tr>
         <th scope="col"># </th>
         <th scope="col">Nombres</th>
@@ -15,7 +16,7 @@
         <th scope="col">Número documento</th>
         <th scope="col">Fecha ingreso</th>
         <th scope="col">Nombre usuario sistema</th>
-        <th scope="col">password</th>
+        <th scope="col">Contraseña</th>
         <th scope="col">Dirección</th>
         <th scope="col">Teléfono fijo</th>
         <th scope="col">Telefono fijo2</th>
@@ -24,9 +25,6 @@
         <th scope="col">Correo electrónico</th>
         <th scope="col">Tipo documento</th>
         <th scope="col">Tipo usuario</th>
-        <th scope="col">Centro zonal</th>
-        <th scope="col">Punto entrega</th>
-        <th scope="col">UDS</th>
         </tr>
       </thead>
       <tbody>
@@ -47,13 +45,8 @@
         <td>{{usu.Email}}</td>
         <td>{{usu.NombreTipo}}</td>
         <td>{{usu.RolPersona}}</td>
-        <td>{{usu.NombreCentroZonal}}</td>
-        <td>{{usu.NombrePE}}</td>
-        <td>{{usu.NombreUDS}}</td>
         
-          <td>
-            <button class="btn btn-primary" [routerLink]="['/modificarusuariom', usu.idUsuarios]">Modificar</button>
-          </td>
+
         </tr>
       </tbody>
     </table>

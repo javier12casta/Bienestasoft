@@ -8,7 +8,9 @@ import { ServicioService } from '../../servicio.service';
 })
 export class ModificarserviciosmComponent implements OnInit {
   serviciom: MaestroBienestarina[] = [];
-
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
+  
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {

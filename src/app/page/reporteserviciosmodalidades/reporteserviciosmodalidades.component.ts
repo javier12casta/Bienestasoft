@@ -11,6 +11,9 @@ import html2canvas from 'html2canvas';
 export class ReporteserviciosmodalidadesComponent implements OnInit {
 
   serviciom: MaestroBienestarina[] = [];
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
+  Nombrereporte = 'Reporte servicios y modalidades';
 
   constructor(private Service: ServicioService) { }
 

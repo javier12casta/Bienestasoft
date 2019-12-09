@@ -13,12 +13,15 @@ import html2canvas from 'html2canvas';
 export class ReportealmacenComponent implements OnInit {
 
   alm: Almacen[] = [];
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
+  Nombrereporte = 'Reporte almacen';
 
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {
 
-    this.Service.getalmacen()
+    this.Service.getAlmacenr()
     .subscribe(async (data) => {
       this.alm = data;
       console.log(data);

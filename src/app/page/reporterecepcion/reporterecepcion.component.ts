@@ -13,6 +13,9 @@ import { Recepciont } from 'src/app/interfaces/recepciont';
 export class ReporterecepcionComponent implements OnInit {
 
   rec: Recepciont[] = [];
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
+  Nombrereporte = 'Reporte Recepcion';
 
   constructor(private Service: ServicioService) { }
 

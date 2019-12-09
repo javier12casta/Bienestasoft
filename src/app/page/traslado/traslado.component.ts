@@ -11,6 +11,8 @@ import { Trasladost } from 'src/app/interfaces/trasladost';
 export class TrasladoComponent implements OnInit {
 
   translado: Trasladost[] = [];
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
 
   constructor(private Service: ServicioService) { }
 

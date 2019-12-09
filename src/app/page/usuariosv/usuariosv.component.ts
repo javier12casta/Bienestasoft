@@ -12,6 +12,13 @@ import { ServicioService } from '../../servicio.service';
   <td>
   <button class="btn btn-dark" routerLink="/usuarios">Volver</button>
   </td>
+  <div>
+  <label>Crear usuarios centro zonal</label>
+      
+      {{fecha}}  
+      </div>
+      
+    
   <td>
           <button class="btn btn-dark" [routerLink]="['/datosgeneralesusuario']">Crear</button>
         </td>
@@ -27,7 +34,7 @@ import { ServicioService } from '../../servicio.service';
         <th scope="col">Número documento</th>
         <th scope="col">Fecha ingreso</th>
         <th scope="col">Nombre usuario sistema</th>
-   
+        <th scope="col">Contraseña</th>
         <th scope="col">Dirección</th>
         <th scope="col">Teléfono fijo</th>
         <th scope="col">Telefono fijo2</th>
@@ -49,6 +56,7 @@ import { ServicioService } from '../../servicio.service';
         <td>{{usu.NumeroDocumento}}</td>
         <td>{{usu.FechaIngreso}}</td>
         <td>{{usu.NombreUsuarioSistema}}</td>
+        <td>*******</td>
         <td>{{usu.Direccion}}</td>
         <td>{{usu.TelefonoFijo}}</td>
         <td>{{usu.TelefonoFijo2}}</td>
@@ -69,6 +77,8 @@ import { ServicioService } from '../../servicio.service';
 })
 export class UsuariosvComponent implements OnInit {
   usua: Usuariost[] = [];
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
 
   constructor(private Service: ServicioService) { }
 
