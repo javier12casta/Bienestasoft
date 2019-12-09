@@ -209,6 +209,12 @@ export class ServicioService {
     return this.http.get<[Centrozonal]>(path);
   }
 
+  getCentroEStado() {
+    const path = `${this.api}/centrosZ/lista`;
+    return this.http.get<[Centrozonal]>(path);
+  }
+
+
 
   getduplicadoz() {
     const path = `${this.api}/centrosZ/duplicadosz`;
@@ -255,6 +261,10 @@ export class ServicioService {
   //--------------------------------
   getPunto() {
     const path = `${this.api}/punto`;
+    return this.http.get<[Puntoentrega]>(path);
+  }
+  getPuntoEstado() {
+    const path = `${this.api}/punto/lista`;
     return this.http.get<[Puntoentrega]>(path);
   }
   //---Metodo traer por id
