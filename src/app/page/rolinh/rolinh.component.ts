@@ -70,7 +70,7 @@ export class RolinhComponent implements OnInit {
         cont3 = cont + 1;
       }
     }
-    if (cont2 == 0 && cont3 >0){
+    if (cont2 == 0 && cont3 >= 0){
       //console.log('funciona');
       this.updateDatos2();
     }else{
@@ -113,7 +113,7 @@ export class RolinhComponent implements OnInit {
     }).then((res) => {
       if(res.value){
         console.log('confirmed');
-        this.router.navigate(['/centrozonal']);
+        this.router.navigate(['/rolin']);
     }
     });
   }
@@ -144,13 +144,13 @@ export class RolinhComponent implements OnInit {
   showMenssage5() {
     Swal.fire({
       title: 'Inhabilitado',
-      text: 'se ha inhabilitado el' + this.roles.RolPersona,
+      text: 'se ha inhabilitado el ' + this.roles.RolPersona,
       type: 'error',
       confirmButtonText: 'Entendido'
     }).then((res) => {
       if(res.value){
         console.log('confirmed');
-        this.router.navigate(['/centrozonal']);
+        this.router.navigate(['/rolin']);
     }
     });
   }
