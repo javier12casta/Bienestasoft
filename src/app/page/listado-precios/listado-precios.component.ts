@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Lprecios } from 'src/app/interfaces/listaprecios';
 import { ServicioService } from 'src/app/servicio.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { TipoBienestarina } from 'src/app/interfaces/tipobienestarina';
+import { Lprecios } from 'src/app/interfaces/listaprecios';
 
 @Component({
   selector: 'app-listado-precios',
@@ -12,6 +13,7 @@ import { Router } from '@angular/router';
 export class ListadoPreciosComponent implements OnInit {
 
   listamaestro: string[] = ["0", "1"];
+  referencia: TipoBienestarina[] = [];
   cb;
   cb1 ;
   x: Lprecios = {
@@ -20,9 +22,9 @@ export class ListadoPreciosComponent implements OnInit {
     Referencia: '',
     Mes: '',
     Ano: 0,
-    ValorCop: 0,
-    Estado: 0,
-    Codigo: 0,
+    ValorCop: null,
+    Estado: 1,
+    Codigo: null,
 
   };
 
@@ -66,16 +68,26 @@ export class ListadoPreciosComponent implements OnInit {
 
   constructor(private Service: ServicioService,private router:Router) { }
 
+
+  onFilterChange(){
+    for (let re of this.referencia) 
+    {
+      if(re.Codigo == this.x.Codigo){
+        this.x.Referencia = re.Referencia
+      }
+      
+    }
+
+  } 
+
   ngOnInit() {
 
-
-   
-
-
-    
-                                 
-                                  
-                             
+  this.Service.getTipobienestarina().subscribe(res => {
+    this.referencia = Object(res);
+    console.log(this.referencia);
+  }, err =>{
+    console.log(err);
+  });                      
 
   }
 

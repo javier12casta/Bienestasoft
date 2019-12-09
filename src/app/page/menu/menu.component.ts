@@ -2553,11 +2553,11 @@ var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "li
   if (array[0] == "1" ) {
      var create = { name: "Crear servicio y modalidad", route: "/serviciosymodalidadesv", icon: "face" };
     this.datos.push(create);
-    var create = { name: "Crear referecia bienestarina", route: "/referenciasbienestarinav", icon: "face" };
+    var create = { name: "Crear referencia bienestarina", route: "/referenciasbienestarinav", icon: "face" };
     this.datos.push(create);
     var create = { name: "Crear listado de precios", route: "/listapreciosv", icon: "face" };
     this.datos.push(create);
-    var create = { name: "Crear lisdo de cursos", route: "/listadocursosv", icon: "face" };
+    var create = { name: "Crear listado de cursos", route: "/listadocursosv", icon: "face" };
     this.datos.push(create);
     var create = { name: "Crear datos varios", route: "/datosvariosv", icon: "face" };
     this.datos.push(create);
