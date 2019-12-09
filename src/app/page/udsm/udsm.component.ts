@@ -21,6 +21,7 @@ export class UdsmComponent implements OnInit {
   cz: Centrozonal[] = [];
   puntos: Puntoentregat[] = [];
   pe: Puntoentrega[] = [];
+  ud: Uds [] = [];
 
   unidad: Uds = {
     idUDS: 0,
@@ -53,10 +54,12 @@ export class UdsmComponent implements OnInit {
 
     // stop here if form is invalid
     if (this.udForm.valid) {
-      this.updateDatos();
-    } else {
+      if(this.campo1 == false && this.campo2 == false && this.campo3 == false){
+        this.updateDatos();
+      }
+    }  else if(this.udForm.invalid) {
+      this.showMenssagenull();
     }
-
     // display form values on success
     console.log('Formulario', this.udForm.value);
   }
@@ -147,6 +150,59 @@ export class UdsmComponent implements OnInit {
       );
   }
 
+  //-------------------Validar si exiten los datos----------------------
+  campo1 = false;
+  campo2 = false;
+  campo3 = false;
+  Validar() {
+    console.log('nombre ingresado', this.unidad.NombreUDS);
+    var contador = 0;
+    var contador2 = 0;
+    var contador3 = 0;
+    var contador4 = 0;
+    var contador5 = 0;
+    var contador6 = 0;
+    for (let d of this.ud) {
+      if (d.NombreUDS == this.unidad.NombreUDS) {
+        contador = contador2 + 1;
+        console.log('Nombre igual', contador);
+      }
+
+      if (d.CodigoExternoUDS == this.unidad.CodigoExternoUDS) {
+        contador3 = contador4 + 1;
+
+        console.log('Codico CZ igual', contador3);
+      }
+
+      if (d.CodigoInternoUDS == this.unidad.CodigoInternoUDS) {
+        contador5 = contador6 + 1;
+        this.campo3 = true;
+        console.log('Codico interno igual', contador5);
+      }
+
+    }
+    if (contador >= 1) {
+      this.campo1 = true;
+      this.showMenssage3();
+    } else {
+      this.campo1 = false;
+    }
+
+    if (contador3 >= 1) {
+      this.campo2 = true;
+      this.showMenssage4();
+    } else {
+      this.campo2 = false;
+    }
+
+    if (contador5 >= 1) {
+      this.campo3 = true;
+      this.showMenssage5();
+    } else {
+      this.campo3 = false;
+    }
+
+  }
 
   //mensajes de creacion
   showMenssage() {
@@ -179,6 +235,42 @@ export class UdsmComponent implements OnInit {
 
       }
 
+    });
+  }
+
+  showMenssage3() {
+    Swal.fire({
+      title: 'Error',
+      text: 'El nombre de la unidad de servicio ya exite',
+      type: 'warning',
+      confirmButtonText: 'Entendido'
+    });
+  }
+
+  showMenssage4() {
+    Swal.fire({
+      title: 'Error',
+      text: 'El código externo ya exite',
+      type: 'warning',
+      confirmButtonText: 'Entendido'
+    });
+  }
+
+  showMenssage5() {
+    Swal.fire({
+      title: 'Error',
+      text: 'El código interno ya exite',
+      type: 'warning',
+      confirmButtonText: 'Entendido'
+    });
+  }
+
+  showMenssagenull() {
+    Swal.fire({
+      title: 'Error',
+      text: 'Campos vacios',
+      type: 'warning',
+      confirmButtonText: 'Entendido'
     });
   }
 
