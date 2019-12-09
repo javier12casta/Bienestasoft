@@ -9,6 +9,7 @@ import { Centrozonal } from '../../interfaces/centrozonal';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Biometrico } from 'src/app/interfaces/biometrico';
 import { delay } from 'q';
+import { MaestroBienestarina } from 'src/app/interfaces/maestrosBienestarina';
 @Component({
   selector: 'app-datos-generales-beneficiario',
   templateUrl: './datos-generales-beneficiario.component.html',
@@ -21,6 +22,8 @@ export class DatosGeneralesBeneficiarioComponent implements OnInit {
   public reg: Regional[] = [];
   public gen: Genero[] = [];
   public cen: Centrozonal[] = [];
+  ser: MaestroBienestarina [] = [];
+  
 
   x : Beneficiario = {
 
@@ -139,10 +142,15 @@ export class DatosGeneralesBeneficiarioComponent implements OnInit {
    console.log(err);
  });
 
+ this.Service.getMaestrosBienestrina().subscribe(res => {
+  this.ser = res;
+  console.log('Modalidad', this.ser );
+},err => {
+  console.log(err);
+});
+}
+
  
 
   }
 
-
-
-}
