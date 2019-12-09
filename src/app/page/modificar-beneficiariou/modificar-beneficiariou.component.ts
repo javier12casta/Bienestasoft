@@ -10,7 +10,8 @@ import { Beneficiariot } from '../../interfaces/beneficiariot';
 })
 export class ModificarBeneficiariouComponent implements OnInit {
 
-   
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
   bene: Beneficiariot[] = [];
 
   constructor(private Service: ServicioService) { }

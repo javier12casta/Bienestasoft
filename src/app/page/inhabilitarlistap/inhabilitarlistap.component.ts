@@ -9,7 +9,8 @@ import { ServicioService } from '../../servicio.service';
 })
 export class InhabilitarlistapComponent implements OnInit {
   listapre: Lprecios[] = [];
-
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {

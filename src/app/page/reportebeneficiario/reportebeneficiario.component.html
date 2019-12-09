@@ -7,6 +7,7 @@
      
     <table class="table" id="contentToConvert">
         <thead class="thead-green">
+            {{Nombrereporte}}       {{fecha}}
           <tr>
             <th scope="col">#</th>
             <th scope="col">Número documento</th>
@@ -29,12 +30,12 @@
             <th scope="col">Servicio o modalidad</th>
             <th scope="col">Género</th>
             <th scope="col">Tipo documento</th>
-            <th scope="col">UDS</th>
+       
     
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let centro of bene">
+          <tr *ngFor="let centro of benefi">
             <th scope="row">{{centro.idBeneficiarios}}</th>
             <td>{{centro.NumeroDocumento }}</td>
             <td>{{centro.FechaI  }}</td>
@@ -65,7 +66,6 @@
             <td>{{centro.ServicioOmodalidad }}</td>
             <td>{{centro.NombreGenero  }}</td>
             <td>{{centro.NombreTipo }}</td>
-            <td>{{centro.NombreUDS }}</td>
           
           </tr>
         </tbody>

@@ -13,6 +13,13 @@ import { Almacent} from '../../interfaces/almacent';
   <td>
          <button class="btn btn-dark" routerLink="/crearalmacen">Volver</button>
          </td>
+         <div>
+         <label>Crear almacen centro zonal</label>
+     
+     {{fecha}}  
+     </div>
+     
+    
          <td>
           <button class="btn btn-dark" [routerLink]="['/almacenci']">Crear</button>
         </td>
@@ -64,6 +71,8 @@ import { Almacent} from '../../interfaces/almacent';
 export class AlmacencComponent implements OnInit {
 
   alm:Almacent[] = [];
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
 
   constructor(private Service: ServicioService) { }
 

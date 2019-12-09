@@ -1,5 +1,5 @@
 <nav class="navbar navbar-success bg-success">
-    <button class="btn btn-dark" routerLink="/puntoentrega">Volver</button>
+    <button class="btn btn-dark" routerLink="/puntoentregain">Volver</button>
 </nav>
 
 <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
@@ -9,8 +9,8 @@
                 <div class="form-group">
                     <label>Estado</label>
                     <select name="Estado" style="width: 100%;" class="form-control" [(ngModel)]="puntos.Estado">
-                        <option value="1"> Habilitar</option>
-                        <Option value="0">Inhabilitar</Option>
+                        <option value="1"> Habilitado</option>
+                        <Option value="0">Deshabilitado</Option>
                     </select>
                 </div>
                 <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"  -->

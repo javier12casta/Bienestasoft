@@ -12,6 +12,13 @@ import { Centrodistribuciont } from 'src/app/interfaces/centrodistribuciont';
   <td>
   <button class="btn btn-dark" routerLink="/centrodistribucion">Volver</button>
   </td>
+  <div>
+          <label>Crear centro de distribucion centro zonal </label>
+      
+      {{fecha}}  
+      </div>
+      
+   
   <td>
           <button class="btn btn-dark" [routerLink]="['/centrodistribucionci']">Crear</button>
         </td>
@@ -62,7 +69,8 @@ import { Centrodistribuciont } from 'src/app/interfaces/centrodistribuciont';
 export class CentrodistribucioncComponent implements OnInit {
 
  cen: Centrodistribuciont[] = [];
-
+ f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {

@@ -12,6 +12,9 @@ import html2canvas from 'html2canvas';
 export class ReportepreciosbienestarinaComponent implements OnInit {
 
   listapre: Lprecios[] = [];
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
+  Nombrereporte = 'Reporte lista de precios';
 
   constructor(private Service: ServicioService) { }
 

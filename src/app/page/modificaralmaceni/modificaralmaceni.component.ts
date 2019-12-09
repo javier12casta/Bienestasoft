@@ -10,6 +10,15 @@ import { ServicioService } from '../../servicio.service';
 
   <nav class="navbar navbar-success bg-success">
   <button class="btn btn-dark" routerLink="/modificaralmacen">Volver</button>
+  <div>
+      <label>Modificar almacen centro zonal</label>
+  
+  {{fecha}}  
+  </div>
+  
+  <div>
+    
+  </div>
 </nav>
 
 <table class="table">
@@ -61,7 +70,8 @@ import { ServicioService } from '../../servicio.service';
 export class ModificaralmaceniComponent implements OnInit {
 
   alm: Almacent[] = [];
-
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {

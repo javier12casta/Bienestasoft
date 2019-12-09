@@ -13,7 +13,9 @@ import { Salidabeneficiariot } from 'src/app/interfaces/salidabeneficiariot';
 export class ReportesalidabeneficiarioComponent implements OnInit {
 
   centroB: Salidabeneficiariot[] = [];
-
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
+  Nombrereporte = 'Reporte entrega beneficiario';
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {

@@ -17,7 +17,9 @@ import { Regional } from '../../interfaces/regional';
 export class Modificarbeneficiarios1Component implements OnInit {
  
   bene: Beneficiariot[] = [];
-
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
+  
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {

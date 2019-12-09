@@ -10,7 +10,9 @@ import { ServicioService } from '../../servicio.service';
 })
 export class InhabilitarcentrodiComponent implements OnInit {
   centrodt: Centrodistribuciont[] = [];
-
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
+  
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {

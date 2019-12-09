@@ -13,6 +13,9 @@ import html2canvas from 'html2canvas';
 export class ReporterolComponent implements OnInit {
 
   trol: Rol[] = [];
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
+  Nombrereporte = 'Reporte rol';
 
   constructor(private Service: ServicioService) { }
 

@@ -3,6 +3,11 @@
     <td>
     <button class="btn btn-dark" routerLink="/usuarios">Volver</button>
     </td>
+    <div>
+        <label>Crear usuarios punto de entrega</label>
+    
+    {{fecha}}  
+    </div>
     <td>
             <button class="btn btn-dark" [routerLink]="['/datoscontactousuario']">Crear</button>
           </td>
@@ -18,7 +23,7 @@
           <th scope="col">Número documento</th>
           <th scope="col">Fecha ingreso</th>
           <th scope="col">Nombre usuario sistema</th>
-     
+          <th scope="col">Contraseña</th>
           <th scope="col">Dirección</th>
           <th scope="col">Teléfono fijo</th>
           <th scope="col">Telefono fijo2</th>
@@ -41,6 +46,7 @@
           <td>{{usu.NumeroDocumento}}</td>
           <td>{{usu.FechaIngreso}}</td>
           <td>{{usu.NombreUsuarioSistema}}</td>
+          <td>*******</td>
           <td>{{usu.Direccion}}</td>
           <td>{{usu.TelefonoFijo}}</td>
           <td>{{usu.TelefonoFijo2}}</td>

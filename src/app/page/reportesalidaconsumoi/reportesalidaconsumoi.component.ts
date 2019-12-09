@@ -13,6 +13,9 @@ import { Salidaconsumot } from 'src/app/interfaces/salidaconsumot';
 export class ReportesalidaconsumoiComponent implements OnInit {
 
   centroC: Salidaconsumot[] = [];
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
+  Nombrereporte = 'Reporte consumo interno';
 
   constructor(private Service: ServicioService) { }
 

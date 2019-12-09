@@ -12,7 +12,8 @@ import { Router } from '@angular/router';
 export class ListadoPreciosComponent implements OnInit {
 
   listamaestro: string[] = ["0", "1"];
-
+  cb;
+  cb1 ;
   x: Lprecios = {
 
 
@@ -29,20 +30,26 @@ export class ListadoPreciosComponent implements OnInit {
   
   showMenssage(){
     Swal.fire({
-      title: 'Creado',
-      text: 'Dato Maestro Creado',
+      title: 'Modificado',
+      text: 'Dato maestro modificadp',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {
       if (result.value) {
         
-        this.router.navigate(['/listapreciosv']);
-    
+        this.router.navigate(['/modificarlistac']);
+        window.location.reload()
       }
     });
   }  
 
+ 
+  f = new Date();
+  fecha =  this.f.getFullYear();
+ 
+  
 
+ 
 
 
   onClickMe() {
@@ -60,6 +67,16 @@ export class ListadoPreciosComponent implements OnInit {
   constructor(private Service: ServicioService,private router:Router) { }
 
   ngOnInit() {
+
+
+   
+
+
+    
+                                 
+                                  
+                             
+
   }
 
 }

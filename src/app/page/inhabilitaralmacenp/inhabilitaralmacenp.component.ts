@@ -10,7 +10,8 @@ import { ServicioService } from '../../servicio.service';
 })
 export class InhabilitaralmacenpComponent implements OnInit {
 
-  
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
   almac: Almacent[] = [];
   cen: Centrozonal[] = [];
 

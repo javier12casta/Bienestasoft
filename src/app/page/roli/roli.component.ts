@@ -12,7 +12,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class RoliComponent implements OnInit {
 
   roles: Rol[] = [];
-
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
+  
   rol: Rol = {
     idRolPersona: 0,
     RolPersona: '',

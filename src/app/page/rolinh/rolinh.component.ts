@@ -144,7 +144,7 @@ export class RolinhComponent implements OnInit {
   showMenssage5() {
     Swal.fire({
       title: 'Inhabilitado',
-      text: 'El rol ha sido inhabilitado',
+      text: 'se ha inhabilitado el' + this.roles.RolPersona,
       type: 'error',
       confirmButtonText: 'Entendido'
     }).then((res) => {

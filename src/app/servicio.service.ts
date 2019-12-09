@@ -314,6 +314,11 @@ export class ServicioService {
     return this.http.get<[Usuariost]>(path);
   }
 
+  getUsuariosr() {
+    const path = `${this.api}/usuario/tablausuariosr`;
+    return this.http.get<[Usuariost]>(path);
+  }
+
   
 
   getUsuariosid(id: string) {
@@ -381,6 +386,11 @@ export class ServicioService {
 
   getBeneficiariosp() {
     const path = `${this.api}/beneficiario/beneficiariosp`;
+    return this.http.get<[Beneficiariot]>(path);
+  }
+
+  getBeneficiariosr() {
+    const path = `${this.api}/beneficiario/beneficiariosr`;
     return this.http.get<[Beneficiariot]>(path);
   }
 
@@ -580,6 +590,8 @@ export class ServicioService {
     return this.http.get<[Centrodistribuciont]>(path);
   }
 
+ 
+
 
 
   putcentrodistribucion(id: string | number, cent: Centrodistribucion) {
@@ -622,6 +634,10 @@ export class ServicioService {
     return this.http.get<[Almacent]>(path);
   }
 
+  getAlmacenr() {
+    const path = `${this.api}/almacen/almacenesr`;
+    return this.http.get<[Almacent]>(path);
+  }
 
 
   putalmacen(id: string | number, cent: Almacen) {

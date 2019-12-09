@@ -11,9 +11,26 @@
                     <input type="text" class="form-control" [(ngModel)]="pre.Referencia" name="referencia"
                     placeholder="referencia" class="form-control" id="ref" minlength="0" required="">
     
-                    <input type="text" class="form-control" [(ngModel)]="pre.Mes" name="mes"
-                    placeholder="Mes" class="form-control" id="me" minlength="0" required="">
-    
+
+                    <select name="mes" [(ngModel)]="pre.Mes" class="form-control">
+                        <option >Enero</option>
+                        <Option>Febrero</Option>
+                        <Option >Marzo</Option>
+                        <Option >Abril</Option>
+                        <Option >Mayo</Option>
+                        <Option >Junio</Option>
+                        <Option >Julio</Option>
+                        <Option >Agosto</Option>
+                        <Option >Septiembre</Option>
+                        <Option >Octubre</Option>
+                        <Option >Noviembre</Option>
+                        <Option >Diciembre</Option>
+                      </select>
+
+                 
+
+
+               
                     <input type="number" class="form-control" [(ngModel)]="pre.Ano" name="ano"
                     placeholder="Año" class="form-control" id="ano" minlength="0" required="">
     

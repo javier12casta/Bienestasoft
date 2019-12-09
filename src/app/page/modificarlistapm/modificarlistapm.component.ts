@@ -3,6 +3,7 @@ import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 import { Lprecios } from '../../interfaces/listaprecios';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modificarlistapm',
@@ -14,7 +15,7 @@ export class ModificarlistapmComponent implements OnInit {
   public precio: Lprecios[] = [];
 
   constructor(private activeRoute: ActivatedRoute,
-    private Service: ServicioService,) { }
+    private Service: ServicioService,private router:Router) { }
 
     pre: Lprecios = {
 
@@ -52,6 +53,12 @@ export class ModificarlistapmComponent implements OnInit {
       text: 'Dato Maestro Modificado',
       type: 'success',
       confirmButtonText: 'Entendido'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/modificarlistac']);
+        window.location.reload();
+      }
     });
   }
 
@@ -67,6 +74,4 @@ export class ModificarlistapmComponent implements OnInit {
         }
       );
   }
-
-
 }

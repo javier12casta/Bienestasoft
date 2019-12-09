@@ -10,6 +10,8 @@ import { ServicioService } from 'src/app/servicio.service';
 export class ListapreciosvComponent implements OnInit {
 
   servic: Lprecios[] = [];
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
 
   constructor(private Service: ServicioService) { }
 

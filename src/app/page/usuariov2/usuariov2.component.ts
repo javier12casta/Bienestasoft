@@ -9,6 +9,8 @@ import { ServicioService } from '../../servicio.service';
 })
 export class Usuariov2Component implements OnInit {
 
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
   usua: Usuariost[] = [];
 
   constructor(private Service: ServicioService) { }

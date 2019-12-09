@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./usuariouds.component.css']
 })
 export class UsuarioudsComponent implements OnInit {
-
+  tipo = "password";
   listamaestro:string[]=["0","1"];
   listat:string[]=["PE","UDS","ADMINISTRADOR"];
   listar:string[]=["1","2","3","4","5","6","7","8","9","10"];
@@ -129,7 +129,20 @@ this.showMenssage3();
 	});
 	}
 
- 
+  ver(){
+
+    if(this.tipo == "password"){
+
+      this.tipo = "text";
+
+    }else{
+
+      this.tipo = "password";
+
+    }
+
+
+  }
 
 
 

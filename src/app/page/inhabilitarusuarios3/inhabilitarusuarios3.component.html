@@ -1,5 +1,14 @@
 <nav class="navbar navbar-success bg-success">
         <button class="btn btn-dark" routerLink="/inhabilitarusuarios">Volver</button>
+        <div>
+            <label>Inhabilitar usuario uds</label>
+        
+        {{fecha}}  
+        </div>
+        
+        <div>
+          
+        </div>
       </nav>
       
       <table class="table">
@@ -12,6 +21,7 @@
             <th scope="col">Numero documento</th>
             <th scope="col">Fecha ingreso</th>
             <th scope="col">Nombre usuario sistema</th>
+            <th scope="col">Contraseña</th>
             <th scope="col">Dirección</th>
             <th scope="col">Teléfono fijo</th>
             <th scope="col">Teléfono fijo2</th>
@@ -33,6 +43,7 @@
               <td>{{usu.NumeroDocumento}}</td>
               <td>{{usu.FechaIngreso}}</td>
               <td>{{usu.NombreUsuarioSistema}}</td>
+              <td>*******</td>
               <td>{{usu.Direccion}}</td>
               <td>{{usu.TelefonoFijo}}</td>
               <td>{{usu.TelefonoFijo2}}</td>

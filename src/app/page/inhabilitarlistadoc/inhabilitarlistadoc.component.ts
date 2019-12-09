@@ -12,7 +12,9 @@ export class InhabilitarlistadocComponent implements OnInit {
 
   listadoc: Listadocursos[] = [];
   listad: Listadocursost[] = [];
-
+  f = new Date();
+  fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
+  
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {
