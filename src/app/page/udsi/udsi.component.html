@@ -13,7 +13,7 @@
           <label>Centro zonal</label>
           <select formControlName="idCentrosZonales" class="form-control" [(ngModel)]="unidad.idCentrosZonales"
             [ngClass]="{ 'is-invalid': submitted && f.idCentrosZonales.errors }">
-            <option *ngFor="let cen of centros" [value]="cen.idCentrosZonales">{{cen.NombreCentroZonal}}</option>
+            <option *ngFor="let cen of cz" [value]="cen.idCentrosZonales">{{cen.NombreCentroZonal}}</option>
           </select>
           <div *ngIf="submitted && f.idCentrosZonales.errors" class="invalid-feedback">
             <div *ngIf="f.idCentrosZonales.errors.required">Centro zonal es requerido</div>
@@ -24,7 +24,7 @@
           <label>Punto de entrega</label>
           <select formControlName="idPuntoEntrega" class="form-control" [(ngModel)]="unidad.idPuntoEntrega"
             [ngClass]="{ 'is-invalid': submitted && f.idPuntoEntrega.errors }">
-            <option *ngFor="let pun of puntos" [value]="pun.idPuntoEntrega">{{pun.NombrePE}}</option>
+            <option *ngFor="let pun of pe" [value]="pun.idPuntoEntrega">{{pun.NombrePE}}</option>
           </select>
           <div *ngIf="submitted && f.idPuntoEntrega.errors" class="invalid-feedback">
             <div *ngIf="f.idPuntoEntrega.errors.required">Punto de entrega es requerido</div>

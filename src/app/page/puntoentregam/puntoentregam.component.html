@@ -13,7 +13,7 @@
               <label>Centro zonal</label>
               <select formControlName="idCentrosZonales" class="form-control" [(ngModel)]="puntos.idCentrosZonales"
                 [ngClass]="{ 'is-invalid': submitted && f.idCentrosZonales.errors }">
-                <option *ngFor="let cen of centros" [value]="cen.idCentrosZonales">{{cen.NombreCentroZonal}}</option>
+                <option *ngFor="let cen of cz" [value]="cen.idCentrosZonales">{{cen.NombreCentroZonal}}</option>
               </select>
               <div *ngIf="submitted && f.idCentrosZonales.errors" class="invalid-feedback">
                 <div *ngIf="f.idCentrosZonales.errors.required">Centrozonal es requerido</div>

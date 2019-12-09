@@ -24,7 +24,7 @@
         <div class="form-group">
           <label>Nombre centro zonal</label>
           <input type="text" placeholder="Nombre centro zonal" formControlName="NombreCentroZonal" class="form-control" [(ngModel)]="centros.NombreCentroZonal"
-            [ngClass]="{ 'is-invalid': submitted && f.NombreCentroZonal.errors }" />
+            [ngClass]="{ 'is-invalid': submitted && f.NombreCentroZonal.errors }"/>
 
           <div *ngIf="submitted && f.NombreCentroZonal.errors" class="invalid-feedback">
             <div *ngIf="f.NombreCentroZonal.errors.required"> Nombre centro zonal es requerido</div>

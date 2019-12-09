@@ -16,7 +16,9 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 export class UdsiComponent implements OnInit {
   
   centros: Centrozonal []=[];
+  cz: Centrozonal []=[];
   puntos: Puntoentrega[]=[];
+  pe: Puntoentrega[]=[];
 
   unidad : Uds = {
     NombreUDS: '',
@@ -64,6 +66,12 @@ export class UdsiComponent implements OnInit {
 	}, err => {
 	  console.log(err);
   });
+  this.Service.getPuntoEstado()
+	.subscribe(res => {
+	  this.pe = res;
+	}, err => {
+	  console.log(err);
+  });
   
   this.Service.getCentro()
 	.subscribe(res => {
@@ -71,19 +79,27 @@ export class UdsiComponent implements OnInit {
 	}, err => {
 	  console.log(err);
   });
+
+  this.Service.getCentroEStado()
+  .subscribe(res => {
+    this.cz = res;
+    console.log('Centros activos', this.cz);
+  }, err => {
+    console.log(err);
+  });
   
    //Validador--------------------
    this.udForm = this.fb.group({
     idCentrosZonales: ['', Validators.required],
     idPuntoEntrega: ['', Validators.required],
     Estado: ['', Validators.required],
-    NombreUDS: ['', [Validators.required, Validators.pattern('^[a-z A-Z á é í ó ú]*$')]],
+    NombreUDS: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
     CodigoExternoUDS: ['', [Validators.required, Validators.minLength(13), Validators.maxLength(13), Validators.pattern('^[0-9]*$')]],
-    CodigoInternoUDS: ['', [Validators.required, Validators.pattern('^[a-z A-Z 0-9]*$')]],
-    ReponsableUDS: ['', [Validators.required, Validators.pattern('^[a-z A-Z á é í ó ú]*$')]],
-    Comuna: ['', [Validators.required, Validators.pattern('^[a-z A-Z á é í ó ú]*$')]],
-    Direccion: ['', [Validators.required, Validators.pattern('^[a-z A-Z 0-9 á é í ó ú \-\_\´\¨\.\ #]*$')]],
-    Barrio: ['', [Validators.required, Validators.pattern('^[a-z A-Z 0-9 á é í ó ú]*$')]],
+    CodigoInternoUDS: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ 0-9]*$')]],
+    ReponsableUDS: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
+    Comuna: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
+    Direccion: ['', [Validators.required, Validators.pattern('^[a-z A-Z 0-9 ñ á é í ó ú \-\_\´\¨\.\ #]*$')]],
+    Barrio: ['', [Validators.required, Validators.pattern('^[a-z A-Z 0-9 ñ á é í ó ú]*$')]],
     Telefono: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('^[0-9]*$')]],
   });
 

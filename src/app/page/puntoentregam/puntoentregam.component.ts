@@ -15,7 +15,7 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 export class PuntoentregamComponent implements OnInit {
 
   centros: Centrozonal[] = [];
-
+  cz: Centrozonal[] = [];
   puntos: Puntoentrega = {
     NombrePE: '',
     CodigoInternoPE: '',
@@ -80,17 +80,25 @@ export class PuntoentregamComponent implements OnInit {
 
     console.log(this.puntos);
 
+    this.Service.getCentroEStado()
+    .subscribe(res => {
+      this.cz = res;
+      console.log('Centros activos', this.cz);
+    }, err => {
+      console.log(err);
+    });
+
     //Validador--------------------
     this.peForm = this.fb.group({
       idCentrosZonales: ['', Validators.required],
       Estado: ['', Validators.required],
-      NombrePE: ['', [Validators.required, Validators.pattern('^[a-z A-Z á é í ó ú]*$')]],
+      NombrePE: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
       CodigoExternoPE: ['', [Validators.required, Validators.minLength(11), Validators.maxLength(11), Validators.pattern('^[0-9]*$')]],
-      CodigoInternoPE: ['', [Validators.required, Validators.pattern('^[a-z A-Z 0-9]*$')]],
-      Responsable: ['', [Validators.required, Validators.pattern('^[a-z A-Z á é í ó ú]*$')]],
-      Comuna: ['', [Validators.required, Validators.pattern('^[a-z A-Z á é í ó ú]*$')]],
-      Direccion: ['', [Validators.required, Validators.pattern('^[a-z A-Z 0-9 á é í ó ú \-\_\´\¨\.\ #]*$')]],
-      BarrioPE: ['', [Validators.required, Validators.pattern('^[a-z A-Z 0-9 á é í ó ú]*$')]],
+      CodigoInternoPE: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ 0-9]*$')]],
+      Responsable: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
+      Comuna: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
+      Direccion: ['', [Validators.required, Validators.pattern('^[a-z A-Z 0-9 ñ á é í ó ú \-\_\´\¨\.\ #]*$')]],
+      BarrioPE: ['', [Validators.required, Validators.pattern('^[a-z A-Z 0-9 ñ á é í ó ú]*$')]],
       Telefono: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('^[0-9]*$')]],
     });
   }

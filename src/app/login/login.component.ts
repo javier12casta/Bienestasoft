@@ -70,8 +70,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.fb.group({
-      user: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(20),Validators.pattern('^[0-9 a-z A-Z]*$')]],
-      password: ['', [Validators.required, Validators.minLength(6),Validators.maxLength(20),Validators.pattern('^[0-9 a-z A-Z]*$')]],
+      user: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(20),Validators.pattern('^[0-9 a-z A-Z ñ á é í ó ú]*$')]],
+      password: ['', [Validators.required, Validators.minLength(6),Validators.maxLength(20),Validators.pattern('^[0-9 a-z A-Z ñ á é í ó ú]*$')]],
     });
   }
 
