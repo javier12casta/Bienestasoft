@@ -13,6 +13,7 @@ export interface Usuariost {
     TelefonoMovil: number,
     TelefonoMovil2?: number ,
     Email : string,
+    tipo ?: string,
     NombrePE ?: number,
     NombreCentroZonal ?: number,
     NombreUDS ?: number,

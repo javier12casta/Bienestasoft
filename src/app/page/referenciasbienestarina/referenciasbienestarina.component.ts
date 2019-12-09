@@ -47,7 +47,7 @@ export class ReferenciasbienestarinaComponent implements OnInit {
       if (result.value) {
         
         this.router.navigate(['/referenciasbienestarinav']);
-    
+        window.location.reload();
       }
     });
   }

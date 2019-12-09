@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { InTipoBienestarina } from '../../interfaces/inhabilitartipobienestarina';
 import { InMaestroBienestarina } from '../../interfaces/inhabilitarmaestrosBienestarina';
 import Swal from 'sweetalert2';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inhabilitareferenciabi',
@@ -16,7 +16,7 @@ export class InhabilitareferenciabiComponent implements OnInit {
   public tipob: InTipoBienestarina[] = [];
 
   constructor(private activeRoute: ActivatedRoute,
-    private Service: ServicioService,) { }
+    private Service: ServicioService,private router:Router) { }
 
     tip: InTipoBienestarina = {
 
@@ -50,15 +50,26 @@ export class InhabilitareferenciabiComponent implements OnInit {
       text: 'Dato Maestro Inhabilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/inhabilitareferenciab']);
+        window.location.reload();
+      }
     });
   }
-
   showMenssage1(){
     Swal.fire({
       title: 'habilitado',
       text: 'Dato Maestro habilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/inhabilitareferenciab']);
+        window.location.reload();
+      }
     });
   }
 

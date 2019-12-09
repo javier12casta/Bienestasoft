@@ -3,6 +3,7 @@ import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 import { TipoBienestarina } from '../../interfaces/tipobienestarina';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class ModificareferenciabmComponent implements OnInit {
   public tipobienestarina: TipoBienestarina[] = [];
 
   constructor( private activeRoute: ActivatedRoute,
-    private Service: ServicioService,) { }
+    private Service: ServicioService,private router:Router) { }
 
     bine: TipoBienestarina = {
 
@@ -54,6 +55,12 @@ export class ModificareferenciabmComponent implements OnInit {
       text: 'Dsto Maestro Modificado',
       type: 'success',
       confirmButtonText: 'Entendido'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/modificarreferenciab']);
+        window.location.reload();
+      }
     });
   }
 

@@ -22,6 +22,7 @@ export class Modificarusuariosv2mComponent implements OnInit {
   public cen: Centrozonal[] = [];
   public pe: Puntoentrega[] = [];
   public ud: Uds[] = [];
+  tipo="text";
   
   constructor( private activeRoute: ActivatedRoute,
     private Service: ServicioService, private router:Router) { }
@@ -140,7 +141,7 @@ export class Modificarusuariosv2mComponent implements OnInit {
         if (result.value) {
           
           this.router.navigate(['/modificarusuariov2']);
-      
+          window.location.reload();
         }
       });
     }
@@ -170,6 +171,12 @@ export class Modificarusuariosv2mComponent implements OnInit {
         confirmButtonText: 'Entendido'
       });
       }
+
+      focusFunction(){
+
+        this.tipo = "date";
+    
+        }
   
    
 }

@@ -3,6 +3,7 @@ import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 import { MaestroBienestarina } from '../../interfaces/maestrosBienestarina';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modificarserviciomm',
@@ -14,7 +15,7 @@ export class ModificarserviciommComponent implements OnInit {
   public maestrosm: MaestroBienestarina[] = [];
 
   constructor(private activeRoute: ActivatedRoute,
-    private Service: ServicioService,) { }
+    private Service: ServicioService,private router:Router) { }
 
     maes: MaestroBienestarina = {
 
@@ -51,9 +52,14 @@ export class ModificarserviciommComponent implements OnInit {
       text: 'Dato Maestro Modificado',
       type: 'success',
       confirmButtonText: 'Entendido'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/modificarserviciom']);
+        window.location.reload();
+      }
     });
   }
-
 
   updateDatos() {
     this.Service.putMaestrosBienestrina(this.maes.idListasMaestro, this.maes)

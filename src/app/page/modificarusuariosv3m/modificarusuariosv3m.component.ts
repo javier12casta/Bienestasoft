@@ -22,9 +22,7 @@ export class Modificarusuariosv3mComponent implements OnInit {
   public cen: Centrozonal[] = [];
   public pe: Puntoentrega[] = [];
   public ud: Uds[] = [];
-
-
-  
+  tipo="text";
 
   constructor(
     private activeRoute: ActivatedRoute,
@@ -147,7 +145,7 @@ export class Modificarusuariosv3mComponent implements OnInit {
       if (result.value) {
         
         this.router.navigate(['/modificarusuariov3']);
-    
+        window.location.reload();
       }
     });
   }
@@ -178,5 +176,10 @@ export class Modificarusuariosv3mComponent implements OnInit {
     });
     }
 
+    focusFunction(){
+
+      this.tipo = "date";
+  
+      }
 
 }

@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class ListadoPreciosComponent implements OnInit {
 
   listamaestro: string[] = ["0", "1"];
+  año: string[] = [];
   cb;
   cb1 ;
   x: Lprecios = {
@@ -65,18 +66,15 @@ export class ListadoPreciosComponent implements OnInit {
   }
 
   constructor(private Service: ServicioService,private router:Router) { }
+ 
 
   ngOnInit() {
-
-
-   
-
-
-    
-                                 
-                                  
-                             
-
   }
+
+
+  //for (var i = 1930; i < 2050; i++) {
+  //  console.log(i);
+ // }
+
 
 }

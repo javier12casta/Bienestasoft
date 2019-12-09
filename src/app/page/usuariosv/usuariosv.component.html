@@ -18,6 +18,7 @@
         <th scope="col">Correo electrónico</th>
         <th scope="col">UDS</th>
         <th scope="col">Tipo documento</th>
+        <th scope="col">Rol</th>
         <th scope="col">Tipo usuario</th>
         
         
@@ -42,6 +43,7 @@
         <td>{{cen.idUDS}}</td>
         <td>{{cen.idTipoDocumento}}</td>
         <td>{{cen.TipoUsuario}}</td>
+        <td>{{cen.tipo}}</td>
         <td>
           <button class="btn btn-primary" [routerLink]="['/ModificarBeneficiariom', cen.idUsuarios]">Modificar</button>
         </td>

@@ -15,6 +15,8 @@ export class ModificarbeneficiariomComponent implements OnInit {
 
   public beneficiarios: Beneficiario[] = [];
   public ud: Centrozonal[] = [];
+  tipo="text";
+  tipo1="text";
 
   constructor(private activeRoute: ActivatedRoute,
     private Service: ServicioService,private router:Router) { }
@@ -99,5 +101,17 @@ export class ModificarbeneficiariomComponent implements OnInit {
         }
       );
   }
+
+  focusFunction(){
+
+    this.tipo = "date";
+
+    }
+
+    focusFunction1(){
+
+    this.tipo1 = "date";
+
+    }
 
 }

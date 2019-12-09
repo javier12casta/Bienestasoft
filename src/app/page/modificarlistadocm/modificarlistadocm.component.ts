@@ -3,6 +3,7 @@ import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 import { Listadocursos } from '../../interfaces/listadocursos';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modificarlistadocm',
@@ -14,7 +15,7 @@ export class ModificarlistadocmComponent implements OnInit {
   public listacursos: Listadocursos[] = [];
 
   constructor(private activeRoute: ActivatedRoute,
-    private Service: ServicioService,) { }
+    private Service: ServicioService, private router:Router) { }
 
     listac: Listadocursos = {
 
@@ -53,6 +54,13 @@ export class ModificarlistadocmComponent implements OnInit {
       text: 'Dato Maestro Modificado',
       type: 'success',
       confirmButtonText: 'Entendido'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/modificarlistadoc']);
+        window.location.reload();
+    
+      }
     });
   }
 

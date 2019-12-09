@@ -145,6 +145,7 @@ export class RecepcionbienestarinaviComponent implements OnInit {
       if (result.value) {
 
         this.router.navigate(['/recepcionv']);
+        window.location.reload();
 
       }
 
@@ -174,8 +175,6 @@ export class RecepcionbienestarinaviComponent implements OnInit {
       if (result.value) {
         this.onClickMe();
       }
-
-
     });
   }
   showMenssage5() {

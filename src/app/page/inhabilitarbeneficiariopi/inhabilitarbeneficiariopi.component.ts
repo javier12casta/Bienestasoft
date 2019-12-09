@@ -55,6 +55,7 @@ export class InhabilitarbeneficiariopiComponent implements OnInit {
       if (result.value) {
         
         this.router.navigate(['/inhabilitarbeneficiariosp']);
+        window.location.reload();
 
       }
 

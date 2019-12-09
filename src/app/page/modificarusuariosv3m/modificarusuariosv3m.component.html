@@ -38,8 +38,8 @@
                 <input type="text" class="form-control" [(ngModel)]="usu.Apellidos" name="apellidos" placeholder="Apellidos"
                   class="form-control" id="app" minlength="0" required="">
       
-                <input type="date" class="form-control" [(ngModel)]="usu.FechaIngreso" name="fechai" placeholder="Fecha"
-                  min="2018-01-01" max="2050-12-31" class="form-control" minlength="0" required="">
+                <input type={{tipo}} class="form-control" [(ngModel)]="usu.FechaIngreso" name="fechai" placeholder="Fecha"
+                  min="2018-01-01" max="2050-12-31" class="form-control" minlength="0" required="" (focus)="focusFunction()">
       
                 <input type="text" class="form-control" [(ngModel)]="usu.NombreUsuarioSistema" name="Usuario"
                   placeholder="Usuario Sistema" class="form-control" id="usu" minlength="0" required="">

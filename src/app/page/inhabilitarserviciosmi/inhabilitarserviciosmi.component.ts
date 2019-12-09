@@ -3,7 +3,7 @@ import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 import { InMaestroBienestarina } from '../../interfaces/inhabilitarmaestrosBienestarina';
 import Swal from 'sweetalert2';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inhabilitarserviciosmi',
@@ -14,7 +14,7 @@ export class InhabilitarserviciosmiComponent implements OnInit {
   public ser: InMaestroBienestarina[] = [];
 
   constructor(private activeRoute: ActivatedRoute,
-    private Service: ServicioService,) { }
+    private Service: ServicioService, private router:Router) { }
 
     serv: InMaestroBienestarina = {
 
@@ -50,6 +50,13 @@ export class InhabilitarserviciosmiComponent implements OnInit {
       text: 'Dato Maestro Inhabilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/inhabilitarserviciom']);
+        window.location.reload();
+    
+      }
     });
   }
 
@@ -59,6 +66,13 @@ export class InhabilitarserviciosmiComponent implements OnInit {
       text: 'Dato Maestro habilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/inhabilitarserviciom']);
+        window.location.reload();
+    
+      }
     });
   }
 

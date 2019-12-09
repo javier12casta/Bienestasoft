@@ -3,6 +3,7 @@ import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 import { InListadocursos } from '../../interfaces/inhabilitarlistadocursos';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class InhabilitarlistadociComponent implements OnInit {
   public listadoc: InListadocursos[] = [];
 
   constructor(private activeRoute: ActivatedRoute,
-    private Service: ServicioService,) { }
+    private Service: ServicioService,private router:Router) { }
 
     lisc:InListadocursos = {
 
@@ -48,6 +49,12 @@ export class InhabilitarlistadociComponent implements OnInit {
       text: 'Dato Maestro Inhabilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/inhabilitarelistadoc']);
+        window.location.reload();
+      }
     });
   }
 
@@ -57,6 +64,12 @@ export class InhabilitarlistadociComponent implements OnInit {
       text: 'Dato Maestro habilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/inhabilitarelistadoc']);
+        window.location.reload();
+      }
     });
   }
 

@@ -12,6 +12,7 @@ export interface Usuarios {
     TelefonoMovil: number,
     TelefonoMovil2?: number ,
     Email : string,
+    tipo ?: string,
     idPuntoEntrega ?: number,
     idCentrosZonales ?: number,
     idUDS ?: number,

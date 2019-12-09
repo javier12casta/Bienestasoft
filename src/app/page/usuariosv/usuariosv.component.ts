@@ -42,7 +42,7 @@ import { ServicioService } from '../../servicio.service';
         <th scope="col">Telefono movil2</th>
         <th scope="col">Correo electrónico</th>
         <th scope="col">Tipo documento</th>
-        <th scope="col">Tipo usuario</th>
+        <th scope="col">Rol</th>
         <th scope="col">Centro zonal</th>
         
       </tr>

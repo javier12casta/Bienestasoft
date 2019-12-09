@@ -15,7 +15,8 @@ import { Udst } from 'src/app/interfaces/udst';
 export class ModificarBeneficiariouiComponent implements OnInit {
 
   
-  
+  tipo="text";
+  tipo1="text";
   public beneficiarios: Beneficiario[] = [];
   public ud: Uds[] = [];
 
@@ -103,5 +104,16 @@ export class ModificarBeneficiariouiComponent implements OnInit {
       );
   }
 
+  focusFunction(){
+
+    this.tipo = "date";
+
+    }
+
+    focusFunction1(){
+
+    this.tipo1 = "date";
+
+    }
 
 }

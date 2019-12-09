@@ -56,6 +56,7 @@ export class InhabilitarbeneficiariouiComponent implements OnInit {
       if (result.value) {
         
         this.router.navigate(['/inhabilitarbeneficiariosu']);
+        window.location.reload();
 
       }
 
