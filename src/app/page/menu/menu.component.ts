@@ -2559,7 +2559,7 @@ var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "li
     this.datos.push(create);
     var create = { name: "Crear listado de cursos", route: "/listadocursosv", icon: "face" };
     this.datos.push(create);
-    var create = { name: "Crear datos varios", route: "/datosvariosv", icon: "face" };
+    var create = { name: "Crear datos nutricionales", route: "/datosvariosv", icon: "face" };
     this.datos.push(create);
 
 
@@ -2576,7 +2576,7 @@ var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "li
     this.datos.push(create);
     var create = { name: "Modificar listado de cursos", route: "/modificarlistadoc", icon: "face" };
     this.datos.push(create);
-    var create = { name: "Modificar datos varios", route: "/modificardatosnutricionales", icon: "face" };
+    var create = { name: "Modificar datos nutricionales", route: "/modificardatosnutricionales", icon: "face" };
     this.datos.push(create);
      if (array[2] == "1") {        
        if (array[3] == "1") {
@@ -2710,7 +2710,7 @@ var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "li
     this.datos.push(create);
     var create = { name: "Modificar listado de cursos", route: "/modificarlistadoc", icon: "face" };
     this.datos.push(create);
-    var create = { name: "Modificar datos varios", route: "/modificardatosnutricionales", icon: "face" };
+    var create = { name: "Modificar datos nutricionales", route: "/modificardatosnutricionales", icon: "face" };
     this.datos.push(create);
      if (array[2] == "1") {
        

@@ -14,7 +14,7 @@ import { Almacent} from '../../interfaces/almacent';
          <button class="btn btn-dark" routerLink="/crearalmacen">Volver</button>
          </td>
          <div>
-         <label>Crear almacen centro zonal</label>
+         <label>Crear almacén centro zonal</label>
      
      {{fecha}}  
      </div>

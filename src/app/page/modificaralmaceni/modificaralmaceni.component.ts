@@ -11,7 +11,7 @@ import { ServicioService } from '../../servicio.service';
   <nav class="navbar navbar-success bg-success">
   <button class="btn btn-dark" routerLink="/modificaralmacen">Volver</button>
   <div>
-      <label>Modificar almacen centro zonal</label>
+      <label>Modificar almacén centro zonal</label>
   
   {{fecha}}  
   </div>
@@ -49,7 +49,7 @@ import { ServicioService } from '../../servicio.service';
         <div *ngIf="usu.Estado == 1">
         Habilitado
       </div>
-      <div *ngIf="usu.Estadoo== 0">
+      <div *ngIf="usu.Estado== 0">
         Deshabilitado
       </div>
         

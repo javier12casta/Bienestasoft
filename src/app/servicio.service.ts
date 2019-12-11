@@ -62,6 +62,7 @@ import {Udst } from './interfaces/udst';
 import {Consecutivomaestro } from './interfaces/consecutivomaestro';
 import {Usuariost } from './interfaces/usuariost';
 import {Centrodistribuciont } from './interfaces/centrodistribuciont';
+import {Devolucionest } from './interfaces/devolucionest';
 
 @Injectable({
   providedIn: 'root'
@@ -768,12 +769,21 @@ export class ServicioService {
 
   }
 
+  getdevolucionestabla(){
+
+    const path = `${this.api}/devoluciones/tabla`;
+    return this.http.get<[Devolucionest]>(path);
+
+  }
+
   postdevoluciones(recep: Devoluciones) {
 
     const path = `${this.api}/devoluciones`;
     return this.http.post<Devoluciones>(path, recep);
 
   }
+
+
 
   getrecuento(){
     const path = `${this.api}/recuento`;

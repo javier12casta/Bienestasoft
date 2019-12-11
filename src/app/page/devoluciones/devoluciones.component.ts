@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Devoluciones} from '../../interfaces/devoluciones';
+import { Devolucionest} from '../../interfaces/devolucionest';
 import { ServicioService } from '../../servicio.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { ServicioService } from '../../servicio.service';
 })
 export class DevolucionesComponent implements OnInit {
 
-  devolucion: Devoluciones[] = [];
+  devolucion: Devolucionest[] = [];
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
 
@@ -17,7 +17,7 @@ export class DevolucionesComponent implements OnInit {
 
   ngOnInit() {
 
-    this.Service.getdevoluciones()
+    this.Service.getdevolucionestabla()
     .subscribe( (data) => {
       this.devolucion = data;
       console.log(data);
