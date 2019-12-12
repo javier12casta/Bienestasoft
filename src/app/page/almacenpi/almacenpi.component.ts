@@ -5,6 +5,7 @@ import { ServicioService } from 'src/app/servicio.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { Puntoentrega } from 'src/app/interfaces/puntoentrega';
+import { Inventario } from 'src/app/interfaces/inventario';
 
 @Component({
   selector: 'app-almacenpi',
@@ -17,7 +18,12 @@ export class AlmacenpiComponent implements OnInit {
   unidadmedida:string[]=["g","ml", "g y ml"];
   public cen: Centrodistribucion[] = [];
   public cen1: Puntoentrega[] = [];
+  public inv1: Inventario[] = [];
+  public inv2: Inventario[] = [];
   campo: [];
+  inv;
+  habilitar = true;
+
 
   x : Almacen = {
     
@@ -33,8 +39,49 @@ export class AlmacenpiComponent implements OnInit {
     
   };
 
+  y : Inventario = {
+    
+    
+    Nombre : '',
+    Cantidad : 0,
+    Cantidad2 : 0,
+    unidad: '',
+
+    
+  };
+
+
   onClickMe() {
  
+
+    if(this.inv == 0){
+
+      this.y.Nombre = this.x.Nombre;
+      this.y.unidad = this.x.UnidadMedida;
+      this.y.Cantidad = this.x.Capacidad;
+      this.y.Cantidad2 = this.x.Capacidad2;
+      
+    
+          this.Service.postinventario(this.y).subscribe(res => {
+            console.log(this.y);
+       
+            },
+            err => {
+              console.log(err);
+            });
+    
+         } 
+    
+         if(this.inv == 1){
+    
+         
+    
+    
+        } 
+
+
+
+
     this.Service.postalmacen(this.x).subscribe(res => {
      console.log(this.x);
      this.showMenssage();
@@ -80,6 +127,13 @@ export class AlmacenpiComponent implements OnInit {
     console.log(err);
   });
 
+  this.Service.getinventario()
+  .subscribe(res => {
+    this.inv2 = res;
+  }, err => {
+    console.log(err);
+  });
+
 
   }
 
@@ -98,5 +152,23 @@ export class AlmacenpiComponent implements OnInit {
     });
 
 }
+
+inventario($event) {
+ 
+  if(this.inv == 0){
+  
+  this.inv = 0;
+  this.habilitar = true;
+  
+  }
+  
+  if(this.inv == 1){
+  
+  this.inv = 1;
+  this.habilitar = false;
+  
+  }    
+  }
+  
 
 }

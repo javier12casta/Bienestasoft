@@ -5,84 +5,141 @@
       <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
         <div class="card" padding>
           <div class="card-body" padding>
-            <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
-                    <h1>Crear centro distribución </h1>
-              <div class="form-group">
 
-                  <span >Seleccione centro zonal</span>
-                  <h2></h2>
-                  
-                  
-               <select name="idnivel1" class="form-control" style="width: 100%;" [(ngModel)]="x.idCentrosZonales"
-               options="options" placeholder="nivel" 
-               minlength="0" required="">
-               <option *ngFor="let do of cen " [value]="do.idCentrosZonales">{{do.NombreCentroZonal }} </option>
-           
-               </select>
+              <form [formGroup]="czForm" (ngSubmit)="onSubmit()">
 
-                    <span >Número externo</span>
-                    <h2></h2>
-                    <input type="text" class="form-control" [(ngModel)]="x.NumeroExterno" name="numeroex"
-                    placeholder="numero Externo" class="form-control" id="inputex" minlength="0" required="">
-                
-                <h2></h2>
-                
-                <span >Nombre</span>
-                    <h2></h2>
-                    <input type="text" class="form-control" [(ngModel)]="x.Nombre" name="nombre"
-                    placeholder="Nombre" class="form-control" id="inputnom" minlength="0" required="">
-            
-                <h2></h2>
-            
-                    <span  >Estado del dato maestro</span>
-                    <h2></h2>
-                    
-                    <select name="Estado" id="Estado" [(ngModel)]="x.Estado" style="width: 100%;" class="form-control" minlength="0" required="">
-                      <option value="1"> Habilitar</option>
-                      <Option value="0">Inhabilitar</Option>
-                      </select>
+                  <div class="form-group"> 
 
-                    
-             
-                    
-                    <h2></h2>
-                <span >Responsable</span>
-                    <h2></h2>
-                    <input type="text" class="form-control" [(ngModel)]="x.Responsable" name="res"
-                    placeholder="Responsable" class="form-control" id="inputres" minlength="0" required="">
-                
-            
-                <h2></h2>
-                    <span >Dirección</span>
-                    <h2></h2>
-                    <input type="text" class="form-control" [(ngModel)]="x.Direccion" name="nombredic"
-                    placeholder="Direccion" class="form-control" id="dic" minlength="0" required="">
-              
-                    <h2></h2>
-                    <span >Barrio</span>
-                    <h2></h2>
-                    <input type="text" class="form-control" [(ngModel)]="x.Barrio" name="barrioinput"
-                    placeholder="Barrio" class="form-control" id="bar" minlength="0" required="">
-                <h2></h2>
-              
-            
-                      <span >Teléfono</span>
+                      <span >Seleccione centro zonal</span>
                       <h2></h2>
                       
                       
-                      <input type="number" class="form-control" [(ngModel)]="x.Telefono" name="Nombretel"
-                        placeholder="Telefono" class="form-control" minlength="0" required="">
-                      
-                           <h2></h2>
-                           
-                              
-                           <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
-                              
-                           <h2></h2>
-
-
+                   <select formControlName="idCentrosZonales" class="form-control" style="width: 100%;" [(ngModel)]="x.idCentrosZonales"
+                   options="options" placeholder="nivel" 
+                   minlength="0" required="">
+                   <option *ngFor="let do of cen " [value]="do.idCentrosZonales">{{do.NombreCentroZonal }} </option>
+               
+                   </select>
+                   <div *ngIf="submitted && f.idCentrosZonales.errors" class="invalid-feedback">
+                    <div *ngIf="f.idCentrosZonales.required">Centro zonal es requerido</div>
                 </div>
-			</form>
+
+                  </div>
+
+                  <div class="form-group"> 
+                      <span >Número externo</span>
+                      <h2></h2>
+                      <input type="text" class="form-control" [(ngModel)]="x.NumeroExterno" 
+                      placeholder="Número externo" class="form-control" formControlName="NumeroExterno" minlength="0" required="" [ngClass]="{ 'is-invalid': submitted && f.NumeroExterno.errors }"/>
+
+                      <div *ngIf="submitted && f.NumeroExterno.errors" class="invalid-feedback">
+                          <div *ngIf="f.NumeroExterno.errors.required">Número externo es requerido</div>
+                          <div *ngIf="f.NumeroExterno.errors.pattern"> El Número externo puede conterner letras minusculas,
+                            mayusculas , y Números</div>
+                        </div>
+
+                  <h2></h2>
+                    </div>
+
+
+                    <div class="form-group"> 
+                        <span >Nombre</span>
+                        <h2></h2>
+                        <input type="text" class="form-control" [(ngModel)]="x.Nombre" 
+                        placeholder="Nombre" class="form-control" formControlName="Nombre" minlength="0" required="" [ngClass]="{ 'is-invalid': submitted && f.Nombre.errors }"/>
+                        
+                        <div *ngIf="submitted && f.Nombre.errors" class="invalid-feedback">
+                          <div *ngIf="f.Nombre.errors.required"> Nombre centro de distribución es requerido</div>
+                          <div *ngIf="f.Nombre.errors.pattern"> Nombre centro distribución solo puede contener letras minusculas o
+                            mayúsculas</div>
+                        </div>
+                    <h2></h2>
+                      </div>
+
+                      <div class="form-group"> 
+                          <span  >Estado del dato maestro</span>
+                          <h2></h2>
+                          
+                          <select name="Estado" formControlName="Estado" [(ngModel)]="x.Estado" style="width: 100%;" class="form-control" minlength="0" required="">
+                            <option value="1"> Habilitado</option>
+                            <Option value="0">Deshabilitado</Option>
+                            </select>
+                            <div *ngIf="submitted && f.Estado.errors" class="invalid-feedback">
+                                <div *ngIf="f.Estado.errors.required">Estado es requerido</div>
+                            </div>
+                      
+                          
+                          <h2></h2>
+                        </div>
+
+                        <div class="form-group"> 
+                            <span >Responsable</span>
+                            <h2></h2>
+                            <input type="text" class="form-control" [(ngModel)]="x.Responsable" formControlName="Responsable"
+                            placeholder="Responsable" class="form-control"  minlength="0" required="" [ngClass]="{ 'is-invalid': submitted && f.Responsable.errors }" />
+                        
+                            <div *ngIf="submitted && f.Responsable.errors" class="invalid-feedback">
+                              <div *ngIf="f.Responsable.errors.required">Responsable es requireda</div>
+                              <div *ngIf="f.Responsable.errors.pattern"> El responsable solo puede conterner letras minusculas o
+                                mayusculas</div>
+                            </div>
+                    
+                        <h2></h2>
+                          </div>
+
+                          <div class="form-group"> 
+                              <span >Dirección</span>
+                              <h2></h2>
+                              <input type="text" class="form-control" [(ngModel)]="x.Direccion" formControlName="Direccion"
+                              placeholder="Direccion" class="form-control" minlength="0" required="" [ngClass]="{ 'is-invalid': submitted && f.Direccion.errors }" />
+                        
+                              <div *ngIf="submitted && f.Comuna.errors" class="invalid-feedback">
+                                <div *ngIf="f.Direccion.errors.required">Dirección es requireda</div>
+                                <div *ngIf="f.Direccion.errors.pattern"> La Dirección solo puede conterner letras minusculas o
+                                  mayusculas y numeros  </div>
+                              </div>
+
+                              <h2></h2>
+                            </div>
+
+                            <div class="form-group"> 
+                                <span >Barrio</span>
+                                <h2></h2>
+                                <input type="text" class="form-control" [(ngModel)]="x.Barrio" formControlName="Barrio"
+                                placeholder="Barrio" class="form-control"  minlength="0" required="" [ngClass]="{ 'is-invalid': submitted && f.Barrio.errors }" />
+
+                                <div *ngIf="submitted && f.Barrio.errors" class="invalid-feedback">
+                                  <div *ngIf="f.Barrio.errors.required">Barrio es requireda</div>
+                                  <div *ngIf="f.Barrio.errors.pattern"> El barrio solo puede conterner letras minusculas o
+                                    mayusculas</div>
+                                </div>
+
+                            <h2></h2>
+                              </div>
+
+                              <div class="form-group"> 
+                                  <span >Teléfono</span>
+                                  <h2></h2>
+                                  
+                                  
+                                  <input type="number" class="form-control" [(ngModel)]="x.Telefono" formControlName="Telefono"
+                                    placeholder="Telefono" class="form-control" required="" [ngClass]="{ 'is-invalid': submitted && f.Telefono.errors }" />
+                                  
+                                    <div *ngIf="submitted && f.Telefono.errors" class="invalid-feedback">
+                                      <div *ngIf="f.Telefono.errors.required">Teléfono  es requiredo</div>
+                                      <div *ngIf="f.Telefono.errors.minlength"> Teléfono debe contener minimo 10 caracteres </div>
+                                      <div *ngIf="f.Telefono.errors.pattern">Teléfono solo puede conterner numeros</div>
+                                    </div>
+                                  
+                                       <h2></h2>
+                                </div>
+
+                                <div class="text-center"> 
+                                    <button type="submit" class="btn btn-success btn-block">Aceptar</button>
+                                
+                                    <h2></h2>
+                                  </div>
+            </form>
 		</div>
 	  </div>
 	</div>
