@@ -223,7 +223,7 @@ export class PuntoentregaiComponent implements OnInit {
   showMenssage5() {
     Swal.fire({
       title: 'Error',
-      text: 'El código interno punto de entregaya exite',
+      text: 'El código interno punto de entrega ya exite',
       type: 'warning',
       confirmButtonText: 'Entendido'
     });
