@@ -7,6 +7,7 @@ import {Puntoentrega } from 'src/app/interfaces/puntoentrega';
 import { ServicioService } from 'src/app/servicio.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-datos-contacto-usuario',
@@ -21,7 +22,7 @@ import { Router } from '@angular/router';
 
 
 export class DatosContactoUsuarioComponent implements OnInit {
-  tipo = "password";
+  type = "password";
 
   listamaestro:string[]=["0","1"];
   listat:string[]=["PE","UDS","ADMINISTRADOR"];
@@ -38,19 +39,19 @@ export class DatosContactoUsuarioComponent implements OnInit {
     
     Nombres : '',
     Apellidos : '',
-    Estado : 0,
-    NumeroDocumento : 0,
-    FechaIngreso : 0,
+    Estado : 1,
+    NumeroDocumento : null,
+    FechaIngreso : null,
     NombreUsuarioSistema : '',
     Direccion : '',
-    TelefonoFijo :  0,
-    TelefonoFijo2 : 0,
-    TelefonoMovil: 0,
-    TelefonoMovil2 : 0,
+    TelefonoFijo :  null,
+    TelefonoFijo2 : null,
+    TelefonoMovil: null,
+    TelefonoMovil2 : null,
      Email : '',
-     tipo : "",
+     tipo : '',
 	   TipoUsuario : '',
-     idTipoDocumento : 0,
+     idTipoDocumento : null,
      password : '',
      idUDS : null,
      idCentrosZonales : null,
@@ -81,7 +82,28 @@ this.showMenssage3();
 
  }
  
-   constructor(private Service: ServicioService, private router:Router) { }
+   constructor(
+    private Service: ServicioService, 
+    private router:Router,
+    private fb: FormBuilder
+    ) { }
+
+     //----Validaciones de campos
+  usForm: FormGroup;
+  submitted = false;
+  onSubmit() {
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.usForm.valid) {
+      this.onClickMe();
+    } else if (this.usForm.invalid) {
+      this.showMenssagenull();
+    }
+    // display form values on success
+    console.log('Formulario', this.usForm.value);
+  }
+
  
    ngOnInit() {
 
@@ -108,10 +130,30 @@ this.showMenssage3();
   });
 
   
-
+  this.usForm = this.fb.group({
+    idPuntoEntrega: ['', Validators.required],
+    Estado: ['', Validators.required],
+    idTipoDocumento: ['', Validators.required],
+    NumeroDocumento: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+    Nombres: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
+    Apellidos: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
+    FechaIngreso: ['', [Validators.required]],
+    NombreUsuarioSistema: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(20), Validators.pattern('^[0-9 a-z A-Z ñ á é í ó ú]*$')]],
+    tipo: ['', Validators.required],
+    TipoUsuario: ['', Validators.required],
+    password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(20), Validators.pattern('^[0-9 a-z A-Z ñ á é í ó ú]*$')]],
+    Direccion: ['', [Validators.required, Validators.pattern('^[a-z A-Z 0-9 ñ á é í ó ú \-\_\´\¨\.\ #]*$')]],
+    TelefonoFijo: ['', [Validators.required, Validators.minLength(7), Validators.pattern('^[0-9]*$')]],
+    TelefonoFijo2: ['', [Validators.minLength(7),  Validators.pattern('^[0-9]*$')]],
+    TelefonoMovil: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('^[0-9]*$')]],
+    TelefonoMovil2: ['', [Validators.minLength(10), Validators.maxLength(10), Validators.pattern('^[0-9]*$')]],
+    Email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]*$')]],
+  });
 
 
    }
+
+   get f() { return this.usForm.controls; }
 
 
    showMenssage(){
@@ -141,17 +183,26 @@ this.showMenssage3();
 
   ver(){
 
-    if(this.tipo == "password"){
+    if(this.type == "password"){
 
-      this.tipo = "text";
+      this.type = "text";
 
     }else{
 
-      this.tipo = "password";
+      this.type = "password";
 
     }
 
 
+  }
+
+  showMenssagenull() {
+    Swal.fire({
+      title: 'Error',
+      text: 'Campos vacios',
+      type: 'warning',
+      confirmButtonText: 'Entendido'
+    });
   }
 
 }

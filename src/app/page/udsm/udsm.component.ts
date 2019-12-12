@@ -265,6 +265,7 @@ export class UdsmComponent implements OnInit {
     });
   }
 
+ 
   showMenssagenull() {
     Swal.fire({
       title: 'Error',

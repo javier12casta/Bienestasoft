@@ -1,5 +1,3 @@
-
-
 <nav class="navbar navbar-success bg-success">
   <button class="btn btn-dark" routerLink="/modificarusuarios1">Volver</button>
 </nav>
@@ -7,88 +5,286 @@
 <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
   <div class="card" padding>
     <div class="card-body" padding>
-      <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
+
+
+      <form [formGroup]="usForm" (ngSubmit)="onSubmit()">
+
+        <h1>Crear usuarios</h1>
         <div class="form-group">
-
-       <select name="idCentrosZonales" class="select-css" style="width: 100%;" (change)="onChange($event)" [(ngModel)]="usu.idCentrosZonales"
-			options="options" placeholder="nivel" [hidden]="habilitado" minlength="0" required="" class="form-control">
-			<option *ngFor="let did of cen " [value]="did.idCentrosZonales">{{did.NombreCentroZonal }} </option>
-	
-      </select>
-      
-      <select name="idPuntoEntrega" class="select-css" style="width: 100%;" (change)="onChange($event)" [(ngModel)]="usu.idPuntoEntrega"
-			options="options" placeholder="nivel" [hidden]="habilitado1" minlength="0" required="">
-			<option *ngFor="let dodo of pe" [value]="dodo.idPuntoEntrega">{{dodo.NombrePE }} </option>
-	
-		  </select>
-
-		  <select name="idUDS" class="select-css" style="width: 100%;" (change)="onChange($event)" [(ngModel)]="usu.idUDS" 
-			options="options" placeholder="nivel" [hidden]="habilitado2" minlength="0" required="">
-			<option *ngFor="let doso1 of ud" [value]="doso1.idUDS">{{doso1.NombreUDS }} </option>
-	
-		  </select>
-      
-          <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
-          <select name="Estado" [(ngModel)]="usu.Estado" style="width: 100%;" class="form-control" minlength="0" required="">
-            <option [value]="1">Habilitado</option>
-            <Option [value]="0">Inhabilitado</Option>
+          <label>Seleccione centro zonal</label>
+          <select formControlName="idCentrosZonales" class="form-control" [(ngModel)]="x.idCentrosZonales"
+            [ngClass]="{ 'is-invalid': submitted && f.idCentrosZonales.errors }">
+            <option *ngFor="let do of cen " [value]="do.idCentrosZonales">{{do.NombreCentroZonal}}
+            </option>
           </select>
-          <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
-          <select name="tipodocumento" [(ngModel)]="usu.idTipoDocumento" id="tipodocumento" style="width: 100%;" class="form-control" minlength="0" required="">
-            <option value="1">CC</option>
-            <Option value="2">CE</Option>
-            <Option value="3">PA</Option>
+          <div *ngIf="submitted && f.idCentrosZonales.errors" class="invalid-feedback">
+            <div *ngIf="f.idCentrosZonales.errors.required">Centro zonal es requerido</div>
+          </div>
+        </div>
+        <h1>Datos generales usuario</h1>
+
+        <div class="form-group">
+          <label>Estado</label>
+          <select formControlName="Estado" class="form-control" [(ngModel)]="x.Estado"
+            [ngClass]="{ 'is-invalid': submitted && f.Estado.errors }">
+            <option value="1">Habilitado</option>
+            <option value="0">Deshabilitado</option>
+
+          </select>
+          <div *ngIf="submitted && f.Estado.errors" class="invalid-feedback">
+            <div *ngIf="f.Estado.errors.required">Estado es requerido</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Tipo de documento</label>
+          <select formControlName="idTipoDocumento" class="form-control" [(ngModel)]="x.idTipoDocumento"
+            [ngClass]="{ 'is-invalid': submitted && f.idTipoDocumento.errors }">
+            <option *ngFor="let do of doc" [value]="do.idTipoDocumento">{{do.NombreTipo}}</option>
           </select>
 
-          <input type="text" class="form-control" [(ngModel)]="usu.NumeroDocumento" name="numerodoc"
-            placeholder="número documento" class="form-control" id="inputdoc" minlength="0" required="">
+          <div *ngIf="submitted && f.idTipoDocumento.errors" class="invalid-feedback">
+            <div *ngIf="f.idTipoDocumento.errors.required"> Tipo de documento es requerido</div>
+          </div>
+        </div>
 
-          <input type="text" class="form-control" [(ngModel)]="usu.Nombres" name="nombre" placeholder="Nombres"
-            class="form-control" id="nom" minlength="0" required="">
+        <div class="form-group">
+          <label>Número de documento</label>
 
-          <input type="text" class="form-control" [(ngModel)]="usu.Apellidos" name="apellidos" placeholder="Apellidos"
-            class="form-control" id="app" minlength="0" required="">
+          <input type="text" placeholder="Número de documento" formControlName="NumeroDocumento" class="form-control"
+            [(ngModel)]="x.NumeroDocumento" [ngClass]="{ 'is-invalid': submitted && f.NumeroDocumento.errors }" />
 
-          <input type={{tipo}} class="form-control" [(ngModel)]="usu.FechaIngreso" name="fechai" placeholder="Fecha"
-            min="2018-01-01" max="2050-12-31" class="form-control" minlength="0" required="" (focus)="focusFunction()">
+          <div *ngIf="submitted && f.NumeroDocumento.errors" class="invalid-feedback">
+            <div *ngIf="f.NumeroDocumento.errors.required">El número de documento es requiredo
+            </div>
+            <div *ngIf="f.NumeroDocumento.errors.pattern"> El número de documento solo puede
+              conterner
+              numeros
+            </div>
+          </div>
+        </div>
 
-          <input type="text" class="form-control" [(ngModel)]="usu.NombreUsuarioSistema" name="Usuario"
-            placeholder="Usuario Sistema" class="form-control" id="usu" minlength="0" required="">
+        <div class="form-group">
+          <label>Nombres</label>
 
-            <input type="text" class="form-control" [(ngModel)]="usu.password" name="numerodoc"
-            placeholder="Contraseña" class="form-control" id="inputdoc" minlength="0" required="">
+          <input type="text" placeholder="Nombres" formControlName="Nombres" class="form-control"
+            [(ngModel)]="x.Nombres" [ngClass]="{ 'is-invalid': submitted && f.Nombres.errors }" />
+
+          <div *ngIf="submitted && f.Nombres.errors" class="invalid-feedback">
+            <div *ngIf="f.Nombres.errors.required"> Los nombres son requiredos</div>
+            <div *ngIf="f.Nombres.errors.pattern"> Los nombres solo puede
+              contener letras minusculas o
+              mayusculas</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Apellidos</label>
+
+          <input type="text" placeholder="Apellidos" formControlName="Apellidos" class="form-control"
+            [(ngModel)]="x.Apellidos" [ngClass]="{ 'is-invalid': submitted && f.Apellidos.errors }" />
+
+          <div *ngIf="submitted && f.Apellidos.errors" class="invalid-feedback">
+            <div *ngIf="f.Apellidos.errors.required">Los Apellidos son requiredos</div>
+            <div *ngIf="f.Apellidos.errors.pattern">Los Apellidos solo puede conterner
+              letras
+              minusculas o
+              mayusculas</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Fecha de ingreso</label>
+
+          <input type="{{tipo}}" placeholder="Fecha de Ingreso" formControlName="FechaIngreso" class="form-control"
+            [(ngModel)]="x.FechaIngreso" min="1900-01-01" max="2050-12-31"
+            [ngClass]="{ 'is-invalid': submitted && f.FechaIngreso.errors }" (focus)="focusFunction()" />
+
+          <div *ngIf="submitted && f.FechaIngreso.errors" class="invalid-feedback">
+            <div *ngIf="f.FechaIngreso.errors.required">Fecha Ingreso es requireda</div>
+          </div>
+        </div>
+
+        {{today}}
+        <h1>Usuario y asignación de Roles</h1>
+
+        <div class="form-group">
+          <label>Nombre de usuario</label>
+
+          <input type="text" placeholder="Nombre de usuario" formControlName="NombreUsuarioSistema" class="form-control"
+            [(ngModel)]="x.NombreUsuarioSistema"
+            [ngClass]="{ 'is-invalid': submitted && f.NombreUsuarioSistema.errors }" />
+
+          <div *ngIf="submitted && f.NombreUsuarioSistema.errors" class="invalid-feedback">
+            <div *ngIf="f.NombreUsuarioSistema.errors.required">El nombre de usuario en el sistema es
+              requiredo</div>
+            <div *ngIf="f.NombreUsuarioSistema.errors.minlength">El nombre de usuario en el sistema debe
+              contener minimo 6 caracteres</div>
+            <div *ngIf="f.NombreUsuarioSistema.errors.maxlength">El nombre de usuario en el sistema debe
+              contener maximo 20 caracteres</div>
+            <div *ngIf="f.NombreUsuarioSistema.errors.pattern">El nombre de usuario en el sistema solo puede
+              conterner numeros y letras
+              minusculas o
+              mayusculas</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Contraseña</label>
+
+          <input type="{{type}}" placeholder="Contraseña" id="psw" formControlName="password" class="form-control"
+            [(ngModel)]="x.password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+          <button (click)="ver()" type="button" class="btn btn-success btn-sm" style="float: right;">
+            <mat-icon>remove_red_eye</mat-icon>
+          </button>
+
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">La contraseña es
+              requiredo</div>
+            <div *ngIf="f.password.errors.minlength">La contraseña debe
+              contener minimo 6 caracteres</div>
+            <div *ngIf="f.password.errors.maxlength">La contraseña debe
+              contener maximo 20 caracteres</div>
+            <div *ngIf="f.password.errors.pattern">La contraseña solo puede
+              conterner numeros y letras
+              minusculas o
+              mayusculas</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Tipo usuario</label>
+          <select formControlName="tipo" class="form-control" [(ngModel)]="x.tipo"
+            [ngClass]="{ 'is-invalid': submitted && f.tipo.errors }">
+            <option value="PE">PE</option>
+            <option value="UDS">UDS</option>
+            <option value="ADMINISTRADOR">ADMINISTRADOR</option>
+          </select>
 
 
-          <input type="text" class="form-control" [(ngModel)]="usu.Direccion" name="Nombredireccion"
-            placeholder="Dirección" class="form-control" minlength="0" required="">
+          <div *ngIf="submitted && f.tipo.errors" class="invalid-feedback">
+            <div *ngIf="f.tipo.errors.required">El tipo de usuario es requiredo</div>
+          </div>
+        </div>
 
-          <input type="number" class="form-control" [(ngModel)]="usu.TelefonoFijo" name="telefonof1"
-            placeholder="Teléfono fijo 1" class="form-control" minlength="0" required="">
+        <div class="form-group">
+          <label>Rol</label>
+          <select formControlName="TipoUsuario" class="form-control" [(ngModel)]="x.TipoUsuario"
+            [ngClass]="{ 'is-invalid': submitted && f.TipoUsuario.errors }">
+            <option *ngFor="let do of rol" [value]="do.idRolPersona">{{do.RolPersona}} </option>
+          </select>
 
-          <input type="number" class="form-control" [(ngModel)]="usu.TelefonoFijo2" name="telefonof2"
-            placeholder="Teléfono fijo 2" class="form-control" >
+          <div *ngIf="submitted && f.TipoUsuario.errors" class="invalid-feedback">
+            <div *ngIf="f.TipoUsuario.errors.required">El tipo de rol es requiredo</div>
+          </div>
+        </div>
 
-          <input type="number" class="form-control" [(ngModel)]="usu.TelefonoMovil" name="telefonom1"
-            placeholder="Teléfono movil 1" class="form-control" minlength="0" required="">
+        <h1>Datos de contacto</h1>
 
-          <input type="number" class="form-control" [(ngModel)]="usu.TelefonoMovil2" name="telefonom2"
-            placeholder="Teléfono movil 2" class="form-control" >
+        <div class="form-group">
+          <label>Dirección</label>
 
-          <input type="text" class="form-control" [(ngModel)]="usu.Email" name="email" placeholder="Email"
-            class="form-control" minlength="0" required="">
+          <input type="text" placeholder="Dirección" formControlName="Direccion" class="form-control"
+            [(ngModel)]="x.Direccion" [ngClass]="{ 'is-invalid': submitted && f.Direccion.errors }" />
 
-            <select name="idtipousuario" class="select-css" style="width: 100%;" [(ngModel)]="usu.TipoUsuario"
-            options="options" placeholder="tipo usuario" minlength="0" required="">
-            <option *ngFor="let do of rol" [value]="do.idRolPersona">{{do.RolPersona  }} </option>
-            </select>
-            
-        
-        <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
-        <button class="btn btn-success btn-block" type="submit" (click)="updateDatos()"
-          routerLink="/modificarusuarios1">
-          Guardar
-        </button>
-      </div>
+          <div *ngIf="submitted && f.Direccion.errors" class="invalid-feedback">
+            <div *ngIf="f.Direccion.errors.required">Dirección es requiredo</div>
+            <div *ngIf="f.Direccion.errors.pattern">Dirección solo puede conterner - #
+              numeros y
+              letras
+              minusculas o
+              mayusculasletras minusculas o
+              mayúsculas </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Teléfono fijo 1</label>
+
+          <input type="text" placeholder="Teléfono fijo 1" formControlName="TelefonoFijo" class="form-control"
+            [(ngModel)]="x.TelefonoFijo" [ngClass]="{ 'is-invalid': submitted && f.TelefonoFijo.errors }" />
+
+          <div *ngIf="submitted && f.TelefonoFijo.errors" class="invalid-feedback">
+            <div *ngIf="f.TelefonoFijo.errors.required">Teléfono es requiredo</div>
+            <div *ngIf="f.TelefonoFijo.errors.minlength"> Teléfono debe contener minimo 10
+              caracteres
+            </div>
+            <div *ngIf="f.TelefonoFijo.errors.pattern">Teléfono solo puede conterner numeros
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Teléfono fijo 2</label>
+
+          <input type="text" placeholder="Teléfono fijo 2" formControlName="TelefonoFijo2" class="form-control"
+            [(ngModel)]="x.TelefonoFijo2" [ngClass]="{ 'is-invalid': submitted && f.TelefonoFijo2.errors }" />
+
+          <div *ngIf="submitted && f.TelefonoFijo2.errors" class="invalid-feedback">
+            <div *ngIf="f.TelefonoFijo2.errors.minlength"> Teléfono debe contener minimo 10
+              caracteres
+            </div>
+            <div *ngIf="f.TelefonoFijo2.errors.pattern">Teléfono solo puede conterner numeros
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Teléfono movil 1</label>
+
+          <input type="text" placeholder="Teléfono movil 1" formControlName="TelefonoMovil" class="form-control"
+            [(ngModel)]="x.TelefonoMovil" [ngClass]="{ 'is-invalid': submitted && f.TelefonoMovil.errors }" />
+
+          <div *ngIf="submitted && f.TelefonoMovil.errors" class="invalid-feedback">
+            <div *ngIf="f.TelefonoMovil.errors.required">Teléfono es requiredo</div>
+            <div *ngIf="f.TelefonoMovil.errors.minlength"> Teléfono debe contener minimo 10
+              caracteres
+            </div>
+            <div *ngIf="f.TelefonoMovil.errors.pattern">Teléfono solo puede conterner numeros
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Teléfono movil 2</label>
+
+          <input type="text" placeholder="Teléfono movil 2" formControlName="TelefonoMovil2" class="form-control"
+            [(ngModel)]="x.TelefonoMovil2" [ngClass]="{ 'is-invalid': submitted && f.TelefonoMovil2.errors }" />
+
+          <div *ngIf="submitted && f.TelefonoMovil2.errors" class="invalid-feedback">
+            <div *ngIf="f.TelefonoMovil2.errors.required">Teléfono unidad de servicio es requiredo</div>
+            <div *ngIf="f.TelefonoMovil2.errors.minlength"> Teléfono unidad de servicio debe contener minimo 10
+              caracteres
+            </div>
+            <div *ngIf="f.TelefonoMovil2.errors.pattern">Teléfono unidad de servicio solo puede conterner numeros
+            </div>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label>Correo electrónico</label>
+
+          <input type="email" placeholder="Correo electrónico" formControlName="Email" class="form-control"
+            [(ngModel)]="x.Email" [ngClass]="{ 'is-invalid': submitted && f.Email.errors }" />
+
+          <div *ngIf="submitted && f.Email.errors" class="invalid-feedback">
+            <div *ngIf="f.Email.errors.required">Teléfono unidad de servicio es requiredo</div>
+            <div *ngIf="f.Email.errors.minlength"> Teléfono unidad de servicio debe contener minimo 10
+              caracteres
+            </div>
+            <div *ngIf="f.Email.errors.pattern">Teléfono unidad de servicio solo puede conterner numeros
+            </div>
+          </div>
+        </div>
+
+
+        <br />
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-success btn-block">Guardar</button>
+        </div>
+
       </form>
     </div>
   </div>
