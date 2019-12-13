@@ -22,6 +22,7 @@
         <th scope="col">Estado</th>
         <th scope="col">Tipo documento</th>
         <th scope="col">Beneficiarios</th>
+        <th scope="col">Centro zonal</th>
         
       </tr>
     </thead>
@@ -43,6 +44,7 @@
            </td>
           <td> {{cen.tipodocumento}}  </td>
           <td>{{cen.nombrecompleto}}</td>
+          <td>{{cen.NombreCentroZonal}}</td>
           <td>
             <button class="btn btn-primary" [routerLink]="['/modificarlistadocm', cen.idListadoCursos]">Modificar</button>
           </td>

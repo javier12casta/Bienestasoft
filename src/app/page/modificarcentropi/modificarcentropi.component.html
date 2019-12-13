@@ -9,48 +9,144 @@
             <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
               <div class="form-group">
       
-            
-    
-                <input type="number" class="form-control" [(ngModel)]="cend.NumeroExterno" name="numeroext"
-                  placeholder="número Externo" class="form-control" id="inputnext" minlength="0" required="">
-    
-                  <input type="text" class="form-control" [(ngModel)]="cend.Nombre" name="nombre" placeholder="Nombres"
-                  class="form-control" id="nom" minlength="0" required="">
-    
-                  <input type="text" class="form-control" [(ngModel)]="cend.Responsable" name="res" placeholder="Responsable"
-                  class="form-control" id="app" minlength="0" required="">
-    
-                  <input type="text" class="form-control" [(ngModel)]="cend.Direccion" name="dic"
-                  placeholder="Dirección" class="form-control" id="usu" minlength="0" required="">
-    
-                  <input type="text" class="form-control" [(ngModel)]="cend.Barrio" name="bar"
-                  placeholder="Barrio" class="form-control" id="usu" minlength="0" required="">
-    
-                  <input type="text" class="form-control" [(ngModel)]="cend.Telefono" name="tel"
-                  placeholder="Teléfono" class="form-control" id="usu" minlength="0" required="">
-    
-                
-                <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
-                <select name="Estado" [(ngModel)]="cend.Estado" style="width: 100%;" class="form-control" minlength="0" required="">
-                  <option [value]="1">Habilitado</option>
-                  <Option [value]="0">Inhabilitado</Option>
-                </select>
-    
-                <select name="idnivel1" class="form-control" style="width: 100%;" [(ngModel)]="cend.idPuntoEntrega"
-                options="options" placeholder="nivel" 
-                minlength="0" required="">
-                <option *ngFor="let do of cen " [value]="do.idPuntoEntrega">{{do.NombrePE }} </option>
-            
-                </select>
-               
-    
-              <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
-              <button class="btn btn-success btn-block" type="submit" (click)="updateDatos()"
-                routerLink="/modificarcentroi">
-                Guardar
-              </button>
+                  <form [formGroup]="usForm" (ngSubmit)="onSubmit()">
+
+                      <div class="form-group">
+
+                          <label>Número Externo</label>
+
+                          <input type="text" class="form-control" [(ngModel)]="cend.NumeroExterno" name="numeroext"
+                          placeholder="número Externo" class="form-control" formControlName="NumeroExterno" minlength="0" required="" [ngClass]="{ 'is-invalid': submitted && f.NumeroExterno.errors }">
+                          <div *ngIf="submitted && f.NumeroExterno.errors" class="invalid-feedback">
+                              <div *ngIf="f.NumeroExterno.errors.required">Número Externo es requerido</div>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Nombre</label>
+
+                            <input type="text" class="form-control" [(ngModel)]="cend.Nombre" formControlName="Nombre" placeholder="Nombres"
+                            class="form-control"  minlength="0" required="" [ngClass]="{ 'is-invalid': submitted && f.Nombre.errors }">
+                            <div *ngIf="submitted && f.Nombre.errors" class="invalid-feedback">
+                                <div *ngIf="f.Nombre.errors.required">Nombre es requerido</div>
+                              </div>
+
+
+                          </div>
+
+
+                          <div class="form-group">
+
+                              <label>Responsable</label>
+
+                              <input type="text" class="form-control" [(ngModel)]="cend.Responsable"  placeholder="Responsable"
+                              class="form-control" formControlName="Responsable" minlength="0" required="" [ngClass]="{ 'is-invalid': submitted && f.Responsable.errors }">
+                              <div *ngIf="submitted && f.Responsable.errors" class="invalid-feedback">
+                                  <div *ngIf="f.Responsable.errors.required">Responsable es requerido</div>
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>Dirección</label>
+
+                                <input type="text" class="form-control" [(ngModel)]="cend.Direccion" formControlName="Direccion"
+                                placeholder="Dirección" class="form-control"  minlength="0" required="" [ngClass]="{ 'is-invalid': submitted && f.Direccion.errors }">
+
+                                <div *ngIf="submitted && f.Direccion.errors" class="invalid-feedback">
+                                    <div *ngIf="f.Direccion.errors.required">Direccion es requerido</div>
+                                  </div>
+
+                              </div>
+
+
+                              <div class="form-group">
+
+
+                                  <label>Barrio</label>
+
+                                  <input type="text" class="form-control" [(ngModel)]="cend.Barrio" formControlName="Barrio" 
+                                  placeholder="Barrio" class="form-control"  minlength="0" required="">
+                                  <div *ngIf="submitted && f.Barrio.errors" class="invalid-feedback">
+                                      <div *ngIf="f.Barrio.errors.required">Barrio es requerido</div>
+                                    </div>
+
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>Teléfono</label>
+
+                                    <input type="text" class="form-control" [(ngModel)]="cend.Telefono" formControlName="Telefono"
+                                    placeholder="Teléfono" class="form-control"  minlength="0" required="">
+
+                                    <div *ngIf="submitted && f.Telefono.errors" class="invalid-feedback">
+                                        <div *ngIf="f.Telefono.errors.required">Teléfono es requiredo</div>
+                                        <div *ngIf="f.Telefono.errors.minlength"> Teléfono debe contener minimo 10 caractere</div>
+                                        <div *ngIf="f.Telefono.errors.pattern">Teléfono solo puede conterner numeros
+                                        </div>
+                                      </div>
+
+                                  </div>
+
+
+                                  <div class="form-group">
+
+                                      <label>Estado</label>
+                                      <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
+                                      <select formControlName="Estado" [(ngModel)]="cend.Estado" style="width: 100%;" class="form-control" minlength="0" required="">
+                                        <option [value]="1">Habilitado</option>
+                                        <Option [value]="0">Inhabilitado</Option>
+                                      </select>
+
+                                      <div *ngIf="submitted && f.Estado.errors" class="invalid-feedback">
+                                          <div *ngIf="f.Estado.errors.required">Estado es requerido</div>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="form-group">
+
+                                        <label>Seleccione punto de entrega</label>
+
+                                        <select formControlName="idPuntoEntrega" class="form-control" style="width: 100%;" [(ngModel)]="cend.idPuntoEntrega"
+                                        options="options" placeholder="nivel" 
+                                        minlength="0" required="">
+                                        <option *ngFor="let do of cen " [value]="do.idPuntoEntrega">{{do.NombrePE }} </option>
+                                    
+                                        </select>
+
+                                        <div *ngIf="submitted && f.idPuntoEntrega.errors" class="invalid-feedback">
+                                            <div *ngIf="f.idPuntoEntrega.errors.required">Punto de entrega es requerido</div>
+                                          </div>
+
+
+                                      </div>
+
+
+                                      <div class="text-center">
+
+                                          <button type="submit" class="btn btn-success btn-block">
+                                          Guardar
+                                        </button>
+
+                                        </div>
+
+
+
+
+                  </form>
+                 
             </div>
-            </form>
+          </form>
           </div>
         </div>
       </div>

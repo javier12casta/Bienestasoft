@@ -35,5 +35,4 @@ export class InhabilitarlistadocComponent implements OnInit {
     }
     );
   }
-
 }

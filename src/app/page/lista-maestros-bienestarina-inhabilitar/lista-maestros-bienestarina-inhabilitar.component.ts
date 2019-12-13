@@ -38,7 +38,7 @@ export class ListaMaestrosBienestarinaInhabilitarComponent implements OnInit {
   
     if(this.modalidads == "Listado de cursos"){
   
-      this.router.navigate(['/inhabilitarelistadoc']);
+      this.router.navigate(['/nivelistadocursosi']);
   
     }
 

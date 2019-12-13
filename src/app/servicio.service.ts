@@ -521,6 +521,16 @@ export class ServicioService {
     return this.http.get<[Listadocursost]>(path);
   }
 
+  getlistadocursostablap() {
+    const path = `${this.api}/listaC/tablap`;
+    return this.http.get<[Listadocursost]>(path);
+  }
+
+  getlistadocursostablau() {
+    const path = `${this.api}/listaC/tablau`;
+    return this.http.get<[Listadocursost]>(path);
+  }
+
   getlistadocursossid(id: string) {
     return this.http.get(`${this.api}/listaC/${id}`);
   }

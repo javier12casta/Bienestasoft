@@ -242,6 +242,22 @@ import { InhabilitarbeneficiariopComponent } from './page/inhabilitarbeneficiari
 import { InhabilitarbeneficiariopiComponent } from './page/inhabilitarbeneficiariopi/inhabilitarbeneficiariopi.component';
 import { InhabilitarbeneficiariouComponent } from './page/inhabilitarbeneficiariou/inhabilitarbeneficiariou.component';
 import { InhabilitarbeneficiariouiComponent } from './page/inhabilitarbeneficiarioui/inhabilitarbeneficiarioui.component';
+import { NivelistadocursosComponent } from './page/nivelistadocursos/nivelistadocursos.component';
+import { ListadocursospComponent } from './page/listadocursosp/listadocursosp.component';
+import { ListadocursospiComponent } from './page/listadocursospi/listadocursospi.component';
+import { ListadocursosuComponent } from './page/listadocursosu/listadocursosu.component';
+import { ListadocursosuiComponent } from './page/listadocursosui/listadocursosui.component';
+import { NivelistadocursosmComponent } from './page/nivelistadocursosm/nivelistadocursosm.component';
+import { ModificarlistadocursospComponent } from './page/modificarlistadocursosp/modificarlistadocursosp.component';
+import { ModificarlistadocursospiComponent } from './page/modificarlistadocursospi/modificarlistadocursospi.component';
+import { ModificarlistadocursosuComponent } from './page/modificarlistadocursosu/modificarlistadocursosu.component';
+import { ModificarlistadocursosuiComponent } from './page/modificarlistadocursosui/modificarlistadocursosui.component';
+import { NivelistadocursosiComponent } from './page/nivelistadocursosi/nivelistadocursosi.component';
+import { IlistadocursospiComponent } from './page/ilistadocursospi/ilistadocursospi.component';
+import { IlistadocursospComponent } from './page/ilistadocursosp/ilistadocursosp.component';
+import { IlistadocursosuComponent } from './page/ilistadocursosu/ilistadocursosu.component';
+import { IlistadocursosuiComponent } from './page/ilistadocursosui/ilistadocursosui.component';
+import { NiveldatosnutricionalesComponent } from './page/niveldatosnutricionales/niveldatosnutricionales.component';
 
 @NgModule({
   declarations: [
@@ -460,6 +476,23 @@ import { InhabilitarbeneficiariouiComponent } from './page/inhabilitarbeneficiar
     InhabilitarbeneficiariopiComponent,
     InhabilitarbeneficiariouComponent,
     InhabilitarbeneficiariouiComponent,
+    NivelistadocursosComponent,
+    ListadocursospComponent,
+    ListadocursospiComponent,
+    ListadocursosuComponent,
+    ListadocursosuiComponent,
+    NivelistadocursosmComponent,
+    ModificarlistadocursospComponent,
+    ModificarlistadocursospiComponent,
+    ModificarlistadocursosuComponent,
+    ModificarlistadocursosuiComponent,
+    NivelistadocursosiComponent,
+    IlistadocursospiComponent,
+    IlistadocursospComponent,
+    IlistadocursosuComponent,
+    IlistadocursosuiComponent,
+    NiveldatosnutricionalesComponent,
+    
 
     
     

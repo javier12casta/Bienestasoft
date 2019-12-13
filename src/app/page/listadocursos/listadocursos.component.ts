@@ -6,6 +6,7 @@ import { Genero } from 'src/app/interfaces/genero';
 import { Tipodocumento } from 'src/app/interfaces/tipodocumento';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { Centrozonal } from 'src/app/interfaces/centrozonal';
 
 @Component({
   selector: 'app-listadocursos',
@@ -17,6 +18,7 @@ export class ListadocursosComponent implements OnInit {
   listamaestro:string[]=["0","1"];
   public gen: Genero[] = [];
   public tip: Tipodocumento[] = [];
+  public cen1: Centrozonal[] = [];
   public ben: Beneficiario[] = [];
 
   x : Listadocursos = {
@@ -26,7 +28,9 @@ export class ListadocursosComponent implements OnInit {
     Fecha : 0,
     Estado : 0,
     idTipoDocumento : 0,
-    idBenefiarios : 0
+    idBenefiarios : 0,
+    idCentrosZonales : 0,
+ 
 
   };
 
@@ -77,9 +81,14 @@ export class ListadocursosComponent implements OnInit {
 	  this.ben = res;
 	}, err => {
 	  console.log(err);
-	});
-
-
+  });
+  
+  this.Service.getCentro()
+  .subscribe(res => {
+    this.cen1 = res;
+  }, err => {
+    console.log(err);
+  });
   }
 
   showMenssage(){

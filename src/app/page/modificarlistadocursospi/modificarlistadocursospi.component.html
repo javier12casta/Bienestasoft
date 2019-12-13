@@ -1,0 +1,45 @@
+<nav class="navbar navbar-success bg-success">
+        <button class="btn btn-dark" routerLink="/modificarlistadoc">Volver</button>
+      </nav>
+      
+      <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+        <div class="card" padding>
+          <div class="card-body" padding>
+            <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
+              <div class="form-group">
+    
+                    <input type="text" class="form-control" [(ngModel)]="listac.NombreAgenteE" name="nombreagente"
+                    placeholder="Nombre Agente" class="form-control" id="nombre" minlength="0" required="">
+    
+                    
+                    <input type="number" class="form-control" [(ngModel)]="listac.NumeroDocumento" name="numerodoc"
+                    placeholder="Numero Documento" class="form-control" id="numerodoc" minlength="0" required="">
+
+                    <input type="date" class="form-control" [(ngModel)]="listac.Fecha" name="fechai" placeholder="Fecha Ingreso" min="1930-01-01" max="2050-12-31" class="form-control" minlength="0" required="">
+    
+      
+                <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
+                <select name="Estado" id="Estado" [(ngModel)]="listac.Estado" style="width: 100%;" class="form-control" minlength="0" required="">
+                  <option value="0">Deshabilitado</option>
+                  <Option value="1">Habilitado</Option>
+                </select>
+
+                <select name="idnivel1" class="form-control" style="width: 100%;" [(ngModel)]="listac.idPuntoEntrega"
+           options="options" placeholder="nivel" minlength="0" required="">
+           <option *ngFor="let do of cen1 " [value]="do.idPuntoEntrega">{{do.NombrePE }} </option>
+       
+           </select>
+    
+
+
+              <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
+              <button class="btn btn-success btn-block" type="submit" (click)="updateDatos()" >
+                Guardar
+              </button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+

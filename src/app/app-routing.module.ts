@@ -284,6 +284,33 @@ import {InhabilitarbeneficiariopiComponent} from './page/inhabilitarbeneficiario
 import {InhabilitarbeneficiariouComponent} from './page/inhabilitarbeneficiariou/inhabilitarbeneficiariou.component';
 import {InhabilitarbeneficiariouiComponent} from './page/inhabilitarbeneficiarioui/inhabilitarbeneficiarioui.component';
 
+import {NivelistadocursosComponent} from './page/nivelistadocursos/nivelistadocursos.component';
+
+
+
+import {ListadocursospComponent} from './page/listadocursosp/listadocursosp.component';
+import {ListadocursospiComponent} from './page/listadocursospi/listadocursospi.component';
+import {ListadocursosuComponent} from './page/listadocursosu/listadocursosu.component';
+import {ListadocursosuiComponent} from './page/listadocursosui/listadocursosui.component';
+
+import {NivelistadocursosmComponent} from './page/nivelistadocursosm/nivelistadocursosm.component';
+import {ModificarlistadocursospComponent} from './page/modificarlistadocursosp/modificarlistadocursosp.component';
+import {ModificarlistadocursospiComponent} from './page/modificarlistadocursospi/modificarlistadocursospi.component';
+import {ModificarlistadocursosuComponent} from './page/modificarlistadocursosu/modificarlistadocursosu.component';
+import {ModificarlistadocursosuiComponent} from './page/modificarlistadocursosui/modificarlistadocursosui.component';
+
+
+
+
+import {NivelistadocursosiComponent} from './page/nivelistadocursosi/nivelistadocursosi.component';
+import {IlistadocursospiComponent} from './page/ilistadocursospi/ilistadocursospi.component';
+import {IlistadocursospComponent} from './page/ilistadocursosp/ilistadocursosp.component';
+import {IlistadocursosuComponent} from './page/ilistadocursosu/ilistadocursosu.component';
+import {IlistadocursosuiComponent} from './page/ilistadocursosui/ilistadocursosui.component';
+
+import {NiveldatosnutricionalesComponent} from './page/niveldatosnutricionales/niveldatosnutricionales.component';
+
+
 
 
 const routes: Routes = [
@@ -559,7 +586,31 @@ const routes: Routes = [
   {path:'inhabilitarbeneficiariosu', component:  InhabilitarbeneficiariouComponent},
   {path:'inhabilitarbeneficiariosui/:id', component:  InhabilitarbeneficiariouiComponent},
 
+  {path:'nivelistadocursos', component:  NivelistadocursosComponent},
+  
+
+  {path:'listadocursosp', component:  ListadocursospComponent},
+  {path:'listadocursospi', component:  ListadocursospiComponent},
+  {path:'listadocursosu', component:  ListadocursosuComponent},
+  {path:'listadocursosui', component:  ListadocursosuiComponent},
+
+  
+  {path:'nivelistadocursosm', component:  NivelistadocursosmComponent},
+  {path:'modificarlistadocursosp', component:  ModificarlistadocursospComponent},
+  {path:'modificarlistadocursospi/:id', component:  ModificarlistadocursospiComponent},
+  {path:'modificarlistadocursosu', component:  ModificarlistadocursosuComponent},
+  {path:'modificarlistadocursosui/:id', component:  ModificarlistadocursosuiComponent},
+
  
+  {path:'nivelistadocursosi', component:  NivelistadocursosiComponent},
+  {path:'ilistadocursosp', component:  IlistadocursospComponent },
+  {path:'ilistadocursospi/:id', component: IlistadocursospiComponent},
+  {path:'ilistadocursosu', component:  IlistadocursosuComponent},
+  {path:'ilistadocursosui/:id', component:  IlistadocursosuiComponent},
+
+  {path:'niveldatosnutricionales', component:  NiveldatosnutricionalesComponent},
+
+  
 
 ];
 
