@@ -10,6 +10,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Biometrico } from 'src/app/interfaces/biometrico';
 import { delay } from 'q';
 import { Puntoentregat } from 'src/app/interfaces/puntoentregat';
+import { MaestroBienestarina } from 'src/app/interfaces/maestrosBienestarina';
+import { Tipodocumento } from 'src/app/interfaces/tipodocumento';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-beneficiariosmui',
@@ -22,44 +25,47 @@ export class BeneficiariosmuiComponent implements OnInit {
   public reg: Regional[] = [];
   public gen: Genero[] = [];
   public ud: Uds[] = [];
+  ser: MaestroBienestarina[] = [];
+  public doc: Tipodocumento[] = [];
 
-  x : Beneficiario = {
-
-    NumeroDocumento : 0,
-    FechaIngreso : 0 ,
-    FechaNacimiento:0 ,
-    PrimerNombre : '',
+  x: Beneficiario = {
+    NumeroDocumento: null,
+    FechaIngreso: null,
+    FechaNacimiento: null,
+    PrimerNombre: '',
     PrimerApellido: '',
-    SegundoNombre : '',
-    Direccion : '',
-    Pais : '',
-    Municipio : '',
-    TelefonoFijo : 0 ,
-    TelefonoFijo2 : 0 ,
-    TelefonoMovil : '' ,
-    TelefonoMovil2 : '' ,
-    Email : '',
-    Estado : 1,
-    idGenero: 0,
-    idTipoDocumento: 0,
+    SegundoNombre: '',
+    Direccion: '',
+    Pais: '',
+    Municipio: '',
+    TelefonoFijo: null,
+    TelefonoFijo2: null,
+    TelefonoMovil: '',
+    TelefonoMovil2: '',
+    Email: '',
+    Estado: 1,
+    idGenero: null,
+    idTipoDocumento: null,
     SegundoApellido: '',
-    ServicioOmodalidad : '',
-    Departamento : '',
-    idUDS : null,
+    ServicioOmodalidad: '',
+    Departamento: '',
+    idUDS: null,
+    idCentrosZonales:null,
+    idPuntoEntrega: null,
 
   };
 
-  y : Acudientes = {
+  y: Acudientes = {
 
-    NumeroDocumento : 0,
-    Nombres : '',
-    Apellidos : '',
-    Parentesco : '',
-    idGenero : 0,
-    idTipoDocumento : 0,
-    FechaNacimiento : 0,
-    FechaIngreso : 0,
-    RegistroBiometrico :'',
+    NumeroDocumento: null,
+    Nombres: '',
+    Apellidos: '',
+    Parentesco: '',
+    idGenero: null,
+    idTipoDocumento: null,
+    FechaNacimiento: null,
+    FechaIngreso: null,
+    RegistroBiometrico: '',
   };
 
   bio: Biometrico = {
@@ -105,7 +111,28 @@ export class BeneficiariosmuiComponent implements OnInit {
 
 
   }
-  constructor(private Service: ServicioService, private router:Router,private activeRoute: ActivatedRoute) { }
+
+  constructor(
+    private Service: ServicioService,
+    private router: Router,
+    private activeRoute: ActivatedRoute,
+    private fb: FormBuilder
+  ) { }
+    //----Validaciones de campos
+    beForm: FormGroup;
+    submitted = false;
+    onSubmit() {
+      this.submitted = true;
+  
+      // stop here if form is invalid
+      if (this.beForm.valid) {
+        this.onClickMe();
+      } else if (this.beForm.invalid) {
+        this.showMenssagenull();
+      }
+      // display form values on success
+      console.log('Formulario', this.beForm.value);
+    }
 
   ngOnInit() {
     this.Service.gethuella().subscribe(res => {
@@ -140,9 +167,60 @@ export class BeneficiariosmuiComponent implements OnInit {
    console.log(err);
  });
 
- 
+ this.Service.gettipodocumento()
+ .subscribe(res => {
+   this.doc = res;
+ }, err => {
+   console.log(err);
+ });
+
+this.Service.getMaestrosBienestrina().subscribe(res => {
+ this.ser = res;
+ console.log('Modalidad', this.ser);
+}, err => {
+ console.log(err);
+});
+
+ this.beForm = this.fb.group({
+  idUDS: ['', Validators.required],
+  Estado: ['', Validators.required],
+  idTipoDocumento: ['', Validators.required],
+  Departamento: ['', Validators.required],
+  Parentesco: ['', Validators.required],
+  RegistroBiometrico: ['', Validators.required],
+  NumeroDocumento: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+  PrimerNombre: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
+  Pais: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
+  Municipio: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
+  PrimerApellido: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
+  SegundoNombre: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
+  SegundoApellido: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
+  idGenero: ['', Validators.required],
+  Nombres: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
+  Apellidos: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
+  FechaIngreso: ['', [Validators.required]],
+  FechaNacimiento: ['', [Validators.required]],
+  ServicioOmodalidad: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú\(\)]*$')]],
+  Direccion: ['', [Validators.required, Validators.pattern('^[a-z A-Z 0-9 ñ á é í ó ú \-\_\´\¨\.\ #]*$')]],
+  TelefonoFijo: ['', [Validators.required, Validators.minLength(7), Validators.pattern('^[0-9]*$')]],
+  TelefonoFijo2: ['', [Validators.minLength(7), Validators.pattern('^[0-9]*$')]],
+  TelefonoMovil: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('^[0-9]*$')]],
+  TelefonoMovil2: ['', [Validators.minLength(10), Validators.maxLength(10), Validators.pattern('^[0-9]*$')]],
+  Email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]*$')]],
+});
+
 
   }
 
+  get f() { return this.beForm.controls; }
+
+  showMenssagenull() {
+    Swal.fire({
+      title: 'Error',
+      text: 'Campos vacios',
+      type: 'warning',
+      confirmButtonText: 'Entendido'
+    });
+  }
 
 }

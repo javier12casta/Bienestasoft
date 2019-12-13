@@ -22,5 +22,7 @@ export interface Beneficiario {
     SegundoApellido?: string,
     ServicioOmodalidad : string,
     idUDS?: number,
+    idPuntoEntrega?: number,
+    idCentrosZonales?: number,
 
   }
