@@ -6,21 +6,21 @@
 	<div class="card" padding>
 		<div class="card-body" padding>
 
-				<form [formGroup]="usForm" (ngSubmit)="onSubmit()">
 
-						<h1>Crear usuarios</h1>
-						<div class="form-group">
-							<label>Seleccione centro zonal</label>
-							<select formControlName="idCentrosZonales" class="form-control" [(ngModel)]="x.idCentrosZonales"
-								[ngClass]="{ 'is-invalid': submitted && f.idCentrosZonales.errors }">
-								<option *ngFor="let do of cen " [value]="do.idCentrosZonales">{{do.NombreCentroZonal }}</option>
-							</select>
-							<div *ngIf="submitted && f.idCentrosZonales.errors" class="invalid-feedback">
-								<div *ngIf="f.idCentrosZonales.errors.required">Centro zonal es requerido</div>
-							</div>
-						</div>
+			<form [formGroup]="usForm" (ngSubmit)="onSubmit()">
 
-						<h1>Datos generales usuario</h1>
+				<h1>Crear usuarios</h1>
+				<div class="form-group">
+					<label>Seleccione punto de entrega</label>
+					<select formControlName="idCentrosZonales" class="form-control" [(ngModel)]="x.idCentrosZonales"
+						[ngClass]="{ 'is-invalid': submitted && f.idCentrosZonales.errors }">
+						<option *ngFor="let do of cen" [value]="do.idCentrosZonales">{{do.NombreCentroZonal}} </option>
+					</select>
+					<div *ngIf="submitted && f.idCentrosZonales.errors" class="invalid-feedback">
+						<div *ngIf="f.idCentrosZonales.errors.required">Punto de entrega es requerido</div>
+					</div>
+				</div>
+				<h1>Datos generales usuario</h1>
 
 				<div class="form-group">
 					<label>Estado</label>
@@ -78,104 +78,33 @@
 					</div>
 				</div>
 
+				<div class="form-group">
+					<label>Apellidos</label>
+
+					<input type="text" placeholder="Apellidos" formControlName="Apellidos" class="form-control"
+						[(ngModel)]="x.Apellidos" [ngClass]="{ 'is-invalid': submitted && f.Apellidos.errors }" />
+
+					<div *ngIf="submitted && f.Apellidos.errors" class="invalid-feedback">
+						<div *ngIf="f.Apellidos.errors.required">Los Apellidos son requiredos</div>
+						<div *ngIf="f.Apellidos.errors.pattern">Los Apellidos solo puede conterner
+							letras
+							minusculas o
+							mayusculas</div>
+					</div>
+				</div>
 
 				<div class="form-group">
-						<label>Apellidos</label>
-	
-						<input type="text" placeholder="Apellidos" formControlName="Apellidos" class="form-control"
-							[(ngModel)]="x.Apellidos" [ngClass]="{ 'is-invalid': submitted && f.Apellidos.errors }" />
-	
-						<div *ngIf="submitted && f.Apellidos.errors" class="invalid-feedback">
-							<div *ngIf="f.Apellidos.errors.required">Los Apellidos son requiredos</div>
-							<div *ngIf="f.Apellidos.errors.pattern">Los Apellidos solo puede conterner
-								letras
-								minusculas o
-								mayusculas</div>
-						</div>
+					<label>Fecha de ingreso</label>
+
+					<input type="date" placeholder="Fecha de Ingreso" formControlName="FechaIngreso"
+						class="form-control" [(ngModel)]="x.FechaIngreso" min="1900-01-01" max="2050-12-31"
+						[ngClass]="{ 'is-invalid': submitted && f.FechaIngreso.errors }" />
+
+					<div *ngIf="submitted && f.FechaIngreso.errors" class="invalid-feedback">
+						<div *ngIf="f.FechaIngreso.errors.required">Fecha Ingreso es requireda</div>
 					</div>
-	
-					<div class="form-group">
-						<label>Fecha de ingreso</label>
-	
-						<input type="date" placeholder="Fecha de Ingreso" formControlName="FechaIngreso"
-							class="form-control" [(ngModel)]="x.FechaIngreso" min="1900-01-01" max="2050-12-31"
-							[ngClass]="{ 'is-invalid': submitted && f.FechaIngreso.errors }" />
-	
-						<div *ngIf="submitted && f.FechaIngreso.errors" class="invalid-feedback">
-							<div *ngIf="f.FechaIngreso.errors.required">Fecha Ingreso es requireda</div>
-						</div>
-					</div>
+				</div>
 
-
-					<span >Seleccione centro zonal</span>
-			   <h2></h2>
-			   
-			   
-			<select name="idnivel1" class="form-control" style="width: 100%;" [(ngModel)]="x.idCentrosZonales"
-			options="options" placeholder="nivel" 
-			minlength="0" required="">
-			<option *ngFor="let do of cen " [value]="do.idCentrosZonales">{{do.NombreCentroZonal }} </option>
-	
-		  </select>
-
-		  <div class="form-group">
-
-				
-				<h1>Datos generales usuario</h1>
-				<h2></h2>
-				<span  >Estado del dato Maestro</span>
-				<h2></h2>
-				
-				<select name="estadomaestro" [(ngModel)]="x.Estado" class="select-css" 
-				minlength="0" required="" class="form-control">
-				<Option value="1"> Habilitado</Option>
-				<option value="0"> Deshabilitado</option>
-				
-					   	 
-		  </select>
-		</div>
-
-		<h2></h2>
-			   <span >Tipo documento</span>
-			   <h2></h2>
-			   
-			   <select name="idRegional" class="select-css" style="width: 100%;" [(ngModel)]="x.idTipoDocumento"
-			   options="options" placeholder="Tipo documento" 
-			   minlength="0" required="" class="form-control">
-			   <option *ngFor="let do of doc" [value]="do.idTipoDocumento">{{do.NombreTipo }} </option>
-			 </select>
-				  
-			   
-			   <h2></h2>
-		   <span >Número de documento</span>
-			   <h2></h2>
-			   <input type="number" class="form-control" [(ngModel)]="x.NumeroDocumento" name="numerodoc"
-			   placeholder="Número de documento" class="form-control" id="inputdoc" 
-			   minlength="0" required="">
-		   
-			   
-	   
-		   <h2></h2>
-			   <span >Nombres</span>
-			   <h2></h2>
-			   <input type="text" class="form-control" [(ngModel)]="x.Nombres" name="nombre"
-			   placeholder="Nombres" class="form-control" id="nom" 
-			   minlength="0" required="">
-		 
-			   <h2></h2>
-			   <span >Apellidos</span>
-			   <h2></h2>
-			   <input type="text" class="form-control" [(ngModel)]="x.Apellidos" name="apellidos"
-			   placeholder="Apellidos" class="form-control" id="app" 
-			   minlength="0" required="">
-		   <h2></h2>
-		 
-			   <span >Fecha de ingreso</span>
-			   <h2></h2>
-			   <input type="date" class="form-control" [(ngModel)]="x.FechaIngreso" name="fechai" placeholder="Fecha" min="1900-01-01" max="2050-12-31" class="form-control" 
-			   minlength="0" required="">
-		   
-				<h2></h2>
 				{{today}}
 				<h1>Usuario y asignación de Roles</h1>
 
@@ -328,33 +257,34 @@
 
 					<div *ngIf="submitted && f.TelefonoMovil2.errors" class="invalid-feedback">
 						<div *ngIf="f.TelefonoMovil2.errors.required">Teléfono unidad de servicio es requiredo</div>
-						<div *ngIf="f.TelefonoMovil2.errors.minlength"> Teléfono unidad de servicio debe contener minimo 10
+						<div *ngIf="f.TelefonoMovil2.errors.minlength"> Teléfono unidad de servicio debe contener minimo
+							10
 							caracteres
 						</div>
-						<div *ngIf="f.TelefonoMovil2.errors.pattern">Teléfono unidad de servicio solo puede conterner numeros
+						<div *ngIf="f.TelefonoMovil2.errors.pattern">Teléfono unidad de servicio solo puede conterner
+							numeros
 						</div>
 					</div>
 				</div>
 
 
 				<div class="form-group">
-						<label>Correo electrónico</label>
-	
-						<input type="email" placeholder="Correo electrónico" formControlName="Email"
-							class="form-control" [(ngModel)]="x.Email"
-							[ngClass]="{ 'is-invalid': submitted && f.Email.errors }" />
-	
-						<div *ngIf="submitted && f.Email.errors" class="invalid-feedback">
-							<div *ngIf="f.Email.errors.required">Teléfono unidad de servicio es requiredo</div>
-							<div *ngIf="f.Email.errors.minlength"> Teléfono unidad de servicio debe contener minimo 10
-								caracteres
-							</div>
-							<div *ngIf="f.Email.errors.pattern">Teléfono unidad de servicio solo puede conterner numeros
-							</div>
+					<label>Correo electrónico</label>
+
+					<input type="email" placeholder="Correo electrónico" formControlName="Email" class="form-control"
+						[(ngModel)]="x.Email" [ngClass]="{ 'is-invalid': submitted && f.Email.errors }" />
+
+					<div *ngIf="submitted && f.Email.errors" class="invalid-feedback">
+						<div *ngIf="f.Email.errors.required">Teléfono unidad de servicio es requiredo</div>
+						<div *ngIf="f.Email.errors.minlength"> Teléfono unidad de servicio debe contener minimo 10
+							caracteres
+						</div>
+						<div *ngIf="f.Email.errors.pattern">Teléfono unidad de servicio solo puede conterner numeros
 						</div>
 					</div>
+				</div>
 
-					
+
 				<br />
 
 				<div class="text-center">
