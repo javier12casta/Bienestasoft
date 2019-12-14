@@ -1,72 +1,99 @@
 <nav class="navbar navbar-success bg-success">
         <button class="btn btn-dark" routerLink="/referenciasbienestarinav">Volver</button>
-      </nav>
+</nav>
       
-      <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
-        <div class="card" padding>
-          <div class="card-body" padding>
-            <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
-                    <h1>Referencia bienestarina</h1>
-              <div class="form-group">
+<div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+  <div class="card" padding>
+    <div class="card-body" padding>
 
-                  <span  >Tipo </span>
-                  <h2></h2>
-                  <input type="text" class="form-control" [(ngModel)]="x.TipoBienesterina" name="ref"
-                        placeholder="Tipo bienestarina" class="form-control" id="tipo" minlength="0" required="">
-                  <h2></h2>
 
-                    <span  >Código </span>
-                    <h2></h2>
-                    <input type="number" class="form-control" [(ngModel)]="x.Codigo" name="cod"
-                          placeholder="Código " class="form-control" id="codi" minlength="0" required="">
-                    <h2></h2>
-                    <span  >Estado del dato maestro</span>
-                    <h2></h2>
-                    
+      <form [formGroup]="RefForm" (ngSubmit)="onSubmit()">
+        <h1>Referencia bienestarina</h1>
 
-                    <select name="EstadoDatoMaestro" id="EstadoDatoMaestro" [(ngModel)]="x.Estado" style="width: 100%;" class="form-control" minlength="0" required="">
-                      <option value="0">Deshabilitado</option>
-                      <option value="1">Habilitado</option>
-                    </select>
-                  
-                    <h2></h2>
-                  
-                    <span  >Referencia </span>
-                    <h2></h2>
-                    <input type="text" class="form-control" [(ngModel)]="x.Referencia" name="ref"
-                          placeholder="Referencia" class="form-control" id="referencia" minlength="0" required="">
-                    <h2></h2>
-                  
-                    <span  >Unidad de medida principal</span>
-                    <h2></h2>
-                    
-                    <select name="unidadm" [(ngModel)]="x.UnidadPrincipal" class="select-css" minlength="0" required="" class="form-control">
-                  <option [value]="item" *ngFor="let item of unidadmedidad">{{item}} </option>
-                  </select>
-                  <h2></h2>
-                  
-                  <span  >Cantidad equivalente </span>
-                    <h2></h2>
-                    <input type="number" class="form-control" [(ngModel)]="x.Cantidad" name="cantidade"
-                          placeholder="Cantidad Equivalente" class="form-control" id="cantidadequivalente" minlength="0" required="">
-                    <h2></h2>
-                  
-                    <span  >Unidad de medida secundaria </span>
-                    <h2></h2>
-                    <select name="unidadsecundario" [(ngModel)]="x.UnidadSecundaria"  class="select-css" minlength="0" required="" class="form-control">
-                    <option [value]="item" *ngFor="let item of unidadsecundario">{{item}} </option>
-                    </select>
-                    <h2></h2>
-                  
-                  
-                    <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
-                
-                         <h2></h2>
+          <div class="form-group">
+              <label>Estado</label>
+              <select formControlName="Estado" class="form-control" [(ngModel)]="x.Estado" name="EstadoDatoMaestro" id="EstadoDatoMaestro" [ngClass]="{ 'is-invalid': submitted && f.Estado.errors }">
+                  <option value="1">Habilitado</option>
+                  <option value="0">Inhabilitado</option>
+              </select>
+              <div *ngIf="submitted && f.Estado.errors" class="invalid-feedback">
+               <div *ngIf="f.Estado.errors.required">Estado es requerido</div>
+              </div>
+          </div>
 
-                </div>
-                </form>
-            </div>
+        <div class="form-group">
+          <label>Tipo </label>
+          <input type="text" placeholder="Tipo bienestarina" formControlName="TipoBienesterina" class="form-control" [(ngModel)]="x.TipoBienesterina" name="ref" id="tipo"
+            [ngClass]="{ 'is-invalid': submitted && f.TipoBienesterina.errors }"/>
+
+          <div *ngIf="submitted && f.TipoBienesterina.errors" class="invalid-feedback">
+            <div *ngIf="f.TipoBienesterina.errors.required"> Tipo bienesterina es requerido</div>
+            <div *ngIf="f.TipoBienesterina.errors.pattern"> Nombre tipo bienesterina solo puede contener letras minusculas o
+              mayúsculas</div>
           </div>
         </div>
+
+        <div class="form-group">
+          <label>Código</label>
+          <input type="text" placeholder="Código" formControlName="Codigo" class="form-control" [(ngModel)]="x.Codigo" 
+          name="cod" id="codi" [ngClass]="{ 'is-invalid': submitted && f.Codigo.errors }"/>
+
+          <div *ngIf="submitted && f.Codigo.errors" class="invalid-feedback">
+            <div *ngIf="f.Codigo.errors.required">El código es requerido</div>
+            <div *ngIf="f.Codigo.errors.pattern">El código solo puede contener numeros</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Referencia</label>
+          <input type="text" placeholder="Referencia" formControlName="Referencia" class="form-control" [(ngModel)]="x.Referencia" 
+          name="ref" id="referencia" [ngClass]="{ 'is-invalid': submitted && f.Referencia.errors }"/>
+
+          <div *ngIf="submitted && f.Referencia.errors" class="invalid-feedback">
+            <div *ngIf="f.Referencia.errors.required">La referencia es requerido</div>
+            <div *ngIf="f.Referencia.errors.pattern">La referencia solo puede contener numeros y letras minusculas o
+              mayúsculas</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Unidad de medida principal</label>
+          <select formControlName="unidad" placeholder="Unidad de medida" class="form-control" [(ngModel)]="x.UnidadPrincipal" [ngClass]="{ 'is-invalid': submitted && f.unidad.errors }">
+              <option *ngFor="let item of unidadmedidad" [value]="item"> {{item}}</option>
+          </select>
+          <div *ngIf="submitted && f.unidad.errors" class="invalid-feedback">
+              <div *ngIf="f.unidad.errors.required">Unidad de medida es requerido</div>
+          </div>
+      </div>
+
+      <div class="form-group">
+        <label>Cantidad equivalente</label>
+        <input type="text" placeholder="Cantidad equivalente" formControlName="Cantidad" class="form-control" [(ngModel)]="x.Cantidad" 
+        name="cantidade" id="cantidadequivalente" [ngClass]="{ 'is-invalid': submitted && f.Cantidad.errors }"/>
+
+        <div *ngIf="submitted && f.Cantidad.errors" class="invalid-feedback">
+          <div *ngIf="f.Cantidad.errors.required">La Cantidad equivalente es requerida</div>
+          <div *ngIf="f.Cantidad.errors.pattern">La Cantidad equivalente solo puede contener numeros</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Unidad de medida secundaria</label>
+        <select formControlName="unidadsecundario" placeholder="Unidad de medida secundaria" name="unidadsecundario" class="form-control" [(ngModel)]="x.UnidadSecundaria" [ngClass]="{ 'is-invalid': submitted && f.unidadsecundario.errors }" >
+            <option *ngFor="let item of unidadsecundario" [value]="item"> {{item}}</option>
+        </select>
+        <div *ngIf="submitted && f.unidadsecundario.errors" class="invalid-feedback">
+            <div *ngIf="f.unidadsecundario.errors.required">Unidad de medida es requerido</div>
+        </div>
+    </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-success btn-block">Guardar</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>     
     
     

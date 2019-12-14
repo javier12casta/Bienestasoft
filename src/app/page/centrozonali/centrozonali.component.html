@@ -36,7 +36,7 @@
         <div class="form-group">
             <label>Regional</label>
             <select formControlName="idRegional" class="form-control" [(ngModel)]="centros.idRegional" [ngClass]="{ 'is-invalid': submitted && f.idRegional.errors }">
-                <option *ngFor="let reg of regional" [value]="reg.idRegional"> {{reg.Regional}} | {{reg.codigo}}</option>
+                <option *ngFor="let reg of unidadmedidad" [value]="reg.idRegional"> {{reg.Regional}} | {{reg.codigo}}</option>
             </select>
             <div *ngIf="submitted && f.idRegional.errors" class="invalid-feedback">
                 <div *ngIf="f.idRegional.errors.required">Regional es requerido</div>

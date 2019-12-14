@@ -5,36 +5,46 @@
 <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
   <div class="card" padding>
     <div class="card-body" padding>
-      <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
+
+
+      <form [formGroup]="RefForm" (ngSubmit)="onSubmit()">
         <h1>Lista de precios</h1>
+          <div class="form-group">
+              <label>Estado</label>
+              <select formControlName="Estado" class="form-control" [(ngModel)]="x.Estado" name="EstadoDatoMaestro" id="EstadoDatoMaestro" [ngClass]="{ 'is-invalid': submitted && f.Estado.errors }">
+                  <option value="1">Habilitado</option>
+                  <option value="0">Inhabilitado</option>
+              </select>
+              <div *ngIf="submitted && f.Estado.errors" class="invalid-feedback">
+               <div *ngIf="f.Estado.errors.required">Estado es requerido</div>
+              </div>
+          </div>
+          <div class="form-group">
+            <label>Códigos</label>
+            <select formControlName="Codigo" placeholder="Codigo" class="form-control" [(ngModel)]="x.Codigo" name="Codigo" id="Codigo" [ngClass]="{ 'is-invalid': submitted && f.Codigo.errors }" (change)="onFilterChange($event)">
+                <option *ngFor="let re of referencia" [value]="re.Codigo">{{re.Codigo}}</option>
+            </select>
+            <div *ngIf="submitted && f.Codigo.errors" class="invalid-feedback">
+                <div *ngIf="f.Codigo.errors.required">El código es requerido</div>
+            </div>
+        </div>  
+
         <div class="form-group">
+          <label>Referencia</label>
+          <input type="text" placeholder="Referencia" formControlName="Referencia" class="form-control" [(ngModel)]="x.Referencia" 
+          name="ref" id="refer" [ngClass]="{ 'is-invalid': submitted && f.Referencia.errors }"/>
 
-          <span>Código</span>
-          <h2></h2>
-          <select name="Codigo" id="Codigo" [(ngModel)]="x.Codigo" style="width: 100%;"
-            class="form-control" minlength="0" required="" (change)="onFilterChange($event)">
-            <option *ngFor="let re of referencia" [value]="re.Codigo">{{re.Codigo}}</option>
-          </select>
-          <span>Estado del dato maestro</span>
-          <h2></h2>
+          <div *ngIf="submitted && f.Referencia.errors" class="invalid-feedback">
+            <div *ngIf="f.Referencia.errors.required">La referencia es requerido</div>
+            <div *ngIf="f.Referencia.errors.pattern">La referencia solo puede contener numeros y letras minusculas o
+              mayúsculas</div>
+          </div>
+        </div>
 
-          <select name="EstadoDatoMaestro" id="EstadoDatoMaestro" [(ngModel)]="x.Estado" style="width: 100%;"
-            class="form-control" minlength="0" required="">
-            <option value="0">Deshabilitado</option>
-            <option value="1">Habilitado</option>
-          </select>
-
-          <h2></h2>
-          <span>Referencia</span>
-          <h2></h2>
-          <input type="text" class="form-control" [(ngModel)]="x.Referencia" name="ref" placeholder="Referencia"
-            class="form-control" id="refer" minlength="0" required="">
-
-          <h2></h2>
-          <span>Mes</span>
-          <h2></h2>
-
-          <select name="mes" [(ngModel)]="x.Mes" class="form-control">
+        
+        <div class="form-group">
+          <label>Mes</label>
+          <select formControlName="Mes" placeholder="Mes" class="form-control" [(ngModel)]="x.Mes" [ngClass]="{ 'is-invalid': submitted && f.Mes.errors }">
             <option>Enero</option>
             <Option>Febrero</Option>
             <Option>Marzo</Option>
@@ -48,32 +58,38 @@
             <Option>Noviembre</Option>
             <Option>Diciembre</Option>
           </select>
+          <div *ngIf="submitted && f.Mes.errors" class="invalid-feedback">
+              <div *ngIf="f.Mes.errors.required">El mes es requerido</div>
+          </div>
+      </div>
 
+      <div class="form-group">
+        <label>Año</label>
+        <input type="text" placeholder="Año" formControlName="Ano" class="form-control" [(ngModel)]="x.Ano" 
+        name="ano" id="ano" [ngClass]="{ 'is-invalid': submitted && f.Ano.errors }"/>
 
-          <h2></h2>
-          <span>año</span>
-          <h2></h2>
-
-
-
-
-          <input type="number" class="form-control" [(ngModel)]="x.Ano" name="ano" placeholder="Año "
-            class="form-control" id="ano" minlength="0" required="">
-
-          <h2></h2>
-
-          <span>Valor COP</span>
-          <h2></h2>
-          <input type="number" class="form-control" [(ngModel)]="x.ValorCop" name="valo" placeholder="valor"
-            class="form-control" id="cop" minlength="0" required="">
-          <h2></h2>
-
-          <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
-
-          <h2></h2>
-
+        <div *ngIf="submitted && f.Ano.errors" class="invalid-feedback">
+          <div *ngIf="f.Ano.errors.required">El año es requerido</div>
+          <div *ngIf="f.Ano.errors.pattern">El año solo puede contener numeros</div>
         </div>
+      </div>
+
+      <div class="form-group">
+        <label>Valor COP</label>
+        <input type="text" placeholder="Valor" formControlName="ValorCop" class="form-control" [(ngModel)]="x.ValorCop" 
+        name="valo" id="cop" [ngClass]="{ 'is-invalid': submitted && f.ValorCop.errors }"/>
+
+        <div *ngIf="submitted && f.ValorCop.errors" class="invalid-feedback">
+          <div *ngIf="f.ValorCop.errors.required">El año es requerido</div>
+          <div *ngIf="f.ValorCop.errors.pattern">El año solo puede contener numeros</div>
+        </div>
+      </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-success btn-block">Guardar</button>
+        </div>
+
       </form>
     </div>
   </div>
-</div>
+</div>  

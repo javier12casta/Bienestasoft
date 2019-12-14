@@ -5,28 +5,56 @@
       <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
         <div class="card" padding>
           <div class="card-body" padding>
-            <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
+      
+      
+            <form [formGroup]="servicioForm" (ngSubmit)="onSubmit()">
+              <h1>Modificar servicios y modalidades</h1>
+      
+                <div class="form-group">
+                    <label>Estado del dato maestro</label>
+                    <select formControlName="EstadoDatoMaestro" class="form-control" [(ngModel)]="maes.EstadoDatoMaestro" [ngClass]="{ 'is-invalid': submitted && f.EstadoDatoMaestro.errors }" name="mod3">
+                        <option value="1">Habilitado</option>
+                        <option value="0">Inhabilitado</option>
+      
+                    </select>
+                    <div *ngIf="submitted && f.EstadoDatoMaestro.errors" class="invalid-feedback">
+                        <div *ngIf="f.EstadoDatoMaestro.errors.required">Estado es requerido</div>
+                    </div>
+                </div>
+      
               <div class="form-group">
-    
-                  <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
-                  <input type="text" class="form-control" [(ngModel)]="maes.EstadoDatoMaestro" name="mod3"
-                    placeholder="estado Maestro" class="form-control" id="nom" minlength="0" required="">
-    
-                    <input type="text" class="form-control" [(ngModel)]="maes.Modalidad" name="mod"
-                    placeholder="Modalidad" class="form-control" id="nom" minlength="0" required="">
-    
-                
-                    <input type="text" class="form-control" [(ngModel)]="maes.Servicio" name="ser"
-                    placeholder="Servicio" class="form-control" id="nom" minlength="0" required="">
-    
-                   
-              <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
-              <button class="btn btn-success btn-block" type="submit" (click)="updateDatos()" routerLink="/modificarserviciom">
-                Guardar
-              </button>
-            </div>
+                <label>Modalidad</label>
+                <input type="text" placeholder="Nombre de la Modalidad" formControlName="Modalidad" class="form-control" [(ngModel)]="maes.Modalidad"
+                name="mod" [ngClass]="{ 'is-invalid': submitted && f.Modalidad.errors }" />
+      
+                <div *ngIf="submitted && f.Modalidad.errors" class="invalid-feedback">
+                  <div *ngIf="f.Modalidad.errors.required">Nombre de la Modalidad es requerido</div>
+                  <div *ngIf="f.Modalidad.errors.pattern"> Nombre de la Modalidad solo puede contener letras minusculas o
+                    mayúsculas, parentesis</div>
+                </div>
+              </div>
+      
+              <div class="form-group">
+                <label>Código servicio y modalidad</label>
+                <input type="text" placeholder="Código servicio y modalidad" formControlName="Servicio" class="form-control" [(ngModel)]="maes.Servicio"
+                name="ser" [ngClass]="{ 'is-invalid': submitted && f.Servicio.errors }" />
+      
+                <div *ngIf="submitted && f.Servicio.errors" class="invalid-feedback">
+                  <div *ngIf="f.Servicio.errors.required">Nombre de la Modalidad es requerido</div>
+                  <div *ngIf="f.Servicio.errors.pattern"> Código servicio y modalidad solo puede contener numeros</div>
+                </div>
+              </div>
+      
+              
+              
+              <br/>
+      
+              <div class="text-center">
+                <button type="submit" class="btn btn-success btn-block" [disabled]="!servicioForm.valid" >Guardar</button>
+              </div>
+      
             </form>
           </div>
         </div>
-      </div>
+      </div>     
       

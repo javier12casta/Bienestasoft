@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { TipoBienestarina } from 'src/app/interfaces/tipobienestarina';
 import { Lprecios } from 'src/app/interfaces/listaprecios';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-listado-precios',
@@ -22,38 +23,45 @@ export class ListadoPreciosComponent implements OnInit {
 
     Referencia: '',
     Mes: '',
-    Ano: 0,
+    Ano: 2019,
     ValorCop: null,
     Estado: 1,
     Codigo: null,
 
   };
 
+  constructor(
+    private Service: ServicioService,
+    private router:Router,
+    private fb: FormBuilder) { }
+
+  //----Validaciones de campos
+  RefForm: FormGroup;
+  submitted = false;
   
   
-  showMenssage(){
-    Swal.fire({
-      title: 'Modificado',
-      text: 'Dato maestro modificadp',
-      type: 'success',
-      confirmButtonText: 'Entendido'
-    }).then((result) => {
-      if (result.value) {
-        
-        this.router.navigate(['/modificarlistac']);
-        window.location.reload()
-      }
-    });
-  }  
+  fe = new Date();
+  fecha =  this.fe.getFullYear();
+ 
+  onSubmit() {
+    this.submitted = true;
 
- 
-  f = new Date();
-  fecha =  this.f.getFullYear();
- 
+    // stop here if form is invalid
+    if (this.RefForm.valid) {
+      
+        this.onClickMe();
+          
+    } else if (this.RefForm.invalid) {
+      this.showMenssagenull();
+    }
+  }
   
+  onReset() {
+    this.submitted = false;
+    this.RefForm.reset();
+  }
 
- 
-
+  get f() { return this.RefForm.controls; }
 
   onClickMe() {
 
@@ -67,7 +75,7 @@ export class ListadoPreciosComponent implements OnInit {
 
   }
 
-  constructor(private Service: ServicioService,private router:Router) { }
+  
  
 
 
@@ -85,6 +93,16 @@ export class ListadoPreciosComponent implements OnInit {
   } 
   ngOnInit() {
 
+    //Validador--------------------
+    this.RefForm = this.fb.group({
+      Estado: ['', Validators.required],
+      Codigo: ['', Validators.required],
+      Referencia:  ['', [Validators.required, Validators.pattern('^[0-9 a-z A-Z ñ á é í ó ú\(\)\.]*$')]],
+      Mes: ['', Validators.required],
+      Ano: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+      ValorCop: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+    });
+
   this.Service.getTipobienestarina().subscribe(res => {
     this.referencia = Object(res);
     console.log(this.referencia);
@@ -92,5 +110,30 @@ export class ListadoPreciosComponent implements OnInit {
     console.log(err);
   });                      
 
+  }
+
+
+  showMenssage(){
+    Swal.fire({
+      title: 'Creado',
+      text: 'Dato Maestro Creado',
+      type: 'success',
+      confirmButtonText: 'Entendido'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/referenciasbienestarinav']);
+        window.location.reload();
+      }
+    });
+  }
+  
+  showMenssagenull() {
+    Swal.fire({
+      title: 'Error',
+      text: 'Campos inválidos',
+      type: 'warning',
+      confirmButtonText: 'Entendido'
+    });
   }
 }

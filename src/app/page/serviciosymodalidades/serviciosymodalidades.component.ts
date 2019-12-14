@@ -159,7 +159,7 @@ export class ServiciosymodalidadesComponent implements OnInit {
   showMenssagenull() {
     Swal.fire({
       title: 'Error',
-      text: 'Campos vacios',
+      text: 'Campos inválidos',
       type: 'warning',
       confirmButtonText: 'Entendido'
     });

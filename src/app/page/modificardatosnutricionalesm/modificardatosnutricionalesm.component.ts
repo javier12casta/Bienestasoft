@@ -4,7 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Datosvarios } from '../../interfaces/datosvarios';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
-import { Centrozonal } from 'src/app/interfaces/centrozonal';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-modificardatosnutricionalesm',
@@ -14,10 +15,14 @@ import { Centrozonal } from 'src/app/interfaces/centrozonal';
 export class ModificardatosnutricionalesmComponent implements OnInit {
 
   public datosvarios: Datosvarios[] = [];
-  public cen1: Centrozonal[] = [];
+  listamaestro:string[]=["0","1"];
+  unidadm:string[]=["g","personas"];
 
-  constructor(private activeRoute: ActivatedRoute,
-    private Service: ServicioService,private router:Router) { }
+  constructor(
+    private activeRoute: ActivatedRoute,
+    private Service: ServicioService,
+    private router:Router,
+    private fb: FormBuilder) { }
 
     
     dvarios: Datosvarios = {
@@ -32,7 +37,41 @@ export class ModificardatosnutricionalesmComponent implements OnInit {
 
       };
 
+     //----Validaciones de campos
+  RefForm: FormGroup;
+  submitted = false;
+
+  onSubmit() {
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.RefForm.valid) {
+      
+        this.updateDatos();
+          
+    } else if (this.RefForm.invalid) {
+      this.showMenssagenull();
+    }
+  }
+  
+  onReset() {
+    this.submitted = false;
+    this.RefForm.reset();
+  }
+
+  get f() { return this.RefForm.controls; }  
+
   ngOnInit() {
+
+    //Validador--------------------
+    this.RefForm = this.fb.group({
+      Estado: ['', Validators.required],
+      Codigo:  ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+      descripcion: ['', [Validators.required, Validators.pattern('^[0-9 a-z A-Z ñ á é í ó ú\(\)\.]*$')]],
+      Valor: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+      unidad: ['', Validators.required]
+      
+    });
 
     const params = this.activeRoute.snapshot.params;
     console.log(params);
@@ -56,6 +95,18 @@ export class ModificardatosnutricionalesmComponent implements OnInit {
 
   }
 
+  updateDatos() {
+    this.Service.putdatosvarioss(this.dvarios.idDatosVarios, this.dvarios)
+      .subscribe(
+        res => {
+          console.log(res);
+          this.showMenssage();
+        }, err => {
+          console.log(err);
+        }
+      );
+  }
+
   showMenssage(){
     Swal.fire({
       title: 'Modificado!',
@@ -70,18 +121,16 @@ export class ModificardatosnutricionalesmComponent implements OnInit {
       }
     });
   }
-
-  updateDatos() {
-    this.Service.putdatosvarioss(this.dvarios.idDatosVarios, this.dvarios)
-      .subscribe(
-        res => {
-          console.log(res);
-          this.showMenssage();
-        }, err => {
-          console.log(err);
-        }
-      );
+  showMenssagenull() {
+    Swal.fire({
+      title: 'Error',
+      text: 'Campos inválidos',
+      type: 'warning',
+      confirmButtonText: 'Entendido'
+    });
   }
+
+  
 
 
 }

@@ -64,8 +64,7 @@ export class RolComponent implements OnInit {
     //Validador--------------------
     this.rolForm = this.fb.group({
       Estado: ['', Validators.required],
-      RolPersona: ['', [Validators.required,Validators.pattern('^[a-zA-Zñáéíóú]*$')]],
-});
+      RolPersona: ['', [Validators.required,Validators.pattern('^[a-zA-Zñáéíóú]*$')]],});
     
 
   }
@@ -118,7 +117,7 @@ export class RolComponent implements OnInit {
   showMenssagenull() {
     Swal.fire({
       title: 'Error',
-      text: 'Campos vacios',
+      text: 'Campos inválidos',
       type: 'warning',
       confirmButtonText: 'Entendido'
     });

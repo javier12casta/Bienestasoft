@@ -5,46 +5,73 @@
   <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
     <div class="card" padding>
       <div class="card-body" padding>
-        <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
-          <div class="form-group">
+  
+  
+        <form [formGroup]="RefForm" (ngSubmit)="onSubmit()">
+          <h1>Modificar datos nutricionales</h1>
+            <div class="form-group">
+                <label>Estado</label>
+                <select formControlName="Estado" class="form-control" [(ngModel)]="dvarios.EstadoDatoMaestro" name="Estado" id="Estado" [ngClass]="{ 'is-invalid': submitted && f.Estado.errors }">
+                    <option value="1">Habilitado</option>
+                    <option value="0">Inhabilitado</option>
+                </select>
+                <div *ngIf="submitted && f.Estado.errors" class="invalid-feedback">
+                 <div *ngIf="f.Estado.errors.required">Estado es requerido</div>
+                </div>
+            </div>
 
-                <input type="number" class="form-control" [(ngModel)]="dvarios.CodigoInterno" name="codin"
-                placeholder="CodigoInterno " class="form-control" id="inputcodin" minlength="0" required="">
+            <div class="form-group">
+              <label>Código interno</label>
+              <input type="text" placeholder="Codigo" formControlName="Codigo" class="form-control" [(ngModel)]="dvarios.CodigoInterno" 
+              name="codin" id="inputcodin" [ngClass]="{ 'is-invalid': submitted && f.Codigo.errors }"/>
+      
+              <div *ngIf="submitted && f.Codigo.errors" class="invalid-feedback">
+                <div *ngIf="f.Codigo.errors.required">El codigo interno es requerido</div>
+                <div *ngIf="f.Codigo.errors.pattern">El codigo interno solo puede contener numeros</div>
+              </div>
+            </div>  
+           
+            <div class="form-group">
+              <label>Descripción del registro</label>
+              <input type="text" placeholder="Descripción del registro" formControlName="descripcion" class="form-control" [(ngModel)]="dvarios.DescripcionDelRegistro" 
+              name="dr" id="desr" [ngClass]="{ 'is-invalid': submitted && f.descripcion.errors }"/>
+    
+              <div *ngIf="submitted && f.descripcion.errors" class="invalid-feedback">
+                <div *ngIf="f.descripcion.errors.required">La descripción es requerido</div>
+                <div *ngIf="f.descripcion.errors.pattern">La descripción solo puede contener numeros y letras minusculas o
+                  mayúsculas</div>
+              </div>
+            </div>
 
-                <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
-            <select name="Estado" id="Estado" [(ngModel)]="dvarios.EstadoDatoMaestro" style="width: 100%;" class="form-control" minlength="0" required="">
-                <option value="1">Habilitado</option>
-                <Option value="0">Deshabilitado</Option>
+            <div class="form-group">
+              <label>Valor</label>
+              <input type="text" placeholder="Valor" formControlName="Valor" class="form-control" [(ngModel)]="dvarios.Valor" 
+              name="vl" id="app" [ngClass]="{ 'is-invalid': submitted && f.Valor.errors }"/>
+      
+              <div *ngIf="submitted && f.Valor.errors" class="invalid-feedback">
+                <div *ngIf="f.Valor.errors.required">El valor es requerido</div>
+                <div *ngIf="f.Valor.errors.pattern">El valor solo puede contener numeros</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Unidad de medida</label>
+              <select formControlName="unidad" placeholder="Unidad de medida" class="form-control" [(ngModel)]="dvarios.UnidadDeMedida" name="nmedida" id="nm" [ngClass]="{ 'is-invalid': submitted && f.unidad.errors }" >
+                  <option *ngFor="let item of unidadm" [value]="item">{{item}}</option>
               </select>
-
-              
-                <input type="text" class="form-control" [(ngModel)]="dvarios.DescripcionDelRegistro" name="dr"
-                placeholder="Descripcion del registro" class="form-control" id="desr" minlength="0" required="">
-
-                <input type="text" class="form-control" [(ngModel)]="dvarios.Valor" name="vl"
-                placeholder="Valor " class="form-control" id="app" minlength="0" required="">
-
-                <input type="text" class="form-control" [(ngModel)]="dvarios.UnidadDeMedida" name="nmedida"
-                placeholder="Unidad Medida" class="form-control" id="nm" minlength="0" required="">
-
-               
-                
-             <select name="idnivel1" class="form-control" style="width: 100%;" [(ngModel)]="dvarios.idCentrosZonales"
-             options="options" placeholder="nivel" 
-             minlength="0" required="">
-             <option *ngFor="let do of cen1 " [value]="do.idCentrosZonales">{{do.NombreCentroZonal }} </option>
-         
-             </select>
+              <div *ngIf="submitted && f.unidad.errors" class="invalid-feedback">
+                  <div *ngIf="f.unidad.errors.required">La unidad de medida es requerida</div>
+              </div>
+          </div> 
 
 
-          <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
-          <button class="btn btn-success btn-block" type="submit" (click)="updateDatos()" routerLink="/modificardatosnutricionales">
-            Guardar
-          </button>
-        </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-success btn-block" [disabled]="!RefForm.valid">Guardar</button>
+          </div>
+  
         </form>
       </div>
     </div>
-  </div>
+  </div>  
   
 
