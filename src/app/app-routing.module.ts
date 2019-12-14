@@ -311,6 +311,26 @@ import {IlistadocursosuiComponent} from './page/ilistadocursosui/ilistadocursosu
 import {NiveldatosnutricionalesComponent} from './page/niveldatosnutricionales/niveldatosnutricionales.component';
 
 
+import {DatosvariospComponent} from './page/datosvariosp/datosvariosp.component';
+import {DatosvariospiComponent} from './page/datosvariospi/datosvariospi.component';
+import {DatosvariosuComponent} from './page/datosvariosu/datosvariosu.component';
+import {DatosvariosuiComponent} from './page/datosvariosui/datosvariosui.component';
+
+import {NiveldatosnutricionalesmComponent} from './page/niveldatosnutricionalesm/niveldatosnutricionalesm.component';
+
+
+import {ModificardatosnutricionalespComponent} from './page/modificardatosnutricionalesp/modificardatosnutricionalesp.component';
+import {ModificardatosnutricionalespiComponent} from './page/modificardatosnutricionalespi/modificardatosnutricionalespi.component';
+import {ModificardatosnutricionalesuComponent} from './page/modificardatosnutricionalesu/modificardatosnutricionalesu.component';
+import {ModificardatosnutricionalesuiComponent} from './page/modificardatosnutricionalesui/modificardatosnutricionalesui.component';
+
+
+import {NiveldatosnutricionalesiComponent} from './page/niveldatosnutricionalesi/niveldatosnutricionalesi.component';
+import {IdatosnutricionalespComponent} from './page/idatosnutricionalesp/idatosnutricionalesp.component';
+import {IdatosnutricionalespiComponent} from './page/idatosnutricionalespi/idatosnutricionalespi.component';
+import {IdatosnutricionalesuComponent} from './page/idatosnutricionalesu/idatosnutricionalesu.component';
+import {IdatosnutricionalesuiComponent} from './page/idatosnutricionalesui/idatosnutricionalesui.component';
+
 
 
 const routes: Routes = [
@@ -611,6 +631,28 @@ const routes: Routes = [
   {path:'niveldatosnutricionales', component:  NiveldatosnutricionalesComponent},
 
   
+  {path:'datosvariosp', component:  DatosvariospComponent},
+
+  {path:'datosvariospi', component:  DatosvariospiComponent},
+
+  {path:'datosvariosu', component:  DatosvariosuComponent},
+
+  {path:'datosvariosui', component:  DatosvariosuiComponent},
+  
+  {path:'niveldatosnutricionalesm', component:  NiveldatosnutricionalesmComponent},
+ 
+  {path:'modificardatosnutricionalesp', component:  ModificardatosnutricionalespComponent},
+  {path:'modificardatosnutricionalespi/:id', component:  ModificardatosnutricionalespiComponent},
+  {path:'modificardatosnutricionalesu', component:  ModificardatosnutricionalesuComponent},
+  {path:'modificardatosnutricionalesui/:id', component:  ModificardatosnutricionalesuiComponent},
+
+ 
+  {path:'niveldatosnutricionalesi', component:  NiveldatosnutricionalesiComponent},
+  {path:'idatosnutricionalesp', component:  IdatosnutricionalespComponent},
+  {path:'idatosnutricionalespi/:id', component:  IdatosnutricionalespiComponent},
+  {path:'idatosnutricionalesu', component:  IdatosnutricionalesuComponent},
+  {path:'idatosnutricionalesui/:id', component:  IdatosnutricionalesuiComponent},
+
 
 ];
 

@@ -13,8 +13,8 @@
 
                 <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
             <select name="Estado" id="Estado" [(ngModel)]="dvarios.EstadoDatoMaestro" style="width: 100%;" class="form-control" minlength="0" required="">
-                <option value="1">0</option>
-                <Option value="0">1</Option>
+                <option value="1">Habilitado</option>
+                <Option value="0">Deshabilitado</Option>
               </select>
 
               
@@ -26,6 +26,16 @@
 
                 <input type="text" class="form-control" [(ngModel)]="dvarios.UnidadDeMedida" name="nmedida"
                 placeholder="Unidad Medida" class="form-control" id="nm" minlength="0" required="">
+
+               
+                
+             <select name="idnivel1" class="form-control" style="width: 100%;" [(ngModel)]="dvarios.idCentrosZonales"
+             options="options" placeholder="nivel" 
+             minlength="0" required="">
+             <option *ngFor="let do of cen1 " [value]="do.idCentrosZonales">{{do.NombreCentroZonal }} </option>
+         
+             </select>
+
 
           <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
           <button class="btn btn-success btn-block" type="submit" (click)="updateDatos()" routerLink="/modificardatosnutricionales">

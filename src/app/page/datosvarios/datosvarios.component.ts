@@ -3,6 +3,7 @@ import { Datosvarios } from 'src/app/interfaces/datosvarios';
 import { ServicioService } from 'src/app/servicio.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { Centrozonal } from 'src/app/interfaces/centrozonal';
 
 @Component({
   selector: 'app-datosvarios',
@@ -15,6 +16,7 @@ export class DatosvariosComponent implements OnInit {
 
   listamaestro:string[]=["0","1"];
   unidadm:string[]=["g","personas"];
+  public cen1: Centrozonal[] = [];
   
   x : Datosvarios = {
     
@@ -23,6 +25,7 @@ export class DatosvariosComponent implements OnInit {
     DescripcionDelRegistro : '',
     Valor : 0,
     UnidadDeMedida : '',
+    idCentrosZonales : 0,
 
   };
 
@@ -56,6 +59,15 @@ export class DatosvariosComponent implements OnInit {
   constructor(private Service: ServicioService,private router:Router) { }
 
   ngOnInit() {
+
+
+    this.Service.getCentro()
+  .subscribe(res => {
+    this.cen1 = res;
+  }, err => {
+    console.log(err);
+  });
+
   }
 
 }

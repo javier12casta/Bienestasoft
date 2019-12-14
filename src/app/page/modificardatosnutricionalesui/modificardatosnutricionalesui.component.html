@@ -1,0 +1,51 @@
+<nav class="navbar navbar-success bg-success">
+    <button class="btn btn-dark" routerLink="/modificardatosnutricionalesu">Volver</button>
+  </nav>
+  
+  <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+    <div class="card" padding>
+      <div class="card-body" padding>
+        <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
+          <div class="form-group">
+
+                <input type="number" class="form-control" [(ngModel)]="dvarios.CodigoInterno" name="codin"
+                placeholder="CodigoInterno " class="form-control" id="inputcodin" minlength="0" required="">
+
+                <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
+            <select name="Estado" id="Estado" [(ngModel)]="dvarios.EstadoDatoMaestro" style="width: 100%;" class="form-control" minlength="0" required="">
+                <option value="1">Habilitado</option>
+                <Option value="0">Deshabilitado</Option>
+              </select>
+
+              
+                <input type="text" class="form-control" [(ngModel)]="dvarios.DescripcionDelRegistro" name="dr"
+                placeholder="Descripcion del registro" class="form-control" id="desr" minlength="0" required="">
+
+                <input type="text" class="form-control" [(ngModel)]="dvarios.Valor" name="vl"
+                placeholder="Valor " class="form-control" id="app" minlength="0" required="">
+
+                <input type="text" class="form-control" [(ngModel)]="dvarios.UnidadDeMedida" name="nmedida"
+                placeholder="Unidad Medida" class="form-control" id="nm" minlength="0" required="">
+
+               
+                
+             <select name="idnivel1" class="form-control" style="width: 100%;" [(ngModel)]="dvarios.idUDS"
+             options="options" placeholder="nivel" 
+             minlength="0" required="">
+             <option *ngFor="let do of cen1 " [value]="do.idUDS">{{do.NombreUDS }} </option>
+         
+             </select>
+
+
+          <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
+          <button class="btn btn-success btn-block" type="submit" (click)="updateDatos()" routerLink="/modificardatosnutricionalesu">
+            Guardar
+          </button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+
+

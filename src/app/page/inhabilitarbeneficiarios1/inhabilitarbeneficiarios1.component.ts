@@ -11,7 +11,7 @@ import { Beneficiariot } from '../../interfaces/beneficiariot';
   
   <nav class="navbar navbar-fixed-top">
   <td>
-  <button class="btn btn-dark" routerLink="/menu">Volver</button>
+  <button class="btn btn-dark" routerLink="/inhabilitarnivelbeneficiario">Volver</button>
          
         </td>
 

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-success bg-success">
-    <button class="btn btn-dark" routerLink="/menu">Volver</button>
+    <button class="btn btn-dark" routerLink="/niveldatosnutricionales">Volver</button>
     <div>
-        <label>Crear datos nutricionales</label>
+        <label>Crear datos nutricionales centro zonal</label>
     
     {{fecha}}  
     </div>
@@ -19,6 +19,7 @@
         <th scope="col">Descripción del registro</th>
         <th scope="col">Valor </th>
         <th scope="col">Unidad de medida  </th>
+        <th scope="col">Centro Zonal  </th>
       </tr>
     </thead>
     <tbody>
@@ -37,6 +38,7 @@
         <td>{{ser.DescripcionDelRegistro }}</td>
         <td>{{ser.Valor }}</td>
         <td>{{ser.UnidadDeMedida  }}</td>
+        <td>{{ser.NombreCentroZonal  }}</td>
       </tr>
     </tbody>
   </table>

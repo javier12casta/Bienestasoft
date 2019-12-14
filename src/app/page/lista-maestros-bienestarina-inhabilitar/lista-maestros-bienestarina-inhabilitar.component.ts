@@ -44,7 +44,7 @@ export class ListaMaestrosBienestarinaInhabilitarComponent implements OnInit {
 
     if(this.modalidads == "Datos Nutricionales"){
   
-      this.router.navigate(['/inhabilitardatosnutricionales']);
+      this.router.navigate(['/niveldatosnutricionalesi']);
   
     }
   

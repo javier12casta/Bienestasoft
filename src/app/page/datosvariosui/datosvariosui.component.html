@@ -1,0 +1,69 @@
+<nav class="navbar navbar-success bg-success">
+    <button class="btn btn-dark" routerLink="/datosvariosu">Volver</button>
+  </nav>
+  
+  <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+    <div class="card" padding>
+      <div class="card-body" padding>
+        <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
+                <h1>Datos nutricionales</h1>
+          <div class="form-group">
+            
+                <span >Código interno</span>
+<h2></h2>
+<input type="number" class="form-control" [(ngModel)]="x.CodigoInterno" name="codigoi"
+placeholder="Código Interno" class="form-control" id="codigointerno" minlength="0" required="">
+<h2></h2>
+<span  >Estado del dato maestro</span>
+<h2></h2>
+
+<select name="EstadoDatoMaestro" id="EstadoDatoMaestro" [(ngModel)]="x.EstadoDatoMaestro" style="width: 100%;" class="form-control" minlength="0" required="">
+<option value="0">Deshabilitado</option>
+<option value="1">Habilitado</option>
+</select>
+
+
+<h2></h2>
+<span >Descripción del registro</span>
+<h2></h2>
+<input type="text" class="form-control" [(ngModel)]="x.DescripcionDelRegistro" name="descripcionr"
+placeholder="Descripción del registro" class="form-control" id="descripcionregistro" minlength="0" required="">
+<h2></h2>
+<span >Valor</span>
+<h2></h2>
+<input type="number" class="form-control" [(ngModel)]="x.Valor" name="v"
+placeholder="Valor" class="form-control" id="valor" minlength="0" required="">
+
+<h2></h2>
+<span >Unidad de medida</span>
+<h2></h2>
+
+<select name="unidad" [(ngModel)]="x.UnidadDeMedida" class="select-css" class="form-control" minlength="0" required="">
+<option [value]="item" *ngFor="let item of unidadm">{{item}} </option>
+</select>
+
+<h2></h2>
+
+<span >Seleccione uds</span>
+      <h2></h2>
+      
+      
+   <select name="idnivel1" class="form-control" style="width: 100%;" [(ngModel)]="x.idUDS"
+   options="options" placeholder="nivel" 
+   minlength="0" required="">
+   <option *ngFor="let do of cen1 " [value]="do.idUDS">{{do.NombreUDS }} </option>
+
+   </select>
+
+   <h2></h2>
+    
+   <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
+    
+<h2></h2>
+
+            </div>
+            </form>
+        </div>
+      </div>
+    </div>
+

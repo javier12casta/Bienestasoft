@@ -496,6 +496,22 @@ export class ServicioService {
     return this.http.get<[Datosvarios]>(path);
   }
 
+  getdatosvariosc() {
+    const path = `${this.api}/datos/tablac`;
+    return this.http.get<[Datosvarios]>(path);
+  }
+
+  getdatosvariosp() {
+    const path = `${this.api}/datos/tablap`;
+    return this.http.get<[Datosvarios]>(path);
+  }
+
+
+  getdatosvariosu() {
+    const path = `${this.api}/datos/tablau`;
+    return this.http.get<[Datosvarios]>(path);
+  }
+
   getdatosvariosid(id: string) {
     return this.http.get(`${this.api}/datos/${id}`);
   }

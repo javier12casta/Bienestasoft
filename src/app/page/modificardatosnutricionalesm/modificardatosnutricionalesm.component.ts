@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Datosvarios } from '../../interfaces/datosvarios';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
-
+import { Centrozonal } from 'src/app/interfaces/centrozonal';
 
 @Component({
   selector: 'app-modificardatosnutricionalesm',
@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 export class ModificardatosnutricionalesmComponent implements OnInit {
 
   public datosvarios: Datosvarios[] = [];
+  public cen1: Centrozonal[] = [];
 
   constructor(private activeRoute: ActivatedRoute,
     private Service: ServicioService,private router:Router) { }
@@ -27,7 +28,8 @@ export class ModificardatosnutricionalesmComponent implements OnInit {
       DescripcionDelRegistro : '',
       Valor : 0,
       UnidadDeMedida : '',   
-  
+      idCentrosZonales : 0,
+
       };
 
   ngOnInit() {
@@ -44,6 +46,14 @@ export class ModificardatosnutricionalesmComponent implements OnInit {
         }
         );
     }
+
+    this.Service.getCentro()
+  .subscribe(res => {
+    this.cen1 = res;
+  }, err => {
+    console.log(err);
+  });
+
   }
 
   showMenssage(){
@@ -55,7 +65,7 @@ export class ModificardatosnutricionalesmComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         
-        this.router.navigate(['/modificardatosnutricionales']);
+        window.location.reload();
 
       }
     });

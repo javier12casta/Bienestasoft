@@ -2576,7 +2576,7 @@ var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "li
     this.datos.push(create);
     var create = { name: "Modificar listado de cursos", route: "/nivelistadocursosm", icon: "face" };
     this.datos.push(create);
-    var create = { name: "Modificar datos nutricionales", route: "/modificardatosnutricionales", icon: "face" };
+    var create = { name: "Modificar datos nutricionales", route: "/niveldatosnutricionalesm", icon: "face" };
     this.datos.push(create);
      if (array[2] == "1") {        
        if (array[3] == "1") {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Datosvarios } from '../../interfaces/datosvarios';
+import { Datosvariost } from '../../interfaces/datosvariost';
 import { ServicioService } from '../../servicio.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { ServicioService } from '../../servicio.service';
 })
 export class InhabilitardatosnutricionalesComponent implements OnInit {
 
-  dvarios: Datosvarios[] = [];
+  dvarios: Datosvariost[] = [];
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
   constructor(private Service: ServicioService) { }
@@ -17,7 +17,7 @@ export class InhabilitardatosnutricionalesComponent implements OnInit {
   ngOnInit() {
 
 
-    this.Service.getdatosvarios()
+    this.Service.getdatosvariosc()
     .subscribe(async (data) => {
       this.dvarios = data;
       console.log(data);

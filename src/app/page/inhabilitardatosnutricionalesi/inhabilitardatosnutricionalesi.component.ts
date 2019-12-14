@@ -47,6 +47,12 @@ export class InhabilitardatosnutricionalesiComponent implements OnInit {
       text: 'dato maestro Inhabilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
+    }).then((result) => {
+      if (result.value) {
+        
+
+        window.location.reload();
+      }
     });
   }
 
@@ -56,6 +62,12 @@ export class InhabilitardatosnutricionalesiComponent implements OnInit {
       text: 'dato maestro habilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
+    }).then((result) => {
+      if (result.value) {
+        
+        
+        window.location.reload();
+      }
     });
   }
 

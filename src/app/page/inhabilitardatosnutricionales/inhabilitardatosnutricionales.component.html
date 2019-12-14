@@ -1,7 +1,7 @@
 <nav class="navbar navbar-success bg-success">
-    <button class="btn btn-dark" routerLink="/listamaestrosinhabilitar">Volver</button>
+    <button class="btn btn-dark" routerLink="/niveldatosnutricionalesi">Volver</button>
     <div>
-      <label>Inhabilitar datos nutricionales</label>
+      <label>Inhabilitar datos nutricionales centro zonal</label>
   
   {{fecha}}  
   </div>
@@ -20,16 +20,27 @@
           <th scope="col">Descripcion del registro</th>
           <th scope="col">Valor</th>
           <th scope="col">Unidad de medida</th>
+          <th scope="col">Centro zonal</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let cen of dvarios">
           <th scope="row">{{cen.idDatosVarios}}</th>
           <td>{{cen.CodigoInterno}}</td>
-          <td>{{cen.EstadoDatoMaestro}}</td>
+          <td>
+            
+            <div *ngIf="cen.EstadoDatoMaestro == 1">
+              Habilitado
+            </div>
+            <div *ngIf="cen.EstadoDatoMaestro== 0">
+              Deshabilitado
+            </div>
+            
+          </td>
           <td>{{cen.DescripcionDelRegistro}}</td>
           <td>{{cen.Valor}}</td>
           <td>{{cen.UnidadDeMedida}}</td>
+          <td>{{cen.NombreCentroZonal}}</td>
           <td>  
             <button class="btn btn-primary" [routerLink]="['/inhabilitardatosnutricionalesi', cen.idDatosVarios]">Inhabilitar</button>
           </td>

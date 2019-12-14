@@ -18,8 +18,8 @@
   <h2></h2>
   
   <select name="EstadoDatoMaestro" id="EstadoDatoMaestro" [(ngModel)]="x.EstadoDatoMaestro" style="width: 100%;" class="form-control" minlength="0" required="">
-    <option value="0">Inhabilitar</option>
-    <option value="1">Habilitar</option>
+    <option value="0">Deshabilitado</option>
+    <option value="1">Habilitado</option>
   </select>
 
   
@@ -43,6 +43,19 @@
 </select>
 
 <h2></h2>
+
+<span >Seleccione centro zonal</span>
+          <h2></h2>
+          
+          
+       <select name="idnivel1" class="form-control" style="width: 100%;" [(ngModel)]="x.idCentrosZonales"
+       options="options" placeholder="nivel" 
+       minlength="0" required="">
+       <option *ngFor="let do of cen1 " [value]="do.idCentrosZonales">{{do.NombreCentroZonal }} </option>
+   
+       </select>
+
+       <h2></h2>
         
        <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
         

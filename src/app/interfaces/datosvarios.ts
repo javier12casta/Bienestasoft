@@ -7,7 +7,9 @@ export interface Datosvarios {
     Valor : number,
     UnidadDeMedida : string,
     idDatosMaestros? : number,
-
+    idCentrosZonales? : number,
+    idPuntoEntrega ?: number,
+    idUDS ?: number,
 
 
 

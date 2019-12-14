@@ -1,0 +1,28 @@
+<nav class="navbar navbar-success bg-success">
+    <button class="btn btn-dark" routerLink="/listamaestrosinhabilitar">Volver</button>
+  </nav>
+  
+  <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+    <div class="card" padding>
+      <div class="card-body" padding>
+        <form>
+            <h1>Seleccionar el nivel</h1>
+          <div class="form-group">
+            <span  >Nivel</span>
+            <h2></h2>
+            
+            <select name="miselect" [(ngModel)]="listau" class="form-control">
+            <option [value]="item" *ngFor="let item of lista">{{item}} </option>
+            </select>
+            
+                 <h2></h2>
+                 <button (click)="siguiente()" type="button" class="btn btn-success" >siguiente</button>
+                 <h2></h2>
+            </div>
+            </form>
+        </div>
+      </div>
+    </div>
+
+
+

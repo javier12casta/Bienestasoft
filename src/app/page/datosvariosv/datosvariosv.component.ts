@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Datosvarios } from 'src/app/interfaces/datosvarios';
+import { Datosvariost } from 'src/app/interfaces/datosvariost';
 import { ServicioService } from 'src/app/servicio.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { ServicioService } from 'src/app/servicio.service';
 })
 export class DatosvariosvComponent implements OnInit {
 
-  servic: Datosvarios[] = [];
+  servic: Datosvariost[] = [];
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
 
@@ -17,7 +17,7 @@ export class DatosvariosvComponent implements OnInit {
 
   ngOnInit() {
 
-    this.Service.getdatosvarios()
+    this.Service.getdatosvariosc()
     .subscribe(async (data) => {
       this.servic = data;
       console.log(data);

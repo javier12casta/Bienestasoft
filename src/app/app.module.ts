@@ -258,6 +258,20 @@ import { IlistadocursospComponent } from './page/ilistadocursosp/ilistadocursosp
 import { IlistadocursosuComponent } from './page/ilistadocursosu/ilistadocursosu.component';
 import { IlistadocursosuiComponent } from './page/ilistadocursosui/ilistadocursosui.component';
 import { NiveldatosnutricionalesComponent } from './page/niveldatosnutricionales/niveldatosnutricionales.component';
+import { DatosvariospComponent } from './page/datosvariosp/datosvariosp.component';
+import { DatosvariospiComponent } from './page/datosvariospi/datosvariospi.component';
+import { DatosvariosuComponent } from './page/datosvariosu/datosvariosu.component';
+import { DatosvariosuiComponent } from './page/datosvariosui/datosvariosui.component';
+import { NiveldatosnutricionalesmComponent } from './page/niveldatosnutricionalesm/niveldatosnutricionalesm.component';
+import { ModificardatosnutricionalespComponent } from './page/modificardatosnutricionalesp/modificardatosnutricionalesp.component';
+import { ModificardatosnutricionalespiComponent } from './page/modificardatosnutricionalespi/modificardatosnutricionalespi.component';
+import { ModificardatosnutricionalesuComponent } from './page/modificardatosnutricionalesu/modificardatosnutricionalesu.component';
+import { ModificardatosnutricionalesuiComponent } from './page/modificardatosnutricionalesui/modificardatosnutricionalesui.component';
+import { NiveldatosnutricionalesiComponent } from './page/niveldatosnutricionalesi/niveldatosnutricionalesi.component';
+import { IdatosnutricionalespComponent } from './page/idatosnutricionalesp/idatosnutricionalesp.component';
+import { IdatosnutricionalespiComponent } from './page/idatosnutricionalespi/idatosnutricionalespi.component';
+import { IdatosnutricionalesuComponent } from './page/idatosnutricionalesu/idatosnutricionalesu.component';
+import { IdatosnutricionalesuiComponent } from './page/idatosnutricionalesui/idatosnutricionalesui.component';
 
 @NgModule({
   declarations: [
@@ -492,6 +506,20 @@ import { NiveldatosnutricionalesComponent } from './page/niveldatosnutricionales
     IlistadocursosuComponent,
     IlistadocursosuiComponent,
     NiveldatosnutricionalesComponent,
+    DatosvariospComponent,
+    DatosvariospiComponent,
+    DatosvariosuComponent,
+    DatosvariosuiComponent,
+    NiveldatosnutricionalesmComponent,
+    ModificardatosnutricionalespComponent,
+    ModificardatosnutricionalespiComponent,
+    ModificardatosnutricionalesuComponent,
+    ModificardatosnutricionalesuiComponent,
+    NiveldatosnutricionalesiComponent,
+    IdatosnutricionalespComponent,
+    IdatosnutricionalespiComponent,
+    IdatosnutricionalesuComponent,
+    IdatosnutricionalesuiComponent,
     
 
     
