@@ -3,6 +3,7 @@ import { TipoBienestarina } from 'src/app/interfaces/tipobienestarina';
 import { ServicioService } from 'src/app/servicio.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 
 @Component({
@@ -32,9 +33,59 @@ export class ReferenciasbienestarinaComponent implements OnInit {
   };
 
 
-  constructor(private Service: ServicioService,private router:Router) { }
+  constructor(
+    private Service: ServicioService,
+    private router:Router,
+    private fb: FormBuilder) { }
 
+    //----Validaciones de campos
+    RefForm: FormGroup;
+    submitted = false;
+
+  onSubmit() {
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.RefForm.valid) {
+      
+        this.onClickMe();
+          
+    } else if (this.RefForm.invalid) {
+      this.showMenssagenull();
+    }
+  }
+  
   ngOnInit() {
+    //Validador--------------------
+    this.RefForm = this.fb.group({
+      Estado: ['', Validators.required],
+      TipoBienesterina: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú\(\)\.)]*$')]],
+      Codigo: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+      Referencia:  ['', [Validators.required, Validators.pattern('^[0-9 a-z A-Z ñ á é í ó ú\(\)\.]*$')]],
+      unidad: ['', Validators.required],
+      Cantidad: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+      unidadsecundario: ['', Validators.required],
+    });
+
+  }
+  onReset() {
+    this.submitted = false;
+    this.RefForm.reset();
+  }
+
+  get f() { return this.RefForm.controls; }
+  
+  onClickMe() {
+
+    
+    this.Service.postTipobienestarina(this.x).subscribe(res => {
+      console.log(this.x);
+      this.showMenssage();
+      },
+      err => {
+        console.log(err);
+      });
+
   }
 
   showMenssage(){
@@ -52,20 +103,16 @@ export class ReferenciasbienestarinaComponent implements OnInit {
     });
   }
 
-
-
-
-  onClickMe() {
-
-    
-    this.Service.postTipobienestarina(this.x).subscribe(res => {
-      console.log(this.x);
-      this.showMenssage();
-      },
-      err => {
-        console.log(err);
-      });
-
+  showMenssagenull() {
+    Swal.fire({
+      title: 'Error',
+      text: 'Campos inválidos',
+      type: 'warning',
+      confirmButtonText: 'Entendido'
+    });
   }
+
+
+ 
 
 }

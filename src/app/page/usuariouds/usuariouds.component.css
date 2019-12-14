@@ -9,3 +9,15 @@
   .mat-icon {
     font-size: 20px;
   }
+  .navbar-fixed-top {
+    min-height: 80px;
+    background-color:#22b13a;
+    width: 1850px;
+    }
+    
+    @media (min-width: 768px) {
+    .navbar {
+    border-radius: 4px;
+    min-height: 50px;
+     }
+    }
