@@ -2557,9 +2557,9 @@ var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "li
     this.datos.push(create);
     var create = { name: "Crear listado de precios", route: "/listapreciosv", icon: "face" };
     this.datos.push(create);
-    var create = { name: "Crear listado de cursos", route: "/listadocursosv", icon: "face" };
+    var create = { name: "Crear listado de cursos", route: "/nivelistadocursos", icon: "face" };
     this.datos.push(create);
-    var create = { name: "Crear datos nutricionales", route: "/datosvariosv", icon: "face" };
+    var create = { name: "Crear datos nutricionales", route: "/niveldatosnutricionales", icon: "face" };
     this.datos.push(create);
 
 
@@ -2574,7 +2574,7 @@ var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "li
     this.datos.push(create);
     var create = { name: "Modificar listado de precios", route: "/modificarlistac", icon: "face" };
     this.datos.push(create);
-    var create = { name: "Modificar listado de cursos", route: "/modificarlistadoc", icon: "face" };
+    var create = { name: "Modificar listado de cursos", route: "/nivelistadocursosm", icon: "face" };
     this.datos.push(create);
     var create = { name: "Modificar datos nutricionales", route: "/modificardatosnutricionales", icon: "face" };
     this.datos.push(create);

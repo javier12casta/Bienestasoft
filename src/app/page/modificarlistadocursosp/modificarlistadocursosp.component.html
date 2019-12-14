@@ -1,0 +1,57 @@
+<nav class="navbar navbar-success bg-success">
+        <button class="btn btn-dark" routerLink="/menu">Volver</button>
+        <div>
+            <label>Modificar listado cursos punto de entrega</label>
+        
+        {{fecha}}  
+        </div>
+        
+        <div>
+          
+        </div>
+     
+      </nav>
+    
+      <table class="table">
+        <thead class="thead-green">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre agente </th>
+            <th scope="col">Número documento</th>
+            <th scope="col">Fecha registro</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Tipo documento</th>
+            <th scope="col">Beneficiarios</th>
+            <th scope="col">Punto de entrega</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+                <tr *ngFor="let cen of listad">
+                        <th scope="row">{{cen.idListadoCursos}}</th>
+                        <td>{{cen.NombreAgenteE}}</td>
+                        <td>{{cen.NumeroDocumento}}</td>
+                        <td>{{cen.Fecha}}</td>
+              <td>
+                
+                  <div *ngIf="cen.Estado == 1">
+                      Habilitado
+                    </div>
+                    <div *ngIf="cen.Estado == 0">
+                      Deshabilitado
+                    </div>
+                
+               </td>
+              <td> {{cen.tipodocumento}}  </td>
+              <td>{{cen.nombrecompleto}}</td>
+              <td>{{cen.NombrePE}}</td>
+              <td>
+                <button class="btn btn-primary" [routerLink]="['/modificarlistadocursospi', cen.idListadoCursos]">Modificar</button>
+              </td>
+                      </tr>
+                        
+                
+          </tbody>
+      
+    </table>
+    

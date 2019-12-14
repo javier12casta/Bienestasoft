@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Listadocursos } from '../../interfaces/listadocursos';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { Centrozonal } from 'src/app/interfaces/centrozonal';
 
 @Component({
   selector: 'app-modificarlistadocm',
@@ -13,6 +14,7 @@ import { Router } from '@angular/router';
 export class ModificarlistadocmComponent implements OnInit {
 
   public listacursos: Listadocursos[] = [];
+  public cen1: Centrozonal[] = [];
 
   constructor(private activeRoute: ActivatedRoute,
     private Service: ServicioService, private router:Router) { }
@@ -27,6 +29,7 @@ export class ModificarlistadocmComponent implements OnInit {
       idTipoDocumento : 0,
       idConsecutivosMaestro :0,
       idBenefiarios : 0,
+      idCentrosZonales : 0,
   
       };
 
@@ -46,6 +49,12 @@ export class ModificarlistadocmComponent implements OnInit {
         );
     }
 
+    this.Service.getCentro()
+    .subscribe(res => {
+      this.cen1 = res;
+    }, err => {
+      console.log(err);
+    });
   }
 
   showMenssage(){

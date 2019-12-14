@@ -1,7 +1,7 @@
 <nav class="navbar navbar-success bg-success">
         <button class="btn btn-dark" routerLink="/listamaestrosinhabilitar">Volver</button>
         <div>
-          <label>Inhabilitar listado de cursos</label>
+          <label>Inhabilitar listado de cursos centro zonal</label>
       
       {{fecha}}  
       </div>
@@ -21,7 +21,7 @@
             <th scope="col">Estado</th>
             <th scope="col">Tipo documento</th>
             <th scope="col">Beneficiarios</th>
-            
+            <th scope="col">centro zonal</th>
           </tr>
         </thead>
         <tbody>
@@ -37,12 +37,11 @@
                     </div>
                     <div *ngIf="cen.Estado == 0">
                       Deshabilitado
-                    </div>
-                
-                
+                    </div>  
                 </td>
               <td> {{cen.tipodocumento}} </td>
               <td> {{cen.nombrecompleto }}</td>
+              <td> {{cen.NombreCentroZonal }}</td>
               <td>
                 <button class="btn btn-primary" [routerLink]="['/inhabilitarelistadoci', cen.idListadoCursos]">Inhabilitar</button>
               </td>

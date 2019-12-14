@@ -7,6 +7,9 @@ export interface Listadocursost {
     tipodocumento ?: string,
     idConsecutivosMaestro? : number,
     nombrecompleto: string,
+    NombreCentroZonal ?: string,
+    NombrePE ?: string,
+    NombreUDS ?: string,
 
 
 

@@ -7,7 +7,9 @@ export interface Listadocursos {
     idTipoDocumento ?: number,
     idConsecutivosMaestro? : number,
     idBenefiarios? : number,
-
+    idCentrosZonales ?: number,
+    idPuntoEntrega ?: number,
+    idUDS ?: number
 
 
 }
