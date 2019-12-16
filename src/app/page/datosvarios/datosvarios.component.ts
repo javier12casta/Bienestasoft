@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Datosvarios } from 'src/app/interfaces/datosvarios';
 import { ServicioService } from 'src/app/servicio.service';
+import { Centrozonal} from 'src/app/interfaces/centrozonal';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';

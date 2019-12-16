@@ -5,59 +5,166 @@
 <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
   <div class="card" padding>
     <div class="card-body" padding>
-      <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
+      <form [formGroup]="czForm" (ngSubmit)="onSubmit()">
+        
         <div class="form-group">
 
+          <label>Número Externo</label>
 
-          <input type="number" class="form-control" [(ngModel)]="almac.NumeroExterno" name="numeroext"
+
+          <input type="number" class="form-control" formControlName="NumeroExterno" [(ngModel)]="almac.NumeroExterno" name="numeroext"
             placeholder="Número Externo" class="form-control" id="inputnext" minlength="0" required="">
 
-          <input type="text" class="form-control" [(ngModel)]="almac.Nombre" name="nombre" placeholder="Nombre "
+            <div *ngIf="submitted && f.NumeroExterno.errors" class="invalid-feedback">
+              <div *ngIf="f.NumeroExterno.errors.required"> Número Externo es requerido</div>
+              <div *ngIf="f.NumeroExterno.errors.pattern"> Número Externo solo puede contener letras minusculas ,
+                mayúsculas y  Números </div>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+
+          <label>Nombre</label>
+
+ <input type="text" class="form-control" formControlName="Nombre" [(ngModel)]="almac.Nombre" name="nombre" placeholder="Nombre "
             class="form-control" id="nom" minlength="0" required="">
 
-          <input type="text" class="form-control" [(ngModel)]="almac.Responsable" name="res" placeholder="Responsable"
+            <div *ngIf="submitted && f.Nombre.errors" class="invalid-feedback">
+              <div *ngIf="f.Nombre.errors.required"> Nombre  es requerido</div>
+              <div *ngIf="f.Nombre.errors.pattern"> Nombre solo puede contener letras minusculas o
+                mayúsculas</div>
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>Responsable</label>
+
+ <input type="text" class="form-control" formControlName="Responsable" [(ngModel)]="almac.Responsable" name="res" placeholder="Responsable"
             class="form-control" id="app" minlength="0" required="">
 
-          <input type="text" class="form-control" [(ngModel)]="almac.Capacidad " name="cap" placeholder="Capacidad"
-            class="form-control" id="usu" minlength="0" required="">
+            <div *ngIf="submitted && f.Responsable.errors" class="invalid-feedback">
+              <div *ngIf="f.Responsable.errors.required"> Responsable es requerido</div>
+              <div *ngIf="f.Responsable.errors.pattern"> Responsable solo puede contener letras minusculas o
+                mayúsculas</div>
+            </div>
 
-          <div id="unidad" hidden [hidden]="habilitado">
-            <input type="number" class="form-control" [(ngModel)]="almac.Capacidad2" name="Capacidad2"
-              placeholder="Capacidad 2" class="form-control" id="inputcap" minlength="0" required="">
+
+        </div>
+
+        <div class="form-group">
+
+          <label>Capacidad</label>
+
+          <input type="text" class="form-control" formControlName="Capacidad"  [(ngModel)]="almac.Capacidad " name="cap" placeholder="Capacidad"
+          class="form-control" id="usu" minlength="0" required="">
+
+          <div *ngIf="submitted && f.Capacidad.errors" class="invalid-feedback">
+            <div *ngIf="f.Capacidad.errors.required"> Capacidad es requerido</div>
+            <div *ngIf="f.Capacidad.errors.pattern"> Capacidad solo puede contener numeros</div>
           </div>
 
-          <input type="text" class="form-control" (change)="onChange($event)" [(ngModel)]="almac.UnidadMedida"
+
+        </div>
+
+        <div class="form-group">
+
+          <label>Capacidad Liquida</label>
+
+ <div id="unidad" hidden [hidden]="habilitado">
+            <input type="number" class="form-control" formControlName="Capacidad2"  [(ngModel)]="almac.Capacidad2" name="Capacidad2"
+              placeholder="Capacidad 2" class="form-control" id="inputcap" minlength="0" required="">
+         
+              <div *ngIf="submitted && f.Capacidad2.errors" class="invalid-feedback">
+                <div *ngIf="f.Capacidad2.errors.required"> Capacidad es requerido</div>
+                <div *ngIf="f.Capacidad2.errors.pattern"> Capacidad solo puede contener numeros</div>
+              </div>
+         
+            </div>
+
+        </div>
+
+        <div class="form-group">
+
+          <label>Unidad de medida</label>
+
+ <input type="text" class="form-control" (change)="onChange($event)" formControlName="UnidadMedida" [(ngModel)]="almac.UnidadMedida"
             name="UnidadMedida" placeholder="Unidad de medida" minlength="0" required="">
 
-          <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
-          <select name="Estado" [(ngModel)]="almac.Estado" style="width: 100%;" class="form-control" minlength="0" required="">
+            <div *ngIf="submitted && f.UnidadMedida.errors" class="invalid-feedback">
+              <div *ngIf="f.UnidadMedida.errors.required"> UnidadMedida es requerido</div>
+              <div *ngIf="f.UnidadMedida.errors.pattern"> UnidadMedida solo puede contener letras minusculas o
+                mayúsculas</div>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+          <label>estado</label>
+
+           <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
+           <select name="Estado" formControlName="Estado" [(ngModel)]="almac.Estado" style="width: 100%;" class="form-control" minlength="0" required="">
             <option [value]="1">Habilitado</option>
             <Option [value]="0">Deshabilitado</Option>
           </select>
-          
 
-            <select name="idnivel2" class="form-control" style="width: 100%;" [(ngModel)]="almac.idCentroDistribucion"
-            options="options" placeholder="nivel" 
-            minlength="0" required="">
-            <option *ngFor="let do of centrod" [value]="do.idCentroDistribucion">{{do.Nombre }} </option>
-        
-            </select>
-
-
-            <select name="idnivel1" class="form-control" style="width: 100%;" [(ngModel)]="almac.idCentrosZonales"
-            options="options" placeholder="nivel" 
-            minlength="0" required="">
-            <option *ngFor="let do of cen" [value]="do.idCentrosZonales">{{do.NombreCentroZonal }} </option>
-        
-            </select>
-
-
-          <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
-          <button class="btn btn-success btn-block" type="submit" (click)="updateDatos()"
-            routerLink="/modifcaralmaceni">
-            Guardar
-          </button>
+          <div *ngIf="submitted && f.Estado.errors" class="invalid-feedback">
+            <div *ngIf="f.Estado.errors.required">Estado es requerido</div>
         </div>
+
+        </div>
+
+        <div class="form-group">
+
+          <label>Centro distribucion</label>
+
+          <select name="idnivel2" class="form-control" style="width: 100%;" [(ngModel)]="almac.idCentroDistribucion"
+          options="options" placeholder="nivel" 
+          minlength="0" required="" formControlName="idCentroDistribucion" >
+          <option *ngFor="let do of centrod" [value]="do.idCentroDistribucion">{{do.Nombre }} </option>
+      
+          </select>
+
+          <div *ngIf="submitted && f.idCentroDistribucion.errors" class="invalid-feedback">
+            <div *ngIf="f.idCentroDistribucion.errors.required">Centro de distribucion es requerido</div>
+            
+          </div>
+
+
+
+        </div>
+
+        <div class="form-group">
+
+          <label>Centro zonal</label>
+
+          <select name="idnivel1" class="form-control" style="width: 100%;" [(ngModel)]="almac.idCentrosZonales"
+          options="options" placeholder="nivel" 
+          minlength="0" required="" formControlName="idCentrosZonales" >
+          <option *ngFor="let do of cen" [value]="do.idCentrosZonales">{{do.NombreCentroZonal }} </option>
+      
+          </select>
+
+          <div *ngIf="submitted && f.idCentrosZonales.errors" class="invalid-feedback">
+            <div *ngIf="f.idCentrosZonales.errors.required"> Nombre centro zonal es requerido</div>
+            
+          </div>
+
+        </div>
+
+        <div class="text-center">
+
+  <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
+  <button type="submit" class="btn btn-success btn-block"
+  routerLink="/modifcaralmaceni">
+  Guardar
+</button>
+
+        </div>
+
       </form>
     </div>
   </div>

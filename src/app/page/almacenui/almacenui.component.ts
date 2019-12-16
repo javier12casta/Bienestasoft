@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { Uds } from 'src/app/interfaces/uds';
 import { Inventario } from 'src/app/interfaces/inventario';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-almacenui',
@@ -107,9 +108,47 @@ export class AlmacenuiComponent implements OnInit {
      
   }
 
-  constructor(private Service: ServicioService,private router:Router) { }
+  constructor(private Service: ServicioService,private router:Router,
+    private fb: FormBuilder) { }
+
+    
+    czForm: FormGroup;
+    czForm1: FormGroup;
+  submitted = false;
+
+  onSubmit() {
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.czForm.valid) {
+      
+   
+        this.onClickMe();
+      
+    } else if(this.czForm.invalid) {
+      this.showMenssagenull();
+    }
+
+    // display form values on success
+    console.log('Formulario', this.czForm.value);
+  }
+
+
 
   ngOnInit() {
+
+    this.czForm = this.fb.group({
+      NumeroExterno: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú 0-9]*$')]],
+      Nombre: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
+      Responsable: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
+      Capacidad: ['', [ Validators.pattern('^[0-9]*$')]],
+      Capacidad2: ['', [ Validators.pattern('^[0-9]*$')]],
+      UnidadMedida: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
+      Estado: ['', Validators.required],
+      idCentroDistribucion: ['', Validators.required],
+      idUDS: ['', Validators.required],
+
+    });
 
     this.Service.getcentrodistribucion()
     .subscribe(res => {
@@ -135,6 +174,13 @@ export class AlmacenuiComponent implements OnInit {
 
 
   }
+
+  onReset() {
+    this.submitted = false;
+    this.czForm.reset();
+  }
+
+  get f() { return this.czForm.controls; }
 
   showMenssage(){
     Swal.fire({
@@ -168,4 +214,13 @@ inventario($event) {
   }    
   }
 
+  showMenssagenull() {
+    Swal.fire({
+      title: 'Error',
+      text: 'Campos vacios',
+      type: 'warning',
+      confirmButtonText: 'Entendido'
+    });
+  }
+  
 }

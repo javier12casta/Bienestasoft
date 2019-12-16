@@ -17,7 +17,7 @@
 
                       <label>Número Externo</label>
 
-                      <input type="text" class="form-control" [(ngModel)]="cend.NumeroExterno" name="numeroext"
+                      <input type="number" class="form-control" [(ngModel)]="cend.NumeroExterno" name="numeroext"
                       placeholder="número Externo" class="form-control" formControlName="NumeroExterno" minlength="0" required="" [ngClass]="{ 'is-invalid': submitted && f.NumeroExterno.errors }">
                       <div *ngIf="submitted && f.NumeroExterno.errors" class="invalid-feedback">
                           <div *ngIf="f.NumeroExterno.errors.required">Número Externo es requerido</div>

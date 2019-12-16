@@ -7,7 +7,6 @@ import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Centrozonal } from 'src/app/interfaces/centrozonal';
 
-
 @Component({
   selector: 'app-modificardatosnutricionalesm',
   templateUrl: './modificardatosnutricionalesm.component.html',
@@ -15,10 +14,10 @@ import { Centrozonal } from 'src/app/interfaces/centrozonal';
 })
 export class ModificardatosnutricionalesmComponent implements OnInit {
 
-  public datosvarios: Datosvarios[] = [];
-  listamaestro:string[]=["0","1"];
-  unidadm:string[]=["g","personas"];
-  public cen1: Centrozonal[] = [];
+   public cen1: Centrozonal[] = [];
+  
+    listamaestro:string[]=["0","1"];
+    unidadm:string[]=["g","personas"];
 
   constructor(
     private activeRoute: ActivatedRoute,
