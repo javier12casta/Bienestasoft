@@ -25,7 +25,6 @@ export class Modificarusuariosv2mComponent implements OnInit {
   public cen: Centrozonal[] = [];
   public pe: Puntoentrega[] = [];
   public ud: Uds[] = [];
-  tipo = "text";
 
   x: Usuarios = {
     Nombres: '',
@@ -219,12 +218,6 @@ export class Modificarusuariosv2mComponent implements OnInit {
       type: 'error',
       confirmButtonText: 'Entendido'
     });
-  }
-
-  focusFunction() {
-
-    this.tipo = "date";
-
   }
 
   ver() {

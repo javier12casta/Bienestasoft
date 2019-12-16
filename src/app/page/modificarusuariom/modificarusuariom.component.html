@@ -96,9 +96,9 @@
         <div class="form-group">
           <label>Fecha de ingreso</label>
 
-          <input type="{{tipo}}" placeholder="Fecha de Ingreso" formControlName="FechaIngreso" class="form-control"
+          <input type="date" placeholder="Fecha de Ingreso" formControlName="FechaIngreso" class="form-control"
             [(ngModel)]="x.FechaIngreso" min="1900-01-01" max="2050-12-31"
-            [ngClass]="{ 'is-invalid': submitted && f.FechaIngreso.errors }" (focus)="focusFunction()" />
+            [ngClass]="{ 'is-invalid': submitted && f.FechaIngreso.errors }"/>
 
           <div *ngIf="submitted && f.FechaIngreso.errors" class="invalid-feedback">
             <div *ngIf="f.FechaIngreso.errors.required">Fecha Ingreso es requireda</div>

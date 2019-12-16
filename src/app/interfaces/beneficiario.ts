@@ -1,3 +1,6 @@
+export interface Id {
+  id:number
+}
 export interface Beneficiario {
 
     idBeneficiarios?: number,

@@ -25,7 +25,6 @@ export class Modificarusuariosv3mComponent implements OnInit {
   public cen: Centrozonal[] = [];
   public pe: Puntoentrega[] = [];
   public ud: Uds[] = [];
-  tipo="text";
 
   x: Usuarios = {
     Nombres: '',
@@ -222,11 +221,6 @@ onSubmit() {
     });
     }
 
-    focusFunction(){
-
-      this.tipo = "date";
-  
-      }
 
       ver() {
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Beneficiario } from 'src/app/interfaces/beneficiario';
+import { Beneficiario, Id } from 'src/app/interfaces/beneficiario';
 import { ServicioService } from 'src/app/servicio.service';
 import { Acudientes } from 'src/app/interfaces/acudiente';
 import Swal from 'sweetalert2';
@@ -66,7 +66,10 @@ export class BeneficiariosmpiComponent implements OnInit {
     FechaIngreso: null,
     RegistroBiometrico: '',
   };
-
+  idbene: Id = {
+    id: null,
+  };
+  idmax = 0;
   bio: Biometrico = {
     Huella: '',
   };
@@ -170,6 +173,21 @@ export class BeneficiariosmpiComponent implements OnInit {
  }, err => {
    console.log(err);
  });
+
+     //traer id ultimo beneficiarios
+     this.Service.getBeneficiariosMaxId()
+     .subscribe(res => {
+       this.idbene = Object(res);
+       console.log('idbeneficiario', this.idbene);
+       console.log('idbeneficiario', this.idbene[0]["id"]);
+       this.idmax = this.idbene[0]["id"];
+       console.log('idbeneficiario numero', this.idmax);
+       this.y.idBeneficiarios = this.idmax + 1;
+       console.log('idbeneficiario y numero', this.y.idBeneficiarios);
+
+     }, err => {
+       console.log(err);
+     });
 
  this.Service.getPunto()
  .subscribe(res => {

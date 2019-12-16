@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 import { Puntoentrega } from './interfaces/puntoentrega';
 import { Usuarios } from './interfaces/usuarios';
 import { InUsuarios } from './interfaces/inhabilitarusuarios';
-import { Beneficiario } from './interfaces/beneficiario';
+import { Beneficiario, Id } from './interfaces/beneficiario';
 import { Beneficiariot } from './interfaces/beneficiariot';
 import { InBeneficiario } from './interfaces/inhabilitarBenefiario';
 import { Uds } from './interfaces/uds';
@@ -375,6 +375,11 @@ export class ServicioService {
     return this.http.get<[Beneficiario]>(path);
   }
 
+  getBeneficiariosMaxId() {
+    const path = `${this.api}/beneficiario/id`;
+    return this.http.get<[Id]>(path);
+  }
+
   getBeneficiariosu() {
     const path = `${this.api}/beneficiario/beneficiariosu`;
     return this.http.get<[Beneficiariot]>(path);
@@ -421,6 +426,10 @@ export class ServicioService {
   getAcudientes() {
     const path = `${this.api}/acudiente`;
     return this.http.get<[Acudientes]>(path);
+  }
+
+  getAcudientesid(id: string) {
+    return this.http.get(`${this.api}/acudiente/${id}`);
   }
 
   getAcudientesA() {

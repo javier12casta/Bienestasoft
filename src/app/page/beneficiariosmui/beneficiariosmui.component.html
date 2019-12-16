@@ -9,7 +9,7 @@
   
         <form [formGroup]="beForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
-            <label>Seleccione punto de entrega</label>
+            <label>Seleccione la unidad de servicio</label>
             <select formControlName="idUDS" class="form-control" [(ngModel)]="x.idUDS"
               [ngClass]="{ 'is-invalid': submitted && f.idUDS.errors }">
               <option *ngFor="let udss of ud" [value]="udss.idUDS">{{udss.NombreUDS}}</option>
