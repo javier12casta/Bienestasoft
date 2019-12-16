@@ -12,7 +12,7 @@
           <label>Número Externo</label>
 
 
-          <input type="number" class="form-control" formControlName="NumeroExterno" [(ngModel)]="almac.NumeroExterno" name="numeroext"
+          <input type="text" class="form-control" formControlName="NumeroExterno" [(ngModel)]="almac.NumeroExterno" name="numeroext"
             placeholder="Número Externo" class="form-control" id="inputnext" minlength="0" required="">
 
             <div *ngIf="submitted && f.NumeroExterno.errors" class="invalid-feedback">
@@ -106,7 +106,7 @@
           <label>estado</label>
 
            <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
-           <select name="Estado" formControlName="Estado" [(ngModel)]="almac.Estado" style="width: 100%;" class="form-control" minlength="0" required="">
+           <select name="Estado" formControlName="Estado" [(ngModel)]="almac.Estado" style="width: 100%;" class="form-control" >
             <option [value]="1">Habilitado</option>
             <Option [value]="0">Deshabilitado</Option>
           </select>

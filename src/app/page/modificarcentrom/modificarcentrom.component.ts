@@ -23,7 +23,7 @@ export class ModificarcentromComponent implements OnInit {
 
     cend: Centrodistribucion = {
 
-    idCentroDistribucion: 1,
+    idCentroDistribucion: 0,
     NumeroExterno:'',
     Nombre : '',
     Responsable : '' ,
@@ -56,9 +56,9 @@ export class ModificarcentromComponent implements OnInit {
 
 
     this.usForm = this.fb.group({
-      idCentroDistribucion: ['', Validators.required],
+     
       Estado: ['', Validators.required],
-      NumeroExterno: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
+      NumeroExterno: ['', [Validators.required,Validators.pattern('^[a-z A-Z ñ á é í ó ú 0-9]*$')]],
       Nombre: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
       Responsable: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
       Direccion: ['', [Validators.required, Validators.pattern('^[a-z A-Z 0-9 ñ á é í ó ú \-\_\´\¨\.\ #]*$')]],

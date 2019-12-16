@@ -5,7 +5,8 @@
       <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
         <div class="card" padding>
           <div class="card-body" padding>
-            <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
+            
+            <form [formGroup]="usForm" (ngSubmit)="onSubmit()">
               
               <div class="form-group">
 

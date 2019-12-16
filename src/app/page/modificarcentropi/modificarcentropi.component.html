@@ -6,8 +6,7 @@
       <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
         <div class="card" padding>
           <div class="card-body" padding>
-            <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
-              <div class="form-group">
+          
       
                   <form [formGroup]="usForm" (ngSubmit)="onSubmit()">
 
@@ -101,9 +100,9 @@
 
                                       <label>Estado</label>
                                       <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
-                                      <select formControlName="Estado" [(ngModel)]="cend.Estado" style="width: 100%;" class="form-control" minlength="0" required="">
+                                      <select formControlName="Estado" [(ngModel)]="cend.Estado" style="width: 100%;" class="form-control" >
                                         <option [value]="1">Habilitado</option>
-                                        <Option [value]="0">Inhabilitado</Option>
+                                        <Option [value]="0">Deshabilitado</Option>
                                       </select>
 
                                       <div *ngIf="submitted && f.Estado.errors" class="invalid-feedback">
@@ -146,8 +145,6 @@
                   </form>
                  
             </div>
-          </form>
-          </div>
         </div>
       </div>
     

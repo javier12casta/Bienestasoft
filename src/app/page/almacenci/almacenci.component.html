@@ -12,7 +12,7 @@
 
           <span>Número externo</span>
           <h2></h2>
-          <input type="number" class="form-control" formControlName="NumeroExterno" [(ngModel)]="x.NumeroExterno " name="numeroex"
+          <input type="text" class="form-control" formControlName="NumeroExterno" [(ngModel)]="x.NumeroExterno " name="numeroex"
             placeholder="Número externo" class="form-control" id="inputex" minlength="0" required="" [ngClass]="{ 'is-invalid': submitted && f.NumeroExterno.errors }">
             <div *ngIf="submitted && f.NumeroExterno.errors" class="invalid-feedback">
             <div *ngIf="f.NumeroExterno.errors.required"> Número externo es requerido</div>
@@ -116,8 +116,7 @@
          </select>
 
          <div *ngIf="submitted && f.Estado.errors" class="invalid-feedback">
-          <div *ngIf="f.Estado.errors.required"> Capacidad liquída  es requerido</div>
-          <div *ngIf="f.Estado.errors.pattern"> Capacidad liquída solo puede contener numeros </div>
+          <div *ngIf="f.Estado.errors.required"> Estado  es requerido</div>
         </div>
 
          <h2></h2>
@@ -128,15 +127,17 @@
           <span>Centro de distribución</span>
           <h2></h2>
 
-          <select name="idRegional" formControlName="idCentroDistribucion"  class="select-css" style="width: 100%;" [(ngModel)]="x.idCentroDistribucion"
-            options="options" placeholder="Centro de distribución" minlength="0" required="" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.idCentroDistribucion.errors }">
-            <option *ngFor="let do of cen" [value]="do.idCentroDistribucion">{{do.Nombre  }} </option>
+          <select name="idnivel1"  formControlName="idCentroDistribucion" class="form-control" style="width: 100%;" [(ngModel)]="x.idCentroDistribucion"
+          options="options" placeholder="nivel" 
+          minlength="0" required="" [ngClass]="{ 'is-invalid': submitted && f.idCentroDistribucion.errors }">
+          <option *ngFor="let do of cen " [value]="do.idCentroDistribucion">{{do.Nombre }} </option>
+      
           </select>
-
+   
           <div *ngIf="submitted && f.idCentroDistribucion.errors" class="invalid-feedback">
-            <div *ngIf="f.idCentroDistribucion.errors.required"> Centro de distribución es requerido</div>
-            
-          </div>
+           <div *ngIf="f.idCentroDistribucion.errors.required"> Centro zonal  es requerido</div>
+           
+         </div>
 
           <h2></h2>
 
@@ -162,20 +163,19 @@
 
         </div>
 
-      </form>
-
-           <form [formGroup]="czForm1" (ngSubmit)="onSubmit()">
+     
 
         <div class="form-group">
 
           <span >Inventario</span>
        <h2></h2>
+       
 
        <select name="select"  class="form-control" (change)="inventario($event)" [(ngModel)]="inv">
         <option value="0"> Crear inventario</option> 
         <option value="1" >Añadir inventario existente</option>
       </select>
-
+{{inv}}
       
        <h2></h2>
 
@@ -188,16 +188,12 @@
             <span >Seleccione inventario</span>
             <h2></h2>
   
-         <select name="idinventario" formControlName="Nombre" class="form-control" style="width: 100%;" [(ngModel)]="x.Nombre"
-         options="options" placeholder="nivel" 
-         minlength="0" required="" [ngClass]="{ 'is-invalid': submitted && f.Nombre.errors }">
+         <select name="idinventario" formControlName="Nombre" class="form-control"  [(ngModel)]="x.Nombre"
+         options="options" placeholder="nivel">
          <option *ngFor="let do of inv2" [value]="do.Nombre">{{do.Nombre }} </option>
         </select>
 
-        <div *ngIf="submitted && f.Nombre.errors" class="invalid-feedback">
-          <div *ngIf="f.Nombre.errors.required"> Nombre inventario  es requerido</div>
-         
-        </div>
+   
 
          <h2></h2>
   
@@ -207,7 +203,7 @@
 
         <div class="text-center">
 
-          <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
+          <button type="submit" class="btn btn-success btn-block">Aceptar</button>
 
           <h2></h2>
 

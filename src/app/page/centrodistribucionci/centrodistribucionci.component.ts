@@ -92,8 +92,8 @@ export class CentrodistribucionciComponent implements OnInit {
         Direccion : ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú 0-9]*$')]],
         Barrio : ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
         Telefono : ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('^[0-9]*$')]],
-        Estado : ['', Validators.required],
-        idCentrosZonales : ['', Validators.required],
+        Estado :['', Validators.required],
+        idCentrosZonales : ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú 0-9]*$')]],
   
       });
 

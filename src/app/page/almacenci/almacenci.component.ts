@@ -111,6 +111,23 @@ export class AlmacenciComponent implements OnInit {
      
   }
 
+  inventario($event) {
+ 
+    if(this.inv == 0){
+    
+    this.inv = 0;
+    this.habilitar = true;
+    
+    }
+    
+    if(this.inv == 1){
+    
+    this.inv = 1;
+    this.habilitar = false;
+    
+    }    
+    }
+
   constructor(private Service: ServicioService,private router:Router,
     private fb: FormBuilder) { }
 
@@ -153,11 +170,7 @@ export class AlmacenciComponent implements OnInit {
     });
 
 
-    this.czForm1 = this.fb.group({
-      
-      Nombre : ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú 0-9]*$')]],
-     
-    });
+   
 
 
 
@@ -212,22 +225,7 @@ export class AlmacenciComponent implements OnInit {
 
 }
 
-inventario($event) {
- 
-if(this.inv == 0){
 
-this.inv = 0;
-this.habilitar = true;
-
-}
-
-if(this.inv == 1){
-
-this.inv = 1;
-this.habilitar = false;
-
-}    
-}
 
 showMenssagenull() {
   Swal.fire({

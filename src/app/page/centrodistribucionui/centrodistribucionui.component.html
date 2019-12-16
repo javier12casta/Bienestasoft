@@ -11,169 +11,133 @@
 
 
               <div class="form-group">
-                
-                  <span >Seleccione uds</span>
-                  <h2></h2>
-                  
-                  
-               <select formControlName="idUDS" class="form-control" style="width: 100%;" [(ngModel)]="x.idUDS"
-               options="options" placeholder="nivel" 
-               minlength="0" required="">
-               <option *ngFor="let do of cen " [value]="do.idUDS">{{do.NombreUDS }} </option>
-           
-               </select>
-               <div *ngIf="submitted && f.idUDS.errors" class="invalid-feedback"></div>
-               <div *ngIf="f.idUDS.required">Uds es requerido</div>
-              
+                <label>Uds</label>
+                <select formControlName="idUDS" class="form-control" [(ngModel)]="x.idUDS"
+                  [ngClass]="{ 'is-invalid': submitted && f.idUDS.errors }">
+                  <option *ngFor="let do of cen" [value]="do.idUDS">{{do.NombreUDS}}</option>
+                </select>
+                <div *ngIf="submitted && f.idUDS.errors" class="invalid-feedback">
+                  <div *ngIf="f.idUDS.errors.required">Uds es requerido</div>
+                </div>
               </div>
 
 
-              <div class="form-group">
-                
+              <div class="form-group"> 
+                <span >Número externo</span>
+                <h2></h2>
+                <input type="text" class="form-control" [(ngModel)]="x.NumeroExterno" 
+                placeholder="Número externo" class="form-control" formControlName="NumeroExterno" minlength="0" required="" [ngClass]="{ 'is-invalid': submitted && f.NumeroExterno.errors }"/>
 
-                  <span >Número externo</span>
-                  <h2></h2>
-                  <input type="text" class="form-control" [(ngModel)]="x.NumeroExterno" name="numeroex"
-                  placeholder="numero Externo" class="form-control" formControlName="NumeroExterno" minlength="0" required="">
-              
-                  <div *ngIf="submitted && f.NumeroExterno.errors" class="invalid-feedback">
-                      <div *ngIf="f.NumeroExterno.errors.required">Número externo es requerido</div>
-                      <div *ngIf="f.NumeroExterno.errors.pattern"> El Número externo puede conterner letras minusculas,
-                        mayusculas , y Números</div>
-                    </div>
-
-              <h2></h2>
-              
+                <div *ngIf="submitted && f.NumeroExterno.errors" class="invalid-feedback">
+                    <div *ngIf="f.NumeroExterno.errors.required">Número externo es requerido</div>
+                    <div *ngIf="f.NumeroExterno.errors.pattern"> El Número externo puede conterner letras minusculas,
+                      mayusculas y Números</div>
                 </div>
 
+            <h2></h2>
+            </div>
 
-                <div class="form-group">
-                
-                    <span >Nombre</span>
+
+              <div class="form-group"> 
+                  <span >Nombre</span>
+                  <h2></h2>
+                  <input type="text" class="form-control" [(ngModel)]="x.Nombre" 
+                  placeholder="Nombre" class="form-control" formControlName="Nombre" minlength="0" required="" [ngClass]="{ 'is-invalid': submitted && f.Nombre.errors }"/>
+                  
+                  <div *ngIf="submitted && f.Nombre.errors" class="invalid-feedback">
+                    <div *ngIf="f.Nombre.errors.required"> Nombre centro de distribución es requerido</div>
+                    <div *ngIf="f.Nombre.errors.pattern"> Nombre centro distribución solo puede contener letras minusculas o
+                      mayúsculas</div>
+                  </div>
+              <h2></h2>
+                </div>
+
+                <div class="form-group"> 
+                    <span  >Estado del dato maestro</span>
                     <h2></h2>
-                    <input type="text" class="form-control" [(ngModel)]="x.Nombre" name="nombre"
-                    placeholder="Nombre" class="form-control" formControlName="Nombre" minlength="0" required="">
-            
-                    <div *ngIf="submitted && f.Nombre.errors" class="invalid-feedback">
-                        <div *ngIf="f.Nombre.errors.required"> Nombre centro de distribución es requerido</div>
-                        <div *ngIf="f.Nombre.errors.pattern"> Nombre centro distribución solo puede contener letras minusculas o
-                          mayúsculas</div>
-                      </div>
-
-                <h2></h2>
+                    
+                    <select name="estadomaestro" formControlName="Estado" [(ngModel)]="x.Estado" class="form-control" 
+                    minlength="0" required="" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Estado.errors }">
+                    <Option value="1"> Habilitado</Option>
+                    <option value="0"> Deshabilitado</option>
+                   </select>
+          
+                   <div *ngIf="submitted && f.Estado.errors" class="invalid-feedback">
+                    <div *ngIf="f.Estado.errors.required"> Estado  es requerido</div>
+                  </div>
                 
-              
+                    
+                    <h2></h2>
                   </div>
 
-
-                  <div class="form-group">
-                
-                      <span  >Estado del dato maestro</span>
+                  <div class="form-group"> 
+                      <span >Responsable</span>
                       <h2></h2>
-                      
-                      <select name="Estado" formControlName="Estado" [(ngModel)]="x.Estado" style="width: 100%;" class="form-control" minlength="0" required="">
-                        <option value="1"> Habilitado</option>
-                        <Option value="0">Deshabilitado</Option>
-                        </select>
-
-   <div *ngIf="submitted && f.Estado.errors" class="invalid-feedback">
-                                <div *ngIf="f.Estado.errors.required">Estado es requerido</div>
-                            </div>
-                      
-               
-                      
-                      <h2></h2>
-                
+                      <input type="text" class="form-control" [(ngModel)]="x.Responsable" formControlName="Responsable"
+                      placeholder="Responsable" class="form-control"  minlength="0" required="" [ngClass]="{ 'is-invalid': submitted && f.Responsable.errors }" />
+                  
+                      <div *ngIf="submitted && f.Responsable.errors" class="invalid-feedback">
+                        <div *ngIf="f.Responsable.errors.required">Responsable es requerido</div>
+                        <div *ngIf="f.Responsable.errors.pattern"> El responsable solo puede conterner letras minusculas o
+                          mayusculas</div>
+                      </div>
               
+                  <h2></h2>
                     </div>
 
-
-                    <div class="form-group">
-                
-                        <span >Responsable</span>
+                    <div class="form-group"> 
+                        <span >Dirección</span>
                         <h2></h2>
-                        <input type="text" class="form-control" [(ngModel)]="x.Responsable" formControlName="Responsable"
-                        placeholder="Responsable" class="form-control" id="inputres" minlength="0" required="">
-                    
-                <div *ngIf="submitted && f.Responsable.errors" class="invalid-feedback">
-                  <div *ngIf="f.Responsable.errors.required">Responsable es requireda</div>
-                  <div *ngIf="f.Responsable.errors.pattern"> El responsable solo puede conterner letras minusculas o
-                    mayusculas</div>
-                </div>
-
-                    <h2></h2>
-                
-              
-                      </div>
-
-
-                      <div class="form-group">
-                
-                          <span >Dirección</span>
-                          <h2></h2>
-                          <input type="text" class="form-control" [(ngModel)]="x.Direccion" formControlName="Direccion"
-                          placeholder="Direccion" class="form-control" id="dic" minlength="0" required="">
-                    
-                          <div *ngIf="submitted && f.Comuna.errors" class="invalid-feedback">
-                              <div *ngIf="f.Direccion.errors.required">Dirección es requireda</div>
-                              <div *ngIf="f.Direccion.errors.pattern"> La Dirección solo puede conterner letras minusculas o
-                                mayusculas y numeros  </div>
-                            </div>
-
-                            
-                          <h2></h2>
-                
-              
+                        <input type="text" class="form-control" [(ngModel)]="x.Direccion" formControlName="Direccion"
+                        placeholder="Direccion" class="form-control" minlength="0" required="" [ngClass]="{ 'is-invalid': submitted && f.Direccion.errors }" />
+                  
+                        <div *ngIf="submitted && f.Direccion.errors" class="invalid-feedback">
+                          <div *ngIf="f.Direccion.errors.required">Dirección es requerido</div>
+                          <div *ngIf="f.Direccion.errors.pattern"> La Dirección solo puede conterner letras minusculas o
+                            mayusculas y numeros  </div>
                         </div>
 
-                        <div class="form-group">
-                
-                            <span >Barrio</span>
-                            <h2></h2>
-                            <input type="text" class="form-control" [(ngModel)]="x.Barrio" formControlName="Barrio"
-                            placeholder="Barrio" class="form-control" id="bar" minlength="0" required="">
-
-                            <div *ngIf="submitted && f.Barrio.errors" class="invalid-feedback">
-                                <div *ngIf="f.Barrio.errors.required">Barrio es requireda</div>
-                                <div *ngIf="f.Barrio.errors.pattern"> El barrio solo puede conterner letras minusculas o
-                                  mayusculas</div>
-                              </div>
-
-
                         <h2></h2>
-                
-              
+                      </div>
+
+                      <div class="form-group"> 
+                          <span >Barrio</span>
+                          <h2></h2>
+                          <input type="text" class="form-control" [(ngModel)]="x.Barrio" formControlName="Barrio"
+                          placeholder="Barrio"  required="" minlength="0" [ngClass]="{'is-invalid': submitted && f.Barrio.errors }" />
+
+                          <div *ngIf="submitted && f.Barrio.errors" class="invalid-feedback">
+                            <div *ngIf="f.Barrio.errors.required">Barrio es requerido</div>
+                            <div *ngIf="f.Barrio.errors.pattern"> El barrio solo puede conterner letras minusculas o
+                              mayusculas</div>
                           </div>
 
-                          <div class="form-group">
-                
-                              <span >Teléfono</span>
-                              <h2></h2>
-                              
-                              
-                              <input type="number" class="form-control" [(ngModel)]="x.Telefono" formControlName="Telefono"
-                                placeholder="Telefono" class="form-control" minlength="0" required="">
-                              
-                                <div *ngIf="submitted && f.Telefono.errors" class="invalid-feedback">
-                                    <div *ngIf="f.Telefono.errors.required">Teléfono  es requiredo</div>
-                                    <div *ngIf="f.Telefono.errors.minlength"> Teléfono debe contener minimo 10 caracteres </div>
-                                    <div *ngIf="f.Telefono.errors.pattern">Teléfono solo puede conterner numeros</div>
-                                  </div>
+                      <h2></h2>
+                        </div>
 
-                                   <h2></h2>
-                
-              
-                            </div>
-
-
-                            <div class="text-center">
-                
-                                <button type="submit" class="btn btn-success btn-block">Aceptar</button>
-                
-              
+                        <div class="form-group"> 
+                            <span >Teléfono</span>
+                            <h2></h2>
+                            
+                            
+                            <input type="text" class="form-control" [(ngModel)]="x.Telefono" formControlName="Telefono"
+                              placeholder="Telefono"  required="" minlength="0" [ngClass]="{ 'is-invalid': submitted && f.Telefono.errors }" />
+                            
+                              <div *ngIf="submitted && f.Telefono.errors" class="invalid-feedback">
+                                <div *ngIf="f.Telefono.errors.required">Teléfono  es requerido</div>
+                                <div *ngIf="f.Telefono.errors.minlength"> Teléfono o debe contener minimo 10 caracteres
+                                </div>
+                                <div *ngIf="f.Telefono.errors.pattern">Teléfono  solo puede contener numeros</div>
                               </div>
+                            
+                                 <h2></h2>
+                          </div>
 
-
+                          <div class="text-center"> 
+                              <button type="submit" class="btn btn-success btn-block">Aceptar</button>
+                          
+                              <h2></h2>
+                            </div>
               
 
 
