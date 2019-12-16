@@ -5,7 +5,7 @@ import { Datosvarios } from '../../interfaces/datosvarios';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-
+import { Centrozonal } from 'src/app/interfaces/centrozonal';
 
 @Component({
   selector: 'app-modificardatosnutricionalesm',
@@ -14,9 +14,10 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 })
 export class ModificardatosnutricionalesmComponent implements OnInit {
 
-  public datosvarios: Datosvarios[] = [];
-  listamaestro:string[]=["0","1"];
-  unidadm:string[]=["g","personas"];
+   public cen1: Centrozonal[] = [];
+  
+    listamaestro:string[]=["0","1"];
+    unidadm:string[]=["g","personas"];
 
   constructor(
     private activeRoute: ActivatedRoute,

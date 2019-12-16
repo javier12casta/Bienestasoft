@@ -5,59 +5,84 @@
   <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
     <div class="card" padding>
       <div class="card-body" padding>
-        <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
-          <h1>Crear almacen </h1>
+        <form [formGroup]="czForm" (ngSubmit)="onSubmit()">
+
           <div class="form-group">
-  
+
             <span>Número externo</span>
             <h2></h2>
-            <input type="number" class="form-control" [(ngModel)]="x.NumeroExterno " name="numeroex"
+            <input type="number" class="form-control" formControlName="NumeroExterno" [(ngModel)]="x.NumeroExterno " name="numeroex"
               placeholder="Número externo" class="form-control" id="inputex" minlength="0" required="">
   
             <h2></h2>
-  
+
+
+           </div>
+
+           <div class="form-group">
+
             <span>Nombre almacén</span>
             <h2></h2>
-            <input type="text" class="form-control" [(ngModel)]="x.Nombre" name="nombre" placeholder="Nombre"
+            <input type="text" class="form-control" formControlName="Nombre" [(ngModel)]="x.Nombre" name="nombre" placeholder="Nombre"
               class="form-control" id="inputnom" minlength="0" required="">
   
             <h2></h2>
   
+
+          </div>
+
+          <div class="form-group">
+
             <span>Responsable</span>
             <h2></h2>
-            <input type="text" class="form-control" [(ngModel)]="x.Responsable" name="res" placeholder="Responsable"
+            <input type="text" class="form-control" formControlName="Responsable" [(ngModel)]="x.Responsable" name="res" placeholder="Responsable"
               class="form-control" id="inputres" minlength="0" required="">
             <h2></h2>
+
+          </div>
+
+          <div class="form-group">
+
             <span>Unidad de medida</span>
             <h2></h2>
-            <select name="unidadmedida" [(ngModel)]="x.UnidadMedida" (change)="onChange($event)" class="select-css" minlength="0" required="" class="form-control">
+            <select name="unidadmedida" formControlName="UnidadMedida"  [(ngModel)]="x.UnidadMedida" (change)="onChange($event)" class="select-css" minlength="0" required="" class="form-control">
               <option [value]="item" *ngFor="let item of unidadmedida">{{item}} </option>
             </select>
             <h2></h2>
-            
+
+          </div>
+
+          <div class="form-group">
+
             <span>Cantidad</span>
             <h2></h2>
-            <input type="number" class="form-control" [(ngModel)]="x.Capacidad" name="cap" placeholder="Capacidad"
+            <input type="number" class="form-control" formControlName="Capacidad" [(ngModel)]="x.Capacidad" name="cap" placeholder="Capacidad"
               class="form-control" id="inputcap" minlength="0" required="">
   
             <h2></h2>
-            
-            
+
+          </div>
+
+          <div class="form-group">
+
             <div id="unidad" hidden [hidden]="habilitado">
               <h2></h2>
               <span>Capacidad liquída</span>
               <h2></h2>
-              <input type="number" class="form-control" [(ngModel)]="x.Capacidad2" name="Capacidad2" placeholder="Capacidad 2"
+              <input type="number" class="form-control" formControlName="Capacidad2" [(ngModel)]="x.Capacidad2" name="Capacidad2" placeholder="Capacidad 2"
                 class="form-control" id="inputcap" minlength="0" required="">
     
               <h2></h2>
             </div>
-  
-  
+
+          </div>
+
+          <div class="form-group">
+
             <span>Estado del dato maestro</span>
             <h2></h2>
   
-            <select name="estadomaestro" [(ngModel)]="x.Estado" class="form-control" 
+            <select name="estadomaestro" formControlName="Estado" [(ngModel)]="x.Estado" class="form-control" 
           minlength="0" required="" class="form-control">
           <Option value="1"> Habilitado</Option>
           <option value="0"> Deshabilitado</option>
@@ -65,21 +90,29 @@
   
   
             <h2></h2>
-  
+
+          </div>
+
+          <div class="form-group">
+
             <span>Centro de distribución</span>
             <h2></h2>
   
-            <select name="idRegional" class="select-css" style="width: 100%;" [(ngModel)]="x.idCentroDistribucion"
+            <select name="idRegional" formControlName="idCentroDistribucion" class="select-css" style="width: 100%;" [(ngModel)]="x.idCentroDistribucion"
               options="options" placeholder="centro de distribucion" minlength="0" required="" class="form-control">
               <option *ngFor="let do of cen" [value]="do.idCentroDistribucion">{{do.Nombre  }} </option>
             </select>
             <h2></h2>
-  
+
+          </div>
+
+          <div class="form-group">
+
             <span >Seleccione uds</span>
             <h2></h2>
             
             
-         <select name="idnivel1" class="form-control" style="width: 100%;" [(ngModel)]="x.idUDS"
+         <select name="idnivel1" formControlName="idUDS" class="form-control" style="width: 100%;" [(ngModel)]="x.idUDS"
          options="options" placeholder="nivel" 
          minlength="0" required="">
          <option *ngFor="let do of cen1 " [value]="do.idUDS">{{do.NombreUDS }} </option>
@@ -87,40 +120,50 @@
          </select>
          <h2></h2>
 
-         <span >Inventario</span>
-         <h2></h2>
-  
-         <select name="select" class="form-control" (change)="inventario($event)" [(ngModel)]="inv">
-          <option value="0"> Crear inventario</option> 
-          <option value="1" >Añadir inventario existente</option>
-        </select>
-  
-         <h2></h2>
-  
-         <div id="unidad" hidden [hidden]="habilitar">
-  
-            <span >Seleccione inventario</span>
-            <h2></h2>
-  
-         <select name="idinventario" class="form-control" style="width: 100%;" [(ngModel)]="x.Nombre"
-         options="options" placeholder="nivel" 
-         minlength="0" required="">
-         <option *ngFor="let do of inv2" [value]="do.Nombre">{{do.Nombre }} </option>
-        </select>
-         <h2></h2>
-  
-      </div>
-
-
-            <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
-  
-            <h2></h2>
-  
-  
-  
-  
           </div>
+
+          <div class="form-group">
+
+            <span >Inventario</span>
+            <h2></h2>
+     
+            <select name="select" class="form-control" (change)="inventario($event)" [(ngModel)]="inv">
+             <option value="0"> Crear inventario</option> 
+             <option value="1" >Añadir inventario existente</option>
+           </select>
+     
+            <h2></h2>
+
+          </div>
+
+          <div class="form-group">
+
+            <div id="unidad" hidden [hidden]="habilitar">
+  
+              <span >Seleccione inventario</span>
+              <h2></h2>
+    
+           <select name="idinventario" formControlName="Nombre" class="form-control" style="width: 100%;" [(ngModel)]="x.Nombre"
+           options="options" placeholder="nivel" 
+           minlength="0" required="">
+           <option *ngFor="let do of inv2" [value]="do.Nombre">{{do.Nombre }} </option>
+          </select>
+           <h2></h2>
+    
+        </div>
+
+        <div class="text-center">
+          
+          <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
+  
+          <h2></h2>
+
+
+          </div>
+        </div>
+
         </form>
+        
       </div>
     </div>
   </div>

@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { Centrozonal } from 'src/app/interfaces/centrozonal';
 import { Centrodistribucion } from '../../interfaces/centrodistribucion';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-modificaralmacenm',
@@ -19,7 +20,8 @@ export class ModificaralmacenmComponent implements OnInit {
   public centrod: Centrodistribucion[] = [];
 
   constructor(private activeRoute: ActivatedRoute,
-    private Service: ServicioService,private router:Router) { }
+    private Service: ServicioService,private router:Router,
+    private fb: FormBuilder) { }
 
     almac: Almacen = {
       idAlmacenes: 1,
@@ -34,9 +36,42 @@ export class ModificaralmacenmComponent implements OnInit {
 
       };
 
+      czForm: FormGroup;
+      submitted = false;
+    
+      onSubmit() {
+        this.submitted = true;
+    
+        // stop here if form is invalid
+        if (this.czForm.valid) {
+          
+            this.updateDatos();
+         
+           
+        } else if(this.czForm.invalid) {
+          this.showMenssagenull();
+        }
+    
+        // display form values on success
+        console.log('Formulario', this.czForm.value);
+      }
 
   ngOnInit() {
 
+    this.czForm = this.fb.group({  
+ 
+      NumeroExterno :['', [Validators.required,Validators.pattern('^[a-z A-Z ñ á é í ó ú 0-9]*$')]], 
+      Nombre: ['', [Validators.required,Validators.pattern('^[a-z A-Z ñ á é í ó ú 0-9]*$')]],
+      Responsable : ['', [Validators.required,Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
+      Capacidad  : ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+      Capacidad2  : ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+      UnidadMedida  : ['', [Validators.required,Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
+      Estado  :  ['', Validators.required],
+      idCentroDistribucion : ['', [Validators.required,Validators.pattern('^[a-z A-Z ñ á é í ó ú 0-9]*$')]],
+      idCentrosZonales  :['', [Validators.required,Validators.pattern('^[a-z A-Z ñ á é í ó ú 0-9]*$')]],
+   
+
+    });
     
     this.Service.getCentro()
     .subscribe(res => {
@@ -69,7 +104,12 @@ export class ModificaralmacenmComponent implements OnInit {
 
   }
 
+  onReset() {
+    this.submitted = false;
+    this.czForm.reset();
+  }
 
+  get f() { return this.czForm.controls; }
 
   showMenssage(){
     Swal.fire({
@@ -98,6 +138,13 @@ export class ModificaralmacenmComponent implements OnInit {
       );
   }
 
-
+  showMenssagenull() {
+    Swal.fire({
+      title: 'Error',
+      text: 'Campos vacios',
+      type: 'warning',
+      confirmButtonText: 'Entendido'
+    });
+  }
 
 }
