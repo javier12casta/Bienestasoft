@@ -5,6 +5,7 @@ import { Listadocursos } from '../../interfaces/listadocursos';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { Centrozonal } from 'src/app/interfaces/centrozonal';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-modificarlistadocm',
@@ -16,8 +17,11 @@ export class ModificarlistadocmComponent implements OnInit {
   public listacursos: Listadocursos[] = [];
   public cen1: Centrozonal[] = [];
 
-  constructor(private activeRoute: ActivatedRoute,
-    private Service: ServicioService, private router:Router) { }
+  constructor(
+    private activeRoute: ActivatedRoute,
+    private Service: ServicioService, 
+    private router:Router,
+    private fb: FormBuilder) { }
 
     listac: Listadocursos = {
 
@@ -32,9 +36,43 @@ export class ModificarlistadocmComponent implements OnInit {
       idCentrosZonales : 0,
   
       };
-
+  
+   //----Validaciones de campos
+   RefForm: FormGroup;
+   submitted = false;
+ 
+   onSubmit() {
+     this.submitted = true;
+ 
+     // stop here if form is invalid
+     if (this.RefForm.valid) {
+       
+         this.updateDatos();
+           
+     } else if (this.RefForm.invalid) {
+       this.showMenssagenull();
+     }
+   }
+   
+   onReset() {
+     this.submitted = false;
+     this.RefForm.reset();
+   }
+ 
+   get f() { return this.RefForm.controls; }
       
   ngOnInit() {
+
+
+    //Validador--------------------
+    this.RefForm = this.fb.group({
+
+      Centroz: ['', Validators.required],
+      agente: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú\(\)\.]*$')]],
+      Numdoc: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+      Estado: ['', Validators.required],
+      fecha: ['', Validators.required]
+    });
 
     const params = this.activeRoute.snapshot.params;
     console.log(params);
@@ -70,6 +108,15 @@ export class ModificarlistadocmComponent implements OnInit {
         window.location.reload();
     
       }
+    });
+  }
+
+  showMenssagenull() {
+    Swal.fire({
+      title: 'Error',
+      text: 'Campos inválidos',
+      type: 'warning',
+      confirmButtonText: 'Entendido'
     });
   }
 

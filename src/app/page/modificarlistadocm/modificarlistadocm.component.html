@@ -5,41 +5,71 @@
       <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
         <div class="card" padding>
           <div class="card-body" padding>
-            <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
-              <div class="form-group">
-    
-                    <input type="text" class="form-control" [(ngModel)]="listac.NombreAgenteE" name="nombreagente"
-                    placeholder="Nombre Agente" class="form-control" id="nombre" minlength="0" required="">
-    
-                    
-                    <input type="number" class="form-control" [(ngModel)]="listac.NumeroDocumento" name="numerodoc"
-                    placeholder="Numero Documento" class="form-control" id="numerodoc" minlength="0" required="">
-
-                    <input type="date" class="form-control" [(ngModel)]="listac.Fecha" name="fechai" placeholder="Fecha Ingreso" min="2018-01-01" max="2050-12-31" class="form-control" minlength="0" required="">
-    
       
-                <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
-                <select name="Estado" id="Estado" [(ngModel)]="listac.Estado" style="width: 100%;" class="form-control" minlength="0" required="">
-                  <option value="0">Deshabilitado</option>
-                  <Option value="1">Habilitado</Option>
+            <form [formGroup]="RefForm" (ngSubmit)="onSubmit()">
+              <h1>Modificar listado de cursos</h1>
+
+              <div class="form-group">
+                <label>Estado</label>
+                <select formControlName="Estado" class="form-control" [(ngModel)]="listac.Estado" name="Estado" id="Estado" [ngClass]="{ 'is-invalid': submitted && f.Estado.errors }">
+                    <option value="1">Habilitado</option>
+                    <option value="0">Inhabilitado</option>
                 </select>
-
-                <select name="idnivel1" class="form-control" style="width: 100%;" [(ngModel)]="listac.idCentrosZonales"
-           options="options" placeholder="nivel" 
-           minlength="0" required="">
-           <option *ngFor="let do of cen1 " [value]="do.idCentrosZonales">{{do.NombreCentroZonal }} </option>
-       
-           </select>
-    
-
-
-              <!-- Validacion para usar el mismo form  (click)="modificar ? updateDatos() : insertDatos()"-->
-              <button class="btn btn-success btn-block" type="submit" (click)="updateDatos()" routerLink="/modificarlistadoc">
-                Guardar
-              </button>
+                <div *ngIf="submitted && f.Estado.errors" class="invalid-feedback">
+                 <div *ngIf="f.Estado.errors.required">Estado es requerido</div>
+                </div>
             </div>
+    
+              <div class="form-group">
+                <label>Seleccione centro zonal</label>
+                <select formControlName="Centroz" placeholder="Centro zonal" class="form-control" options="options" [(ngModel)]="listac.idCentrosZonales" name="idnivel1" id="idnivel1" [ngClass]="{ 'is-invalid': submitted && f.Centroz.errors }" >
+                  <option *ngFor="let do of cen1 " [value]="do.idCentrosZonales">{{do.NombreCentroZonal }} </option>
+                </select>
+                <div *ngIf="submitted && f.Centroz.errors" class="invalid-feedback">
+                    <div *ngIf="f.Centroz.errors.required">El centro zonal es requerido</div>
+                </div>
+            </div> 
+    
+            <div class="form-group">
+              <label>Nombre de el agente educativo</label>
+              <input type="text" placeholder="Nombre agente educativo" formControlName="agente" class="form-control" [(ngModel)]="listac.NombreAgenteE" 
+              name="nombreagente" id="agentee" [ngClass]="{ 'is-invalid': submitted && f.agente.errors }"/>
+      
+              <div *ngIf="submitted && f.agente.errors" class="invalid-feedback">
+                <div *ngIf="f.agente.errors.required">El nombre de el agente es requerido</div>
+                <div *ngIf="f.agente.errors.pattern">El nombre de el agente solo puede contener letras minusculas o
+                  mayúsculas, parentesis </div>
+              </div>
+            </div>
+    
+          <div class="form-group">
+            <label>Número de documento</label>
+            <input type="text" placeholder="Número de documento" formControlName="Numdoc" class="form-control" [(ngModel)]="listac.NumeroDocumento" 
+            name="numerodoc" id="inputdoc" [ngClass]="{ 'is-invalid': submitted && f.Numdoc.errors }"/>
+    
+            <div *ngIf="submitted && f.Numdoc.errors" class="invalid-feedback">
+              <div *ngIf="f.Numdoc.errors.required">El número de documento es requerido</div>
+              <div *ngIf="f.Numdoc.errors.pattern">El número de documento solo puede contener numeros</div>
+            </div>
+          </div> 
+
+           <div class="form-group">
+                  <label>Fecha</label>
+                  <input type="date" placeholder="Fecha de ingreso" formControlName="fecha" class="form-control" [(ngModel)]="listac.Fecha" min="1900-01-01" max="2050-12-31" 
+                  name="fechai" id="fecha" [ngClass]="{ 'is-invalid': submitted && f.fecha.errors }"/>
+          
+                  <div *ngIf="submitted && f.fecha.errors" class="invalid-feedback">
+                    <div *ngIf="f.fecha.errors.required">La fecha es requerida</div>
+                  </div>
+                </div> 
+    
+    
+              <div class="text-center">
+                <button type="submit" class="btn btn-success btn-block">Guardar</button>
+              </div>
+      
             </form>
           </div>
         </div>
-      </div>
+      </div>  
       
