@@ -10,5 +10,6 @@ export interface Devolucionest {
     centrodistribucionorigen:string,
     centrodistribuciondestino :string,
     Nombrealmacen:string,
+    movito ? : string,
 }
     

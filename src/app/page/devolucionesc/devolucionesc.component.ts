@@ -37,6 +37,7 @@ export class DevolucionescComponent implements OnInit {
       idCentroDistribucionDestino  : 0,
       idAlmacenes  : 0,
       idTipoBienesterina  : 0,
+      motivo : '',
     
     };
 

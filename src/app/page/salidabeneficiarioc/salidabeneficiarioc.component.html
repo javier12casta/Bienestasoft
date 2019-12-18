@@ -5,123 +5,194 @@
 <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
   <div class="card" padding>
     <div class="card-body" padding>
-      <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
-        <div class="form-group">
-
-
-          <h1>Salida para beneficiario </h1>
+      <form [formGroup]="czForm" (ngSubmit)="onSubmit()">
+        <h1>Salida para beneficiario </h1>
           <h2></h2>
+        <div class="form-group">
 
           <span>Referencia bienestarina</span>
           <h2></h2>
 
-          <select name="idreferencia" class="select-css" style="width: 100%;" [(ngModel)]="sal.idTipoBienesterina"
-            options="options" placeholder="referencia" minlength="0" required="" class="form-control">
+          <select formControlName="idTipoBienesterina" [(ngModel)]="sal.idTipoBienesterina"
+             placeholder="referencia"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.idTipoBienesterina.errors }">
             <option *ngFor="let ud of tip" [value]="ud.idTipoBienesterina ">{{ud.TipoBienesterina }} </option>
           </select>
 
-          <br>
+          <div *ngIf="submitted && f.idTipoBienesterina.errors" class="invalid-feedback">
+            <div *ngIf="f.idTipoBienesterina.errors.required">Tipo de bienestarina es requerido</div>
+          </div>
+
+        </div>
+
+        <div class="form-group">
 
           <span>Centro de distribución de origen</span>
           <h2></h2>
 
-          <select name="idcentrodistribucion" class="select-css" style="width: 100%;"
-            [(ngModel)]="sal.idCentroDistribucion" options="options" placeholder="almacen" minlength="0" required="" class="form-control">
+          <select formControlName="idCentroDistribucion"
+            [(ngModel)]="sal.idCentroDistribucion"  placeholder="almacen"  class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.idCentroDistribucion.errors }">
             <option *ngFor="let ud of cen" [value]="ud.idCentroDistribucion">{{ud.Nombre }} </option>
           </select>
 
+          <div *ngIf="submitted && f.idCentroDistribucion.errors" class="invalid-feedback">
+            <div *ngIf="f.idCentroDistribucion.errors.required">Centro de distribución de origen es requerido</div>
+          </div>
+
           <h2></h2>
+
+        </div>
+
+        <div class="form-group">
 
           <span>Almacén de origen</span>
           <h2></h2>
 
-          <select name="idalmacen" class="select-css" style="width: 100%;" [(ngModel)]="sal.idAlmacenes"
-            options="options" placeholder="almacen" minlength="0" required="" class="form-control">
+          <select formControlName="idAlmacenes"  [(ngModel)]="sal.idAlmacenes"
+             placeholder="almacen"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.idAlmacenes.errors }">
             <option *ngFor="let ud of alm" [value]="ud.idAlmacenes">{{ud.Nombre }} </option>
           </select>
 
-          <br> 
+          <div *ngIf="submitted && f.idAlmacenes.errors" class="invalid-feedback">
+            <div *ngIf="f.idAlmacenes.errors.required">Almacén de origen es requerido</div>
+          </div>
 
-          <span> Inventario</span>
-          <h2></h2>
+        </div>
 
-          <select name="idinv" class="select-css" style="width: 100%;" (change)="onChange3($event)" [(ngModel)]="idinv"
-            options="options" placeholder="inventario" (change)="onChange1($event)" minlength="0" required="" class="form-control">
-            <option *ngFor="let ud of inv" [value]="ud.idInventario">{{ud.Nombre }} </option>
-          </select>
 
-          <h2></h2>
+        <div class="form-group">
 
           <span>Lote</span>
           <h2></h2>
-          <input type="text" class="form-control" [(ngModel)]="sal.lote" name="cane" placeholder="Lote"
-            class="form-control" id="inputen"  minlength="0" required="" class="form-control">
+          <input type="text" formControlName="lote" [(ngModel)]="sal.lote"  placeholder="Lote"
+             class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lote.errors }">
+
+             <div *ngIf="submitted && f.lote.errors" class="invalid-feedback">
+              <div *ngIf="f.lote.errors.required">Lote es requerido</div>
+              <div *ngIf="f.lote.errors.pattern">Lote solo puede conterner letras mayusculas , minusculas y numeros</div>
+            </div>
 
           <h2></h2>
 
+        </div>
+
+        <div class="form-group">
 
           <span>Fecha de vencimiento </span>
           <h2></h2>
-          <input type="date" class="form-control" [(ngModel)]="sal.fechavencimiento" name="fechai" placeholder="Fecha"
-            min="2018-01-01" max="2050-12-31" class="form-control" minlength="0" required="" class="form-control">
+          <input type="date" formControlName="fechavencimiento" [(ngModel)]="sal.fechavencimiento"  placeholder="Fecha"
+            min="2018-01-01" max="2050-12-31" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fechavencimiento.errors }">
 
+            <div *ngIf="submitted && f.fechavencimiento.errors" class="invalid-feedback">
+              <div *ngIf="f.fechavencimiento.errors.required">Fecha de vencimiento es requerido</div>
+            </div>
           <h2></h2>
+
+
+        </div>
+
+        <div class="form-group">
 
           <span>Unidad de medida</span>
           <h2></h2>
 
-          <select name="unidad" [(ngModel)]="sal.unidad" (change)="onChange3($event)" class="select-css" minlength="0" required="" class="form-control">
+          <select  [(ngModel)]="sal.unidad" formControlName="unidad" (change)="onChange3($event)" class="select-css" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.unidad.errors }">
             <option [value]="item" *ngFor="let item of unidadmedida">{{item}} </option>
           </select>
 
+          <div *ngIf="submitted && f.unidad.errors" class="invalid-feedback">
+            <div *ngIf="f.unidad.errors.required">Unidad de medida es requerido</div>
+          </div>
+
           <h2></h2>
 
+
+        </div>
+
+        <div class="form-group">
 
           <span>Cantidad</span>
           <h2></h2>
-          <input type="number" class="form-control" [(ngModel)]="sal.cantidad" name="cantidad" (keyup)="onKey($event)"
-            placeholder="Cantidad" class="form-control" id="inputen" required="" class="form-control">
+          <input type="text" class="form-control" formControlName="cantidad" [(ngModel)]="sal.cantidad"  (keyup)="onKey($event)"
+            placeholder="Cantidad" [ngClass]="{ 'is-invalid': submitted && f.cantidad.errors }" >
+
+            <div *ngIf="submitted && f.cantidad.errors" class="invalid-feedback">
+              <div *ngIf="f.cantidad.errors.required">Cantidad es requerido</div>
+              <div *ngIf="f.cantidad.errors.pattern">Cantidad solo puede conterner numeros</div>
+            </div>
 
           <h2></h2>
+
+
+        </div>
+
+        <div class="form-group">
 
           <div id="unidad" [hidden]="habilitado">
             <h2></h2>
             <span>Cantidad líquida</span>
             <h2></h2>
-            <input type="number" class="form-control" [(ngModel)]="sal.Cantidad2" name="Cantidad2"
-              placeholder="Cantidad líquida" (keyup)="onKey2($event)" class="form-control" id="inputcap" minlength="0" required="" class="form-control">
+            <input type="number" class="form-control" formControlName="Cantidad2" [(ngModel)]="sal.Cantidad2" 
+              placeholder="Cantidad líquida" (keyup)="onKey2($event)"  [ngClass]="{ 'is-invalid': submitted && f.Cantidad2.errors }">
+
+              <div *ngIf="submitted && f.Cantidad2.errors" class="invalid-feedback">
+                <div *ngIf="f.Cantidad2.errors.required">Cantidad líquida es requerido</div>
+                <div *ngIf="f.cantidad2.errors.pattern">Cantidad líquida solo puede conterner numeros</div>
+              </div>
 
             <h2></h2>
           </div>
 
+
+        </div>
+
+        <div class="form-group">
+
           <span>Beneficiario </span>
           <h2></h2>
 
-          <select name="idbenicbf" class="select-css" style="width: 100%;" [(ngModel)]="sal.idBeneficiarios"
-            options="options" placeholder="" minlength="0" required="" class="form-control">
+          <select  [(ngModel)]="sal.idBeneficiarios"
+            placeholder=""  class="form-control" formControlName="idBeneficiarios" [ngClass]="{ 'is-invalid': submitted && f.idBeneficiarios.errors }">
             <option *ngFor="let ud of ben" [value]="ud.idBeneficiarios">{{ud.PrimerNombre || ud.PrimerApellido}}
             </option>
           </select>
 
-          <h2></h2>
-
-          <span>Acudiente  </span>
-          <h2></h2>
-
-          <select name="idacuicbf" class="select-css" style="width: 100%;" [(ngModel)]="sal.idAcudientes"
-            options="options" placeholder="" minlength="0" required="" class="form-control">
-            <option *ngFor="let ud of acu" [value]="ud.idAcudientes">{{ud.Nombres || ud.Apellidos}} </option>
-          </select>
-
-          <h2></h2>
-          <br>
-          <button (click)="onClickMe()" class="btn btn-success btn-block">Aceptar</button>
+          <div *ngIf="submitted && f.idBeneficiarios.errors" class="invalid-feedback">
+            <div *ngIf="f.idBeneficiarios.errors.required">Beneficiario  es requerido</div>
+          </div>
 
           <h2></h2>
 
 
 
         </div>
+
+        <div class="form-group">
+
+          <span>Acudiente  </span>
+          <h2></h2>
+
+          <select   [(ngModel)]="sal.idAcudientes"
+            placeholder=""  class="form-control" formControlName="idAcudientes" [ngClass]="{ 'is-invalid': submitted && f.idAcudientes.errors }">
+            <option *ngFor="let ud of acu" [value]="ud.idAcudientes">{{ud.Nombres || ud.Apellidos}} </option>
+          </select>
+
+          <div *ngIf="submitted && f.idAcudientes.errors" class="invalid-feedback">
+            <div *ngIf="f.idAcudientes.errors.required">Acudiente  es requerido</div>
+          </div>
+
+          <h2></h2>
+          <br>
+
+
+        </div>
+
+        <div class="form-group">
+
+
+          <button type="submit" class="btn btn-success btn-block">Aceptar</button>
+
+        </div>
+
 
       </form>
     </div>

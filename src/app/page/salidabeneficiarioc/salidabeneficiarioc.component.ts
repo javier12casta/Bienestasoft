@@ -31,7 +31,7 @@ export class SalidabeneficiariocComponent implements OnInit {
   unidadmedida = [];
 
   constructor(private activeRoute: ActivatedRoute,
-    private Service: ServicioService, private router: Router) { }
+    private Service: ServicioService, private router: Router, private fb: FormBuilder) { }
 
   //para las operaciones capacidad
   public inventario: Inventario = {
@@ -72,8 +72,43 @@ export class SalidabeneficiariocComponent implements OnInit {
 
   idinv = 0;
 
+//----Validaciones de campos
+czForm: FormGroup;
+submitted = false;
+
+onSubmit() {
+  this.submitted = true;
+
+  // stop here if form is invalid
+  if (this.czForm.valid) {
+  
+      this.onClickMe();
+    
+  } else if(this.czForm.invalid) {
+    this.showMenssagenull();
+  }
+
+  // display form values on success
+  console.log('Formulario', this.czForm.value);
+}
 
   ngOnInit() {
+
+    this.czForm = this.fb.group({
+      
+    lote :['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
+    fechavencimiento : ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú 0-9]*$')]],
+    cantidad  : ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+    unidad : ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
+    idAcudientes : ['', Validators.required],
+    idBeneficiarios:['', Validators.required],
+    idCentroDistribucion : ['', Validators.required],
+    idAlmacenes  : ['', Validators.required],
+    idTipoBienesterina : ['', Validators.required],
+    Cantidad2: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+
+      });
+
 
     this.Service.getTipobienestarina()
       .subscribe(async (data) => {
@@ -124,6 +159,14 @@ export class SalidabeneficiariocComponent implements OnInit {
       );
 
   }
+
+  onReset() {
+    this.submitted = false;
+    this.czForm.reset();
+  }
+
+  get f() { return this.czForm.controls; }
+
 
   onClickMe() {
 
@@ -276,5 +319,13 @@ export class SalidabeneficiariocComponent implements OnInit {
     }
   }
 
+  showMenssagenull() {
+    Swal.fire({
+      title: 'Error',
+      text: 'Campos vacios',
+      type: 'warning',
+      confirmButtonText: 'Entendido'
+    });
+  }
 
 }

@@ -11,6 +11,7 @@ import { Centrodistribucion } from '../../interfaces/centrodistribucion';
 import { Almacen } from '../../interfaces/almacen';
 import { Inventario } from 'src/app/interfaces/inventario';
 
+
 @Component({
   selector: 'app-salidaconsumoc',
   templateUrl: './salidaconsumoc.component.html',
@@ -26,7 +27,7 @@ export class SalidaconsumocComponent implements OnInit {
   unidadmedida = [];
 
   constructor(private activeRoute: ActivatedRoute,
-    private Service: ServicioService, private router:Router) { }
+    private Service: ServicioService, private router:Router, private fb: FormBuilder) { }
 
      //para las operaciones capacidad
   public inventario: Inventario = {
@@ -66,7 +67,44 @@ export class SalidaconsumocComponent implements OnInit {
     };
     idinv = 0;
 
+    //----Validaciones de campos
+  czForm: FormGroup;
+  submitted = false;
+
+  onSubmit() {
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.czForm.valid) {
+    
+        this.onClickMe();
+      
+    } else if(this.czForm.invalid) {
+      this.showMenssagenull();
+    }
+
+    // display form values on success
+    console.log('Formulario', this.czForm.value);
+  }
+
+
   ngOnInit() {
+
+     
+     this.czForm = this.fb.group({
+      
+
+      lote :['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
+      fechavencimiento : ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú 0-9]*$')]],
+      cantidad  : ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+      cantidad2   : ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+      unidad : ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
+      fecharegistro  : ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú 0-9]*$')]],
+      idTipoBienesterina:['', Validators.required],
+      idCentroDistribucion : ['', Validators.required],
+      idAlmacenes  : ['', Validators.required],
+      });
+
 
     this.Service.getTipobienestarina()
     .subscribe(async (data) => {
@@ -101,6 +139,14 @@ export class SalidaconsumocComponent implements OnInit {
       );
 
   }
+
+  onReset() {
+    this.submitted = false;
+    this.czForm.reset();
+  }
+
+  get f() { return this.czForm.controls; }
+
 
   onClickMe(){
 
@@ -254,5 +300,13 @@ export class SalidaconsumocComponent implements OnInit {
     }
   }
 
-
+showMenssagenull() {
+    Swal.fire({
+      title: 'Error',
+      text: 'Campos vacios',
+      type: 'warning',
+      confirmButtonText: 'Entendido'
+    });
+  }
+  
 }
