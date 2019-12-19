@@ -24,7 +24,7 @@ export class ReferenciasbienestarinaComponent implements OnInit {
     
     TipoBienesterina : '',
     Codigo  : 0,
-    Estado : '',
+    Estado : 'Habilitado',
     Referencia : '',
     UnidadPrincipal : '',
     Cantidad : 0,
@@ -98,7 +98,7 @@ export class ReferenciasbienestarinaComponent implements OnInit {
       if (result.value) {
         
         this.router.navigate(['/referenciasbienestarinav']);
-        window.location.reload();
+        
       }
     });
   }

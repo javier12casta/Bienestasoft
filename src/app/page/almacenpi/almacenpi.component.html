@@ -11,7 +11,7 @@
 
             <span>Número externo</span>
             <h2></h2>
-            <input type="number" class="form-control" formControlName="NumeroExterno" [(ngModel)]="x.NumeroExterno " name="numeroex"
+            <input type="text" class="form-control" formControlName="NumeroExterno" [(ngModel)]="x.NumeroExterno " name="numeroex"
               placeholder="Número externo" class="form-control" id="inputex" minlength="0" required="">
               <div *ngIf="submitted && f.NumeroExterno.errors" class="invalid-feedback">
                 <div *ngIf="f.NumeroExterno.errors.required"> Número externo es requerido</div>
@@ -74,34 +74,35 @@
 
           <div class="form-group">
             
-            <span>Cantidad</span>
+            <div id="unidad" hidden [hidden]="habilitado1">
+              <span>Capacidad bolsas</span>
             <h2></h2>
-            <input type="number" class="form-control" formControlName="Capacidad" [(ngModel)]="x.Capacidad" name="cap" placeholder="Capacidad"
-              class="form-control" id="inputcap" minlength="0" required="">
+            <input type="text" class="form-control" formControlName="Capacidad" [(ngModel)]="x.Capacidad" name="cap" placeholder="Capacidad"
+              class="form-control" id="inputcap"  [ngClass]="{ 'is-invalid': submitted && f.Capacidad.errors }">
   
               <div *ngIf="submitted && f.Capacidad.errors" class="invalid-feedback">
-                <div *ngIf="f.Capacidad.errors.required"> Cantidad es requerido</div>
-                <div *ngIf="f.Capacidad.errors.pattern"> Cantidad solo puede contener numeros </div>
+                <div *ngIf="f.Capacidad.errors.required"> Cantidad bolsas es requerido</div>
+                <div *ngIf="f.Capacidad.errors.pattern"> Cantidad bolsas solo puede contener numeros </div>
               </div>
 
             <h2></h2>
             
 
-
+          </div>
           </div>
 
           <div class="form-group">
             
             <div id="unidad" hidden [hidden]="habilitado">
               <h2></h2>
-              <span>Capacidad liquída</span>
+              <span>Capacidad cajas</span>
               <h2></h2>
-              <input type="number" class="form-control" formControlName="Capacidad2" [(ngModel)]="x.Capacidad2" name="Capacidad2" placeholder="Capacidad 2"
-                class="form-control" id="inputcap" minlength="0" required="">
+              <input type="text" class="form-control" formControlName="Capacidad2" [(ngModel)]="x.Capacidad2" name="Capacidad2" placeholder="Capacidad 2"
+                class="form-control" id="inputcap" [ngClass]="{ 'is-invalid': submitted && f.Capacidad2.errors }">
     
                 <div *ngIf="submitted && f.Capacidad2.errors" class="invalid-feedback">
-                <div *ngIf="f.Capacidad2.errors.required"> Capacidad liquída  es requerido</div>
-                <div *ngIf="f.Capacidad2.errors.pattern"> Capacidad liquída solo puede contener numeros </div>
+                <div *ngIf="f.Capacidad2.errors.required"> Capacidad caja  es requerido</div>
+                <div *ngIf="f.Capacidad2.errors.pattern"> Capacidad caja solo puede contener numeros </div>
               </div>
 
               <h2></h2>
@@ -117,8 +118,8 @@
             <h2></h2>
   
             <select name="estadomaestro" formControlName="Estado" [(ngModel)]="x.Estado" class="form-control" 
-            minlength="0" required="" class="form-control">
-            <Option value="1"> Habilitado</Option>
+             class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Estado.errors }">
+            <option value="1"> Habilitado</option>
             <option value="0"> Deshabilitado</option>
            </select>
   
@@ -139,7 +140,7 @@
             <h2></h2>
   
             <select name="idRegional" formControlName="idCentroDistribucion" class="select-css" style="width: 100%;" [(ngModel)]="x.idCentroDistribucion"
-              options="options" placeholder="centro de distribucion" minlength="0" required="" class="form-control">
+              options="options" placeholder="centro de distribucion"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.idCentroDistribucion.errors }">
               <option *ngFor="let do of cen" [value]="do.idCentroDistribucion">{{do.Nombre  }} </option>
             </select>
 
@@ -162,7 +163,7 @@
             
          <select name="idnivel1" formControlName="idPuntoEntrega" class="form-control" style="width: 100%;" [(ngModel)]="x.idPuntoEntrega"
          options="options" placeholder="nivel" 
-         minlength="0" required="">
+         [ngClass]="{ 'is-invalid': submitted && f.idPuntoEntrega.errors }">
          <option *ngFor="let do of cen1 " [value]="do.idPuntoEntrega">{{do.NombrePE }} </option>
      
          </select>
@@ -179,41 +180,8 @@
         <form [formGroup]="czForm1" (ngSubmit)="onSubmit()">
 
 
-          <div class="form-group">
-            
-            <span >Inventario</span>
-            <h2></h2>
-     
-            <select name="select" class="form-control" (change)="inventario($event)" [(ngModel)]="inv">
-             <option value="0"> Crear inventario</option> 
-             <option value="1" >Añadir inventario existente</option>
-           </select>
-     
-            <h2></h2>
-
-          </div>
-
-          <div class="form-group">
-            
-            <div id="unidad" hidden [hidden]="habilitar">
-  
-              <span >Seleccione inventario</span>
-              <h2></h2>
-    
-           <select name="idinventario" formControlName="Nombre" class="form-control" style="width: 100%;" [(ngModel)]="x.Nombre"
-           options="options" placeholder="nivel" 
-           minlength="0" required="">
-           <option *ngFor="let do of inv2" [value]="do.Nombre">{{do.Nombre }} </option>
-          </select>
-
-          <div *ngIf="submitted && f.Nombre.errors" class="invalid-feedback">
-            <div *ngIf="f.Nombre.errors.required"> Nombre inventario  es requerido</div>
          
-          </div>
-           <h2></h2>
-    
-          </div>
-          </div>
+          
 
           <div class="text-center">
             
