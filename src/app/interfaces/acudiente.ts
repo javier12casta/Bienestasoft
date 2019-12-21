@@ -11,4 +11,5 @@ export interface Acudientes {
     FechaNacimiento : number,
     FechaIngreso : number,
     RegistroBiometrico :string,
+    RegistroBiometrico1 :string,
   }
