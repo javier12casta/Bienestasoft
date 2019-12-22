@@ -23,7 +23,7 @@
       </div>
 
         <div class="form-group">
-          <label>Tipo </label>
+          <label>Referencia </label>
           <input type="text" placeholder="Tipo bienestarina" formControlName="TipoBienesterina" class="form-control" [(ngModel)]="x.TipoBienesterina" name="ref" id="tipo"
             [ngClass]="{ 'is-invalid': submitted && f.TipoBienesterina.errors }"/>
 
@@ -42,18 +42,6 @@
           <div *ngIf="submitted && f.Codigo.errors" class="invalid-feedback">
             <div *ngIf="f.Codigo.errors.required">El código es requerido</div>
             <div *ngIf="f.Codigo.errors.pattern">El código solo puede contener numeros</div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Referencia</label>
-          <input type="text" placeholder="Referencia" formControlName="Referencia" class="form-control" [(ngModel)]="x.Referencia" 
-          name="ref" id="referencia" [ngClass]="{ 'is-invalid': submitted && f.Referencia.errors }"/>
-
-          <div *ngIf="submitted && f.Referencia.errors" class="invalid-feedback">
-            <div *ngIf="f.Referencia.errors.required">La referencia es requerido</div>
-            <div *ngIf="f.Referencia.errors.pattern">La referencia solo puede contener numeros y letras minusculas o
-              mayúsculas</div>
           </div>
         </div>
 
