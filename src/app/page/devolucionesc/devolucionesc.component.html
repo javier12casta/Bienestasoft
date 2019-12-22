@@ -1,106 +1,130 @@
 <nav class="navbar navbar-success bg-success">
-    <button class="btn btn-dark" routerLink="/devoluciones">Volver</button>
-  </nav>
-  
-  <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
-    <div class="card" padding>
-      <div class="card-body" padding>
-        <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate> 
-          <div class="form-group">
-  
-          
-            <h1>Gestion de devoluciones </h1>
-            <h2></h2>
-            
-            <span >Referencia Bienestarina</span>
-            <h2></h2>
+  <button class="btn btn-dark" routerLink="/devoluciones">Volver</button>
+</nav>
 
-            <select name="idreferencia" class="select-css" style="width: 100%;" [(ngModel)]="sal.idTipoBienesterina"
-            options="options" placeholder="referencia" minlength="0" required="" class="form-control">
-            <option *ngFor="let ud of tip" [value]="ud.idTipoBienesterina ">{{ud.TipoBienesterina }} </option>
+<div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+  <div class="card" padding>
+    <div class="card-body" padding>
+
+
+      <form [formGroup]="dev" (ngSubmit)="onSubmit()">
+        <h1>Gestión de devoluciones</h1>
+        <div class="form-group">
+          <label>Referencia bienestarina</label>
+          <select formControlName="idTipoBienesterina" class="form-control" [(ngModel)]="sal.idTipoBienesterina"
+            [ngClass]="{ 'is-invalid': submitted && f.idTipoBienesterina.errors }" (ngModelChange)="Referencia($event)">
+            <option *ngFor="let t of tip" [value]="t.idTipoBienesterina">{{t.TipoBienesterina}}</option>
           </select>
+          <div *ngIf="submitted && f.idTipoBienesterina.errors" class="invalid-feedback">
+            <div *ngIf="f.idTipoBienesterina.errors.required">Referencia es requerida</div>
+          </div>
+        </div>
 
-          <h2></h2>
+        <div class="form-group">
+          <label>Centro de distribución de origen</label>
+          <select formControlName="idCentroDistribucionOrigen" class="form-control"
+            [(ngModel)]="sal.idCentroDistribucionOrigen"
+            [ngClass]="{ 'is-invalid': submitted && f.idCentroDistribucionOrigen.errors }">
+            <option *ngFor="let c of cen" [value]="c.idCentroDistribucion">{{c.Nombre}}</option>
+          </select>
+          <div *ngIf="submitted && f.idCentroDistribucionOrigen.errors" class="invalid-feedback">
+            <div *ngIf="f.idCentroDistribucionOrigen.errors.required">Centro de distribución de origen es requerido
+            </div>
+          </div>
+        </div>
 
-          <span >Centro de distribucion de origen</span>
-          <h2></h2>
+        <div class="form-group">
+          <label>Almacen de origen</label>
+          <select formControlName="idAlmacenes2" class="form-control" [(ngModel)]="sal.idAlmacenes"
+            [ngClass]="{ 'is-invalid': submitted && f.idAlmacenes2.errors }">
+            <option *ngFor="let ud of alm" [value]="ud.idAlmacenes">{{ud.Nombre}}</option>
+          </select>
+          <div *ngIf="submitted && f.idAlmacenes2.errors" class="invalid-feedback">
+            <div *ngIf="f.idAlmacenes2.errors.required">Centro de distribución de origen es requerido</div>
+          </div>
+        </div>
 
-          <select name="idcentrodistribucion" class="select-css" style="width: 100%;" [(ngModel)]="sal.idCentroDistribucionOrigen"
-          options="options" placeholder="almacen" minlength="0" required="" class="form-control">
-          <option *ngFor="let ud of cen" [value]="ud.idCentroDistribucion">{{ud.Nombre }} </option>
-        </select>
+        <div class="form-group">
+          <label>Lote</label>
 
-        <h2></h2>
+          <input type="text" placeholder="Lote" formControlName="lote" class="form-control" [(ngModel)]="sal.lote"
+            [ngClass]="{ 'is-invalid': submitted && f.lote.errors }" />
 
-        <span >Almacen de origen</span>
-        <h2></h2>
+          <div *ngIf="submitted && f.lote.errors" class="invalid-feedback">
+            <div *ngIf="f.lote.errors.required">Lote es requireda</div>
+            <div *ngIf="f.lote.errors.pattern"> Lote solo puede conterner numeros</div>
+          </div>
+        </div>
 
-        <select name="idalmacen" class="select-css" style="width: 100%;" [(ngModel)]="sal.idAlmacenes"
-        options="options" placeholder="almacen" minlength="0" required="" class="form-control">
-        <option *ngFor="let ud of alm" [value]="ud.idAlmacenes">{{ud.Nombre }} </option>
-      </select>
+        <div class="form-group">
+          <label>Fecha de vencimiento</label>
 
-      <h2></h2>
+          <input type="date" placeholder="Fecha de Ingreso" formControlName="fechavencimiento" class="form-control"
+            [(ngModel)]="sal.fechavencimiento" min="1900-01-01" max="2050-12-31"
+            [ngClass]="{ 'is-invalid': submitted && f.fechavencimiento.errors }" />
 
-      <span >lote</span>
-      <h2></h2>
-      <input type="text" class="form-control" [(ngModel)]="sal.lote" name="cane"
-      placeholder="lote" class="form-control" id="inputen" minlength="0" required="">
-  
-  <h2></h2>
+          <div *ngIf="submitted && f.fechavencimiento.errors" class="invalid-feedback">
+            <div *ngIf="f.fechavencimiento.errors.required">Fecha de vencimiento es requireda</div>
+          </div>
+        </div>
 
+        <div class="form-group">
+          <label>Centro de distribución de destino</label>
+          <select formControlName="idCentroDistribucionDestino" class="form-control"
+            [(ngModel)]="sal.idCentroDistribucionDestino"
+            [ngClass]="{ 'is-invalid': submitted && f.idCentroDistribucionDestino.errors }">
+            <option *ngFor="let ud of cen" [value]="ud.idCentroDistribucion">{{ud.Nombre}}</option>
+          </select>
+          <div *ngIf="submitted && f.idCentroDistribucionDestino.errors" class="invalid-feedback">
+            <div *ngIf="f.idCentroDistribucionDestino.errors.required">Centro de distribución de origen es requerido
+            </div>
+          </div>
+        </div>
 
-            <span >Fecha de vencimiento </span>
-                <h2></h2>
-            <input type="date" class="form-control" [(ngModel)]="sal.fechavencimiento" name="fechai" placeholder="Fecha" min="1900-01-01" max="2050-12-31" class="form-control" minlength="0" required="">
-           
-            <h2></h2>
+        <div class="form-group">
+          <label>Presentación</label>
+          <select formControlName="unidad" class="form-control" [(ngModel)]="sal.unidad"
+            [ngClass]="{ 'is-invalid': submitted && f.unidad.errors }">
+            <option value="bolsa">bolsa</option>
+            <option value="caja">caja</option>
+          </select>
+          <div *ngIf="submitted && f.unidad.errors" class="invalid-feedback">
+            <div *ngIf="f.unidad.errors.required">Unidad es requerido</div>
+          </div>
+        </div>
 
+        <div class="form-group">
+          <label>Fecha de vencimiento</label>
 
-        <span >Unidad de medida</span>
-        <h2></h2>
+          <input type="date" placeholder="Fecha de Ingreso" formControlName="fecharegistro" class="form-control"
+            [(ngModel)]="sal.fecharegistro" min="1900-01-01" max="2050-12-31"
+            [ngClass]="{ 'is-invalid': submitted && f.fecharegistro.errors }" />
 
-        <select name="idalmacen" class="select-css" style="width: 100%;" [(ngModel)]="sal.unidad"
-        options="options" placeholder="almacen" minlength="0" required="" class="form-control">
-        <option *ngFor="let ud of tip" [value]="ud.idTipoBienesterina">{{ud.UnidadSecundaria }} </option>
-      </select>
+          <div *ngIf="submitted && f.fecharegistro.errors" class="invalid-feedback">
+            <div *ngIf="f.fecharegistro.errors.required">Fecha de registro es requireda</div>
+          </div>
+        </div>
 
-      <h2></h2>
+        <div class="form-group">
+          <label>Motivo</label>
 
-      <span >Centro de distribucion de destino</span>
-          <h2></h2>
+          <input type="text" placeholder="Motivo" formControlName="motivo" class="form-control" [(ngModel)]="sal.motivo"
+            [ngClass]="{ 'is-invalid': submitted && f.motivo.errors }" />
 
-          <select name="idcentrodistribucion" class="select-css" style="width: 100%;" [(ngModel)]="sal.idCentroDistribucionDestino"
-          options="options" placeholder="almacen" minlength="0" required="" class="form-control">
-          <option *ngFor="let ud of cen" [value]="ud.idCentroDistribucion">{{ud.Nombre }} </option>
-        </select>
+          <div *ngIf="submitted && f.motivo.errors" class="invalid-feedback">
+            <div *ngIf="f.motivo.errors.required">Motivo es requireda</div>
+            <div *ngIf="f.motivo.errors.pattern"> Motivo solo puede conterner numeros y letras minúsculas o mayúsculas
+            </div>
+          </div>
+        </div>
 
-        <h2></h2>
+        <br />
 
-        <span >Fecha de registro </span>
-        <h2></h2>
-    <input type="date" class="form-control" [(ngModel)]="sal.fecharegistro" name="fechai" placeholder="Fecha" min="1900-01-01" max="2050-12-31" class="form-control" minlength="0" required="">
-   
+        <div class="text-center">
+          <button type="submit" class="btn btn-success btn-block">Guardar</button>
+        </div>
 
-    <h2></h2>
-
-    <span >Motivo </span>
-    <h2></h2>
-<input type="text" class="form-control" [(ngModel)]="sal.motivo"  placeholder="Motivo">
-
-
-<h2></h2>
-
-                       <button (click)="onClickMe()" class="btn btn-success">Aceptar</button>
-                        
-                 <h2></h2>
-                 
-
-
-         </div>
-
-        </form>
-      </div>
+      </form>
     </div>
   </div>
-
+</div>

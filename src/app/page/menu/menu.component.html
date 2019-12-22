@@ -18,12 +18,17 @@
           <mat-icon class="icon">{{nav.icon}}</mat-icon>
           {{nav.name}}
         </a>
-        <h3 matSubheader style="color: black;">Entrega y recepción</h3>
+        <h3 matSubheader style="color: black;">Entrega</h3>
         <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of entrega" style="font-size:20px;">
           <mat-icon class="icon">{{nav.icon}}</mat-icon>
           {{nav.name}}
         </a>
-        <h3 matSubheader style="color: black;">Inventario</h3>
+        <h3 matSubheader style="color: black;">Recepción</h3>
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of recepcion" style="font-size:20px;">
+          <mat-icon class="icon">{{nav.icon}}</mat-icon>
+          {{nav.name}}
+        </a>
+        <h3 matSubheader style="color: black;">Gestión de inventarios</h3>
         <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of inventarios" style="font-size:20px;">
           <mat-icon class="icon">{{nav.icon}}</mat-icon>
           {{nav.name}}

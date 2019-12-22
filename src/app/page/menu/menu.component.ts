@@ -1486,6 +1486,7 @@ this.beneficiarios.push(create);
   }
   //carga permiso 6----------
   entrega = [];
+  recepcion = [];
   cargarpermiso6() {
     var centrostr = this.permisos.perEntrega;
     var array = centrostr.split("");
@@ -1495,7 +1496,7 @@ this.beneficiarios.push(create);
       var create = { name: "Entrega", route: "/entregasel", icon: "list_alt" };
      this.entrega.push(create);
 var create = { name: "Recepción", route: "/recepcion", icon: "list_alt" };
-     this.entrega.push(create);
+     this.recepcion.push(create);
 var create = { name: "Devoluciones", route: "/devoluciones", icon: "list_alt" };
      this.entrega.push(create);
       if (array[1] == "1") {
@@ -1510,7 +1511,7 @@ var create = { name: "Devoluciones", route: "/devoluciones", icon: "list_alt" };
 var create = { name: "Reporte entrega", route: "/reportentregab", icon: "list_alt" };
      this.entrega.push(create);
 var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "list_alt" };
-     this.entrega.push(create);
+     this.recepcion.push(create);
             if (array[4] == "1") {
               
             }
@@ -1540,7 +1541,7 @@ var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "li
 var create = { name: "Reporte entrega", route: "/reportentregab", icon: "list_alt" };
      this.entrega.push(create);
 var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "list_alt" };
-     this.entrega.push(create);
+     this.recepcion.push(create);
             if (array[4] == "1") {
               
             }
@@ -1575,7 +1576,7 @@ var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "li
 var create = { name: "Reporte entrega", route: "/reportentregab", icon: "list_alt" };
      this.entrega.push(create);
 var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "list_alt" };
-     this.entrega.push(create);
+     this.recepcion.push(create);
             if (array[4] == "1") {
               
             }
@@ -1606,7 +1607,7 @@ var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "li
 var create = { name: "Reporte entrega", route: "/reportentregab", icon: "list_alt" };
      this.entrega.push(create);
 var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "list_alt" };
-     this.entrega.push(create);
+     this.recepcion.push(create);
             if (array[4] == "1") {
               
             }
@@ -1645,7 +1646,7 @@ var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "li
 var create = { name: "Reporte entrega", route: "/reportentregab", icon: "list_alt" };
      this.entrega.push(create);
 var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "list_alt" };
-     this.entrega.push(create);
+     this.recepcion.push(create);
             if (array[4] == "1") {
               
             }
@@ -1674,7 +1675,7 @@ var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "li
 var create = { name: "Reporte entrega", route: "/reportentregab", icon: "list_alt" };
      this.entrega.push(create);
 var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "list_alt" };
-     this.entrega.push(create);
+     this.recepcion.push(create);
             if (array[4] == "1") {
               
             }
@@ -1709,7 +1710,7 @@ var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "li
 var create = { name: "Reporte entrega", route: "/reportentregab", icon: "list_alt" };
      this.entrega.push(create);
 var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "list_alt" };
-     this.entrega.push(create);
+     this.recepcion.push(create);
             if (array[4] == "1") {
               
             }
@@ -1739,7 +1740,7 @@ var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "li
 var create = { name: "Reporte entrega", route: "/reportentregab", icon: "list_alt" };
      this.entrega.push(create);
 var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "list_alt" };
-     this.entrega.push(create);
+     this.recepcion.push(create);
             if (array[4] == "1") {
               
             }
@@ -3097,6 +3098,5 @@ var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "li
  }
 
 }
-
 
 }
