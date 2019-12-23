@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioService } from 'src/app/servicio.service';
 import { Router } from '@angular/router';
-
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-centrodistribucion',
@@ -24,7 +24,6 @@ export class CentrodistribucionComponent implements OnInit {
 
   clickMessage='';
  
-
   siguiente(){
 
     if(this.listau == 'Centro Zonal'){
@@ -44,6 +43,20 @@ export class CentrodistribucionComponent implements OnInit {
       this.router.navigate(['/centrodistribucionu']);
       
     }
+
+    if(this.listau == ''){
+  
+    this.showMenssagenull();
+      
+    }
   }
 
+  showMenssagenull() {
+    Swal.fire({
+      title: 'Error',
+      text: 'Seleccione un nivel',
+      type: 'warning',
+      confirmButtonText: 'Entendido'
+    });
+  }
 }

@@ -3,6 +3,7 @@ import { Centrodistribucion } from 'src/app/interfaces/centrodistribucion';
 import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-recepcionbienestrarina',
@@ -37,8 +38,22 @@ export class RecepcionbienestrarinaComponent implements OnInit {
       this.router.navigate(['/recepcionv']);
     
     }
-  
 
+    if(this.lista == ''){
+  
+      this.showMenssagenull();
+        
+      }
+  
+  }
+
+  showMenssagenull() {
+    Swal.fire({
+      title: 'Error',
+      text: 'Seleccione un tipo de movimiento',
+      type: 'warning',
+      confirmButtonText: 'Entendido'
+    });
   }
 
 
