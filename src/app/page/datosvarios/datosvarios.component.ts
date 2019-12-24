@@ -68,9 +68,17 @@ export class DatosvariosComponent implements OnInit {
       Codigo:  ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       descripcion: ['', [Validators.required, Validators.pattern('^[0-9 a-z A-Z ñ á é í ó ú\(\)\.]*$')]],
       Valor: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
-      unidad: ['', Validators.required]
+      unidad: ['', Validators.required],
+      Czs: ['', Validators.required]
       
     });
+
+    this.Service.getCentro()
+  .subscribe(res => {
+    this.cen1 = res;
+  }, err => {
+    console.log(err);
+  });
 
   }
 
