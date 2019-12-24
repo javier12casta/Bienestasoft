@@ -1,42 +1,37 @@
 <nav class="navbar navbar-success bg-success">
-    <button class="btn btn-dark" routerLink="/menu">Volver</button>
-    <div>
-        <label>Crear Devolucion</label>
-    
-    {{fecha}}  
-    </div>
-    <button class="btn btn-dark" routerLink="/devolucionesc"> Crear </button>
-  </nav>
+  <button class="btn btn-dark" routerLink="/menu">Volver</button>
+  <div>
+    <label>Crear Devolución</label>
+    {{fecha}}
+  </div>
+  <button class="btn btn-dark" routerLink="/devolucionesc"> Crear </button>
+</nav>
 
-  <table class="table">
-    <thead class="thead-green">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">lote</th>
-        <th scope="col">fechavencimiento</th>       
-        <th scope="col">unidad</th>
-        <th scope="col">fecha registro</th>
-        <th scope="col">Tipo bienesterina</th>
-        <th scope="col">Centro distribucion de origen </th>
-        <th scope="col">Centro distribucion de destino</th>
-        <th scope="col">Almacen</th>
-    
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let sal of devolucion">
-        <th scope="row">{{sal.iddevoluciones}}</th>
-        <td>{{sal.lote}}</td>
-        <td>{{sal.fechavencimiento}}</td>
-        <td>{{sal.unidad}}</td>
-        <td>{{sal.fecharegistro}}</td>
-        <td>{{sal.Referencia}}</td>
-        <td>{{sal.centrodistribucionorigen}}</td>
-        <td>{{sal.centrodistribuciondestino}}</td>
-        <td>{{sal.Nombrealmacen  }}</td>
-
-
-      </tr>
-    </tbody>
-  </table>
-
+<table class="table">
+  <thead class="thead-green">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Lote</th>
+      <th scope="col">Fecha de vencimiento</th>
+      <th scope="col">Fecha de registro</th>
+      <th scope="col">Presentación</th>
+      <th scope="col">Tipo de bienesterina</th>
+      <th scope="col">Centro de distribución de origen </th>
+      <th scope="col">Centro de distribución de destino</th>
+      <th scope="col">Almacen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let sal of devolucion">
+      <th scope="row">{{sal.iddevoluciones}}</th>
+      <td>{{sal.lote}}</td>
+      <td>{{sal.fechavencimiento}}</td>
+      <td>{{sal.fecharegistro}}</td>
+      <td>{{sal.unidad}}</td>
+      <td>{{sal.Referencia}}</td>
+      <td>{{sal.centrodistribucionorigen}}</td>
+      <td>{{sal.centrodistribuciondestino}}</td>
+      <td>{{sal.Nombrealmacen  }}</td>
+    </tr>
+  </tbody>
+</table>

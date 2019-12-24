@@ -24,7 +24,7 @@ export class ReferenciasbienestarinaComponent implements OnInit {
     
     TipoBienesterina : '',
     Codigo  : 0,
-    Estado : '',
+    Estado : 'Habilitado',
     Referencia : '',
     UnidadPrincipal : '',
     Cantidad : 0,
@@ -61,7 +61,6 @@ export class ReferenciasbienestarinaComponent implements OnInit {
       Estado: ['', Validators.required],
       TipoBienesterina: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú\(\)\.)]*$')]],
       Codigo: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
-      Referencia:  ['', [Validators.required, Validators.pattern('^[0-9 a-z A-Z ñ á é í ó ú\(\)\.]*$')]],
       unidad: ['', Validators.required],
       Cantidad: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       unidadsecundario: ['', Validators.required],
@@ -77,7 +76,7 @@ export class ReferenciasbienestarinaComponent implements OnInit {
   
   onClickMe() {
 
-    
+    this.x.Referencia = this.x.TipoBienesterina;
     this.Service.postTipobienestarina(this.x).subscribe(res => {
       console.log(this.x);
       this.showMenssage();
@@ -98,7 +97,7 @@ export class ReferenciasbienestarinaComponent implements OnInit {
       if (result.value) {
         
         this.router.navigate(['/referenciasbienestarinav']);
-        window.location.reload();
+        
       }
     });
   }

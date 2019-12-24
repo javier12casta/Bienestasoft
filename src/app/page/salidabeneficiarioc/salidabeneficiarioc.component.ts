@@ -29,7 +29,7 @@ export class SalidabeneficiariocComponent implements OnInit {
   public ben: Beneficiario[] = [];
   public acu: Acudientes[] = [];
   unidadmedida = [];
-
+  u;
   constructor(private activeRoute: ActivatedRoute,
     private Service: ServicioService, private router: Router, private fb: FormBuilder) { }
 
@@ -328,4 +328,37 @@ onSubmit() {
     });
   }
 
+
+  unidad(){
+
+    
+
+    for(let ud of this.tip){
+
+      if(ud.TipoBienesterina == "Granular"){
+
+        this.u=0;
+  
+      }else{
+  
+       this.u=1;
+      }
+
+    }
+
+    if(this.u == 0){
+
+      this.unidadmedida.pop();
+      this.unidadmedida.push("g");
+
+    }else{
+
+       this.unidadmedida.pop();
+      this.unidadmedida.push("ml");
+    }
+    
+ 
+
+  }
+  
 }

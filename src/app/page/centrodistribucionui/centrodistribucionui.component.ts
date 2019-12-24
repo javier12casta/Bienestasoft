@@ -26,7 +26,7 @@ export class CentrodistribucionuiComponent implements OnInit {
     Direccion : '',
     Barrio : '',
     Telefono : 0,
-    Estado : 0,
+    Estado : 1,
     idUDS : null,
     idCentrosZonales : null,
     idPuntoEntrega : null,

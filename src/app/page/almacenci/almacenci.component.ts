@@ -35,7 +35,7 @@ export class AlmacenciComponent implements OnInit {
     Capacidad  : 0,
     Capacidad2  : 0,
     UnidadMedida  : '',
-    Estado  : 0,
+    Estado  : 1,
     idCentroDistribucion : 1,
 
     
@@ -54,7 +54,6 @@ export class AlmacenciComponent implements OnInit {
 
   onClickMe() {
 
-    if(this.inv == 0){
 
   this.y.Nombre = this.x.Nombre;
   this.y.unidad = this.x.UnidadMedida;
@@ -70,15 +69,9 @@ export class AlmacenciComponent implements OnInit {
           console.log(err);
         });
 
-     } 
-
-     if(this.inv == 1){
-
      
 
-
-    } 
-
+     
 
     this.Service.postalmacen(this.x).subscribe(res => {
      console.log(this.x);
@@ -97,36 +90,25 @@ export class AlmacenciComponent implements OnInit {
    }
 
    habilitado = true;
+   habilitado1 = false;
 
    onChange($event) {
     
     if(this.x.UnidadMedida == "g y ml"){
       this.habilitado = false;
+      this.habilitado1 = false;
    console.log(this.habilitado);
     }else if (this.x.UnidadMedida == "g") {
       this.habilitado = true;
+      this.habilitado1 = false;
     }else if (this.x.UnidadMedida == "ml") {
-      this.habilitado = true;
+      this.habilitado = false;
+      this.habilitado1 = true;
     }
      
   }
 
-  inventario($event) {
  
-    if(this.inv == 0){
-    
-    this.inv = 0;
-    this.habilitar = true;
-    
-    }
-    
-    if(this.inv == 1){
-    
-    this.inv = 1;
-    this.habilitar = false;
-    
-    }    
-    }
 
   constructor(private Service: ServicioService,private router:Router,
     private fb: FormBuilder) { }
@@ -171,7 +153,12 @@ export class AlmacenciComponent implements OnInit {
 
 
    
-
+    this.Service.getinventario()
+    .subscribe(res => {
+      this.inv2 = res;
+    }, err => {
+      console.log(err);
+    });
 
 
     this.Service.getcentrodistribucion()
@@ -190,12 +177,7 @@ export class AlmacenciComponent implements OnInit {
   });
 
 
-  this.Service.getinventario()
-  .subscribe(res => {
-    this.inv2 = res;
-  }, err => {
-    console.log(err);
-  });
+ 
 
 
   }

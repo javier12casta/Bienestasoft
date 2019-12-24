@@ -34,7 +34,7 @@ export class AlmacenpiComponent implements OnInit {
     Capacidad  : 0,
     Capacidad2  : 0,
     UnidadMedida  : '',
-    Estado  : 0,
+    Estado  : 1,
     idCentroDistribucion : 1,
 
     
@@ -54,9 +54,7 @@ export class AlmacenpiComponent implements OnInit {
 
   onClickMe() {
  
-
-    if(this.inv == 0){
-
+ 
       this.y.Nombre = this.x.Nombre;
       this.y.unidad = this.x.UnidadMedida;
       this.y.Cantidad = this.x.Capacidad;
@@ -70,19 +68,7 @@ export class AlmacenpiComponent implements OnInit {
             err => {
               console.log(err);
             });
-    
-         } 
-    
-         if(this.inv == 1){
-    
-         
-    
-    
-        } 
-
-
-
-
+  
     this.Service.postalmacen(this.x).subscribe(res => {
      console.log(this.x);
      this.showMenssage();
@@ -95,18 +81,21 @@ export class AlmacenpiComponent implements OnInit {
    }
 
    habilitado = true;
+   habilitado1 = false;
 
    onChange($event) {
     
     if(this.x.UnidadMedida == "g y ml"){
       this.habilitado = false;
+      this.habilitado1 = false;
    console.log(this.habilitado);
     }else if (this.x.UnidadMedida == "g") {
       this.habilitado = true;
+      this.habilitado1 = false;
     }else if (this.x.UnidadMedida == "ml") {
-      this.habilitado = true;
-    }
-     
+      this.habilitado = false;
+      this.habilitado1 = true;
+    }  
   }
 
   constructor(private Service: ServicioService,private router:Router,
@@ -123,7 +112,6 @@ export class AlmacenpiComponent implements OnInit {
     // stop here if form is invalid
     if (this.czForm.valid) {
       
-   
         this.onClickMe();
       
     } else if(this.czForm.invalid) {
@@ -205,22 +193,7 @@ export class AlmacenpiComponent implements OnInit {
 
 }
 
-inventario($event) {
- 
-  if(this.inv == 0){
-  
-  this.inv = 0;
-  this.habilitar = true;
-  
-  }
-  
-  if(this.inv == 1){
-  
-  this.inv = 1;
-  this.habilitar = false;
-  
-  }    
-  }
+
   
   showMenssagenull() {
     Swal.fire({

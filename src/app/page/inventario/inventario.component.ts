@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioService } from 'src/app/servicio.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-inventario',
@@ -35,10 +36,20 @@ export class InventarioComponent implements OnInit {
       
     }
   
-    
+    if(this.lista == ''){
   
+      this.showMenssagenull();
+        
+      }
     }
 
-  
+    showMenssagenull() {
+      Swal.fire({
+        title: 'Error',
+        text: 'Seleccione transacción',
+        type: 'warning',
+        confirmButtonText: 'Entendido'
+      });
+    }
 
 }

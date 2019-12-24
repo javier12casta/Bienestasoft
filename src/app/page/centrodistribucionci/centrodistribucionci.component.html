@@ -49,23 +49,17 @@
                     <h2></h2>
                       </div>
 
-                      <div class="form-group"> 
-                          <span  >Estado del dato maestro</span>
-                          <h2></h2>
-                          
-                          <select name="estadomaestro" formControlName="Estado" [(ngModel)]="x.Estado" class="form-control" 
-                          minlength="0" required="" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Estado.errors }">
-                          <Option value="1"> Habilitado</Option>
-                          <option value="0"> Deshabilitado</option>
-                         </select>
-                
-                         <div *ngIf="submitted && f.Estado.errors" class="invalid-feedback">
-                          <div *ngIf="f.Estado.errors.required"> Estado  es requerido</div>
+                      <div class="form-group">
+                        <label>Estado</label>
+                        <select formControlName="Estado" class="form-control" [(ngModel)]="x.Estado" [ngClass]="{ 'is-invalid': submitted && f.Estado.errors }">
+                            <option value="1">Habilitado</option>
+                            <option value="0">Deshabilitado</option>
+          
+                        </select>
+                        <div *ngIf="submitted && f.Estado.errors" class="invalid-feedback">
+                            <div *ngIf="f.Estado.errors.required">Estado es requerido</div>
                         </div>
-                      
-                          
-                          <h2></h2>
-                        </div>
+                    </div>
 
                         <div class="form-group"> 
                             <span >Responsable</span>

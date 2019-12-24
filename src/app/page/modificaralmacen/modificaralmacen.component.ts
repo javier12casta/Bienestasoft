@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioService } from 'src/app/servicio.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-modificaralmacen',
@@ -32,8 +33,24 @@ export class ModificaralmacenComponent implements OnInit {
       this.router.navigate(['/modificaralmacenu']);
       
     }
+
+    if(this.listau == ''){
+  
+      this.showMenssagenull();
+        
+      }
+
     }
 
+    showMenssagenull() {
+      Swal.fire({
+        title: 'Error',
+        text: 'Seleccione un nivel',
+        type: 'warning',
+        confirmButtonText: 'Entendido'
+      });
+    }
+    
   constructor(private Service:ServicioService , private router:Router) { }
 
   ngOnInit() {

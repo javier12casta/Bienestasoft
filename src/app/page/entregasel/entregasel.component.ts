@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-entregasel',
@@ -41,6 +42,21 @@ export class EntregaselComponent implements OnInit {
     
     }
 
+    if(this.salida == ''){
+  
+      this.showMenssagenull();
+        
+      }
+
+  }
+
+  showMenssagenull() {
+    Swal.fire({
+      title: 'Error',
+      text: 'Seleccione una salida de movimiento',
+      type: 'warning',
+      confirmButtonText: 'Entendido'
+    });
   }
 
 }

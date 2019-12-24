@@ -67,6 +67,7 @@ export class DatosGeneralesBeneficiarioComponent implements OnInit {
     FechaNacimiento: null,
     FechaIngreso: null,
     RegistroBiometrico: '',
+    RegistroBiometrico1: '',
     idBeneficiarios: null,
   };
 
@@ -207,6 +208,7 @@ export class DatosGeneralesBeneficiarioComponent implements OnInit {
       Departamento: ['', Validators.required],
       Parentesco: ['', Validators.required],
       RegistroBiometrico: ['', Validators.required],
+      RegistroBiometrico1: ['', Validators.required],
       NumeroDocumento: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       PrimerNombre: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
       Pais: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
