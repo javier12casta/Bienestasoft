@@ -96,7 +96,7 @@ export class TrasladocComponent implements OnInit {
       fechavencimiento: ['', Validators.required],
       fecharegistro: ['', Validators.required],
       unidad: ['', [Validators.required]],
-      cantidad: ['',[Validators.required, Validators.pattern('^[0-9]*$')]]
+      cantidad: ['', [Validators.required, Validators.pattern('^[0-9]*$')]]
     });
   }
   get f() { return this.dev.controls; }
@@ -114,12 +114,12 @@ export class TrasladocComponent implements OnInit {
 
   tiporef: TipoBienestarina = {
     idTipoBienesterina: 0,
-    TipoBienesterina : '',
-    Codigo : 0,
-    Estado : '',
-    Referencia : '',
-    UnidadPrincipal : '',
-    Cantidad : 0,
+    TipoBienesterina: '',
+    Codigo: 0,
+    Estado: '',
+    Referencia: '',
+    UnidadPrincipal: '',
+    Cantidad: 0,
     cantidad2: 0,
     UnidadSecundaria: '',
 
@@ -127,25 +127,26 @@ export class TrasladocComponent implements OnInit {
 
   inventario1: Inventario = {
     idInventario: null,
-    Nombre : '',
-    Cantidad : null,
-    Cantidad2 : null,
+    Nombre: '',
+    Cantidad: null,
+    Cantidad2: null,
     unidad: '',
   };
   inventario2: Inventario = {
     idInventario: null,
-    Nombre : '',
-    Cantidad : null,
-    Cantidad2 : null,
+    Nombre: '',
+    Cantidad: null,
+    Cantidad2: null,
     unidad: '',
   };
 
 
-  traerAlmacen(){
-    this.Service.getinventarioid(this.sal.idAlmacenesOrigen.toString()).subscribe( res => {
+  traerAlmacen() {
+    this.Service.getinventarioid(this.sal.idAlmacenesOrigen.toString()).subscribe(res => {
       this.inventario1 = Object(res);
       console.log('inventario origen', this.inventario1);
-    },err =>{
+      this.Referencia();
+    }, err => {
       console.log(err);
     });
   }
@@ -155,7 +156,12 @@ export class TrasladocComponent implements OnInit {
       this.tiporef = Object(res);
       console.log('Tipo de referencia', res);
       this.sal.unidad = this.tiporef.UnidadPrincipal;
-      this.traerAlmacen();
+
+      if(this.tiporef.Referencia == "Granular"){
+        this.sal.cantidad = this.inventario1.Cantidad;
+      }else if(this.tiporef.Referencia = "Liquida"){
+        this.sal.cantidad = this.inventario1.Cantidad2;
+      }
     });
   }
 
