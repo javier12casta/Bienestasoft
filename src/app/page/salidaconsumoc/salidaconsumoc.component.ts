@@ -24,7 +24,7 @@ export class SalidaconsumocComponent implements OnInit {
   public tip: TipoBienestarina[] = [];
   public cen: Centrodistribucion[] = [];
   public alm: Almacen[] = [];
-  unidadmedida = [];
+  unidadmedida = ["bolsa","caja"];
 
   constructor(private activeRoute: ActivatedRoute,
     private Service: ServicioService, private router:Router, private fb: FormBuilder) { }
@@ -64,6 +64,19 @@ export class SalidaconsumocComponent implements OnInit {
       idAlmacenes  : 0,
      
     
+    };
+
+    tiporef: TipoBienestarina = {
+      idTipoBienesterina: 0,
+      TipoBienesterina : '',
+      Codigo : 0,
+      Estado : '',
+      Referencia : '',
+      UnidadPrincipal : '',
+      Cantidad : 0,
+      cantidad2: 0,
+      UnidadSecundaria: '',
+  
     };
     idinv = 0;
 
@@ -146,6 +159,15 @@ export class SalidaconsumocComponent implements OnInit {
   }
 
   get f() { return this.czForm.controls; }
+
+  Referencia  (){
+    this.Service.getTipobienestarinaid(this.sal.idTipoBienesterina.toString()).subscribe(res => {
+      this.tiporef = Object(res);
+      console.log('Tipo de referencia',res);
+      this.sal.unidad = this.tiporef.UnidadPrincipal;
+    });
+  }
+
 
 
   onClickMe(){

@@ -14,7 +14,7 @@
           <span>Referencia bienestarina</span>
           <h2></h2>
 
-          <select  formControlName="idTipoBienesterina" [(ngModel)]="sal.idTipoBienesterina"
+          <select  formControlName="idTipoBienesterina" [(ngModel)]="sal.idTipoBienesterina" (ngModelChange)="Referencia($event)"
              placeholder="referencia" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.idTipoBienesterina.errors }">
             <option *ngFor="let ud of tip" [value]="ud.idTipoBienesterina ">{{ud.TipoBienesterina }} </option>
           </select>

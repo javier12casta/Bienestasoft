@@ -8,6 +8,7 @@ import { Recepcion } from 'src/app/interfaces/recepcion';
 import { Acta } from 'src/app/interfaces/acta';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-recepcionbienestarinavi',
@@ -30,6 +31,18 @@ export class RecepcionbienestarinaviComponent implements OnInit {
     Estado: 0,
     idCentroDistribucion: 0,
   };
+  tiporef: TipoBienestarina = {
+    idTipoBienesterina: 0,
+    TipoBienesterina : '',
+    Codigo : 0,
+    Estado : '',
+    Referencia : '',
+    UnidadPrincipal : '',
+    Cantidad : 0,
+    cantidad2: 0,
+    UnidadSecundaria: '',
+
+  };
 
 
   public cen: Centrodistribucion[] = [];
@@ -43,13 +56,16 @@ export class RecepcionbienestarinaviComponent implements OnInit {
     Cantidad2: 0,
     unidad: '',
   };
-  unidadmedida = [];
+  unidadmedida = ["bolsa","caja"];
   public ac: Acta[] = [];
   cantidadrecp: number;
   id1 = 0;
  
 
-  constructor(private Service: ServicioService, private router:Router) { }
+  constructor(
+    private Service: ServicioService,
+     private router:Router,
+     private fb: FormBuilder) { }
 
   x : Recepcion = {
     
@@ -69,8 +85,39 @@ export class RecepcionbienestarinaviComponent implements OnInit {
     idBienestarina: 6,
   };
 
+  //----Validaciones de campos
+  RefForm: FormGroup;
+  submitted = false;
+
+onSubmit() {
+  this.submitted = true;
+
+  // stop here if form is invalid
+  if (this.RefForm.valid) {
+    
+      this.onClickMe();
+        
+  } else if (this.RefForm.invalid) {
+    this.showMenssagenull();
+  }
+}
 
   ngOnInit() {
+
+    //Validador--------------------
+    this.RefForm = this.fb.group({
+      alma: ['', Validators.required],
+      fecha: ['', Validators.required],
+      Cd: ['', Validators.required],
+      Tipob: ['', Validators.required],
+      inventa: ['', Validators.required],
+      Lote: ['', [Validators.required, Validators.pattern('^[0-9 a-z A-Z ñ á é í ó ú\(\)\.)]*$')]],
+      fechav: ['', Validators.required],
+      unidad: ['', Validators.required],
+      Cantidad: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+      Cantidadl: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+      Numero: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+    });
 
     this.Service.getalmacen()
       .subscribe(res => {
@@ -104,6 +151,9 @@ export class RecepcionbienestarinaviComponent implements OnInit {
 
 
   onClickMe() {
+
+
+
     const cantidad = this.x.Cantidad;
     const cantidad2 = this.x.Cantidad2;
     this.inventario.Cantidad = this.inventario.Cantidad + cantidad;
@@ -186,6 +236,15 @@ export class RecepcionbienestarinaviComponent implements OnInit {
     });
   }
 
+  showMenssagenull() {
+    Swal.fire({
+      title: 'Error',
+      text: 'Campos inválidos',
+      type: 'warning',
+      confirmButtonText: 'Entendido'
+    });
+  }
+
 
   onChange($event) {
 
@@ -220,6 +279,14 @@ export class RecepcionbienestarinaviComponent implements OnInit {
 
       }
     }
+  }
+
+  Referencia  (){
+    this.Service.getTipobienestarinaid(this.x.idTipoBienesterina.toString()).subscribe(res => {
+      this.tiporef = Object(res);
+      console.log('Tipo de referencia',res);
+      this.x.UnidadPrincipal = this.tiporef.UnidadPrincipal;
+    });
   }
 
 
