@@ -94,7 +94,7 @@ export class DevolucionescComponent implements OnInit {
         idCentroDistribucionDestino: ['', Validators.required],
         idAlmacenes: ['', Validators.required],
         idAlmacenes2: ['', Validators.required],
-        lote: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+        lote: ['', [Validators.required, Validators.pattern('^[0-9 a-z A-Z]*$')]],
         fechavencimiento: ['', Validators.required],
         fecharegistro: ['', Validators.required],
         unidad:['', [Validators.required]],
