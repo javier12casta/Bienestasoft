@@ -129,7 +129,7 @@ export class DevolucionescComponent implements OnInit {
 
   };
 
-  Referencia(){
+Referencia  (){
     this.Service.getTipobienestarinaid(this.sal.idTipoBienesterina.toString()).subscribe(res => {
       this.tiporef = Object(res);
       console.log('Tipo de referencia',res);
