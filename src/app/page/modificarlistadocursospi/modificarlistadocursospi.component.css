@@ -1,0 +1,18 @@
+toolbar{
+    color: green;
+    position: fixed;
+    padding-inline: 50px;
+}
+
+input{
+    padding: 10px;
+    padding-block-end: 10px; 
+}
+
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+  
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }
