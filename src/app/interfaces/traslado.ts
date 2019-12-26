@@ -1,5 +1,4 @@
-export interface Translado {
-    
+export interface Translado { 
     idTraslados?: number,
     lote:string,
     fechavencimiento : number,
@@ -9,6 +8,5 @@ export interface Translado {
     idCentroDistribucion:number,
     idAlmacenesOrigen : number,
     idAlmacenesDestino  : number,
-    
-
+    cantidad: number;
 }

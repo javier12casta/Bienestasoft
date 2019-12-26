@@ -21,6 +21,18 @@
         </div>
 
         <div class="form-group">
+          <label>Presentación</label>
+          <select formControlName="unidad" class="form-control" [(ngModel)]="sal.unidad"
+            [ngClass]="{ 'is-invalid': submitted && f.unidad.errors }">
+            <option value="bolsa">bolsa</option>
+            <option value="caja">caja</option>
+          </select>
+          <div *ngIf="submitted && f.unidad.errors" class="invalid-feedback">
+            <div *ngIf="f.unidad.errors.required">Presentación es requerida</div>
+          </div>
+        </div>
+
+        <div class="form-group">
           <label>Centro de distribución de origen</label>
           <select formControlName="idCentroDistribucionOrigen" class="form-control"
             [(ngModel)]="sal.idCentroDistribucionOrigen"
@@ -34,13 +46,13 @@
         </div>
 
         <div class="form-group">
-          <label>Almacen de origen</label>
+          <label>Almacén de origen</label>
           <select formControlName="idAlmacenes2" class="form-control" [(ngModel)]="sal.idAlmacenes"
             [ngClass]="{ 'is-invalid': submitted && f.idAlmacenes2.errors }">
             <option *ngFor="let ud of alm" [value]="ud.idAlmacenes">{{ud.Nombre}}</option>
           </select>
           <div *ngIf="submitted && f.idAlmacenes2.errors" class="invalid-feedback">
-            <div *ngIf="f.idAlmacenes2.errors.required">Centro de distribución de origen es requerido</div>
+            <div *ngIf="f.idAlmacenes2.errors.required">Almacén de origen es requerido</div>
           </div>
         </div>
 
@@ -52,7 +64,7 @@
 
           <div *ngIf="submitted && f.lote.errors" class="invalid-feedback">
             <div *ngIf="f.lote.errors.required">Lote es requireda</div>
-            <div *ngIf="f.lote.errors.pattern"> Lote solo puede conterner numeros</div>
+            <div *ngIf="f.lote.errors.pattern"> Lote solo puede conterner numeros y letras minúsculas o mayúsculas</div>
           </div>
         </div>
 
@@ -76,25 +88,13 @@
             <option *ngFor="let ud of cen" [value]="ud.idCentroDistribucion">{{ud.Nombre}}</option>
           </select>
           <div *ngIf="submitted && f.idCentroDistribucionDestino.errors" class="invalid-feedback">
-            <div *ngIf="f.idCentroDistribucionDestino.errors.required">Centro de distribución de origen es requerido
+            <div *ngIf="f.idCentroDistribucionDestino.errors.required">Centro de distribución de destino es requerido
             </div>
           </div>
         </div>
 
         <div class="form-group">
-          <label>Presentación</label>
-          <select formControlName="unidad" class="form-control" [(ngModel)]="sal.unidad"
-            [ngClass]="{ 'is-invalid': submitted && f.unidad.errors }">
-            <option value="bolsa">bolsa</option>
-            <option value="caja">caja</option>
-          </select>
-          <div *ngIf="submitted && f.unidad.errors" class="invalid-feedback">
-            <div *ngIf="f.unidad.errors.required">Unidad es requerido</div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Fecha de vencimiento</label>
+          <label>Fecha de registro</label>
 
           <input type="date" placeholder="Fecha de Ingreso" formControlName="fecharegistro" class="form-control"
             [(ngModel)]="sal.fecharegistro" min="1900-01-01" max="2050-12-31"
@@ -112,7 +112,7 @@
             [ngClass]="{ 'is-invalid': submitted && f.motivo.errors }" />
 
           <div *ngIf="submitted && f.motivo.errors" class="invalid-feedback">
-            <div *ngIf="f.motivo.errors.required">Motivo es requireda</div>
+            <div *ngIf="f.motivo.errors.required">Motivo es requiredo</div>
             <div *ngIf="f.motivo.errors.pattern"> Motivo solo puede conterner numeros y letras minúsculas o mayúsculas
             </div>
           </div>

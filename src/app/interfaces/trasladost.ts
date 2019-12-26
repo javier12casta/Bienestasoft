@@ -8,4 +8,5 @@ export interface Trasladost {
     idTraslados?: 0,
     lote: number,
     unidad: string,
+    cantidad: number;
 }

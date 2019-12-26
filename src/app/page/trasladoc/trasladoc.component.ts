@@ -5,10 +5,11 @@ import { ActivatedRoute } from '@angular/router';
 
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
-
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { TipoBienestarina } from '../../interfaces/tipobienestarina';
 import { Centrodistribucion } from '../../interfaces/centrodistribucion';
 import { Almacen } from '../../interfaces/almacen';
+import { Inventario } from 'src/app/interfaces/inventario';
 
 @Component({
   selector: 'app-trasladoc',
@@ -18,39 +19,57 @@ import { Almacen } from '../../interfaces/almacen';
 export class TrasladocComponent implements OnInit {
 
   translado: Translado[] = [];
- 
+
   public tip: TipoBienestarina[] = [];
   public cen: Centrodistribucion[] = [];
   public alm: Almacen[] = [];
 
-  constructor(private activeRoute: ActivatedRoute,
-    private Service: ServicioService, private router:Router) { }
+  constructor(
+    private activeRoute: ActivatedRoute,
+    private Service: ServicioService,
+    private router: Router,
+    private fb: FormBuilder
+  ) { }
+  sal: Translado = {
+    lote: '',
+    fechavencimiento: null,
+    unidad: '',
+    fecharegistro: null,
+    idTipoBienesterina: null,
+    idCentroDistribucion: null,
+    idAlmacenesOrigen: null,
+    idAlmacenesDestino: null,
+    cantidad: null,
+  };
 
 
-    sal: Translado = {
+  //----Validaciones de campos
+  dev: FormGroup;
+  submitted = false;
 
-   
-      lote  : '',
-      fechavencimiento  : 0,
-      unidad  : '',
-      fecharegistro  : 0,
-      idTipoBienesterina  : 0,
-      idCentroDistribucion  : 0,
-      idAlmacenesOrigen  : 0,
-      idAlmacenesDestino  : 0,
-      
-    
-    };
+  onSubmit() {
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.dev.valid) {
+      this.onClickMe();
+    } else if (this.dev.invalid) {
+      this.showMenssagenull();
+    }
+
+    // display form values on success
+    console.log('Formulario', this.dev.value);
+  }
 
   ngOnInit() {
 
     this.Service.getTipobienestarina()
-    .subscribe(async (data) => {
-      this.tip = data;
-      console.log(data);
-      console.log('funciona');
-    }
-    );
+      .subscribe(async (data) => {
+        this.tip = data;
+        console.log(data);
+        console.log('funciona');
+      }
+      );
 
     this.Service.getcentrodistribucion()
       .subscribe(async (data) => {
@@ -60,7 +79,7 @@ export class TrasladocComponent implements OnInit {
       }
       );
 
-      this.Service.getalmacen()
+    this.Service.getalmacen()
       .subscribe(async (data) => {
         this.alm = data;
         console.log(data);
@@ -68,25 +87,79 @@ export class TrasladocComponent implements OnInit {
       }
       );
 
+    this.dev = this.fb.group({
+      idTipoBienesterina: ['', Validators.required],
+      idCentroDistribucionOrigen: ['', Validators.required],
+      idAlmacenesDestino: ['', Validators.required],
+      idAlmacenesOrigen: ['', Validators.required],
+      lote: ['', [Validators.required, Validators.pattern('^[0-9 a-z A-Z]*$')]],
+      fechavencimiento: ['', Validators.required],
+      fecharegistro: ['', Validators.required],
+      unidad: ['', [Validators.required]],
+      cantidad: ['',[Validators.required, Validators.pattern('^[0-9]*$')]]
+    });
   }
-  onClickMe(){
+  get f() { return this.dev.controls; }
 
-    
+  onClickMe() {
     this.Service.postraslados(this.sal).subscribe(res => {
       console.log(this.sal);
       this.showMenssage();
-      
-      },
+
+    },
       err => {
         console.log(err);
       });
-      
-     
-     
-
   }
 
-  showMenssage(){
+  tiporef: TipoBienestarina = {
+    idTipoBienesterina: 0,
+    TipoBienesterina : '',
+    Codigo : 0,
+    Estado : '',
+    Referencia : '',
+    UnidadPrincipal : '',
+    Cantidad : 0,
+    cantidad2: 0,
+    UnidadSecundaria: '',
+
+  };
+
+  inventario1: Inventario = {
+    idInventario: null,
+    Nombre : '',
+    Cantidad : null,
+    Cantidad2 : null,
+    unidad: '',
+  };
+  inventario2: Inventario = {
+    idInventario: null,
+    Nombre : '',
+    Cantidad : null,
+    Cantidad2 : null,
+    unidad: '',
+  };
+
+
+  traerAlmacen(){
+    this.Service.getinventarioid(this.sal.idAlmacenesOrigen.toString()).subscribe( res => {
+      this.inventario1 = Object(res);
+      console.log('inventario origen', this.inventario1);
+    },err =>{
+      console.log(err);
+    });
+  }
+
+  Referencia() {
+    this.Service.getTipobienestarinaid(this.sal.idTipoBienesterina.toString()).subscribe(res => {
+      this.tiporef = Object(res);
+      console.log('Tipo de referencia', res);
+      this.sal.unidad = this.tiporef.UnidadPrincipal;
+      this.traerAlmacen();
+    });
+  }
+
+  showMenssage() {
     Swal.fire({
       title: 'Creado',
       text: 'Traslado creado',
@@ -94,12 +167,20 @@ export class TrasladocComponent implements OnInit {
       confirmButtonText: 'Aceptar'
     }).then((result) => {
       if (result.value) {
-        
+
         this.router.navigate(['/traslado']);
-    
+
       }
     });
   }
 
+  showMenssagenull() {
+    Swal.fire({
+      title: 'Error',
+      text: 'Campos vacios',
+      type: 'warning',
+      confirmButtonText: 'Entendido'
+    });
+  }
 
 }

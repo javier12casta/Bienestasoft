@@ -5,4 +5,6 @@ export interface Inventario {
   Cantidad : number,
   Cantidad2 ?: number,
   unidad: string,
+  cantidaddevuelta?: number,
+  cantidaddevueltaml?: number,
   }
