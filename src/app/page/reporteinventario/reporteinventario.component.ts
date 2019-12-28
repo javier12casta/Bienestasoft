@@ -7,7 +7,10 @@ import {Regional } from '../../interfaces/regional';
 import {Centrozonal } from '../../interfaces/centrozonal';
 import {Municipio } from '../../interfaces/municipio';
 import {Lprecios } from '../../interfaces/listaprecios';
-
+import {Recepcion } from '../../interfaces/recepcion';
+import {Salidabeneficiariot } from '../../interfaces/Salidabeneficiariot';
+import {Salidacentrot } from '../../interfaces/salidacentrot';
+import {Salidaconsumot } from '../../interfaces/salidaconsumot';
 
 @Component({
   selector: 'app-reporteinventario',
@@ -20,9 +23,19 @@ export class ReporteinventarioComponent implements OnInit {
   centro: Centrozonal [] = [];
   mun: Municipio [] = [];
   pre: Lprecios [] = [];
+  re: Recepcion [] = [];
+  sab  : Salidabeneficiariot [] = [];
+  sac  : Salidacentrot [] = [];
+  sact  : Salidaconsumot [] = [];
+
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
   Nombrereporte = 'Reporte inventario';
+  entrada = "";
+  visible = true;
+  visible1 = true;
+  visible2 = true;
+  visible3 = true;
 
   constructor(private service: ServicioService) { }
 
@@ -64,7 +77,35 @@ export class ReporteinventarioComponent implements OnInit {
     });
 
    
+    this.service.getrecepciontabla()
+    .subscribe(res => {
+      this.re = res;
+    }, err => {
+      console.log(err);
+    });
 
+
+    this.service.getsalidabeneficiarioTabla()
+    .subscribe(res => {
+      this.sab = res;
+    }, err => {
+      console.log(err);
+    });
+
+    this.service.getsalidacentroTabla()
+    .subscribe(res => {
+      this.sac = res;
+    }, err => {
+      console.log(err);
+    });
+
+
+    this.service.getsalidaconsumoTabla()
+    .subscribe(res => {
+      this.sact = res;
+    }, err => {
+      console.log(err);
+    });
 
 
   }
@@ -88,6 +129,52 @@ export class ReporteinventarioComponent implements OnInit {
     });   
        
     
+    }
+
+    onChange(){
+
+    if(this.entrada == "0"){
+
+    this.visible = false;
+    this.visible1 = true;
+    this.visible2 = true;
+    this.visible3 = true;
+   
+   
+
+    }
+
+    if(this.entrada == "1"){
+
+      this.visible = true;
+      this.visible1 = false;
+      this.visible2 = true;
+      this.visible3 = true;
+
+      }
+
+      if(this.entrada == "2"){
+
+        this.visible = true;
+        this.visible1 = true;
+        this.visible2 = false;
+        this.visible3 = true;
+    
+        }
+
+
+        if(this.entrada == "3"){
+
+          this.visible = true;
+          this.visible1 = true;
+          this.visible2 = true;
+          this.visible3 = false;
+      
+          }
+
+
+    
+
     }
 
 }

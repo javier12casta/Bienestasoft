@@ -63,6 +63,7 @@ import {Consecutivomaestro } from './interfaces/consecutivomaestro';
 import {Usuariost } from './interfaces/usuariost';
 import {Centrodistribuciont } from './interfaces/centrodistribuciont';
 import {Devolucionest } from './interfaces/devolucionest';
+import { Salidacentrot } from './interfaces/salidacentrot';
 
 @Injectable({
   providedIn: 'root'
@@ -752,7 +753,7 @@ export class ServicioService {
 
   getsalidacentroTabla() {
     const path = `${this.api}/entregacentrod/tabla`;
-    return this.http.get<[Salidacentro]>(path);
+    return this.http.get<[Salidacentrot]>(path);
   }
   postsalidacentro(recep: Salidacentro) {
 
