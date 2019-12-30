@@ -111,7 +111,7 @@ onSubmit() {
     this.czForm = this.fb.group({
       
     lote :['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
-    fechavencimiento : ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú 0-9]*$')]],
+    fechavencimiento : ['', Validators.required],
     cantidad  : ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
     unidad : ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
     idAcudientes : ['', Validators.required],

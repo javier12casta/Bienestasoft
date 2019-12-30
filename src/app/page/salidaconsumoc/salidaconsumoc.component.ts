@@ -108,11 +108,11 @@ export class SalidaconsumocComponent implements OnInit {
       
 
       lote :['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
-      fechavencimiento : ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú 0-9]*$')]],
+      fechavencimiento : ['', Validators.required],
       cantidad  : ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       cantidad2   : ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       unidad : ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
-      fecharegistro  : ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú 0-9]*$')]],
+      fecharegistro  : ['', Validators.required],
       idTipoBienesterina:['', Validators.required],
       idCentroDistribucion : ['', Validators.required],
       idAlmacenes  : ['', Validators.required],
