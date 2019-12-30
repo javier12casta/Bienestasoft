@@ -33,6 +33,17 @@
         </div>
 
         <div class="form-group">
+          <label>Almacen de origen</label>
+          <select formControlName="idAlmacenesOrigen" class="form-control" [(ngModel)]="sal.idAlmacenesOrigen"
+            [ngClass]="{ 'is-invalid': submitted && f.idAlmacenesOrigen.errors }" (ngModelChange)="traerAlmacen($event)">
+            <option *ngFor="let ud of alm" [value]="ud.idAlmacenes">{{ud.Nombre}}</option>
+          </select>
+          <div *ngIf="submitted && f.idAlmacenesOrigen.errors" class="invalid-feedback">
+            <div *ngIf="f.idAlmacenesOrigen.errors.required">Almacen de origen es requerido</div>
+          </div>
+        </div>
+
+        <div class="form-group">
           <label>Centro de distribución de origen</label>
           <select formControlName="idCentroDistribucionOrigen" class="form-control"
             [(ngModel)]="sal.idCentroDistribucion"
@@ -42,17 +53,6 @@
           <div *ngIf="submitted && f.idCentroDistribucionOrigen.errors" class="invalid-feedback">
             <div *ngIf="f.idCentroDistribucionOrigen.errors.required">Centro de distribución de origen es requerido
             </div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Almacen de origen</label>
-          <select formControlName="idAlmacenesOrigen" class="form-control" [(ngModel)]="sal.idAlmacenesOrigen"
-            [ngClass]="{ 'is-invalid': submitted && f.idAlmacenesOrigen.errors }" (ngModelChange)="traerAlmacen($event)">
-            <option *ngFor="let ud of alm" [value]="ud.idAlmacenes">{{ud.Nombre}}</option>
-          </select>
-          <div *ngIf="submitted && f.idAlmacenesOrigen.errors" class="invalid-feedback">
-            <div *ngIf="f.idAlmacenesOrigen.errors.required">Centro de distribución de origen es requerido</div>
           </div>
         </div>
 
@@ -67,12 +67,24 @@
             <div *ngIf="f.lote.errors.pattern"> Lote solo puede conterner numeros y letras minúsculas o mayúsculas</div>
           </div>
         </div>
+        
+        <div class="form-group">
+          <label>Almacen de destino</label>
+          <select formControlName="idAlmacenesDestino" class="form-control" [(ngModel)]="sal.idAlmacenesDestino"
+            [ngClass]="{ 'is-invalid': submitted && f.idAlmacenesDestino.errors }" (ngModelChange)="traerAlmacen2($event)">
+            <option *ngFor="let ud of alm" [value]="ud.idAlmacenes">{{ud.Nombre}}</option>
+          </select>
+          <div *ngIf="submitted && f.idAlmacenesDestino.errors" class="invalid-feedback">
+            <div *ngIf="f.idAlmacenesDestino.errors.required">Almacen de destino es requerido</div>
+          </div>
+        </div>
+
 
         <div class="form-group">
           <label>Cantidad</label>
-
+          <div style="color: green; font-size: 15px;">Cantidad existente en el almacén {{cantidadEx}}</div>
           <input type="text" placeholder="Cantidad" formControlName="cantidad" class="form-control" [(ngModel)]="sal.cantidad"
-            [ngClass]="{ 'is-invalid': submitted && f.cantidad.errors }" />
+            [ngClass]="{ 'is-invalid': submitted && f.cantidad.errors }" (keyup)="onKey($event)" />
 
           <div *ngIf="submitted && f.cantidad.errors" class="invalid-feedback">
             <div *ngIf="f.cantidad.errors.required">Cantidad es requireda</div>
@@ -89,19 +101,6 @@
 
           <div *ngIf="submitted && f.fechavencimiento.errors" class="invalid-feedback">
             <div *ngIf="f.fechavencimiento.errors.required">Fecha de vencimiento es requireda</div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Almacén de destino</label>
-          <select formControlName="idAlmacenesDestino" class="form-control"
-            [(ngModel)]="sal.idAlmacenesDestino"
-            [ngClass]="{ 'is-invalid': submitted && f.idAlmacenesDestino.errors }">
-            <option *ngFor="let ud of alm" [value]="ud.idAlmacenesDestino">{{ud.Nombre}}</option>
-          </select>
-          <div *ngIf="submitted && f.idAlmacenesDestino.errors" class="invalid-feedback">
-            <div *ngIf="f.idAlmacenesDestino.errors.required">Almacen de destino es requerido
-            </div>
           </div>
         </div>
 
