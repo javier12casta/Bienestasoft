@@ -14,6 +14,7 @@
       <tr>
         <th scope="col">#</th>
         <th scope="col">Lote</th>
+        <th scope="col">Cantidad</th>
         <th scope="col">Fecha vencimiento</th>
         <th scope="col">Referencia bienesterina</th>
         <th scope="col">Presentación</th>
@@ -28,6 +29,7 @@
       <tr *ngFor="let sal of translado">
         <th scope="row">{{sal.idTraslados }}</th>
         <td>{{sal.lote}}</td>
+        <td>{{sal.cantidad}}</td>
         <td>{{sal.fechavencimiento}}</td>
         <td>{{sal.TipoBienesterina}}</td>
         <td>{{sal.unidad}}</td>
