@@ -65,6 +65,8 @@ import {Centrodistribuciont } from './interfaces/centrodistribuciont';
 import {Devolucionest } from './interfaces/devolucionest';
 import { Salidacentrot } from './interfaces/salidacentrot';
 
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -80,7 +82,8 @@ export class ServicioService {
     return this.http.get<Entrega []>(path);
   }
 
-  
+
+
   getentregaid(id: string) {
     return this.http.get(`${this.api}/entrega/${id}`);
   }
@@ -880,7 +883,10 @@ export class ServicioService {
     return this.http.get<[Consecutivomaestro]>(path);
   }
 
-
+  Obtenerconsecutivosm() {
+    const path = `${this.api}/consecutivoM/tabla`;
+    return this.http.get<[Consecutivomaestro]>(path);
+  }
  
 
 }

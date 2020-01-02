@@ -20,6 +20,13 @@ export class ConsecutivomaestrovComponent implements OnInit {
 
   ngOnInit() {
 
+    this.Service.Obtenerconsecutivosm()
+    .subscribe( async (res)=> {
+      this.unidadt = res
+    }, err => {
+      console.log(err);
+    });
+
     this.Service.getconsecutivomaestro()
     .subscribe( async (res)=> {
       this.unidadt = res
