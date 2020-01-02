@@ -201,7 +201,7 @@ export class SalidacentrocComponent implements OnInit {
   showMenssage(){
     Swal.fire({
       title: 'Creado',
-      text: 'Salida centro de distribución Creado',
+      text: 'Salida centro de distribución creado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {

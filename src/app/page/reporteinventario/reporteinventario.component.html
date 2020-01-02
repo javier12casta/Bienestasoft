@@ -370,7 +370,7 @@
         </tbody>
       </table>
 
-      <table class="table" id="contentToConvert" [hidden]="visible">
+      <table class="table"  [hidden]="visible">
           <thead class="thead-green">
             <tr>
               <th scope="col"># </th>
@@ -398,7 +398,7 @@
           
         </table>
 
-        <table class="table" id="contentToConvert" [hidden]="visible1">
+        <table class="table"  [hidden]="visible1">
           <thead class="thead-green">
             <tr>
               <th scope="col">#</th>
@@ -407,10 +407,9 @@
               <th scope="col">Fecha de vencimiento</th>
               <th scope="col">Cantidad</th>
               <th scope="col">Unidades</th >
-              <th scope="col">Destino</th>
-              <th scope="col">Beneficiarios</th >
-              <th scope="col">Unidades ejecutora 1</th>
-               <th scope="col">Unidades ejecutoras 2</th>
+              <th scope="col">Destino</th>                                                                                      
+              <th scope="col">Unidades ejecutora </th>
+              
             
              
             </tr>
@@ -421,18 +420,17 @@
               <th scope="row">{{cen.lote}}</th>
               <th scope="row">{{cen.fechavencimiento}}</th>
               <th scope="row">{{cen.cantidad}}</th>
-              <th scope="row">{{cen.Nombrecompleto}}</th>
+              <th scope="row">{{cen.unidad}}</th>
               <th scope="row">{{cen.centrodistribucion}}</th>
               <th scope="row">{{cen.almacenes}}</th>
-
-            </tr>
+            </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
             
           </tbody>
           
         </table>
 
 
-        <table class="table" id="contentToConvert" [hidden]="visible2">
+        <table class="table" [hidden]="visible2">
           <thead class="thead-green">
             <tr>
               <th scope="col">#</th>
@@ -456,7 +454,8 @@
               <th scope="row">{{cen.fechavencimiento }}</th>
               <th scope="row">{{cen.unidad }}</th>
               <th scope="row">{{cen.centroorigen }}</th>
-              <th scope="row">{{cen.centrodestino }}</th>        
+              <th scope="row">{{cen.centrodestino }}</th>       
+              <th scope="row">{{cen.TipoBienesterina }}</th>     
               <th scope="row">{{cen.cantidad }}</th>
               <th scope="row">{{cen.Nombre }}</th>
               
@@ -466,7 +465,7 @@
           
         </table>
 
-        <table class="table" id="contentToConvert" [hidden]="visible3">
+        <table class="table"  [hidden]="visible3">
           <thead class="thead-green">
             <tr>
               <th scope="col">#</th>
@@ -498,7 +497,7 @@
         </table>
 
           
-         <table class="table" id="contentToConvert" >
+         <table class="table"  >
          
           <tr >
             <td >Firma del responsable del punto de entrega 

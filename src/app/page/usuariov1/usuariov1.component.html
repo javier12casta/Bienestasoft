@@ -1,16 +1,19 @@
 
   <nav class="navbar navbar-fixed-top">
     <td>
+  <nav class="navbar navbar-success bg-success">
+    <div>
     <button class="btn btn-dark" routerLink="/usuarios">Volver</button>
-    </td>
+    <button class="btn btn-dark" [routerLink]="['/datoscontactousuario']">Crear</button>
+    </div>
     <div>
         <label>Crear usuarios punto de entrega</label>
     
     {{fecha}}  
     </div>
-    <td>
-            <button class="btn btn-dark" [routerLink]="['/datoscontactousuario']">Crear</button>
-          </td>
+    <div>
+          
+    </div>
   </nav>
   
   <table class="table">
