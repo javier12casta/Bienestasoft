@@ -9,9 +9,10 @@ import { ServicioService } from '../../servicio.service';
   template: `
 
   <nav class="navbar navbar-success bg-success">
-  <td>
+  <div>
   <button class="btn btn-dark" routerLink="/usuarios">Volver</button>
-  </td>
+  <button class="btn btn-dark" [routerLink]="['/datosgeneralesusuario']">Crear</button>
+  </div>
   <div>
   <label>Crear usuarios centro zonal</label>
       
@@ -19,9 +20,9 @@ import { ServicioService } from '../../servicio.service';
       </div>
       
     
-  <td>
-          <button class="btn btn-dark" [routerLink]="['/datosgeneralesusuario']">Crear</button>
-        </td>
+  <div>
+          
+        </div>
 </nav>
 
 <table class="table">

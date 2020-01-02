@@ -10,9 +10,10 @@ import { Almacent} from '../../interfaces/almacent';
   template: `
 
   <nav class="navbar navbar-success bg-success">
-  <td>
+  <div>
          <button class="btn btn-dark" routerLink="/crearalmacen">Volver</button>
-         </td>
+         <button class="btn btn-dark" [routerLink]="['/almacenci']">Crear</button>
+         </div>
          <div>
          <label>Crear almacén centro zonal</label>
      
@@ -20,9 +21,9 @@ import { Almacent} from '../../interfaces/almacent';
      </div>
      
     
-         <td>
-          <button class="btn btn-dark" [routerLink]="['/almacenci']">Crear</button>
-        </td>
+         <div>
+          
+        </div>
 </nav>
 
 <table class="table">
