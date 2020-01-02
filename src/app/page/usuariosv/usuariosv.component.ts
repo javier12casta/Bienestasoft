@@ -8,7 +8,7 @@ import { ServicioService } from '../../servicio.service';
   styleUrls: ['./usuariosv.component.css'],
   template: `
 
-  <nav class="navbar navbar-success bg-success">
+  <nav class="navbar navbar-fixed-top">
   <div>
   <button class="btn btn-dark" routerLink="/usuarios">Volver</button>
   <button class="btn btn-dark" [routerLink]="['/datosgeneralesusuario']">Crear</button>
