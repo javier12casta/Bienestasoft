@@ -9,9 +9,10 @@ import { Centrodistribuciont } from 'src/app/interfaces/centrodistribuciont';
   template: `
 
   <nav class="navbar navbar-success bg-success">
-  <td>
+  <div>
   <button class="btn btn-dark" routerLink="/centrodistribucion">Volver</button>
-  </td>
+  <button class="btn btn-dark" [routerLink]="['/centrodistribucionci']">Crear</button>
+  </div>
   <div>
           <label>Crear centro de distribucion centro zonal </label>
       
@@ -19,9 +20,9 @@ import { Centrodistribuciont } from 'src/app/interfaces/centrodistribuciont';
       </div>
       
    
-  <td>
-          <button class="btn btn-dark" [routerLink]="['/centrodistribucionci']">Crear</button>
-        </td>
+  <div>
+          
+        </div>
 </nav>
 
 <table class="table">
