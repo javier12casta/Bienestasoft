@@ -1,109 +1,114 @@
 <nav class="navbar navbar-success bg-success">
     <button class="btn btn-dark" routerLink="/recuentoinventario">Volver</button>
   </nav>
-  
+
   <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
     <div class="card" padding>
       <div class="card-body" padding>
-        <form class="form-signin was-validated" style="justify-content: center; margin-bottom: 70px;" novalidate>
+  
+  
+        <form [formGroup]="rec" (ngSubmit)="onSubmit()">
+          <h1>Recuento inventario</h1>
+
           <div class="form-group">
+            <label>Referencia bienestarina</label>
+            <select formControlName="idTipoBienesterina" class="form-control" [(ngModel)]="sal.idTipoBienesterina"
+              [ngClass]="{ 'is-invalid': submitted && f.idTipoBienesterina.errors }" (ngModelChange)="Referencia($event)">
+              <option *ngFor="let t of tip" [value]="t.idTipoBienesterina">{{t.TipoBienesterina}}</option>
+            </select>
+            <div *ngIf="submitted && f.idTipoBienesterina.errors" class="invalid-feedback">
+              <div *ngIf="f.idTipoBienesterina.errors.required">Referencia es requerida</div>
+            </div>
+          </div>
   
+          <div class="form-group">
+            <label>Presentación</label>
+            <select formControlName="unidadmedida1" class="form-control" [(ngModel)]="sal.unidadmedida1"
+              [ngClass]="{ 'is-invalid': submitted && f.unidadmedida1.errors }">
+              <option value="bolsa">bolsa</option>
+              <option value="caja">caja</option>
+            </select>
+            <div *ngIf="submitted && f.unidadmedida1.errors" class="invalid-feedback">
+              <div *ngIf="f.unidadmedida1.errors.required">Presentación es requerida</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Almacén</label>
+            <select formControlName="idAlmacenes" class="form-control" [(ngModel)]="sal.idAlmacenes"
+              [ngClass]="{ 'is-invalid': submitted && f.idAlmacenes.errors }" (ngModelChange)="traerAlmacen($event)">
+              <option *ngFor="let ud of alm" [value]="ud.idAlmacenes">{{ud.Nombre}}</option>
+            </select>
+            <div *ngIf="submitted && f.idAlmacenes.errors" class="invalid-feedback">
+              <div *ngIf="f.idAlmacenes.errors.required">Almacen es requerido</div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label>Centro de distribución</label>
+            <select formControlName="idCentroDistribucion" class="form-control"
+              [(ngModel)]="sal.idCentroDistribucion"
+              [ngClass]="{ 'is-invalid': submitted && f.idCentroDistribucion.errors }">
+              <option *ngFor="let c of cen" [value]="c.idCentroDistribucion">{{c.Nombre}}</option>
+            </select>
+            <div *ngIf="submitted && f.idCentroDistribucion.errors" class="invalid-feedback">
+              <div *ngIf="f.idCentroDistribucion.errors.required">Centro de distribución es requerido
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Lote</label>
+  
+            <input type="text" placeholder="Lote" formControlName="lote" class="form-control" [(ngModel)]="sal.lote"
+              [ngClass]="{ 'is-invalid': submitted && f.lote.errors }" />
+  
+            <div *ngIf="submitted && f.lote.errors" class="invalid-feedback">
+              <div *ngIf="f.lote.errors.required">Lote es requireda</div>
+              <div *ngIf="f.lote.errors.pattern"> Lote solo puede conterner numeros y letras minúsculas o mayúsculas</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Cantidad</label>
+            <input type="text" placeholder="Cantidad" formControlName="cantidad" class="form-control" [(ngModel)]="sal.cantidad"
+              [ngClass]="{ 'is-invalid': submitted && f.cantidad.errors }" (keyup)="onKey($event)" />
+  
+            <div *ngIf="submitted && f.cantidad.errors" class="invalid-feedback">
+              <div *ngIf="f.cantidad.errors.required">Cantidad es requireda</div>
+              <div *ngIf="f.cantidad.errors.pattern"> Cantidad solo puede conterner numeros</div>
+            </div>
+          </div>
           
-            <h1>Recuento inventario </h1>
-            <h2></h2>
-            
-            <span >Lote</span>
-            <h2></h2>
-            <input type="text" class="form-control" [(ngModel)]="sal.lote" name="cane"
-            placeholder="Lote" class="form-control" id="inputen" minlength="0" required="">
-        
-        <h2></h2>
-
-
-        <span >Fecha de vencimiento </span>
-        <h2></h2>
-    <input type="date" class="form-control" [(ngModel)]="sal.FechaVencimiento" name="fechai" placeholder="Fecha" min="2018-01-01" max="2050-12-31" class="form-control" minlength="0" required="">
-   
-    <h2></h2>
-
-    
-    <span >Unidad de medida</span>
-    <h2></h2>
-
-    <select name="idalmacen" class="form-control" style="width: 100%;" [(ngModel)]="sal.unidadmedida1"
-    options="options" placeholder="almacen" minlength="0" required="">
-    <option *ngFor="let ud of tip" [value]="ud.idTipoBienesterina">{{ud.UnidadSecundaria }} </option>
-  </select>
-
-  <h2></h2>
-
+          <div class="form-group">
+            <label>Cantidad contada</label>
+            <input type="text" placeholder="Cantidad contada" formControlName="cantidadcontada" class="form-control" [(ngModel)]="sal.cantidadcontada"
+              [ngClass]="{ 'is-invalid': submitted && f.cantidadcontada.errors }" (keyup)="onKey($event)" />
   
-        
-  <span >Cantidad</span>
-  <h2></h2>
-  <input type="number" class="form-control" [(ngModel)]="sal.cantidad" name="cane"
-  placeholder="Cantidad" class="form-control" id="inputen" minlength="0" required="">
+            <div *ngIf="submitted && f.cantidadcontada.errors" class="invalid-feedback">
+              <div *ngIf="f.cantidadcontada.errors.required">Cantidad contada es requireda</div>
+              <div *ngIf="f.cantidadcontada.errors.pattern"> Cantidad contada solo puede conterner numeros</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Fecha de vencimiento</label>
   
-
-<h2></h2>
-
-
-<span >Cantidad contada</span>
-<h2></h2>
-
-<input type="number" class="form-control" [(ngModel)]="sal.cantidadcontada" name="cane"
-  placeholder="Cantidad contada" class="form-control" id="inputen" minlength="0" required="">
-
-<h2></h2>
-
-
-<span >Unidad de medida</span>
-<h2></h2>
-
-<select name="idalmacen" class="form-control" style="width: 100%;" [(ngModel)]="sal.unidadmedida2"
-options="options" placeholder="almacen" minlength="0" required="">
-<option *ngFor="let ud of tip" [value]="ud.idTipoBienesterina">{{ud.UnidadSecundaria }} </option>
-</select>
-
-<h2></h2>
-
-
-            <span >Referencia bienestarina</span>
-            <h2></h2>
-
-            <select name="idreferencia" class="form-control" style="width: 100%;" [(ngModel)]="sal.idTipoBienesterina"
-            options="options" placeholder="referencia" minlength="0" required="">
-            <option *ngFor="let ud of tip" [value]="ud.idTipoBienesterina ">{{ud.TipoBienesterina }} </option>
-          </select>
-
-          <h2></h2>
-
-          <span >Centro de distribución </span>
-          <h2></h2>
-
-          <select name="idcentrodistribucion" class="form-control" style="width: 100%;" [(ngModel)]="sal.idCentroDistribucion"
-          options="options" placeholder="almacen" minlength="0" required="">
-          <option *ngFor="let ud of cen" [value]="ud.idCentroDistribucion">{{ud.Nombre }} </option>
-        </select>
-
-        <h2></h2>
-
-        <span >Almacén </span>
-        <h2></h2>
-
-        <select name="idalmacen" class="form-control" style="width: 100%;" [(ngModel)]="sal.idAlmacenes"
-        options="options" placeholder="almacen" minlength="0" required="">
-        <option *ngFor="let ud of alm" [value]="ud.idAlmacenes">{{ud.Nombre }} </option>
-      </select>
-
-      <h2></h2>
-
-      <button (click)="onClickMe()" class="btn btn-success btn-block">Aceptar</button>
-                        
-                 <h2></h2>
-                 
-         </div>
-
+            <input type="date" placeholder="Fecha de vencimiento" formControlName="FechaVencimiento" class="form-control"
+              [(ngModel)]="sal.FechaVencimiento" min="1900-01-01" max="2050-12-31"
+              [ngClass]="{ 'is-invalid': submitted && f.FechaVencimiento.errors }" />
+  
+            <div *ngIf="submitted && f.FechaVencimiento.errors" class="invalid-feedback">
+              <div *ngIf="f.FechaVencimiento.errors.required">Fecha de vencimiento es requireda</div>
+            </div>
+          </div>
+  
+          <br />
+  
+          <div class="text-center">
+            <button type="submit" class="btn btn-success btn-block">Guardar</button>
+          </div>
+  
         </form>
       </div>
     </div>
