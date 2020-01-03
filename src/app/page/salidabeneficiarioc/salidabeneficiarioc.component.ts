@@ -301,7 +301,10 @@ export class SalidabeneficiariocComponent implements OnInit {
       var can = Number(this.sal.cantidad);
       var cantidadinv = Number(this.inventario.Cantidad);
       console.log('suma', can);
-      if (can > cantidadinv) {
+      if(cantidadinv == 0){
+        this.showMenssagevacio();
+      }
+      else if (can > cantidadinv) {
         this.showMenssage5();
         this.val1 = false;
       } else {
@@ -311,7 +314,10 @@ export class SalidabeneficiariocComponent implements OnInit {
       var can = Number(this.sal.Cantidad2);
       var cantidadinv = Number(this.inventario.Cantidad2);
       console.log('suma', can);
-      if (can > cantidadinv) {
+      if(cantidadinv == 0){
+        this.showMenssagevacio();
+      }
+      else if (can > cantidadinv) {
         this.showMenssage5();
         this.val1 = false;
       } else {
@@ -364,6 +370,15 @@ export class SalidabeneficiariocComponent implements OnInit {
     Swal.fire({
       title: 'Advertencia',
       text: 'La cantidad ingresada supera la cantidad existente en el inventario',
+      type: 'warning',
+      confirmButtonText: 'Entendido'
+    });
+  }
+
+  showMenssagevacio() {
+    Swal.fire({
+      title: 'Advertencia',
+      text: 'No hay existencias de la referenia seleccionada',
       type: 'warning',
       confirmButtonText: 'Entendido'
     });
