@@ -115,7 +115,6 @@ export class SalidabeneficiariocComponent implements OnInit {
   onClickMe() {
     console.log('Cantidad inventario', this.inventario.Cantidad);
     this.Service.putinventario(this.idinv, this.inventario).subscribe(res => {
-
       this.Service.putinventario(this.sal.idAlmacenes, this.inventario).subscribe( res => {});
     }, err => {
       console.log(err);
