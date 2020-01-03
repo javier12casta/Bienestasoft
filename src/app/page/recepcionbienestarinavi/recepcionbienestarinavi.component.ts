@@ -38,6 +38,8 @@ export class RecepcionbienestarinaviComponent implements OnInit {
     Cantidad: null,
     Cantidad2: null,
     unidad: '',
+    cantidaddevueltaml: null,
+    cantidaddevuelta: null,
   };
 
   tiporef: TipoBienestarina = {
@@ -332,8 +334,9 @@ export class RecepcionbienestarinaviComponent implements OnInit {
       var cap = this.almacen.Capacidad;
       //console.log('Capacidad almacen 2', cap);
       var can = Number(this.x.Cantidad);
+      var devolucion = Number(this.inventario1.cantidaddevuelta);
       var cantidadinv = Number(this.inventario1.Cantidad);
-      var cantidadsuma = Number(cantidadinv + can);
+      var cantidadsuma = Number(cantidadinv + can + devolucion);
       console.log('suma', cantidadsuma);
       if (cantidadsuma > cap) {
         this.showMenssage5();
@@ -345,8 +348,9 @@ export class RecepcionbienestarinaviComponent implements OnInit {
       var cap = this.almacen.Capacidad2;
       //console.log('Capacidad almacen 2', cap);
       var can = Number(this.x.Cantidad);
+      var devolucion2 = Number(this.inventario1.cantidaddevueltaml);
       var cantidadinv = Number(this.inventario1.Cantidad2);
-      var cantidadsuma = Number(cantidadinv + can);
+      var cantidadsuma = Number(cantidadinv + can + devolucion2);
       console.log('suma', cantidadsuma);
       if (cantidadsuma > cap) {
         this.showMenssage5();

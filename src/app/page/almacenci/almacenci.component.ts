@@ -16,8 +16,8 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 })
 export class AlmacenciComponent implements OnInit {
 
-  listamaestro:string[]=["0","1"];
-  unidadmedida:string[]=["g","ml", "g y ml"];
+  listamaestro: string[] = ["0", "1"];
+  unidadmedida: string[] = ["g", "ml", "g y ml"];
   public cen: Centrodistribucion[] = [];
   public cen1: Centrozonal[] = [];
   public inv1: Inventario[] = [];
@@ -27,95 +27,93 @@ export class AlmacenciComponent implements OnInit {
   habilitar = true;
 
 
-  x : Almacen = {
-    
-    NumeroExterno : '',
-    Nombre: '',
-    Responsable : '',
-    Capacidad  : 0,
-    Capacidad2  : 0,
-    UnidadMedida  : '',
-    Estado  : 1,
-    idCentroDistribucion : 1,
+  x: Almacen = {
 
-    
+    NumeroExterno: '',
+    Nombre: '',
+    Responsable: '',
+    Capacidad: 0,
+    Capacidad2: 0,
+    UnidadMedida: '',
+    Estado: 1,
+    idCentroDistribucion: 1,
+
+
   };
 
-  y : Inventario = {
-    
-    
-    Nombre : '',
-    Cantidad : 0,
-    Cantidad2 : 0,
+  y: Inventario = {
+    Nombre: '',
+    Cantidad: 0,
+    Cantidad2: 0,
     unidad: '',
-
-    
+    cantidaddevuelta: 0,
+    cantidaddevueltaml: 0,
   };
 
   onClickMe() {
 
 
-  this.y.Nombre = this.x.Nombre;
-  this.y.unidad = this.x.UnidadMedida;
-  this.y.Cantidad = this.x.Capacidad;
-  this.y.Cantidad2 = this.x.Capacidad2;
-  
+    this.y.Nombre = this.x.Nombre;
+    this.y.unidad = this.x.UnidadMedida;
+    this.y.Cantidad = this.x.Capacidad;
+    this.y.Cantidad2 = this.x.Capacidad2;
 
-      this.Service.postinventario(this.y).subscribe(res => {
-        console.log(this.y);
-   
-        },
-        err => {
-          console.log(err);
-        });
 
-     
+    this.Service.postinventario(this.y).subscribe(res => {
+      console.log(this.y);
 
-     
+    },
+      err => {
+        console.log(err);
+      });
+
+
+
+
 
     this.Service.postalmacen(this.x).subscribe(res => {
-     console.log(this.x);
-     this.showMenssage();
-     
-     },
-     err => {
-       console.log(err);
-     });
+      console.log(this.x);
+      this.showMenssage();
+
+    },
+      err => {
+        console.log(err);
+      });
 
 
-    
 
-     
-    
-   }
 
-   habilitado = true;
-   habilitado1 = false;
 
-   onChange($event) {
-    
-    if(this.x.UnidadMedida == "g y ml"){
+
+  }
+
+  habilitado = true;
+  habilitado1 = false;
+
+  onChange($event) {
+
+    if (this.x.UnidadMedida == "g y ml") {
       this.habilitado = false;
       this.habilitado1 = false;
-   console.log(this.habilitado);
-    }else if (this.x.UnidadMedida == "g") {
+      console.log(this.habilitado);
+    } else if (this.x.UnidadMedida == "g") {
       this.habilitado = true;
       this.habilitado1 = false;
-    }else if (this.x.UnidadMedida == "ml") {
+    } else if (this.x.UnidadMedida == "ml") {
       this.habilitado = false;
       this.habilitado1 = true;
     }
-     
+
   }
 
- 
 
-  constructor(private Service: ServicioService,private router:Router,
+
+  constructor(private Service: ServicioService, private router: Router,
     private fb: FormBuilder) { }
 
 
-    czForm: FormGroup;
-    czForm1: FormGroup;
+  czForm: FormGroup;
+  czForm1: FormGroup;
   submitted = false;
 
   onSubmit() {
@@ -123,11 +121,11 @@ export class AlmacenciComponent implements OnInit {
 
     // stop here if form is invalid
     if (this.czForm.valid) {
-      
-   
-        this.onClickMe();
-      
-    } else if(this.czForm.invalid) {
+
+
+      this.onClickMe();
+
+    } else if (this.czForm.invalid) {
       this.showMenssagenull();
     }
 
@@ -138,46 +136,46 @@ export class AlmacenciComponent implements OnInit {
 
   ngOnInit() {
 
-      this.czForm = this.fb.group({
-      NumeroExterno: ['', [Validators.required,Validators.pattern('^[a-z A-Z ñ á é í ó ú 0-9]*$')]],
+    this.czForm = this.fb.group({
+      NumeroExterno: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú 0-9]*$')]],
       Nombre: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
       Responsable: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
-      Capacidad: ['', [ Validators.pattern('^[0-9]*$')]],
-      Capacidad2: ['', [ Validators.pattern('^[0-9]*$')]],
+      Capacidad: ['', [Validators.pattern('^[0-9]*$')]],
+      Capacidad2: ['', [Validators.pattern('^[0-9]*$')]],
       UnidadMedida: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
       Estado: ['', Validators.required],
       idCentroDistribucion: ['', Validators.required],
       idCentrosZonales: ['', Validators.required],
-    
+
     });
 
 
-   
+
     this.Service.getinventario()
-    .subscribe(res => {
-      this.inv2 = res;
-    }, err => {
-      console.log(err);
-    });
+      .subscribe(res => {
+        this.inv2 = res;
+      }, err => {
+        console.log(err);
+      });
 
 
     this.Service.getcentrodistribucion()
-    .subscribe(res => {
-      this.cen = res;
-    }, err => {
-      console.log(err);
-    });
-
-    
-  this.Service.getCentro()
-  .subscribe(res => {
-    this.cen1 = res;
-  }, err => {
-    console.log(err);
-  });
+      .subscribe(res => {
+        this.cen = res;
+      }, err => {
+        console.log(err);
+      });
 
 
- 
+    this.Service.getCentro()
+      .subscribe(res => {
+        this.cen1 = res;
+      }, err => {
+        console.log(err);
+      });
+
+
+
 
 
   }
@@ -191,7 +189,7 @@ export class AlmacenciComponent implements OnInit {
 
 
 
-  showMenssage(){
+  showMenssage() {
     Swal.fire({
       title: 'Creado',
       text: 'Almacen Creado',
@@ -199,23 +197,23 @@ export class AlmacenciComponent implements OnInit {
       confirmButtonText: 'Entendido'
     }).then((result) => {
       if (result.value) {
-        
+
         this.router.navigate(['/almacenc']);
-    
+
       }
     });
 
-}
+  }
 
 
 
-showMenssagenull() {
-  Swal.fire({
-    title: 'Error',
-    text: 'Campos vacios',
-    type: 'warning',
-    confirmButtonText: 'Entendido'
-  });
-}
+  showMenssagenull() {
+    Swal.fire({
+      title: 'Error',
+      text: 'Campos vacios',
+      type: 'warning',
+      confirmButtonText: 'Entendido'
+    });
+  }
 
 }

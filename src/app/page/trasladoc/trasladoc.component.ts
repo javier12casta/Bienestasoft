@@ -166,6 +166,8 @@ export class TrasladocComponent implements OnInit {
     Cantidad: null,
     Cantidad2: null,
     unidad: '',
+    cantidaddevueltaml: null,
+    cantidaddevuelta: null,
   };
   inventario2: Inventario = {
     idInventario: null,
@@ -173,6 +175,8 @@ export class TrasladocComponent implements OnInit {
     Cantidad: null,
     Cantidad2: null,
     unidad: '',
+    cantidaddevueltaml: null,
+    cantidaddevuelta: null,
   };
 
 
@@ -373,8 +377,9 @@ export class TrasladocComponent implements OnInit {
       var cap = this.almacen2.Capacidad;
       //console.log('Capacidad almacen 2', cap);
       var can = Number(this.sal.cantidad);
+      var devolucion = Number(this.inventario2.cantidaddevuelta);
       var cantidadinv = Number(this.inventario2.Cantidad);
-      var cantidadsuma = Number(cantidadinv + can);
+      var cantidadsuma = Number(cantidadinv + can + devolucion);
       console.log('suma', cantidadsuma);
       if (cantidadsuma > cap) {
         this.showMenssage5();
@@ -386,8 +391,9 @@ export class TrasladocComponent implements OnInit {
       var cap = this.almacen2.Capacidad2;
       //console.log('Capacidad almacen 2', cap);
       var can = Number(this.sal.cantidad);
+      var devolucion2 = Number(this.inventario2.cantidaddevueltaml);
       var cantidadinv = Number(this.inventario2.Cantidad2);
-      var cantidadsuma = Number(cantidadinv + can);
+      var cantidadsuma = Number(cantidadinv + can + devolucion2);
       console.log('suma', cantidadsuma);
       if (cantidadsuma > cap) {
         this.showMenssage5();

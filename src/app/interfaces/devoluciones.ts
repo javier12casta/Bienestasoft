@@ -11,5 +11,7 @@ export interface Devoluciones {
     idCentroDistribucionDestino :number,
     idAlmacenes:number,
     motivo ? : string,
+    cantidad: number,
+    idAlmacenesDestino: number,
 }
     

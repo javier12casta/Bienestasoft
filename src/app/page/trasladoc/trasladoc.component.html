@@ -39,7 +39,7 @@
             <option *ngFor="let ud of alm" [value]="ud.idAlmacenes">{{ud.Nombre}}</option>
           </select>
           <div *ngIf="submitted && f.idAlmacenesOrigen.errors" class="invalid-feedback">
-            <div *ngIf="f.idAlmacenesOrigen.errors.required">Almacen de origen es requerido</div>
+            <div *ngIf="f.idAlmacenesOrigen.errors.required">Almacén de origen es requerido</div>
           </div>
         </div>
 
@@ -75,7 +75,7 @@
             <option *ngFor="let ud of alm" [value]="ud.idAlmacenes">{{ud.Nombre}}</option>
           </select>
           <div *ngIf="submitted && f.idAlmacenesDestino.errors" class="invalid-feedback">
-            <div *ngIf="f.idAlmacenesDestino.errors.required">Almacen de destino es requerido</div>
+            <div *ngIf="f.idAlmacenesDestino.errors.required">Almacén de destino es requerido</div>
           </div>
         </div>
 
