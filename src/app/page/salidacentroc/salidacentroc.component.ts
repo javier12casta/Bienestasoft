@@ -31,7 +31,15 @@ export class SalidacentrocComponent implements OnInit {
   unidadmedida = ["bolsa","caja"];
 
   //para las operaciones capacidad
-  public inventario: Inventario = {
+  public inventario1: Inventario = {
+    idInventario: 0,
+    Nombre: '',
+    Cantidad: 0,
+    Cantidad2: 0,
+    unidad: '',
+  };
+
+  public inventario2: Inventario = {
     idInventario: 0,
     Nombre: '',
     Cantidad: 0,
@@ -44,22 +52,33 @@ export class SalidacentrocComponent implements OnInit {
     private Service: ServicioService, private router:Router, private fb: FormBuilder) { }
 
     sal: Salidacentro = {
-
       lote  : '',
       fechavencimiento  : null,
-      cantidad  : 0,
-      cantidad2 : 0,
+      cantidad  : null,
+      cantidad2 : null,
       unidad  : '',
       fecharegistro  : null,
-      idCentroDistribucionOrigen  : 0,
-      idCentroDistribucionDestino  : 0,
-      idAlmacen  : 0,
-      idTipoBienesterina  : 0,
-    
+      idCentroDistribucionOrigen  : null,
+      idCentroDistribucionDestino  : null,
+      idAlmacen  : null,
+      idTipoBienesterina  : null,
+      idAlmacenesDestino: null,
     };
 
       //para la capacidad almacen
   public almacen: Almacen = {
+    idAlmacenes: 0,
+    NumeroExterno: '',
+    Nombre: '',
+    Responsable: '',
+    Capacidad: 0,
+    Capacidad2: 0,
+    UnidadMedida: '',
+    Estado: 0,
+    idCentroDistribucion: 0,
+  };
+
+  public almacen2: Almacen = {
     idAlmacenes: 0,
     NumeroExterno: '',
     Nombre: '',
@@ -97,8 +116,18 @@ export class SalidacentrocComponent implements OnInit {
     // stop here if form is invalid
     if (this.czForm.valid) {
     
+      this.sumaResta();
+      if(this.val == true && this.val1 == true && this.val2 == true && this.val3 == true){
         this.onClickMe();
-      
+      }else if(this.val == false){
+        this.showMenssage6();
+      }else if(this.val1 == false){
+        this.showMenssage7();
+      }else if (this.val2 == true){
+        this.showMenssageAlmacen();
+      }else if(this.val3 == true){
+        this.showMenssage5();
+      }
     } else if(this.czForm.invalid) {
       this.showMenssagenull();
     }
@@ -113,15 +142,15 @@ export class SalidacentrocComponent implements OnInit {
     //Validador--------------------
     this.czForm = this.fb.group({
       
-    lote:['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
+    lote:['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú 0-9]*$')]],
     fechavencimiento : ['', Validators.required],
     cantidad  :  ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
-    cantidad2  :  ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
     unidad : ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
     fecharegistro : ['', Validators.required],
     idCentroDistribucionOrigen:['', Validators.required],
     idCentroDistribucionDestino : ['', Validators.required],
     idAlmacen  : ['', Validators.required],
+    idAlmacenesDestino: ['', Validators.required],
     idTipoBienesterina : ['', Validators.required],
     });
 
@@ -159,37 +188,191 @@ export class SalidacentrocComponent implements OnInit {
       );
   }
 
-  onReset() {
-    this.submitted = false;
-    this.czForm.reset();
+  get f() { return this.czForm.controls; }
+// para hacer cumplir las validaciones
+  val = false;
+  val1 = false;
+  val2 = false;
+  val3 = false;
+
+  sumaResta(){
+    var can = Number(this.sal.cantidad);
+    var cant1 = Number(this.inventario1.Cantidad);
+    var cant2 = Number(this.inventario1.Cantidad2);
+    var cant3 = Number(this.inventario2.Cantidad);
+    var cant4 = Number(this.inventario2.Cantidad2);
+    if(this.granular == true){
+      this.inventario1.Cantidad = cant1 - can;
+      this.inventario2.Cantidad = cant3 + can;
+    }else if(this.liquida == true){
+      this.inventario1.Cantidad2 = cant2 - can;
+      this.inventario2.Cantidad2 = cant4 + can;
+    }
   }
 
-  get f() { return this.czForm.controls; }
+  traerAlmacen() {
+    if (this.sal.idAlmacen !== 0 || this.sal.idAlmacen !== null) {
 
-  Referencia  (){
-    this.Service.getTipobienestarinaid(this.sal.idTipoBienesterina.toString()).subscribe(res => {
-      this.tiporef = Object(res);
-      console.log('Tipo de referencia',res);
-      this.sal.unidad = this.tiporef.UnidadPrincipal;
+      this.Service.getalmacenid(this.sal.idAlmacen.toString()).subscribe(async res => {
+        this.almacen = Object(res);
+        this.sal.idCentroDistribucionOrigen = this.almacen.idCentroDistribucion;
+        console.log('centro distribucion id', this.sal.idCentroDistribucionOrigen);
+        setTimeout(() => { this.valAlmacen() }, 1000);
+      }, err => {
+        console.log(err);
+      });
+
+
+      this.Service.getinventarioid(this.sal.idAlmacen.toString()).subscribe(res => {
+        this.inventario1 = Object(res);
+        console.log('inventario origen', this.inventario1);
+        if (this.granular == true) {
+          this.cantidadEx = this.inventario1.Cantidad;
+        } else if (this.liquida == true) {
+          this.cantidadEx = this.inventario1.Cantidad2;
+        }
+      }, err => {
+        console.log(err);
+      });
+    }
+
+  }
+
+  valAlmacen() {
+    if (this.sal.idAlmacen !== 0 || this.sal.idAlmacen !== null) {
+      if (this.granular == true) {
+        if (this.almacen.Capacidad == 0) {
+          this.showMenssage6();
+          this.val = false;
+        }else {
+          this.val = true;
+        }
+      } else if (this.liquida == true) {
+        if (this.almacen.Capacidad2 == 0) {
+          this.showMenssage6();
+          this.val = false;
+        }else {
+          this.val = true;
+        }
+      }
+    }
+  }
+
+  traerAlmacen2() {
+    if (this.sal.idAlmacenesDestino !== 0 && this.sal.idAlmacenesDestino !== null) {
+      if (this.sal.idAlmacen == this.sal.idAlmacenesDestino) {
+        this.showMenssageAlmacen();
+        this.val2 = false;
+      } else if (this.sal.idAlmacen !== this.sal.idAlmacenesDestino) {
+        this.val2 = true;
+        this.Service.getalmacenid(this.sal.idAlmacenesDestino.toString()).subscribe(res => {
+          this.almacen2 = Object(res);
+          this.sal.idCentroDistribucionDestino = this.almacen2.idCentroDistribucion;
+          setTimeout(() => { this.valAlmacen() }, 1000);
+        }, err => {
+          console.log(err);
+        });
+
+        this.Service.getinventarioid(this.sal.idAlmacenesDestino.toString()).subscribe(res => {
+          this.inventario2 = Object(res);
+          console.log('inventario destino', this.inventario2);
+          this.Referencia();
+        }, err => {
+          console.log(err);
+        });
+
+      }
+    }
+  }
+
+  valAlmacen2() {
+    if (this.sal.idAlmacenesDestino !== 0 && this.sal.idAlmacenesDestino !== null) {
+      if (this.granular == true) {
+        if (this.almacen2.Capacidad == 0) {
+          this.showMenssage7();
+          this.val1 = false;
+        }else{
+          this.val1 = true;
+        }
+      } else if (this.liquida == true) {
+        if (this.almacen2.Capacidad2 == 0) {
+          this.showMenssage7();
+          this.val1 = false;
+        }else{
+          this.val1 = true;
+        }
+      }
+    }
+  }
+
+  showMenssageAlmacen() {
+    Swal.fire({
+      title: 'Advertencia',
+      text: 'El almacen debe ser diferente al de origen',
+      type: 'warning',
+      confirmButtonText: 'Entendido'
     });
   }
+
+  cantidadEx: number;
+  Referencia() {
+    this.Service.getTipobienestarinaid(this.sal.idTipoBienesterina.toString()).subscribe(res => {
+      this.tiporef = Object(res);
+      console.log('Tipo de referencia', res);
+      this.sal.unidad = this.tiporef.UnidadPrincipal;
+
+      if (this.tiporef.Referencia == "Granular" || this.tiporef.Referencia == "granular") {
+        this.cantidadEx = this.inventario1.Cantidad;
+        this.granular = true;
+        this.liquida = false;
+        if (this.sal.idAlmacen !== 0 && this.sal.idAlmacen != null) {
+          this.valAlmacen();
+          if (this.sal.idAlmacenesDestino !== 0 || this.sal.idAlmacenesDestino !== null) {
+            this.valAlmacen2();
+          }
+        }
+
+
+      } else if (this.tiporef.Referencia == "Liquida" || this.tiporef.Referencia == "liquida") {
+        this.cantidadEx = this.inventario1.Cantidad2;
+        this.granular = false;
+        this.liquida = true;
+        if (this.sal.idAlmacen!== 0 && this.sal.idAlmacen !== null) {
+          this.valAlmacen();
+          if (this.sal.idAlmacenesDestino !== 0 || this.sal.idAlmacenesDestino !== null) {
+            this.valAlmacen2();
+          }
+        }
+      }
+    });
+  }
+
+  //mensaje capacidad referencia
+  showMenssage6() {
+    Swal.fire({
+      title: 'Advertencia',
+      text: 'El ' + this.almacen.Nombre + ' no dispone de ese tipo de referencia',
+      type: 'warning',
+      confirmButtonText: 'Entendido'
+    });
+  }
+  showMenssage7() {
+    Swal.fire({
+      title: 'Advertencia',
+      text: 'El ' + this.almacen2.Nombre + ' no puede almacenar de ese tipo de referencia',
+      type: 'warning',
+      confirmButtonText: 'Entendido'
+    });
+  }
+
 
 
   onClickMe(){
-    // para restar al inventario
-    const cantidad = this.sal.cantidad;
-    const cantidad2 = this.sal.cantidad2;
-    this.inventario.Cantidad = this.inventario.Cantidad - cantidad;
-    this.inventario.Cantidad2 = this.inventario.Cantidad2 - cantidad2;
-    console.log('Cantidad inventario', this.inventario.Cantidad);
-    this.Service.putinventario(this.idinv, this.inventario).subscribe(res => {
 
-    }, err => {
-      console.log(err);
-    });
-//--------------------------------------------------------------
     this.Service.postsalidacentro(this.sal).subscribe(res => {
       console.log(this.sal);
+      this.Service.putinventario(this.sal.idAlmacen, this.inventario1).subscribe( res => {});
+      this.Service.putinventario(this.sal.idAlmacenesDestino, this.inventario2).subscribe( res => {});
       this.showMenssage();
       },
       err => {
@@ -232,111 +415,39 @@ export class SalidacentrocComponent implements OnInit {
   showMenssage5() {
     Swal.fire({
       title: 'Advertencia',
-      text: 'La cantidad ingresada supera la capacidad',
+      text: 'La cantidad ingresada supera la cantidad existente en el inventario',
       type: 'warning',
       confirmButtonText: 'Entendido'
     });
   }
 //Para saber que digita en el campo cantidad
-  onKey($event) {
-    const cap = this.almacen.Capacidad
-    const can = this.sal.cantidad
-    const cantidadinv = this.inventario.Cantidad;
-    const cantidadsuma = cantidadinv + can;
-    if (cantidadsuma >= cap) {
+
+granular = false;
+liquida = false;
+
+onKey($event) {
+  if (this.granular == true) {
+    var can = Number(this.sal.cantidad);
+    var cantidadinv = Number(this.inventario1.Cantidad);
+    console.log('suma', can);
+    if (can > cantidadinv) {
       this.showMenssage5();
+      this.val3 = false;
+    }else{
+      this.val3 = true;
     }
-  }
-
-  //para saber que digita en la cantidad2
-  onKey2($event) {
-    const cap = this.almacen.Capacidad2
-    const cantidadinv = this.inventario.Cantidad2;
-    const cantidadsuma = cantidadinv;
-    if (cantidadsuma >= cap) {
+  } else if (this.liquida == true) {
+    var can = Number(this.sal.cantidad);
+    var cantidadinv = Number(this.inventario1.Cantidad2);
+    console.log('suma', can);
+    if (can > cantidadinv) {
       this.showMenssage5();
-    }
-  }
-//saber que almacen selecciono y cargar la unidad de medida
-onChange($event) {
-
-  for (let al of this.alm) {
-
-    if (this.sal.idAlmacen == al.idAlmacenes) {
-      const id = this.sal.idAlmacen;
-     // console.log("IGUAl", id);
-      this.Service.getalmacenid(id.toString()).subscribe(res => {
-        this.almacen = Object(res);
-        console.log(this.almacen);
-/*         if(this.almacen.UnidadMedida == "g"){
-          console.log('entro g');
-          this.unidadmedida.pop();
-          this.unidadmedida.push('g');
-        }else if(this.almacen.UnidadMedida == "ml"){
-          this.unidadmedida.pop();
-          this.unidadmedida.push("ml");
-        }else if (this.almacen.UnidadMedida == "g y ml"){
-          this.unidadmedida.pop();
-          this.unidadmedida.push("g y ml");
-        } */
-      }, err => {
-        console.log(err);
-      });
-
+      this.val3 = false;
+    }else{
+      this.val3 = true;
     }
   }
 }
-//para saber que inventario selecciono y cargar la unidad 
-onChange1($event) {
-  console.log(this.sal);
-
-  for (let al of this.inv) {
-
-    if (this.idinv == al.idInventario) {
-      console.log("IGUAl", this.idinv);
-      this.Service.getinventarioid(this.idinv.toString()).subscribe(res => {
-        this.inventario = Object(res);
-        console.log(this.inventario);
-        if(this.inventario.unidad == "g"){
-          //console.log('entro g');
-          this.unidadmedida.pop();
-          this.unidadmedida.pop();
-          this.unidadmedida.push('');
-          this.unidadmedida.push('g');
-        }else if(this.inventario.unidad  == "ml"){
-          this.unidadmedida.pop();
-          this.unidadmedida.pop();
-          this.unidadmedida.push('');
-          this.unidadmedida.push("ml");
-        }else if (this.inventario.unidad == "g y ml"){
-          this.unidadmedida.pop();
-          this.unidadmedida.pop();
-          this.unidadmedida.push('');
-          this.unidadmedida.push("g y ml");
-        }
-
-      }, err => {
-        console.log(err);
-      });
-
-    }
-  }
-}
-
-  //verificar que selecciono en la unidad de medida
-  habilitado = true;
-  onChange3($event) {
-    console.log(this.sal.unidad);
-    if(this.sal.unidad == "g y ml"){
-      console.log("entro");
-      this.habilitado = false;
-      console.log(this.habilitado);
-    }else if (this.sal.unidad == "g") {
-      this.habilitado = true;
-    }else if (this.sal.unidad == "ml") {
-      this.habilitado = true;
-    }
-  }
 
   showMenssagenull() {
     Swal.fire({

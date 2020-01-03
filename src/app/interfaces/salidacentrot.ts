@@ -10,4 +10,5 @@ export interface Salidacentrot {
     centrodestino: string,
     Nombreal: string,
     TipoBienesterina : string,
+    idAlmacenesDestino: number,
 }

@@ -9,6 +9,7 @@ export interface Salidacentro {
     idCentroDistribucionOrigen:number,
     idCentroDistribucionDestino : number,
     idAlmacen  : number,
+    idAlmacenesDestino: number,
     idTipoBienesterina : number,
 }
     

@@ -4,49 +4,48 @@
     <button class="btn btn-dark" routerLink="/entregasel">Volver</button>
     <button class="btn btn-dark" routerLink="/salidacentroc"> Crear </button>
   </div>
-    
-    <div>
-        <label>Entrega centro distribución</label>
-    
-    {{fecha}}  
-    </div>
-  
-    <div>
 
-      
-    </div>
-  </nav>
+  <div>
+    <label>Entrega centro distribución</label>
 
-  <table class="table" >
-    <thead class="thead-green">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Lote </th>
-        <th scope="col">Fecha vencimiento </th>
-        <th scope="col">Cantidad </th>
-        <th scope="col">Unidad </th>
-        <th scope="col">Fecha registro</th>
-        <th scope="col">Centro distribución origen</th>
-        <th scope="col">Centro distribución destino</th>
-        <th scope="col">Almacén</th>
-        <th scope="col">Tipo bienesterina</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let sal of centroD">
-        <th >{{sal.identregacentrodistribucion}}</th>
-        <td>{{sal.lote }}</td>
-        <td>{{sal.fechavencimiento}}</td>
-        <td>{{sal.cantidad }}</td>
-        <td>{{sal.unidad}}</td>
-        <td>{{sal.fecharegistro}}</td>
-        <td>{{sal.centroorigen}}</td>
-        <td>{{sal.centrodestino}}</td>
-        <td>{{sal.Nombre}}</td>
-        <td>{{sal.TipoBienesterina}}</td>
-        
+    {{fecha}}
+  </div>
 
-      </tr>
-    </tbody>
-  </table>  
- 
+  <div>
+
+
+  </div>
+</nav>
+
+<table class="table">
+  <thead class="thead-green">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Lote </th>
+      <th scope="col">Fecha vencimiento </th>
+      <th scope="col">Cantidad </th>
+      <th scope="col">Referncia bienesterina</th>
+      <th scope="col">Presentación </th>
+      <th scope="col">Fecha registro</th>
+      <th scope="col">Centro distribución origen</th>
+      <th scope="col">Almacén origen</th>
+      <th scope="col">Centro distribución destino</th>
+      <th scope="col">Almacén destino</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let sal of centroD">
+      <th>{{sal.identregacentrodistribucion}}</th>
+      <td>{{sal.lote }}</td>
+      <td>{{sal.fechavencimiento}}</td>
+      <td>{{sal.cantidad }}</td>
+      <td>{{sal.TipoBienesterina}}</td>
+      <td>{{sal.unidad}}</td>
+      <td>{{sal.fecharegistro}}</td>
+      <td>{{sal.centroorigen}}</td>
+      <td>{{sal.Nombre}}</td>
+      <td>{{sal.centrodestino}}</td>
+      <td>{{sal.idAlmacenesDestino}}</td>
+    </tr>
+  </tbody>
+</table>
