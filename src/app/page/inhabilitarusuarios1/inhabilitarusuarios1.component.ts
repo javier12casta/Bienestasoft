@@ -8,7 +8,7 @@ import { ServicioService } from '../../servicio.service';
   styleUrls: ['./inhabilitarusuarios1.component.css'],
   template: `
 
-  <nav class="navbar navbar-success bg-success">
+  <nav class="navbar navbar-fixed-top">
   <button class="btn btn-dark" routerLink="/inhabilitarusuarios">Volver</button>
   <div>
           <label>Inhabilitar usuarios centro zonal</label>
