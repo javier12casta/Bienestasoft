@@ -182,8 +182,9 @@ export class BeneficiariosmpiComponent implements OnInit {
        console.log('idbeneficiario', this.idbene);
        console.log('idbeneficiario', this.idbene[0]["id"]);
        this.idmax = this.idbene[0]["id"];
+       var suma = Number(this.idmax + 1);
        console.log('idbeneficiario numero', this.idmax);
-       this.y.idBeneficiarios = this.idmax + 1;
+       this.y.idBeneficiarios = suma;
        console.log('idbeneficiario y numero', this.y.idBeneficiarios);
 
      }, err => {
