@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Salidaconsumo} from 'src/app/interfaces/salidaconsumo';
+import { Salidaconsumo } from 'src/app/interfaces/salidaconsumo';
 import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
 import { Select2OptionData } from 'ng2-select2';
@@ -24,12 +24,12 @@ export class SalidaconsumocComponent implements OnInit {
   public tip: TipoBienestarina[] = [];
   public cen: Centrodistribucion[] = [];
   public alm: Almacen[] = [];
-  unidadmedida = ["bolsa","caja"];
+  unidadmedida = ["bolsa", "caja"];
 
   constructor(private activeRoute: ActivatedRoute,
-    private Service: ServicioService, private router:Router, private fb: FormBuilder) { }
+    private Service: ServicioService, private router: Router, private fb: FormBuilder) { }
 
-     //para las operaciones capacidad
+  //para las operaciones capacidad
   public inventario: Inventario = {
     idInventario: 0,
     Nombre: '',
@@ -51,36 +51,36 @@ export class SalidaconsumocComponent implements OnInit {
     idCentroDistribucion: 0,
   };
 
-    sal: Salidaconsumo = {
+  sal: Salidaconsumo = {
 
-      lote  : '',
-      fechavencimiento  : 0,
-      cantidad  : null,
-      cantidad2: 0,
-      unidad  : '',
-      fecharegistro  : 0,
-      idTipoBienesterina  : 0,
-      idCentroDistribucion  : 0,
-      idAlmacenes  : 0,
-     
-    
-    };
+    lote: '',
+    fechavencimiento: 0,
+    cantidad: null,
+    cantidad2: 0,
+    unidad: '',
+    fecharegistro: 0,
+    idTipoBienesterina: 0,
+    idCentroDistribucion: 0,
+    idAlmacenes: 0,
 
-    tiporef: TipoBienestarina = {
-      idTipoBienesterina: 0,
-      TipoBienesterina : '',
-      Codigo : 0,
-      Estado : '',
-      Referencia : '',
-      UnidadPrincipal : '',
-      Cantidad : 0,
-      cantidad2: 0,
-      UnidadSecundaria: '',
-  
-    };
-    idinv = 0;
 
-    //----Validaciones de campos
+  };
+
+  tiporef: TipoBienestarina = {
+    idTipoBienesterina: 0,
+    TipoBienesterina: '',
+    Codigo: 0,
+    Estado: '',
+    Referencia: '',
+    UnidadPrincipal: '',
+    Cantidad: 0,
+    cantidad2: 0,
+    UnidadSecundaria: '',
+
+  };
+  idinv = 0;
+
+  //----Validaciones de campos
   czForm: FormGroup;
   submitted = false;
 
@@ -89,10 +89,18 @@ export class SalidaconsumocComponent implements OnInit {
 
     // stop here if form is invalid
     if (this.czForm.valid) {
-    
+
+      this.suma();
+      if (this.val == true && this.val1 == true) {
+        console.log('Entro');
         this.onClickMe();
-      
-    } else if(this.czForm.invalid) {
+      } else if (this.val == false) {
+        this.showMenssage6();
+      } else if (this.val1 == false) {
+        this.showMenssage5();
+      }
+
+    } else if (this.czForm.invalid) {
       this.showMenssagenull();
     }
 
@@ -100,32 +108,55 @@ export class SalidaconsumocComponent implements OnInit {
     console.log('Formulario', this.czForm.value);
   }
 
+  onClickMe() {
+    this.Service.postsalidaconsumo(this.sal).subscribe(res => {
+      console.log(this.sal);
+      this.Service.putinventario(this.sal.idAlmacenes, this.inventario).subscribe(res => { });
+      this.showMenssage();
+    },
+      err => {
+        console.log(err);
+      });
+  }
+
+  suma() {
+    var cantidad = Number(this.sal.cantidad);
+    var can = Number(this.inventario.Cantidad);
+    var cantidad2 = Number(this.sal.cantidad);
+    var can2 = Number(this.inventario.Cantidad2);
+    if (this.granular == true) {
+      this.inventario.Cantidad = can - cantidad;
+      console.log('cantidad granular', this.inventario.Cantidad);
+    } else if (this.liquida == true) {
+      this.inventario.Cantidad2 = can2 - cantidad2;
+      console.log('cantidad liquida', this.inventario.Cantidad2);
+    }
+  }
 
   ngOnInit() {
 
-     
-     this.czForm = this.fb.group({
-      
 
-      lote :['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
-      fechavencimiento : ['', Validators.required],
-      cantidad  : ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
-      cantidad2   : ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
-      unidad : ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
-      fecharegistro  : ['', Validators.required],
-      idTipoBienesterina:['', Validators.required],
-      idCentroDistribucion : ['', Validators.required],
-      idAlmacenes  : ['', Validators.required],
-      });
+    this.czForm = this.fb.group({
+
+
+      lote: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú 0-9]*$')]],
+      fechavencimiento: ['', Validators.required],
+      cantidad: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+      unidad: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
+      fecharegistro: ['', Validators.required],
+      idTipoBienesterina: ['', Validators.required],
+      idCentroDistribucion: ['', Validators.required],
+      idAlmacenes: ['', Validators.required],
+    });
 
 
     this.Service.getTipobienestarina()
-    .subscribe(async (data) => {
-      this.tip = data;
-      console.log(data);
-      console.log('funciona');
-    }
-    );
+      .subscribe(async (data) => {
+        this.tip = data;
+        console.log(data);
+        console.log('funciona');
+      }
+      );
 
     this.Service.getcentrodistribucion()
       .subscribe(async (data) => {
@@ -135,7 +166,7 @@ export class SalidaconsumocComponent implements OnInit {
       }
       );
 
-      this.Service.getalmacen()
+    this.Service.getalmacen()
       .subscribe(async (data) => {
         this.alm = data;
         console.log(data);
@@ -143,7 +174,7 @@ export class SalidaconsumocComponent implements OnInit {
       }
       );
 
-      this.Service.getinventario()
+    this.Service.getinventario()
       .subscribe(async (data) => {
         this.inv = data;
         //console.log(data);
@@ -160,43 +191,114 @@ export class SalidaconsumocComponent implements OnInit {
 
   get f() { return this.czForm.controls; }
 
-  Referencia  (){
+  granular = false;
+  liquida = false;
+  Referencia() {
     this.Service.getTipobienestarinaid(this.sal.idTipoBienesterina.toString()).subscribe(res => {
       this.tiporef = Object(res);
-      console.log('Tipo de referencia',res);
+      console.log('Tipo de referencia', res);
       this.sal.unidad = this.tiporef.UnidadPrincipal;
+      if (this.tiporef.Referencia == "Granular" || this.tiporef.Referencia == "granular") {
+        this.granular = true;
+        this.liquida = false;
+        if (this.sal.idAlmacenes !== 0 && this.sal.idAlmacenes != null) {
+          this.valAlmacen();
+        }
+      } else if (this.tiporef.Referencia == "Liquida" || this.tiporef.Referencia == "liquida") {
+        this.granular = false;
+        this.liquida = true;
+        if (this.sal.idAlmacenes !== 0 && this.sal.idAlmacenes !== null) {
+          this.valAlmacen();
+        }
+      }
     });
   }
 
+  traerAlmacen() {
+    if (this.sal.idAlmacenes !== 0 || this.sal.idAlmacenes !== null) {
 
-
-  onClickMe(){
-
-        // para restar al inventario
-        const cantidad = this.sal.cantidad;
-        const cantidad2 = this.sal.cantidad2;
-        this.inventario.Cantidad = this.inventario.Cantidad - cantidad;
-        this.inventario.Cantidad2 = this.inventario.Cantidad2 - cantidad2;
-        console.log('Cantidad inventario', this.inventario.Cantidad);
-        this.Service.putinventario(this.idinv, this.inventario).subscribe(res => {
-    
-        }, err => {
-          console.log(err);
-        });
-        //--------------------------------------------------------------
-    this.Service.postsalidaconsumo(this.sal).subscribe(res => {
-      console.log(this.sal);
-      this.showMenssage();
-      
-      },
-      err => {
+      this.Service.getalmacenid(this.sal.idAlmacenes.toString()).subscribe(async res => {
+        this.almacen = Object(res);
+        this.sal.idCentroDistribucion = this.almacen.idCentroDistribucion;
+        console.log('centro distribucion id', this.sal.idCentroDistribucion);
+        setTimeout(() => { this.valAlmacen() }, 1000);
+      }, err => {
         console.log(err);
       });
-     
+
+
+      this.Service.getinventarioid(this.sal.idAlmacenes.toString()).subscribe(res => {
+        this.inventario = Object(res);
+        console.log('inventario origen', this.inventario);
+      }, err => {
+        console.log(err);
+      });
+    }
 
   }
+  val = false;
+  valAlmacen() {
+    if (this.sal.idAlmacenes !== 0 || this.sal.idAlmacenes !== null) {
+      if (this.granular == true) {
+        if (this.almacen.Capacidad == 0) {
+          this.showMenssage6();
+          this.val = false;
+        } else {
+          this.val = true;
+        }
+      } else if (this.liquida == true) {
+        if (this.almacen.Capacidad2 == 0) {
+          this.showMenssage6();
+          this.val = false;
+        } else {
+          this.val = true;
+        }
+      }
+    }
+  }
 
-  showMenssage(){
+  //mensaje capacidad referencia
+  showMenssage6() {
+    Swal.fire({
+      title: 'Advertencia',
+      text: 'El ' + this.almacen.Nombre + ' no dispone ese tipo de referencia',
+      type: 'warning',
+      confirmButtonText: 'Entendido'
+    });
+  }
+
+  val1 = false;
+  onKey($event) {
+    if (this.granular == true) {
+      var can = Number(this.sal.cantidad);
+      var cantidadinv = Number(this.inventario.Cantidad);
+      console.log('suma', can);
+      if (cantidadinv == 0) {
+        this.showMenssagevacio();
+      }
+      else if (can > cantidadinv) {
+        this.showMenssage5();
+        this.val1 = false;
+      } else {
+        this.val1 = true;
+      }
+    } else if (this.liquida == true) {
+      var can = Number(this.sal.cantidad2);
+      var cantidadinv = Number(this.inventario.Cantidad2);
+      console.log('suma', can);
+      if (cantidadinv == 0) {
+        this.showMenssagevacio();
+      }
+      else if (can > cantidadinv) {
+        this.showMenssage5();
+        this.val1 = false;
+      } else {
+        this.val1 = true;
+      }
+    }
+  }
+
+  showMenssage() {
     Swal.fire({
       title: 'Creado',
       text: 'Salida para consumo creado',
@@ -204,9 +306,9 @@ export class SalidaconsumocComponent implements OnInit {
       confirmButtonText: 'Entendido'
     }).then((result) => {
       if (result.value) {
-        
+
         this.router.navigate(['/salidaconsumo']);
-    
+
       }
     });
   }
@@ -215,114 +317,22 @@ export class SalidaconsumocComponent implements OnInit {
   showMenssage5() {
     Swal.fire({
       title: 'Advertencia',
-      text: 'La cantidad ingresada supera la capacidad',
+      text: 'La cantidad ingresada supera la cantidad existente en el inventario',
       type: 'warning',
       confirmButtonText: 'Entendido'
     });
   }
-  //Para saber que digita en el campo cantidad
-  onKey($event) {
-    const Cantidadx = this.sal.cantidad;
-    const cap = this.almacen.Capacidad;
-    const cantidadinv = this.inventario.Cantidad;
-    const cantidadsuma = Cantidadx;
-    if (cantidadsuma >= cantidadinv) {
-      this.showMenssage5();
-    }
+
+  showMenssagevacio() {
+    Swal.fire({
+      title: 'Advertencia',
+      text: 'No hay existencias de la referenia seleccionada',
+      type: 'warning',
+      confirmButtonText: 'Entendido'
+    });
   }
 
-  //para saber que digita en la cantidad2
-  onKey2($event) {
-    const Cantidadx = this.sal.cantidad2;
-    const cantidadinv = this.inventario.Cantidad2;
-    const cantidadsuma = Cantidadx;
-    console.log('inv', cantidadinv);
-    if (cantidadsuma >= cantidadinv) {
-      this.showMenssage5();
-    }
-  }
-  //saber que almacen selecciono y cargar la unidad de medida
-  onChange($event) {
-
-    for (let al of this.alm) {
-
-      if (this.sal.idAlmacenes == al.idAlmacenes) {
-        const id = this.sal.idAlmacenes;
-        // console.log("IGUAl", id);
-        this.Service.getalmacenid(id.toString()).subscribe(res => {
-          this.almacen = Object(res);
-          console.log(this.almacen);
-          /*         if(this.almacen.UnidadMedida == "g"){
-                    console.log('entro g');
-                    this.unidadmedida.pop();
-                    this.unidadmedida.push('g');
-                  }else if(this.almacen.UnidadMedida == "ml"){
-                    this.unidadmedida.pop();
-                    this.unidadmedida.push("ml");
-                  }else if (this.almacen.UnidadMedida == "g y ml"){
-                    this.unidadmedida.pop();
-                    this.unidadmedida.push("g y ml");
-                  } */
-        }, err => {
-          console.log(err);
-        });
-
-      }
-    }
-  }
-
-
-  onChange1($event) {
-    console.log(this.sal);
-
-    for (let al of this.inv) {
-
-      if (this.idinv == al.idInventario) {
-        console.log("IGUAl", this.idinv);
-        this.Service.getinventarioid(this.idinv.toString()).subscribe(res => {
-          this.inventario = Object(res);
-          console.log(this.inventario);
-          if (this.inventario.unidad == "g") {
-            this.unidadmedida.pop();
-            this.unidadmedida.pop();
-            this.unidadmedida.push('');
-            this.unidadmedida.push('g');
-          } else if (this.inventario.unidad == "ml") {
-            this.unidadmedida.pop();
-            this.unidadmedida.pop();
-            this.unidadmedida.push('');
-            this.unidadmedida.push("ml");
-          } else if (this.inventario.unidad == "g y ml") {
-            this.unidadmedida.pop();
-            this.unidadmedida.pop();
-            this.unidadmedida.push('');
-            this.unidadmedida.push("g y ml");
-          }
-
-        }, err => {
-          console.log(err);
-        });
-
-      }
-    }
-  }
-
-
-  habilitado = true;
-  onChange3($event) {
-    console.log(this.sal.unidad);
-    if (this.sal.unidad == "g y ml") {
-     // console.log("entro");
-      this.habilitado = false;
-      console.log(this.habilitado);
-    } else if (this.sal.unidad == "g") {
-      this.habilitado = true;
-    } else if (this.sal.unidad == "ml") {
-      this.habilitado = true;
-    }
-  }
-
-showMenssagenull() {
+  showMenssagenull() {
     Swal.fire({
       title: 'Error',
       text: 'Campos vacios',
@@ -330,5 +340,5 @@ showMenssagenull() {
       confirmButtonText: 'Entendido'
     });
   }
-  
+
 }

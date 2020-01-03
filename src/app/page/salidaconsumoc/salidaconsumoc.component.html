@@ -14,8 +14,9 @@
           <span>Referencia bienestarina</span>
           <h2></h2>
 
-          <select  formControlName="idTipoBienesterina" [(ngModel)]="sal.idTipoBienesterina" (ngModelChange)="Referencia($event)"
-             placeholder="referencia" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.idTipoBienesterina.errors }">
+          <select formControlName="idTipoBienesterina" [(ngModel)]="sal.idTipoBienesterina"
+            (ngModelChange)="Referencia($event)" placeholder="referencia" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.idTipoBienesterina.errors }">
             <option *ngFor="let ud of tip" [value]="ud.idTipoBienesterina ">{{ud.TipoBienesterina }} </option>
           </select>
 
@@ -25,7 +26,35 @@
 
           <h2></h2>
 
-         
+
+        </div>
+
+        <div class="form-group">
+
+          <span>Presentación</span>
+          <h2></h2>
+          <select [(ngModel)]="sal.unidad" (change)="onChange3($event)" class="form-control" formControlName="unidad"
+            [ngClass]="{ 'is-invalid': submitted && f.unidad.errors }">
+            <option [value]="item" *ngFor="let item of unidadmedida">{{item}} </option>
+          </select>
+
+          <div *ngIf="submitted && f.unidad.errors" class="invalid-feedback">
+            <div *ngIf="f.unidad.errors.required">Presentación es requerido</div>
+          </div>
+          <h2></h2>
+        </div>
+
+        <div class="form-group">
+          <span>Almacén </span>
+          <h2></h2>
+          <select formControlName="idAlmacenes" [(ngModel)]="sal.idAlmacenes" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.idAlmacenes.errors }" (ngModelChange)="traerAlmacen($event)">
+            <option *ngFor="let ud of alm" [value]="ud.idAlmacenes">{{ud.Nombre }} </option>
+          </select>
+          <div *ngIf="submitted && f.idAlmacenes.errors" class="invalid-feedback">
+            <div *ngIf="f.idAlmacenes.errors.required">Almacén es requerido</div>
+          </div>
+          <h2></h2>
         </div>
 
         <div class="form-group">
@@ -33,9 +62,8 @@
           <span>Centro de distribución </span>
           <h2></h2>
 
-          <select formControlName="idCentroDistribucion"
-            [(ngModel)]="sal.idCentroDistribucion" 
-            class="form-control" [ngClass]="{ 'is-invalid': submitted && f.idCentroDistribucion.errors }">
+          <select formControlName="idCentroDistribucion" [(ngModel)]="sal.idCentroDistribucion" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.idCentroDistribucion.errors }">
             <option *ngFor="let ud of cen" [value]="ud.idCentroDistribucion">{{ud.Nombre }} </option>
           </select>
 
@@ -44,36 +72,15 @@
           </div>
 
           <h2></h2>
-         
+
         </div>
-
-
-        <div class="form-group">
-
-          <span>Almacén </span>
-          <h2></h2>
-
-          <select formControlName="idAlmacenes"  [(ngModel)]="sal.idAlmacenes"
-            class="form-control" [ngClass]="{ 'is-invalid': submitted && f.idAlmacenes.errors }">
-            <option *ngFor="let ud of alm" [value]="ud.idAlmacenes">{{ud.Nombre }} </option>
-          </select>
-
-          <div *ngIf="submitted && f.idAlmacenes.errors" class="invalid-feedback">
-            <div *ngIf="f.idAlmacenes.errors.required">Almacén es requerido</div>
-          </div>
-
-          <h2></h2>
-
-         
-        </div>
-
 
         <div class="form-group">
 
           <span>Lote</span>
           <h2></h2>
-          <input type="text" class="form-control" [(ngModel)]="sal.lote"  placeholder="Lote"
-          formControlName="lote" [ngClass]="{ 'is-invalid': submitted && f.lote.errors }">
+          <input type="text" class="form-control" [(ngModel)]="sal.lote" placeholder="Lote" formControlName="lote"
+            [ngClass]="{ 'is-invalid': submitted && f.lote.errors }">
 
           <div *ngIf="submitted && f.lote.errors" class="invalid-feedback">
             <div *ngIf="f.lote.errors.required">Lote es requerido</div>
@@ -81,99 +88,66 @@
           </div>
 
           <h2></h2>
-         
+
         </div>
 
         <div class="form-group">
 
           <span>Fecha de vencimiento </span>
           <h2></h2>
-          <input type="date"  [(ngModel)]="sal.fechavencimiento"  placeholder="Fecha de vencimiento"
-            min="1940-01-01" max="2050-12-31" class="form-control" formControlName="fechavencimiento" [ngClass]="{ 'is-invalid': submitted && f.fechavencimiento.errors }">
+          <input type="date" [(ngModel)]="sal.fechavencimiento" placeholder="Fecha de vencimiento" min="1940-01-01"
+            max="2050-12-31" class="form-control" formControlName="fechavencimiento"
+            [ngClass]="{ 'is-invalid': submitted && f.fechavencimiento.errors }">
 
-            <div *ngIf="submitted && f.fechavencimiento.errors" class="invalid-feedback">
-              <div *ngIf="f.fechavencimiento.errors.required">Fecha vencimiento es requerido</div>
-            </div>
-
-          <h2></h2>
-         
-        </div>
-
-        <div class="form-group">
-
-          <span>Unidad de medida</span>
-          <h2></h2>
-
-          <select  [(ngModel)]="sal.unidad" (change)="onChange3($event)"  
-             class="form-control" formControlName="unidad" [ngClass]="{ 'is-invalid': submitted && f.unidad.errors }">
-            <option [value]="item" *ngFor="let item of unidadmedida">{{item}} </option>
-          </select>
-
-          <div *ngIf="submitted && f.unidad.errors" class="invalid-feedback">
-            <div *ngIf="f.unidad.errors.required">Unidad es requerido</div>
+          <div *ngIf="submitted && f.fechavencimiento.errors" class="invalid-feedback">
+            <div *ngIf="f.fechavencimiento.errors.required">Fecha vencimiento es requerido</div>
           </div>
 
           <h2></h2>
-         
+
         </div>
+
+
 
         <div class="form-group">
 
           <span>Cantidad</span>
           <h2></h2>
-          <input type="number" class="form-control" [(ngModel)]="sal.cantidad" [ngClass]="{ 'is-invalid': submitted && f.cantidad.errors }"
-            placeholder="Cantidad" (keyup)="onKey($event)" formControlName="cantidad" >
+          <input type="number" class="form-control" [(ngModel)]="sal.cantidad"
+            [ngClass]="{ 'is-invalid': submitted && f.cantidad.errors }" placeholder="Cantidad" (keyup)="onKey($event)"
+            formControlName="cantidad">
 
-            <div *ngIf="submitted && f.cantidad.errors" class="invalid-feedback">
-              <div *ngIf="f.cantidad.errors.required">Cantidad es requerido</div>
-              <div *ngIf="f.cantidad.errors.pattern">Cantidad solo puede contener numeros</div>
-            </div>
+          <div *ngIf="submitted && f.cantidad.errors" class="invalid-feedback">
+            <div *ngIf="f.cantidad.errors.required">Cantidad es requerido</div>
+            <div *ngIf="f.cantidad.errors.pattern">Cantidad solo puede contener numeros</div>
+          </div>
 
           <h2></h2>
-         
-        </div>
 
-        <div class="form-group">
-
-          <div id="unidad" [hidden]="habilitado">
-            <h2></h2>
-            <span>Capacidad líquida</span>
-            <h2></h2>
-            <input type="number"  [(ngModel)]="sal.cantidad2" formControlName="cantidad2" [ngClass]="{ 'is-invalid': submitted && f.cantidad2.errors }"
-              placeholder="Capacidad líquida" (keyup)="onKey2($event)" class="form-control"  minlength="0"
-             >
-
-             <div *ngIf="submitted && f.cantidad2.errors" class="invalid-feedback">
-              <div *ngIf="f.cantidad2.errors.required">Cantidad líquida es requerido</div>
-              <div *ngIf="f.cantidad2.errors.pattern">Cantidad solo puede contener numeros</div>
-            </div>
-
-            <h2></h2>
-          </div>
-         
         </div>
 
         <div class="form-group">
 
           <span>Fecha de registro </span>
           <h2></h2>
-          <input type="date" class="form-control" formControlName="fecharegistro"  [(ngModel)]="sal.fecharegistro" placeholder="Fecha de registro"
-          min="1930-01-01" max="2050-12-31" [ngClass]="{ 'is-invalid': submitted && f.fecharegistro.errors }">
+          <input type="date" class="form-control" formControlName="fecharegistro" [(ngModel)]="sal.fecharegistro"
+            placeholder="Fecha de registro" min="1930-01-01" max="2050-12-31"
+            [ngClass]="{ 'is-invalid': submitted && f.fecharegistro.errors }">
 
           <div *ngIf="submitted && f.fecharegistro.errors" class="invalid-feedback">
             <div *ngIf="f.fecharegistro.errors.required">Fecha de registro es requerido</div>
           </div>
 
           <h2></h2>
-         
+
         </div>
 
         <div class="form-group">
 
-          <button (click)="onClickMe()" class="btn btn-success btn-block">Aceptar</button>
+          <button class="btn btn-success btn-block">Aceptar</button>
 
           <h2></h2>
-         
+
         </div>
 
 
