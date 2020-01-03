@@ -113,15 +113,10 @@ export class SalidabeneficiariocComponent implements OnInit {
   }
 
   onClickMe() {
-
-    // para restar al inventario
-    const cantidad = this.sal.cantidad;
-    const cantidad2 = this.sal.Cantidad2;
-    this.inventario.Cantidad = this.inventario.Cantidad - cantidad;
-    this.inventario.Cantidad2 = this.inventario.Cantidad2 - cantidad2;
     console.log('Cantidad inventario', this.inventario.Cantidad);
     this.Service.putinventario(this.idinv, this.inventario).subscribe(res => {
 
+      this.Service.putinventario(this.sal.idAlmacenes, this.inventario).subscribe( res => {});
     }, err => {
       console.log(err);
     });
@@ -143,10 +138,10 @@ export class SalidabeneficiariocComponent implements OnInit {
     var cantidad2 = Number(this.sal.cantidad);
     var can2 = Number(this.inventario.Cantidad2);
     if(this.granular == true){
-      this.inventario.Cantidad = cantidad - can;
+      this.inventario.Cantidad = can - cantidad;
       console.log('cantidad granular',this.inventario.Cantidad);
     }else if(this.liquida == true){
-      this.inventario.Cantidad2 = cantidad2 - can2;
+      this.inventario.Cantidad2 = can2 - cantidad2;
       console.log('cantidad liquida',this.inventario.Cantidad2);
     }
   }
