@@ -27,7 +27,7 @@ export class ListadocursosComponent implements OnInit {
     NombreAgenteE :'',
     NumeroDocumento : '',
     Fecha : 0,
-    Estado : 0,
+    Estado : 1,
     idTipoDocumento : 0,
     idBenefiarios : 0,
     idCentrosZonales : 0,

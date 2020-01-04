@@ -57,7 +57,7 @@ import { ServicioService } from '../../servicio.service';
         </td>
         <td>{{usu.NombreCentroZonal}}</td>    
         <td>
-          <button class="btn btn-primary" [routerLink]="['/modificarcentrom', usu.idCentroDistribucion]">Modificar</button>
+          <button class="btn btn-dark" [routerLink]="['/modificarcentrom', usu.idCentroDistribucion]">Modificar</button>
         </td>
       </tr>
     </tbody>

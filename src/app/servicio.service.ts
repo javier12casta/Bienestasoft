@@ -953,6 +953,11 @@ export class ServicioService {
     const path = `${this.api}/consecutivoM/tabla17`;
     return this.http.get<[Consecutivomaestro]>(path);
   }
+
+  Obtenerconsecutivosm18() {
+    const path = `${this.api}/consecutivoM/tabla18`;
+    return this.http.get<[Consecutivomaestro]>(path);
+  }
  
 
 }

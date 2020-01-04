@@ -23,7 +23,7 @@ export class ListadoPreciosComponent implements OnInit {
 
     Referencia: '',
     Mes: '',
-    Ano: 2019,
+    Ano: null,
     ValorCop: null,
     Estado: 1,
     Codigo: null,
@@ -99,7 +99,7 @@ export class ListadoPreciosComponent implements OnInit {
       Codigo: ['', Validators.required],
       Referencia:  ['', [Validators.required, Validators.pattern('^[0-9 a-z A-Z ñ á é í ó ú\(\)\.]*$')]],
       Mes: ['', Validators.required],
-      Ano: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+      Ano:  ['', [Validators.required, Validators.minLength(4), Validators.maxLength(4), Validators.pattern('^[0-9]*$')]],
       ValorCop: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
     });
 
@@ -122,8 +122,8 @@ export class ListadoPreciosComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         
-        this.router.navigate(['/referenciasbienestarinav']);
-        window.location.reload();
+        this.router.navigate(['/listapreciosv']);
+       
       }
     });
   }

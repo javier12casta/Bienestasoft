@@ -61,7 +61,7 @@
                 <label>Estado</label>
                 <select formControlName="Estado" class="form-control" [(ngModel)]="x.Estado" name="Estado" id="Estado" [ngClass]="{ 'is-invalid': submitted && f.Estado.errors }">
                     <option value="1">Habilitado</option>
-                    <option value="0">Inhabilitado</option>
+                    <option value="0">Deshabilitado</option>
                 </select>
                 <div *ngIf="submitted && f.Estado.errors" class="invalid-feedback">
                  <div *ngIf="f.Estado.errors.required">Estado es requerido</div>

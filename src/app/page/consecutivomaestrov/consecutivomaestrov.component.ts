@@ -141,6 +141,14 @@ export class ConsecutivomaestrovComponent implements OnInit {
     });
 
 
+    this.Service.Obtenerconsecutivosm18()
+    .subscribe( async (res)=> {
+      this.unidadt = res
+    }, err => {
+      console.log(err);
+    });
+
+
 
     this.Service.getconsecutivomaestro()
     .subscribe( async (res)=> {
