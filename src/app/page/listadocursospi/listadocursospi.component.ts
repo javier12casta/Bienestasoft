@@ -28,7 +28,7 @@ export class ListadocursospiComponent implements OnInit {
     NombreAgenteE :'',
     NumeroDocumento : '',
     Fecha : 0,
-    Estado : 0,
+    Estado : 1,
     idTipoDocumento : 0,
     idBenefiarios : 0,
     idPuntoEntrega : 0,
