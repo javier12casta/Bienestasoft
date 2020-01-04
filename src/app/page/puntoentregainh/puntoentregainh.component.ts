@@ -172,7 +172,7 @@ export class PuntoentregainhComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
 
-        this.router.navigate(['/puntoentrega']);
+        this.router.navigate(['/puntoentregain']);
 
       }
 
@@ -201,7 +201,7 @@ export class PuntoentregainhComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
 
-        this.router.navigate(['/puntoentrega']);
+        this.router.navigate(['/puntoentregain']);
 
       }
 
