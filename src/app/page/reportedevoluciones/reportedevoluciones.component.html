@@ -5,33 +5,32 @@
   <table class="table"  id="contentToConvert">
     <thead class="thead-green">
         {{Nombrereporte}}  {{fecha}}
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">lote</th>
-        <th scope="col">fechavencimiento</th>       
-        <th scope="col">unidad</th>
-        <th scope="col">fecha registro</th>
-        <th scope="col"># TipoBienesterina</th>
-        <th scope="col"># CentroDistribucionOrigen </th>
-        <th scope="col"># CentroDistribucionDestino</th>
-        <th scope="col"># Almacenes</th>
-    
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let sal of devolucion">
-        <th scope="row">{{sal.iddevoluciones}}</th>
-        <td>{{sal.lote}}</td>
-        <td>{{sal.fechavencimiento}}</td>
-        <td>{{sal.unidad}}</td>
-        <td>{{sal.fecharegistro}}</td>
-        <td>{{sal.idTipoBienesterina}}</td>
-        <td>{{sal.idCentroDistribucionOrigen}}</td>
-        <td>{{sal.idCentroDistribucionDestino}}</td>
-        <td>{{sal.idAlmacenes  }}</td>
-
-
-      </tr>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Lote</th>
+          <th scope="col">Fecha de vencimiento</th>
+          <th scope="col">Fecha de registro</th>
+          <th scope="col">Presentación</th>
+          <th scope="col">Referencia bienesterina</th>
+          <th scope="col">Centro de distribución de origen </th>
+          <th scope="col">Almacén origen</th>
+          <th scope="col">Centro de distribución de destino</th>
+          <th scope="col">Almacén destino</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sal of devolucion">
+          <th scope="row">{{sal.iddevoluciones}}</th>
+          <td>{{sal.lote}}</td>
+          <td>{{sal.fechavencimiento}}</td>
+          <td>{{sal.fecharegistro}}</td>
+          <td>{{sal.unidad}}</td>
+          <td>{{sal.Referencia}}</td>
+          <td>{{sal.centrodistribucionorigen}}</td>
+          <td>{{sal.Nombrealmacen}}</td>
+          <td>{{sal.centrodistribuciondestino}}</td>
+          <td>{{sal.idAlmacenesDestino}}</td>
+        </tr>
     </tbody>
   </table>
 

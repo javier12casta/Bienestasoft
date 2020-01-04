@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Devoluciones} from '../../interfaces/devoluciones';
+import { Devolucionest} from '../../interfaces/devolucionest';
 import { ServicioService } from '../../servicio.service';
 import * as jspdf from 'jspdf'; 
 import html2canvas from 'html2canvas';
@@ -11,7 +11,7 @@ import html2canvas from 'html2canvas';
 })
 export class ReportedevolucionesComponent implements OnInit {
 
-  devolucion: Devoluciones[] = [];
+  devolucion: Devolucionest[] = [];
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
   Nombrereporte = 'Reporte devoluciones';
@@ -21,7 +21,7 @@ export class ReportedevolucionesComponent implements OnInit {
   ngOnInit() {
 
     
-    this.Service.getdevoluciones()
+    this.Service.getdevolucionestabla()
     .subscribe( (data) => {
       this.devolucion = data;
       console.log(data);

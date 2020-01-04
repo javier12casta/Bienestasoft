@@ -883,8 +883,74 @@ export class ServicioService {
     return this.http.get<[Consecutivomaestro]>(path);
   }
 
-  Obtenerconsecutivosm() {
-    const path = `${this.api}/consecutivoM/tabla`;
+  Obtenerconsecutivosm1() {
+    const path = `${this.api}/consecutivoM/tabla1`;
+    return this.http.get<[Consecutivomaestro]>(path);
+  }
+
+   Obtenerconsecutivosm2() {
+    const path = `${this.api}/consecutivoM/tabla2`;
+    return this.http.get<[Consecutivomaestro]>(path);
+  }
+
+  Obtenerconsecutivosm3() {
+    const path = `${this.api}/consecutivoM/tabla3`;
+    return this.http.get<[Consecutivomaestro]>(path);
+  }
+  Obtenerconsecutivosm4() {
+    const path = `${this.api}/consecutivoM/tabla4`;
+    return this.http.get<[Consecutivomaestro]>(path);
+  }
+  Obtenerconsecutivosm5() {
+    const path = `${this.api}/consecutivoM/tabla5`;
+    return this.http.get<[Consecutivomaestro]>(path);
+  }
+  Obtenerconsecutivosm6() {
+    const path = `${this.api}/consecutivoM/tabla6`;
+    return this.http.get<[Consecutivomaestro]>(path);
+  }
+  Obtenerconsecutivosm7() {
+    const path = `${this.api}/consecutivoM/tabla7`;
+    return this.http.get<[Consecutivomaestro]>(path);
+  }
+   Obtenerconsecutivosm8() {
+    const path = `${this.api}/consecutivoM/tabla8`;
+    return this.http.get<[Consecutivomaestro]>(path);
+  }
+   Obtenerconsecutivosm9() {
+    const path = `${this.api}/consecutivoM/tabla9`;
+    return this.http.get<[Consecutivomaestro]>(path);
+  }
+   Obtenerconsecutivosm10() {
+    const path = `${this.api}/consecutivoM/tabla10`;
+    return this.http.get<[Consecutivomaestro]>(path);
+  }
+   Obtenerconsecutivosm11() {
+    const path = `${this.api}/consecutivoM/tabla11`;
+    return this.http.get<[Consecutivomaestro]>(path);
+  }
+   Obtenerconsecutivosm12() {
+    const path = `${this.api}/consecutivoM/tabla12`;
+    return this.http.get<[Consecutivomaestro]>(path);
+  }
+   Obtenerconsecutivosm13() {
+    const path = `${this.api}/consecutivoM/tabla13`;
+    return this.http.get<[Consecutivomaestro]>(path);
+  }
+   Obtenerconsecutivosm14() {
+    const path = `${this.api}/consecutivoM/tabla14`;
+    return this.http.get<[Consecutivomaestro]>(path);
+  }
+   Obtenerconsecutivosm15() {
+    const path = `${this.api}/consecutivoM/tabla15`;
+    return this.http.get<[Consecutivomaestro]>(path);
+  }
+   Obtenerconsecutivosm16() {
+    const path = `${this.api}/consecutivoM/tabla16`;
+    return this.http.get<[Consecutivomaestro]>(path);
+  }
+   Obtenerconsecutivosm17() {
+    const path = `${this.api}/consecutivoM/tabla17`;
     return this.http.get<[Consecutivomaestro]>(path);
   }
  

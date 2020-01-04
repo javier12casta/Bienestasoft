@@ -18,6 +18,7 @@ export class ReporteconsecutivomaestroComponent implements OnInit {
   Nombrereporte = 'Reporte consecutivo maestro';
   constructor(private Service: ServicioService,) { }
 
+
   ngOnInit() {
 
     this.Service.getconsecutivomaestro()

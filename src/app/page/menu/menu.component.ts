@@ -2570,6 +2570,8 @@ var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "li
     this.datos.push(create);
     var create = { name: "Ver consecutivos maestros", route: "/consecutivomaestrov", icon: "face" };
     this.datos.push(create);
+
+    
    if (array[1] == "1") {
      var create = { name: "Modificar servicio y modalidad", route: "/modificarserviciom", icon: "face" };
     this.datos.push(create);
