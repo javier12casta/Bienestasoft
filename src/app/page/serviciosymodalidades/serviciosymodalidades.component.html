@@ -14,7 +14,7 @@
               <label>Estado del dato maestro</label>
               <select formControlName="EstadoDatoMaestro" class="form-control" [(ngModel)]="x.EstadoDatoMaestro" [ngClass]="{ 'is-invalid': submitted && f.EstadoDatoMaestro.errors }">
                   <option value="1">Habilitado</option>
-                  <option value="0">Inhabilitado</option>
+                  <option value="0">Deshabilitado</option>
 
               </select>
               <div *ngIf="submitted && f.EstadoDatoMaestro.errors" class="invalid-feedback">

@@ -20,7 +20,7 @@ export class DatosvariospiComponent implements OnInit {
   x : Datosvarios = {
     
     CodigoInterno : 0,
-    EstadoDatoMaestro : 0,
+    EstadoDatoMaestro : 1,
     DescripcionDelRegistro : '',
     Valor : 0,
     UnidadDeMedida : '',
