@@ -49,7 +49,12 @@ import { ServicioService } from '../../servicio.service';
         <th scope="row">{{usu.idUsuarios}}</th>
         <td>{{usu.Nombres}}</td>
         <td>{{usu.Apellidos}}</td>
-        <td>{{usu.Estado}}</td>
+        <td> <div *ngIf="usu.Estado == 1">
+        Habilitado
+      </div>
+      <div *ngIf="usu.Estado== 0">
+        Deshabilitado
+      </div></td>
         <td>{{usu.NumeroDocumento}}</td>
         <td>{{usu.FechaIngreso}}</td>
         <td>{{usu.NombreUsuarioSistema}}</td>
@@ -65,7 +70,7 @@ import { ServicioService } from '../../servicio.service';
         <td>{{usu.RolPersona}}</td>
         <td>{{usu.NombreCentroZonal}}</td>
         <td>
-          <button class="btn btn-primary" [routerLink]="['/inhabilitarusuariosi', usu.idUsuarios]">Inhabilitar</button>
+          <button class="btn btn-dark" [routerLink]="['/inhabilitarusuariosi', usu.idUsuarios]">Inhabilitar</button>
         </td>
       </tr>
     </tbody>

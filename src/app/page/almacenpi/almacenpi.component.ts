@@ -33,7 +33,6 @@ export class AlmacenpiComponent implements OnInit {
     Responsable : '',
     Capacidad  : 0,
     Capacidad2  : 0,
-    UnidadMedida  : '',
     Estado  : 1,
     idCentroDistribucion : 1,
 
@@ -131,7 +130,6 @@ export class AlmacenpiComponent implements OnInit {
       Responsable: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
       Capacidad: ['', [ Validators.pattern('^[0-9]*$')]],
       Capacidad2: ['', [ Validators.pattern('^[0-9]*$')]],
-      UnidadMedida: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
       Estado: ['', Validators.required],
       idCentroDistribucion: ['', Validators.required],
       idPuntoEntrega: ['', Validators.required],
