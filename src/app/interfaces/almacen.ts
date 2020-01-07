@@ -5,7 +5,7 @@ export interface Almacen {
     Responsable : string,
     Capacidad  : number,
     Capacidad2  : number,
-    UnidadMedida  : string,
+    UnidadMedida  ?: string,
     Estado  : number,
     idCentroDistribucion? : number,
     idCentrosZonales ? :number,

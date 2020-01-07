@@ -29,7 +29,17 @@
         <th scope="row">{{cen.idUsuarios}}</th>
         <td>{{cen.Nombres}}</td>
         <td>{{cen.Apellidos}}</td>
-        <td>{{cen.Estado}}</td>
+        <td>
+          
+          <div *ngIf="cen.Estado == 1">
+            Habilitado
+          </div>
+          <div *ngIf="cen.Estado== 0">
+            Deshabilitado
+          </div>
+          
+          
+        </td>
         <td>{{cen.NumeroDocumento}}</td>
         <td>{{cen.FechaIngreso}}</td>
         <td>{{cen.NombreUsuarioSistema}}</td>

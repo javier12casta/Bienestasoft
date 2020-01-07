@@ -4,6 +4,12 @@
 
 <table class="table" id="contentToConvert">
   <thead class="thead-green">
+    <footer id="sticky-footer" class="text-white-50" style="margin-bottom: 0px; bottom: 0px;">
+      <div class="container text-center" style="justify-content: center;  bottom: 0px; margin-left: auto; margin-right: auto; margin-bottom: 0px;">
+
+       <img src="../../assets/icbf-logo.png" style="width: 65px; height: 65px; margin-left: 10px; margin-top: 10px; margin-bottom: 0px;" class="rounded float-left">
+      </div>
+    </footer>
     {{Nombrereporte}} {{fecha}}
     <tr>
       <th scope="col"># </th>
@@ -29,7 +35,12 @@
       <th scope="row">{{usu.idUsuarios}}</th>
       <td>{{usu.Nombres}}</td>
       <td>{{usu.Apellidos}}</td>
-      <td>{{usu.Estado}}</td>
+      <td> <div *ngIf="usu.Estado == 1">
+        Habilitado
+      </div>
+      <div *ngIf="usu.Estado== 0">
+        Deshabilitado
+      </div></td>
       <td>{{usu.NumeroDocumento}}</td>
       <td>{{usu.FechaIngreso}}</td>
       <td>{{usu.NombreUsuarioSistema}}</td>

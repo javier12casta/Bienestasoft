@@ -5,7 +5,7 @@ export interface Almacent {
     Responsable : string,
     Capacidad  : number,
     Capacidad2  : number,
-    UnidadMedida  : string,
+    UnidadMedida  ?: string,
     Estado  : number,
     Nombrecentrodedistribucion : string,
     NombreCentroZonal ? :string,
