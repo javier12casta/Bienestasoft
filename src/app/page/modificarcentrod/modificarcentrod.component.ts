@@ -11,19 +11,19 @@ import Swal from 'sweetalert2';
 })
 export class ModificarcentrodComponent implements OnInit {
   listau = '';
-  lista:string[]=["Centro Zonal","Punto De Entrega","Unidad de servicio"];
+  lista:string[]=["Centro zonal","Punto de entrega","Unidad de servicio"];
 
   onClickMe() {
   
 
     
-    if(this.listau == 'Centro Zonal'){
+    if(this.listau == 'Centro zonal'){
 
       this.router.navigate(['/modificarcentroi']);
     
     }
   
-    if(this.listau == 'Punto De Entrega'){
+    if(this.listau == 'Punto de entrega'){
   
       this.router.navigate(['/modificarcentrop']);
       

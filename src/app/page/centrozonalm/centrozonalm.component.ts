@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Centrozonal } from 'src/app/interfaces/centrozonal';
 import { ServicioService } from '../../servicio.service';
 import { ActivatedRoute } from '@angular/router';
-
 import { Municipio } from '../../interfaces/municipio';
 import { Comuna } from '../../interfaces/comuna';
 import { Regional } from '../../interfaces/regional';
@@ -40,7 +39,7 @@ export class CentrozonalmComponent implements OnInit {
     Estado: 1,
     idRegional: 2,
   };
-
+  DesEstado = true;
     //----Validaciones de campos
     czForm: FormGroup;
     submitted = false;

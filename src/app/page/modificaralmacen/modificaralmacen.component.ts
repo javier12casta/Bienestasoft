@@ -11,18 +11,18 @@ import Swal from 'sweetalert2';
 export class ModificaralmacenComponent implements OnInit {
 
   listau = '';
-  lista:string[]=["Centro Zonal","Punto De Entrega","Unidad de servicio"];
+  lista:string[]=["Centro zonal","Punto de entrega","Unidad de servicio"];
  
   onClickMe() {
   
 
-    if(this.listau == 'Centro Zonal'){
+    if(this.listau == 'Centro zonal'){
 
       this.router.navigate(['/modificaralmaceni']);
     
     }
   
-    if(this.listau == 'Punto De Entrega'){
+    if(this.listau == 'Punto de entrega'){
   
       this.router.navigate(['/modificaralmacenp']);
       

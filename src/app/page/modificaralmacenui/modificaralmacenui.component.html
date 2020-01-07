@@ -100,10 +100,10 @@
 
           <div class="form-group">
   
-            <label>estado</label>
+            <label>Estado</label>
 
             <!-- name= "al campo de la tabla" [(ngModel)]="regionales.(Nombre de la columna)"-->
-            <select name="Estado" [(ngModel)]="almac.Estado" formControlName="Estado" style="width: 100%;" class="form-control" minlength="0" required="">
+            <select name="Estado" [(ngModel)]="almac.Estado" formControlName="Estado" style="width: 100%;" class="form-control" minlength="0" required="" disabled>
               <option [value]="1">Habilitado</option>
               <Option [value]="0">Inhabilitado</Option>
             </select>

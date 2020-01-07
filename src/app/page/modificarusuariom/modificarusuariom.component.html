@@ -26,7 +26,7 @@
         <div class="form-group">
           <label>Estado</label>
           <select formControlName="Estado" class="form-control" [(ngModel)]="x.Estado"
-            [ngClass]="{ 'is-invalid': submitted && f.Estado.errors }">
+            [ngClass]="{ 'is-invalid': submitted && f.Estado.errors }" disabled>
             <option value="1">Habilitado</option>
             <option value="0">Deshabilitado</option>
 

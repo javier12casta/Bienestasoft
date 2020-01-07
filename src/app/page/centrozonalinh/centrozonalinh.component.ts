@@ -178,7 +178,7 @@ export class CentrozonalinhComponent implements OnInit {
     }).then((res) => {
       if(res.value){
         console.log('confirmed');
-        this.router.navigate(['/centrozonal']);
+        this.router.navigate(['/centrozonalin']);
     }
     });
   }
@@ -209,7 +209,7 @@ export class CentrozonalinhComponent implements OnInit {
     }).then((res) => {
       if(res.value){
         console.log('confirmed');
-        this.router.navigate(['/centrozonal']);
+        this.router.navigate(['/centrozonalin']);
     }
     });
   }

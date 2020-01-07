@@ -3,103 +3,112 @@
 </nav>
 
 <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
-    <div class="card" padding>
-      <div class="card-body" padding>
-  
-  
-        <form [formGroup]="czForm" (ngSubmit)="onSubmit()">
-  
-            <div class="form-group">
-                <label>Estado</label>
-                <select formControlName="Estado" class="form-control" [(ngModel)]="centros.Estado" [ngClass]="{ 'is-invalid': submitted && f.Estado.errors }">
-                    <option value="1">Habilitado</option>
-                    <option value="0">Inhabilitado</option>
-  
-                </select>
-                <div *ngIf="submitted && f.Estado.errors" class="invalid-feedback">
-                    <div *ngIf="f.Estado.errors.required">Estado es requerido</div>
-                </div>
+  <div class="card" padding>
+    <div class="card-body" padding>
+
+
+      <form [formGroup]="czForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+          <label>Estado</label>
+          <select formControlName="Estado" class="form-control" [(ngModel)]="centros.Estado"
+            [ngClass]="{ 'is-invalid': submitted && f.Estado.errors }" disabled>
+            <option value="1">Habilitado</option>
+            <option value="0">Inhabilitado</option>
+
+          </select>
+          <div *ngIf="submitted && f.Estado.errors" class="invalid-feedback">
+            <div *ngIf="f.Estado.errors.required">Estado es requerido</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Nombre centro zonal</label>
+          <input type="text" placeholder="Nombre centro zonal" formControlName="NombreCentroZonal" class="form-control"
+            [(ngModel)]="centros.NombreCentroZonal"
+            [ngClass]="{ 'is-invalid': submitted && f.NombreCentroZonal.errors }" />
+
+          <div *ngIf="submitted && f.NombreCentroZonal.errors" class="invalid-feedback">
+            <div *ngIf="f.NombreCentroZonal.errors.required"> Nombre centro zonal es requerido</div>
+            <div *ngIf="f.NombreCentroZonal.errors.pattern"> Nombre centro zonal solo puede contener letras minusculas o
+              mayúsculas</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Regional</label>
+          <select formControlName="idRegional" class="form-control" [(ngModel)]="centros.idRegional"
+            [ngClass]="{ 'is-invalid': submitted && f.idRegional.errors }">
+            <option *ngFor="let reg of regional" [value]="reg.idRegional"> {{reg.Regional}} | {{reg.codigo}}</option>
+          </select>
+          <div *ngIf="submitted && f.idRegional.errors" class="invalid-feedback">
+            <div *ngIf="f.idRegional.errors.required">Regional es requerido</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Municipio</label>
+          <select formControlName="idMunicipios" class="form-control" [(ngModel)]="centros.idMunicipios"
+            [ngClass]="{ 'is-invalid': submitted && f.idMunicipios.errors }">
+            <option *ngFor="let muni of municipios" [value]="muni.idMunicipios"> {{muni.Municipio}} | {{muni.codigo}} |
+              {{muni.codigoR}}</option>
+          </select>
+          <div *ngIf="submitted && f.idMunicipios.errors" class="invalid-feedback">
+            <div *ngIf="f.idMunicipios.errors.required">Municipio es requerido</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Comuna</label>
+
+          <input type="text" placeholder="Comuna" formControlName="Comuna" class="form-control"
+            [(ngModel)]="centros.Comuna" [ngClass]="{ 'is-invalid': submitted && f.Comuna.errors }" />
+
+          <div *ngIf="submitted && f.Comuna.errors" class="invalid-feedback">
+            <div *ngIf="f.Comuna.errors.required">Comuna es requireda</div>
+            <div *ngIf="f.Comuna.errors.pattern"> La Comuna solo puede conterner letras minusculas o
+              mayusculas</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Código externo JCZ</label>
+
+          <input type="text" placeholder="Codigo externo JCZ" formControlName="CodigoExternoJcz" class="form-control"
+            [(ngModel)]="centros.CodigoExternoJcz"
+            [ngClass]="{ 'is-invalid': submitted && f.CodigoExternoJcz.errors }" />
+
+          <div *ngIf="submitted && f.CodigoExternoJcz.errors" class="invalid-feedback">
+            <div *ngIf="f.CodigoExternoJcz.errors.required">Código externo JCZ es requireda</div>
+            <div *ngIf="f.CodigoExternoJcz.errors.pattern"> Código externo JCZ solo puede contener numeros y letras
+              minusculas o
+              mayusculas</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Código externo ICBF centro zonal</label>
+
+          <input type="text" placeholder="Código externo ICBF centro zonal" formControlName="CodigoExternoCZ"
+            class="form-control" [(ngModel)]="centros.CodigoExternoCZ"
+            [ngClass]="{ 'is-invalid': submitted && f.CodigoExternoCZ.errors }" />
+
+          <div *ngIf="submitted && f.CodigoExternoCZ.errors" class="invalid-feedback">
+            <div *ngIf="f.CodigoExternoCZ.errors.required">Código externo ICBF centro zonal es requireda</div>
+            <div *ngIf="f.CodigoExternoCZ.errors.minlength"> Código externo ICBF centro zonal debe contener minimo 4
+              caracteres</div>
+            <div *ngIf="f.CodigoExternoCZ.errors.pattern"> Código externo ICBF centro zonal solo puede conterner numeros
             </div>
-  
-          <div class="form-group">
-            <label>Nombre centro zonal</label>
-            <input type="text" placeholder="Nombre centro zonal" formControlName="NombreCentroZonal" class="form-control" [(ngModel)]="centros.NombreCentroZonal"
-              [ngClass]="{ 'is-invalid': submitted && f.NombreCentroZonal.errors }" />
-  
-            <div *ngIf="submitted && f.NombreCentroZonal.errors" class="invalid-feedback">
-              <div *ngIf="f.NombreCentroZonal.errors.required"> Nombre centro zonal es requerido</div>
-              <div *ngIf="f.NombreCentroZonal.errors.pattern"> Nombre centro zonal solo puede contener letras minusculas o
-                mayúsculas</div>
-            </div>
           </div>
-  
-          <div class="form-group">
-              <label>Regional</label>
-              <select formControlName="idRegional" class="form-control" [(ngModel)]="centros.idRegional" [ngClass]="{ 'is-invalid': submitted && f.idRegional.errors }">
-                  <option *ngFor="let reg of regional" [value]="reg.idRegional"> {{reg.Regional}} | {{reg.codigo}}</option>
-              </select>
-              <div *ngIf="submitted && f.idRegional.errors" class="invalid-feedback">
-                  <div *ngIf="f.idRegional.errors.required">Regional es requerido</div>
-              </div>
-          </div>
-  
-          <div class="form-group">
-              <label>Municipio</label>
-              <select formControlName="idMunicipios" class="form-control" [(ngModel)]="centros.idMunicipios" [ngClass]="{ 'is-invalid': submitted && f.idMunicipios.errors }">
-                  <option *ngFor="let muni of municipios" [value]="muni.idMunicipios"> {{muni.Municipio}} | {{muni.codigo}} |
-                      {{muni.codigoR}}</option>
-              </select>
-              <div *ngIf="submitted && f.idMunicipios.errors" class="invalid-feedback">
-                  <div *ngIf="f.idMunicipios.errors.required">Municipio es requerido</div>
-              </div>
-          </div>
-  
-          <div class="form-group">
-            <label>Comuna</label>
-  
-            <input type="text" placeholder="Comuna" formControlName="Comuna" class="form-control" [(ngModel)]="centros.Comuna"
-              [ngClass]="{ 'is-invalid': submitted && f.Comuna.errors }" />
-  
-            <div *ngIf="submitted && f.Comuna.errors" class="invalid-feedback">
-              <div *ngIf="f.Comuna.errors.required">Comuna es requireda</div>
-              <div *ngIf="f.Comuna.errors.pattern"> La Comuna solo puede conterner letras minusculas o
-                mayusculas</div>
-            </div>
-          </div>
-  
-          <div class="form-group">
-              <label>Código externo JCZ</label>
-    
-              <input type="text" placeholder="Codigo externo JCZ" formControlName="CodigoExternoJcz" class="form-control" [(ngModel)]="centros.CodigoExternoJcz"
-                [ngClass]="{ 'is-invalid': submitted && f.CodigoExternoJcz.errors }" />
-    
-              <div *ngIf="submitted && f.CodigoExternoJcz.errors" class="invalid-feedback">
-                <div *ngIf="f.CodigoExternoJcz.errors.required">Código externo JCZ es requireda</div>
-                <div *ngIf="f.CodigoExternoJcz.errors.pattern"> Código externo JCZ solo puede contener numeros y letras minusculas o
-                    mayusculas</div>
-              </div>
-            </div>
-  
-            <div class="form-group">
-                <label>Código externo ICBF centro zonal</label>
-      
-                <input type="text" placeholder="Código externo ICBF centro zonal" formControlName="CodigoExternoCZ" class="form-control" [(ngModel)]="centros.CodigoExternoCZ"
-                  [ngClass]="{ 'is-invalid': submitted && f.CodigoExternoCZ.errors }" />
-      
-                <div *ngIf="submitted && f.CodigoExternoCZ.errors" class="invalid-feedback">
-                  <div *ngIf="f.CodigoExternoCZ.errors.required">Código externo ICBF centro zonal es requireda</div>
-                  <div *ngIf="f.CodigoExternoCZ.errors.minlength"> Código externo ICBF centro zonal debe contener minimo 4 caracteres</div>
-                  <div *ngIf="f.CodigoExternoCZ.errors.pattern"> Código externo ICBF centro zonal solo puede conterner numeros</div>
-                </div>
-              </div>
-          
-          <br/>
-  
-          <div class="text-center">
-            <button type="submit" class="btn btn-success btn-block"  [disabled]="!czForm.valid">Guardar</button>
-          </div>
-  
-        </form>
-      </div>
+        </div>
+
+        <br />
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-success btn-block" [disabled]="!czForm.valid">Guardar</button>
+        </div>
+
+      </form>
     </div>
   </div>
+</div>

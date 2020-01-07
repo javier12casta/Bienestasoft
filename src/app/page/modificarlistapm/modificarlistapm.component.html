@@ -11,7 +11,7 @@
               <h1>Modificar lista de precios</h1>
                 <div class="form-group">
                     <label>Estado</label>
-                    <select formControlName="Estado" class="form-control" [(ngModel)]="pre.Estado" name="Estado" id="Estado" [ngClass]="{ 'is-invalid': submitted && f.Estado.errors }">
+                    <select formControlName="Estado" class="form-control" [(ngModel)]="pre.Estado" name="Estado" id="Estado" [ngClass]="{ 'is-invalid': submitted && f.Estado.errors }" disabled>
                         <option value="1">Habilitado</option>
                         <option value="0">Inhabilitado</option>
                     </select>
