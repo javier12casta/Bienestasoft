@@ -35,8 +35,8 @@ import { ServicioService } from '../../servicio.service';
       <th scope="col">Dirección</th>
       <th scope="col">Teléfono fijo</th>
       <th scope="col">Teléfono fijo2</th>
-      <th scope="col">Teléfono movil</th>
-      <th scope="col">Teléfono movil2</th>
+      <th scope="col">Teléfono móvil</th>
+      <th scope="col">Teléfono móvil2</th>
       <th scope="col">Correo electrónico</th>
       <th scope="col">Tipo documento</th>
       <th scope="col">Tipo usuario</th>

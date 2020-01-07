@@ -47,28 +47,26 @@ export class InhabilitareferenciabiComponent implements OnInit {
   showMenssage(){
     Swal.fire({
       title: 'Inhabilitado',
-      text: 'Dato Maestro Inhabilitado',
+      text: 'Dato maestro inhabilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {
       if (result.value) {
         
         this.router.navigate(['/inhabilitareferenciab']);
-        window.location.reload();
       }
     });
   }
   showMenssage1(){
     Swal.fire({
-      title: 'habilitado',
-      text: 'Dato Maestro habilitado',
+      title: 'Habilitado',
+      text: 'Dato maestro habilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {
       if (result.value) {
         
         this.router.navigate(['/inhabilitareferenciab']);
-        window.location.reload();
       }
     });
   }
@@ -90,7 +88,7 @@ export class InhabilitareferenciabiComponent implements OnInit {
             this.showMenssage();
           }
 
-        }, err => {
+        }, err => { 
           console.log(err);
         }
       );

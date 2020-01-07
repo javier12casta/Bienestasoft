@@ -19,11 +19,9 @@
           <th scope="col">Nombre almacén </th>
           <th scope="col">Responsable </th>
           <th scope="col">Cantidad </th>
-          <th scope="col">Unidad medida </th>
           <th scope="col">Estado </th>
           <th scope="col">Centro distribución</th>
           <th scope="col">Centro zonal</th>
-          
         </tr>
       </thead>
       <tbody>
@@ -33,7 +31,6 @@
           <td>{{al.Nombre }}</td>
           <td>{{al.Responsable }}</td>
           <td>{{al.Capacidad }}</td>
-          <td>{{al.UnidadMedida }}</td>
           <td>
           
           <div *ngIf="al.Estado == 1">

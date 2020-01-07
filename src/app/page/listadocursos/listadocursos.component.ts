@@ -152,7 +152,7 @@ export class ListadocursosComponent implements OnInit {
   showMenssage(){
     Swal.fire({
       title: 'Creado',
-      text: 'Dato Maestro Creado',
+      text: 'Dato maestro creado',
       type: 'success',
 	  confirmButtonText: 'Entendido'
 	}).then((result) => {

@@ -1,60 +1,56 @@
 <nav class="navbar navbar-success bg-success">
-    <button class="btn btn-dark" routerLink="/inhabilitaralmacen">Volver</button>
-    <div>
-      <label>Inhabilitar almacén uds</label>
-  
-  {{fecha}}  
-  </div>
-  
+  <button class="btn btn-dark" routerLink="/inhabilitaralmacen">Volver</button>
   <div>
-    
+    <label>Inhabilitar almacén uds</label>
+
+    {{fecha}}
   </div>
-  </nav>
 
-  <table class="table">
-    <thead class="thead-green">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Número externo </th>
-        <th scope="col">Nombre almacén </th>
-        <th scope="col">Responsable</th>
-        <th scope="col"> Cantidad</th>
-        <th scope="col">Unidad medida</th>
-        <th scope="col">Estado</th>
-        <th scope="col">Centro distribución</th>
-        <th scope="col">UDS</th>
-       
-      </tr>
-    </thead>
-    <tbody>
-            <tr *ngFor="let cen of almac">
-                    <th scope="row">{{cen.idAlmacenes}}</th>
-                    <td>{{cen.NumeroExterno}}</td>
-                    <td>{{cen.Nombre}}</td>
-                    <td>{{cen.Responsable}}</td>
-          <td>{{cen.Capacidad}}</td>
-          <td>{{cen.UnidadMedida}}</td>
-          <td>
-            
-              <div *ngIf="cen.Estado == 1">
-                  Habilitado
-                </div>
-                <div *ngIf="cen.Estado== 0">
-                  Deshabilitado
-                </div>
-                  
-                
-                </td>
-          <td>{{cen.Nombrecentrodistribucion}}</td>   
-          <td>{{cen.NombreUDS}}</td>       
-          <td>
-            <button class="btn btn-dark" [routerLink]="['/inhabilitaralmacenui', cen.idAlmacenes]">inhabilitar</button>
-          </td>
-        </tr>
-                    
-            
-      </tbody>
-  
+  <div>
+
+  </div>
+</nav>
+
+<table class="table">
+  <thead class="thead-green">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Número externo </th>
+      <th scope="col">Nombre almacén </th>
+      <th scope="col">Responsable</th>
+      <th scope="col"> Cantidad</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Centro distribución</th>
+      <th scope="col">UDS</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cen of almac">
+      <th scope="row">{{cen.idAlmacenes}}</th>
+      <td>{{cen.NumeroExterno}}</td>
+      <td>{{cen.Nombre}}</td>
+      <td>{{cen.Responsable}}</td>
+      <td>{{cen.Capacidad}}</td>
+      <td>
+
+        <div *ngIf="cen.Estado == 1">
+          Habilitado
+        </div>
+        <div *ngIf="cen.Estado== 0">
+          Deshabilitado
+        </div>
+
+
+      </td>
+      <td>{{cen.Nombrecentrodistribucion}}</td>
+      <td>{{cen.NombreUDS}}</td>
+      <td>
+        <button class="btn btn-dark" [routerLink]="['/inhabilitaralmacenui', cen.idAlmacenes]">inhabilitar</button>
+      </td>
+    </tr>
+
+
+  </tbody>
+
 </table>
-
-

@@ -103,7 +103,7 @@ export class ModificareferenciabmComponent implements OnInit {
   showMenssage(){
     Swal.fire({
       title: 'Modificado',
-      text: 'Dsto Maestro Modificado',
+      text: 'Dsto maestro modificado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {

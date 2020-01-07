@@ -125,7 +125,7 @@ export class ModificarlistapmComponent implements OnInit {
   showMenssage(){
     Swal.fire({
       title: 'Modificado',
-      text: 'Dato Maestro Modificado',
+      text: 'Dato maestro modificado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {

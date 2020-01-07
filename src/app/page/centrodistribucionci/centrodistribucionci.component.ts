@@ -89,7 +89,7 @@ export class CentrodistribucionciComponent implements OnInit {
         NumeroExterno: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú 0-9]*$')]],
         Nombre : ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
         Responsable : ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
-        Direccion : ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú 0-9]*$')]],
+        Direccion : ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú 0-9 - ]*$')]],
         Barrio : ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
         Telefono : ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('^[0-9]*$')]],
         Estado :['', Validators.required],
@@ -120,7 +120,7 @@ export class CentrodistribucionciComponent implements OnInit {
   showMenssage(){
     Swal.fire({
       title: 'Creado',
-      text: 'Centro Distribución Creado',
+      text: 'Centro distribución creado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {

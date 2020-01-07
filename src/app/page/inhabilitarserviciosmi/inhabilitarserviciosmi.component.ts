@@ -47,7 +47,7 @@ export class InhabilitarserviciosmiComponent implements OnInit {
   showMenssage(){
     Swal.fire({
       title: 'Inhabilitado',
-      text: 'Dato Maestro Inhabilitado',
+      text: 'Dato maestro inhabilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {
@@ -63,7 +63,7 @@ export class InhabilitarserviciosmiComponent implements OnInit {
   showMenssage1(){
     Swal.fire({
       title: 'habilitado',
-      text: 'Dato Maestro habilitado',
+      text: 'Dato maestro habilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {

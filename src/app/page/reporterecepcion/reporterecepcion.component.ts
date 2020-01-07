@@ -15,7 +15,7 @@ export class ReporterecepcionComponent implements OnInit {
   rec: Recepciont[] = [];
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
-  Nombrereporte = 'Reporte Recepcion';
+  Nombrereporte = 'Reporte Recepción';
 
   constructor(private Service: ServicioService) { }
 

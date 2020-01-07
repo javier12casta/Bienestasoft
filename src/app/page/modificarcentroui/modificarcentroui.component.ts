@@ -94,7 +94,7 @@ export class ModificarcentrouiComponent implements OnInit {
   showMenssage(){
     Swal.fire({
       title: 'Modificado!',
-      text: 'Centro Distribucion Modificado',
+      text: 'Centro distribución modificado',
       type: 'success',
       confirmButtonText: 'Ok'
     }).then((result) => {

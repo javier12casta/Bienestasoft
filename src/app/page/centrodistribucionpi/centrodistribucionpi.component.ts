@@ -120,7 +120,7 @@ export class CentrodistribucionpiComponent implements OnInit {
   showMenssage(){
     Swal.fire({
       title: 'Creado',
-      text: 'Centro Distribución Creado',
+      text: 'Centro distribución creado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {

@@ -179,7 +179,7 @@ export class AlmacenuiComponent implements OnInit {
   showMenssage(){
     Swal.fire({
       title: 'Creado',
-      text: 'Almacen Creado',
+      text: 'Almacen creado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {

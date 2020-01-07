@@ -70,8 +70,8 @@ export class InhabilitarcentrodmComponent implements OnInit {
 
   showMenssage4() {
     Swal.fire({
-      title: 'Error!',
-      text: 'No es posible inhabilitar el centro de distribucion',
+      title: 'Error',
+      text: 'No es posible inhabilitar el centro de distribución',
       type: 'error',
       confirmButtonText: 'Entendido'
     });
@@ -79,8 +79,8 @@ export class InhabilitarcentrodmComponent implements OnInit {
 
   showMenssage(){
     Swal.fire({
-      title: 'Inhabilitado!',
-      text: 'Beneficiario Inhabilitado',
+      title: 'Inhabilitado',
+      text: 'Beneficiario inhabilitado',
       type: 'success',
       confirmButtonText: 'Ok'
     });
@@ -88,7 +88,7 @@ export class InhabilitarcentrodmComponent implements OnInit {
 
   showMenssage1(){
     Swal.fire({
-      title: 'habilitado!',
+      title: 'Habilitado',
       text: 'Beneficiario habilitado',
       type: 'success',
       confirmButtonText: 'Ok'

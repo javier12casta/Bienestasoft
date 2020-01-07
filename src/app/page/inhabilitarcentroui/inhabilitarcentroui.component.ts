@@ -86,8 +86,8 @@ export class InhabilitarcentrouiComponent implements OnInit {
 
   showMenssage(){
     Swal.fire({
-      title: 'Inhabilitado!',
-      text: 'Beneficiario Inhabilitado',
+      title: 'Inhabilitado',
+      text: 'Beneficiario inhabilitado',
       type: 'success',
       confirmButtonText: 'Ok'
     }).then((result) => {
@@ -101,7 +101,7 @@ export class InhabilitarcentrouiComponent implements OnInit {
 
   showMenssage1(){
     Swal.fire({
-      title: 'habilitado!',
+      title: 'Habilitado!',
       text: 'Beneficiario habilitado',
       type: 'success',
       confirmButtonText: 'Ok'

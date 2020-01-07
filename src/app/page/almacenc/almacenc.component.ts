@@ -35,7 +35,6 @@ import { Almacent} from '../../interfaces/almacent';
         <th scope="col">Responsable </th>
         <th scope="col">Capacidad bolsas </th>
         <th scope="col">Capacidad cajas </th>
-        <th scope="col">Unidad medida </th>
         <th scope="col">Estado </th>
         <th scope="col">Centro distribución</th>
         <th scope="col">Centro zonal</th>
@@ -50,7 +49,6 @@ import { Almacent} from '../../interfaces/almacent';
         <td>{{al.Responsable }}</td>
         <td>{{al.Capacidad }}</td>
         <td>{{al.Capacidad2 }}</td>
-        <td>{{al.UnidadMedida }}</td>
         <td>
         
         <div *ngIf="al.Estado == 1">

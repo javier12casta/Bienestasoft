@@ -48,7 +48,7 @@ export class InhabilitaralmacendmComponent implements OnInit {
   showMenssage(){
     Swal.fire({
       title: 'Inhabilitado',
-      text: 'Almacen Inhabilitado',
+      text: 'Almacén inhabilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {
@@ -62,8 +62,8 @@ export class InhabilitaralmacendmComponent implements OnInit {
 
   showMenssage1(){
     Swal.fire({
-      title: 'habilitado',
-      text: 'Almacen habilitado',
+      title: 'Habilitado',
+      text: 'Almacén habilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {

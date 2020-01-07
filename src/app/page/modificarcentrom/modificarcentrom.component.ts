@@ -98,8 +98,8 @@ export class ModificarcentromComponent implements OnInit {
 
   showMenssage(){
     Swal.fire({
-      title: 'Modificado!',
-      text: 'Centro Distribucion Modificado',
+      title: 'Modificado',
+      text: 'Centro distribución modificado',
       type: 'success',
       confirmButtonText: 'Ok'
     }).then((result) => {
