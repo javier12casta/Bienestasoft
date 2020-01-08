@@ -24,7 +24,7 @@ export class ReferenciasbienestarinaComponent implements OnInit {
     
     TipoBienesterina : '',
     Codigo  : 0,
-    Estado : 'Habilitado',
+    Estado : 1,
     Referencia : '',
     UnidadPrincipal : '',
     Cantidad : 0,

@@ -152,7 +152,7 @@ export class TrasladocComponent implements OnInit {
     idTipoBienesterina: 0,
     TipoBienesterina: '',
     Codigo: 0,
-    Estado: '',
+    Estado: 1,
     Referencia: '',
     UnidadPrincipal: '',
     Cantidad: 0,

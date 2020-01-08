@@ -21,7 +21,7 @@ export class ModificareferenciabmComponent implements OnInit {
     idTipoBienesterina : 1,
     TipoBienesterina : '',
     Codigo : 0,
-    Estado : '',
+    Estado : 1,
     Referencia : '',
     UnidadPrincipal : '',
     Cantidad : 0,

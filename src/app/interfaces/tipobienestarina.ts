@@ -3,7 +3,7 @@ export interface TipoBienestarina {
     idTipoBienesterina?:number,
     TipoBienesterina : string,
     Codigo : number,
-    Estado : string,
+    Estado : number,
     Referencia : string,
     UnidadPrincipal : string,
     Cantidad : number,
