@@ -196,7 +196,7 @@ export class PuntoentregainhComponent implements OnInit {
     Swal.fire({
       title: 'Inhabilitado',
       text: 'Punto de entrega inhabilitado',
-      type: 'error',
+      type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {
       if (result.value) {

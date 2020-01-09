@@ -16,7 +16,7 @@ export class PuntoentregamComponent implements OnInit {
 
   centros: Centrozonal[] = [];
   cz: Centrozonal[] = [];
-  pe: Puntoentrega[]=[];
+  pe: Puntoentrega[] = [];
   puntos: Puntoentrega = {
     NombrePE: '',
     CodigoInternoPE: '',
@@ -33,39 +33,39 @@ export class PuntoentregamComponent implements OnInit {
   constructor(
     private Service: ServicioService,
     private activeRoute: ActivatedRoute,
-    private router:Router,
+    private router: Router,
     private fb: FormBuilder
   ) { }
 
- //----Validaciones de campos
- peForm: FormGroup;
- submitted = false;
- onSubmit() {
-   this.submitted = true;
+  //----Validaciones de campos
+  peForm: FormGroup;
+  submitted = false;
+  onSubmit() {
+    this.submitted = true;
 
-   // stop here if form is invalid
-   if (this.peForm.valid) {
-    this.Validar();
-    if(this.campo1 == false && this.campo2 == false && this.campo3 == false){
-      this.updateDatos();
+    // stop here if form is invalid
+    if (this.peForm.valid) {
+      this.Validar();
+      if (this.campo1 == false && this.campo2 == false && this.campo3 == false) {
+        this.updateDatos();
+      }
+    } else {
+      this.showMenssagenull();
     }
-   } else {
-    this.showMenssagenull();
-   }
 
-   // display form values on success
-   console.log('Formulario', this.peForm.value);
- }
+    // display form values on success
+    console.log('Formulario', this.peForm.value);
+  }
 
 
   modificar = false;
 
- async ngOnInit() {
+  async ngOnInit() {
 
     const params = this.activeRoute.snapshot.params;
     console.log(params);
     if (params.id) {
-      await  this.Service.getPuntoid(params.id)
+      await this.Service.getPuntoid(params.id)
         .subscribe(res => {
           console.log(res);
           this.puntos = Object(res);
@@ -86,12 +86,12 @@ export class PuntoentregamComponent implements OnInit {
     console.log(this.puntos);
 
     this.Service.getCentroEStado()
-    .subscribe(res => {
-      this.cz = res;
-      console.log('Centros activos', this.cz);
-    }, err => {
-      console.log(err);
-    });
+      .subscribe(res => {
+        this.cz = res;
+        console.log('Centros activos', this.cz);
+      }, err => {
+        console.log(err);
+      });
 
     this.Service.getPunto()
       .subscribe(res => {
@@ -122,60 +122,62 @@ export class PuntoentregamComponent implements OnInit {
 
   get f() { return this.peForm.controls; }
 
-    //------------------Validar si exiten los datos-----------------------
-    campo1 = false;
-    campo2 = false;
-    campo3 = false;
-    Validar() {
-      console.log('nombre ingresado', this.puntos.NombrePE);
-      var contador = 0;
-      var contador2 = 0;
-      var contador3 = 0;
-      var contador4 = 0;
-      var contador5 = 0;
-      var contador6 = 0;
-      for (let d of this.pe) {
+  //------------------Validar si exiten los datos-----------------------
+  campo1 = false;
+  campo2 = false;
+  campo3 = false;
+  Validar() {
+    console.log('nombre ingresado', this.puntos.NombrePE);
+    var contador = 0;
+    var contador2 = 0;
+    var contador3 = 0;
+    var contador4 = 0;
+    var contador5 = 0;
+    var contador6 = 0;
+    for (let d of this.pe) {
+
+      if (d.idPuntoEntrega !== this.puntos.idPuntoEntrega) {
         if (d.NombrePE == this.puntos.NombrePE) {
           contador = contador2 + 1;
           console.log('Nombre igual', contador);
         }
-  
+
         if (d.CodigoExternoPE == this.puntos.CodigoExternoPE) {
           contador3 = contador4 + 1;
-  
+
           console.log('Codico ExPE igual', contador3);
         }
-  
+
         if (d.CodigoInternoPE == this.puntos.CodigoInternoPE) {
           contador5 = contador6 + 1;
           this.campo3 = true;
           console.log('Codico InPE igual', contador5);
         }
-  
       }
-      if (contador >= 1) {
-        this.campo1 = true;
-        this.showMenssage3();
-      } else {
-        this.campo1 = false;
-      }
-  
-      if (contador3 >= 1) {
-        this.campo2 = true;
-        this.showMenssage4();
-      }else{
-        this.campo2 = false;
-      }
-  
-      if (contador5 >= 1) {
-        this.campo3 = true;
-        this.showMenssage5();
-      }else{
-        this.campo3 = false;
-      }
-  
     }
-  
+    if (contador >= 1) {
+      this.campo1 = true;
+      this.showMenssage3();
+    } else {
+      this.campo1 = false;
+    }
+
+    if (contador3 >= 1) {
+      this.campo2 = true;
+      this.showMenssage4();
+    } else {
+      this.campo2 = false;
+    }
+
+    if (contador5 >= 1) {
+      this.campo3 = true;
+      this.showMenssage5();
+    } else {
+      this.campo3 = false;
+    }
+
+  }
+
   // Actualizar Datos---------------------------------------------
   updateDatos() {
     this.Service.putPunto(this.puntos.idPuntoEntrega, this.puntos)
@@ -214,9 +216,9 @@ export class PuntoentregamComponent implements OnInit {
       confirmButtonText: 'Entendido'
     }).then((result) => {
       if (result.value) {
-        
+
         this.router.navigate(['/puntoentrega']);
-    
+
       }
 
     });
