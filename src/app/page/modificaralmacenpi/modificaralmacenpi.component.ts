@@ -81,7 +81,7 @@ export class ModificaralmacenpiComponent implements OnInit {
       console.log(err);
     });
 
-    this.Service.getcentrodistribucion()
+    this.Service.getCentrodistribucionxpunto()
     .subscribe(res => {
       this.centrod = res;
     }, err => {

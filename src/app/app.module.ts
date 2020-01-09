@@ -272,6 +272,7 @@ import { IdatosnutricionalespComponent } from './page/idatosnutricionalesp/idato
 import { IdatosnutricionalespiComponent } from './page/idatosnutricionalespi/idatosnutricionalespi.component';
 import { IdatosnutricionalesuComponent } from './page/idatosnutricionalesu/idatosnutricionalesu.component';
 import { IdatosnutricionalesuiComponent } from './page/idatosnutricionalesui/idatosnutricionalesui.component';
+import { NivelnumerocuposComponent } from './page/nivelnumerocupos/nivelnumerocupos.component';
 
 @NgModule({
   declarations: [
@@ -520,6 +521,7 @@ import { IdatosnutricionalesuiComponent } from './page/idatosnutricionalesui/ida
     IdatosnutricionalespiComponent,
     IdatosnutricionalesuComponent,
     IdatosnutricionalesuiComponent,
+    NivelnumerocuposComponent,
     
 
     

@@ -83,7 +83,7 @@ export class ModificaralmacenuiComponent implements OnInit {
       console.log(err);
     });
 
-    this.Service.getcentrodistribucion()
+    this.Service.getCentrodistribucionxuds()
     .subscribe(res => {
       this.centrod = res;
     }, err => {

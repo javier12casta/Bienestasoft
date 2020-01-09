@@ -140,7 +140,7 @@ export class AlmacenpiComponent implements OnInit {
      
     });
 
-    this.Service.getcentrodistribucion()
+    this.Service.getCentrodistribucionxpunto()
     .subscribe(res => {
       this.cen = res;
     }, err => {

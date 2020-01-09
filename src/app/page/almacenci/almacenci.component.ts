@@ -155,7 +155,7 @@ export class AlmacenciComponent implements OnInit {
       });
 
 
-    this.Service.getcentrodistribucion()
+    this.Service.getCentrodistribucionxcentro()
       .subscribe(res => {
         this.cen = res;
       }, err => {
@@ -169,9 +169,6 @@ export class AlmacenciComponent implements OnInit {
       }, err => {
         console.log(err);
       });
-
-
-
 
 
   }

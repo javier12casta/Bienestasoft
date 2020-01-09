@@ -184,7 +184,7 @@ import { Inhabilitarusuarios2Component} from './page/inhabilitarusuarios2/inhabi
 import { Inhabilitarusuarios3Component} from './page/inhabilitarusuarios3/inhabilitarusuarios3.component';
 import {InhabilitarusuariospComponent} from './page/inhabilitarusuariosp/inhabilitarusuariosp.component';
 import { InhabilitarusuariosuComponent} from './page/inhabilitarusuariosu/inhabilitarusuariosu.component';
-
+import { NivelnumerocuposComponent} from './page/nivelnumerocupos/nivelnumerocupos.component';
 import {CentrodistribuciondComponent} from './page/centrodistribuciond/centrodistribuciond.component';
 
 import { CentrodistribucionuiComponent} from './page/centrodistribucionui/centrodistribucionui.component';
@@ -653,7 +653,9 @@ const routes: Routes = [
   {path:'idatosnutricionalesu', component:  IdatosnutricionalesuComponent},
   {path:'idatosnutricionalesui/:id', component:  IdatosnutricionalesuiComponent},
 
+  {path:'nivelnumerocupos', component:  NivelnumerocuposComponent},
 
+  
 ];
 
 @NgModule({

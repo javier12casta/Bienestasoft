@@ -32,6 +32,7 @@ export class ReportecentrozonalComponent implements OnInit {
 
   }
   Generareporte(){
+    
     window.scrollTo(0,0); 
 
     html2canvas(document.getElementById('contentToConvert'), {
@@ -51,7 +52,7 @@ export class ReportecentrozonalComponent implements OnInit {
       
       doc.addImage(img,'PNG',0, 0, width, height );
   
-    doc.save('reportecentrozonal.pdf');
+       doc.save('reportecentrozonal.pdf');
 
 
 

@@ -630,6 +630,21 @@ export class ServicioService {
     return this.http.get<[Centrodistribuciont]>(path);
   }
 
+
+  getCentrodistribucionxcentro() {
+    const path = `${this.api}/centrosD/centrodistribucionxcentro`;
+    return this.http.get<[Centrodistribucion]>(path);
+  }
+
+  getCentrodistribucionxpunto() {
+    const path = `${this.api}/centrosD/centrodistribucionxpunto`;
+    return this.http.get<[Centrodistribucion]>(path);
+  }
+
+  getCentrodistribucionxuds() {
+    const path = `${this.api}/centrosD/centrodistribucionxuds`;
+    return this.http.get<[Centrodistribucion]>(path);
+  }
  
 
 
@@ -678,6 +693,8 @@ export class ServicioService {
     const path = `${this.api}/almacen/almacenesr`;
     return this.http.get<[Almacent]>(path);
   }
+
+
 
 
   putalmacen(id: string | number, cent: Almacen) {

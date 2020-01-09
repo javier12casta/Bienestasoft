@@ -138,7 +138,7 @@ export class AlmacenuiComponent implements OnInit {
 
     });
 
-    this.Service.getcentrodistribucion()
+    this.Service.getCentrodistribucionxuds()
     .subscribe(res => {
       this.cen = res;
     }, err => {

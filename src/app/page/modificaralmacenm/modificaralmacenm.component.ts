@@ -80,7 +80,7 @@ export class ModificaralmacenmComponent implements OnInit {
       console.log(err);
     });
 
-    this.Service.getcentrodistribucion()
+    this.Service.getCentrodistribucionxcentro()
     .subscribe(res => {
       this.centrod = res;
     }, err => {
