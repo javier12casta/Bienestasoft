@@ -54,7 +54,7 @@
 
           <div class="form-group">
   
-            <label>Capacidad</label>
+            <label>Capacidad bolsas</label>
 
             <input type="text" class="form-control" formControlName="Capacidad" [(ngModel)]="almac.Capacidad " name="cap" placeholder="Capacidad"
             class="form-control" id="usu" minlength="0" required="">
@@ -68,10 +68,10 @@
 
           <div class="form-group">
   
-            <label>Capacidad Liquida</label>
+            <label>Capacidad cajas</label>
 
             <div id="unidad" hidden [hidden]="habilitado">
-              <input type="number" class="form-control" formControlName="Capacidad2" [(ngModel)]="almac.Capacidad2" name="Capacidad2"
+              <input type="text" class="form-control" formControlName="Capacidad2" [(ngModel)]="almac.Capacidad2" name="Capacidad2"
                 placeholder="Capacidad 2" class="form-control" id="inputcap" minlength="0" required="">
             </div>
 
@@ -82,20 +82,7 @@
   
           </div>
 
-          <div class="form-group">
-  
-            <label>Unidad de medida</label>
-
-            <input type="text" class="form-control" formControlName="UnidadMedida" (change)="onChange($event)" [(ngModel)]="almac.UnidadMedida"
-              name="UnidadMedida" placeholder="Unidad de medida" minlength="0" required="">
-              
-              <div *ngIf="submitted && f.UnidadMedida.errors" class="invalid-feedback">
-                <div *ngIf="f.UnidadMedida.errors.required"> UnidadMedida es requerido</div>
-                <div *ngIf="f.UnidadMedida.errors.pattern"> UnidadMedida solo puede contener letras minusculas o
-                  mayúsculas</div>
-              </div>
-
-          </div>
+          
 
           <div class="form-group">
   

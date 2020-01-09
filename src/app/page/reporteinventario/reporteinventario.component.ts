@@ -112,23 +112,27 @@ export class ReporteinventarioComponent implements OnInit {
 
   Generareporte(){
 
-  
-    var data = document.getElementById('contentToConvert');
-    html2canvas(data).then(canvas => {
-    // Few necessary setting options
-    var imgWidth = 100;
-    var pageHeight = 500;
-    var imgHeight = canvas.height * imgWidth / canvas.width;
-    var heightLeft = imgHeight;
+    window.scrollTo(0,0); 
+
+    html2canvas(document.getElementById('contentToConvert'), {
+     
+      // Opciones
+      allowTaint: true,
+      useCORS: false,
+      // Calidad del PDF
+      scale: 1,
+      
+    }).then(function(canvas) {
+
+      var img = canvas.toDataURL("image/png");
+      var doc = new jspdf();
+      doc.addImage(img,'PNG',10, 0, 175, 295);
+      doc.save('reporteinventario.pdf');
+
+      
+    });
     
-    const contentDataURL = canvas.toDataURL('image/png')
-    let pdf = new jspdf('p', 'mm', 'a0'); // A4 size page of PDF
-    var position = 10;
-    pdf.addImage(contentDataURL, 'PNG', 0, position, 800, 0)
-    pdf.save('reporteinventario.pdf'); // Generated PDF
-    });   
-       
-    
+        
     }
 
     onChange(){

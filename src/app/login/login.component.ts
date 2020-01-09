@@ -115,7 +115,7 @@ export class LoginComponent implements OnInit {
 
   showMenssage2() {
     Swal.fire({
-      title: 'Error al iniciar session',
+      title: 'Error al iniciar sesión',
       text: 'Verifica tus credenciales',
       type: 'error',
       confirmButtonText: 'Entendido'

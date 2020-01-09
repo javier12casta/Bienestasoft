@@ -47,8 +47,8 @@ export class InhabilitaralmacenuiComponent implements OnInit {
 
   showMenssage(){
     Swal.fire({
-      title: 'Inhabilitado',
-      text: 'Almacén inhabilitado',
+      title: 'Deshabilitado',
+      text: 'Almacén Deshabilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {

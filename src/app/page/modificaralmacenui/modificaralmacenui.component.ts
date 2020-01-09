@@ -67,7 +67,7 @@ export class ModificaralmacenuiComponent implements OnInit {
       Responsable : ['', [Validators.required,Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
       Capacidad  : ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       Capacidad2  : ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
-      UnidadMedida  : ['', [Validators.required,Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
+     
       Estado  :  ['', Validators.required],
       idCentroDistribucion : ['', [Validators.required,Validators.pattern('^[a-z A-Z ñ á é í ó ú 0-9]*$')]],
       idCentrosZonales  :['', [Validators.required,Validators.pattern('^[a-z A-Z ñ á é í ó ú 0-9]*$')]],

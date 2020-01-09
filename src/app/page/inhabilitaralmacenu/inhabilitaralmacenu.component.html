@@ -14,13 +14,14 @@
 <table class="table">
   <thead class="thead-green">
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Número externo </th>
-      <th scope="col">Nombre almacén </th>
-      <th scope="col">Responsable</th>
-      <th scope="col"> Cantidad</th>
-      <th scope="col">Estado</th>
-      <th scope="col">Centro distribución</th>
+      <th scope="col"># </th>
+          <th scope="col">Número externo </th>
+          <th scope="col">Nombre almacén </th>
+          <th scope="col">Responsable </th>
+          <th scope="col">Capacidad bolsas </th>
+          <th scope="col">Capacidad cajas </th>
+          <th scope="col">Estado </th>
+          <th scope="col">Centro distribución</th>
       <th scope="col">UDS</th>
 
     </tr>
@@ -32,6 +33,7 @@
       <td>{{cen.Nombre}}</td>
       <td>{{cen.Responsable}}</td>
       <td>{{cen.Capacidad}}</td>
+      <td>{{cen.Capacidad2}}</td>
       <td>
 
         <div *ngIf="cen.Estado == 1">

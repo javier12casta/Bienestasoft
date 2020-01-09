@@ -24,15 +24,15 @@ import { ServicioService } from '../../servicio.service';
 <table class="table">
     <thead class="thead-green">
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">Número externo</th>
-        <th scope="col">Nombre almacén</th>
-        <th scope="col">Responsable</th>
-        <th scope="col">Cantidad</th>
-        <th scope="col">Unidad medida</th>
-        <th scope="col">Estado</th>
-        <th scope="col">Centro distribución</th>
-        <th scope="col">Centro zonal</th>
+      <th scope="col"># </th>
+      <th scope="col">Número externo </th>
+      <th scope="col">Nombre almacén </th>
+      <th scope="col">Responsable </th>
+      <th scope="col">Capacidad bolsas </th>
+      <th scope="col">Capacidad cajas </th>
+      <th scope="col">Estado </th>
+      <th scope="col">Centro distribución</th>
+      <th scope="col">Centro zonal</th>
        
       </tr>
     </thead>
@@ -43,7 +43,7 @@ import { ServicioService } from '../../servicio.service';
         <td>{{usu.Nombre}}</td>
         <td>{{usu.Responsable}}</td>
         <td>{{usu.Capacidad}}</td>
-        <td>{{usu.UnidadMedida}}</td>
+        <td>{{usu.Capacidad2}}</td>
         <td>
         
         <div *ngIf="usu.Estado == 1">

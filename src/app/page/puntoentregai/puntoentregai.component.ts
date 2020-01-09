@@ -94,7 +94,7 @@ export class PuntoentregaiComponent implements OnInit {
       idCentrosZonales: ['', Validators.required],
       Estado: ['', Validators.required],
       NombrePE: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
-      CodigoExternoPE: ['', [Validators.required, Validators.minLength(11), Validators.maxLength(11), Validators.pattern('^[0-9]*$')]],
+      CodigoExternoPE: ['', [Validators.required, Validators.minLength(12), Validators.maxLength(12), Validators.pattern('^[0-9]*$')]],
       CodigoInternoPE: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ 0-9]*$')]],
       Responsable: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
       Comuna: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
