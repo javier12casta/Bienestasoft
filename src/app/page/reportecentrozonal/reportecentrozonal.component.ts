@@ -35,31 +35,19 @@ export class ReportecentrozonalComponent implements OnInit {
     
     window.scrollTo(0,0); 
 
-    html2canvas(document.getElementById('contentToConvert'), {
-      // Opciones
-      allowTaint: true,
-      useCORS: false,
-      // Calidad del PDF
-      scale: 1,
-     
-    }).then(function(canvas) {
-
-
-      var img = canvas.toDataURL("image/png");
-      var doc = new jspdf();
-      var width = doc.internal.pageSize.getWidth();
-      var height = doc.internal.pageSize.getHeight(); 
-      
-      doc.addImage(img,'PNG',0, 0, width, height );
-  
-       doc.save('reportecentrozonal.pdf');
-
-
-
-      
-
-      
-      
+    var data = document.getElementById('contentToConvert');
+    html2canvas(data).then(canvas => {
+    // Few necessary setting options
+    var imgWidth = 208;
+    var pageHeight = 295;
+    var imgHeight = canvas.height * imgWidth / canvas.width;
+    var heightLeft = imgHeight;
+    
+    const contentDataURL = canvas.toDataURL('image/png')
+    let pdf = new jspdf('p', 'mm', 'a4'); // A4 size page of PDF
+    var position = 0;
+    pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
+    pdf.save('reportecentrozonal.pdf'); // Generated PDF
     });
 }
 }

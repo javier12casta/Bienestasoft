@@ -37,7 +37,6 @@ export class AlmacenciComponent implements OnInit {
     Estado: 1,
     idCentroDistribucion: 1,
 
-
   };
 
   y: Inventario = {
@@ -161,7 +160,6 @@ export class AlmacenciComponent implements OnInit {
       }, err => {
         console.log(err);
       });
-
 
     this.Service.getCentro()
       .subscribe(res => {
