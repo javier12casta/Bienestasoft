@@ -126,7 +126,9 @@ export class ReporteinventarioComponent implements OnInit {
 
       var img = canvas.toDataURL("image/png");
       var doc = new jspdf();
-      doc.addImage(img,'PNG',10, 0, 175, 295);
+
+      var height = doc.internal.pageSize.getHeight(); 
+      doc.addImage(img,'PNG',10, 0,198, height);
       doc.save('reporteinventario.pdf');
 
       
