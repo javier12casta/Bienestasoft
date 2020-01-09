@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { InCentrodistribucion } from '../../interfaces/inhabilitarcentrodistribucion';
 import Swal from 'sweetalert2';
 import { Almacen } from 'src/app/interfaces/almacen';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inhabilitarcentrodm',
@@ -13,17 +14,19 @@ import { Almacen } from 'src/app/interfaces/almacen';
 export class InhabilitarcentrodmComponent implements OnInit {
 
   public centrod: InCentrodistribucion[] = [];
-  almacen: Almacen [] = [];
+  almacen: Almacen[] = [];
 
-  constructor(private activeRoute: ActivatedRoute,
-    private Service: ServicioService,) { }
+  constructor(
+    private activeRoute: ActivatedRoute,
+    private Service: ServicioService, 
+    private router:Router ) { }
 
-    inc: InCentrodistribucion = {
+  inc: InCentrodistribucion = {
 
     idCentroDistribucion: 1,
-    Estado : 0,
-      
-   };
+    Estado: 0,
+
+  };
 
 
 
@@ -40,6 +43,10 @@ export class InhabilitarcentrodmComponent implements OnInit {
           console.log(err);
         }
         );
+
+        this.Service.getalmacen().subscribe( res => {
+          this.almacen = Object(res);
+        });
     }
   }
 
@@ -48,7 +55,7 @@ export class InhabilitarcentrodmComponent implements OnInit {
     var numero = params.id;
     var cont2: number = 0;
     var cont3: number = 0;
-
+    console.log('Almacenes', this.almacen);
     for (let numeros of this.almacen) {
       if (numero == numeros.idCentroDistribucion && numeros.Estado == 1) {
         var cont: number = 0;
@@ -59,7 +66,7 @@ export class InhabilitarcentrodmComponent implements OnInit {
         cont3 = cont + 1;
       }
     }
-    if (cont2 == 0 && cont3 >0){
+    if (cont2 == 0 && cont3 >= 0){
       //console.log('funciona');
       this.updateDatos2();
     }else{
@@ -80,18 +87,30 @@ export class InhabilitarcentrodmComponent implements OnInit {
   showMenssage(){
     Swal.fire({
       title: 'Inhabilitado',
-      text: 'Beneficiario inhabilitado',
+      text: 'Centro de distribución inhabilitado',
       type: 'success',
       confirmButtonText: 'Ok'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/inhabilitarcentroi']);
+    
+      }
     });
   }
 
   showMenssage1(){
     Swal.fire({
       title: 'Habilitado',
-      text: 'Beneficiario habilitado',
+      text: 'Centro de distribución habilitado',
       type: 'success',
       confirmButtonText: 'Ok'
+    }).then((result) => {
+      if (result.value) {
+        
+        this.router.navigate(['/inhabilitarcentroi']);
+    
+      }
     });
   }
 

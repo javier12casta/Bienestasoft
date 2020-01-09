@@ -52,15 +52,10 @@ export class AlmacenuiComponent implements OnInit {
   };
 
   onClickMe() {
- 
-
-    
 
       this.y.Nombre = this.x.Nombre;
       this.y.unidad = this.x.UnidadMedida;
-      this.y.Cantidad = this.x.Capacidad;
-      this.y.Cantidad2 = this.x.Capacidad2;
-      
+    
     
           this.Service.postinventario(this.y).subscribe(res => {
             console.log(this.y);

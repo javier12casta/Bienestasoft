@@ -42,6 +42,11 @@ export class InhabilitarcentropiComponent implements OnInit {
           console.log(err);
         }
         );
+
+        this.Service.getalmacen().subscribe( res => {
+          this.almacen = Object(res);
+        });
+
     }
   }
 
@@ -50,7 +55,7 @@ export class InhabilitarcentropiComponent implements OnInit {
     var numero = params.id;
     var cont2: number = 0;
     var cont3: number = 0;
-
+    console.log('Almacenes', this.almacen);
     for (let numeros of this.almacen) {
       if (numero == numeros.idCentroDistribucion && numeros.Estado == 1) {
         var cont: number = 0;
@@ -61,7 +66,7 @@ export class InhabilitarcentropiComponent implements OnInit {
         cont3 = cont + 1;
       }
     }
-    if (cont2 == 0 && cont3 >0){
+    if (cont2 == 0 && cont3 >= 0){
       //console.log('funciona');
       this.updateDatos2();
     }else{
@@ -88,7 +93,7 @@ export class InhabilitarcentropiComponent implements OnInit {
   showMenssage(){
     Swal.fire({
       title: 'Inhabilitado',
-      text: 'Beneficiario inhabilitado',
+      text: 'Centro de distribución inhabilitado',
       type: 'success',
       confirmButtonText: 'Ok'
     }).then((result) => {
@@ -103,7 +108,7 @@ export class InhabilitarcentropiComponent implements OnInit {
   showMenssage1(){
     Swal.fire({
       title: 'Habilitado',
-      text: 'Beneficiario habilitado',
+      text: 'Centro de distribución habilitado',
       type: 'success',
       confirmButtonText: 'Ok'
     }).then((result) => {

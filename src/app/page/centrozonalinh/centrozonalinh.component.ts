@@ -203,8 +203,8 @@ export class CentrozonalinhComponent implements OnInit {
   showMenssage4() {
     Swal.fire({
       title: 'Inhabilitado',
-      text: 'centro zonal inhabilitado',
-      type: 'error',
+      text: 'Centro zonal inhabilitado',
+      type: 'success',
       confirmButtonText: 'Entendido'
     }).then((res) => {
       if(res.value){

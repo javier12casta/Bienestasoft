@@ -54,8 +54,6 @@ export class AlmacenciComponent implements OnInit {
 
     this.y.Nombre = this.x.Nombre;
     this.y.unidad = this.x.UnidadMedida;
-    this.y.Cantidad = this.x.Capacidad;
-    this.y.Cantidad2 = this.x.Capacidad2;
 
 
     this.Service.postinventario(this.y).subscribe(res => {
@@ -141,7 +139,6 @@ export class AlmacenciComponent implements OnInit {
       Responsable: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
       Capacidad: ['', [Validators.pattern('^[0-9]*$')]],
       Capacidad2: ['', [Validators.pattern('^[0-9]*$')]],
-      
       Estado: ['', Validators.required],
       idCentroDistribucion: ['', Validators.required],
       idCentrosZonales: ['', Validators.required],

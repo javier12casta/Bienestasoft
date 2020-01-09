@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
 })
 export class CentrodistribucionComponent implements OnInit {
   listau = '';
-  lista:string[]=["Centro Zonal","Punto De Entrega","Unidad de servicio"];
+  lista:string[]=["Centro zonal","Punto de entrega","Unidad de servicio"];
   datosgenerales: string[];
   seleccionado='';
   resultado='';
@@ -26,13 +26,13 @@ export class CentrodistribucionComponent implements OnInit {
  
   siguiente(){
 
-    if(this.listau == 'Centro Zonal'){
+    if(this.listau == 'Centro zonal'){
 
       this.router.navigate(['/centrodistribucionc']);
     
     }
   
-    if(this.listau == 'Punto De Entrega'){
+    if(this.listau == 'Punto de entrega'){
   
       this.router.navigate(['/centrodistribucionp']);
       
