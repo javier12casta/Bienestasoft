@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class ReportesComponent implements OnInit {
 
   lista = '';
-  listar:string[]=["servicio y modalidades","Referencias de Bienestarina","Lista de precios","Listado de cursos","Datos nutricionales"];
+  listar:string[]=["servicio y modalidades","Referencias de Bienestarina","Lista de precios","Listado de cursos","Datos nutricionales", "número de cupos"];
 
 
   constructor(private Service: ServicioService , private router:Router) { }
@@ -49,9 +49,15 @@ export class ReportesComponent implements OnInit {
   }
 
 
-  if(this.lista == 'Datos nutricionales' || this.lista == 'numero de cupos' ){
+  if(this.lista == 'Datos nutricionales' ){
 
     this.router.navigate(['/reportedatosnutricionales']);
+    
+  }
+
+  if(this.lista == 'número de cupos' ){
+
+    this.router.navigate(['/reportenumerocupos']);
     
   }
 

@@ -332,6 +332,33 @@ import {IdatosnutricionalesuComponent} from './page/idatosnutricionalesu/idatosn
 import {IdatosnutricionalesuiComponent} from './page/idatosnutricionalesui/idatosnutricionalesui.component';
 
 
+import {NumerocuposcComponent} from './page/numerocuposc/numerocuposc.component';
+import {NumerocuposciComponent} from './page/numerocuposci/numerocuposci.component';
+import {NumerocupospComponent} from './page/numerocuposp/numerocuposp.component';
+import {NumerocupospiComponent} from './page/numerocupospi/numerocupospi.component';
+import {NumerocuposuComponent} from './page/numerocuposu/numerocuposu.component';
+import {NumerocuposuiComponent} from './page/numerocuposui/numerocuposui.component';
+
+
+
+import {ModificarnivelnumerocuposComponent} from './page/modificarnivelnumerocupos/modificarnivelnumerocupos.component';
+import {ModificarnumerocuposcComponent} from './page/modificarnumerocuposc/modificarnumerocuposc.component';
+import {ModificarnumerocuposciComponent} from './page/modificarnumerocuposci/modificarnumerocuposci.component';
+import {ModificarnumerocupospComponent} from './page/modificarnumerocuposp/modificarnumerocuposp.component';
+import {ModificarnumerocupospiComponent} from './page/modificarnumerocupospi/modificarnumerocupospi.component';
+import {ModificarnumerocuposuComponent} from './page/modificarnumerocuposu/modificarnumerocuposu.component';
+import {ModificarnumerocuposuiComponent} from './page/modificarnumerocuposui/modificarnumerocuposui.component';
+
+
+import {ReportenumerocuposComponent} from './page/reportenumerocupos/reportenumerocupos.component';
+
+import {InhabilitarnivelnumerocuposComponent} from './page/inhabilitarnivelnumerocupos/inhabilitarnivelnumerocupos.component';
+import {InhabilitarnivelnumerocuposcComponent} from './page/inhabilitarnivelnumerocuposc/inhabilitarnivelnumerocuposc.component';
+import {InhabilitarnivelnumerocuposciComponent} from './page/inhabilitarnivelnumerocuposci/inhabilitarnivelnumerocuposci.component';
+import {InhabilitarnivelnumerocupospComponent} from './page/inhabilitarnivelnumerocuposp/inhabilitarnivelnumerocuposp.component';
+import {InhabilitarnivelnumerocupospiComponent} from './page/inhabilitarnivelnumerocupospi/inhabilitarnivelnumerocupospi.component';
+import {InhabilitarnivelnumerocuposuComponent} from './page/inhabilitarnivelnumerocuposu/inhabilitarnivelnumerocuposu.component';
+import {InhabilitarnivelnumerocuposuiComponent} from './page/inhabilitarnivelnumerocuposui/inhabilitarnivelnumerocuposui.component';
 
 const routes: Routes = [
   {path:'', component: LoginComponent},
@@ -655,7 +682,38 @@ const routes: Routes = [
 
   {path:'nivelnumerocupos', component:  NivelnumerocuposComponent},
 
+  {path:'numerocuposc', component:  NumerocuposcComponent},
+  {path:'numerocuposci', component:  NumerocuposciComponent},
+  {path:'numerocuposp', component:  NumerocupospComponent},
+  {path:'numerocupospi', component:  NumerocupospiComponent},
+  {path:'numerocuposu', component:  NumerocuposuComponent},
+  {path:'numerocuposui', component:  NumerocuposuiComponent},
+
+
+  {path:'modificarnivelnumerocupos', component:  ModificarnivelnumerocuposComponent},
+
+  {path:'modificarnumerocuposc', component:  ModificarnumerocuposcComponent},
+  {path:'modificarnumerocuposci/:id', component:  ModificarnumerocuposciComponent},
+  {path:'modificarnumerocuposp', component:  ModificarnumerocupospComponent},
+  {path:'modificarnumerocupospi/:id', component:  ModificarnumerocupospiComponent},
+  {path:'modificarnumerocuposu', component:  ModificarnumerocuposuComponent},
+  {path:'modificarnumerocuposui/:id', component:  ModificarnumerocuposuiComponent},
+
+  {path:'reportenumerocupos', component:  ReportenumerocuposComponent},
   
+
+
+  {path:'inhabilitarnivelnumerocupos', component:  InhabilitarnivelnumerocuposComponent},
+  {path:'inhabilitarnumerocuposc', component:  InhabilitarnivelnumerocuposcComponent},
+  {path:'inhabilitarnumerocuposci/:id', component:  InhabilitarnivelnumerocuposciComponent},
+  {path:'inhabilitarnumerocuposp', component:  InhabilitarnivelnumerocupospComponent},
+  {path:'inhabilitarnumerocupospi/:id', component:  InhabilitarnivelnumerocupospiComponent},
+  {path:'inhabilitarnumerocuposu', component:  InhabilitarnivelnumerocuposuComponent},
+  {path:'inhabilitarnumerocuposui/:id', component:  InhabilitarnivelnumerocuposuiComponent},
+
+
+
+
 ];
 
 @NgModule({

@@ -187,7 +187,7 @@ export class CentrozonalinhComponent implements OnInit {
   showMenssage2() {
     Swal.fire({
       title: 'Error',
-      text: 'Error al inhabilitar el centro zonal',
+      text: 'Error al deshabilitar el centro zonal',
       type: 'error',
       confirmButtonText: 'Entendido'
     });
@@ -195,15 +195,15 @@ export class CentrozonalinhComponent implements OnInit {
   showMenssage3() {
     Swal.fire({
       title: 'Error',
-      text: 'No es posible inhabilitar el centro zonal',
+      text: 'No es posible deshabilitar el centro zonal',
       type: 'error',
       confirmButtonText: 'Entendido'
     });
   }
   showMenssage4() {
     Swal.fire({
-      title: 'Inhabilitado',
-      text: 'Centro zonal inhabilitado',
+      title: 'Deshabilitado',
+      text: 'Centro zonal Deshabilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((res) => {

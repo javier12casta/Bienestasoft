@@ -49,6 +49,17 @@ export class ListaMaestrosBienestarinaInhabilitarComponent implements OnInit {
   
     }
 
+
+    if(this.modalidads == "Número de cupos"){
+  
+      this.router.navigate(['/inhabilitarnivelnumerocupos']);
+  
+    }
+
+
+    
+
+
     if(this.modalidads == ''){
   
       this.showMenssagenull();

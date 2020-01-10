@@ -64,8 +64,8 @@ import {Usuariost } from './interfaces/usuariost';
 import {Centrodistribuciont } from './interfaces/centrodistribuciont';
 import {Devolucionest } from './interfaces/devolucionest';
 import { Salidacentrot } from './interfaces/salidacentrot';
-
-
+import { Numerocupos } from 'src/app/interfaces/numerocupos'
+import { Innumerocupos } from 'src/app/interfaces/inhabilitarnumerocupos'
 
 @Injectable({
   providedIn: 'root'
@@ -532,6 +532,51 @@ export class ServicioService {
   putdatosvarioss(id: string | number, Nombre: Datosvarios) {
     return this.http.put<Datosvarios>(`${this.api}/datos/${id}`, Nombre);
   }
+
+
+  getnumerocupos() {
+    const path = `${this.api}/cupos`;
+    return this.http.get<[Numerocupos]>(path);
+  }
+
+
+  getnumerocuposc() {
+    const path = `${this.api}/cupos/tablac`;
+    return this.http.get<[Numerocupos]>(path);
+  }
+
+  getnumerocuposp() {
+    const path = `${this.api}/cupos/tablap`;
+    return this.http.get<[Numerocupos]>(path);
+  }
+
+
+  getnumerocuposu() {
+    const path = `${this.api}/cupos/tablau`;
+    return this.http.get<[Numerocupos]>(path);
+  }
+
+  getnumerocuposid(id: string) {
+    return this.http.get(`${this.api}/cupos/${id}`);
+  }
+
+  putnumerocupos(id: string | number, Nombre: Numerocupos) {
+    return this.http.put<Numerocupos>(`${this.api}/cupos/${id}`, Nombre);
+  }
+
+  putnumerocupoInhabilitar(id: string | number, Nombre: Innumerocupos) {
+    return this.http.put<Innumerocupos>(`${this.api}/cupos/${id}`, Nombre);
+  }
+
+
+  postnumerocupos(usu:Numerocupos) {
+
+    const path = `${this.api}/cupos`;
+    return this.http.post<Numerocupos>(path, usu);
+
+  }
+
+
 
   postlistadocursos(usu: Listadocursos) {
 

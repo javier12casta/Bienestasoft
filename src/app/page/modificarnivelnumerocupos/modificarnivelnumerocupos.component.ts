@@ -5,11 +5,11 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-nivelnumerocupos',
-  templateUrl: './nivelnumerocupos.component.html',
-  styleUrls: ['./nivelnumerocupos.component.css']
+  selector: 'app-modificarnivelnumerocupos',
+  templateUrl: './modificarnivelnumerocupos.component.html',
+  styleUrls: ['./modificarnivelnumerocupos.component.css']
 })
-export class NivelnumerocuposComponent implements OnInit {
+export class ModificarnivelnumerocuposComponent implements OnInit {
 
   listau = '';
   lista:string[]=["Centro Zonal","Punto De Entrega","Unidad de servicio"];
@@ -26,19 +26,19 @@ export class NivelnumerocuposComponent implements OnInit {
 
     if(this.listau == 'Centro Zonal'){
 
-      this.router.navigate(['/numerocuposc']);
+      this.router.navigate(['/modificarnumerocuposc']);
     
     }
   
     if(this.listau == 'Punto De Entrega'){
   
-      this.router.navigate(['/numerocuposp']);
+      this.router.navigate(['/modificarnumerocuposp']);
       
     }
   
     if(this.listau == 'Unidad de servicio'){
   
-      this.router.navigate(['/numerocuposu']);
+      this.router.navigate(['/modificarnumerocuposu']);
       
     }
   

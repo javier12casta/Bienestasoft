@@ -1,0 +1,52 @@
+<nav class="navbar navbar-success bg-success">
+    <div>
+      <button class="btn btn-dark" routerLink="/inhabilitarnivelnumerocupos">Volver</button>
+    </div>
+  
+  
+      
+      <div>
+          <label>Inhabilitar numero de cupos centro zonal</label>
+      
+      {{fecha}}  
+      </div>
+      
+      <div></div>
+      
+    </nav>
+    
+    <table class="table">
+      <thead class="thead-green">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Código interno </th>
+          <th scope="col">Estado </th>
+          <th scope="col">Descripción del registro</th>
+          <th scope="col">Valor </th>
+          <th scope="col">Unidad de medida  </th>
+          <th scope="col">Centro Zonal  </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ser of servic">
+          <th scope="row">{{ser.idnumerocupos}}</th>
+          <td>{{ser.CodigoInterno  }}</td>
+          <td>
+            
+              <div *ngIf="ser.EstadoDatoMaestro == 1">
+                  Habilitado
+                </div>
+                <div *ngIf="ser.EstadoDatoMaestro == 0">
+                  Deshabilitado
+                </div>
+            </td>
+          <td>{{ser.DescripcionDelRegistro }}</td>
+          <td>{{ser.Valor }}</td>
+          <td>{{ser.UnidadDeMedida  }}</td>
+          <td>{{ser.NombreCentroZonal  }}</td>
+          <td>
+            <button class="btn btn-dark" [routerLink]="['/inhabilitarnumerocuposci', ser.idnumerocupos]">Inhabilitar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
