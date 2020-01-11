@@ -2548,6 +2548,7 @@ var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "li
 
  //carga permiso 10----------
  datos = [];
+ cupos = [];
  cargarpermiso10() {
   var centrostr = this.permisos.perMaestros;
   var array = centrostr.split("");
@@ -2564,7 +2565,8 @@ var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "li
     this.datos.push(create);
     var create = { name: "Crear datos nutricionales", route: "/niveldatosnutricionales", icon: "face" };
     this.datos.push(create);
-
+    var create = { name: "Crear número de cupos", route: "/nivelnumerocupos", icon: "face" };
+    this.datos.push(create);
 
     var create = { name: "Reporte consecutivo maestros", route: "/reporteconsecutivomaestro", icon: "face" };
     this.datos.push(create);
@@ -2582,6 +2584,8 @@ var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "li
     var create = { name: "Modificar listado de cursos", route: "/nivelistadocursosm", icon: "face" };
     this.datos.push(create);
     var create = { name: "Modificar datos nutricionales", route: "/niveldatosnutricionalesm", icon: "face" };
+    this.datos.push(create);
+    var create = { name: "Modificar número de cupos", route: "/modificarnivelnumerocupos", icon: "face" };
     this.datos.push(create);
      if (array[2] == "1") {        
        if (array[3] == "1") {
@@ -2716,6 +2720,8 @@ var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "li
     var create = { name: "Modificar listado de cursos", route: "/modificarlistadoc", icon: "face" };
     this.datos.push(create);
     var create = { name: "Modificar datos nutricionales", route: "/modificardatosnutricionales", icon: "face" };
+    this.datos.push(create);
+    var create = { name: "Modificar número de cupos", route: "/modificarnivelnumerocupos", icon: "face" };
     this.datos.push(create);
      if (array[2] == "1") {
        
