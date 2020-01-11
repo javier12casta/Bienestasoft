@@ -10,7 +10,7 @@ export interface Devolucionest {
     centrodistribucionorigen:string,
     centrodistribuciondestino :string,
     Nombrealmacen:string,
-    movito ? : string,
+    motivo ? : string,
     cantidad: number,
     idAlmacenesDestino: number,
 }

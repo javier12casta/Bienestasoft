@@ -1,4 +1,4 @@
-<nav class="navbar navbar-success bg-success">
+<nav class="navbar navbar-fixed-top">
     <button class="btn btn-dark" routerLink="/menu">Volver</button>
   </nav>
 
@@ -16,10 +16,12 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">Lote</th>
+          <th scope="col">Cantidad</th>
           <th scope="col">Fecha de vencimiento</th>
           <th scope="col">Fecha de registro</th>
           <th scope="col">Presentación</th>
-          <th scope="col">Referencia bienesterina</th>
+          <th scope="col">Tipo bienesterina</th>
+          <th scope="col">Motivo</th>
           <th scope="col">Centro de distribución de origen </th>
           <th scope="col">Almacén origen</th>
           <th scope="col">Centro de distribución de destino</th>
@@ -30,10 +32,12 @@
         <tr *ngFor="let sal of devolucion">
           <th scope="row">{{sal.iddevoluciones}}</th>
           <td>{{sal.lote}}</td>
+          <td>{{sal.cantidad}}</td>
           <td>{{sal.fechavencimiento}}</td>
           <td>{{sal.fecharegistro}}</td>
           <td>{{sal.unidad}}</td>
           <td>{{sal.Referencia}}</td>
+          <td>{{sal.motivo}}</td>
           <td>{{sal.centrodistribucionorigen}}</td>
           <td>{{sal.Nombrealmacen}}</td>
           <td>{{sal.centrodistribuciondestino}}</td>
