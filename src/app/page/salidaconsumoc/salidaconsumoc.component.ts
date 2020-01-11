@@ -24,7 +24,11 @@ export class SalidaconsumocComponent implements OnInit {
   public tip: TipoBienestarina[] = [];
   public cen: Centrodistribucion[] = [];
   public alm: Almacen[] = [];
-  unidadmedida = ["bolsa", "caja"];
+  Referencias: string[] = ["Granular", "Liquida"];
+  refe = {
+    referencia: '',
+  };
+  unidadmedida = ["Bolsa", "Caja"];
 
   constructor(private activeRoute: ActivatedRoute,
     private Service: ServicioService, private router: Router, private fb: FormBuilder) { }
@@ -54,14 +58,14 @@ export class SalidaconsumocComponent implements OnInit {
   sal: Salidaconsumo = {
 
     lote: '',
-    fechavencimiento: 0,
+    fechavencimiento: null,
     cantidad: null,
-    cantidad2: 0,
+    cantidad2: null,
     unidad: '',
-    fecharegistro: 0,
-    idTipoBienesterina: 0,
-    idCentroDistribucion: 0,
-    idAlmacenes: 0,
+    fecharegistro: null,
+    idTipoBienesterina: null,
+    idCentroDistribucion: null,
+    idAlmacenes: null,
 
 
   };
@@ -147,6 +151,7 @@ export class SalidaconsumocComponent implements OnInit {
       idTipoBienesterina: ['', Validators.required],
       idCentroDistribucion: ['', Validators.required],
       idAlmacenes: ['', Validators.required],
+      Referencia: ['', Validators.required],
     });
 
 
@@ -199,12 +204,14 @@ export class SalidaconsumocComponent implements OnInit {
       console.log('Tipo de referencia', res);
       this.sal.unidad = this.tiporef.UnidadPrincipal;
       if (this.tiporef.Referencia == "Granular" || this.tiporef.Referencia == "granular") {
+        this.refe.referencia = this.tiporef.Referencia;
         this.granular = true;
         this.liquida = false;
         if (this.sal.idAlmacenes !== 0 && this.sal.idAlmacenes != null) {
           this.valAlmacen();
         }
       } else if (this.tiporef.Referencia == "Liquida" || this.tiporef.Referencia == "liquida") {
+        this.refe.referencia = this.tiporef.Referencia;
         this.granular = false;
         this.liquida = true;
         if (this.sal.idAlmacenes !== 0 && this.sal.idAlmacenes !== null) {

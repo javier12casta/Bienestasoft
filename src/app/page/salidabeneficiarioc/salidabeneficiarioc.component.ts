@@ -27,7 +27,11 @@ export class SalidabeneficiariocComponent implements OnInit {
   public alm: Almacen[] = [];
   public ben: Beneficiario[] = [];
   public acu: Acudientes[] = [];
-  unidadmedida = ["bolsa", "caja"];
+  Referencias: string[] = ["Granular", "Liquida"];
+  refe = {
+    referencia: '',
+  };
+  unidadmedida = ["Bolsa", "Caja"];
   u;
   constructor(private activeRoute: ActivatedRoute,
     private Service: ServicioService, private router: Router, private fb: FormBuilder) { }
@@ -158,7 +162,7 @@ export class SalidabeneficiariocComponent implements OnInit {
       idCentroDistribucion: ['', Validators.required],
       idAlmacenes: ['', Validators.required],
       idTipoBienesterina: ['', Validators.required],
-
+      Referencia: ['', Validators.required],
     });
 
 
@@ -227,12 +231,14 @@ export class SalidabeneficiariocComponent implements OnInit {
       console.log('Tipo de referencia', res);
       this.sal.unidad = this.tiporef.UnidadPrincipal;
       if (this.tiporef.Referencia == "Granular" || this.tiporef.Referencia == "granular") {
+        this.refe.referencia = this.tiporef.Referencia;
         this.granular = true;
         this.liquida = false;
         if (this.sal.idAlmacenes !== 0 && this.sal.idAlmacenes != null) {
           this.valAlmacen();
         }
       } else if (this.tiporef.Referencia == "Liquida" || this.tiporef.Referencia == "liquida") {
+        this.refe.referencia = this.tiporef.Referencia;
         this.granular = false;
         this.liquida = true;
         if (this.sal.idAlmacenes !== 0 && this.sal.idAlmacenes !== null) {

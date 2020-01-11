@@ -10,7 +10,7 @@
       <form [formGroup]="dev" (ngSubmit)="onSubmit()">
         <h1>Gestión de devoluciones</h1>
         <div class="form-group">
-          <label>Referencia bienestarina</label>
+          <label>Tipo bienestarina</label>
           <select formControlName="idTipoBienesterina" class="form-control" [(ngModel)]="sal.idTipoBienesterina"
             [ngClass]="{ 'is-invalid': submitted && f.idTipoBienesterina.errors }" (ngModelChange)="Referencia($event)">
             <option *ngFor="let t of tip" [value]="t.idTipoBienesterina">{{t.TipoBienesterina}}</option>
@@ -21,11 +21,22 @@
         </div>
 
         <div class="form-group">
+          <label>Referencia bienestarina</label>
+          <select formControlName="Referencia" class="form-control" [(ngModel)]="refe.referencia"
+            [ngClass]="{ 'is-invalid': submitted && f.Referencia.errors }">
+            <option *ngFor="let t of Referencias" [value]="t">{{t}}</option>
+          </select>
+          <div *ngIf="submitted && f.Referencia.errors" class="invalid-feedback">
+            <div *ngIf="f.Referencia.errors.required">Referencia es requerida</div>
+          </div>
+        </div>
+
+        <div class="form-group">
           <label>Presentación</label>
           <select formControlName="unidad" class="form-control" [(ngModel)]="sal.unidad"
             [ngClass]="{ 'is-invalid': submitted && f.unidad.errors }">
-            <option value="bolsa">bolsa</option>
-            <option value="caja">caja</option>
+            <option value="Bolsa">Bolsa</option>
+            <option value="Caja">Caja</option>
           </select>
           <div *ngIf="submitted && f.unidad.errors" class="invalid-feedback">
             <div *ngIf="f.unidad.errors.required">Presentación es requerida</div>
@@ -109,7 +120,8 @@
           <label>Cantidad</label>
 
           <input type="text" placeholder="Cantidad" formControlName="cantidad" class="form-control"
-            [(ngModel)]="sal.cantidad" [ngClass]="{ 'is-invalid': submitted && f.cantidad.errors }" (keyup)="onKey($event)"/>
+            [(ngModel)]="sal.cantidad" [ngClass]="{ 'is-invalid': submitted && f.cantidad.errors }"
+            (keyup)="onKey($event)" />
 
           <div *ngIf="submitted && f.cantidad.errors" class="invalid-feedback">
             <div *ngIf="f.cantidad.errors.required">La cantidad es requireda</div>

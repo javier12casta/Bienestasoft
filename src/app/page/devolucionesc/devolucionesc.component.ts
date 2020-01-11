@@ -22,6 +22,10 @@ export class DevolucionescComponent implements OnInit {
   public tip: TipoBienestarina[] = [];
   public cen: Centrodistribucion[] = [];
   public alm: Almacen[] = [];
+  Referencias: string[] = ["Granular", "Liquida"];
+  refe = {
+    referencia: '',
+  };
 
 
   constructor(
@@ -128,6 +132,7 @@ export class DevolucionescComponent implements OnInit {
 
       this.dev = this.fb.group({
         idTipoBienesterina: ['', Validators.required],
+        Referencia: ['', Validators.required],
         idCentroDistribucionOrigen: ['', Validators.required],
         idCentroDistribucionDestino: ['', Validators.required],
         idAlmacenes2: ['', Validators.required],
@@ -343,6 +348,7 @@ export class DevolucionescComponent implements OnInit {
       this.sal.unidad = this.tiporef.UnidadPrincipal;
 
       if (this.tiporef.Referencia == "Granular" || this.tiporef.Referencia == "granular") {
+        this.refe.referencia = this.tiporef.Referencia;
         this.granular = true;
         this.liquida = false;
         if (this.sal.idAlmacenes !== 0 && this.sal.idAlmacenes != null) {
@@ -354,6 +360,7 @@ export class DevolucionescComponent implements OnInit {
 
 
       } else if (this.tiporef.Referencia == "Liquida" || this.tiporef.Referencia == "liquida") {
+        this.refe.referencia = this.tiporef.Referencia;
         this.granular = false;
         this.liquida = true;
         if (this.sal.idAlmacenes !== 0 && this.sal.idAlmacenes !== null) {

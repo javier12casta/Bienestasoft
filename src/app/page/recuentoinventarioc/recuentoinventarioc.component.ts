@@ -24,7 +24,11 @@ export class RecuentoinventariocComponent implements OnInit {
   public tip: TipoBienestarina[] = [];
   public cen: Centrodistribucion[] = [];
   public alm: Almacen[] = [];
-  unidadmedida = ["bolsa","caja"];
+  Referencias: string[] = ["Granular", "Liquida"];
+  refe = {
+    referencia: '',
+  };
+  unidadmedida = ["Bolsa","Caja"];
 
   constructor(private activeRoute: ActivatedRoute,
     private Service: ServicioService, private router:Router, private fb: FormBuilder) { }
@@ -111,7 +115,7 @@ export class RecuentoinventariocComponent implements OnInit {
         unidadmedida1  : ['', Validators.required],
         cantidad: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
         cantidadcontada: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
-        //unidadmedida2  : ['', Validators.required],
+        Referencia  : ['', Validators.required],
         idTipoBienesterina: ['', Validators.required],
         idAlmacenes: ['', Validators.required],
         idCentroDistribucion: ['', Validators.required],
@@ -227,12 +231,14 @@ export class RecuentoinventariocComponent implements OnInit {
 
       if (this.tiporef.Referencia == "Granular" || this.tiporef.Referencia == "granular") {
         this.sal.unidadmedida1 = this.tiporef.UnidadPrincipal;
+        this.refe.referencia = this.tiporef.Referencia;
         this.granular = true;
         this.liquida = false;
 
 
       } else if (this.tiporef.Referencia == "Liquida" || this.tiporef.Referencia == "liquida") {
         this.sal.unidadmedida1 = this.tiporef.UnidadPrincipal;
+        this.refe.referencia = this.tiporef.Referencia;
         this.sal.unidadmedida2 = this.tiporef.UnidadSecundaria;
         this.granular = false;
         this.liquida = true;

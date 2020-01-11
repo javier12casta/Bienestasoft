@@ -11,13 +11,25 @@
           <h1>Recuento inventario</h1>
 
           <div class="form-group">
-            <label>Referencia bienestarina</label>
+
+            <label>Tipo bienestarina</label>
             <select formControlName="idTipoBienesterina" class="form-control" [(ngModel)]="sal.idTipoBienesterina"
               [ngClass]="{ 'is-invalid': submitted && f.idTipoBienesterina.errors }" (ngModelChange)="Referencia($event)">
               <option *ngFor="let t of tip" [value]="t.idTipoBienesterina">{{t.TipoBienesterina}}</option>
             </select>
             <div *ngIf="submitted && f.idTipoBienesterina.errors" class="invalid-feedback">
-              <div *ngIf="f.idTipoBienesterina.errors.required">Referencia es requerida</div>
+              <div *ngIf="f.idTipoBienesterina.errors.required">Tipo de bienestarina es requerido</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Referencia bienestarina</label>
+            <select formControlName="Referencia" class="form-control" [(ngModel)]="refe.referencia"
+              [ngClass]="{ 'is-invalid': submitted && f.Referencia.errors }">
+              <option *ngFor="let t of Referencias" [value]="t">{{t}}</option>
+            </select>
+            <div *ngIf="submitted && f.Referencia.errors" class="invalid-feedback">
+              <div *ngIf="f.Referencia.errors.required">Referencia es requerida</div>
             </div>
           </div>
   
@@ -25,8 +37,8 @@
             <label>Presentación</label>
             <select formControlName="unidadmedida1" class="form-control" [(ngModel)]="sal.unidadmedida1"
               [ngClass]="{ 'is-invalid': submitted && f.unidadmedida1.errors }">
-              <option value="bolsa">bolsa</option>
-              <option value="caja">caja</option>
+              <option value="Bolsa">Bolsa</option>
+              <option value="Caja">Caja</option>
             </select>
             <div *ngIf="submitted && f.unidadmedida1.errors" class="invalid-feedback">
               <div *ngIf="f.unidadmedida1.errors.required">Presentación es requerida</div>

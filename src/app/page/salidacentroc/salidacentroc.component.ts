@@ -24,11 +24,15 @@ export class SalidacentrocComponent implements OnInit {
   public cen: Centrodistribucion[] = [];
   public alm: Almacen[] = [];
   public alm1: Almacen[] = [];
+  Referencias: string[] = ["Granular", "Liquida"];
+  refe = {
+    referencia: '',
+  };
   cant;
   id;
   inventa;
   id1 = 0;
-  unidadmedida = ["bolsa","caja"];
+  unidadmedida = ["Bolsa","Caja"];
 
   //para las operaciones capacidad
   public inventario1: Inventario = {
@@ -152,6 +156,7 @@ export class SalidacentrocComponent implements OnInit {
     idAlmacen  : ['', Validators.required],
     idAlmacenesDestino: ['', Validators.required],
     idTipoBienesterina : ['', Validators.required],
+    Referencia : ['', Validators.required],
     });
 
 
@@ -322,6 +327,7 @@ export class SalidacentrocComponent implements OnInit {
       this.sal.unidad = this.tiporef.UnidadPrincipal;
 
       if (this.tiporef.Referencia == "Granular" || this.tiporef.Referencia == "granular") {
+        this.refe.referencia = this.tiporef.Referencia;
         this.cantidadEx = this.inventario1.Cantidad;
         this.granular = true;
         this.liquida = false;
@@ -334,6 +340,7 @@ export class SalidacentrocComponent implements OnInit {
 
 
       } else if (this.tiporef.Referencia == "Liquida" || this.tiporef.Referencia == "liquida") {
+        this.refe.referencia = this.tiporef.Referencia;
         this.cantidadEx = this.inventario1.Cantidad2;
         this.granular = false;
         this.liquida = true;

@@ -20,6 +20,10 @@ import { async } from '@angular/core/testing';
 export class TrasladocComponent implements OnInit {
 
   translado: Translado[] = [];
+  Referencias: string[] = ["Granular", "Liquida"];
+  refe = {
+    referencia: '',
+  };
 
   public tip: TipoBienestarina[] = [];
   public cen: Centrodistribucion[] = [];
@@ -103,6 +107,7 @@ export class TrasladocComponent implements OnInit {
 
     this.dev = this.fb.group({
       idTipoBienesterina: ['', Validators.required],
+      Referencia: ['', Validators.required],
       idCentroDistribucionOrigen: ['', Validators.required],
       idAlmacenesDestino: ['', Validators.required],
       idAlmacenesOrigen: ['', Validators.required],
@@ -290,31 +295,35 @@ export class TrasladocComponent implements OnInit {
       this.tiporef = Object(res);
       console.log('Tipo de referencia', res);
       this.sal.unidad = this.tiporef.UnidadPrincipal;
+      this.refe.referencia = this.tiporef.Referencia;
+      this.Bienestarina();
+    });
+  }
 
-      if (this.tiporef.Referencia == "Granular" || this.tiporef.Referencia == "granular") {
-        this.cantidadEx = this.inventario1.Cantidad;
-        this.granular = true;
-        this.liquida = false;
-        if (this.sal.idAlmacenesOrigen !== 0 && this.sal.idAlmacenesOrigen != null) {
-          this.valAlmacen();
-          if (this.sal.idAlmacenesDestino !== 0 || this.sal.idAlmacenesDestino !== null) {
-            this.valAlmacen2();
-          }
-        }
-
-
-      } else if (this.tiporef.Referencia == "Liquida" || this.tiporef.Referencia == "liquida") {
-        this.cantidadEx = this.inventario1.Cantidad2;
-        this.granular = false;
-        this.liquida = true;
-        if (this.sal.idAlmacenesOrigen !== 0 && this.sal.idAlmacenesOrigen !== null) {
-          this.valAlmacen();
-          if (this.sal.idAlmacenesDestino !== 0 || this.sal.idAlmacenesDestino !== null) {
-            this.valAlmacen2();
-          }
+  Bienestarina(){
+    if (this.refe.referencia == "Granular" || this.refe.referencia == "granular") {
+      this.cantidadEx = this.inventario1.Cantidad;
+      this.granular = true;
+      this.liquida = false;
+      if (this.sal.idAlmacenesOrigen !== 0 && this.sal.idAlmacenesOrigen != null) {
+        this.valAlmacen();
+        if (this.sal.idAlmacenesDestino !== 0 || this.sal.idAlmacenesDestino !== null) {
+          this.valAlmacen2();
         }
       }
-    });
+
+
+    } else if (this.refe.referencia == "Liquida" || this.refe.referencia == "liquida") {
+      this.cantidadEx = this.inventario1.Cantidad2;
+      this.granular = false;
+      this.liquida = true;
+      if (this.sal.idAlmacenesOrigen !== 0 && this.sal.idAlmacenesOrigen !== null) {
+        this.valAlmacen();
+        if (this.sal.idAlmacenesDestino !== 0 || this.sal.idAlmacenesDestino !== null) {
+          this.valAlmacen2();
+        }
+      }
+    }
   }
 
   //mensaje capacidad referencia

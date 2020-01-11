@@ -18,6 +18,10 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 export class RecepcionbienestarinaviComponent implements OnInit {
 
   public alm: Almacen[] = [];
+  Referencias: string[] = ["Granular", "Liquida"];
+  refe = {
+    referencia: '',
+  };
 
   //para la capacidad
   public almacen: Almacen = {
@@ -58,7 +62,7 @@ export class RecepcionbienestarinaviComponent implements OnInit {
   public tip: TipoBienestarina[] = [];
   public inv: Inventario[] = [];
   //para las operaciones
-  unidadmedida = ["bolsa", "caja"];
+  unidadmedida = ["Bolsa", "Caja"];
   public ac: Acta[] = [];
   cantidadrecp: number;
   id1 = 0;
@@ -149,6 +153,7 @@ export class RecepcionbienestarinaviComponent implements OnInit {
       fecha: ['', Validators.required],
       Cd: ['', Validators.required],
       Tipob: ['', Validators.required],
+      Referencia:['', Validators.required],
       Lote: ['', [Validators.required, Validators.pattern('^[0-9 a-z A-Z ñ á é í ó ú\(\)\.)]*$')]],
       fechav: ['', Validators.required],
       unidad: ['', Validators.required],
@@ -259,12 +264,14 @@ export class RecepcionbienestarinaviComponent implements OnInit {
       this.x.UnidadPrincipal = this.tiporef.UnidadPrincipal;
       this.y.idBienestarina = this.x.idBienestarina;
       if (this.tiporef.Referencia == "Granular" || this.tiporef.Referencia == "granular") {
+        this.refe.referencia = this.tiporef.Referencia;
         this.granular = true;
         this.liquida = false;
         if (this.x.idAlmacenes !== 0 && this.x.idAlmacenes != null) {
           this.valAlmacen();
         }
       } else if (this.tiporef.Referencia == "Liquida" || this.tiporef.Referencia == "liquida") {
+        this.refe.referencia = this.tiporef.Referencia;
         this.granular = false;
         this.liquida = true;
         if (this.x.idAlmacenes !== 0 && this.x.idAlmacenes !== null) {
