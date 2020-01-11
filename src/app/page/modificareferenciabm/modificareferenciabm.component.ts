@@ -15,25 +15,25 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 export class ModificareferenciabmComponent implements OnInit {
 
   public tipobienestarina: TipoBienestarina[] = [];
+  unidadmedidad: string[] = ["Bolsa", "Caja"];
+  unidadsecundario: string[] = ["g", "ml"];
+  Referencias: string[] = ["Granular", "Liquida"];
 
   bine: TipoBienestarina = {
-
-    idTipoBienesterina : 1,
-    TipoBienesterina : '',
-    Codigo : 0,
-    Estado : 1,
-    Referencia : '',
-    UnidadPrincipal : '',
-    Cantidad : 0,
+    idTipoBienesterina: 1,
+    TipoBienesterina: '',
+    Codigo: 0,
+    Estado: 1,
+    Referencia: '',
+    UnidadPrincipal: '',
+    Cantidad: 0,
     UnidadSecundaria: '',
+  };
 
-
-    };
-
-  constructor( 
+  constructor(
     private activeRoute: ActivatedRoute,
     private Service: ServicioService,
-    private router:Router,
+    private router: Router,
     private fb: FormBuilder) { }
 
   //----Validaciones de campos
@@ -45,14 +45,14 @@ export class ModificareferenciabmComponent implements OnInit {
 
     // stop here if form is invalid
     if (this.RefForm.valid) {
-      
-        this.updateDatos();
-          
+
+      this.updateDatos();
+
     } else if (this.RefForm.invalid) {
       this.showMenssagenull();
     }
-  }  
-   
+  }
+
 
   ngOnInit() {
 
@@ -60,7 +60,8 @@ export class ModificareferenciabmComponent implements OnInit {
     this.RefForm = this.fb.group({
       Estado: ['', Validators.required],
       Codigo: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
-      Referencia:  ['', [Validators.required, Validators.pattern('^[0-9 a-z A-Z ñ á é í ó ú\(\)\.]*$')]],
+      TipoBienesterina: ['', [Validators.required, Validators.pattern('^[0-9 a-z A-Z ñ á é í ó ú\(\)\.]*$')]],
+      Referencia: ['', Validators.required],
       unidad: ['', Validators.required],
       Cantidad: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       unidadsecundario: ['', Validators.required],
@@ -100,7 +101,27 @@ export class ModificareferenciabmComponent implements OnInit {
       );
   }
 
-  showMenssage(){
+  Referencia() {
+    if (this.bine.Referencia == "Granular") {
+      this.bine.UnidadPrincipal = "Bolsa";
+      this.bine.UnidadSecundaria = "g";
+    } else if (this.bine.Referencia == "Liquida") {
+      this.bine.UnidadPrincipal = "Caja";
+      this.bine.UnidadSecundaria = "ml";
+    }
+  }
+
+  presentacion() {
+    if (this.bine.UnidadPrincipal == "Bolsa") {
+      this.bine.Referencia = "Granular";
+      this.bine.UnidadSecundaria = "g";
+    } else if (this.bine.Referencia == "Caja") {
+      this.bine.Referencia = "Liquida";
+      this.bine.UnidadSecundaria = "ml";
+    }
+  }
+
+  showMenssage() {
     Swal.fire({
       title: 'Modificado',
       text: 'Dsto maestro modificado',
@@ -108,9 +129,8 @@ export class ModificareferenciabmComponent implements OnInit {
       confirmButtonText: 'Entendido'
     }).then((result) => {
       if (result.value) {
-        
+
         this.router.navigate(['/modificarreferenciab']);
-        window.location.reload();
       }
     });
   }
@@ -124,7 +144,7 @@ export class ModificareferenciabmComponent implements OnInit {
     });
   }
 
-   
+
 
 
 }

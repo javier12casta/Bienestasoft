@@ -17,8 +17,9 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 export class ReferenciasbienestarinaComponent implements OnInit {
 
   listamaestro:string[]=["0","1"];
-  unidadmedidad:string[]=["bolsa","caja","otra presentacion"];
+  unidadmedidad:string[]=["Bolsa","Caja"];
   unidadsecundario:string[]=["g","ml"];
+  Referencias: string [] = ["Granular","Liquida"];
 
   x : TipoBienestarina  = {
     
@@ -61,6 +62,7 @@ export class ReferenciasbienestarinaComponent implements OnInit {
       Estado: ['', Validators.required],
       TipoBienesterina: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú\(\)\.)]*$')]],
       Codigo: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+      Referencia:['', Validators.required],
       unidad: ['', Validators.required],
       Cantidad: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       unidadsecundario: ['', Validators.required],
@@ -75,8 +77,6 @@ export class ReferenciasbienestarinaComponent implements OnInit {
   get f() { return this.RefForm.controls; }
   
   onClickMe() {
-
-    this.x.Referencia = this.x.TipoBienesterina;
     this.Service.postTipobienestarina(this.x).subscribe(res => {
       console.log(this.x);
       this.showMenssage();
@@ -85,6 +85,16 @@ export class ReferenciasbienestarinaComponent implements OnInit {
         console.log(err);
       });
 
+  }
+
+  Referencia(){
+    if(this.x.Referencia == "Granular"){
+      this.x.UnidadPrincipal = "Bolsa";
+      this.x.UnidadSecundaria = "g";
+    }else if(this.x.Referencia == "Liquida"){
+      this.x.UnidadPrincipal = "Caja";
+      this.x.UnidadSecundaria = "ml";
+    }
   }
 
   showMenssage(){
