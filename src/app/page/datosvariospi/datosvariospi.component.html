@@ -22,11 +22,11 @@
 
             <div class="form-group">
               <label>Seleccione un punto de entrega</label>
-              <select formControlName="Pis" placeholder="Unidad de medida" class="form-control" [(ngModel)]="x.idPuntoEntrega" name="unidad" id="unidad" [ngClass]="{ 'is-invalid': submitted && f.Pis.errors }" >
+              <select formControlName="idPuntoEntrega"  class="form-control" [(ngModel)]="x.idPuntoEntrega" name="idPuntoEntrega" id="idPuntoEntrega" [ngClass]="{ 'is-invalid': submitted && f.idPuntoEntrega.errors }" >
                 <option *ngFor="let do of cen1 " [value]="do.idPuntoEntrega">{{do.NombrePE }} </option>
               </select>
-              <div *ngIf="submitted && f.Pis.errors" class="invalid-feedback">
-                  <div *ngIf="f.Pis.errors.required">El punto de entrega es requerido</div>
+              <div *ngIf="submitted && f.idPuntoEntrega.errors" class="invalid-feedback">
+                  <div *ngIf="f.idPuntoEntrega.errors.required">El punto de entrega es requerido</div>
               </div>
           </div>
 

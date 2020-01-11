@@ -64,6 +64,16 @@
               </div>
           </div> 
 
+          <div class="form-group">
+            <label>Seleccione un centro zonal</label>
+            <select formControlName="Czs" placeholder="Unidad de medida" class="form-control" [(ngModel)]="dvarios.idCentrosZonales" name="unidad" id="unidad" [ngClass]="{ 'is-invalid': submitted && f.Czs.errors }" >
+              <option *ngFor="let do of cen1 " [value]="do.idCentrosZonales">{{do.NombreCentroZonal }} </option>
+            </select>
+            <div *ngIf="submitted && f.Czs.errors" class="invalid-feedback">
+                <div *ngIf="f.Czs.errors.required">El centro zonal es requerido</div>
+            </div>
+        </div>
+
 
           <div class="text-center">
             <button type="submit" class="btn btn-success btn-block" [disabled]="!RefForm.valid">Guardar</button>

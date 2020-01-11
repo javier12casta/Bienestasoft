@@ -86,16 +86,10 @@ export class DatosvariospiComponent implements OnInit {
       descripcion: ['', [Validators.required, Validators.pattern('^[0-9 a-z A-Z ñ á é í ó ú\(\)\.]*$')]],
       Valor: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       unidad: ['', Validators.required],
-      Pis: ['', Validators.required]
+      idPuntoEntrega: ['', Validators.required]
       
     });
 
-    this.Service.getPunto()
-  .subscribe(res => {
-    this.cen1 = res;
-  }, err => {
-    console.log(err);
-  });
 
   }
   showMenssagenull() {

@@ -70,8 +70,8 @@ export class ModificardatosnutricionalesmComponent implements OnInit {
       Codigo:  ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       descripcion: ['', [Validators.required, Validators.pattern('^[0-9 a-z A-Z ñ á é í ó ú\(\)\.]*$')]],
       Valor: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
-      unidad: ['', Validators.required]
-      
+      unidad: ['', Validators.required],
+      Czs: ['', Validators.required]
     });
 
     const params = this.activeRoute.snapshot.params;
@@ -117,7 +117,8 @@ export class ModificardatosnutricionalesmComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         
-        window.location.reload();
+        this.router.navigate(['/modificardatosnutricionales']);
+       
 
       }
     });

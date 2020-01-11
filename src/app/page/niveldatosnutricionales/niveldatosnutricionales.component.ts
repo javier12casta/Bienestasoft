@@ -31,7 +31,7 @@ export class NiveldatosnutricionalesComponent implements OnInit {
     
     }
   
-    if(this.listau == 'Punto de entrega'){
+    if(this.listau == 'Punto de Entrega'){
   
       this.router.navigate(['/datosvariosp']);
       
