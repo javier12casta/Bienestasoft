@@ -144,7 +144,7 @@ export class ModificarserviciommComponent implements OnInit {
       if (result.value) {
         
         this.router.navigate(['/modificarserviciom']);
-        window.location.reload();
+        
       }
     });
   }

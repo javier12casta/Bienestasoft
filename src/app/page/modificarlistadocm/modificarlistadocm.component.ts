@@ -105,7 +105,7 @@ export class ModificarlistadocmComponent implements OnInit {
       if (result.value) {
         
         this.router.navigate(['/modificarlistadoc']);
-        window.location.reload();
+        
     
       }
     });

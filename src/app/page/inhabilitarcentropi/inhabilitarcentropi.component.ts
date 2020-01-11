@@ -92,8 +92,8 @@ export class InhabilitarcentropiComponent implements OnInit {
 
   showMenssage(){
     Swal.fire({
-      title: 'Inhabilitado',
-      text: 'Centro de distribución inhabilitado',
+      title: 'Deshabilitado',
+      text: 'Centro de distribución deshabilitado',
       type: 'success',
       confirmButtonText: 'Ok'
     }).then((result) => {

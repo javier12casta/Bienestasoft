@@ -76,7 +76,7 @@ export class InhabilitarcentrouiComponent implements OnInit {
   showMenssage4() {
     Swal.fire({
       title: 'Error',
-      text: 'No es posible inhabilitar el centro de distribucion',
+      text: 'No es posible deshabilitar el centro de distribucion',
       type: 'error',
       confirmButtonText: 'Entendido'
     }).then((result) => {
@@ -90,8 +90,8 @@ export class InhabilitarcentrouiComponent implements OnInit {
 
   showMenssage(){
     Swal.fire({
-      title: 'Inhabilitado',
-      text: 'Centro de distribución inhabilitado',
+      title: 'Deshabilitado',
+      text: 'Centro de distribución deshabilitado',
       type: 'success',
       confirmButtonText: 'Ok'
     }).then((result) => {

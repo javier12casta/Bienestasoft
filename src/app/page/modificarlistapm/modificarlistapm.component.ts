@@ -132,7 +132,7 @@ export class ModificarlistapmComponent implements OnInit {
       if (result.value) {
         
         this.router.navigate(['/modificarlistac']);
-        window.location.reload();
+       
       }
     });
   }
