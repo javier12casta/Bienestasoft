@@ -14,7 +14,7 @@ export class ReportecentrodistribucionComponent implements OnInit {
   cen: Centrodistribucion[] = [];
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
-  Nombrereporte = 'Reporte centro de distribucion';
+  Nombrereporte = 'Reporte centro de distribución';
 
   constructor(private Service: ServicioService) { }
 
@@ -31,21 +31,33 @@ export class ReportecentrodistribucionComponent implements OnInit {
 
   Generareporte(){
 
-    var data = document.getElementById('contentToConvert');
-    html2canvas(data).then(canvas => {
-    // Few necessary setting options
-    var imgWidth = 208;
-    var pageHeight = 295;
-    var imgHeight = canvas.height * imgWidth / canvas.width;
-    var heightLeft = imgHeight;
+    var doc = new jspdf('p', 'pt');
+    var img = document.getElementById('imagen');
+    var res = doc.autoTableHtmlToJson(document.getElementById("contentToConvert"));
+    var fec = this.fecha;
+
+    var header = function(data) {
+      doc.setFontSize(18);
+      doc.setTextColor(40);
+      doc.setFontStyle('normal');
+
+     doc.addImage(img, 'PNG', 50, 20, 50, 50);
     
-    const contentDataURL = canvas.toDataURL('image/png')
-    let pdf = new jspdf('p', 'mm', 'a4'); // A4 size page of PDF
-    var position = 0;
-    pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
-    pdf.save('reportecentrodistribucion.pdf'); // Generated PDF
-    });
-       
+      doc.text("Reporte centro de distribución" , 110 ,60 ,0 ,90 );
+      doc.text(fec , 450 ,60 ,0 ,90 );
+    };
+  
+    var options = {
+      beforePageContent: header,
+      margin: {
+        top: 80
+      },
+      startY: doc.autoTableEndPosY() + 100
+    };
+  
+    doc.autoTable(res.columns, res.data, options);
+  
+    doc.save("reportecentrodistribucion.pdf");
     
     }
 
