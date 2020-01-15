@@ -39,20 +39,20 @@ export class ReportebeneficiarioComponent implements OnInit {
 
   Generareporte(){
 
-    var doc = new jspdf('p', 'pt');
+    var doc = new jspdf("l", "pt", 'a1');
     var img = document.getElementById('imagen');
     var res = doc.autoTableHtmlToJson(document.getElementById("contentToConvert"));
     var fec = this.fecha;
 
     var header = function(data) {
-      doc.setFontSize(18);
+      doc.setFontSize(9);
       doc.setTextColor(40);
       doc.setFontStyle('normal');
 
      doc.addImage(img, 'PNG', 50, 20, 50, 50);
     
       doc.text("Reporte beneficiario" , 110 ,60 ,0 ,90 );
-      doc.text(fec , 450 ,60 ,0 ,90 );
+      doc.text(fec , 2150 ,60 ,0 ,90 );
     };
   
     var options = {
@@ -64,9 +64,7 @@ export class ReportebeneficiarioComponent implements OnInit {
     };
   
     doc.autoTable(res.columns, res.data, options);
-  
     doc.save("reportebeneficiarios.pdf");
    
-
 }
 }

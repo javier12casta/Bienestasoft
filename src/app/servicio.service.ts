@@ -1021,5 +1021,9 @@ export class ServicioService {
     return this.http.get<[Consecutivomaestro]>(path);
   }
  
+  Obtenerconsecutivosm19() {
+    const path = `${this.api}/consecutivoM/tabla19`;
+    return this.http.get<[Consecutivomaestro]>(path);
+  }
 
 }

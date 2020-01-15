@@ -125,16 +125,15 @@ export class ReporteinventarioComponent implements OnInit {
     }).then(function(canvas) {
 
       var img = canvas.toDataURL("image/png");
-      var doc = new jspdf();
+      var doc = new jspdf('l', 'pt');
 
       var height = doc.internal.pageSize.getHeight(); 
-      doc.addImage(img,'PNG',10, 0,198, height);
+      doc.addImage(img,'PNG',10, 0,830, height);
       doc.save('reporteinventario.pdf');
 
       
     });
-    
-        
+
     }
 
     onChange(){
@@ -177,8 +176,6 @@ export class ReporteinventarioComponent implements OnInit {
           this.visible3 = false;
       
           }
-
-
     
 
     }
