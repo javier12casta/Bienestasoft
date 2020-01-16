@@ -5,7 +5,7 @@ import { TipoBienestarina } from 'src/app/interfaces/tipobienestarina';
 import { Inventario } from 'src/app/interfaces/inventario';
 import { ServicioService } from 'src/app/servicio.service';
 import { Recepcion } from 'src/app/interfaces/recepcion';
-import { Acta } from 'src/app/interfaces/acta';
+import { Acta, RecepcionMax } from 'src/app/interfaces/acta';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
@@ -85,9 +85,12 @@ export class RecepcionbienestarinaviComponent implements OnInit {
     idInventario: null,
   };
 
+  z: RecepcionMax = {
+    idBienestarina: null,
+  }
   y: Acta = {
     numero: null,
-    idBienestarina: null,
+    idBienestarina: 1,
   };
 
   //----Validaciones de campos
@@ -125,6 +128,16 @@ export class RecepcionbienestarinaviComponent implements OnInit {
         console.log(err);
       });
 
+      this.Service.getBienestarinaMaxid().subscribe(res => {
+        this.z = Object(res);
+        console.log('id', this.z);
+        this.y.idBienestarina = this.z [0] ["idBienestarina"];
+        console.log('id', this.y);
+        if(this.y.idBienestarina == null){
+          this.y.idBienestarina = 1;
+        }
+      });
+
     this.Service.getcentrodistribucion()
       .subscribe(res => {
         this.cen = res;
@@ -154,29 +167,25 @@ export class RecepcionbienestarinaviComponent implements OnInit {
       Cd: ['', Validators.required],
       Tipob: ['', Validators.required],
       Referencia:['', Validators.required],
-      Lote: ['', [Validators.required, Validators.pattern('^[0-9 a-z A-Z ñ á é í ó ú\(\)\.)]*$')]],
+      Lote: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       fechav: ['', Validators.required],
       unidad: ['', Validators.required],
       Cantidad: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
-      Numero: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+      Numero: ['', [Validators.required, Validators.pattern('^[0-9 a-z A-Z]*$')]],
     });
   }
 
   get f() { return this.RefForm.controls; }
-
+  get f1() { return this.y; }
   onClickMe() {
 
     this.Service.postrecepcion(this.x).subscribe(res => {
       console.log(this.x);
+      this.Service.postacta(this.y).subscribe(res => {
+        console.log(this.y);
+      });
       this.Service.putinventario(this.x.idAlmacenes, this.inventario1).subscribe( res => {});
       this.showMenssage();
-    },
-      err => {
-        console.log(err);
-      });
-
-    this.Service.postacta(this.y).subscribe(res => {
-      console.log(this.y);
     },
       err => {
         console.log(err);
@@ -262,7 +271,6 @@ export class RecepcionbienestarinaviComponent implements OnInit {
       this.tiporef = Object(res);
       console.log('Tipo de referencia', res);
       this.x.UnidadPrincipal = this.tiporef.UnidadPrincipal;
-      this.y.idBienestarina = this.x.idBienestarina;
       if (this.tiporef.Referencia == "Granular" || this.tiporef.Referencia == "granular") {
         this.refe.referencia = this.tiporef.Referencia;
         this.granular = true;

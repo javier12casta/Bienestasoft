@@ -45,7 +45,7 @@ import { Salidaconsumo} from './interfaces/salidaconsumo';
 import { Devoluciones} from './interfaces/devoluciones';
 import { Recuentoinventario} from './interfaces/recuentoinventario';
 import { Translado} from './interfaces/traslado';
-import { Acta} from './interfaces/acta';
+import { Acta, RecepcionMax} from './interfaces/acta';
 import { Biometrico } from './interfaces/biometrico';
 import { Centrozonalt } from './interfaces/centrozonalt';
 import { Salidabeneficiariot } from './interfaces/salidabeneficiariot';
@@ -924,6 +924,12 @@ export class ServicioService {
 
     const path = `${this.api}/Acta`;
     return this.http.get<[Acta]>(path);
+
+  }
+
+  getBienestarinaMaxid(){
+    const path = `${this.api}/bienestarina/maxid`;
+    return this.http.get<[RecepcionMax]>(path);
 
   }
 

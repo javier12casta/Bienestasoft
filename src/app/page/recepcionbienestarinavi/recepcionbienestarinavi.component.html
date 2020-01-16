@@ -13,7 +13,7 @@
         <div class="form-group">
           <label>Tipo bienestarina</label>
           <select formControlName="Tipob" placeholder="Referencia de bienestarina" class="form-control"
-            [(ngModel)]="x.idTipoBienesterina" [ngClass]="{ 'is-invalid': submitted && f.Tipob.errors }"
+             [(ngModel)]="x.idTipoBienesterina" [ngClass]="{ 'is-invalid': submitted && f.Tipob.errors }"
             (ngModelChange)="Referencia($event)">
             <option *ngFor="let do of tip" [value]="do.idTipoBienesterina">{{do.TipoBienesterina}}</option>
           </select>
@@ -69,7 +69,7 @@
         <div class="form-group">
           <label>Número de acta</label>
           <input type="text" placeholder="Número de acta" formControlName="Numero" class="form-control"
-            [(ngModel)]="y.numero" name="Numero" id="Numero"
+            [(ngModel)]="y.numero" name="numero"
             [ngClass]="{ 'is-invalid': submitted && f.Numero.errors }" />
 
           <div *ngIf="submitted && f.Numero.errors" class="invalid-feedback">
@@ -81,7 +81,7 @@
         <div class="form-group">
           <label>Lote </label>
           <input type="text" placeholder="Lote bienestarina" formControlName="Lote" class="form-control"
-            [(ngModel)]="x.lote" name="ref" id="tipo" [ngClass]="{ 'is-invalid': submitted && f.Lote.errors }" />
+            [(ngModel)]="x.lote" name="lote" id="tipo" [ngClass]="{ 'is-invalid': submitted && f.Lote.errors }" />
 
           <div *ngIf="submitted && f.Lote.errors" class="invalid-feedback">
             <div *ngIf="f.Lote.errors.required"> Tipo bienesterina es requerido</div>

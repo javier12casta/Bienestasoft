@@ -1,8 +1,9 @@
 export interface Acta {
-  
     idacta?: number,
-    numero : number,
-    idBienestarina ? : number,
-   
+    numero : string,
+    idBienestarina: number,
+  }
 
+  export interface RecepcionMax {
+    idBienestarina: number,
   }
