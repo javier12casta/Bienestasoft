@@ -53,6 +53,23 @@
             </div>
           </div> 
 
+          <h2></h2>
+          <h1>Beneficiario</h1>
+          <h2></h2>
+
+          <div class="form-group">
+            <label>Beneficiario</label>
+            <select formControlName="pname" placeholder="Tipo de documento" class="form-control" options="options"
+              [(ngModel)]="listac.idBenefiarios" name="pname" id="pname"
+              [ngClass]="{ 'is-invalid': submitted && f.pname.errors }">
+              <option *ngFor="let do of ben" [value]="do.idBeneficiarios">{{do.PrimerNombre }} {{do.SegundoNombre}}
+                {{do.PrimerApellido}} {{do.SegundoApellido}}</option>
+            </select>
+            <div *ngIf="submitted && f.pname.errors" class="invalid-feedback">
+              <div *ngIf="f.pname.errors.required">El Beneficiario es requerido</div>
+            </div>
+          </div>
+
            <div class="form-group">
                   <label>Fecha</label>
                   <input type="date" placeholder="Fecha de ingreso" formControlName="fecha" class="form-control" [(ngModel)]="listac.Fecha" min="1900-01-01" max="2050-12-31" 

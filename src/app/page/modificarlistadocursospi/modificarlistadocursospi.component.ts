@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { Puntoentrega } from 'src/app/interfaces/puntoentrega';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { Beneficiario } from 'src/app/interfaces/beneficiario';
 
 @Component({
   selector: 'app-modificarlistadocursospi',
@@ -17,6 +18,7 @@ export class ModificarlistadocursospiComponent implements OnInit {
   
   public listacursos: Listadocursos[] = [];
   public cen1: Puntoentrega[] = [];
+  public ben: Beneficiario[] = [];
 
   constructor(
     private activeRoute: ActivatedRoute,
@@ -49,7 +51,8 @@ export class ModificarlistadocursospiComponent implements OnInit {
       agente: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú\(\)\.]*$')]],
       Numdoc: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       Estado: ['', Validators.required],
-      fecha: ['', Validators.required]
+      fecha: ['', Validators.required],
+      pname: ['', Validators.required],
     });
 
     this.Service.getPunto()
@@ -59,6 +62,12 @@ export class ModificarlistadocursospiComponent implements OnInit {
       console.log(err);
     });
 
+    this.Service.getBeneficiarios()
+    .subscribe(res => {
+      this.ben = res;
+    }, err => {
+      console.log(err);
+    });
     
     const params = this.activeRoute.snapshot.params;
     console.log(params);
@@ -103,7 +112,7 @@ export class ModificarlistadocursospiComponent implements OnInit {
   showMenssage(){
     Swal.fire({
       title: 'Modificado',
-      text: 'Dato maestro modificado',
+      text: 'Listado curso modificado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {
