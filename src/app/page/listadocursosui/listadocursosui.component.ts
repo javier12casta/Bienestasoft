@@ -102,11 +102,7 @@ export class ListadocursosuiComponent implements OnInit {
       Estado: ['', Validators.required],
       Numdocb: ['', Validators.required],
       pname: ['', Validators.required],
-      sname: ['', Validators.required],
-      papell: ['', Validators.required],
-      sapell: ['', Validators.required],
       fecha: ['', Validators.required]
-      
     });
 
 	this.Service.getgenero()
@@ -141,7 +137,7 @@ export class ListadocursosuiComponent implements OnInit {
   showMenssage(){
     Swal.fire({
       title: 'Creado',
-      text: 'Dato maestro creado',
+      text: 'Listado curso creado',
       type: 'success',
 	  confirmButtonText: 'Entendido'
 	}).then((result) => {
@@ -166,6 +162,16 @@ export class ListadocursosuiComponent implements OnInit {
     
    }
 
+   beneficiario = null;
+   documento(){
+     for(let b of this.ben){
+       if(b.idBeneficiarios == this.x.idBenefiarios){
+          this.beneficiario = b.idBeneficiarios;
+       }
+
+     }
+   }
+   
    showMenssagenull() {
     Swal.fire({
       title: 'Error',

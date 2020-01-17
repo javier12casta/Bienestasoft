@@ -1,29 +1,32 @@
 <nav class="navbar navbar-success bg-success">
-    <button class="btn btn-dark" routerLink="/listadocursosv">Volver</button>
-  </nav>
-  
-  <div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
-    <div class="card" padding>
-      <div class="card-body" padding>
-  
-        <form [formGroup]="RefForm" (ngSubmit)="onSubmit()">
-          <h1>Listado de cursos</h1>
+  <button class="btn btn-dark" routerLink="/listadocursosv">Volver</button>
+</nav>
 
-          <div class="form-group">
-            <label>Seleccione centro zonal</label>
-            <select formControlName="Centroz" placeholder="Centro zonal" class="form-control" options="options" [(ngModel)]="x.idCentrosZonales" name="idnivel1" id="idnivel1" [ngClass]="{ 'is-invalid': submitted && f.Centroz.errors }" >
-              <option *ngFor="let do of cen1 " [value]="do.idCentrosZonales">{{do.NombreCentroZonal }} </option>
-            </select>
-            <div *ngIf="submitted && f.Centroz.errors" class="invalid-feedback">
-                <div *ngIf="f.Centroz.errors.required">El centro zonal es requerido</div>
-            </div>
-        </div> 
+<div class="col-md-4 offset-md-4" style="padding-top: 50px;" padding>
+  <div class="card" padding>
+    <div class="card-body" padding>
+
+      <form [formGroup]="RefForm" (ngSubmit)="onSubmit()">
+        <h1>Listado de cursos</h1>
+
+        <div class="form-group">
+          <label>Seleccione centro zonal</label>
+          <select formControlName="Centroz" placeholder="Centro zonal" class="form-control" options="options"
+            [(ngModel)]="x.idCentrosZonales" name="idnivel1" id="idnivel1"
+            [ngClass]="{ 'is-invalid': submitted && f.Centroz.errors }">
+            <option *ngFor="let do of cen1 " [value]="do.idCentrosZonales">{{do.NombreCentroZonal }} </option>
+          </select>
+          <div *ngIf="submitted && f.Centroz.errors" class="invalid-feedback">
+            <div *ngIf="f.Centroz.errors.required">El centro zonal es requerido</div>
+          </div>
+        </div>
 
         <div class="form-group">
           <label>Nombre de el agente educativo</label>
-          <input type="text" placeholder="Nombre agente educativo" formControlName="agente" class="form-control" [(ngModel)]="x.NombreAgenteE" 
-          name="nombreagente" id="agentee" [ngClass]="{ 'is-invalid': submitted && f.agente.errors }"/>
-  
+          <input type="text" placeholder="Nombre agente educativo" formControlName="agente" class="form-control"
+            [(ngModel)]="x.NombreAgenteE" name="nombreagente" id="agentee"
+            [ngClass]="{ 'is-invalid': submitted && f.agente.errors }" />
+
           <div *ngIf="submitted && f.agente.errors" class="invalid-feedback">
             <div *ngIf="f.agente.errors.required">El nombre de el agente es requerido</div>
             <div *ngIf="f.agente.errors.pattern">El nombre de el agente solo puede contener letras minusculas o
@@ -33,109 +36,85 @@
 
         <div class="form-group">
           <label>Tipo de documento</label>
-          <select formControlName="Tipod" placeholder="Tipo de documento" class="form-control" options="options" [(ngModel)]="x.idTipoDocumento" name="Tipod" id="Tipod" [ngClass]="{ 'is-invalid': submitted && f.Tipod.errors }" >
+          <select formControlName="Tipod" placeholder="Tipo de documento" class="form-control" options="options"
+            [(ngModel)]="x.idTipoDocumento" name="Tipod" id="Tipod"
+            [ngClass]="{ 'is-invalid': submitted && f.Tipod.errors }">
             <option *ngFor="let do of tip" [value]="do.idTipoDocumento">{{do.NombreTipo }} </option>
           </select>
           <div *ngIf="submitted && f.Tipod.errors" class="invalid-feedback">
-              <div *ngIf="f.Tipod.errors.required">El tipo de documento es requerido</div>
+            <div *ngIf="f.Tipod.errors.required">El tipo de documento es requerido</div>
           </div>
-      </div> 
-
-      <div class="form-group">
-        <label>Número de documento</label>
-        <input type="text" placeholder="Número de documento" formControlName="Numdoc" class="form-control" [(ngModel)]="x.NumeroDocumento" 
-        name="numerodoc" id="inputdoc" [ngClass]="{ 'is-invalid': submitted && f.Numdoc.errors }"/>
-
-        <div *ngIf="submitted && f.Numdoc.errors" class="invalid-feedback">
-          <div *ngIf="f.Numdoc.errors.required">El número de documento es requerido</div>
-          <div *ngIf="f.Numdoc.errors.pattern">El número de documento solo puede contener numeros</div>
         </div>
-      </div> 
 
-      <h2></h2>
-            <h1>Beneficiario</h1>
-      <h2></h2>
+        <div class="form-group">
+          <label>Número de documento</label>
+          <input type="text" placeholder="Número de documento" formControlName="Numdoc" class="form-control"
+            [(ngModel)]="x.NumeroDocumento" name="numerodoc" id="inputdoc"
+            [ngClass]="{ 'is-invalid': submitted && f.Numdoc.errors }" />
 
-
-            <div class="form-group">
-                <label>Estado</label>
-                <select formControlName="Estado" class="form-control" [(ngModel)]="x.Estado" name="Estado" id="Estado" [ngClass]="{ 'is-invalid': submitted && f.Estado.errors }">
-                    <option value="1">Habilitado</option>
-                    <option value="0">Deshabilitado</option>
-                </select>
-                <div *ngIf="submitted && f.Estado.errors" class="invalid-feedback">
-                 <div *ngIf="f.Estado.errors.required">Estado es requerido</div>
-                </div>
-            </div>
-            <div class="form-group">
-              <label>Número de documento</label>
-              <select formControlName="Numdocb" placeholder="Tipo de documento" class="form-control" options="options" [(ngModel)]="x.idBenefiarios" name="Numdocb" id="Numdocb" [ngClass]="{ 'is-invalid': submitted && f.Numdocb.errors }" >
-                <option *ngFor="let do of ben" [value]="do.idBeneficiarios">{{do.NumeroDocumento }} </option>
-              </select>
-                <div *ngIf="submitted && f.Numdocb.errors" class="invalid-feedback">
-                <div *ngIf="f.Numdocb.errors.required">El número de documento es requerido</div>
-              </div>
-            </div> 
-
-            <div class="form-group">
-              <label>Primer nombre de el beneficiario</label>
-              <select formControlName="pname" placeholder="Tipo de documento" class="form-control" options="options" [(ngModel)]="y.PrimerNombre" name="pname" id="pname" [ngClass]="{ 'is-invalid': submitted && f.pname.errors }" >
-                <option *ngFor="let do of ben" [value]="do.idBeneficiarios">{{do.PrimerNombre }} </option>
-              </select>
-                <div *ngIf="submitted && f.pname.errors" class="invalid-feedback">
-                <div *ngIf="f.pname.errors.required">El primer nombre es requerido</div>
-              </div>
-            </div> 
-
-            <div class="form-group">
-              <label>Segundo nombre de el beneficiario</label>
-              <select formControlName="sname" placeholder="Tipo de documento" class="form-control" options="options" [(ngModel)]="y.SegundoNombre" name="sname" id="sname" [ngClass]="{ 'is-invalid': submitted && f.sname.errors }" >
-                <option *ngFor="let do of ben" [value]="do.idBeneficiarios">{{do.SegundoNombre }} </option>
-              </select>
-                <div *ngIf="submitted && f.sname.errors" class="invalid-feedback">
-                <div *ngIf="f.sname.errors.required">El segundo nombre es requerido</div>
-              </div>
-            </div> 
-
-            <div class="form-group">
-              <label>Primer apellido de el beneficiario</label>
-              <select formControlName="papell" placeholder="Tipo de documento" class="form-control" options="options" [(ngModel)]="y.PrimerApellido" name="papell" id="papell" [ngClass]="{ 'is-invalid': submitted && f.papell.errors }" >
-                <option *ngFor="let do of ben" [value]="do.idBeneficiarios">{{do.PrimerApellido  }} </option>
-              </select>
-                <div *ngIf="submitted && f.papell.errors" class="invalid-feedback">
-                <div *ngIf="f.papell.errors.required">El primer apellido es requerido</div>
-              </div>
-            </div> 
-
-            <div class="form-group">
-              <label>Segundo apellido de el beneficiario</label>
-              <select formControlName="sapell" placeholder="Segundo apellido" class="form-control" options="options" [(ngModel)]="y.SegundoApellido" name="sapell" id="sapell" [ngClass]="{ 'is-invalid': submitted && f.sapell.errors }" >
-                <option *ngFor="let do of ben" [value]="do.idBeneficiarios">{{do.SegundoApellido  }} </option>
-              </select>
-                <div *ngIf="submitted && f.sapell.errors" class="invalid-feedback">
-                <div *ngIf="f.sapell.errors.required">El segundo apellido es requerido</div>
-              </div>
-            </div> 
-
-            <div class="form-group">
-              <label>Fecha</label>
-              <input type="date" placeholder="Fecha" formControlName="fecha" class="form-control" [(ngModel)]="x.Fecha" min="1900-01-01" max="2050-12-31" 
-              name="fechai" id="fecha" [ngClass]="{ 'is-invalid': submitted && f.fecha.errors }"/>
-      
-              <div *ngIf="submitted && f.fecha.errors" class="invalid-feedback">
-                <div *ngIf="f.fecha.errors.required">La fecha es requerida</div>
-              </div>
-            </div> 
-
-
-          <div class="text-center">
-            <button type="submit" class="btn btn-success btn-block">Guardar</button>
+          <div *ngIf="submitted && f.Numdoc.errors" class="invalid-feedback">
+            <div *ngIf="f.Numdoc.errors.required">El número de documento es requerido</div>
+            <div *ngIf="f.Numdoc.errors.pattern">El número de documento solo puede contener numeros</div>
           </div>
-  
-        </form>
-      </div>
-    </div>
-  </div>  
+        </div>
 
-    
-    
+        <h2></h2>
+        <h1>Beneficiario</h1>
+        <h2></h2>
+
+
+        <div class="form-group">
+          <label>Estado</label>
+          <select formControlName="Estado" class="form-control" [(ngModel)]="x.Estado" name="Estado" id="Estado"
+            [ngClass]="{ 'is-invalid': submitted && f.Estado.errors }">
+            <option value="1">Habilitado</option>
+            <option value="0">Deshabilitado</option>
+          </select>
+          <div *ngIf="submitted && f.Estado.errors" class="invalid-feedback">
+            <div *ngIf="f.Estado.errors.required">Estado es requerido</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Número de documento</label>
+          <select formControlName="Numdocb" placeholder="Tipo de documento" class="form-control" options="options"
+            [(ngModel)]="x.idBenefiarios" name="Numdocb" id="Numdocb"
+            [ngClass]="{ 'is-invalid': submitted && f.Numdocb.errors }" (ngModelChange)="documento($event)">
+            <option *ngFor="let do of ben" [value]="do.idBeneficiarios">{{do.NumeroDocumento }} </option>
+          </select>
+          <div *ngIf="submitted && f.Numdocb.errors" class="invalid-feedback">
+            <div *ngIf="f.Numdocb.errors.required">El número de documento es requerido</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Beneficiario</label>
+          <select formControlName="pname" placeholder="Tipo de documento" class="form-control" options="options"
+            [(ngModel)]="beneficiario" name="pname" id="pname"
+            [ngClass]="{ 'is-invalid': submitted && f.pname.errors }">
+            <option *ngFor="let do of ben" [value]="do.idBeneficiarios">{{do.PrimerNombre }} {{do.SegundoNombre}}
+              {{do.PrimerApellido}} {{do.SegundoApellido}}</option>
+          </select>
+          <div *ngIf="submitted && f.pname.errors" class="invalid-feedback">
+            <div *ngIf="f.pname.errors.required">El Beneficiario es requerido</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Fecha</label>
+          <input type="date" placeholder="Fecha" formControlName="fecha" class="form-control" [(ngModel)]="x.Fecha"
+            min="1900-01-01" max="2050-12-31" name="fechai" id="fecha"
+            [ngClass]="{ 'is-invalid': submitted && f.fecha.errors }" />
+
+          <div *ngIf="submitted && f.fecha.errors" class="invalid-feedback">
+            <div *ngIf="f.fecha.errors.required">La fecha es requerida</div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-success btn-block">Guardar</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
