@@ -66,6 +66,7 @@ import {Devolucionest } from './interfaces/devolucionest';
 import { Salidacentrot } from './interfaces/salidacentrot';
 import { Numerocupos } from 'src/app/interfaces/numerocupos'
 import { Innumerocupos } from 'src/app/interfaces/inhabilitarnumerocupos'
+import { Inventariocan} from './interfaces/inventariocan';
 
 @Injectable({
   providedIn: 'root'
@@ -811,6 +812,11 @@ export class ServicioService {
     return this.http.put<Inventario>(`${this.api}/inventario/${id}`, Nombre);
   }
 
+  getinventariocantidad() {
+    const path = `${this.api}/inventario/tabla`;
+    return this.http.get<[Inventariocan]>(path);
+  }
+
   getsalidacentro() {
     const path = `${this.api}/entregacentrod`;
     return this.http.get<[Salidacentro]>(path);
@@ -826,8 +832,6 @@ export class ServicioService {
     return this.http.post<Salidacentro>(path, recep);
 
   }
-
-
   getsalidabeneficiario(){
     const path = `${this.api}/entregabeneficiario`;
     return this.http.get<[Salidabeneficiario]>(path);

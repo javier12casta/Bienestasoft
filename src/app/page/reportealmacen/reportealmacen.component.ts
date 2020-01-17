@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Almacen} from '../../interfaces/almacen';
+import { Inventariocan} from '../../interfaces/inventariocan';
 import { ServicioService } from '../../servicio.service';
 import * as jspdf from 'jspdf'; 
 import html2canvas from 'html2canvas';
@@ -11,12 +12,17 @@ import html2canvas from 'html2canvas';
 
 })
 export class ReportealmacenComponent implements OnInit {
-
+  isHidden: boolean = true;
+  isHidden1: boolean = true;
   alm: Almacen[] = [];
+  inv: Inventariocan[] = [];
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
   Nombrereporte = 'Reporte almacén';
-
+  fil;
+  est;
+  res;
+  us;
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {
@@ -24,6 +30,14 @@ export class ReportealmacenComponent implements OnInit {
     this.Service.getAlmacenr()
     .subscribe(async (data) => {
       this.alm = data;
+      console.log(data);
+    }
+    );
+
+
+    this.Service.getinventariocantidad()
+    .subscribe(async (data) => {
+      this.inv = data;
       console.log(data);
     }
     );
@@ -63,5 +77,41 @@ export class ReportealmacenComponent implements OnInit {
     
     }
 
+    onChange(){
 
+    if(this.fil == "Responsable"){
+
+      this.isHidden = false;
+      this.isHidden1 = true;
+    }
+
+    if(this.fil == "Estado"){
+
+     this.isHidden = true;
+     this.isHidden1 = false;
+
+    }
+
+    }
+
+    estad(){
+
+      if(this.est == "Habilitado"){
+
+        
+      }
+  
+      if(this.est == "Deshabilitado"){
+  
+       
+  
+      }
+
+
+    }
+
+    cambiaLado(res) {
+      this.us = res;
+    }
+   
 }

@@ -10,7 +10,44 @@
            <img src="../../assets/icbf-logo.png" id="imagen" style="width: 65px; height: 65px; margin-left: 10px; margin-top: 10px; margin-bottom: 0px;" class="rounded float-left">
           </div>
         </footer>
-          {{Nombrereporte}}       {{fecha}}
+          {{Nombrereporte}}    
+          
+          
+          <h2> </h2> 
+          
+          {{fecha}}
+          
+          <div >
+            <h1> </h1> 
+            <label  >filtar Por : </label>
+            <h1></h1> 
+          <select  class="select-css" [(ngModel)]="fil" (change)="onChange()"> 
+            <option   > 
+              Responsable
+            </option > 
+            <option   > 
+              Estado
+            </option > 
+            
+            </select>
+            <h2> </h2> 
+            <input type="text" placeholder="Reponsable" [hidden]="isHidden" [(ngModel)]="res" (ngModelChange)="cambiaLado($event)" />
+            <h2> </h2> 
+
+            <select  class="select-css" [(ngModel)]="est" (change)="estad()"  [hidden]="isHidden1"> 
+              <option   > 
+                Habilitado
+              </option > 
+              <option  > 
+                Deshabilitado
+              </option > 
+              
+              </select>
+
+
+          </div>
+          
+          <h1> </h1> 
         <tr>
           <th scope="col"># </th>
           <th scope="col">Número externo </th>
@@ -20,7 +57,8 @@
           <th scope="col">Capacidad cajas </th>
           <th scope="col">Estado </th>
           <th scope="col">Centro distribución</th>
-      
+          <th scope="col">Inventario disponible cajas</th>
+          <th scope="col">Inventario disponible bolsas</th>
         </tr>
       </thead>
       <tbody>
@@ -41,7 +79,9 @@
                   
             
             </td>
-          <td>{{usu.centro}}</td>    
+          <td>{{usu.centro}}</td>  
+        
+        
         </tr>
       </tbody>
     </table>
