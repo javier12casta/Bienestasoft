@@ -23,6 +23,7 @@ export class ReportealmacenComponent implements OnInit {
   est;
   res;
   us;
+  defaultValue = "Responsable";
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {

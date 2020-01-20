@@ -1,5 +1,47 @@
 <nav class="navbar navbar-success bg-success">
+
+
+
     <button class="btn btn-dark" routerLink="/menu">Volver</button>
+
+    <label  style="text-align:left;"  >filtar Por : </label>
+  <select style="width: 200px;" class="form-control"  [(ngModel)]="fil" (change)="onChange()"> 
+      <option >  
+        Municipio 
+      </option > 
+      <option> 
+        Código externo ICBF 
+      </option > 
+      <option > 
+        Estado
+      </option > 
+      
+      </select>
+
+      <label [hidden]="isHidden2" class="menu">Municipio</label>
+        <select class="menu "  style="width: 300px;" class="form-control" formControlName="idMunicipios"  [(ngModel)]="mun" [hidden]="isHidden2">
+            <option *ngFor="let muni of municipios"  (ngModelChange)="opmunicipio()"  > {{muni.Municipio}} </option>
+        </select>
+      
+  
+        <label class="menu" [hidden]="isHidden">Código externo ICBF </label>
+      <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Código externo ICBF " [hidden]="isHidden" [(ngModel)]="res" (ngModelChange)="cambiaLado($event)" />
+
+
+      <label  [hidden]="isHidden1" class="menu"> Estado </label>
+
+      <select   style="width: 200px;" class="form-control" [(ngModel)]="est" (change)="estad()"  [hidden]="isHidden1"> 
+        <option   > 
+          Habilitado
+        </option > 
+        <option  > 
+          Deshabilitado
+        </option > 
+        
+        </select>
+   
+        <button class="btn btn-dark" >Buscar</button>
+        
   </nav>
   
 

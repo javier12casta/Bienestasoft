@@ -1,5 +1,41 @@
 <nav class="navbar navbar-success bg-success">
     <button class="btn btn-dark" routerLink="/menu">Volver</button>
+
+      <h1> </h1> 
+      <label  >filtar Por : </label>
+      <h1></h1> 
+    <select class="form-control" style="width: 200px;" [(ngModel)]="fil" (change)="onChange()" [value]="Responsable"> 
+      
+      
+      <option > 
+        Responsable
+      </option > 
+      <option   > 
+        Estado
+      </option > 
+      
+      </select>
+      <label [hidden]="isHidden" >Responsable : </label>
+      <h2> </h2> 
+      <input type="text" placeholder="Responsable" [hidden]="isHidden" [(ngModel)]="res" (ngModelChange)="cambiaLado($event)" />
+      <h2> </h2> 
+
+      <label [hidden]="isHidden1" >Estado : </label>
+      <select  class="form-control" style="width: 200px;" [(ngModel)]="est" (change)="estad()"  [hidden]="isHidden1"> 
+        <option   > 
+          Habilitado
+        </option > 
+        <option  > 
+          Deshabilitado
+        </option > 
+        
+        </select>
+
+
+        <button class="btn btn-dark" >Buscar</button>
+
+
+
   </nav>
   
   <table class="table" id="contentToConvert">
@@ -17,35 +53,7 @@
           
           {{fecha}}
           
-          <div >
-            <h1> </h1> 
-            <label  >filtar Por : </label>
-            <h1></h1> 
-          <select  class="select-css" [(ngModel)]="fil" (change)="onChange()"> 
-            <option   > 
-              Responsable
-            </option > 
-            <option   > 
-              Estado
-            </option > 
-            
-            </select>
-            <h2> </h2> 
-            <input type="text" placeholder="Reponsable" [hidden]="isHidden" [(ngModel)]="res" (ngModelChange)="cambiaLado($event)" />
-            <h2> </h2> 
-
-            <select  class="select-css" [(ngModel)]="est" (change)="estad()"  [hidden]="isHidden1"> 
-              <option   > 
-                Habilitado
-              </option > 
-              <option  > 
-                Deshabilitado
-              </option > 
-              
-              </select>
-
-
-          </div>
+          
           
           <h1> </h1> 
         <tr>

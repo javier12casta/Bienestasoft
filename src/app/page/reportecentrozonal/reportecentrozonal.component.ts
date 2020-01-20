@@ -7,19 +7,24 @@ import html2canvas from 'html2canvas';
 import { Centrozonalt } from 'src/app/interfaces/centrozonalt';
 import 'jspdf-autotable'
 import { autoTable as AutoTable } from 'jspdf-autotable';
-
+import { Municipio } from '../../interfaces/municipio';
 @Component({
   selector: 'app-reportecentrozonal',
   templateUrl: './reportecentrozonal.component.html',
   styleUrls: ['./reportecentrozonal.component.css']
 })
 export class ReportecentrozonalComponent implements OnInit {
-
+  isHidden: boolean = true;
+  isHidden1: boolean = true;
+  isHidden2: boolean = true;
+  
   centros: Centrozonalt[] = [];
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
   Nombrereporte = 'Reporte centro zonal';
-
+  fil;
+  est;
+  municipios: Municipio[] = [];
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {
@@ -31,6 +36,13 @@ export class ReportecentrozonalComponent implements OnInit {
         console.log('funciona');
       }
       );
+
+      this.Service.getMunicipio()
+      .subscribe(res => {
+        this.municipios = res;
+      }, err => {
+        console.log(err);
+      });
 
   }
   Generareporte(){
@@ -63,4 +75,55 @@ export class ReportecentrozonalComponent implements OnInit {
   
     doc.save("reportecentrozonal.pdf");
   }
+  onChange(){
+
+    if(this.fil == "Municipio"){
+
+      this.isHidden = true;
+      this.isHidden1 = true;
+      this.isHidden2 = false;
+    }
+
+
+    if(this.fil == "Código externo ICBF"){
+
+      this.isHidden = false;
+      this.isHidden1 = true;
+      this.isHidden2 = true;
+    }
+
+
+
+    if(this.fil == "Estado"){
+
+     this.isHidden = true;
+     this.isHidden1 = false;
+     this.isHidden2 = true;
+
+    }
+
+    }
+
+    estad(){
+
+      if(this.est == "Habilitado"){
+
+        
+      }
+  
+      if(this.est == "Deshabilitado"){
+  
+       
+  
+      }
+
+    }
+
+
+    opmunicipio(){
+
+
+
+    }
+    
 }

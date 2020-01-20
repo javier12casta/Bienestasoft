@@ -3,3 +3,19 @@
     display: flex;
     justify-content: center;
   }
+
+  .menu{ 
+ 
+    display: flex;
+    justify-content: center;
+  
+  } 
+
+  .s {
+    
+    width: 400px; 
+    text-align:center;
+    
+   } 
+
+ 
