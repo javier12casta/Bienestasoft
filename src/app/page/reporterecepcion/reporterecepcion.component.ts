@@ -12,6 +12,13 @@ import { Recepciont } from 'src/app/interfaces/recepciont';
 })
 export class ReporterecepcionComponent implements OnInit {
 
+  isHidden: boolean = true;
+  isHidden1: boolean = true;
+  isHidden2: boolean = true;
+
+
+fil;
+  est;
   rec: Recepciont[] = [];
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
@@ -64,5 +71,56 @@ export class ReporterecepcionComponent implements OnInit {
        
     
     }
+
+    onChange(){
+
+      if(this.fil == "Fecha recepción"){
+  
+        this.isHidden = true;
+        this.isHidden1 = true;
+        this.isHidden2 = false;
+      }
+  
+  
+      if(this.fil == "Tipo bienesterina"){
+  
+        this.isHidden = false;
+        this.isHidden1 = true;
+        this.isHidden2 = true;
+      }
+  
+  
+  
+      if(this.fil == "lote"){
+  
+       this.isHidden = true;
+       this.isHidden1 = false;
+       this.isHidden2 = true;
+  
+      }
+  
+      }
+  
+      estad(){
+  
+        if(this.est == "Habilitado"){
+  
+          
+        }
+    
+        if(this.est == "Deshabilitado"){
+    
+         
+    
+        }
+  
+      }
+  
+  
+      opmunicipio(){
+  
+  
+  
+      }
 
 }

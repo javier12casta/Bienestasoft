@@ -3,7 +3,7 @@ import { Usuariost } from '../../interfaces/usuariost';
 import { ServicioService } from '../../servicio.service';
 import * as jspdf from 'jspdf'; 
 import html2canvas from 'html2canvas';
-
+import { Tipodocumento } from '../../interfaces/tipodocumento';
 
 @Component({
   selector: 'app-reporteusuarios',
@@ -12,6 +12,12 @@ import html2canvas from 'html2canvas';
 })
 export class ReporteusuariosComponent implements OnInit {
 
+  isHidden: boolean = true;
+  isHidden1: boolean = true;
+  isHidden2: boolean = true;
+  fil;
+  est;
+  tip: Tipodocumento[] = [];
   usua: Usuariost[] = [];
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
@@ -29,6 +35,14 @@ export class ReporteusuariosComponent implements OnInit {
     );
 
     
+    
+    this.Service.gettipodocumento()
+    .subscribe(res => {
+      this.tip = res;
+    }, err => {
+      console.log(err);
+    });
+
 
 
   }
@@ -67,5 +81,58 @@ export class ReporteusuariosComponent implements OnInit {
     
     }
 
+
+    onChange(){
+
+      if(this.fil == "Fecha ingreso"){
+  
+        this.isHidden = true;
+        this.isHidden1 = true;
+        this.isHidden2 = false;
+      }
+  
+  
+      if(this.fil == "Tipo documento"){
+  
+        this.isHidden = false;
+        this.isHidden1 = true;
+        this.isHidden2 = true;
+      }
+  
+  
+  
+      if(this.fil == "Estado"){
+  
+       this.isHidden = true;
+       this.isHidden1 = false;
+       this.isHidden2 = true;
+  
+      }
+  
+      }
+  
+      estad(){
+  
+        if(this.est == "Habilitado"){
+  
+          
+        }
+    
+        if(this.est == "Deshabilitado"){
+    
+         
+    
+        }
+  
+      }
+  
+  
+      opmunicipio(){
+  
+  
+  
+      }
+  
+  
 
 }

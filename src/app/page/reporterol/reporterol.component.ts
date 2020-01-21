@@ -12,6 +12,13 @@ import html2canvas from 'html2canvas';
 })
 export class ReporterolComponent implements OnInit {
 
+  isHidden: boolean = true;
+  isHidden1: boolean = true;
+  isHidden2: boolean = true;
+
+
+fil;
+  est;
   trol: Rol[] = [];
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
@@ -65,6 +72,44 @@ export class ReporterolComponent implements OnInit {
        
     
     }
+
+    onChange(){
+
+      if(this.fil == "Rol"){
+  
+        this.isHidden = true;
+        this.isHidden1 = true;
+        this.isHidden2 = false;
+      }
+
+      if(this.fil == "Estado"){
+  
+       this.isHidden = true;
+       this.isHidden1 = false;
+       this.isHidden2 = true;
+  
+      }
+  
+      }
+  
+      estad(){
+  
+        if(this.est == "Habilitado"){
+  
+          
+        }
+    
+        if(this.est == "Deshabilitado"){
+    
+         
+    
+        }
+  
+      }
+  
+
+
+
 
 
 }

@@ -1,5 +1,59 @@
 <nav class="navbar navbar-fixed-top">
   <button class="btn btn-dark" routerLink="/menu">Volver</button>
+
+
+
+  <label  style="text-align:left;"  >Filtar Por : </label>
+  <select style="width: 200px;" class="form-control"  [(ngModel)]="fil" (change)="onChange()"> 
+      <option >  
+        Fecha ingreso
+      </option > 
+      <option> 
+        Tipo documento
+      </option > 
+      <option > 
+        Estado
+      </option > 
+      
+      </select>
+
+      <label [hidden]="isHidden2" class="menu">Fecha ingreso</label>
+      <input type="date"  min="1900-01-01" max="2050-12-31" [hidden]="isHidden2"/>
+  
+        <label class="menu" [hidden]="isHidden">Tipo documento</label>
+        <select class="menu "  style="width: 300px;" class="form-control" formControlName="idMunicipios"  [(ngModel)]="mun" [hidden]="isHidden">
+          <option *ngFor="let t of tip"  (ngModelChange)="opmunicipio()"  > {{t.NombreTipo}} </option>
+      </select>
+    
+
+
+      <label  [hidden]="isHidden1" class="menu"> Estado </label>
+
+      <select   style="width: 200px;" class="form-control" [(ngModel)]="est" (change)="estad()"  [hidden]="isHidden1"> 
+        <option   > 
+          Habilitado
+        </option > 
+        <option  > 
+          Deshabilitado
+        </option > 
+        
+        </select>
+   
+        <button class="btn btn-dark" >Buscar</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </nav>
 
 <table class="table" id="contentToConvert">

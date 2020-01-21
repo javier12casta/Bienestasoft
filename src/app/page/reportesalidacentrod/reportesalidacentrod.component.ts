@@ -11,11 +11,17 @@ import { Salidacentrot } from 'src/app/interfaces/salidacentrot';
   styleUrls: ['./reportesalidacentrod.component.css']
 })
 export class ReportesalidacentrodComponent implements OnInit {
+  isHidden: boolean = true;
+  isHidden1: boolean = true;
+  isHidden2: boolean = true;
+
+
+fil;
+  est;
   centroD: Salidacentrot[] = [];
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
   Nombrereporte = 'Reporte centro distribución';
-
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {
@@ -61,5 +67,56 @@ export class ReportesalidacentrodComponent implements OnInit {
        
     
     }
+
+    onChange(){
+
+      if(this.fil == "Fecha registro"){
+  
+        this.isHidden = true;
+        this.isHidden1 = true;
+        this.isHidden2 = false;
+      }
+  
+  
+      if(this.fil == "Presentación"){
+  
+        this.isHidden = false;
+        this.isHidden1 = true;
+        this.isHidden2 = true;
+      }
+  
+  
+  
+      if(this.fil == "Lote"){
+  
+       this.isHidden = true;
+       this.isHidden1 = false;
+       this.isHidden2 = true;
+  
+      }
+  
+      }
+  
+      estad(){
+  
+        if(this.est == "Habilitado"){
+  
+          
+        }
+    
+        if(this.est == "Deshabilitado"){
+    
+         
+    
+        }
+  
+      }
+  
+  
+      opmunicipio(){
+  
+  
+  
+      }
 
 }

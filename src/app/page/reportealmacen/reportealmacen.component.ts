@@ -14,6 +14,8 @@ import html2canvas from 'html2canvas';
 export class ReportealmacenComponent implements OnInit {
   isHidden: boolean = true;
   isHidden1: boolean = true;
+  isHidden2: boolean = true;
+
   alm: Almacen[] = [];
   inv: Inventariocan[] = [];
   f = new Date();
@@ -84,12 +86,23 @@ export class ReportealmacenComponent implements OnInit {
 
       this.isHidden = false;
       this.isHidden1 = true;
+      this.isHidden2 = true;
     }
+
+    if(this.fil == "Nombre almacén"){
+
+      this.isHidden = true;
+      this.isHidden1 = true;
+      this.isHidden2 = false;
+ 
+     }
+
 
     if(this.fil == "Estado"){
 
      this.isHidden = true;
      this.isHidden1 = false;
+     this.isHidden2 = true;
 
     }
 

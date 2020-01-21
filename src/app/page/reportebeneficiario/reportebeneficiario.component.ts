@@ -6,6 +6,7 @@ import html2canvas from 'html2canvas';
 import { Regional } from '../../interfaces/regional';
 import { UserOptions } from 'jspdf';
 import { Beneficiariot } from '../../interfaces/beneficiariot';
+import { Municipio } from '../../interfaces/municipio';
 
 
 @Component({
@@ -17,6 +18,14 @@ import { Beneficiariot } from '../../interfaces/beneficiariot';
 })
 export class ReportebeneficiarioComponent implements OnInit {
 
+  isHidden: boolean = true;
+  isHidden1: boolean = true;
+  isHidden2: boolean = true;
+
+
+fil;
+  est;
+  municipios: Municipio[] = [];
   benefi: Beneficiarior[] = [];
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
@@ -33,6 +42,14 @@ export class ReportebeneficiarioComponent implements OnInit {
       console.log('funciona');
     }
     );
+
+    this.Service.getMunicipio()
+    .subscribe(res => {
+      this.municipios = res;
+    }, err => {
+      console.log(err);
+    });
+
 
   
   }
@@ -67,4 +84,54 @@ export class ReportebeneficiarioComponent implements OnInit {
     doc.save("reportebeneficiarios.pdf");
    
 }
+
+onChange(){
+
+  if(this.fil == "Municipio"){
+
+    this.isHidden = true;
+    this.isHidden1 = true;
+    this.isHidden2 = false;
+  }
+
+
+  if(this.fil == "Fecha ingreso"){
+
+    this.isHidden = false;
+    this.isHidden1 = true;
+    this.isHidden2 = true;
+  }
+
+
+
+  if(this.fil == "Estado"){
+
+   this.isHidden = true;
+   this.isHidden1 = false;
+   this.isHidden2 = true;
+
+  }
+
+  }
+
+  estad(){
+
+    if(this.est == "Habilitado"){
+
+      
+    }
+
+    if(this.est == "Deshabilitado"){
+
+     
+
+    }
+
+  }
+  opmunicipio(){
+
+
+
+  }
+
 }

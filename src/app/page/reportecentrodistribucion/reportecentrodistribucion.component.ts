@@ -11,6 +11,13 @@ import html2canvas from 'html2canvas';
 })
 export class ReportecentrodistribucionComponent implements OnInit {
 
+  isHidden: boolean = true;
+  isHidden1: boolean = true;
+  isHidden2: boolean = true;
+
+
+fil;
+  est;
   cen: Centrodistribucion[] = [];
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
@@ -61,5 +68,57 @@ export class ReportecentrodistribucionComponent implements OnInit {
     
     }
 
+    onChange(){
+
+      if(this.fil == "Responsable"){
+  
+        this.isHidden = true;
+        this.isHidden1 = true;
+        this.isHidden2 = false;
+      }
+  
+  
+      if(this.fil == "Nombre"){
+  
+        this.isHidden = false;
+        this.isHidden1 = true;
+        this.isHidden2 = true;
+      }
+  
+  
+  
+      if(this.fil == "Estado"){
+  
+       this.isHidden = true;
+       this.isHidden1 = false;
+       this.isHidden2 = true;
+  
+      }
+  
+      }
+  
+      estad(){
+  
+        if(this.est == "Habilitado"){
+  
+          
+        }
+    
+        if(this.est == "Deshabilitado"){
+    
+         
+    
+        }
+  
+      }
+  
+  
+      opmunicipio(){
+  
+  
+  
+      }
+  
+  
 
 }

@@ -11,6 +11,15 @@ import html2canvas from 'html2canvas';
 })
 export class ReportedevolucionesComponent implements OnInit {
 
+
+  isHidden: boolean = true;
+  isHidden1: boolean = true;
+  isHidden2: boolean = true;
+
+
+fil;
+  est;
+
   devolucion: Devolucionest[] = [];
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
@@ -62,6 +71,59 @@ export class ReportedevolucionesComponent implements OnInit {
       doc.save("reportedevoluciones.pdf");
 
     }
+
+    onChange(){
+
+      if(this.fil == "Fecha registro"){
+  
+        this.isHidden = true;
+        this.isHidden1 = true;
+        this.isHidden2 = false;
+      }
+  
+  
+      if(this.fil == "Presentación"){
+  
+        this.isHidden = false;
+        this.isHidden1 = true;
+        this.isHidden2 = true;
+      }
+  
+  
+  
+      if(this.fil == "Lote"){
+  
+       this.isHidden = true;
+       this.isHidden1 = false;
+       this.isHidden2 = true;
+  
+      }
+  
+      }
+  
+      estad(){
+  
+        if(this.est == "Habilitado"){
+  
+          
+        }
+    
+        if(this.est == "Deshabilitado"){
+    
+         
+    
+        }
+  
+      }
+  
+  
+      opmunicipio(){
+  
+  
+  
+      }
+
+
   }
 
 

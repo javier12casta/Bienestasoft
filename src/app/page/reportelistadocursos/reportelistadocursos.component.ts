@@ -12,6 +12,11 @@ import { Listadocursost } from 'src/app/interfaces/listadocursost';
 })
 export class ReportelistadocursosComponent implements OnInit {
 
+  isHidden: boolean = true;
+  isHidden1: boolean = true;
+  isHidden2: boolean = true;
+  fil;
+  est;
   listadoc: Listadocursos[] = [];
   listad: Listadocursost[] = [];
   f = new Date();
@@ -70,7 +75,54 @@ export class ReportelistadocursosComponent implements OnInit {
   
     doc.save("reportelistadocursos.pdf");
   }
+      
+  
+
+  onChange(){
+
+    if(this.fil == "Nombre Agente"){
+
+      this.isHidden = true;
+      this.isHidden1 = true;
+      this.isHidden2 = false;
+    }
+
+
+    if(this.fil == "Fecha"){
+
+      this.isHidden = false;
+      this.isHidden1 = true;
+      this.isHidden2 = true;
+    }
+
+
+
+    if(this.fil == "Estado"){
+
+     this.isHidden = true;
+     this.isHidden1 = false;
+     this.isHidden2 = true;
+
+    }
+
+    }
+
+    estad(){
+
+      if(this.est == "Habilitado"){
+
+        
+      }
+  
+      if(this.est == "Deshabilitado"){
+  
        
+  
+      }
+
+    }
+
+
     
     }
 

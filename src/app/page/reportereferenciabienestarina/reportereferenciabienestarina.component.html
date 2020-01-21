@@ -1,6 +1,51 @@
 <nav class="navbar navbar-success bg-success">
     <button class="btn btn-dark" routerLink="/reportes">Volver</button>
 
+
+
+    <label  style="text-align:left;"  >Filtar Por : </label>
+    <select style="width: 200px;" class="form-control"  [(ngModel)]="fil" (change)="onChange()"> 
+        <option >  
+          Código
+        </option > 
+        <option> 
+          Presentación 
+        </option > 
+        <option > 
+          Estado
+        </option > 
+        
+        </select>
+  
+        <label [hidden]="isHidden2" class="menu">Código</label>
+        <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Código  " [hidden]="isHidden2" [(ngModel)]="res" (ngModelChange)="cambiaLado($event)" />
+  
+        
+    
+          <label class="menu" [hidden]="isHidden">Presentación </label>
+        <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Presentación" [hidden]="isHidden" [(ngModel)]="res" (ngModelChange)="cambiaLado($event)" />
+  
+  
+        <label  [hidden]="isHidden1" class="menu"> Estado </label>
+  
+        <select   style="width: 200px;" class="form-control" [(ngModel)]="est" (change)="estad()"  [hidden]="isHidden1"> 
+          <option   > 
+            Habilitado
+          </option > 
+          <option  > 
+            Deshabilitado
+          </option > 
+          
+          </select>
+     
+          <button class="btn btn-dark" >Buscar</button>
+
+
+
+
+
+
+
   </nav>
   
   <table class="table" id="contentToConvert">

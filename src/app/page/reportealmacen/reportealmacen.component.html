@@ -2,13 +2,16 @@
     <button class="btn btn-dark" routerLink="/menu">Volver</button>
 
       <h1> </h1> 
-      <label  >filtar Por : </label>
+      <label  >Filtar Por : </label>
       <h1></h1> 
     <select class="form-control" style="width: 200px;" [(ngModel)]="fil" (change)="onChange()" [value]="Responsable"> 
       
       
       <option > 
         Responsable
+      </option > 
+      <option > 
+        Nombre almacén 
       </option > 
       <option   > 
         Estado
@@ -19,6 +22,14 @@
       <h2> </h2> 
       <input type="text" placeholder="Responsable" [hidden]="isHidden" [(ngModel)]="res" (ngModelChange)="cambiaLado($event)" />
       <h2> </h2> 
+
+      <label [hidden]="isHidden2" >Nombre almacén : </label>
+      <h2> </h2> 
+      <input type="text" placeholder="Nombre almacén" [hidden]="isHidden2" [(ngModel)]="res" (ngModelChange)="cambiaLado($event)" />
+      <h2> </h2> 
+
+
+
 
       <label [hidden]="isHidden1" >Estado : </label>
       <select  class="form-control" style="width: 200px;" [(ngModel)]="est" (change)="estad()"  [hidden]="isHidden1"> 
