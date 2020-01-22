@@ -118,7 +118,7 @@ export class UdsmComponent implements OnInit {
       idPuntoEntrega: ['', Validators.required],
       Estado: ['', Validators.required],
       NombreUDS: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
-      CodigoExternoUDS: ['', [Validators.required, Validators.minLength(13), Validators.maxLength(13), Validators.pattern('^[0-9]*$')]],
+      CodigoExternoUDS: ['', [Validators.required, Validators.minLength(12), Validators.maxLength(12), Validators.pattern('^[0-9]*$')]],
       CodigoInternoUDS: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ 0-9]*$')]],
       ReponsableUDS: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
       Comuna: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],

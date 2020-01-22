@@ -21,6 +21,8 @@ export class ReportebeneficiarioComponent implements OnInit {
   isHidden: boolean = true;
   isHidden1: boolean = true;
   isHidden2: boolean = true;
+  isHidden3: boolean = true;
+  isHidden4: boolean = true;
 
 
 fil;
@@ -56,7 +58,7 @@ fil;
 
   Generareporte(){
 
-    var doc = new jspdf("l", "pt", 'a1');
+    var doc = new jspdf("l", "pt", 'a2');
     var img = document.getElementById('imagen');
     var res = doc.autoTableHtmlToJson(document.getElementById("contentToConvert"));
     var fec = this.fecha;
@@ -92,6 +94,8 @@ onChange(){
     this.isHidden = true;
     this.isHidden1 = true;
     this.isHidden2 = false;
+    this.isHidden3 = true;
+    this.isHidden4 = true;
   }
 
 
@@ -100,6 +104,8 @@ onChange(){
     this.isHidden = false;
     this.isHidden1 = true;
     this.isHidden2 = true;
+    this.isHidden3 = true;
+    this.isHidden4 = true;
   }
 
 
@@ -109,8 +115,30 @@ onChange(){
    this.isHidden = true;
    this.isHidden1 = false;
    this.isHidden2 = true;
+   this.isHidden3 = true;
+    this.isHidden4 = true;
 
   }
+
+  if(this.fil == "Servicio o modalidad"){
+
+    this.isHidden = true;
+    this.isHidden1 = true;
+    this.isHidden2 = true;
+    this.isHidden3 = false;
+     this.isHidden4 = true;
+ 
+   }
+
+   if(this.fil == "Nivel"){
+
+    this.isHidden = true;
+    this.isHidden1 = true;
+    this.isHidden2 = true;
+    this.isHidden3 = true;
+     this.isHidden4 = false;
+ 
+   }
 
   }
 

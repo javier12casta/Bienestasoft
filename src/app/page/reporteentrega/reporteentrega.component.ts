@@ -62,7 +62,7 @@ fil;
 
   Generareporte(){
 
-    var doc = new jspdf('p', 'pt');
+    var doc = new jspdf("l", "pt", 'a2');
     var img = document.getElementById('imagen');
     var res = doc.autoTableHtmlToJson(document.getElementById("contentToConvert"));
     var fec = this.fecha;

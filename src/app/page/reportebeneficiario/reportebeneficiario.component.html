@@ -13,6 +13,12 @@
       <option > 
         Estado
       </option > 
+      <option > 
+        Servicio o modalidad
+      </option >
+      <option > 
+        Nivel
+      </option > 
       
       </select>
 
@@ -37,6 +43,29 @@
         </option > 
         
         </select>
+
+        <label [hidden]="isHidden3" >Servicio o modalidad : </label>
+        <h2> </h2> 
+        <input type="text" placeholder="Servicio o modalidad" [(ngModel)]="res" [hidden]="isHidden3" />
+        <h2> </h2> 
+
+
+        <label  class="menu" [hidden]="isHidden4"> Nivel </label>
+
+        <select style="width: 200px;" class="form-control" [(ngModel)]="est" (change)="estad()" [hidden]="isHidden4"> 
+          <option   > 
+            Centro zonal
+          </option > 
+          <option  > 
+            Punto de entrega
+          </option > 
+          <option  > 
+            Unidad de servicio
+          </option > 
+          
+          </select>
+
+
    
         <button class="btn btn-dark" >Buscar</button>
 
