@@ -47,7 +47,8 @@ export class AlmacenuiComponent implements OnInit {
     Cantidad : 0,
     Cantidad2 : 0,
     unidad: '',
-
+    cantidaddevuelta: 0,
+    cantidaddevueltaml: 0,
     
   };
 
@@ -55,7 +56,8 @@ export class AlmacenuiComponent implements OnInit {
 
       this.y.Nombre = this.x.Nombre;
       this.y.unidad = this.x.UnidadMedida;
-    
+      this.y.Cantidad = this.x.Capacidad;
+      this.y.Cantidad2 = this.x.Capacidad2;
     
           this.Service.postinventario(this.y).subscribe(res => {
             console.log(this.y);

@@ -360,6 +360,11 @@ import {InhabilitarnivelnumerocupospiComponent} from './page/inhabilitarnivelnum
 import {InhabilitarnivelnumerocuposuComponent} from './page/inhabilitarnivelnumerocuposu/inhabilitarnivelnumerocuposu.component';
 import {InhabilitarnivelnumerocuposuiComponent} from './page/inhabilitarnivelnumerocuposui/inhabilitarnivelnumerocuposui.component';
 
+import {CargainventarioComponent} from './page/cargainventario/cargainventario.component';
+import {CargainventarioinicialComponent} from './page/cargainventarioinicial/cargainventarioinicial.component';
+
+
+
 const routes: Routes = [
   {path:'', component: LoginComponent},
   {path:'entrega', component:EntregaComponent},
@@ -710,8 +715,8 @@ const routes: Routes = [
   {path:'inhabilitarnumerocupospi/:id', component:  InhabilitarnivelnumerocupospiComponent},
   {path:'inhabilitarnumerocuposu', component:  InhabilitarnivelnumerocuposuComponent},
   {path:'inhabilitarnumerocuposui/:id', component:  InhabilitarnivelnumerocuposuiComponent},
-
-
+  {path:'cargainventario', component:  CargainventarioComponent},
+  {path:'cargainventarioinicial', component:  CargainventarioinicialComponent},
 
 
 ];

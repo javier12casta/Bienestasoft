@@ -14,7 +14,9 @@ export class RecepcionbienestrarinaComponent implements OnInit {
 
   lista = '';
   public centro: Centrodistribucion[] = [];
-  listar:string[]=["Entrada a centro de distribución y carga inventario inicial"];
+  listar:string[]=["Entrada a centro de distribución"];
+  listari:string[]=["Carga inventario inicial"];
+  
 
   constructor( private activeRoute: ActivatedRoute,
     private Service: ServicioService, private router:Router) { }
@@ -32,10 +34,17 @@ export class RecepcionbienestrarinaComponent implements OnInit {
 
   onClickMe(){
 
-    if(this.lista == 'Entrada a centro de distribución y carga inventario inicial'){
+    if(this.lista == 'Entrada a centro de distribución'){
 
 
       this.router.navigate(['/recepcionv']);
+    
+    }
+
+    if(this.lista == 'Carga inventario inicial'){
+
+
+      this.router.navigate(['/cargainventario']);
     
     }
 

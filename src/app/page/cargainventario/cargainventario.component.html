@@ -1,0 +1,55 @@
+<nav class="navbar navbar-success bg-success">
+  
+
+    <div>
+
+      <button class="btn btn-dark" routerLink="/recepcion">Volver</button>
+      <button class="btn btn-dark" routerLink="/cargainventarioinicial"> Crear </button>
+
+    </div>
+
+    <div>
+        <label>Carga Inventario inicial</label>
+    
+    {{fecha}}  
+    </div>
+
+    <div>
+             
+    </div>
+    
+  </nav>
+  
+  <table class="table">
+    <thead class="thead-green">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">lote </th>
+        <th scope="col">Fecha vencimiento </th>
+        <th scope="col">Cantidad </th>
+        <th scope="col">Presentación  </th>
+        <th scope="col">Fecha recepción  </th>
+        <th scope="col">Tipo bienestarina </th>
+        <th scope="col">Inventario </th>
+        <th scope="col">Almacén </th>
+        <th scope="col">Centro distribución </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ser of rec">
+        <th scope="row">{{ser.idBienestarina}}</th>
+        <td>{{ser.lote}}</td>
+        <td>{{ser.FechaVencimiento   }}</td>
+        <td>{{ser.Cantidad}}</td>
+        <td>{{ser.UnidadPrincipal  }}</td>
+        <td>{{ser.FechaRecepcion   }}</td>
+        <td>{{ser.TipoBienesterina  }}</td>
+        <td>{{ser.inventario  }}</td>
+        <td>{{ser.almacenes }}</td>
+        <td>{{ser.centrodistribucion}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
