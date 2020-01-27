@@ -363,7 +363,10 @@ import {InhabilitarnivelnumerocuposuiComponent} from './page/inhabilitarnivelnum
 import {CargainventarioComponent} from './page/cargainventario/cargainventario.component';
 import {CargainventarioinicialComponent} from './page/cargainventarioinicial/cargainventarioinicial.component';
 
+import {ReporterecuentoinventarioComponent} from './page/reporterecuentoinventario/reporterecuentoinventario.component';
 
+
+import {ReporteformatoentregabComponent} from './page/reporteformatoentregab/reporteformatoentregab.component';
 
 const routes: Routes = [
   {path:'', component: LoginComponent},
@@ -717,8 +720,10 @@ const routes: Routes = [
   {path:'inhabilitarnumerocuposui/:id', component:  InhabilitarnivelnumerocuposuiComponent},
   {path:'cargainventario', component:  CargainventarioComponent},
   {path:'cargainventarioinicial', component:  CargainventarioinicialComponent},
+  {path:'reporterecuentoinv', component:  ReporterecuentoinventarioComponent},
 
-
+  {path:'reporteformatoentregab', component:   ReporteformatoentregabComponent},
+  
 ];
 
 @NgModule({

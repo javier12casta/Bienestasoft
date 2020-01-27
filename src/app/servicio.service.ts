@@ -68,6 +68,8 @@ import { Numerocupos } from 'src/app/interfaces/numerocupos'
 import { Innumerocupos } from 'src/app/interfaces/inhabilitarnumerocupos'
 import { Inventariocan} from './interfaces/inventariocan';
 
+import { cargainventariot} from './interfaces/cargainventario';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -1034,6 +1036,16 @@ export class ServicioService {
   Obtenerconsecutivosm19() {
     const path = `${this.api}/consecutivoM/tabla19`;
     return this.http.get<[Consecutivomaestro]>(path);
+  }
+
+  getcargainventario() {
+    const path = `${this.api}/cargainv`;
+    return this.http.get<cargainventariot []>(path);
+  }
+
+  getcargainventariotabla() {
+    const path = `${this.api}/cargainv/tabla`;
+    return this.http.get<[cargainventariot]>(path);
   }
 
 }

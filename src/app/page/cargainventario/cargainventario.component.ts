@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Recepcion } from 'src/app/interfaces/recepcion';
 import { ServicioService } from '../../servicio.service';
-import { Recepciont } from 'src/app/interfaces/recepciont';
+import { cargainventariot } from 'src/app/interfaces/cargainventario';
 
 @Component({
   selector: 'app-cargainventario',
@@ -10,7 +10,7 @@ import { Recepciont } from 'src/app/interfaces/recepciont';
 })
 export class CargainventarioComponent implements OnInit {
 
-  rec: Recepciont[] = [];
+  rec: cargainventariot[] = [];
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
 
@@ -18,7 +18,7 @@ export class CargainventarioComponent implements OnInit {
 
   ngOnInit() {
 
-    this.Service.getrecepciontabla()
+    this.Service.getcargainventariotabla()
     .subscribe(async (data) => {
       this.rec = data;
       console.log(data);

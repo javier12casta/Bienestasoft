@@ -2568,7 +2568,8 @@ var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "li
     var create = { name: "Crear número de cupos", route: "/nivelnumerocupos", icon: "face" };
     this.datos.push(create);
 
-    var create = { name: "Reporte consecutivo maestros", route: "/reporteconsecutivomaestro", icon: "face" };
+    var create = { name: "Reporte consecutivo maestros", route: "/reporteconsecutivomaestro", icon: "face"  };
+
     this.datos.push(create);
     var create = { name: "Ver consecutivos maestros", route: "/consecutivomaestrov", icon: "face" };
     this.datos.push(create);
@@ -3108,5 +3109,7 @@ var create = { name: "Reporte recepción", route: "/reporterecepcion", icon: "li
  }
 
 }
+
+
 
 }
