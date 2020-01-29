@@ -14,7 +14,13 @@ export class ConsecutivomaestrovComponent implements OnInit {
   unidadt: Consecutivomaestro []= [];
 
   
-  constructor(private Service: ServicioService,) { }
+  constructor(private Service: ServicioService,) { 
+
+
+
+
+    
+  }
 
 
   ngOnInit() {
@@ -158,11 +164,18 @@ export class ConsecutivomaestrovComponent implements OnInit {
 
     this.Service.getconsecutivomaestro()
     .subscribe( async (res)=> {
+    
       this.unidadt = res
     }, err => {
       console.log(err);
     });
 
+
+  }
+
+  recargar(){
+
+    location.reload();
 
   }
 

@@ -296,6 +296,8 @@ import { InhabilitarnivelnumerocuposuComponent } from './page/inhabilitarnivelnu
 import { InhabilitarnivelnumerocuposuiComponent } from './page/inhabilitarnivelnumerocuposui/inhabilitarnivelnumerocuposui.component';
 import { CargainventarioComponent } from './page/cargainventario/cargainventario.component';
 import { CargainventarioinicialComponent } from './page/cargainventarioinicial/cargainventarioinicial.component';
+import { ReporterecuentoinventarioComponent } from './page/reporterecuentoinventario/reporterecuentoinventario.component';
+import { ReporteformatoentregabComponent } from './page/reporteformatoentregab/reporteformatoentregab.component';
 
 @NgModule({
   declarations: [
@@ -568,6 +570,8 @@ import { CargainventarioinicialComponent } from './page/cargainventarioinicial/c
     InhabilitarnivelnumerocuposuiComponent,
     CargainventarioComponent,
     CargainventarioinicialComponent,
+    ReporterecuentoinventarioComponent,
+    ReporteformatoentregabComponent,
     
 
     

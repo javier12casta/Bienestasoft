@@ -1,10 +1,11 @@
 <nav class="navbar navbar-success bg-success">
         <div>
             <button class="btn btn-dark" routerLink="/menu"> Volver </button>
+            <button class="btn btn-dark" (click)="recargar()"> Refrescar </button>
         </div>
           </nav>
           
-          <table class="table">
+          <table class="table"  routerLink="/consecutivomaestrov">
               <thead class="thead-green">
                 <tr>
                   <th scope="col">#</th>

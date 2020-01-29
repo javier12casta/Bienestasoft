@@ -64,4 +64,11 @@ export class ReporteconsecutivomaestroComponent implements OnInit {
     
     }
 
+    recargar(){
+
+      location.reload();
+  
+    }
+
+    
 }
