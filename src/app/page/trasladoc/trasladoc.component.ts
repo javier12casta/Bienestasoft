@@ -1,28 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import { Translado } from 'src/app/interfaces/traslado';
-import { ServicioService } from '../../servicio.service';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { Translado } from "src/app/interfaces/traslado";
+import { ServicioService } from "../../servicio.service";
+import { ActivatedRoute } from "@angular/router";
 
-import Swal from 'sweetalert2';
-import { Router } from '@angular/router';
+import Swal from "sweetalert2";
+import { Router } from "@angular/router";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { TipoBienestarina } from '../../interfaces/tipobienestarina';
-import { Centrodistribucion } from '../../interfaces/centrodistribucion';
-import { Almacen } from '../../interfaces/almacen';
-import { Inventario } from 'src/app/interfaces/inventario';
-import { async } from '@angular/core/testing';
+import { TipoBienestarina } from "../../interfaces/tipobienestarina";
+import { Centrodistribucion } from "../../interfaces/centrodistribucion";
+import { Almacen } from "../../interfaces/almacen";
+import { Inventario } from "src/app/interfaces/inventario";
+import { async } from "@angular/core/testing";
 
 @Component({
-  selector: 'app-trasladoc',
-  templateUrl: './trasladoc.component.html',
-  styleUrls: ['./trasladoc.component.css']
+  selector: "app-trasladoc",
+  templateUrl: "./trasladoc.component.html",
+  styleUrls: ["./trasladoc.component.css"]
 })
 export class TrasladocComponent implements OnInit {
-
   translado: Translado[] = [];
   Referencias: string[] = ["Granular", "Liquida"];
   refe = {
-    referencia: '',
+    referencia: ""
   };
 
   public tip: TipoBienestarina[] = [];
@@ -34,19 +33,18 @@ export class TrasladocComponent implements OnInit {
     private Service: ServicioService,
     private router: Router,
     private fb: FormBuilder
-  ) { }
+  ) {}
   sal: Translado = {
-    lote: '',
+    lote: "",
     fechavencimiento: null,
-    unidad: '',
+    unidad: "",
     fecharegistro: null,
     idTipoBienesterina: null,
     idCentroDistribucion: null,
     idAlmacenesOrigen: null,
     idAlmacenesDestino: null,
-    cantidad: null,
+    cantidad: null
   };
-
 
   //----Validaciones de campos
   dev: FormGroup;
@@ -58,176 +56,217 @@ export class TrasladocComponent implements OnInit {
     // stop here if form is invalid
     if (this.dev.valid) {
       this.sumaResta();
-      if(this.val == true && this.val1 == true && this.val2 == true && this.val3 == true){
+      if (
+        this.val == true &&
+        this.val1 == true &&
+        this.val2 == true &&
+        this.val3 == true &&
+        this.val4 == true
+      ) {
         this.onClickMe();
-      }else if(this.val == false){
+      } else if (this.val == false) {
         this.showMenssage6();
-      }else if(this.val1 == false){
+      } else if (this.val1 == false) {
         this.showMenssage7();
-      }else if (this.val2 == true){
+      } else if (this.val2 == false) {
         this.showMenssageAlmacen();
-      }else if(this.val3 == true){
+      } else if (this.val3 == false) {
+        this.showMenssage5();
+      } else if (this.val4 == false) {
         this.showMenssage5();
       }
-      
     } else if (this.dev.invalid) {
       this.showMenssagenull();
     }
 
     // display form values on success
-    console.log('Formulario', this.dev.value);
+    console.log("Formulario", this.dev.value);
   }
-  
 
   ngOnInit() {
+    this.Service.getTipobienestarina().subscribe(async data => {
+      this.tip = data;
+      console.log(data);
+      console.log("funciona");
+    });
 
-    this.Service.getTipobienestarina()
-      .subscribe(async (data) => {
-        this.tip = data;
-        console.log(data);
-        console.log('funciona');
-      }
-      );
+    this.Service.getcentrodistribucion().subscribe(async data => {
+      this.cen = data;
+      console.log(data);
+      console.log("funciona");
+    });
 
-    this.Service.getcentrodistribucion()
-      .subscribe(async (data) => {
-        this.cen = data;
-        console.log(data);
-        console.log('funciona');
-      }
-      );
-
-    this.Service.getalmacen()
-      .subscribe(async (data) => {
-        this.alm = data;
-        console.log(data);
-        console.log('funciona');
-      }
-      );
+    this.Service.getalmacen().subscribe(async data => {
+      this.alm = data;
+      console.log(data);
+      console.log("funciona");
+    });
 
     this.dev = this.fb.group({
-      idTipoBienesterina: ['', Validators.required],
-      Referencia: ['', Validators.required],
-      idCentroDistribucionOrigen: ['', Validators.required],
-      idAlmacenesDestino: ['', Validators.required],
-      idAlmacenesOrigen: ['', Validators.required],
-      lote: ['', [Validators.required, Validators.pattern('^[0-9 a-z A-Z]*$')]],
-      fechavencimiento: ['', Validators.required],
-      fecharegistro: ['', Validators.required],
-      unidad: ['', [Validators.required]],
-      cantidad: ['', [Validators.required, Validators.pattern('^[0-9]*$')]]
+      idTipoBienesterina: ["", Validators.required],
+      Referencia: ["", Validators.required],
+      idCentroDistribucionOrigen: ["", Validators.required],
+      idAlmacenesDestino: ["", Validators.required],
+      idAlmacenesOrigen: ["", Validators.required],
+      lote: ["", [Validators.required, Validators.pattern("^[0-9 a-z A-Z]*$")]],
+      fechavencimiento: ["", Validators.required],
+      fecharegistro: ["", Validators.required],
+      unidad: ["", [Validators.required]],
+      cantidad: ["", [Validators.required, Validators.pattern("^[0-9]*$")]]
     });
   }
-  get f() { return this.dev.controls; }
-// para hacer cumplir las validaciones
+  get f() {
+    return this.dev.controls;
+  }
+  // para hacer cumplir las validaciones
   val = false;
   val1 = false;
   val2 = false;
   val3 = false;
 
   onClickMe() {
-
-    this.Service.postraslados(this.sal).subscribe(res => {
-      console.log(this.sal);
-      this.Service.putinventario(this.sal.idAlmacenesOrigen, this.inventario1).subscribe( res => {});
-      this.Service.putinventario(this.sal.idAlmacenesDestino, this.inventario2).subscribe( res => {});
-      this.showMenssage();
-      
-    }, err => {
-      console.log(err);
-    });
+    this.Service.postraslados(this.sal).subscribe(
+      res => {
+        console.log(this.sal);
+        this.Service.putinventario(
+          this.sal.idAlmacenesOrigen,
+          this.inventario1
+        ).subscribe(res => {});
+        this.Service.putinventario(
+          this.sal.idAlmacenesDestino,
+          this.inventario2
+        ).subscribe(res => {});
+        this.showMenssage();
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
-
-  sumaResta(){
+  val4 = false;
+  sumaResta() {
     var can = Number(this.sal.cantidad);
     var cant1 = Number(this.inventario1.Cantidad);
     var cant2 = Number(this.inventario1.Cantidad2);
     var cant3 = Number(this.inventario2.Cantidad);
     var cant4 = Number(this.inventario2.Cantidad2);
-    if(this.granular == true){
-      this.inventario1.Cantidad = cant1 - can;
-      this.inventario2.Cantidad = cant3 + can;
-    }else if(this.liquida == true){
-      this.inventario1.Cantidad2 = cant2 - can;
-      this.inventario2.Cantidad2 = cant4 + can;
+    if (this.granular == true) {
+      if (can <= cant1) {
+        this.val4 = true;
+        this.inventario1.Cantidad = cant1 - can;
+        this.inventario2.Cantidad = cant3 + can;
+      } else {
+        this.val4 = false;
+        this.showMenssagecantidad();
+      }
+    } else if (this.liquida == true) {
+      if (can <= cant2) {
+        this.val4 = true;
+        this.inventario1.Cantidad2 = cant2 - can;
+        this.inventario2.Cantidad2 = cant4 + can;
+      } else {
+        this.val4 = false;
+        this.showMenssagecantidad();
+      }
     }
+  }
+  showMenssagecantidad() {
+    Swal.fire({
+      title: "Advertencia",
+      text: "La cantidad es mayor a la que dispone el almacén de origen",
+      type: "warning",
+      confirmButtonText: "Entendido"
+    });
   }
 
   tiporef: TipoBienestarina = {
     idTipoBienesterina: 0,
-    TipoBienesterina: '',
+    TipoBienesterina: "",
     Codigo: 0,
     Estado: 1,
-    Referencia: '',
-    UnidadPrincipal: '',
+    Referencia: "",
+    UnidadPrincipal: "",
     Cantidad: 0,
     cantidad2: 0,
-    UnidadSecundaria: '',
+    UnidadSecundaria: ""
   };
 
   inventario1: Inventario = {
     idInventario: null,
-    Nombre: '',
+    Nombre: "",
     Cantidad: null,
     Cantidad2: null,
-    unidad: '',
+    unidad: "",
     cantidaddevueltaml: null,
-    cantidaddevuelta: null,
+    cantidaddevuelta: null
   };
   inventario2: Inventario = {
     idInventario: null,
-    Nombre: '',
+    Nombre: "",
     Cantidad: null,
     Cantidad2: null,
-    unidad: '',
+    unidad: "",
     cantidaddevueltaml: null,
-    cantidaddevuelta: null,
+    cantidaddevuelta: null
   };
 
-
-
   traerAlmacen() {
-    if (this.sal.idAlmacenesOrigen !== 0 || this.sal.idAlmacenesOrigen !== null) {
-
-      this.Service.getalmacenid(this.sal.idAlmacenesOrigen.toString()).subscribe(async res => {
-        this.almacen = Object(res);
-        this.sal.idCentroDistribucion = this.almacen.idCentroDistribucion;
-        console.log('centro distribucion id', this.sal.idCentroDistribucion);
-        setTimeout(() => { this.valAlmacen() }, 1000);
-      }, err => {
-        console.log(err);
-      });
-
-
-      this.Service.getinventarioid(this.sal.idAlmacenesOrigen.toString()).subscribe(res => {
-        this.inventario1 = Object(res);
-        console.log('inventario origen', this.inventario1);
-        if (this.granular == true) {
-          this.cantidadEx = this.inventario1.Cantidad;
-        } else if (this.liquida == true) {
-          this.cantidadEx = this.inventario1.Cantidad2;
+    if (
+      this.sal.idAlmacenesOrigen !== 0 ||
+      this.sal.idAlmacenesOrigen !== null
+    ) {
+      this.Service.getalmacenid(
+        this.sal.idAlmacenesOrigen.toString()
+      ).subscribe(
+        async res => {
+          this.almacen = Object(res);
+          this.sal.idCentroDistribucion = this.almacen.idCentroDistribucion;
+          console.log("centro distribucion id", this.sal.idCentroDistribucion);
+          setTimeout(() => {
+            this.valAlmacen();
+          }, 1000);
+        },
+        err => {
+          console.log(err);
         }
-      }, err => {
-        console.log(err);
-      });
-    }
+      );
 
+      this.Service.getinventarioid(
+        this.sal.idAlmacenesOrigen.toString()
+      ).subscribe(
+        res => {
+          this.inventario1 = Object(res);
+          console.log("inventario origen", this.inventario1);
+          if (this.granular == true) {
+            this.cantidadEx = this.inventario1.Cantidad;
+          } else if (this.liquida == true) {
+            this.cantidadEx = this.inventario1.Cantidad2;
+          }
+        },
+        err => {
+          console.log(err);
+        }
+      );
+    }
   }
 
   valAlmacen() {
-    if (this.sal.idAlmacenesOrigen !== 0 || this.sal.idAlmacenesOrigen !== null) {
+    if (
+      this.sal.idAlmacenesOrigen !== 0 ||
+      this.sal.idAlmacenesOrigen !== null
+    ) {
       if (this.granular == true) {
         if (this.almacen.Capacidad == 0) {
           this.showMenssage6();
           this.val = false;
-        }else {
+        } else {
           this.val = true;
         }
       } else if (this.liquida == true) {
         if (this.almacen.Capacidad2 == 0) {
           this.showMenssage6();
           this.val = false;
-        }else {
+        } else {
           this.val = true;
         }
       }
@@ -235,45 +274,62 @@ export class TrasladocComponent implements OnInit {
   }
 
   traerAlmacen2() {
-    if (this.sal.idAlmacenesDestino !== 0 && this.sal.idAlmacenesDestino !== null) {
+    if (
+      this.sal.idAlmacenesDestino !== 0 &&
+      this.sal.idAlmacenesDestino !== null
+    ) {
       if (this.sal.idAlmacenesOrigen == this.sal.idAlmacenesDestino) {
         this.showMenssageAlmacen();
         this.val2 = false;
       } else if (this.sal.idAlmacenesOrigen !== this.sal.idAlmacenesDestino) {
         this.val2 = true;
-        this.Service.getalmacenid(this.sal.idAlmacenesDestino.toString()).subscribe(res => {
-          this.almacen2 = Object(res);
-          setTimeout(() => { this.valAlmacen() }, 1000);
-        }, err => {
-          console.log(err);
-        });
+        this.Service.getalmacenid(
+          this.sal.idAlmacenesDestino.toString()
+        ).subscribe(
+          res => {
+            this.almacen2 = Object(res);
+            setTimeout(() => {
+              this.valAlmacen();
+            }, 1000);
+          },
+          err => {
+            console.log(err);
+          }
+        );
 
-        this.Service.getinventarioid(this.sal.idAlmacenesDestino.toString()).subscribe(res => {
-          this.inventario2 = Object(res);
-          console.log('inventario destino', this.inventario2);
-          this.Referencia();
-        }, err => {
-          console.log(err);
-        });
-
+        this.Service.getinventarioid(
+          this.sal.idAlmacenesDestino.toString()
+        ).subscribe(
+          res => {
+            this.inventario2 = Object(res);
+            console.log("inventario destino", this.inventario2);
+            this.Referencia();
+          },
+          err => {
+            console.log(err);
+          }
+        );
       }
     }
   }
 
   valAlmacen2() {
-    if (this.sal.idAlmacenesDestino !== 0 && this.sal.idAlmacenesDestino !== null) {
+    if (
+      this.sal.idAlmacenesDestino !== 0 &&
+      this.sal.idAlmacenesDestino !== null
+    ) {
       if (this.granular == true) {
         if (this.almacen2.Capacidad == 0) {
           this.showMenssage7();
           this.val1 = false;
-        }else{
+        } else {
           this.val1 = true;
         }
       } else if (this.liquida == true) {
         if (this.almacen2.Capacidad2 == 0) {
           this.showMenssage7();
           this.val1 = false;
-        }else{
+        } else {
           this.val1 = true;
         }
       }
@@ -282,44 +338,62 @@ export class TrasladocComponent implements OnInit {
 
   showMenssageAlmacen() {
     Swal.fire({
-      title: 'Advertencia',
-      text: 'El almacen debe ser diferente al de origen',
-      type: 'warning',
-      confirmButtonText: 'Entendido'
+      title: "Advertencia",
+      text: "El almacen debe ser diferente al de origen",
+      type: "warning",
+      confirmButtonText: "Entendido"
     });
   }
 
   cantidadEx: number;
   Referencia() {
-    this.Service.getTipobienestarinaid(this.sal.idTipoBienesterina.toString()).subscribe(res => {
+    this.Service.getTipobienestarinaid(
+      this.sal.idTipoBienesterina.toString()
+    ).subscribe(res => {
       this.tiporef = Object(res);
-      console.log('Tipo de referencia', res);
+      console.log("Tipo de referencia", res);
       this.sal.unidad = this.tiporef.UnidadPrincipal;
       this.refe.referencia = this.tiporef.Referencia;
       this.Bienestarina();
     });
   }
 
-  Bienestarina(){
-    if (this.refe.referencia == "Granular" || this.refe.referencia == "granular") {
+  Bienestarina() {
+    if (
+      this.refe.referencia == "Granular" ||
+      this.refe.referencia == "granular"
+    ) {
       this.cantidadEx = this.inventario1.Cantidad;
       this.granular = true;
       this.liquida = false;
-      if (this.sal.idAlmacenesOrigen !== 0 && this.sal.idAlmacenesOrigen != null) {
+      if (
+        this.sal.idAlmacenesOrigen !== 0 &&
+        this.sal.idAlmacenesOrigen != null
+      ) {
         this.valAlmacen();
-        if (this.sal.idAlmacenesDestino !== 0 || this.sal.idAlmacenesDestino !== null) {
+        if (
+          this.sal.idAlmacenesDestino !== 0 ||
+          this.sal.idAlmacenesDestino !== null
+        ) {
           this.valAlmacen2();
         }
       }
-
-
-    } else if (this.refe.referencia == "Liquida" || this.refe.referencia == "liquida") {
+    } else if (
+      this.refe.referencia == "Liquida" ||
+      this.refe.referencia == "liquida"
+    ) {
       this.cantidadEx = this.inventario1.Cantidad2;
       this.granular = false;
       this.liquida = true;
-      if (this.sal.idAlmacenesOrigen !== 0 && this.sal.idAlmacenesOrigen !== null) {
+      if (
+        this.sal.idAlmacenesOrigen !== 0 &&
+        this.sal.idAlmacenesOrigen !== null
+      ) {
         this.valAlmacen();
-        if (this.sal.idAlmacenesDestino !== 0 || this.sal.idAlmacenesDestino !== null) {
+        if (
+          this.sal.idAlmacenesDestino !== 0 ||
+          this.sal.idAlmacenesDestino !== null
+        ) {
           this.valAlmacen2();
         }
       }
@@ -329,53 +403,58 @@ export class TrasladocComponent implements OnInit {
   //mensaje capacidad referencia
   showMenssage6() {
     Swal.fire({
-      title: 'Advertencia',
-      text: 'El ' + this.almacen.Nombre + ' no dispone de ese tipo de referencia',
-      type: 'warning',
-      confirmButtonText: 'Entendido'
+      title: "Advertencia",
+      text:
+        "El " + this.almacen.Nombre + " no dispone de ese tipo de referencia",
+      type: "warning",
+      confirmButtonText: "Entendido"
     });
   }
   showMenssage7() {
     Swal.fire({
-      title: 'Advertencia',
-      text: 'El ' + this.almacen2.Nombre + ' no puede almacenar de ese tipo de referencia',
-      type: 'warning',
-      confirmButtonText: 'Entendido'
+      title: "Advertencia",
+      text:
+        "El " +
+        this.almacen2.Nombre +
+        " no puede almacenar de ese tipo de referencia",
+      type: "warning",
+      confirmButtonText: "Entendido"
     });
   }
 
   //mensaje de la capacidad
   showMenssage5() {
     Swal.fire({
-      title: 'Advertencia',
-      text: 'La cantidad ingresada supera la capacidad del ' + this.almacen2.Nombre,
-      type: 'warning',
-      confirmButtonText: 'Entendido'
+      title: "Advertencia",
+      text:
+        "La cantidad ingresada supera la capacidad del " + this.almacen2.Nombre,
+      type: "warning",
+      confirmButtonText: "Entendido"
     });
   }
 
   //para la capacidad almacen
   public almacen: Almacen = {
     idAlmacenes: 0,
-    NumeroExterno: '',
-    Nombre: '',
-    Responsable: '',
+    NumeroExterno: "",
+    Nombre: "",
+    Responsable: "",
     Capacidad: 0,
     Capacidad2: 0,
-    UnidadMedida: '',
+    UnidadMedida: "",
     Estado: 0,
-    idCentroDistribucion: 0,
+    idCentroDistribucion: 0
   };
   public almacen2: Almacen = {
     idAlmacenes: 0,
-    NumeroExterno: '',
-    Nombre: '',
-    Responsable: '',
+    NumeroExterno: "",
+    Nombre: "",
+    Responsable: "",
     Capacidad: 0,
     Capacidad2: 0,
-    UnidadMedida: '',
+    UnidadMedida: "",
     Estado: 0,
-    idCentroDistribucion: 0,
+    idCentroDistribucion: 0
   };
 
   granular = false;
@@ -386,15 +465,21 @@ export class TrasladocComponent implements OnInit {
       var cap = this.almacen2.Capacidad;
       //console.log('Capacidad almacen 2', cap);
       var can = Number(this.sal.cantidad);
+      var caninv = Number(this.inventario1.Cantidad);
+      var caninv2 = Number(this.inventario1.Cantidad);
       var devolucion = Number(this.inventario2.cantidaddevuelta);
       var cantidadinv = Number(this.inventario2.Cantidad);
       var cantidadsuma = Number(cantidadinv + can + devolucion);
-      console.log('suma', cantidadsuma);
+      console.log("suma", cantidadsuma);
       if (cantidadsuma > cap) {
         this.showMenssage5();
         this.val3 = false;
-      }else{
+      } else {
         this.val3 = true;
+        if(can > caninv){
+          this.val4=true;
+          this.showMenssagecantidad();
+        }
       }
     } else if (this.liquida == true) {
       var cap = this.almacen2.Capacidad2;
@@ -403,39 +488,40 @@ export class TrasladocComponent implements OnInit {
       var devolucion2 = Number(this.inventario2.cantidaddevueltaml);
       var cantidadinv = Number(this.inventario2.Cantidad2);
       var cantidadsuma = Number(cantidadinv + can + devolucion2);
-      console.log('suma', cantidadsuma);
+      console.log("suma", cantidadsuma);
       if (cantidadsuma > cap) {
         this.showMenssage5();
         this.val3 = false;
-      }else{
+
+      } else {
         this.val3 = true;
+        if(can > caninv2){
+          this.val4=true;
+          this.showMenssagecantidad();
+        }
       }
     }
   }
 
-
   showMenssage() {
     Swal.fire({
-      title: 'Creado',
-      text: 'Traslado creado',
-      type: 'success',
-      confirmButtonText: 'Aceptar'
-    }).then((result) => {
+      title: "Creado",
+      text: "Traslado creado",
+      type: "success",
+      confirmButtonText: "Aceptar"
+    }).then(result => {
       if (result.value) {
-
-        this.router.navigate(['/traslado']);
-
+        this.router.navigate(["/traslado"]);
       }
     });
   }
 
   showMenssagenull() {
     Swal.fire({
-      title: 'Error',
-      text: 'Campos vacios',
-      type: 'warning',
-      confirmButtonText: 'Entendido'
+      title: "Error",
+      text: "Campos vacios",
+      type: "warning",
+      confirmButtonText: "Entendido"
     });
   }
-
 }

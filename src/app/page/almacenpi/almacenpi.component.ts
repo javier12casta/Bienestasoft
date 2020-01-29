@@ -57,8 +57,8 @@ export class AlmacenpiComponent implements OnInit {
  
       this.y.Nombre = this.x.Nombre;
       this.y.unidad = this.x.UnidadMedida;
-      this.y.Cantidad = this.x.Capacidad;
-      this.y.Cantidad2 = this.x.Capacidad2;
+      this.y.Cantidad = 0;
+      this.y.Cantidad2 = 0;
     
           this.Service.postinventario(this.y).subscribe(res => {
             console.log(this.y);

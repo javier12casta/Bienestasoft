@@ -98,7 +98,7 @@ export class SalidabeneficiariocComponent implements OnInit {
     // stop here if form is invalid
     if (this.czForm.valid) {
       this.suma();
-      if (this.val == true && this.val1 == true) {
+      if (this.val == true && this.val1 == true && this.val2 == true) {
         console.log("Entro");
         this.onClickMe();
       } else if (this.val == false) {
@@ -106,9 +106,13 @@ export class SalidabeneficiariocComponent implements OnInit {
       } else if (this.val1 == false) {
         this.showMenssage5();
       }
+      else if (this.val2 == false) {
+        this.showMenssagecantidad();
+      }
     } else if (this.czForm.invalid) {
       this.showMenssagenull();
     }
+    
 
     // display form values on success
     console.log("Formulario", this.czForm.value);
@@ -139,20 +143,42 @@ export class SalidabeneficiariocComponent implements OnInit {
       }
     );
   }
-
+  val2 =false;
   suma() {
     var cantidad = Number(this.sal.cantidad);
     var can = Number(this.inventario.Cantidad);
     var cantidad2 = Number(this.sal.cantidad);
     var can2 = Number(this.inventario.Cantidad2);
     if (this.granular == true) {
-      this.inventario.Cantidad = can - cantidad;
+      if(cantidad <= can){
+        this.val2 = true;
+        this.inventario.Cantidad = can - cantidad;
+      }else{
+        this.val2 = false;
+        this.showMenssagecantidad();
+      }      
       console.log("cantidad granular", this.inventario.Cantidad);
     } else if (this.liquida == true) {
-      this.inventario.Cantidad2 = can2 - cantidad2;
+      if(cantidad2 <= can2){
+        this.val2 = true;
+        this.inventario.Cantidad2 = can2 - cantidad2;
+      }else{
+        this.val2 = false;
+        this.showMenssagecantidad();
+      }
+      
       console.log("cantidad liquida", this.inventario.Cantidad2);
     }
   }
+  showMenssagecantidad() {
+    Swal.fire({
+      title: 'Advertencia',
+      text: 'La cantidad es mayor a la que dispone el almacén',
+      type: 'warning',
+      confirmButtonText: 'Entendido'
+    });
+  }
+
 
   ngOnInit() {
     this.czForm = this.fb.group({

@@ -121,17 +121,21 @@ export class SalidacentrocComponent implements OnInit {
     if (this.czForm.valid) {
     
       this.sumaResta();
-      if(this.val == true && this.val1 == true && this.val2 == true && this.val3 == true){
+      if(this.val == true && this.val1 == true && this.val2 == true && this.val3 == true && this.val4 == true){
         this.onClickMe();
       }else if(this.val == false){
         this.showMenssage6();
       }else if(this.val1 == false){
         this.showMenssage7();
-      }else if (this.val2 == true){
+      }else if (this.val2 == false){
         this.showMenssageAlmacen();
-      }else if(this.val3 == true){
+      }else if(this.val3 == false){
         this.showMenssage5();
       }
+      else if(this.val4 == false){
+        this.showMenssagecantidad();
+      }
+
     } else if(this.czForm.invalid) {
       this.showMenssagenull();
     }
@@ -199,7 +203,7 @@ export class SalidacentrocComponent implements OnInit {
   val1 = false;
   val2 = false;
   val3 = false;
-
+  val4 = false;
   sumaResta(){
     var can = Number(this.sal.cantidad);
     var cant1 = Number(this.inventario1.Cantidad);
@@ -207,12 +211,34 @@ export class SalidacentrocComponent implements OnInit {
     var cant3 = Number(this.inventario2.Cantidad);
     var cant4 = Number(this.inventario2.Cantidad2);
     if(this.granular == true){
+      if(can <= cant1){
+        this.val4 = true;
       this.inventario1.Cantidad = cant1 - can;
       this.inventario2.Cantidad = cant3 + can;
+      }else{
+        this.val4 = false;
+        this.showMenssagecantidad();
+      }
+      
     }else if(this.liquida == true){
-      this.inventario1.Cantidad2 = cant2 - can;
-      this.inventario2.Cantidad2 = cant4 + can;
-    }
+      if(can <= cant2){
+        this.val4 =true;
+        this.inventario1.Cantidad2 = cant2 - can;
+        this.inventario2.Cantidad2 = cant4 + can;
+      }else{
+        this.val4 =false;
+        this.showMenssagecantidad();
+      }
+      }
+  }
+
+  showMenssagecantidad() {
+    Swal.fire({
+      title: 'Advertencia',
+      text: 'La cantidad es mayor a la que dispone el almacén',
+      type: 'warning',
+      confirmButtonText: 'Entendido'
+    });
   }
 
   traerAlmacen() {
@@ -445,7 +471,7 @@ onKey($event) {
     }
   } else if (this.liquida == true) {
     var can = Number(this.sal.cantidad);
-    var cantidadinv = Number(this.inventario1.Cantidad2);
+    var cantidadinv2 = Number(this.inventario1.Cantidad2);
     console.log('suma', can);
     if (can > cantidadinv) {
       this.showMenssage5();
