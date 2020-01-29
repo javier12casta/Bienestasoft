@@ -12,6 +12,8 @@ export interface Permisos {
     idRol?: number,
     perAlmacenes: string,
     perCentrosD: string,
+    perRecepcion?: string,
+    perDevolucion?: string,
 }
 
 

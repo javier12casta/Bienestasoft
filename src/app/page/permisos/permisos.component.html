@@ -1,5 +1,5 @@
 <nav class="navbar navbar-success bg-success">
-  <button class="btn btn-dark" routerLink="/roli"> Volver </button>
+  <button class="btn btn-dark" routerLink="/roliv"> Volver </button>
 </nav>
 
 <h1>Asignar transacciones</h1>
@@ -116,16 +116,44 @@
         <div>
           <a> Crear </a>
           <input type="checkbox" [(ngModel)]="filter26" (change)="onFilterChange26($event)" />
-          <a> Actualizar </a>
-          <input type="checkbox" [(ngModel)]="filter27" (change)="onFilterChange27($event)" />
           <a> Reportes </a>
           <input type="checkbox" [(ngModel)]="filter29" (change)="onFilterChange29($event)" />
-          <a> Deshabilitar </a>
-          <input type="checkbox" [(ngModel)]="filter30" (change)="onFilterChang30($event)" />
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <span>Recepción</span>
+
+      </td>
+      <td>
+        <div>
+          <a> Crear </a>
+          <input type="checkbox" [(ngModel)]="filter27" (change)="onFilterChange27($event)" />
+          <a> Reportes </a>
+          <input type="checkbox" [(ngModel)]="filter28" (change)="onFilterChange28($event)" />
           <hr>
         </div>
       </td>
     </tr>
+
+    <tr>
+      <td>
+        <span>Devoluciones</span>
+
+      </td>
+      <td>
+        <div>
+          <a> Crear </a>
+          <input type="checkbox" [(ngModel)]="filter56" (change)="onFilterChange56($event)" />
+          <a> Reportes </a>
+          <input type="checkbox" [(ngModel)]="filter57" (change)="onFilterChange57($event)" />
+          <hr>
+        </div>
+      </td>
+    </tr>
+
     <tr>
       <td>
         <span> Centro distribución</span>
