@@ -5,6 +5,7 @@ import * as jspdf from 'jspdf';
 import html2canvas from 'html2canvas';
 import { Salidabeneficiariot } from 'src/app/interfaces/salidabeneficiariot';
 
+import { Regional } from 'src/app/interfaces/regional';
 @Component({
   selector: 'app-reportesalidabeneficiario',
   templateUrl: './reportesalidabeneficiario.component.html',
@@ -22,7 +23,7 @@ fil;
   centroB: Salidabeneficiariot[] = [];
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
-  Nombrereporte = 'Reporte entrega beneficiario';
+  Nombrereporte = 'FORMATO ENTREGA ALIMENTOS DE ALTO VALOR NUTRICIONAL A BENEFICIARIOS';
   constructor(private Service: ServicioService) { }
 
   ngOnInit() {

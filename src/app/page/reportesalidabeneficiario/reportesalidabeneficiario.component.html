@@ -1,82 +1,391 @@
+
+
+
 <nav class="navbar navbar-success bg-success">
-    <button class="btn btn-dark" routerLink="/reportentregab">Volver</button>
+  <button class="btn btn-dark" routerLink="/reportentregab">Volver</button>
 
 
 
-    <label  style="text-align:left;"  >Filtar Por : </label>
-    <select style="width: 200px;" class="form-control"  [(ngModel)]="fil" (change)="onChange()"> 
-        <option >  
-          Acudiente
-        </option > 
-        <option> 
-          Presentación
-        </option > 
-        <option > 
-          Lote
-        </option > 
-        
-        </select>
+  <label  style="text-align:left;"  >Filtar Por : </label>
+  <select style="width: 200px;" class="form-control"  [(ngModel)]="fil" (change)="onChange()"> 
+      <option >  
+        Acudiente
+      </option > 
+      <option> 
+        Presentación
+      </option > 
+      <option > 
+        Lote
+      </option > 
+      
+      </select>
+
+      <label [hidden]="isHidden2" class="menu">Acudiente</label>
+      <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Acudiente" [hidden]="isHidden2" [(ngModel)]="res" (ngModelChange)="cambiaLado($event)"/>
+      
   
-        <label [hidden]="isHidden2" class="menu">Acudiente</label>
-        <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Acudiente" [hidden]="isHidden2" [(ngModel)]="res" (ngModelChange)="cambiaLado($event)"/>
-        
-    
-          <label class="menu" [hidden]="isHidden">Presentación </label>
-        <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Presentación" [hidden]="isHidden" [(ngModel)]="res" (ngModelChange)="cambiaLado($event)" />
-  
-  
-        <label  [hidden]="isHidden1" class="menu"> Lote </label>
-        <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Lote" [hidden]="isHidden1" [(ngModel)]="res"  />
-        
-     
-          <button class="btn btn-dark" >Buscar</button>
+        <label class="menu" [hidden]="isHidden">Presentación </label>
+      <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Presentación" [hidden]="isHidden" [(ngModel)]="res" (ngModelChange)="cambiaLado($event)" />
+
+
+      <label  [hidden]="isHidden1" class="menu"> Lote </label>
+      <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Lote" [hidden]="isHidden1" [(ngModel)]="res"  />
+      
+   
+        <button class="btn btn-dark" >Buscar</button>
 
 
 
 
 
-  </nav>
+</nav>
 
-  <table class="table" id="contentToConvert">
-    <thead class="thead-green" >
-      <footer id="sticky-footer" class="text-white-50" style="margin-bottom: 0px; bottom: 0px;">
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+<HEAD>
+	
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=us-ascii">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice 4.1.1  (FreeBSD/amd64)">
+	<META NAME="CREATED" CONTENT="0;0">
+	<META NAME="CHANGED" CONTENT="0;0">
+	
+	<STYLE>
+		<!-- 
+		BODY,DIV,TABLE,THEAD,TBODY,TFOOT,TR,TH,TD,P { font-family:"Arimo"; font-size:x-small }
+		 -->
+	</STYLE>
+	
+</HEAD>
+
+<BODY TEXT="#000000">
+
+<TABLE FRAME=VOID ALIGN=LEFT CELLSPACING=0 COLS=20 RULES=NONE BORDER=0 id="contentToConvert" >
+
+	<footer id="sticky-footer" class="text-white-50" style="margin-bottom: 0px; bottom: 0px;">
         <div class="container text-center" style="justify-content: center;  bottom: 0px; margin-left: auto; margin-right: auto; margin-bottom: 0px;">
  
          <img src="../../assets/icbf-logo.png" id="imagen" style="width: 65px; height: 65px; margin-left: 10px; margin-top: 10px; margin-bottom: 0px;" class="rounded float-left">
+         
         </div>
       </footer>
+	  <div class="centro">
+		{{Nombrereporte}}  {{fecha}}
+	  
+	  </div>
+	 
+	<h1></h1>
+	<COLGROUP></COLGROUP>
+	<TBODY>
+		<TR>
+			<TD STYLE="border-top: 3px solid #000000; border-left: 3px solid #000000" WIDTH=27 HEIGHT=20 ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD STYLE="border-top: 3px solid #000000" WIDTH=132 ALIGN=LEFT VALIGN=MIDDLE SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000">LUGAR:</FONT></TD>
+			<TD STYLE="border-top: 3px solid #000000" WIDTH=132 ALIGN=LEFT VALIGN=MIDDLE SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000">PUNTO DE ENTREGA PRIMARIO</FONT><input type="checkbox" id="cbox2" value="second_checkbox"> </TD>
+			<TD STYLE="border-top: 3px solid #000000" ROWSPAN=2 WIDTH=132 ALIGN=CENTER VALIGN=MIDDLE SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR> 
+			</FONT></TD>
+			<TD STYLE="border-top: 3px solid #000000" WIDTH=132 ALIGN=LEFT VALIGN=MIDDLE SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000">UDS</FONT> <input type="checkbox" id="cbox2" value="second_checkbox"> </TD>
+			
+			<TD STYLE="border-top: 3px solid #000000" WIDTH=46 ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000">C&Oacute;DIGO DEL PUNTO DE ENTREGA o UDS:</FONT></TD>
+			<TD STYLE="border-top: 3px solid #000000" WIDTH=46 ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><input type="text" name="fname"></FONT></TD>
+			
+			
+
+			<TD STYLE="border-top: 3px solid #000000" WIDTH=46 ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General" ><FONT FACE="Calibri" COLOR="#000000">MES DE CONSUMO:</FONT></TD>
+		
+			<TD STYLE="border-top: 3px solid #000000" WIDTH=46 ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General" ><FONT FACE="Calibri" COLOR="#000000" >     <select name="idnivel1" class="select-css" style="width: 100%;" 
+                options="options" placeholder="nivel" >
+                <option *ngFor="let do of region ">{{do.Regional }} </option>
+                </select></FONT></TD>
+
+		
+
+			<TD STYLE="border-top: 3px solid #000000" ><FONT FACE="Calibri" COLOR="#000000">AÑO </FONT></TD>
+		
+		
+      <TD  STYLE="border-top: 3px solid #000000" ><FONT FACE="Calibri" COLOR="#000000"><select name="idnivel1" class="select-css" style="width: 100%;" 
+                options="options" placeholder="nivel" >
+                <option *ngFor="let do of region ">{{do.Regional }} </option>
+                </select></FONT> </TD>
+
+				<TD STYLE="border-top: 3px solid #000000; border-right: 3px solid #000000" ><FONT FACE="Calibri"></FONT></TD >
+		</TR>
+		<TR>
+			<TD STYLE="border-left: 3px solid #000000" HEIGHT=20 ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=MIDDLE SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000">REGIONAL:</FONT></TD>
+			<TD > <select name="idnivel1" class="select-css" style="width: 100%;" 
+                options="options" placeholder="nivel" >
+                <option *ngFor="let do of region ">{{do.Regional }} </option>
+                </select></TD>
+                <TD > 	</TD > 
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000">NOMBRE PUNTO DE ENTREGA O UDS:</FONT></TD>
+		
+			<TD >     <select name="idnivel1" class="select-css" style="width: 100%;" 
+                options="options" placeholder="nivel" >
+                <option *ngFor="let do of region ">{{do.Regional }} </option>
+                </select></TD>
+				<TD></TD>
+				<TD></TD>
+				<TD></TD>
+				<TD></TD>
+				<TD STYLE="border-right: 3px solid #000000" ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><B><FONT FACE="Calibri"><BR></FONT></B></TD>
+
+		</TR>
+		<TR>
+			<TD STYLE="border-left: 3px solid #000000" HEIGHT=20 ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=MIDDLE SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000">CENTRO ZONAL: </FONT></TD>
+			<TD > <select name="idnivel1" class="select-css" style="width: 100%;" 
+                options="options" placeholder="nivel" >
+                <option *ngFor="let do of region ">{{do.Regional }} </option>
+                </select></TD>
+                <TD ></TD >
+                  <TD ></TD >
+                   
+
+			<TD ><FONT FACE="Calibri" COLOR="#000000">RESPONSABLE PUNTO DE ENTREGA O UDS:</FONT></TD>
+      <TD ><input type="text" name="fname"></TD>
+	  
+		
+			<TD ><FONT FACE="Calibri" COLOR="#000000">SUPLENTE PUNTO DE ENTREGA :</FONT></TD>
+			<TD ><select name="idnivel1" class="select-css" style="width: 100%;" 
+                options="options" placeholder="nivel" >
+                <option *ngFor="let do of region ">{{do.Regional }} </option>
+                </select></TD>
+				<TD></TD>
+				<TD></TD>
+				
+			
+
+			<TD STYLE="border-right: 3px solid #000000" ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><B><FONT FACE="Calibri"><BR></FONT></B></TD>
+		</TR>
+		<TR>
+			<TD STYLE="border-left: 3px solid #000000" HEIGHT=20 ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=MIDDLE SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000">MUNICIPIO:</FONT></TD>
+	
+			<TD><select name="idnivel1" class="select-css" style="width: 100%;" 
+                options="options" placeholder="nivel" >
+                <option *ngFor="let do of region ">{{do.Regional }} </option>
+                </select></TD>
+      <TD></TD>
+      <TD ></TD >
+      <TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000">DIRECCI&Oacute;N PUNTO DE ENTREGA O UDS:</FONT></TD>
       
-        {{Nombrereporte}}  {{fecha}}
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Lote</th>
-        <th scope="col">Fecha vencimiento</th>
-        <th scope="col">Cantidad</th>
-        <th scope="col">Presentación</th>
-        <th scope="col">Acudientes</th>
-        <th scope="col">Beneficiarios </th>
-        <th scope="col">Centro distribución</th>
-        <th scope="col">Almacenés</th>
-        <th scope="col">Referencia bienesterina</th>
+			<TD><input type="text" name="fname"></TD>
+			
+
+			<TD ><FONT FACE="Calibri" COLOR="#000000">BARRIO: </FONT></TD>
+			<TD><input type="text" name="fname"></TD>
+			
+			
+		
+		
+		
+			<TD  ><FONT FACE="Calibri">TELEFONO: </FONT></TD>
+			<TD><input type="text" name="fname"></TD>
+
+		
+				
+			
+
+			<TD STYLE="border-right: 3px solid #000000" ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><B><FONT FACE="Calibri"><BR></FONT></B></TD>
+
+		</TR>
+		<TR>
+			<TD STYLE="border-left: 3px solid #000000" HEIGHT=20 ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+      <TD ALIGN=LEFT VALIGN=MIDDLE SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000">MODALIDAD: </FONT></TD>
+      
+		
+			<TD >     <select name="idnivel1" class="select-css" style="width: 100%;" 
+                options="options" placeholder="nivel" >
+                <option *ngFor="let do of region ">{{do.Regional }} </option>
+                </select></TD>
+                <TD ></TD >
+                  <TD ></TD >
+        
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000">CODIGO PUNTO DE ENTREGA DE ORIGEN: </FONT></TD>
+
+			<TD >     <input type="text" name="fname"></TD>
+		
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000">NOMBRE PUNTO DE ENTREGA DE ORIGEN: </FONT></TD>
+			<TD><input type="text" name="fname"></TD>
+			
+			<TD></TD>
+				
+			<TD></TD>
+				
+
+			<TD STYLE="border-right: 3px solid #000000" ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><B><FONT FACE="Calibri"><BR></FONT></B></TD>
+
+		</TR>
+		<TR>
+			<TD STYLE="border-bottom: 3px solid #000000; border-left: 3px solid #000000" HEIGHT=10 ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD STYLE="border-bottom: 3px solid #000000" ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><B><FONT FACE="Calibri"><BR></FONT></B></TD>
+			<TD STYLE="border-bottom: 3px solid #000000" ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><B><FONT FACE="Calibri"><BR></FONT></B></TD>
+			<TD STYLE="border-bottom: 3px solid #000000" ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><B><FONT FACE="Calibri"><BR></FONT></B></TD>
+			<TD STYLE="border-bottom: 3px solid #000000" ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><B><FONT FACE="Calibri"><BR></FONT></B></TD>
+			
+			<TD STYLE="border-bottom: 3px solid #000000" ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD STYLE="border-bottom: 3px solid #000000" ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+				<TD STYLE="border-bottom: 3px solid #000000" ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+				<TD STYLE="border-bottom: 3px solid #000000" ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+					<TD STYLE="border-bottom: 3px solid #000000" ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+				<TD STYLE="border-bottom: 3px solid #000000" ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD STYLE="border-bottom: 3px solid #000000; border-right: 3px solid #000000" ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><B><FONT FACE="Calibri"><BR></FONT></B></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=18 ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri"><BR></FONT></TD>
+			<TD ALIGN=CENTER VALIGN=MIDDLE SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=CENTER VALIGN=MIDDLE SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=CENTER VALIGN=MIDDLE SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=CENTER VALIGN=MIDDLE SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=CENTER VALIGN=MIDDLE SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri"><BR></FONT></TD>
+      <TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri"><BR></FONT></TD>
+
+		</TR>
+   
+
+		<TR>
+			<TD HEIGHT=11 ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=CENTER VALIGN=MIDDLE SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			
+
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+    </TR>
+    
+
+  
+
+    <tr >
+
+        <th scope="col" ><FONT FACE="Calibri" COLOR="#000000">N</FONT> </th>
+     
+        <th scope="col"><FONT FACE="Calibri" COLOR="#000000">Primer nombre</FONT> </th>
+	
+        <th scope="col" ><FONT FACE="Calibri" COLOR="#000000">Segundo nombre</FONT> </th>
+
+        <th scope="col" ><FONT FACE="Calibri" COLOR="#000000">Primer apellido</FONT></th>
+	
+        <th scope="col" ><FONT FACE="Calibri" COLOR="#000000">Segundo apellido</FONT> </th>
+
+        <th scope="col" ><FONT FACE="Calibri" COLOR="#000000">tipo documento</FONT> </th>
+
+        <th scope="col" ><FONT FACE="Calibri" COLOR="#000000">numero de documento</FONT> </th>
+
+        <th scope="col" ><FONT FACE="Calibri" COLOR="#000000">Referencia bienesterina</FONT></th> 
+
+        <th scope="col" ><FONT FACE="Calibri" COLOR="#000000">Lote</FONT></th>
+
+        <th scope="col" ><FONT FACE="Calibri" COLOR="#000000">Nombre completo y cedula</FONT> </th>
+
+        <th scope="col" ><FONT FACE="Calibri" COLOR="#000000">Parentesco</FONT></th>
+
+        <th scope="col" ><FONT FACE="Calibri" COLOR="#000000">Firma</FONT></th>
+     
       </tr>
-    </thead>
-    <tbody>
+  
       <tr *ngFor="let sal of centroB">
         <th scope="row">{{sal.idEntregaBeneficiario}}</th>
-        <td>{{sal.lote}}</td>
-        <td>{{sal.fechavencimiento}}</td>
-        <td>{{sal.cantidad}}</td>
-        <td>{{sal.unidad}}</td>
-        <td>{{sal.NombrePadre}}</td>
-        <td>{{sal.Nombrecompleto}}</td>
-        <td>{{sal.centrodistribucion}}</td>
-        <td>{{sal.almacenes  }}</td>
-        <td>{{sal.TipoBienesterina}}</td>
+        <td style="font-size:21px;">{{sal.Nombrecompleto}}</td>
+        <td style="font-size:21px;"> {{sal.lote}}</td>
+        <td style="font-size:21px;">{{sal.fechavencimiento}}</td>
+        <td style="font-size:21px;" >{{sal.cantidad}}</td>
+        <td style="font-size:21px;">{{sal.unidad}}</td>
+        <td style="font-size:21px;" >{{sal.NombrePadre}}</td>
+
+        <td style="font-size:21px;">{{sal.centrodistribucion}}</td>
+        <td style="font-size:21px;">{{sal.almacenes  }}</td>
+        <td style="font-size:21px;">{{sal.TipoBienesterina}}</td>
 
       </tr>
-    </tbody>
-  </table>
 
-  <div class="trans">
+    
+
+
+		<TR>
+			
+	
+			<TD HEIGHT=19 ALIGN=LEFT VALIGN=MIDDLE SDNUM="1033;1033;General"><B><FONT FACE="Calibri">Firma del Responsable y/o Suplente del punto de entrega o UDS: </FONT></B></TD>
+			<TD > </TD>
+			<TD > </TD>
+			<TD > </TD>
+			<TD > </TD>
+			<TD > </TD>
+			<TD > </TD>
+			<TD >     <input type="text"  style="width:300px;height:15px"></TD>
+			
+		</TR>
+		<TR>
+		
+			<TD HEIGHT=22 ALIGN=LEFT VALIGN=MIDDLE SDNUM="1033;1033;General"><B><FONT FACE="Calibri">C&eacute;dula del Responsable y/o Suplente del punto de entrega o UDS: </FONT></B></TD>
+			<TD > </TD>
+			<TD > </TD>
+			<TD > </TD>
+			<TD > </TD>
+			<TD > </TD>
+			<TD > </TD>
+			<TD > </TD>
+			<TD > </TD>
+			<TD >     <input type="text" style="width:100px;height:15px"></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=22 ALIGN=LEFT VALIGN=MIDDLE SDNUM="1033;1033;General"><B><FONT FACE="Calibri"><BR></FONT></B></TD>
+			<TD ALIGN=CENTER VALIGN=MIDDLE SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=CENTER VALIGN=MIDDLE SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=CENTER VALIGN=MIDDLE SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=23 ALIGN=LEFT VALIGN=MIDDLE SDNUM="1033;1033;General"><B><FONT FACE="Calibri"><BR></FONT></B></TD>
+			
+		
+			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
+			<TD COLSPAN=9 ALIGN=CENTER VALIGN=MIDDLE SDNUM="1033;1033;General"><B><FONT FACE="Tempus Sans ITC" SIZE=4 COLOR="#000000">Antes de imprimir este documento&hellip; piense en el medio ambiente!</FONT></B></TD>
+		</TR>
+		</TBODY>
+</TABLE>
+<BR CLEAR=LEFT>
+
+</BODY>
+
+</HTML>
+
+<div class="trans">
     <button class="btn btn-dark" (click)="Generareporte()">Generar reporte</button>
   </div>
