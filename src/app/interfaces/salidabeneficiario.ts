@@ -11,4 +11,5 @@ export interface Salidabeneficiario {
     idAlmacenes  : number,
     idTipoBienesterina : number,
     Cantidad2?: number,
+    idTipoDocumento?: number,
 }
