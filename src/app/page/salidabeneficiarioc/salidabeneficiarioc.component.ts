@@ -394,12 +394,18 @@ export class SalidabeneficiariocComponent implements OnInit {
     RegistroBiometrico: "",
     RegistroBiometrico1: ""
   };
+
   Beneficiario() {
     if (this.sal.idAcudientes !== 0 && this.sal.idAcudientes !== null) {
       this.Service.getAcudientesid(this.sal.idAcudientes.toString()).subscribe(
         res => {
           this.acudiente = Object(res);
           this.sal.idBeneficiarios = this.acudiente.idBeneficiarios;
+          for(let b of this.ben){
+            if(b.idBeneficiarios === this.sal.idBeneficiarios){
+              this.sal.idTipoDocumento = b.idTipoDocumento;
+            }
+          }
         }
       );
     }
