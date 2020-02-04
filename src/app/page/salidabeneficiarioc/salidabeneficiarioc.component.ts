@@ -72,6 +72,7 @@ export class SalidabeneficiariocComponent implements OnInit {
     idCentroDistribucion: null,
     idAlmacenes: null,
     idTipoBienesterina: null
+  
   };
 
   tiporef: TipoBienestarina = {
@@ -245,6 +246,7 @@ export class SalidabeneficiariocComponent implements OnInit {
     for (let b of this.acu) {
       if (this.sal.idBeneficiarios == b.idBeneficiarios) {
         this.sal.idAcudientes = b.idAcudientes;
+       
       }
     }
   }

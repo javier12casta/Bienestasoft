@@ -4,8 +4,20 @@ import { ServicioService } from '../../servicio.service';
 import * as jspdf from 'jspdf'; 
 import html2canvas from 'html2canvas';
 import { Salidabeneficiariot } from 'src/app/interfaces/salidabeneficiariot';
-
 import { Regional } from 'src/app/interfaces/regional';
+
+import { Centrozonal } from 'src/app/interfaces/centrozonal';
+import { Municipio } from 'src/app/interfaces/municipio';
+import { Puntoentrega } from 'src/app/interfaces/puntoentrega';
+import { Uds } from 'src/app/interfaces/uds';
+import { Lprecios } from 'src/app/interfaces/listaprecios';
+import { MaestroBienestarina } from 'src/app/interfaces/maestrosBienestarina';
+
+
+
+
+
+
 @Component({
   selector: 'app-reportesalidabeneficiario',
   templateUrl: './reportesalidabeneficiario.component.html',
@@ -16,11 +28,30 @@ export class ReportesalidabeneficiarioComponent implements OnInit {
   isHidden: boolean = true;
   isHidden1: boolean = true;
   isHidden2: boolean = true;
-
+ valor: boolean = false;
+ valor1: boolean = false;
 
 fil;
   est;
   centroB: Salidabeneficiariot[] = [];
+
+  region: Regional[] = [];
+  centro: Centrozonal[] = [];
+  municipio:  Municipio[] = [];
+  punto:  Puntoentrega[] = [];
+  ud: Uds[] = [];
+  lprecios: Lprecios[] = [];
+  mbienestarina: MaestroBienestarina[] = [];
+  rep;
+
+
+
+
+
+
+
+
+
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
   Nombrereporte = 'FORMATO ENTREGA ALIMENTOS DE ALTO VALOR NUTRICIONAL A BENEFICIARIOS';
@@ -28,7 +59,7 @@ fil;
 
   ngOnInit() {
 
-    this.Service.getsalidabeneficiarioTabla()
+    this.Service.getsalidabeneficiarioTabla1()
     .subscribe( (data) => {
       this.centroB = Object(data);
       console.log(data);
@@ -36,39 +67,97 @@ fil;
     }
     );
 
+    this.Service.getRegional()
+    .subscribe( (data) => {
+      this.region = Object(data);
+      console.log(data);
+      console.log('funciona');
+    }
+    );
+
+    this.Service.getCentro()
+    .subscribe( (data) => {
+      this.centro = Object(data);
+      console.log(data);
+      console.log('funciona');
+    }
+    );
+
+    this.Service.getMunicipio()
+    .subscribe( (data) => {
+      this.municipio = Object(data);
+      console.log(data);
+      console.log('funciona');
+    }
+    );
+
+   
+   
+    this.Service.getUds()
+    .subscribe( (data) => {
+      this.ud = Object(data);
+      console.log(data);
+      console.log('funciona');
+    }
+    );
+
+    this.Service.getListaprecios()
+    .subscribe( (data) => {
+      this.lprecios = Object(data);
+      console.log(data);
+      console.log('funciona');
+    }
+    );
+
+    this.Service.getMaestrosBienestrina()
+    .subscribe( (data) => {
+      this.mbienestarina = Object(data);
+      console.log(data);
+      console.log('funciona');
+    }
+    );
+
+    this.Service.getPunto()
+    .subscribe( (data) => {
+      this.punto = Object(data);
+      console.log(data);
+      console.log('funciona');
+    }
+    );
+    
+    for (let entry of this.punto) {
+      
+      this.rep =  entry.Responsable;
+     
+    }
+
+
   }
 
   
   Generareporte(){
 
-    var doc = new jspdf("l", "pt", 'a2');
-    var img = document.getElementById('imagen');
-    var res = doc.autoTableHtmlToJson(document.getElementById("contentToConvert"));
-    var fec = this.fecha;
+    window.scrollTo(0,0); 
 
-    var header = function(data) {
-      doc.setFontSize(18);
-      doc.setTextColor(40);
-      doc.setFontStyle('normal');
+    html2canvas(document.getElementById('contentToConvert'), {
+     
+      // Opciones
+      allowTaint: true,
+      useCORS: false,
+      // Calidad del PDF
+      scale: 1,
+      
+    }).then(function(canvas) {
 
-     doc.addImage(img, 'PNG', 50, 20, 50, 50);
-    
-      doc.text("Reporte entrega beneficiario" , 110 ,60 ,0 ,90 );
-      doc.text(fec , 450 ,60 ,0 ,90 );
-    };
-  
-    var options = {
-      beforePageContent: header,
-      margin: {
-        top: 80
-      },
-      startY: doc.autoTableEndPosY() + 100
-    };
-  
-    doc.autoTable(res.columns, res.data, options);
-  
-    doc.save("reportesalidabeneficiario.pdf");
-       
+      var img = canvas.toDataURL("image/png");
+      var doc = new jspdf("l", "pt", 'a2');
+
+      var height = doc.internal.pageSize.getHeight(); 
+      doc.addImage(img,'PNG',10, 0,1600, height);
+      doc.save('reportesalidabeneficiario.pdf');
+
+      
+    });
     
     }
 
@@ -116,11 +205,68 @@ fil;
   
       }
   
+      valores1(values:any){
+
+        if(values.currentTarget.checked == true){
+
+          this.valor= true;
+          this.valor1= false;
+         
+        
+        
+        }
+        if(values.currentTarget.checked == false){
+
+          this.valor= false;
+          this.valor1= true;
+
+
+        }
+
+        if(values.currentTarget.checked == true && values.currentTarget.checked == true){
+
+          this.valor= true;
+          this.valor1= true;
+
+        }
+        
+        
+
+      }
+
   
-      opmunicipio(){
+      checkValue(values:any){
+
+
+if(values.currentTarget.checked == true){
+
+  this.valor= false;
+  this.valor1= true;
+ 
+
+
+}
+
+if(values.currentTarget.checked == false){
+
+  this.valor= true;
+  this.valor1= false;
   
-  
-  
+}
+
+
+if(values.currentTarget.checked == true && values.currentTarget.checked == true){
+
+  this.valor= true;
+  this.valor1= true;
+
+}
+
+
+
+
+    
+
       }
       
 

@@ -845,6 +845,12 @@ export class ServicioService {
     return this.http.get<[Salidabeneficiariot]>(path);
   }
 
+
+  getsalidabeneficiarioTabla1(){
+    const path = `${this.api}/entregabeneficiario/tabla1`;
+    return this.http.get<[Salidabeneficiariot]>(path);
+  }
+
   postsalidabeneficiario(recep: Salidabeneficiario) {
 
     const path = `${this.api}/entregabeneficiario`;

@@ -84,10 +84,10 @@
 		<TR>
 			<TD STYLE="border-top: 3px solid #000000; border-left: 3px solid #000000" WIDTH=27 HEIGHT=20 ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR></FONT></TD>
 			<TD STYLE="border-top: 3px solid #000000" WIDTH=132 ALIGN=LEFT VALIGN=MIDDLE SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000">LUGAR:</FONT></TD>
-			<TD STYLE="border-top: 3px solid #000000" WIDTH=132 ALIGN=LEFT VALIGN=MIDDLE SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000">PUNTO DE ENTREGA PRIMARIO</FONT><input type="checkbox" id="cbox2" value="second_checkbox"> </TD>
+			<TD STYLE="border-top: 3px solid #000000" WIDTH=132 ALIGN=LEFT VALIGN=MIDDLE SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000">PUNTO DE ENTREGA PRIMARIO</FONT><input type="checkbox" id="cbox2" value="second_checkbox" (change)="checkValue($event)" [disabled]="valor"  > </TD>
 			<TD STYLE="border-top: 3px solid #000000" ROWSPAN=2 WIDTH=132 ALIGN=CENTER VALIGN=MIDDLE SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><BR> 
 			</FONT></TD>
-			<TD STYLE="border-top: 3px solid #000000" WIDTH=132 ALIGN=LEFT VALIGN=MIDDLE SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000">UDS</FONT> <input type="checkbox" id="cbox2" value="second_checkbox"> </TD>
+			<TD STYLE="border-top: 3px solid #000000" WIDTH=132 ALIGN=LEFT VALIGN=MIDDLE SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000">UDS</FONT> <input type="checkbox" id="cbox2" value="second_checkbox" (change)="valores1($event)" [disabled]="valor1" > </TD>
 			
 			<TD STYLE="border-top: 3px solid #000000" WIDTH=46 ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000">C&Oacute;DIGO DEL PUNTO DE ENTREGA o UDS:</FONT></TD>
 			<TD STYLE="border-top: 3px solid #000000" WIDTH=46 ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000"><input type="text" name="fname"></FONT></TD>
@@ -98,7 +98,7 @@
 		
 			<TD STYLE="border-top: 3px solid #000000" WIDTH=46 ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General" ><FONT FACE="Calibri" COLOR="#000000" >     <select name="idnivel1" class="select-css" style="width: 100%;" 
                 options="options" placeholder="nivel" >
-                <option *ngFor="let do of region ">{{do.Regional }} </option>
+                <option *ngFor="let do of lprecios">{{do.Mes }} </option>
                 </select></FONT></TD>
 
 		
@@ -108,7 +108,7 @@
 		
       <TD  STYLE="border-top: 3px solid #000000" ><FONT FACE="Calibri" COLOR="#000000"><select name="idnivel1" class="select-css" style="width: 100%;" 
                 options="options" placeholder="nivel" >
-                <option *ngFor="let do of region ">{{do.Regional }} </option>
+                <option *ngFor="let do of lprecios ">{{do.Ano }} </option>
                 </select></FONT> </TD>
 
 				<TD STYLE="border-top: 3px solid #000000; border-right: 3px solid #000000" ><FONT FACE="Calibri"></FONT></TD >
@@ -124,8 +124,9 @@
 			<TD ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000">NOMBRE PUNTO DE ENTREGA O UDS:</FONT></TD>
 		
 			<TD >     <select name="idnivel1" class="select-css" style="width: 100%;" 
-                options="options" placeholder="nivel" >
-                <option *ngFor="let do of region ">{{do.Regional }} </option>
+                options="options" placeholder="nivel" (ngModelChange)="valores()" >
+                <option [hidden]="valor" *ngFor="let do of punto">{{do.NombrePE }} </option>
+				<option [hidden]="valor1" *ngFor="let do of ud">{{do.NombreUDS }} </option>
                 </select></TD>
 				<TD></TD>
 				<TD></TD>
@@ -139,21 +140,18 @@
 			<TD ALIGN=LEFT VALIGN=MIDDLE SDNUM="1033;1033;General"><FONT FACE="Calibri" COLOR="#000000">CENTRO ZONAL: </FONT></TD>
 			<TD > <select name="idnivel1" class="select-css" style="width: 100%;" 
                 options="options" placeholder="nivel" >
-                <option *ngFor="let do of region ">{{do.Regional }} </option>
+                <option *ngFor="let do of  centro">{{do.NombreCentroZonal }} </option>
                 </select></TD>
                 <TD ></TD >
                   <TD ></TD >
                    
 
 			<TD ><FONT FACE="Calibri" COLOR="#000000">RESPONSABLE PUNTO DE ENTREGA O UDS:</FONT></TD>
-      <TD ><input type="text" name="fname"></TD>
+      <TD ><input type="text" [(ngModel)]="rep" ></TD>
 	  
 		
 			<TD ><FONT FACE="Calibri" COLOR="#000000">SUPLENTE PUNTO DE ENTREGA :</FONT></TD>
-			<TD ><select name="idnivel1" class="select-css" style="width: 100%;" 
-                options="options" placeholder="nivel" >
-                <option *ngFor="let do of region ">{{do.Regional }} </option>
-                </select></TD>
+			<TD ><input type="text" name="fname"></TD>
 				<TD></TD>
 				<TD></TD>
 				
@@ -167,7 +165,7 @@
 	
 			<TD><select name="idnivel1" class="select-css" style="width: 100%;" 
                 options="options" placeholder="nivel" >
-                <option *ngFor="let do of region ">{{do.Regional }} </option>
+                <option *ngFor="let do of municipio ">{{do.Municipio  }} </option>
                 </select></TD>
       <TD></TD>
       <TD ></TD >
@@ -200,7 +198,7 @@
 		
 			<TD >     <select name="idnivel1" class="select-css" style="width: 100%;" 
                 options="options" placeholder="nivel" >
-                <option *ngFor="let do of region ">{{do.Regional }} </option>
+                <option *ngFor="let do of mbienestarina ">{{do.Modalidad  }} </option>
                 </select></TD>
                 <TD ></TD >
                   <TD ></TD >
@@ -307,17 +305,18 @@
   
       <tr *ngFor="let sal of centroB">
         <th scope="row">{{sal.idEntregaBeneficiario}}</th>
-        <td style="font-size:21px;">{{sal.Nombrecompleto}}</td>
-        <td style="font-size:21px;"> {{sal.lote}}</td>
-        <td style="font-size:21px;">{{sal.fechavencimiento}}</td>
-        <td style="font-size:21px;" >{{sal.cantidad}}</td>
-        <td style="font-size:21px;">{{sal.unidad}}</td>
-        <td style="font-size:21px;" >{{sal.NombrePadre}}</td>
-
-        <td style="font-size:21px;">{{sal.centrodistribucion}}</td>
-        <td style="font-size:21px;">{{sal.almacenes  }}</td>
-        <td style="font-size:21px;">{{sal.TipoBienesterina}}</td>
-
+        <td style="font-size:10px;">{{sal.PrimerNombre}}</td>
+		<td style="font-size:10px;">{{sal.SegundoNombre}}</td>
+		<td style="font-size:10px;">{{sal.PrimerApellido}}</td>
+		<td style="font-size:10px;">{{sal.SegundoApellido}}</td>
+		<td style="font-size:10px;">{{sal.NombreTipo}}</td>
+		<td style="font-size:10px;">{{sal.NumeroDocumento}}</td>
+		<td style="font-size:10px;">{{sal.TipoBienesterina}}</td>
+        <td style="font-size:10px;"> {{sal.lote}}</td>
+        <td style="font-size:10px;" >{{sal.NombrePadre}}</td>
+        <td style="font-size:10px;">{{sal.Parentesco}}</td>
+        <td style="font-size:10px;">{{sal.firma  }}</td>
+      
       </tr>
 
     
@@ -327,27 +326,24 @@
 			
 	
 			<TD HEIGHT=19 ALIGN=LEFT VALIGN=MIDDLE SDNUM="1033;1033;General"><B><FONT FACE="Calibri">Firma del Responsable y/o Suplente del punto de entrega o UDS: </FONT></B></TD>
+		
 			<TD > </TD>
 			<TD > </TD>
 			<TD > </TD>
 			<TD > </TD>
-			<TD > </TD>
-			<TD > </TD>
-			<TD >     <input type="text"  style="width:300px;height:15px"></TD>
+			<TD >     <input type="text"  style="width:200px;height:15px"></TD>
 			
 		</TR>
 		<TR>
 		
 			<TD HEIGHT=22 ALIGN=LEFT VALIGN=MIDDLE SDNUM="1033;1033;General"><B><FONT FACE="Calibri">C&eacute;dula del Responsable y/o Suplente del punto de entrega o UDS: </FONT></B></TD>
 			<TD > </TD>
+		
+		
 			<TD > </TD>
 			<TD > </TD>
 			<TD > </TD>
-			<TD > </TD>
-			<TD > </TD>
-			<TD > </TD>
-			<TD > </TD>
-			<TD >     <input type="text" style="width:100px;height:15px"></TD>
+			<TD >     <input type="text" style="width:200px;height:15px"></TD>
 		</TR>
 		<TR>
 			<TD HEIGHT=22 ALIGN=LEFT VALIGN=MIDDLE SDNUM="1033;1033;General"><B><FONT FACE="Calibri"><BR></FONT></B></TD>
