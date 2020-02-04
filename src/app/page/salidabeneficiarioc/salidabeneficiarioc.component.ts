@@ -47,7 +47,6 @@ export class SalidabeneficiariocComponent implements OnInit {
     Cantidad2: 0,
     unidad: ""
   };
-
   //para la capacidad almacen
   public almacen: Almacen = {
     idAlmacenes: null,
@@ -71,7 +70,8 @@ export class SalidabeneficiariocComponent implements OnInit {
     idBeneficiarios: null,
     idCentroDistribucion: null,
     idAlmacenes: null,
-    idTipoBienesterina: null
+    idTipoBienesterina: null,
+    idTipoDocumento: null,
   
   };
 
