@@ -9,7 +9,9 @@ import { Regional } from 'src/app/interfaces/regional';
 import { Centrozonal } from 'src/app/interfaces/centrozonal';
 import { Municipio } from 'src/app/interfaces/municipio';
 import { Puntoentrega } from 'src/app/interfaces/puntoentrega';
+import { Puntoentregat } from 'src/app/interfaces/puntoentregat';
 import { Uds } from 'src/app/interfaces/uds';
+import { Udst } from 'src/app/interfaces/udst';
 import { Lprecios } from 'src/app/interfaces/listaprecios';
 import { MaestroBienestarina } from 'src/app/interfaces/maestrosBienestarina';
 
@@ -28,8 +30,12 @@ export class ReportesalidabeneficiarioComponent implements OnInit {
   isHidden: boolean = true;
   isHidden1: boolean = true;
   isHidden2: boolean = true;
- valor: boolean = false;
- valor1: boolean = false;
+ valor: boolean = true;
+ valor1: boolean = true;
+ valor2: boolean = false;
+ id = {
+  idv:null,
+ };
 
 fil;
   est;
@@ -43,10 +49,16 @@ fil;
   lprecios: Lprecios[] = [];
   mbienestarina: MaestroBienestarina[] = [];
   rep;
-
-
-
-
+dic;
+cod;
+codo;
+sup;
+bar;
+nomp;
+tel;
+check1 :boolean = false;
+check2: boolean = false;
+cen;
 
 
 
@@ -124,12 +136,27 @@ fil;
       console.log('funciona');
     }
     );
+
+
     
-    for (let entry of this.punto) {
-      
-      this.rep =  entry.Responsable;
-     
+    this.Service.getPuntoTabla()
+    .subscribe( (data) => {
+      this.punid = Object(data);
+      console.log(data);
+      console.log('funciona');
     }
+    );
+    
+
+    
+    this.Service.getUdsTabla()
+    .subscribe( (data) => {
+      this.udid = Object(data);
+      console.log(data);
+      console.log('funciona');
+    }
+    );
+  
 
 
   }
@@ -153,7 +180,7 @@ fil;
       var doc = new jspdf("l", "pt", 'a2');
 
       var height = doc.internal.pageSize.getHeight(); 
-      doc.addImage(img,'PNG',10, 0,1600, height);
+      doc.addImage(img,'PNG',0, 0,1600, height);
       doc.save('reportesalidabeneficiario.pdf');
 
       
@@ -209,26 +236,37 @@ fil;
 
         if(values.currentTarget.checked == true){
 
-          this.valor= true;
-          this.valor1= false;
          
-        
+          this.check1 = true;
+          this.valor= false;
+          this.valor2= true;
         
         }
         if(values.currentTarget.checked == false){
 
-          this.valor= false;
-          this.valor1= true;
-
-
-        }
-
-        if(values.currentTarget.checked == true && values.currentTarget.checked == true){
-
+          this.check1 = false;
           this.valor= true;
-          this.valor1= true;
+          this.valor2= true;
 
         }
+
+        if(values.currentTarget.checked == false && values.currentTarget.checked == false){
+
+
+          this.valor2= false;
+
+          this.rep = "";
+        this.dic = "";
+        this.cod = "";
+        this.codo = "";
+        this.sup = "";
+        this.bar = "";
+        this.nomp = "";
+        this.tel = "";
+        this.cen = "";
+
+        }
+        
         
         
 
@@ -240,34 +278,114 @@ fil;
 
 if(values.currentTarget.checked == true){
 
-  this.valor= false;
-  this.valor1= true;
  
-
-
+  this.check2 = true;
+  this.valor1= false;
+  this.valor2= true;
 }
 
 if(values.currentTarget.checked == false){
 
-  this.valor= true;
-  this.valor1= false;
-  
-}
-
-
-if(values.currentTarget.checked == true && values.currentTarget.checked == true){
-
-  this.valor= true;
+  this.check2 = false;
   this.valor1= true;
-
+  this.valor2= true;
 }
 
 
+if(values.currentTarget.checked == false && values.currentTarget.checked == false){
 
 
+  this.valor2= false;
+
+  this.rep = "";
+        this.dic = "";
+        this.cod = "";
+        this.codo = "";
+        this.sup = "";
+        this.bar = "";
+        this.nomp = "";
+        this.tel = "";
+        this.cen = "";
     
 
-      }
+}
+
+
+
+}
+
+
+
+
+
+      punid:  Puntoentregat [] = [];
+      udid: Udst [] = [];
+
+
+      valores(values:any){
+
+ 
+    
       
 
+    for(let  p of this.punid ){
+
+      if(values == p.NombrePE){
+ 
+   this.rep = p.Responsable;
+   this.dic = p.Direccion;
+   this.cod = p.CodigoExternoPE;
+   this.codo = p.CodigoExternoPE;
+   this.sup = p.Responsable;
+   this.bar = p.BarrioPE;
+   this.nomp = p.NombrePE;
+   this.tel = p.Telefono;
+   this.cen = p.NombreCentroZonal;
+  
+  }
+ 
+    }
+      
+ 
+       
+
+  
+ 
+
+      }
+
+      
+      valores2(values:any){
+
+        
+     
+        for(let  u of this.udid ){
+
+          if(values == u.NombreUDS){
+           
+
+       this.rep = u.ReponsableUDS;
+       this.dic = u.Direccion;
+       this.cod = u.CodigoInternoUDS;
+       this.codo = u.CodigoExternoUDS;
+       this.sup = u.ReponsableUDS;
+       this.nomp = u.NombreUDS;
+       this.tel = u.Telefono;
+      this.cen = u.NombreCentroZonal;
+      this.bar = u.Barrio;
+    this.nomp = u.NombrePE;
+    console.log('barrio' , u.Barrio);
+          }
+     
+           }
+     
+           
+    
+      
+     
+    
+          }
+
+        
+  
 }
