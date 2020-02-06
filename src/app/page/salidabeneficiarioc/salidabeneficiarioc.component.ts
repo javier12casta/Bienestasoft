@@ -400,6 +400,7 @@ export class SalidabeneficiariocComponent implements OnInit {
         res => {
           this.acudiente = Object(res);
           this.sal.idBeneficiarios = this.acudiente.idBeneficiarios;
+          console.log('id beneficiario, ');
           for(let b of this.ben){
             if(b.idBeneficiarios === this.sal.idBeneficiarios){
               this.sal.idTipoDocumento = b.idTipoDocumento;
