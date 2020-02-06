@@ -11,6 +11,7 @@ import { Almacen } from "../../interfaces/almacen";
 import { Acudientes } from "../../interfaces/acudiente";
 import { Beneficiario } from "../../interfaces/beneficiario";
 import { Inventario } from "src/app/interfaces/inventario";
+import { Validacion} from "src/app/interfaces/biometrico";
 
 @Component({
   selector: "app-salidabeneficiarioc",
@@ -242,10 +243,21 @@ export class SalidabeneficiariocComponent implements OnInit {
   }
 
   acudienteb = null;
+  vali: Validacion = {
+    id:null,
+    Nombre: ""
+  }
+  validacion: boolean = false;
+  
   acudientes() {
+
     for (let b of this.acu) {
       if (this.sal.idBeneficiarios == b.idBeneficiarios) {
         this.sal.idAcudientes = b.idAcudientes;
+        if(this.sal.idAcudientes == Number(this.vali.id))
+        {
+            this.validacion = true;
+        }
        
       }
     }
