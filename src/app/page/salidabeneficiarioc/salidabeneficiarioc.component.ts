@@ -47,7 +47,6 @@ export class SalidabeneficiariocComponent implements OnInit {
     Cantidad2: 0,
     unidad: ""
   };
-
   //para la capacidad almacen
   public almacen: Almacen = {
     idAlmacenes: null,
@@ -73,6 +72,7 @@ export class SalidabeneficiariocComponent implements OnInit {
     idAlmacenes: null,
     idTipoBienesterina: null,
     idTipoDocumento: null,
+  
   };
 
   tiporef: TipoBienestarina = {
@@ -246,6 +246,7 @@ export class SalidabeneficiariocComponent implements OnInit {
     for (let b of this.acu) {
       if (this.sal.idBeneficiarios == b.idBeneficiarios) {
         this.sal.idAcudientes = b.idAcudientes;
+       
       }
     }
   }
@@ -404,6 +405,7 @@ export class SalidabeneficiariocComponent implements OnInit {
           for(let b of this.ben){
             if(b.idBeneficiarios === this.sal.idBeneficiarios){
               this.sal.idTipoDocumento = b.idTipoDocumento;
+              console.log('documento', this.sal.idTipoDocumento);
             }
           }
         }

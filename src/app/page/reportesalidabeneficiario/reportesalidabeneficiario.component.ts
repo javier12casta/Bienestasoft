@@ -4,8 +4,22 @@ import { ServicioService } from '../../servicio.service';
 import * as jspdf from 'jspdf'; 
 import html2canvas from 'html2canvas';
 import { Salidabeneficiariot } from 'src/app/interfaces/salidabeneficiariot';
-
 import { Regional } from 'src/app/interfaces/regional';
+
+import { Centrozonal } from 'src/app/interfaces/centrozonal';
+import { Municipio } from 'src/app/interfaces/municipio';
+import { Puntoentrega } from 'src/app/interfaces/puntoentrega';
+import { Puntoentregat } from 'src/app/interfaces/puntoentregat';
+import { Uds } from 'src/app/interfaces/uds';
+import { Udst } from 'src/app/interfaces/udst';
+import { Lprecios } from 'src/app/interfaces/listaprecios';
+import { MaestroBienestarina } from 'src/app/interfaces/maestrosBienestarina';
+
+
+
+
+
+
 @Component({
   selector: 'app-reportesalidabeneficiario',
   templateUrl: './reportesalidabeneficiario.component.html',
@@ -16,11 +30,40 @@ export class ReportesalidabeneficiarioComponent implements OnInit {
   isHidden: boolean = true;
   isHidden1: boolean = true;
   isHidden2: boolean = true;
-
+ valor: boolean = true;
+ valor1: boolean = true;
+ valor2: boolean = false;
+ id = {
+  idv:null,
+ };
 
 fil;
   est;
   centroB: Salidabeneficiariot[] = [];
+
+  region: Regional[] = [];
+  centro: Centrozonal[] = [];
+  municipio:  Municipio[] = [];
+  punto:  Puntoentrega[] = [];
+  ud: Uds[] = [];
+  lprecios: Lprecios[] = [];
+  mbienestarina: MaestroBienestarina[] = [];
+  rep;
+dic;
+cod;
+codo;
+sup;
+bar;
+nomp;
+tel;
+check1 :boolean = false;
+check2: boolean = false;
+cen;
+
+
+
+
+
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
   Nombrereporte = 'FORMATO ENTREGA ALIMENTOS DE ALTO VALOR NUTRICIONAL A BENEFICIARIOS';
@@ -28,7 +71,7 @@ fil;
 
   ngOnInit() {
 
-    this.Service.getsalidabeneficiarioTabla()
+    this.Service.getsalidabeneficiarioTabla1()
     .subscribe( (data) => {
       this.centroB = Object(data);
       console.log(data);
@@ -36,39 +79,112 @@ fil;
     }
     );
 
+    this.Service.getRegional()
+    .subscribe( (data) => {
+      this.region = Object(data);
+      console.log(data);
+      console.log('funciona');
+    }
+    );
+
+    this.Service.getCentro()
+    .subscribe( (data) => {
+      this.centro = Object(data);
+      console.log(data);
+      console.log('funciona');
+    }
+    );
+
+    this.Service.getMunicipio()
+    .subscribe( (data) => {
+      this.municipio = Object(data);
+      console.log(data);
+      console.log('funciona');
+    }
+    );
+
+   
+   
+    this.Service.getUds()
+    .subscribe( (data) => {
+      this.ud = Object(data);
+      console.log(data);
+      console.log('funciona');
+    }
+    );
+
+    this.Service.getListaprecios()
+    .subscribe( (data) => {
+      this.lprecios = Object(data);
+      console.log(data);
+      console.log('funciona');
+    }
+    );
+
+    this.Service.getMaestrosBienestrina()
+    .subscribe( (data) => {
+      this.mbienestarina = Object(data);
+      console.log(data);
+      console.log('funciona');
+    }
+    );
+
+    this.Service.getPunto()
+    .subscribe( (data) => {
+      this.punto = Object(data);
+      console.log(data);
+      console.log('funciona');
+    }
+    );
+
+
+    
+    this.Service.getPuntoTabla()
+    .subscribe( (data) => {
+      this.punid = Object(data);
+      console.log(data);
+      console.log('funciona');
+    }
+    );
+    
+
+    
+    this.Service.getUdsTabla()
+    .subscribe( (data) => {
+      this.udid = Object(data);
+      console.log(data);
+      console.log('funciona');
+    }
+    );
+  
+
+
   }
 
   
   Generareporte(){
 
-    var doc = new jspdf("l", "pt", 'a2');
-    var img = document.getElementById('imagen');
-    var res = doc.autoTableHtmlToJson(document.getElementById("contentToConvert"));
-    var fec = this.fecha;
+    window.scrollTo(0,0); 
 
-    var header = function(data) {
-      doc.setFontSize(18);
-      doc.setTextColor(40);
-      doc.setFontStyle('normal');
+    html2canvas(document.getElementById('contentToConvert'), {
+     
+      // Opciones
+      allowTaint: true,
+      useCORS: false,
+      // Calidad del PDF
+      scale: 1,
+      
+    }).then(function(canvas) {
 
-     doc.addImage(img, 'PNG', 50, 20, 50, 50);
-    
-      doc.text("Reporte entrega beneficiario" , 110 ,60 ,0 ,90 );
-      doc.text(fec , 450 ,60 ,0 ,90 );
-    };
-  
-    var options = {
-      beforePageContent: header,
-      margin: {
-        top: 80
-      },
-      startY: doc.autoTableEndPosY() + 100
-    };
-  
-    doc.autoTable(res.columns, res.data, options);
-  
-    doc.save("reportesalidabeneficiario.pdf");
-       
+      var img = canvas.toDataURL("image/png");
+      var doc = new jspdf("l", "pt", 'a2');
+
+      var height = doc.internal.pageSize.getHeight(); 
+      doc.addImage(img,'PNG',0, 0,1600, height);
+      doc.save('reportesalidabeneficiario.pdf');
+
+      
+    });
     
     }
 
@@ -116,12 +232,160 @@ fil;
   
       }
   
-  
-      opmunicipio(){
-  
-  
-  
+      valores1(values:any){
+
+        if(values.currentTarget.checked == true){
+
+         
+          this.check1 = true;
+          this.valor= false;
+          this.valor2= true;
+        
+        }
+        if(values.currentTarget.checked == false){
+
+          this.check1 = false;
+          this.valor= true;
+          this.valor2= true;
+
+        }
+
+        if(values.currentTarget.checked == false && values.currentTarget.checked == false){
+
+
+          this.valor2= false;
+
+          this.rep = "";
+        this.dic = "";
+        this.cod = "";
+        this.codo = "";
+        this.sup = "";
+        this.bar = "";
+        this.nomp = "";
+        this.tel = "";
+        this.cen = "";
+
+        }
+        
+        
+        
+
       }
+
+  
+      checkValue(values:any){
+
+
+if(values.currentTarget.checked == true){
+
+ 
+  this.check2 = true;
+  this.valor1= false;
+  this.valor2= true;
+}
+
+if(values.currentTarget.checked == false){
+
+  this.check2 = false;
+  this.valor1= true;
+  this.valor2= true;
+}
+
+
+if(values.currentTarget.checked == false && values.currentTarget.checked == false){
+
+
+  this.valor2= false;
+
+  this.rep = "";
+        this.dic = "";
+        this.cod = "";
+        this.codo = "";
+        this.sup = "";
+        this.bar = "";
+        this.nomp = "";
+        this.tel = "";
+        this.cen = "";
+    
+
+}
+
+
+
+}
+
+
+
+
+
+      punid:  Puntoentregat [] = [];
+      udid: Udst [] = [];
+
+
+      valores(values:any){
+
+ 
+    
       
 
+    for(let  p of this.punid ){
+
+      if(values == p.NombrePE){
+ 
+   this.rep = p.Responsable;
+   this.dic = p.Direccion;
+   this.cod = p.CodigoExternoPE;
+   this.codo = p.CodigoExternoPE;
+   this.sup = p.Responsable;
+   this.bar = p.BarrioPE;
+   this.nomp = p.NombrePE;
+   this.tel = p.Telefono;
+   this.cen = p.NombreCentroZonal;
+  
+  }
+ 
+    }
+      
+ 
+       
+
+  
+ 
+
+      }
+
+      
+      valores2(values:any){
+
+        
+     
+        for(let  u of this.udid ){
+
+          if(values == u.NombreUDS){
+           
+
+       this.rep = u.ReponsableUDS;
+       this.dic = u.Direccion;
+       this.cod = u.CodigoInternoUDS;
+       this.codo = u.CodigoExternoUDS;
+       this.sup = u.ReponsableUDS;
+       this.nomp = u.NombreUDS;
+       this.tel = u.Telefono;
+      this.cen = u.NombreCentroZonal;
+      this.bar = u.Barrio;
+    this.nomp = u.NombrePE;
+    console.log('barrio' , u.Barrio);
+          }
+     
+           }
+     
+           
+    
+      
+     
+    
+          }
+
+        
+  
 }

@@ -10,5 +10,6 @@ export interface Salidabeneficiariot {
     almacenes  : string,
     TipoBienesterina : string,
     Cantidad2?: number,
+    idTipoDocumento?: number,
 }
 
