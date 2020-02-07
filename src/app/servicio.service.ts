@@ -46,7 +46,7 @@ import { Devoluciones} from './interfaces/devoluciones';
 import { Recuentoinventario} from './interfaces/recuentoinventario';
 import { Translado} from './interfaces/traslado';
 import { Acta, RecepcionMax} from './interfaces/acta';
-import { Biometrico } from './interfaces/biometrico';
+import { Biometrico, Validacion } from './interfaces/biometrico';
 import { Centrozonalt } from './interfaces/centrozonalt';
 import { Salidabeneficiariot } from './interfaces/salidabeneficiariot';
 import { Salidaconsumot } from './interfaces/salidaconsumot';
@@ -1052,6 +1052,16 @@ export class ServicioService {
   getcargainventariotabla() {
     const path = `${this.api}/cargainv/tabla`;
     return this.http.get<[cargainventariot]>(path);
+  }
+
+  //Huella biometrico
+  ObtenerValidacion() {
+    const path = `${this.api}/biometrico/val`;
+    return this.http.get<Validacion []>(path);
+  }
+  ObtenerHuellas() {
+    const path = `${this.api}/biometrico/guardar`;
+    return this.http.get<Biometrico []>(path);
   }
 
 }

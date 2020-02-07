@@ -1,3 +1,8 @@
 export interface Biometrico {
-    Huella: string, 
+    Huella1: string,
+    Huella2: string, 
+}
+export interface Validacion {
+    id: string,
+    Nombre: string, 
 }

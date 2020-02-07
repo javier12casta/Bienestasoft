@@ -73,7 +73,8 @@ export class BeneficiariosmuiComponent implements OnInit {
   };
   idmax = 0;
   bio: Biometrico = {
-    Huella: '',
+    Huella1: '',
+    Huella2: '',
   };
 
   showMenssage() {
@@ -146,7 +147,8 @@ export class BeneficiariosmuiComponent implements OnInit {
     }, err => {
       console.log(err);
     });
-    this.y.RegistroBiometrico = this.bio.Huella;
+    this.y.RegistroBiometrico = this.bio.Huella1;
+    this.y.RegistroBiometrico1 = this.bio.Huella2;
     console.log(this.y.RegistroBiometrico);
     //traer regionales -----------------------------------------
     this.Service.getRegional()
