@@ -18,7 +18,7 @@ import { Uds } from './interfaces/uds';
 import { MaestroBienestarina } from './interfaces/maestrosBienestarina';
 import { Acudientes } from './interfaces/acudiente';
 import { TipoBienestarina } from './interfaces/tipobienestarina';
-import { Lprecios } from './interfaces/listaprecios';
+import { Lprecios, Lpreciost } from './interfaces/listaprecios';
 import { Datosvarios } from './interfaces/datosvarios';
 import { Listadocursos } from './interfaces/listadocursos';
 import { InMaestroBienestarina } from './interfaces/inhabilitarmaestrosBienestarina';
@@ -69,6 +69,7 @@ import { Innumerocupos } from 'src/app/interfaces/inhabilitarnumerocupos'
 import { Inventariocan} from './interfaces/inventariocan';
 
 import { cargainventariot} from './interfaces/cargainventario';
+import { Aux} from './interfaces/aux';
 
 @Injectable({
   providedIn: 'root'
@@ -484,6 +485,16 @@ export class ServicioService {
   getListaprecios() {
     const path = `${this.api}/listaP`;
     return this.http.get<[Lprecios]>(path);
+  }
+
+  getListapreciostabla() {
+    const path = `${this.api}/listaP/tabla`;
+    return this.http.get<[Lpreciost]>(path);
+  }
+
+  getListapreciostabla1() {
+    const path = `${this.api}/listaP/tabla1`;
+    return this.http.get<[Lpreciost]>(path);
   }
 
   getListapreciosid(id: string) {
@@ -942,6 +953,12 @@ export class ServicioService {
   getBienestarinaMaxid(){
     const path = `${this.api}/bienestarina/maxid`;
     return this.http.get<[RecepcionMax]>(path);
+
+  }
+
+  getdatosinventario(){
+    const path = `${this.api}/bienestarina/datosi`;
+    return this.http.get<[Aux]>(path);
 
   }
 

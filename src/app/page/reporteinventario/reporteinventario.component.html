@@ -15,14 +15,7 @@
               </footer>
               {{Nombrereporte}}       {{fecha}}
 
-            
-              <span>Movimiento : </span>
-                <select [(ngModel)]="entrada" (change)="onChange()">
-                <option value="0">Entradas </option> 
-                <option value="1">Salida Beneficiario</option> 
-                <option value="2">Salida centro de distribucion</option> 
-                <option value="3">Salida consumo interno</option> 
-                </select>
+             
               
               
 
@@ -32,10 +25,18 @@
             <td class="column0 style1 s">NOMBRE DEL PUNTO DE ENTREGA</td>
             <td class="column1 style2 null">
               
-                <select name="idnivel1" class="select-css" style="width: 100%;" 
-                options="options" placeholder="nivel" >
-                <option *ngFor="let do of punto ">{{do.NombrePE }} </option>
-                </select>
+              <select 
+              (ngModelChange)="valores($event)"
+              name="idv"
+              [(ngModel)]="id.idv"
+            >
+              <option               
+                *ngFor="let do of punto"
+                [value]="do.NombrePE"
+                >{{ do.NombrePE }}
+              </option>
+              
+            </select>
 
 
             </td>
@@ -45,10 +46,7 @@
             <td class="column9 style4 s">CODIGO DEL PUNTO</td>
             <td class="column10 style5 null">
 
-                <select name="idnivel1" class="select-css" style="width: 100%;" 
-                options="options" placeholder="nivel" >
-                <option *ngFor="let do of punto ">{{do.CodigoInternoPE }} </option>
-                </select>
+              <input type="text" name="cod" [(ngModel)]="cod"[disabled]="txt2"  />
 
 
             </td>
@@ -61,11 +59,9 @@
             <td class="column0 style9 s">NOMBRE RESPONSABLE DEL PUNTO</td>
             <td class="column1 style10 null">
 
-                <select name="idnivel1" class="select-css" style="width: 100%;" 
-                options="options" placeholder="nivel" >
-                <option *ngFor="let do of punto ">{{do.Responsable }} </option>
-                </select>
+              <input type="text" name="rep" [(ngModel)]="rep" [disabled]="txt1"  />
 
+               
 
             </td>
             <td class="column2 style10 null"></td>
@@ -99,10 +95,7 @@
             <td class="column9 style16 s">CENTRO ZONAL </td>
             <td class="column10 style13 null">
 
-                <select name="idnivel1" class="select-css" style="width: 100%;" 
-                options="options" placeholder="nivel" >
-                <option *ngFor="let do of centro ">{{do.NombreCentroZonal }} </option>
-                </select>
+              <input type="text" name="cen" [(ngModel)]="cen" [disabled]="txt3" />
               
             </td>
             
@@ -123,14 +116,16 @@
             <td class="column4 style26 s">Bienestarina Mas®</td>
             <td class="column5 style25 null">
 
-                <input type="checkbox" id="cbox2" value="second_checkbox"> 
+                <input type="checkbox" id="cbox2" value="second_checkbox" (change)="checkValue($event)"
+                [disabled]="check1"    > 
 
             </td>
         
             <td class="column9 style26 s">Bienestarina Mas® Vainilla</td>
             <td class="column10 style25 null">
 
-                <input type="checkbox" id="cbox2" value="second_checkbox"> 
+                <input type="checkbox" id="cbox2" value="second_checkbox" (change)="checkValue1($event)"
+                [disabled]="check2" > 
 
             </td>
            
@@ -138,7 +133,8 @@
             <td class="column13 style26 s">Bienestarina Mas® Fresa:</td>
             <td class="column14 style25 null">
 
-                <input type="checkbox" id="cbox2" value="second_checkbox"> 
+                <input type="checkbox" id="cbox2" value="second_checkbox" (change)="checkValue2($event)"
+                [disabled]="check3" > 
 
             </td>
             
@@ -148,7 +144,7 @@
             <td class="column4 style7 s">Alimento para la Mujer Gestante y en Periodo de Lactancia</td>
             <td class="column5 style30 null">
 
-                <input type="checkbox" id="cbox2" value="second_checkbox"> 
+                <input type="checkbox" id="cbox2" value="second_checkbox" (change)="checkValue3($event)"[disabled]="check5"  > 
 
             </td>
             
@@ -158,7 +154,8 @@
             <td class="column4 style12 s">Bienestarina® Líquida</td>
             <td class="column5 style13 null">
 
-                <input type="checkbox" id="cbox2" value="second_checkbox"> 
+                <input type="checkbox" id="cbox2" value="second_checkbox" (change)="checkValue4($event)"
+                [disabled]="check4"> 
 
 
             </td>
@@ -166,7 +163,8 @@
             <td class="column7 style34 s">Sabor: </td>
             <td class="column8 style35 null">
 
-                <input type="checkbox" id="cbox2" value="second_checkbox"> 
+              <input type="text" class="form-control"  style="width: 100%;"
+              placeholder="Sabor" class="form-control"  >
 
             </td>
            
@@ -174,14 +172,15 @@
             <td class="column13 style12 s">Otro </td>
             <td class="column15 style11 null">
 
-                <input type="checkbox" id="cbox2" value="second_checkbox"> 
+                <input type="checkbox" id="cbox2" value="second_checkbox" (change)="checkValue6($event)"
+                [disabled]="check6" > 
 
             </td>
             <td class="column14 style39 s">Cúal: </td>
             <td class="column15 style11 null">
 
                 <input type="text" class="form-control" name="numerodoc" style="width: 100%;"
-                placeholder="Cual" class="form-control" id="inputdoc">
+                placeholder="Cual" class="form-control" id="inputdoc" [disabled]="txt" >
 
             </td>
            
@@ -370,128 +369,56 @@
         </tbody>
       </table>
 
-      <table class="table"  [hidden]="visible">
+      <table class="table" style="border-collapse: collapse;"  [hidden]="visible">
           <thead class="thead-green">
             <tr>
-              <th scope="col"># </th>
-              <th scope="col">Fecha entrada </th>
-              <th scope="col">No. Lote</th>
-              <th scope="col">Fecha de vencimiento</th>
-              <th scope="col">Unidades</th >
-              <th scope="col">Destino</th>
-              <th scope="col">Unidades ejecutoras</th>
+              <th scope="col" style="font-size: 11px;"># </th>
+              <th scope="col" style="font-size: 11px;">Fecha entrada </th>
+              <th scope="col" style="font-size: 11px;">Numero de acta </th>
+              <th scope="col" style="font-size: 11px;">No. Lote</th>
+              <th scope="col" style="font-size: 11px;">Fecha de vencimiento</th>
+              <th scope="col" style="font-size: 11px;">(Entrada)unidades</th >
+              <th scope="col" style="font-size: 11px;">Unidades</th >
+              <th scope="col" style="font-size: 11px;">Beneficiarios</th >
+              <th scope="col" style="font-size: 11px;">Unidades ejecutoras</th>
+              
+              <th scope="col" style="font-size: 11px;">Existencias a lote(Unidades)</th>
+              <th scope="col" style="font-size: 11px;">Existencias punto de entrega(Unidades)</th>
+              <th scope="col" style="font-size: 11px;">Reserva(Unidades)</th>
+              <th scope="col" style="font-size: 11px;">Entregado</th>
+              <th scope="col" style="font-size: 11px;">Nombre</th>
+              <th scope="col" style="font-size: 11px;">Entidad</th>
+              <th scope="col" style="font-size: 11px;">Fecha</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let cen of re">
-              <th scope="row">{{cen.idBienestarina }}</th>
-              <th scope="row">{{cen.FechaRecepcion }}</th>
-              <th scope="row">{{cen.lote }}</th>
-              <th scope="row">{{cen.FechaVencimiento }}</th>
-              <th scope="row">{{cen.Cantidad  }}</th>
-              <th scope="row">{{cen.inventario }}</th>
-              <th scope="row">{{cen.almacenes }}</th>
+            <tr  *ngFor="let cen of au" >
+              <th scope="row" >{{cen.idBienestarina  }}</th>
+              <th scope="row" >{{cen.FechaRecepcion }}</th>
+              <th scope="row" >{{cen.numero}}</th>
+              <th scope="row" >{{cen.lote }}</th>
+              <th scope="row" >{{cen.FechaVencimiento }}</th>
+              <th scope="row" >{{cen.Cantidad  }}</th>
+              <th scope="row" >{{cen.cantidad  }}</th>
+              <th scope="row" >{{cen.nombrec  }}</th>
+              <th scope="row"  > <input type="checkbox" value="second_checkbox" >  </th>
+              <th scope="row"> <input type="checkbox"  value="second_checkbox" > </th>
+              <th scope="row" >{{cen.lote1 }}</th>
+              <th scope="row" ><input type="text" name="cen" size="2" /></th>
+              <th scope="row"><input type="text" name="cen" size="2" /></th>
+              <th scope="row"><input type="text" name="cen" size="2"  /></th>
+              <th scope="row"><input type="text" name="cen" size="2"  /></th>
+              <th scope="row"><input type="text" name="cen" size="2" /></th>
+              <th scope="row"><input type="date" name="cen" size="2"  /></th>
             </tr>
             
           </tbody>
           
-        </table>
+      
+      
 
-        <table class="table"  [hidden]="visible1">
-          <thead class="thead-green">
-            <tr>
-              <th scope="col">#</th>
-             
-              <th scope="col">No. Lote</th>
-              <th scope="col">Fecha de vencimiento</th>
-              <th scope="col">Cantidad</th>
-              <th scope="col">Unidades</th >
-              <th scope="col">Destino</th>                                                                                      
-              <th scope="col">Unidades ejecutora </th>
-              
-            
-             
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let cen of sab">
-              <th scope="row">{{cen.idEntregaBeneficiario}}</th>
-              <th scope="row">{{cen.lote}}</th>
-              <th scope="row">{{cen.fechavencimiento}}</th>
-              <th scope="row">{{cen.cantidad}}</th>
-              <th scope="row">{{cen.unidad}}</th>
-              <th scope="row">{{cen.centrodistribucion}}</th>
-              <th scope="row">{{cen.almacenes}}</th>
-            </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-            
-          </tbody>
-          
-        </table>
-
-
-        <table class="table" [hidden]="visible2">
-          <thead class="thead-green">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Fecha  salida</th>
-              <th scope="col">No. Lote</th>
-              <th scope="col">Fecha de vencimiento</th>
-              <th scope="col">Unidades</th >
-              <th scope="col">Origen</th>
-              <th scope="col">Destino</th>
-              <th scope="col">Tipo de bienestarina</th>
-              <th scope="col">Cantidad </th >
-              <th scope="col">Unidades ejecutoras</th>
-
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let cen of sac">
-              <th scope="row">{{cen.identregacentrodistribucion }}</th>
-              <th scope="row">{{cen.fecharegistro }}</th>
-              <th scope="row">{{cen.lote }}</th>
-              <th scope="row">{{cen.fechavencimiento }}</th>
-              <th scope="row">{{cen.unidad }}</th>
-              <th scope="row">{{cen.centroorigen }}</th>
-              <th scope="row">{{cen.centrodestino }}</th>       
-              <th scope="row">{{cen.TipoBienesterina }}</th>     
-              <th scope="row">{{cen.cantidad }}</th>
-              <th scope="row">{{cen.Nombre }}</th>
-              
-            </tr>
-            
-          </tbody>
-          
-        </table>
-
-        <table class="table"  [hidden]="visible3">
-          <thead class="thead-green">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Fecha  salida</th>
-              <th scope="col">No. Lote</th>
-              <th scope="col">Fecha de vencimiento</th>
-              <th scope="col">Unidades</th >
-              <th scope="col">Destino</th>
-              <th scope="col">Tipo bienestarina</th>
-              <th scope="col">Unidades ejecutoras</th>
-              
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let cen of sact">
-              <th scope="row">{{cen.idEntregaconsumointerno}}</th>
-              <th scope="row">{{cen.fecharegistro}}</th>
-              <th scope="row">{{cen.lote}}</th>
-              <th scope="row">{{cen.fechavencimiento}}</th>
-              <th scope="row">{{cen.unidad}}</th>
-              <th scope="row">{{cen.centrodistribucion}}</th>
-              <th scope="row">{{cen.TipoBienesterina}}</th>
-              <th scope="row">{{cen.almacenes}}</th>
-              
-            </tr>
-            
-          </tbody>
+       
+        
           
         </table>
 
