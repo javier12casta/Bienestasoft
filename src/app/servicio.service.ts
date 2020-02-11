@@ -69,7 +69,7 @@ import { Innumerocupos } from 'src/app/interfaces/inhabilitarnumerocupos'
 import { Inventariocan} from './interfaces/inventariocan';
 
 import { cargainventariot} from './interfaces/cargainventario';
-import { Aux} from './interfaces/aux';
+import { Datosinventario} from './interfaces/datosinventario';
 
 @Injectable({
   providedIn: 'root'
@@ -958,7 +958,7 @@ export class ServicioService {
 
   getdatosinventario(){
     const path = `${this.api}/bienestarina/datosi`;
-    return this.http.get<[Aux]>(path);
+    return this.http.get<[Datosinventario]>(path);
 
   }
 

@@ -13,7 +13,7 @@ import {Salidaconsumot } from '../../interfaces/salidaconsumot';
 import { Puntoentregat } from 'src/app/interfaces/puntoentregat';
 import {Acta } from '../../interfaces/acta';
 import {Beneficiario } from '../../interfaces/beneficiario';
-import {Aux } from '../../interfaces/aux';
+import {Datosinventario } from '../../interfaces/datosinventario';
 
 @Component({
   selector: 'app-reporteinventario',
@@ -35,9 +35,8 @@ export class ReporteinventarioComponent implements OnInit {
   
   salc: Salidacentrot [] = [];
   salco: Salidaconsumot [] = [];
-  au: Aux [] = [];
   val;
-
+au :  Datosinventario [] = [];
 
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
@@ -124,9 +123,6 @@ id = {
       console.log(err);
     });
  
-
- 
-
 
    
     this.service.getActa()
