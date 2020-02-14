@@ -8,6 +8,7 @@ import { Centrozonalt } from 'src/app/interfaces/centrozonalt';
 import 'jspdf-autotable'
 import { autoTable as AutoTable } from 'jspdf-autotable';
 import { Municipio } from '../../interfaces/municipio';
+
 @Component({
   selector: 'app-reportecentrozonal',
   templateUrl: './reportecentrozonal.component.html',
@@ -17,6 +18,8 @@ export class ReportecentrozonalComponent implements OnInit {
   isHidden: boolean = true;
   isHidden1: boolean = true;
   isHidden2: boolean = true;
+
+  
   
   centros: Centrozonalt[] = [];
   f = new Date();
@@ -27,6 +30,8 @@ export class ReportecentrozonalComponent implements OnInit {
   municipios: Municipio[] = [];
   constructor(private Service: ServicioService) { }
 
+  filtrocz = '';
+  
   ngOnInit() {
 
     this.Service.getCentroTabla()

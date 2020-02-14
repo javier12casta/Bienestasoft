@@ -1,96 +1,130 @@
 <nav class="navbar navbar-success bg-success">
+  <button class="btn btn-dark" routerLink="/menu">Volver</button>
 
+  <label style="text-align:left;">Filtar Por : </label>
+  <select
+    style="width: 200px;"
+    class="form-control"
+    [(ngModel)]="fil"
+    (change)="onChange()"
+  >
+    <option>
+      Municipio
+    </option>
+    <option>
+      Código externo ICBF
+    </option>
+    <option>
+      Estado
+    </option>
+  </select>
 
+  <label [hidden]="isHidden2" class="menu">Municipio</label>
+  <select
+    class="menu "
+    style="width: 300px;"
+    class="form-control"
+    [(ngModel)]="mun"
+    [hidden]="isHidden2"
+  >
+    <option *ngFor="let muni of municipios" (ngModelChange)="opmunicipio()">
+      {{ muni.Municipio }}
+    </option>
+  </select>
 
-    <button class="btn btn-dark" routerLink="/menu">Volver</button>
+  <label class="menu" [hidden]="isHidden">Código externo ICBF </label>
+  <input
+    type="text"
+    style="width: 200px;"
+    class="form-control"
+    class="menu"
+    placeholder="Código externo ICBF "
+    [(ngModel)]="filtrocz"
+    name="filtrocz"
+    [hidden]="isHidden"
+    (ngModelChange)="cambiaLado($event)"
+  />
 
-    <label  style="text-align:left;"  >Filtar Por : </label>
-  <select style="width: 200px;" class="form-control"  [(ngModel)]="fil" (change)="onChange()"> 
-      <option >  
-        Municipio 
-      </option > 
-      <option> 
-        Código externo ICBF 
-      </option > 
-      <option > 
-        Estado
-      </option > 
-      
-      </select>
+  <label [hidden]="isHidden1" class="menu"> Estado </label>
 
-      <label [hidden]="isHidden2" class="menu">Municipio</label>
-        <select class="menu "  style="width: 300px;" class="form-control" formControlName="idMunicipios"  [(ngModel)]="mun" [hidden]="isHidden2">
-            <option *ngFor="let muni of municipios"  (ngModelChange)="opmunicipio()"  > {{muni.Municipio}} </option>
-        </select>
-      
-  
-        <label class="menu" [hidden]="isHidden">Código externo ICBF </label>
-      <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Código externo ICBF " [hidden]="isHidden" [(ngModel)]="res" (ngModelChange)="cambiaLado($event)" />
+  <select
+    style="width: 200px;"
+    class="form-control"
+    [(ngModel)]="est"
+    (change)="estad()"
+    [hidden]="isHidden1"
+  >
+    <option>
+      Habilitado
+    </option>
+    <option>
+      Deshabilitado
+    </option>
+  </select>
 
+  <button class="btn btn-dark">Buscar</button>
+</nav>
 
-      <label  [hidden]="isHidden1" class="menu"> Estado </label>
-
-      <select   style="width: 200px;" class="form-control" [(ngModel)]="est" (change)="estad()"  [hidden]="isHidden1"> 
-        <option   > 
+<table class="table" id="contentToConvert">
+  <thead class="thead-green">
+    <footer
+      id="sticky-footer"
+      class="text-white-50"
+      style="margin-bottom: 0px; bottom: 0px;"
+    >
+      <div
+        class="container text-center"
+        style="justify-content: center;  bottom: 0px; margin-left: auto; margin-right: auto; margin-bottom: 0px;"
+      >
+        <img
+          src="../../assets/icbf-logo.png"
+          id="imagen"
+          style="width: 65px; height: 65px; margin-left: 10px; margin-top: 10px; margin-bottom: 0px;"
+          class="rounded float-left"
+        />
+      </div>
+    </footer>
+    {{
+      Nombrereporte
+    }}
+    {{
+      fecha
+    }}
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre centro zonal</th>
+      <th scope="col">Municipio</th>
+      <th scope="col">Comunas</th>
+      <th scope="col">Código externo JCZ</th>
+      <th scope="col">Código externo ICBF centro zonal</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Regional</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- | filtroZonal: filtrocz-->
+    <tr *ngFor="let cen of centros | filtroZonal: filtrocz">
+      <th scope="row">{{ cen.idCentrosZonales }}</th>
+      <td >{{ cen.NombreCentroZonal }}</td>
+      <td>{{ cen.Municipio }}</td>
+      <td>{{ cen.Comuna }}</td>
+      <td >{{ cen.CodigoExternoJcz }}</td>
+      <td>{{ cen.CodigoExternoCZ }}</td>
+      <td>
+        <div *ngIf="cen.Estado == 1">
           Habilitado
-        </option > 
-        <option  > 
-          Deshabilitado
-        </option > 
-        
-        </select>
-   
-        <button class="btn btn-dark" >Buscar</button>
-        
-  </nav>
-  
-
-
-  <table class="table" id="contentToConvert" >
-    <thead class="thead-green">
-      <footer id="sticky-footer" class="text-white-50" style="margin-bottom: 0px; bottom: 0px;">
-        <div class="container text-center" style="justify-content: center;  bottom: 0px; margin-left: auto; margin-right: auto; margin-bottom: 0px;">
- 
-         <img src="../../assets/icbf-logo.png" id="imagen" style="width: 65px; height: 65px; margin-left: 10px; margin-top: 10px; margin-bottom: 0px;" class="rounded float-left">
         </div>
-      </footer>
-        {{Nombrereporte}}                    {{fecha}}
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nombre centro zonal</th>
-        <th scope="col">Municipio</th>
-        <th scope="col">Comunas</th>
-        <th scope="col">Código externo JCZ</th>
-        <th scope="col">Código externo ICBF centro zonal</th>
-        <th scope="col">Estado</th>
-        <th scope="col">Regional</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let cen of centros">
-        <th scope="row">{{cen.idCentrosZonales}}</th>
-        <td>{{cen.NombreCentroZonal}}</td>
-        <td>{{cen.Municipio}}</td>
-        <td>{{cen.Comuna}}</td>
-        <td>{{cen.CodigoExternoJcz}}</td>
-        <td>{{cen.CodigoExternoCZ}}</td>
-        <td>
-          <div *ngIf="cen.Estado == 1">
-            Habilitado
-          </div>
-          <div *ngIf="cen.Estado== 0">
-            Deshabilitado
-          </div>
-        </td>
-        <td>{{cen.Regional}}</td>
-      </tr>
-    </tbody>
-  </table>
+        <div *ngIf="cen.Estado == 0">
+          Deshabilitado
+        </div>
+      </td>
+      <td>{{ cen.Regional }}</td>
+    </tr>
+  </tbody>
+</table>
 
-   
-
-
- 
-  <div class="trans">
-  <button class="btn btn-dark" (click)="Generareporte()">Generar reporte</button>
+<div class="trans">
+  <button class="btn btn-dark" (click)="Generareporte()">
+    Generar reporte
+  </button>
 </div>
