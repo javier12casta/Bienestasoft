@@ -21,7 +21,7 @@
 
         </div>
         <tbody > 
-          <tr class="row0">
+          <tr class="row0" STYLE="border-top: 3px solid #000000; border-left: 3px solid #000000" WIDTH=27 HEIGHT=30 ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General">
             <td class="column0 style1 s">NOMBRE DEL PUNTO DE ENTREGA</td>
             <td class="column1 style2 null">
               
@@ -41,8 +41,10 @@
 
             </td>
             <td class="column2 style2 null"></td>
-            
-            
+            <td>
+            </td>  
+            <td>
+            </td>
             <td class="column9 style4 s">CODIGO DEL PUNTO</td>
             <td class="column10 style5 null">
 
@@ -50,12 +52,28 @@
 
 
             </td>
+            <td >
+            </td>
+            <td >
+            </td>
+            <td >
+            </td>
+            <td >
+            </td>
+            <td >
+            </td>
+            <td >
+            </td>
+            <td >
+            </td>
+            <td STYLE="border-left: 3px solid #000000">
+            </td>
             <td class="column11 style72 null"></td>
             
             
             <td class="column20">&nbsp;</td>
           </tr>
-          <tr class="row1">
+          <tr class="row1" STYLE=" border-left: 3px solid #000000" WIDTH=27 HEIGHT=30 ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General">
             <td class="column0 style9 s">NOMBRE RESPONSABLE DEL PUNTO</td>
             <td class="column1 style10 null">
 
@@ -65,22 +83,47 @@
 
             </td>
             <td class="column2 style10 null"></td>
-            
+            <td>
+            </td>  
+            <td>
+            </td>
             
             <td class="column9 style12 s">NOMBRE RESPONSABLE DE DILIGENCIAR EL FORMATO</td>
             <td class="column10 style13 null">
 
                 <input type="text" class="form-control" name="numerodoc" style="width: 100%;"
                 placeholder="responsable" class="form-control" id="inputdoc">
-              
+               
+               
 
             </td>
+          
+            <td>
+            </td>
+            <td>
+            </td>
+    
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+    
+            <td>
+            </td>
+    
+            <td>
+            </td>
+            <td STYLE="border-left: 3px solid #000000">
+            </td>
+            
             <td class="column11 style13 null"></td>
             
            
             <td class="column20">&nbsp;</td>
           </tr>
-          <tr class="row2">
+          <tr class="row2" STYLE=" border-left: 3px solid #000000" WIDTH=27 HEIGHT=30 ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General">
             <td class="column0 style18 s">REGIONAL</td>
             <td class="column1 style13 null">
 
@@ -91,26 +134,44 @@
 
 
             </td>
-           
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
             <td class="column9 style16 s">CENTRO ZONAL </td>
             <td class="column10 style13 null">
 
               <input type="text" name="cen" [(ngModel)]="cen" [disabled]="txt3" />
               
             </td>
+          
             
             <td class="column14 style12 s">MUNICIPIO</td>
+            
             <td class="column15 style11 null">
 
-                <select name="idnivel1" class="select-css" style="width: 100%;" 
+                <select name="idnivel1" class="select-css" style="width: 110%;" 
                 options="options" placeholder="nivel" >
                 <option *ngFor="let do of mun ">{{do.Municipio }} </option>
                 </select>
 
+               
+
             </td>
+            
+      
+            <td STYLE="border-left: 3px solid #000000">
+            </td>
+
           </tr>
+
+
+
+          
          
-          <tr class="row4">
+          <tr class="row4" STYLE="border-top: 3px solid #000000; border-left: 3px solid #000000" WIDTH=27 HEIGHT=20 ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General" >
             <td class="column0 style24 s">DESCRIPCION DEL AAVN:</td>
             
             <td class="column4 style26 s">Bienestarina Mas®</td>
@@ -137,9 +198,26 @@
                 [disabled]="check3" > 
 
             </td>
+
+            <td >
+            </td>
+
+            <td >
+            </td>
+            <td >
+            </td>
+
+            <td >
+            </td>
+            <td >
+            </td>
+            <td >
+            </td>
+            <td STYLE="border-left: 3px solid #000000">
+            </td>
             
           </tr>
-          <tr class="row5">
+          <tr class="row5" STYLE=" border-left: 3px solid #000000" WIDTH=27 HEIGHT=30 ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General">
            
             <td class="column4 style7 s">Alimento para la Mujer Gestante y en Periodo de Lactancia</td>
             <td class="column5 style30 null">
@@ -147,9 +225,36 @@
                 <input type="checkbox" id="cbox2" value="second_checkbox" (change)="checkValue3($event)"[disabled]="check5"  > 
 
             </td>
+
+            <td >
+            </td>
+            <td >
+            </td>
+
+            <td >
+            </td>
+            <td >
+            </td>
+
+            <td >
+            </td>
+            <td >
+            </td>
+            <td >
+            </td>
+            <td >
+            </td>
+            <td >
+            </td>
+            <td >
+            </td>
+            <td >
+            </td>
+            <td STYLE="border-left: 3px solid #000000">
+            </td>
             
           </tr>
-          <tr class="row6">
+          <tr class="row6" STYLE=" border-left: 3px solid #000000" WIDTH=27 HEIGHT=30 ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General">
             
             <td class="column4 style12 s">Bienestarina® Líquida</td>
             <td class="column5 style13 null">
@@ -176,18 +281,33 @@
                 [disabled]="check6" > 
 
             </td>
-            <td class="column14 style39 s">Cúal: </td>
-            <td class="column15 style11 null">
+            <td class="column14 style39 s" >Cúal: </td>
+            <td class="column15 style11 null" >
 
-                <input type="text" class="form-control" name="numerodoc" style="width: 100%;"
-                placeholder="Cual" class="form-control" id="inputdoc" [disabled]="txt" >
+                <input type="text" class="form-control" name="numerodoc" style="width: 170%;"
+                placeholder="Cual" class="form-control" id="inputdoc" [disabled]="txt"  >
 
             </td>
-           
+            <td >
+            </td>
+            <td >
+            </td>
+            <td >
+            </td>
+            <td >
+            </td>
+            <td >
+            </td>
+            <td STYLE="border-left: 3px solid #000000">
+            </td>
+
           </tr>
           
-          <tr class="row8">
+          <tr  STYLE="border-top: 3px solid #000000;border-left: 3px solid #000000" >
             <td class="column0 style24 s">VALOR INFORMATIVO </td>
+            
+            <td>
+            </td>
             
             <td class="column4 style44 s">Mes: 
 
@@ -243,11 +363,29 @@
                 </select>
 
             </td>
+
+            <td >
+            </td>
+            <td >
+            </td>
+            <td >
+            </td>
+            <td >
+            </td>
+            <td >
+            </td>
+            <td STYLE="border-left: 3px solid #000000">
+            </td>
            
           </tr>
-          <tr class="row9">
+          <tr class="row9" STYLE=" border-left: 3px solid #000000" WIDTH=27 HEIGHT=30 ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General">
             <td class="column0 style29 s">DEL PRECIO DEL AAVN</td>
             
+            <td>
+            </td>
+            
+          
+
             <td class="column4 style49 s">Mes: 
 
                 <select name="idnivel1" class="select-css" style="width: 100%;" 
@@ -302,14 +440,32 @@
                 </select>
 
             </td>
+
+            <td >
+            </td>
+            <td >
+            </td>
+            <td >
+            </td>
+            <td >
+            </td>
+            <td >
+            </td>
+            <td STYLE="border-left: 3px solid #000000">
+            </td>
            
           </tr>
-          <tr class="row10">
+          <tr class="row10" STYLE="border-left: 3px solid #000000" >
             
           
-            <td class="column2 style13 null"></td>
+            <td class="column2 style13 null" ></td>
             
-            <td class="column4 style49 s">Mes: 
+            <td>
+            </td>
+            
+          
+
+            <td class="column4 style49 s" >Mes: 
 
 
                 <select name="idnivel1" class="select-css" style="width: 100%;" 
@@ -318,7 +474,7 @@
                 </select>
 
             </td>
-            <td class="column5 style12 s">Valor: 
+            <td class="column5 style12 s" >Valor: 
 
                 <select name="idnivel1" class="select-css" style="width: 100%;" 
                 options="options" placeholder="nivel" >
@@ -327,7 +483,7 @@
 
             </td>
             
-            <td class="column9 style39 s">Mes: 
+            <td class="column9 style39 s" >Mes: 
 
                 <select name="idnivel1" class="select-css" style="width: 100%;" 
                 options="options" placeholder="nivel" >
@@ -336,7 +492,7 @@
 
             </td>
            
-            <td class="column11 style12 s">Valor: 
+            <td class="column11 style12 s" >Valor: 
 
                 <select name="idnivel1" class="select-css" style="width: 100%;" 
                 options="options" placeholder="nivel" >
@@ -345,7 +501,7 @@
 
             </td>
            
-            <td class="column13 style39 s">Mes: 
+            <td class="column13 style39 s" >Mes: 
 
                 <select name="idnivel1" class="select-css" style="width: 100%;" 
                 options="options" placeholder="nivel" >
@@ -354,7 +510,7 @@
 
             </td>
             
-            <td class="column15 style12 s">Valor: 
+            <td class="column15 style12 s"  >Valor: 
 
                 <select name="idnivel1" class="select-css" style="width: 100%;" 
                 options="options" placeholder="nivel" >
@@ -363,46 +519,63 @@
 
             </td>
             
+            <td >
+            </td>
+            <td >
+            </td>
+            <td >
+            </td>
+            <td >
+            </td>
+            <td >
+            </td>
+            <td STYLE="border-left: 3px solid #000000">
+            </td>
+
           </tr>
+
+         
+
+     
           
 
         </tbody>
       </table>
 
-      <table class="table" style="border-collapse: collapse;"  [hidden]="visible">
+      <table class="table" style="border-collapse: collapse;"  [hidden]="visible" >
           <thead class="thead-green">
-            <tr>
-              <th scope="col" style="font-size: 11px;"># </th>
-              <th scope="col" style="font-size: 11px;">Fecha entrada </th>
-              <th scope="col" style="font-size: 11px;">Numero de acta </th>
-              <th scope="col" style="font-size: 11px;">No. Lote</th>
-              <th scope="col" style="font-size: 11px;">Fecha de vencimiento</th>
-              <th scope="col" style="font-size: 11px;">(Entrada)unidades</th >
-              <th scope="col" style="font-size: 11px;">Unidades</th >
-              <th scope="col" style="font-size: 11px;">Beneficiarios</th >
-              <th scope="col" style="font-size: 11px;">Unidades ejecutoras</th>
+            <tr  STYLE="border-top: 3px solid #000000" WIDTH=27 HEIGHT=30 ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General" >
+              <th scope="col" style="font-size: 9px;" ># </th>
+              <th scope="col" style="font-size: 9px;">Fecha entrada </th>
+              <th scope="col" style="font-size: 9px;">Numero de acta </th>
+              <th scope="col" style="font-size: 9px;">No. Lote</th>
+              <th scope="col" style="font-size: 9px;">Fecha de vencimiento</th>
+              <th scope="col" style="font-size: 9px;">(Entrada)unidades</th >
+              <th scope="col" style="font-size: 9px;">Unidades</th >
+              <th scope="col" style="font-size: 9px;">Beneficiarios</th >
+              <th scope="col" style="font-size: 9px;">Unidades ejecutoras</th>
               
-              <th scope="col" style="font-size: 11px;">Existencias a lote(Unidades)</th>
-              <th scope="col" style="font-size: 11px;">Existencias punto de entrega(Unidades)</th>
-              <th scope="col" style="font-size: 11px;">Reserva(Unidades)</th>
-              <th scope="col" style="font-size: 11px;">Entregado</th>
-              <th scope="col" style="font-size: 11px;">Nombre</th>
-              <th scope="col" style="font-size: 11px;">Entidad</th>
-              <th scope="col" style="font-size: 11px;">Fecha</th>
+              <th scope="col" style="font-size: 9px;">Existencias a lote(Unidades)</th>
+              <th scope="col" style="font-size: 9px;">Existencias punto de entrega(Unidades)</th>
+              <th scope="col" style="font-size: 9px;">Reserva(Unidades)</th>
+              <th scope="col" style="font-size: 9px;">Entregado</th>
+              <th scope="col" style="font-size: 9px;">Nombre</th>
+              <th scope="col" style="font-size: 9px;">Entidad</th>
+              <th scope="col" style="font-size: 9px;">Fecha</th>
             </tr>
           </thead>
           <tbody>
             <tr  *ngFor="let cen of au" >
-              <th scope="row"style="font-size: 11px;">{{cen.idBienestarina  }}</th>
-              <th scope="row" style="font-size: 11px;">{{cen.FechaRecepcion }}</th>
-              <th scope="row" style="font-size: 11px;">{{cen.numero}}</th>
-              <th scope="row"style="font-size: 11px;" >{{cen.lote }}</th>
-              <th scope="row" style="font-size: 11px;" >{{cen.FechaVencimiento }}</th>
-              <th scope="row" style="font-size: 11px;" >{{cen.Cantidad  }}</th>
-              <th scope="row" style="font-size: 11px;">{{cen.cantidad  }}</th>
-              <th scope="row" style="font-size: 11px;"> <input type="checkbox" value="second_checkbox" > </th>
+              <th scope="row"style="font-size: 9px;">{{cen.idBienestarina  }}</th>
+              <th scope="row" style="font-size: 9px;">{{cen.FechaRecepcion }}</th>
+              <th scope="row" style="font-size: 9px;">{{cen.numero}}</th>
+              <th scope="row"style="font-size: 9px;" >{{cen.lote }}</th>
+              <th scope="row" style="font-size: 9px;" >{{cen.FechaVencimiento }}</th>
+              <th scope="row" style="font-size: 9px;" >{{cen.Cantidad  }}</th>
+              <th scope="row" style="font-size: 9px;">{{cen.cantidad  }}</th>
+              <th scope="row" style="font-size: 9px;"> <input type="checkbox" value="second_checkbox" > </th>
               <th scope="row"  ><input type="checkbox"  value="second_checkbox" > </th>
-              <th scope="row" style="font-size: 11px;">{{cen.lote1 }}</th>
+              <th scope="row" style="font-size: 9px;">{{cen.lote1 }}</th>
               <th scope="row" ><input type="text" name="cen" size="1" /></th>
               <th scope="row" ><input type="text" name="cen" size="1" /></th>
               <th scope="row"><input type="text" name="cen" size="1" /></th>
