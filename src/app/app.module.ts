@@ -299,6 +299,11 @@ import { CargainventarioinicialComponent } from './page/cargainventarioinicial/c
 import { ReporterecuentoinventarioComponent } from './page/reporterecuentoinventario/reporterecuentoinventario.component';
 import { ReporteformatoentregabComponent } from './page/reporteformatoentregab/reporteformatoentregab.component';
 
+
+import { FiltroZonalPipe} from '../app/pipes/filtroZonal.pipe';
+import { FiltroPEPipe} from '../app/pipes/filtroPE.pipe';
+import { PipesModule } from 'w-ng5';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -573,7 +578,8 @@ import { ReporteformatoentregabComponent } from './page/reporteformatoentregab/r
     ReporterecuentoinventarioComponent,
     ReporteformatoentregabComponent,
     
-
+    FiltroZonalPipe,
+    FiltroPEPipe,
     
     
 
@@ -598,6 +604,7 @@ import { ReporteformatoentregabComponent } from './page/reporteformatoentregab/r
     MatButtonModule,
     MatTreeModule,
     Select2Module,
+    PipesModule,
   ],
   providers: [], 
   bootstrap: [AppComponent]
