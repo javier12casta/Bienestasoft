@@ -18,9 +18,10 @@ export class ReporteentregaComponent implements OnInit {
   isHidden1: boolean = true;
   isHidden2: boolean = true;
 
-
-fil;
-  est;
+  nombre = "";
+  codigo = "";
+  fil;
+  est = "";
   municipios: Municipio[] = [];
 
 

@@ -1,92 +1,144 @@
 <nav class="navbar navbar-success bg-success">
-    <button class="btn btn-dark" routerLink="/menu"> Volver </button>
+  <button class="btn btn-dark" routerLink="/menu">Volver</button>
 
-    <label  style="text-align:left;"  >Filtar Por : </label>
-    <select style="width: 200px;" class="form-control"  [(ngModel)]="fil" (change)="onChange()"> 
-        <option >  
-          Nombre PE
-        </option > 
-        <option> 
-          Código externo ICBF 
-        </option > 
-        <option > 
-          Estado
-        </option > 
-        
-        </select>
+  <div
+    style="margin-left: auto; margin-right: auto; display: inline-flex; width: 450px;
+  justify-content: center; align-items: center;"
+  >
+  <div style="  padding: 5px; margin: auto;">
+    <label>
+      <mat-icon class="icon" style="font-size: larger;"
+        >filter_list <a>Filtar por :</a>
+      </mat-icon>
+    </label>
+  </div>
   
-        <label [hidden]="isHidden2" class="menu">Nombre PE</label>
-        <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Nombre PE " [hidden]="isHidden2" [(ngModel)]="res" (ngModelChange)="cambiaLado($event)" />
-        
-    
-          <label class="menu" [hidden]="isHidden">Código externo PE</label>
-        <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Código externo PE " [hidden]="isHidden" [(ngModel)]="res" (ngModelChange)="cambiaLado($event)" />
-  
-  
-        <label  [hidden]="isHidden1" class="menu"> Estado </label>
-  
-        <select   style="width: 200px;" class="form-control" [(ngModel)]="est" (change)="estad()"  [hidden]="isHidden1"> 
-          <option   > 
-            Habilitado
-          </option > 
-          <option  > 
-            Deshabilitado
-          </option > 
-          
-          </select>
-     
-          <button class="btn btn-dark" >Buscar</button>
+    <select
+      style="width: 200px;"
+      class="form-control"
+      [(ngModel)]="fil"
+      (change)="onChange()"
+    >
+      <option>
+        Nombre PE
+      </option>
+      <option>
+        Código externo ICBF
+      </option>
+      <option>
+        Estado
+      </option>
+    </select>
+  </div>
 
-          
-  </nav>
-  
-  <table class="table" id="contentToConvert">
-    <thead class="thead-green">
-      <footer id="sticky-footer" class="text-white-50" style="margin-bottom: 0px; bottom: 0px;">
-        <div class="container text-center" style="justify-content: center;  bottom: 0px; margin-left: auto; margin-right: auto; margin-bottom: 0px;">
- 
-         <img src="../../assets/icbf-logo.png" id="imagen" style="width: 65px; height: 65px; margin-left: 10px; margin-top: 10px; margin-bottom: 0px;" class="rounded float-left">
+  <label [hidden]="isHidden2" class="menu">Nombre PE</label>
+  <input
+    type="text"
+    style="width: 200px;"
+    class="form-control"
+    class="menu"
+    placeholder="Nombre PE "
+    [hidden]="isHidden2"
+    [(ngModel)]="nombre"
+    name="nombre"
+  />
+
+  <label class="menu" [hidden]="isHidden">Código externo PE</label>
+  <input
+    type="text"
+    style="width: 200px;"
+    class="form-control"
+    class="menu"
+    placeholder="Código externo PE "
+    [hidden]="isHidden"
+    [(ngModel)]="codigo"
+    name="codigo"
+  />
+
+  <label [hidden]="isHidden1" class="menu"> Estado </label>
+
+  <select
+    style="width: 200px;"
+    class="form-control"
+    [(ngModel)]="est"
+    name="est"
+    (change)="estad()"
+    [hidden]="isHidden1"
+  >
+    <option [value]="1">
+      Habilitado
+    </option>
+    <option [value]="0">
+      Deshabilitado
+    </option>
+  </select>
+
+</nav>
+
+<table class="table" id="contentToConvert">
+  <thead class="thead-green">
+    <footer
+      id="sticky-footer"
+      class="text-white-50"
+      style="margin-bottom: 0px; bottom: 0px;"
+    >
+      <div
+        class="container text-center"
+        style="justify-content: center;  bottom: 0px; margin-left: auto; margin-right: auto; margin-bottom: 0px;"
+      >
+        <img
+          src="../../assets/icbf-logo.png"
+          id="imagen"
+          style="width: 65px; height: 65px; margin-left: 10px; margin-top: 10px; margin-bottom: 0px;"
+          class="rounded float-left"
+        />
+      </div>
+    </footer>
+    {{
+      Nombrereporte
+    }}
+    {{
+      fecha
+    }}
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Centro zonal</th>
+      <th scope="col">Nombre PE</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Código externo PE</th>
+      <th scope="col">Código interno PE</th>
+      <th scope="col">Responsable</th>
+      <th scope="col">Comuna o vereda</th>
+      <th scope="col">Dirección PE</th>
+      <th scope="col">Barrio PE</th>
+      <th scope="col">Teléfono</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pun of puntot | filtroPE: nombre | filtroPE: codigo | filtroPE: est">
+      <th scope="row">{{ pun.idPuntoEntrega }}</th>
+      <td>{{ pun.NombreCentroZonal }}</td>
+      <td>{{ pun.NombrePE }}</td>
+      <td>
+        <div *ngIf="pun.Estado == 1">
+          Habilitado
         </div>
-      </footer>
-        {{Nombrereporte}}    {{fecha}}
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Centro zonal</th>
-        <th scope="col">Nombre PE</th>
-        <th scope="col">Estado</th>
-        <th scope="col">Código externo PE</th>
-        <th scope="col">Código interno PE</th>
-        <th scope="col">Responsable</th>
-        <th scope="col">Comuna o vereda</th>
-        <th scope="col">Dirección PE</th>
-        <th scope="col">Barrio PE</th>
-        <th scope="col">Teléfono</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let pun of puntot">
-        <th scope="row">{{pun.idPuntoEntrega}}</th>
-        <td>{{pun.NombreCentroZonal}}</td>
-        <td>{{pun.NombrePE}}</td>
-        <td>
-          <div *ngIf="pun.Estado == 1">
-            Habilitado
-          </div>
-          <div *ngIf="pun.Estado== 0">
-            Deshabilitado
-          </div>
-        </td>
-        <td>{{pun.CodigoExternoPE}}</td>
-        <td>{{pun.CodigoInternoPE}}</td>
-        <td>{{pun.Responsable}}</td>
-        <td>{{pun.Comuna}}</td>
-        <td>{{pun.Direccion}}</td>
-        <td>{{pun.BarrioPE}}</td>
-        <td>{{pun.Telefono}}</td>
-        
-      </tr>
-    </tbody>
-  </table>
-  <div class="trans">
-  <button class="btn btn-dark" (click)="Generareporte()">Generar Reporte</button>
+        <div *ngIf="pun.Estado == 0">
+          Deshabilitado
+        </div>
+      </td>
+      <td>{{ pun.CodigoExternoPE }}</td>
+      <td>{{ pun.CodigoInternoPE }}</td>
+      <td>{{ pun.Responsable }}</td>
+      <td>{{ pun.Comuna }}</td>
+      <td>{{ pun.Direccion }}</td>
+      <td>{{ pun.BarrioPE }}</td>
+      <td>{{ pun.Telefono }}</td>
+    </tr>
+  </tbody>
+</table>
+<div class="trans">
+  <button class="btn btn-dark" (click)="Generareporte()">
+    Generar Reporte
+  </button>
 </div>
