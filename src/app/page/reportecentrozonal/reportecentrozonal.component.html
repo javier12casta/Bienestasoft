@@ -1,23 +1,40 @@
 <nav class="navbar navbar-success bg-success">
   <button class="btn btn-dark" routerLink="/menu">Volver</button>
 
-  <label style="text-align:left;">Filtar Por : </label>
-  <select
-    style="width: 200px;"
-    class="form-control"
-    [(ngModel)]="fil"
-    (change)="onChange()"
+  <div
+    style="margin-left: auto; margin-right: auto; display: inline-flex; width: 450px;
+  justify-content: center; align-items: center;"
   >
-    <option>
-      Municipio
-    </option>
-    <option>
-      Código externo ICBF
-    </option>
-    <option>
-      Estado
-    </option>
-  </select>
+    <div style="  padding: 5px; margin: auto;">
+      <label>
+        <mat-icon class="icon" style="font-size: larger;"
+          >filter_list <a>Filtar por :</a>
+        </mat-icon>
+      </label>
+    </div>
+
+    <div
+      style="  padding: 5px;
+    margin: 5px;"
+    >
+      <select
+        style="width: 200px;"
+        class="form-control"
+        [(ngModel)]="fil"
+        (change)="onChange()"
+      >
+        <option>
+          Municipio
+        </option>
+        <option>
+          Código externo ICBF
+        </option>
+        <option>
+          Estado
+        </option>
+      </select>
+    </div>
+  </div>
 
   <label [hidden]="isHidden2" class="menu">Municipio</label>
   <select
@@ -27,7 +44,7 @@
     [(ngModel)]="mun"
     [hidden]="isHidden2"
   >
-    <option *ngFor="let muni of municipios" (ngModelChange)="opmunicipio()">
+    <option *ngFor="let muni of municipios" [value]="muni.Municipio" (ngModelChange)="opmunicipio()">
       {{ muni.Municipio }}
     </option>
   </select>
@@ -42,7 +59,6 @@
     [(ngModel)]="filtrocz"
     name="filtrocz"
     [hidden]="isHidden"
-    (ngModelChange)="cambiaLado($event)"
   />
 
   <label [hidden]="isHidden1" class="menu"> Estado </label>
@@ -51,18 +67,16 @@
     style="width: 200px;"
     class="form-control"
     [(ngModel)]="est"
-    (change)="estad()"
+    name="est"
     [hidden]="isHidden1"
   >
-    <option>
+    <option [value]="1">
       Habilitado
     </option>
-    <option>
+    <option [value]="0">
       Deshabilitado
     </option>
   </select>
-
-  <button class="btn btn-dark">Buscar</button>
 </nav>
 
 <table class="table" id="contentToConvert">
@@ -103,12 +117,12 @@
   </thead>
   <tbody>
     <!-- | filtroZonal: filtrocz-->
-    <tr *ngFor="let cen of centros | filtroZonal: filtrocz">
+    <tr *ngFor="let cen of centros | filtroZonal: filtrocz | filtroZonal: mun | filtroZonal: est ">
       <th scope="row">{{ cen.idCentrosZonales }}</th>
-      <td >{{ cen.NombreCentroZonal }}</td>
+      <td>{{ cen.NombreCentroZonal }}</td>
       <td>{{ cen.Municipio }}</td>
       <td>{{ cen.Comuna }}</td>
-      <td >{{ cen.CodigoExternoJcz }}</td>
+      <td>{{ cen.CodigoExternoJcz }}</td>
       <td>{{ cen.CodigoExternoCZ }}</td>
       <td>
         <div *ngIf="cen.Estado == 1">
