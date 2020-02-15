@@ -177,10 +177,11 @@ cen;
     }).then(function(canvas) {
 
       var img = canvas.toDataURL("image/png");
-      var doc = new jspdf("l", "pt", 'a2');
+      var doc = new jspdf("l", 'px', 'a2');
 
       var height = doc.internal.pageSize.getHeight(); 
-      doc.addImage(img,'PNG',0, 0,1600, height);
+      var width = doc.internal.pageSize.getWidth();
+      doc.addImage(img,'PNG',0, 0,width-45, height);
       doc.save('reportesalidabeneficiario.pdf');
 
       

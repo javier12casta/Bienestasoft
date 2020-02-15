@@ -288,7 +288,6 @@
                 <input type="text" class="form-control" name="numerodoc" style="width: 100%;"
                 placeholder="Cual" class="form-control" id="inputdoc" [disabled]="txt"  >
 
-          
             <td >
             </td>
             <td >
@@ -526,6 +525,8 @@
             </td>
             <td >
             </td>
+            
+            
             <td STYLE="border-left: 3px solid #000000">
             </td>
 
@@ -542,23 +543,23 @@
       <table class="table" style="border-collapse: collapse;"  [hidden]="visible" >
           <thead class="thead-green">
             <tr  STYLE="border-top: 3px solid #000000" WIDTH=27 HEIGHT=30 ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General" >
-              <th scope="col" style="font-size: 9px;" ># </th>
-              <th scope="col" style="font-size: 9px;">Fecha entrada </th>
-              <th scope="col" style="font-size: 9px;">Numero de acta </th>
-              <th scope="col" style="font-size: 9px;">No. Lote</th>
-              <th scope="col" style="font-size: 9px;">Fecha de vencimiento</th>
-              <th scope="col" style="font-size: 9px;">(Entrada)unidades</th >
-              <th scope="col" style="font-size: 9px;">Unidades</th >
-              <th scope="col" style="font-size: 9px;">Beneficiarios</th >
-              <th scope="col" style="font-size: 9px;">Unidades ejecutoras</th>
+              <th scope="col" style="font-size: 8px;" ># </th>
+              <th scope="col" style="font-size: 8px;">Fecha entrada </th>
+              <th scope="col" style="font-size: 8px;">Numero de acta </th>
+              <th scope="col" style="font-size: 8px;">No. Lote</th>
+              <th scope="col" style="font-size: 8px;">Fecha de vencimiento</th>
+              <th scope="col" style="font-size: 8px;">(Entrada)unidades</th >
+              <th scope="col" style="font-size: 8px;">Unidades</th >
+              <th scope="col" style="font-size: 8px;">Beneficiarios</th >
+              <th scope="col" style="font-size: 8px;">Unidades ejecutoras</th>
               
-              <th scope="col" style="font-size: 9px;">Existencias a lote(Unidades)</th>
-              <th scope="col" style="font-size: 9px;">Existencias punto de entrega(Unidades)</th>
-              <th scope="col" style="font-size: 9px;">Reserva(Unidades)</th>
-              <th scope="col" style="font-size: 9px;">Entregado</th>
-              <th scope="col" style="font-size: 9px;">Nombre</th>
-              <th scope="col" style="font-size: 9px;">Entidad</th>
-              <th scope="col" style="font-size: 9px;">Fecha</th>
+              <th scope="col" style="font-size: 8px;">Existencias a lote(Unidades)</th>
+              <th scope="col" style="font-size: 8px;">Existencias punto de entrega(Unidades)</th>
+              <th scope="col" style="font-size: 8px;">Reserva(Unidades)</th>
+              <th scope="col" style="font-size: 8px;">Entregado</th>
+              <th scope="col" style="font-size: 8px;">Nombre</th>
+              <th scope="col" style="font-size: 8px;">Entidad</th>
+              <th scope="col" style="font-size: 8px;">Fecha</th>
             </tr>
           </thead>
           <tbody>
@@ -573,22 +574,17 @@
               <th scope="row" style="font-size: 9px;"> <input type="checkbox" value="second_checkbox" > </th>
               <th scope="row"  ><input type="checkbox"  value="second_checkbox" > </th>
               <th scope="row" style="font-size: 9px;">{{cen.lote1 }}</th>
+              <th scope="row" ><input type="text" name="cen" size="1" width="48" /></th>
               <th scope="row" ><input type="text" name="cen" size="1" /></th>
-              <th scope="row" ><input type="text" name="cen" size="1" /></th>
-              <th scope="row"><input type="text" name="cen" size="1" /></th>
-              <th scope="row"><input type="text" name="cen" size="1"  /></th>
-              <th scope="row"><input type="text" name="cen" size="1"  /></th>
-              <th scope="row"><input type="date" name="cen" size="1"  /></th>
+              <th scope="row"></th>
+              <th scope="row"></th>
+              <th scope="row"></th>
+              <th scope="row" style="font-size: 9px;"> {{fecha}}</th>
             </tr>
             
           </tbody>
           
-      
-      
-
        
-        
-          
         </table>
 
           

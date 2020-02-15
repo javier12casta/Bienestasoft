@@ -150,7 +150,8 @@ id = {
   }
 
   Generareporte(){
- window.scrollTo(0,0); 
+
+    window.scrollTo(0,0); 
    
 
     html2canvas(document.getElementById('contentToConvert'), {
@@ -163,17 +164,19 @@ id = {
       
     }).then(function(canvas) {
 
-      var img = canvas.toDataURL("image/png", 1.0);
-      var doc = new jspdf('l', 'mm', 'a1');
+  
+      var doc = new jspdf('l', 'px', 'a2');
 
       var height = doc.internal.pageSize.getHeight();
+      var width = doc.internal.pageSize.getWidth();
        
-      doc.addImage(img,'PNG',10, 0,730, height);
+      doc.addImage(canvas.toDataURL("image/png"),'PNG',3, 0,width - 45, height);
       
       doc.save('reporteinventario.pdf');
       
     });
-   
+       
+
     }
 
   
