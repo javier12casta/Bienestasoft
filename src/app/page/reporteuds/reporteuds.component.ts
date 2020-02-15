@@ -17,7 +17,9 @@ export class ReporteudsComponent implements OnInit {
   isHidden1: boolean = true;
   isHidden2: boolean = true;
   fil;
-  est;
+  est = "";
+  nombre = "";
+  codigo = "";
   unidad: Uds []= [];
   unidadt: Udst []= [];
   f = new Date();

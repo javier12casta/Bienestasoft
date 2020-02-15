@@ -303,6 +303,7 @@ import { ReporteformatoentregabComponent } from './page/reporteformatoentregab/r
 import { FiltroZonalPipe} from '../app/pipes/filtroZonal.pipe';
 import { FiltroPEPipe} from '../app/pipes/filtroPE.pipe';
 import { PipesModule } from 'w-ng5';
+import { FiltroUDSPipe } from './pipes/filtroUDS.pipe';
 
 @NgModule({
   declarations: [
@@ -580,6 +581,7 @@ import { PipesModule } from 'w-ng5';
     
     FiltroZonalPipe,
     FiltroPEPipe,
+    FiltroUDSPipe,
     
     
 
