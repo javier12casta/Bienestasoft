@@ -304,6 +304,7 @@ import { FiltroZonalPipe} from '../app/pipes/filtroZonal.pipe';
 import { FiltroPEPipe} from '../app/pipes/filtroPE.pipe';
 import { PipesModule } from 'w-ng5';
 import { FiltroUDSPipe } from './pipes/filtroUDS.pipe';
+import { FiltroalmacenPipe } from './pipes/filtroalmacen.pipe';
 
 @NgModule({
   declarations: [
@@ -582,6 +583,7 @@ import { FiltroUDSPipe } from './pipes/filtroUDS.pipe';
     FiltroZonalPipe,
     FiltroPEPipe,
     FiltroUDSPipe,
+    FiltroalmacenPipe,
     
     
 
