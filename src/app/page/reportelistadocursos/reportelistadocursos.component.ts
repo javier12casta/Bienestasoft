@@ -16,7 +16,9 @@ export class ReportelistadocursosComponent implements OnInit {
   isHidden1: boolean = true;
   isHidden2: boolean = true;
   fil;
-  est;
+  nom="";
+  fec="";
+  est="";
   listadoc: Listadocursos[] = [];
   listad: Listadocursost[] = [];
   f = new Date();
@@ -107,20 +109,7 @@ export class ReportelistadocursosComponent implements OnInit {
 
     }
 
-    estad(){
-
-      if(this.est == "Habilitado"){
-
-        
-      }
-  
-      if(this.est == "Deshabilitado"){
-  
-       
-  
-      }
-
-    }
+    
 
 
     

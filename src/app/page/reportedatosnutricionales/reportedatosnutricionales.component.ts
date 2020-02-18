@@ -17,7 +17,9 @@ export class ReportedatosnutricionalesComponent implements OnInit {
 
 
 fil;
-  est;
+cod="";
+uni="";
+  est="";
   datosv: Datosvarios[] = [];
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();

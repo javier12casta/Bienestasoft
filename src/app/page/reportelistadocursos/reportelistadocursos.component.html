@@ -1,8 +1,25 @@
 <nav class="navbar navbar-success bg-success">
     <button class="btn btn-dark" routerLink="/reportes">Volver</button>
   
+    <div
+    style="margin-left: auto; margin-right: auto; display: inline-flex; width: 450px;
+  justify-content: center; align-items: center;"
+  >
+    <div style="  padding: 5px; margin: auto;">
+      <label>
+        <mat-icon class="icon" style="font-size: larger;"
+          >filter_list <a>Filtar por :</a>
+        </mat-icon>
+      </label>
+    </div>
 
-    <label  style="text-align:left;"  >Filtar Por : </label>
+
+
+    <div
+    style="  padding: 5px;
+  margin: 5px;"
+  >
+
     <select style="width: 200px;" class="form-control"  [(ngModel)]="fil" (change)="onChange()"> 
         <option >  
           Nombre Agente 
@@ -15,37 +32,29 @@
         </option > 
         
         </select>
-  
+      </div>
+    </div>
+
+
         <label [hidden]="isHidden2" class="menu">Nombre Agente </label>
-        <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Nombre Agente" [hidden]="isHidden2" [(ngModel)]="res"  />
+        <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Nombre Agente" [hidden]="isHidden2" name="nom" [(ngModel)]="nom"  />
         
     
           <label class="menu" [hidden]="isHidden">Fecha </label>
-          <input type="date"  min="1900-01-01" max="2050-12-31" [hidden]="isHidden"/>
+          <input type="text"  [hidden]="isHidden" name="fec" [(ngModel)]="fec" />
   
   
-        <label  [hidden]="isHidden1" class="menu"> Estado </label>
-  
-        <select   style="width: 200px;" class="form-control" [(ngModel)]="est" (change)="estad()"  [hidden]="isHidden1"> 
-          <option   > 
-            Habilitado
-          </option > 
-          <option  > 
-            Deshabilitado
-          </option > 
-          
-          </select>
-     
-          <button class="btn btn-dark" >Buscar</button>
+          <label [hidden]="isHidden1" class="menu"> Estado </label>
 
-
-
-
-
-
-
-
-
+          <select   style="width: 200px;" class="form-control"  name="est" [(ngModel)]="est"   [hidden]="isHidden1"> 
+            <option  [value]="1" > 
+              Habilitado
+            </option > 
+            <option  [value]="0" > 
+              Deshabilitado
+            </option > 
+            
+            </select>
   </nav>
 
   <table class="table" id="contentToConvert">
@@ -69,7 +78,7 @@
       </tr>
     </thead>
     <tbody>
-            <tr *ngFor="let cen of listad">
+            <tr *ngFor="let cen of listad | filtrolistadoc: nom | filtrolistadoc: fec |filtrolistadoc: est ">
                     <th scope="row">{{cen.idListadoCursos}}</th>
                     <td>{{cen.NombreAgenteE}}</td>
                     <td>{{cen.NumeroDocumento}}</td>

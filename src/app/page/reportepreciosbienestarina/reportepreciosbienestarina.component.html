@@ -2,7 +2,28 @@
     <button class="btn btn-dark" routerLink="/reportes">Volver</button>
 
 
-    <label  style="text-align:left;"  >Filtar Por : </label>
+    <div
+    style="margin-left: auto; margin-right: auto; display: inline-flex; width: 450px;
+  justify-content: center; align-items: center;"
+  >
+    <div style="  padding: 5px; margin: auto;">
+      <label>
+        <mat-icon class="icon" style="font-size: larger;"
+          >filter_list <a>Filtar por :</a>
+        </mat-icon>
+      </label>
+    </div>
+
+
+
+
+
+    <div
+    style="  padding: 5px;
+  margin: 5px;"
+  >
+
+ 
     <select style="width: 200px;" class="form-control"  [(ngModel)]="fil" (change)="onChange()"> 
         <option >  
           Código
@@ -16,39 +37,29 @@
         
         </select>
   
+      </div>
+    </div>
+
         <label [hidden]="isHidden2" class="menu">Código</label>
-        <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Código  " [hidden]="isHidden2" [(ngModel)]="res" (ngModelChange)="cambiaLado($event)" />
+        <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Código  " [hidden]="isHidden2" name="cod"  [(ngModel)]="cod"  />
   
         
     
           <label class="menu" [hidden]="isHidden">Referencia </label>
-        <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Referencia" [hidden]="isHidden" [(ngModel)]="res" (ngModelChange)="cambiaLado($event)" />
+        <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Referencia" [hidden]="isHidden" name="ref" [(ngModel)]="ref"  />
   
   
         <label  [hidden]="isHidden1" class="menu"> Estado </label>
   
-        <select   style="width: 200px;" class="form-control" [(ngModel)]="est" (change)="estad()"  [hidden]="isHidden1"> 
-          <option   > 
+        <select   style="width: 200px;" class="form-control" name="est" [(ngModel)]="est"  [hidden]="isHidden1"> 
+          <option  [value]="1" > 
             Habilitado
           </option > 
-          <option  > 
+          <option [value]="0" > 
             Deshabilitado
           </option > 
           
           </select>
-     
-          <button class="btn btn-dark" >Buscar</button>
-
-
-
-
-
-
-
-
-
-
- 
   </nav>
 
   <table class="table" id="contentToConvert">
@@ -71,7 +82,7 @@
       </tr>
     </thead>
     <tbody>
-            <tr *ngFor="let cen of listapre">
+            <tr *ngFor="let cen of listapre | filtropreciob: cod | filtropreciob: ref | filtropreciob: est  ">
                     <th scope="row">{{cen.idListaPrecios}}</th>
                     <td>{{cen.Referencia}}</td>
                     <td>{{cen.Mes}}</td>

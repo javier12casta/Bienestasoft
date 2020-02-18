@@ -3,7 +3,19 @@
 
 
 
-    <label  style="text-align:left;"  >Filtar Por : </label>
+    <div style="margin-left: auto; margin-right: auto; display: inline-flex; width: 450px;justify-content: center; align-items: center;">
+    <div style="  padding: 5px; margin: auto;">
+      <label>
+        <mat-icon class="icon" style="font-size: larger;"
+          >filter_list <a>Filtar por :</a>
+        </mat-icon>
+      </label>
+    </div>
+
+    <div style="  padding: 5px;margin: 5px;">
+
+
+
     <select style="width: 200px;" class="form-control"  [(ngModel)]="fil" (change)="onChange()"> 
         <option >  
           Código
@@ -13,39 +25,32 @@
         </option > 
         <option > 
           Estado
-        </option > 
-        
+        </option >  
         </select>
-  
-        <label [hidden]="isHidden2" class="menu">Código</label>
-        <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Código  " [hidden]="isHidden2" [(ngModel)]="res" (ngModelChange)="cambiaLado($event)" />
+      </div>
+    </div>
   
         
+    <label [hidden]="isHidden2" class="menu">Código</label>
+    <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Código  " [hidden]="isHidden2" [(ngModel)]="cod" name="cod"  />
+
     
-          <label class="menu" [hidden]="isHidden">Presentación </label>
-        <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Presentación" [hidden]="isHidden" [(ngModel)]="res" (ngModelChange)="cambiaLado($event)" />
-  
-  
-        <label  [hidden]="isHidden1" class="menu"> Estado </label>
-  
-        <select   style="width: 200px;" class="form-control" [(ngModel)]="est" (change)="estad()"  [hidden]="isHidden1"> 
-          <option   > 
-            Habilitado
-          </option > 
-          <option  > 
-            Deshabilitado
-          </option > 
-          
-          </select>
-     
-          <button class="btn btn-dark" >Buscar</button>
+
+      <label class="menu" [hidden]="isHidden">Presentación </label>
+    <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Presentación" [hidden]="isHidden" [(ngModel)]="pre"  name="pre"  />
 
 
+    <label  [hidden]="isHidden1" class="menu"> Estado </label>
 
-
-
-
-
+    <select   style="width: 200px;" class="form-control" [(ngModel)]="est" name="est"   [hidden]="isHidden1"> 
+      <option  [value]="1" > 
+        Habilitado
+      </option > 
+      <option [value]="0" > 
+        Deshabilitado
+      </option > 
+      
+      </select>
   </nav>
   
   <table class="table" id="contentToConvert">
@@ -70,7 +75,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let cen of tbienestarina">
+        <tr *ngFor="let cen of tbienestarina | filtroreferenciab: cod | filtroreferenciab: pre | filtroreferenciab: est ">
           <th scope="row">{{cen.idTipoBienesterina}}</th>
           <td>{{cen.TipoBienesterina}}</td>
           <td>{{cen.Codigo}}</td>

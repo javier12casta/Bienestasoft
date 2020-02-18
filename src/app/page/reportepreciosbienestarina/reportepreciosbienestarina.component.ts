@@ -15,7 +15,9 @@ export class ReportepreciosbienestarinaComponent implements OnInit {
   isHidden1: boolean = true;
   isHidden2: boolean = true;
   fil;
-  est;
+  cod="";
+  ref="";
+  est="";
   listapre: Lprecios[] = [];
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
