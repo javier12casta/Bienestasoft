@@ -6,8 +6,8 @@ export interface cargainventariot {
     Cantidad2?  : number,
     UnidadPrincipal: string,
     FechaRecepcion  : number,
-    TipoBienesterina?: string,
-    inventario?: string,
-    almacenes?: string,
-    centrodistribucion?: string,
+    idTipoBienesterina?: number,
+    idInventario?: number,
+    idAlmacenes?: number,
+    idCentroDistribucion?: number,
 }

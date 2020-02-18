@@ -19,7 +19,9 @@ export class ReportenumerocuposComponent implements OnInit {
 
 
 fil;
-  est;
+cod ="" ;
+uni ="" ;
+  est ="" ;
   servic: Numerocupos[] = [];
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();

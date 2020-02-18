@@ -15,7 +15,9 @@ export class ReportereferenciabienestarinaComponent implements OnInit {
   isHidden1: boolean = true;
   isHidden2: boolean = true;
   fil;
-  est;
+  est = "";
+  pre = "";
+  cod = "";
   tbienestarina: TipoBienestarina[] = [];
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();

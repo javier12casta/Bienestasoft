@@ -304,6 +304,12 @@ import { FiltroZonalPipe} from '../app/pipes/filtroZonal.pipe';
 import { FiltroPEPipe} from '../app/pipes/filtroPE.pipe';
 import { PipesModule } from 'w-ng5';
 import { FiltroUDSPipe } from './pipes/filtroUDS.pipe';
+import { FiltroservicioymodalidadesPipe } from './pipes/filtroservicioymodalidades.pipe';
+import { FiltroreferenciabienestarinaPipe } from './pipes/filtroreferenciabienestarina.pipe';
+import { FiltropreciobienestarinaPipe } from './pipes/filtropreciobienestarina.pipe';
+import {FiltrolistadocursosPipe } from './pipes/filtrolistadocursos.pipe';
+import {FiltrodatosnutricionalesPipe } from './pipes/filtrodatosnutricionales.pipe';
+import {FiltronumerocuposPipe } from './pipes/filtronumerocupos.pipe';
 
 @NgModule({
   declarations: [
@@ -582,12 +588,12 @@ import { FiltroUDSPipe } from './pipes/filtroUDS.pipe';
     FiltroZonalPipe,
     FiltroPEPipe,
     FiltroUDSPipe,
-    
-    
-
-  
-
-
+    FiltroservicioymodalidadesPipe,
+    FiltroreferenciabienestarinaPipe,
+    FiltropreciobienestarinaPipe,
+    FiltrolistadocursosPipe,
+    FiltrodatosnutricionalesPipe,
+    FiltronumerocuposPipe,
  ],
   imports: [
     BrowserModule,

@@ -1,8 +1,24 @@
 <nav class="navbar navbar-success bg-success">
     <button class="btn btn-dark" routerLink="/reportes">Volver</button>
  
+    <div
+    style="margin-left: auto; margin-right: auto; display: inline-flex; width: 450px;
+  justify-content: center; align-items: center;"
+  >
+    <div style="  padding: 5px; margin: auto;">
+      <label>
+        <mat-icon class="icon" style="font-size: larger;"
+          >filter_list <a>Filtar por :</a>
+        </mat-icon>
+      </label>
+    </div>
 
-    <label  style="text-align:left;"  >Filtar Por : </label>
+
+
+    <div
+      style="  padding: 5px;
+    margin: 5px;"
+    >
     <select style="width: 200px;" class="form-control"  [(ngModel)]="fil" (change)="onChange()"> 
         <option >  
           Código interno
@@ -15,41 +31,30 @@
         </option > 
         
         </select>
-  
+      </div>
+    </div>
+
+    
+
+
         <label [hidden]="isHidden2" class="menu"> Código interno</label>
-        <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Código interno " [hidden]="isHidden2" [(ngModel)]="res" (ngModelChange)="cambiaLado($event)" />
+        <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Código interno " [hidden]="isHidden2"  name="cod" [(ngModel)]="cod"  />
     
           <label class="menu" [hidden]="isHidden">Unidad de medida </label>
-        <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Unidad de medida " [hidden]="isHidden" [(ngModel)]="res" (ngModelChange)="cambiaLado($event)" />
+        <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Unidad de medida " [hidden]="isHidden"  name="uni" [(ngModel)]="uni"  />
   
   
         <label  [hidden]="isHidden1" class="menu"> Estado </label>
   
-        <select   style="width: 200px;" class="form-control" [(ngModel)]="est" (change)="estad()"  [hidden]="isHidden1"> 
-          <option   > 
+        <select   style="width: 200px;" class="form-control"  name="est" [(ngModel)]="est"   [hidden]="isHidden1"> 
+          <option  [value]="1" > 
             Habilitado
           </option > 
-          <option  > 
+          <option  [value]="0" > 
             Deshabilitado
           </option > 
           
           </select>
-     
-          <button class="btn btn-dark" >Buscar</button>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   </nav>
     
@@ -72,11 +77,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let ser of servic">
+        <tr *ngFor="let ser of servic | filtronumerocu: cod | filtronumerocu: uni | filtronumerocu: est  ">
           <th scope="row">{{ser.idnumerocupos}}</th>
           <td>{{ser.CodigoInterno  }}</td>
-          <td>
-            
+          <td>           
               <div *ngIf="ser.EstadoDatoMaestro == 1">
                   Habilitado
                 </div>

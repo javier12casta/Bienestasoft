@@ -4,6 +4,7 @@ import { Almacen } from 'src/app/interfaces/almacen';
 import { TipoBienestarina } from 'src/app/interfaces/tipobienestarina';
 import { Inventario } from 'src/app/interfaces/inventario';
 import { ServicioService } from 'src/app/servicio.service';
+import { cargainventariot } from 'src/app/interfaces/cargainventario';
 import { Recepcion } from 'src/app/interfaces/recepcion';
 import { Acta, RecepcionMax } from 'src/app/interfaces/acta';
 import Swal from 'sweetalert2';
@@ -66,7 +67,6 @@ export class CargainventarioinicialComponent implements OnInit {
   public ac: Acta[] = [];
   cantidadrecp: number;
   id1 = 0;
-
 
   constructor(
     private Service: ServicioService,
@@ -179,18 +179,15 @@ export class CargainventarioinicialComponent implements OnInit {
   get f1() { return this.y; }
   onClickMe() {
 
-    this.Service.postrecepcion(this.x).subscribe(res => {
+    this.Service.postcargainventariotabla(this.x).subscribe(res => {
       console.log(this.x);
-      this.Service.postacta(this.y).subscribe(res => {
-        console.log(this.y);
-      });
+      
       this.Service.putinventario(this.x.idAlmacenes, this.inventario1).subscribe( res => {});
       this.showMenssage();
     },
       err => {
         console.log(err);
       });
-
   }
 
   suma(){
@@ -210,12 +207,12 @@ export class CargainventarioinicialComponent implements OnInit {
   showMenssage() {
     Swal.fire({
       title: 'Creado',
-      text: 'Recepción creada',
+      text: 'Carga inicial creada',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {
       if (result.value) {
-        this.router.navigate(['/recepcionv']);
+        this.router.navigate(['/cargainventario']);
       }
 
     });

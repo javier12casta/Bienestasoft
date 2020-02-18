@@ -1071,6 +1071,14 @@ export class ServicioService {
     return this.http.get<[cargainventariot]>(path);
   }
 
+  postcargainventariotabla(recep: cargainventariot) {
+
+    const path = `${this.api}/cargainv`;
+    return this.http.post<cargainventariot>(path, recep);
+
+  }
+
+
   //Huella biometrico
   ObtenerValidacion() {
     const path = `${this.api}/biometrico/val`;

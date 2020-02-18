@@ -14,9 +14,10 @@ export class ReporteserviciosmodalidadesComponent implements OnInit {
   isHidden1: boolean = true;
   isHidden2: boolean = true;
 
-
+  mod="";
 fil;
-  est;
+ser = "";
+   est= "";
   serviciom: MaestroBienestarina[] = [];
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
@@ -100,15 +101,10 @@ fil;
   
       estad(){
   
-        if(this.est == "Habilitado"){
-  
-          
+        if(this.est == "Habilitado"){      
         }
     
         if(this.est == "Deshabilitado"){
-    
-         
-    
         }
   
       }
