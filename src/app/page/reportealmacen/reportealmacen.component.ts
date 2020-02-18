@@ -22,8 +22,9 @@ export class ReportealmacenComponent implements OnInit {
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
   Nombrereporte = 'Reporte almacén';
   fil;
-  est;
-  res;
+  est = "";
+  responsable = "";
+  nombre = "";
   us;
   defaultValue = "Responsable";
   constructor(private Service: ServicioService) { }

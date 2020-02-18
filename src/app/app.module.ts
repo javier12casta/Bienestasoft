@@ -311,6 +311,7 @@ import { FiltropreciobienestarinaPipe } from './pipes/filtropreciobienestarina.p
 import {FiltrolistadocursosPipe } from './pipes/filtrolistadocursos.pipe';
 import {FiltrodatosnutricionalesPipe } from './pipes/filtrodatosnutricionales.pipe';
 import {FiltronumerocuposPipe } from './pipes/filtronumerocupos.pipe';
+import { FiltrocentrodistribucionPipe } from './pipes/filtrocentrodistribucion.pipe';
 
 @NgModule({
   declarations: [
@@ -596,7 +597,7 @@ import {FiltronumerocuposPipe } from './pipes/filtronumerocupos.pipe';
     FiltrolistadocursosPipe,
     FiltrodatosnutricionalesPipe,
     FiltronumerocuposPipe,
-
+    FiltrocentrodistribucionPipe,
     
  ],
   imports: [

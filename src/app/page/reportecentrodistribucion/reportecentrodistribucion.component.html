@@ -13,22 +13,23 @@
       </label>
     </div>
 
-    <select
-      style="width: 200px;"
-      class="form-control"
-      [(ngModel)]="fil"
-      (change)="onChange()"
-    >
-      <option>
-        Responsable
-      </option>
-      <option>
-        Nombre
-      </option>
-      <option>
-        Estado
-      </option>
-    </select>
+  <select
+    class="form-control"
+    style="width: 200px;"
+    [(ngModel)]="fil"
+    (change)="onChange()"
+    [value]="Responsable"
+  >
+    <option>
+      Responsable
+    </option>
+    <option>
+      Nombre centro de distribución
+    </option>
+    <option>
+      Estado
+    </option>
+  </select>
   </div>
 
   <label [hidden]="isHidden2" class="menu">Responsable</label>
@@ -40,7 +41,6 @@
     placeholder="Responsable "
     [hidden]="isHidden2"
     [(ngModel)]="responsable"
-    (ngModelChange)="cambiaLado($event)"
   />
 
   <label class="menu" [hidden]="isHidden">Nombre </label>
@@ -52,7 +52,6 @@
     placeholder="Nombre "
     [hidden]="isHidden"
     [(ngModel)]="nombre"
-    (ngModelChange)="cambiaLado($event)"
   />
 
   <label [hidden]="isHidden1" class="menu"> Estado </label>
@@ -110,7 +109,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let usu of cen">
+    <tr *ngFor="let usu of cen | filtrocentrodistribucion: nombre | filtrocentrodistribucion: responsable | filtrocentrodistribucion: est">
       <th scope="row">{{ usu.idCentroDistribucion }}</th>
       <td>{{ usu.NumeroExterno }}</td>
       <td>{{ usu.Nombre }}</td>
