@@ -15,7 +15,9 @@ export class ReportesalidacentrodComponent implements OnInit {
   isHidden1: boolean = true;
   isHidden2: boolean = true;
 
-
+  fech = "";
+  present = "";
+  lotes = "";
 fil;
   est;
   centroD: Salidacentrot[] = [];

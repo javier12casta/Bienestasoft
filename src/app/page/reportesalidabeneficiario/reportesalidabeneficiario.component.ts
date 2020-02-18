@@ -39,6 +39,9 @@ export class ReportesalidabeneficiarioComponent implements OnInit {
 
 fil;
   est;
+  acudi = "";
+  lotes = "";
+  referen = "";
   centroB: Salidabeneficiariot[] = [];
 
   region: Regional[] = [];
@@ -191,7 +194,7 @@ cen;
 
     onChange(){
 
-      if(this.fil == "Acudiente"){
+      if(this.fil == "Primer nombre"){
   
         this.isHidden = true;
         this.isHidden1 = true;
@@ -199,7 +202,7 @@ cen;
       }
   
   
-      if(this.fil == "Presentación"){
+      if(this.fil == "Número de documento"){
   
         this.isHidden = false;
         this.isHidden1 = true;
@@ -208,7 +211,7 @@ cen;
   
   
   
-      if(this.fil == "Lote"){
+      if(this.fil == "Referencia bienestarina"){
   
        this.isHidden = true;
        this.isHidden1 = false;

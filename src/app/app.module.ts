@@ -312,6 +312,9 @@ import {FiltrolistadocursosPipe } from './pipes/filtrolistadocursos.pipe';
 import {FiltrodatosnutricionalesPipe } from './pipes/filtrodatosnutricionales.pipe';
 import {FiltronumerocuposPipe } from './pipes/filtronumerocupos.pipe';
 import { FiltrocentrodistribucionPipe } from './pipes/filtrocentrodistribucion.pipe';
+import { FiltroentregabePipe } from './pipes/filtroentregabe.pipe';
+import { FiltroentregaconsumoPipe } from './pipes/filtroentregaconsumo.pipe';
+import { FiltroentregacPipe } from './pipes/filtroentregac.pipe';
 
 @NgModule({
   declarations: [
@@ -598,6 +601,9 @@ import { FiltrocentrodistribucionPipe } from './pipes/filtrocentrodistribucion.p
     FiltrodatosnutricionalesPipe,
     FiltronumerocuposPipe,
     FiltrocentrodistribucionPipe,
+    FiltroentregabePipe,
+    FiltroentregaconsumoPipe,
+    FiltroentregacPipe,
     
  ],
   imports: [

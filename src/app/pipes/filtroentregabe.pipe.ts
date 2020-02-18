@@ -5,8 +5,17 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FiltroentregabePipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
-    return null;
+  transform(value: any, arg: any): any {
+    const resultcod = [];
+    var valor = arg;
+    if (arg === "" || arg.length < 1) return value;
+    for (const centro of value) {
+      if (centro.PrimerNombre.toLowerCase().indexOf(valor.toLowerCase()) > -1) {
+        resultcod.push(centro);
+      } 
+
+    }
+    return resultcod;
   }
 
 }
