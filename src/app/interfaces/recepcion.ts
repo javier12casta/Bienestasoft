@@ -12,3 +12,8 @@ export interface Recepcion {
     idAlmacenes?: number,
     idCentroDistribucion?: number,
 }
+
+ export interface Lotes {
+    id?: number,
+    lote: string,
+}

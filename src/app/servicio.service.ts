@@ -791,6 +791,10 @@ export class ServicioService {
     return this.http.get<[Recepciont]>(path);
   }
 
+  getlotesid(id: string | number) {
+    return this.http.get(`${this.api}/bienestarina/lotes/${id}`);
+  }
+
   postrecepcion(recep: Recepcion) {
 
     const path = `${this.api}/bienestarina`;
