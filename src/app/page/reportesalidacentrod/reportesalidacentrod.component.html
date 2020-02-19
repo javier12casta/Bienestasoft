@@ -1,84 +1,38 @@
 <nav class="navbar navbar-success bg-success">
-  <button class="btn btn-dark" routerLink="/reportentregab">Volver</button>
+    <button class="btn btn-dark" routerLink="/reportentregab">Volver</button>
 
-  <div
-    style="margin-left: auto; margin-right: auto; display: inline-flex; width: 450px;
-  justify-content: center; align-items: center;"
-  >
-    <div style="  padding: 5px; margin: auto;">
-      <label>
-        <mat-icon class="icon" style="font-size: larger;"
-          >filter_list <a>Filtar por :</a>
-        </mat-icon>
-      </label>
-    </div>
-    <select
-      style="width: 200px;"
-      class="form-control"
-      [(ngModel)]="fil"
-      (change)="onChange()"
-    >
-      <option>
+
+    <label  style="text-align:left;"  >Filtar Por : </label>
+  <select style="width: 200px;" class="form-control"  [(ngModel)]="fil" (change)="onChange()"> 
+      <option >  
         Fecha registro
-      </option>
-      <option>
+      </option > 
+      <option> 
         Presentación
-      </option>
-      <option>
+      </option > 
+      <option > 
         Lote
-      </option>
-    </select>
-  </div>
-  <label [hidden]="isHidden2" class="menu">Fecha registro</label>
-  <input type="text" [(ngModel)]="fech" [hidden]="isHidden2" />
+      </option > 
+      
+      </select>
 
-  <label class="menu" [hidden]="isHidden">Presentación </label>
-  <select
-    style="width: 200px;"
-    class="form-control"
-    [(ngModel)]="present"
-    name="present"
-    [hidden]="isHidden"
-  >
-    <option value="Bolsa">
-      Bolsa
-    </option>
-    <option value="Caja">
-      Caja
-    </option>
-  </select>
+      <label [hidden]="isHidden2" class="menu">Fecha registro</label>
+      <input type="date"  min="1900-01-01" max="2050-12-31" [hidden]="isHidden2"/>
+      
+  
+        <label class="menu" [hidden]="isHidden">Presentación </label>
+      <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Presentación" [hidden]="isHidden" [(ngModel)]="res" (ngModelChange)="cambiaLado($event)" />
 
-  <label [hidden]="isHidden1" class="menu"> Lote </label>
-  <input
-    type="text"
-    style="width: 200px;"
-    class="form-control"
-    class="menu"
-    placeholder="Lote"
-    [hidden]="isHidden1"
-    [(ngModel)]="lotes"
-  />
 
-</nav>
-<table class="table" id="contentToConvert">
-  <thead class="thead-green">
-    <footer
-      id="sticky-footer"
-      class="text-white-50"
-      style="margin-bottom: 0px; bottom: 0px;"
-    >
-      <div
-        class="container text-center"
-        style="justify-content: center;  bottom: 0px; margin-left: auto; margin-right: auto; margin-bottom: 0px;"
-      >
-        <img
-          src="../../assets/icbf-logo.png"
-          id="imagen"
-          style="width: 65px; height: 65px; margin-left: 10px; margin-top: 10px; margin-bottom: 0px;"
-          class="rounded float-left"
-        />
-      </div>
-    </footer>
+      <label  [hidden]="isHidden1" class="menu"> Lote </label>
+      <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Lote" [hidden]="isHidden1" [(ngModel)]="res"  />
+      
+   
+        <button class="btn btn-dark" >Buscar</button>
+
+
+
+
 
   </nav>
   <table class="table" id="contentToConvert">
@@ -125,44 +79,3 @@
   <div class="trans">
     <button class="btn btn-dark" (click)="Generareporte()">Generar Reporte</button>
   </div>
-    {{
-      Nombrereporte
-    }}
-    {{
-      fecha
-    }}
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Lote</th>
-      <th scope="col">Fecha vencimiento</th>
-      <th scope="col">Cantidad</th>
-      <th scope="col">Referencia bienesterina</th>
-      <th scope="col">Presentación</th>
-      <th scope="col">Fecha registro</th>
-      <th scope="col">Centro distribución origen</th>
-      <th scope="col">Almacén origen</th>
-      <th scope="col">Centro distribución destino</th>
-      <th scope="col">Almacén destino</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let sal of centroD | filtroentregac: present | filtroentregac: fech | filtroentregac: lotes">
-      <th scope="row">{{ sal.identregacentrodistribucion }}</th>
-      <td>{{ sal.lote }}</td>
-      <td>{{ sal.fechavencimiento }}</td>
-      <td>{{ sal.cantidad }}</td>
-      <td>{{ sal.TipoBienesterina }}</td>
-      <td>{{ sal.unidad }}</td>
-      <td>{{ sal.fecharegistro }}</td>
-      <td>{{ sal.centroorigen }}</td>
-      <td>{{ sal.Nombre }}</td>
-      <td>{{ sal.centrodestino }}</td>
-      <td>{{ sal.idAlmacenesDestino }}</td>
-    </tr>
-  </tbody>
-</table>
-<div class="trans">
-  <button class="btn btn-dark" (click)="Generareporte()">
-    Generar Reporte
-  </button>
-</div>
