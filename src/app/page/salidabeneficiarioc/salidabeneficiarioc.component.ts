@@ -12,6 +12,7 @@ import { Acudientes } from "../../interfaces/acudiente";
 import { Beneficiario } from "../../interfaces/beneficiario";
 import { Inventario } from "src/app/interfaces/inventario";
 import { Validacion} from "src/app/interfaces/biometrico";
+import { Lotes } from 'src/app/interfaces/recepcion';
 
 @Component({
   selector: "app-salidabeneficiarioc",
@@ -184,19 +185,10 @@ export class SalidabeneficiariocComponent implements OnInit {
 
   ngOnInit() {
     this.czForm = this.fb.group({
-      lote: [
-        "",
-        [
-          Validators.required,
-          Validators.pattern("^[a-z A-Z ñ á é í ó ú 0-9]*$")
-        ]
-      ],
+      lote: ["",[Validators.required]],
       fechavencimiento: ["", Validators.required],
       cantidad: ["", [Validators.required, Validators.pattern("^[0-9]*$")]],
-      unidad: [
-        "",
-        [Validators.required, Validators.pattern("^[a-z A-Z ñ á é í ó ú]*$")]
-      ],
+      unidad: ["",[Validators.required, Validators.pattern("^[a-z A-Z ñ á é í ó ú]*$")]],
       idAcudientes: ["", Validators.required],
       idBeneficiarios: ["", Validators.required],
       idCentroDistribucion: ["", Validators.required],
@@ -305,6 +297,8 @@ export class SalidabeneficiariocComponent implements OnInit {
     });
   }
 
+  lotes: Lotes [] = [];
+  
   traerAlmacen() {
     if (this.sal.idAlmacenes !== 0 || this.sal.idAlmacenes !== null) {
       this.Service.getalmacenid(this.sal.idAlmacenes.toString()).subscribe(
@@ -320,6 +314,12 @@ export class SalidabeneficiariocComponent implements OnInit {
           console.log(err);
         }
       );
+
+      this.Service.getlotesid(this.sal.idAlmacenes).subscribe(res => {
+        this.lotes = Object(res);
+      }, err => {
+        console.log(err);
+      });
 
       this.Service.getinventarioid(this.sal.idAlmacenes.toString()).subscribe(
         res => {

@@ -10,6 +10,7 @@ import { Inventario } from '../../interfaces/inventario';
 import { Centrodistribucion } from '../../interfaces/centrodistribucion';
 import { Almacen } from '../../interfaces/almacen';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { Lotes } from 'src/app/interfaces/recepcion';
 
 @Component({
   selector: 'app-salidacentroc',
@@ -150,7 +151,7 @@ export class SalidacentrocComponent implements OnInit {
     //Validador--------------------
     this.czForm = this.fb.group({
       
-    lote:['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú 0-9]*$')]],
+    lote:['', [Validators.required ] ],
     fechavencimiento : ['', Validators.required],
     cantidad  :  ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
     unidad : ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
@@ -241,6 +242,8 @@ export class SalidacentrocComponent implements OnInit {
     });
   }
 
+  lotes: Lotes [] = [];
+
   traerAlmacen() {
     if (this.sal.idAlmacen !== 0 || this.sal.idAlmacen !== null) {
 
@@ -253,6 +256,11 @@ export class SalidacentrocComponent implements OnInit {
         console.log(err);
       });
 
+      this.Service.getlotesid(this.sal.idAlmacen).subscribe(res => {
+        this.lotes = Object(res);
+      }, err => {
+        console.log(err);
+      });
 
       this.Service.getinventarioid(this.sal.idAlmacen.toString()).subscribe(res => {
         this.inventario1 = Object(res);

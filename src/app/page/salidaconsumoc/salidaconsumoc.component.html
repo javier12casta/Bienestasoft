@@ -87,12 +87,12 @@
 
           <span>Lote</span>
           <h2></h2>
-          <input type="text" class="form-control" [(ngModel)]="sal.lote" placeholder="Lote" formControlName="lote"
-            [ngClass]="{ 'is-invalid': submitted && f.lote.errors }">
+          <select formControlName="lote" class="form-control" [(ngModel)]="sal.lote" placeholder="Lote" [ngClass]="{ 'is-invalid': submitted && f.lote.errors }">
+            <option *ngFor="let lo of lotes" [value]="lo.lote">{{lo.lote }} </option>
+          </select>
 
           <div *ngIf="submitted && f.lote.errors" class="invalid-feedback">
             <div *ngIf="f.lote.errors.required">Lote es requerido</div>
-            <div *ngIf="f.lote.errors.pattern">Lote solo puede contener letras mayusculas , minusculas y numeros</div>
           </div>
 
           <h2></h2>

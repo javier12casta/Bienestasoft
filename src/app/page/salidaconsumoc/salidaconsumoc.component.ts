@@ -10,6 +10,7 @@ import { TipoBienestarina } from '../../interfaces/tipobienestarina';
 import { Centrodistribucion } from '../../interfaces/centrodistribucion';
 import { Almacen } from '../../interfaces/almacen';
 import { Inventario } from 'src/app/interfaces/inventario';
+import { Lotes } from 'src/app/interfaces/recepcion';
 
 
 @Component({
@@ -169,7 +170,7 @@ export class SalidaconsumocComponent implements OnInit {
     this.czForm = this.fb.group({
 
 
-      lote: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú 0-9]*$')]],
+      lote: ['', [Validators.required]],
       fechavencimiento: ['', Validators.required],
       cantidad: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       unidad: ['', [Validators.required, Validators.pattern('^[a-z A-Z ñ á é í ó ú]*$')]],
@@ -247,6 +248,8 @@ export class SalidaconsumocComponent implements OnInit {
     });
   }
 
+  lotes: Lotes [] = [];
+  
   traerAlmacen() {
     if (this.sal.idAlmacenes !== 0 || this.sal.idAlmacenes !== null) {
 
@@ -259,6 +262,11 @@ export class SalidaconsumocComponent implements OnInit {
         console.log(err);
       });
 
+      this.Service.getlotesid(this.sal.idAlmacenes).subscribe(res => {
+        this.lotes = Object(res);
+      }, err => {
+        console.log(err);
+      });
 
       this.Service.getinventarioid(this.sal.idAlmacenes.toString()).subscribe(res => {
         this.inventario = Object(res);
