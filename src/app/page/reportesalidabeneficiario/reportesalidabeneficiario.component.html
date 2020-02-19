@@ -1,7 +1,17 @@
 <nav class="navbar navbar-success bg-success">
   <button class="btn btn-dark" routerLink="/reportentregab">Volver</button>
 
-  <label style="text-align:left;">Filtar Por : </label>
+  <div
+  style="margin-left: auto; margin-right: auto; display: inline-flex; width: 450px;
+justify-content: center; align-items: center;"
+>
+  <div style="  padding: 5px; margin: auto;">
+    <label>
+      <mat-icon class="icon" style="font-size: larger;"
+        >filter_list <a>Filtar por :</a>
+      </mat-icon>
+    </label>
+  </div>
   <select
     style="width: 200px;"
     class="form-control"
@@ -9,52 +19,38 @@
     (change)="onChange()"
   >
     <option>
-      Acudiente
+      Primer nombre
     </option>
     <option>
-      Presentación
-    </option>
-    <option>
-      Lote
+      Número de documento
     </option>
   </select>
+  </div>
 
-  <label [hidden]="isHidden2" class="menu">Acudiente</label>
+  <label [hidden]="isHidden2" class="menu">Primer nombre</label>
   <input
     type="text"
     style="width: 200px;"
     class="form-control"
     class="menu"
-    placeholder="Acudiente"
+    placeholder="Primer nombre"
     [hidden]="isHidden2"
-    [(ngModel)]="res"
-    (ngModelChange)="cambiaLado($event)"
+    [(ngModel)]="acudi"
+    name="acudi"
   />
 
-  <label class="menu" [hidden]="isHidden">Presentación </label>
+  <label class="menu" [hidden]="isHidden">Número de documento </label>
   <input
     type="text"
     style="width: 200px;"
     class="form-control"
     class="menu"
-    placeholder="Presentación"
+    placeholder="Número de documento"
     [hidden]="isHidden"
-    [(ngModel)]="res"
-    (ngModelChange)="cambiaLado($event)"
+    [(ngModel)]="presentacion"
+    name="presentacion"
   />
 
-  <label [hidden]="isHidden1" class="menu"> Lote </label>
-  <input
-    type="text"
-    style="width: 200px;"
-    class="form-control"
-    class="menu"
-    placeholder="Lote"
-    [hidden]="isHidden1"
-    [(ngModel)]="res"
-  />
-
-  <button class="btn btn-dark">Buscar</button>
 </nav>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
@@ -788,8 +784,8 @@
           >
    
         </tr>
-
-        <tr *ngFor="let sal of centroB">
+        <!--TABLE ngFor-->
+        <tr *ngFor="let sal of centroB | filtroentregabe: acudi " >
           <th
             STYLE="border-bottom: 3px solid #000000; border-left: 3px solid #000000"
             HEIGHT="10"
@@ -797,7 +793,7 @@
             VALIGN="BOTTOM"
             SDNUM="1033;1033;General"
           >
-            {{ sal.idEntregaBeneficiario }}
+            {{ sal.idEntregaBeneficiario | filtroentregabe: acudi }}
           </th>
           <td
             STYLE="border-bottom: 3px solid #000000; border-left: 3px solid #000000"

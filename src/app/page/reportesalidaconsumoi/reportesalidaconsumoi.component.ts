@@ -16,8 +16,10 @@ export class ReportesalidaconsumoiComponent implements OnInit {
   isHidden1: boolean = true;
   isHidden2: boolean = true;
 
-
-fil;
+  lotes = "";
+  present = "";
+  fech = "";
+  fil;
   est;
   centroC: Salidaconsumot[] = [];
   f = new Date();

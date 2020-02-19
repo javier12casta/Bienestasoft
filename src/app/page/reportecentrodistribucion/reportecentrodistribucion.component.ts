@@ -17,7 +17,9 @@ export class ReportecentrodistribucionComponent implements OnInit {
 
 
 fil;
-  est;
+  est = "";
+  nombre = "";
+  responsable = "";
   cen: Centrodistribucion[] = [];
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
