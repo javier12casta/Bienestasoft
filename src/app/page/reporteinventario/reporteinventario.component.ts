@@ -57,6 +57,8 @@ au :  Datosinventario [] = [];
   txt1: boolean = true;
   txt2: boolean = true;
   txt3: boolean = true;
+  checkb: boolean = false;
+  checku: boolean = false;
  rep;
  reg;
  cen;
@@ -400,4 +402,29 @@ if(values.currentTarget.checked == true){
 
     }
 
+checkbeneficiario(values:any){
+
+  if(values.currentTarget.checked == true){
+
+
+
+
+  }else{
+
+
+  }
+
+}
+
+checkunidade(values:any){
+
+if(values.currentTarget.checked == true){
+
+  
+
+}else{
+  
+
+}
+}
 }
