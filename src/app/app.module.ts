@@ -315,6 +315,10 @@ import { FiltrocentrodistribucionPipe } from './pipes/filtrocentrodistribucion.p
 import { FiltroentregabePipe } from './pipes/filtroentregabe.pipe';
 import { FiltroentregaconsumoPipe } from './pipes/filtroentregaconsumo.pipe';
 import { FiltroentregacPipe } from './pipes/filtroentregac.pipe';
+import { FiltroRIPipe } from '../app/pipes/filtroRI.pipe';
+import { FiltrodevolucionPipe } from '../app/pipes/filtrodevolucion.pipe';
+import { FiltrorolPipe } from '../app/pipes/filtrorol.pipe';
+import { FiltrousuarioPipe } from '../app/pipes/filtrousuario.pipe';
 
 @NgModule({
   declarations: [
@@ -604,6 +608,10 @@ import { FiltroentregacPipe } from './pipes/filtroentregac.pipe';
     FiltroentregabePipe,
     FiltroentregaconsumoPipe,
     FiltroentregacPipe,
+    FiltroRIPipe,
+    FiltrodevolucionPipe,
+    FiltrorolPipe,
+    FiltrousuarioPipe,
     
  ],
   imports: [

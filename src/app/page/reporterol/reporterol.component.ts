@@ -18,7 +18,8 @@ export class ReporterolComponent implements OnInit {
 
 
 fil;
-  est;
+  est = "";
+  rol = "";
   trol: Rol[] = [];
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();

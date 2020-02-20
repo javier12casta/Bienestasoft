@@ -17,8 +17,10 @@ export class ReporterecuentoinventarioComponent implements OnInit {
   isHidden1: boolean = true;
   isHidden2: boolean = true;
 
-
-fil;
+  fechas = "";
+  presentacion = "";
+  almacen = "";
+  fil;
   est;
   recuento:Recuentoinventariot[] = [];
   f = new Date();

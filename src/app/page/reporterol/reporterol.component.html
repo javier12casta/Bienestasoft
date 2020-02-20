@@ -1,34 +1,63 @@
 <nav class="navbar navbar-success bg-success">
     <button class="btn btn-dark" routerLink="/menu">Volver</button>
+      <div
+    style="margin-left: auto; margin-right: auto; display: inline-flex; width: 450px;
+  justify-content: center; align-items: center;"
+  >
+    <div style="  padding: 5px; margin: auto;">
+      <label>
+        <mat-icon class="icon" style="font-size: larger;"
+          >filter_list <a>Filtar por :</a>
+        </mat-icon>
+      </label>
+    </div>
 
-    <label  style="text-align:left;"  >Filtar Por : </label>
-    <select style="width: 200px;" class="form-control"  [(ngModel)]="fil" (change)="onChange()"> 
+    <div
+      style="  padding: 5px;
+    margin: 5px;"
+    >
+      <select
+        style="width: 200px;"
+        class="form-control"
+        [(ngModel)]="fil"
+        (change)="onChange()"
+      >
         <option >  
           Rol
         </option > 
         <option > 
           Estado
         </option > 
-        
-        </select>
+      </select>
+    </div>
+  </div>
+        <label [hidden]="isHidden1" class="menu"> Estado </label>
+            <select
+            style="width: 200px;"
+             class="form-control"
+             [(ngModel)]="est"
+            name="est"
+            [hidden]="isHidden1"
+          >
+              <option [value]="1">
+                Habilitado
+              </option>
+              <option [value]="0">
+                 Deshabilitado
+             </option>
+            </select>
 
-        <label [hidden]="isHidden2" class="menu">Rol</label>
-        <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Rol " [hidden]="isHidden2" [(ngModel)]="res" (ngModelChange)="cambiaLado($event)" />
-
-
-        <label  [hidden]="isHidden1" class="menu"> Estado </label>
-
-        <select   style="width: 200px;" class="form-control" [(ngModel)]="est" (change)="estad()"  [hidden]="isHidden1"> 
-          <option   > 
-            Habilitado
-          </option > 
-          <option  > 
-            Deshabilitado
-          </option > 
-          
-          </select>
-     
-          <button class="btn btn-dark" >Buscar</button>
+            <label class="menu" [hidden]="isHidden2">Rol </label>
+                <input
+                   type="text"
+                    style="width: 200px;"
+                    class="form-control"
+                    class="menu"
+                    placeholder="Rol "
+                    [(ngModel)]="rol"
+                    name="rol"
+                    [hidden]="isHidden2"
+                  />
   
 
 
@@ -52,7 +81,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let cen of trol">
+        <tr *ngFor="let cen of trol | filtrorol: est | filtrorol: rol">
           <th scope="row">{{cen.idRolPersona}}</th>
           <td>
             

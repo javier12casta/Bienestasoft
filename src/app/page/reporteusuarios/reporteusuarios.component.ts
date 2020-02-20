@@ -16,7 +16,8 @@ export class ReporteusuariosComponent implements OnInit {
   isHidden1: boolean = true;
   isHidden2: boolean = true;
   fil;
-  est;
+  fechas = "";
+  est = "";
   tip: Tipodocumento[] = [];
   usua: Usuariost[] = [];
   f = new Date();

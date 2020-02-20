@@ -22,6 +22,9 @@ fil;
 
   devolucion: Devolucionest[] = [];
   f = new Date();
+  fechas="";
+  presentacion="";
+  lote="";
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
   Nombrereporte = 'Reporte devoluciones';
 

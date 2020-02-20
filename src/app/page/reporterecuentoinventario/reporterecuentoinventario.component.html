@@ -3,7 +3,17 @@
     
       <button class="btn btn-dark" routerLink="/menu">Volver</button>
     
-      <label  style="text-align:left;"  >Filtar Por : </label>
+     <div
+    style="margin-left: auto; margin-right: auto; display: inline-flex; width: 450px;
+  justify-content: center; align-items: center;"
+  >
+    <div style="  padding: 5px; margin: auto;">
+      <label>
+        <mat-icon class="icon" style="font-size: larger;"
+          >filter_list <a>Filtar por :</a>
+        </mat-icon>
+      </label>
+    </div>
       <select style="width: 200px;" class="form-control"  [(ngModel)]="fil" (change)="onChange()"> 
           <option >  
             Fecha de vencimiento
@@ -16,19 +26,43 @@
           </option > 
           
           </select>
-    
-          <label [hidden]="isHidden2" class="menu">Fecha de vencimiento</label>
-          <input type="date"  min="1900-01-01" max="2050-12-31" [hidden]="isHidden2"/>
-      
-            <label class="menu" [hidden]="isHidden"> Presentación  </label>
-          <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Presentación  " [hidden]="isHidden" [(ngModel)]="res" (ngModelChange)="cambiaLado($event)" />
-    
-    
-          <label  [hidden]="isHidden1" class="menu"> Almacén </label>
-          <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Almacén " [hidden]="isHidden1" [(ngModel)]="res" (ngModelChange)="cambiaLado($event)" />
-         
-       
-            <button class="btn btn-dark" >Buscar</button>
+    </div>
+      <label [hidden]="isHidden2" class="menu">Fecha de vencimiento</label>
+  <input
+    type="text"
+    style="width: 200px;"
+    class="form-control"
+    class="menu"
+    placeholder="Fecha "
+    [hidden]="isHidden2"
+    [(ngModel)]="fechas"
+    name="Fecha"
+  />
+
+  <label class="menu" [hidden]="isHidden">Presetacion</label>
+  <input
+    type="text"
+    style="width: 200px;"
+    class="form-control"
+    class="menu"
+    placeholder="Presetacion "
+    [hidden]="isHidden"
+    [(ngModel)]="presetacion"
+    name="Presetacion"
+  />
+
+  <label [hidden]="isHidden1" class="menu"> Almacen </label>
+
+  <input
+    type="text"
+    style="width: 200px;"
+    class="form-control"
+    class="menu"
+    placeholder="Almacen "
+    [hidden]="isHidden1"
+    [(ngModel)]="almacen"
+    name="Almacen"
+  />    
 
 
     </nav>
@@ -57,7 +91,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let sal of recuento">
+        <tr *ngFor="let sal of recuento | filtroRI: fechas | filtroRI: presetacion | filtroRI: almacen">
           <th scope="row">{{sal.idrecuentroinventario}}</th>
           <td>{{sal.lote}}</td>
           <td>{{sal.fechavencimiento}}</td>
