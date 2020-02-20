@@ -10,6 +10,6 @@ export interface Acudientes {
     idBeneficiarios?: number,
     FechaNacimiento : number,
     FechaIngreso : number,
-    RegistroBiometrico :string,
-    RegistroBiometrico1 :string,
+    RegistroBiometrico : any,
+    RegistroBiometrico1 :any,
   }

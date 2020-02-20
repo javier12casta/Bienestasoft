@@ -7,7 +7,7 @@ import { Regional } from '../../interfaces/regional';
 import { Genero } from '../../interfaces/genero';
 import { Centrozonal } from '../../interfaces/centrozonal';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Biometrico } from 'src/app/interfaces/biometrico';
+import { Biometrico, Validacion } from 'src/app/interfaces/biometrico';
 import { delay } from 'q';
 import { MaestroBienestarina } from 'src/app/interfaces/maestrosBienestarina';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
@@ -80,6 +80,16 @@ export class DatosGeneralesBeneficiarioComponent implements OnInit {
     Huella2: '',
   };
 
+  traerhuellas(){
+    this.Service.ObtenerHuellas().subscribe(res => {
+      this.bio = Object(res);
+      console.log(this.bio.Huella1);
+      this.y.RegistroBiometrico = this.bio.Huella1;
+      this.y.RegistroBiometrico1 =this.bio.Huella2;
+      console.log(this.y.RegistroBiometrico);
+      console.log(this.y.RegistroBiometrico1);
+    });
+  }
   showMenssage() {
 
     Swal.fire({
@@ -143,17 +153,7 @@ export class DatosGeneralesBeneficiarioComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.Service.gethuella().subscribe(res => {
-      this.y.RegistroBiometrico = JSON.stringify(res);
-      console.log(this.y.RegistroBiometrico);
-      delay(1000);
-    }, err => {
-      console.log(err);
-    });
-    this.y.RegistroBiometrico = atob(this.bio.Huella1);
-    this.y.RegistroBiometrico1 = atob(this.bio.Huella2);
-    
-    console.log(this.y.RegistroBiometrico);
+  
     //traer regionales -----------------------------------------
     this.Service.getRegional()
       .subscribe(res => {

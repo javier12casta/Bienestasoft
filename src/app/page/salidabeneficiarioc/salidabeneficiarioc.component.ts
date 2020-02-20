@@ -240,12 +240,41 @@ export class SalidabeneficiariocComponent implements OnInit {
     Nombre: ""
   }
   validacion: boolean = false;
+
+  bene: Beneficiario = {
+    idBeneficiarios: null,
+    NumeroDocumento : null,
+    FechaIngreso : null ,
+    FechaNacimiento: null ,
+    PrimerNombre : null,
+    PrimerApellido: null,
+    SegundoNombre : null,
+    Direccion : null,
+    Pais : null,
+    Departamento : null,
+    Municipio : null,
+    TelefonoFijo : null ,
+    TelefonoFijo2 : null ,
+    TelefonoMovil : null ,
+    TelefonoMovil2 : null ,
+    Email : null,
+    Estado : null,
+    idGenero: null,
+    idTipoDocumento: null,
+    SegundoApellido: null,
+    ServicioOmodalidad : null,
+  };
   
   acudientes() {
 
     for (let b of this.acu) {
       if (this.sal.idBeneficiarios == b.idBeneficiarios) {
         this.sal.idAcudientes = b.idAcudientes;
+        this.Service.getBeneficiariosid(this.sal.idBeneficiarios.toString()).subscribe(res => {
+          this.bene = Object(res);
+          this.sal.idTipoDocumento = this.bene.idTipoDocumento;
+
+        });
         if(this.sal.idAcudientes == Number(this.vali.id))
         {
             this.validacion = true;
