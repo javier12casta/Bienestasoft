@@ -83,6 +83,7 @@ export class RecepcionbienestarinaviComponent implements OnInit {
     idAlmacenes: null,
     idCentroDistribucion: null,
     idInventario: null,
+    Cantidadsuma: 0,
   };
 
   z: RecepcionMax = {
@@ -200,9 +201,11 @@ export class RecepcionbienestarinaviComponent implements OnInit {
     var can2 = Number(this.inventario1.Cantidad2);
     if(this.granular == true){
       this.inventario1.Cantidad = cantidad + can;
+      this.x.Cantidadsuma =  cantidad + can;
       console.log('cantidad granular',this.inventario1.Cantidad);
     }else if(this.liquida == true){
       this.inventario1.Cantidad2 = cantidad2 + can2;
+      this.x.Cantidadsuma = cantidad2 + can2;
       console.log('cantidad liquida',this.inventario1.Cantidad2);
     }
   }

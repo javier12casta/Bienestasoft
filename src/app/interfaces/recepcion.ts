@@ -11,6 +11,7 @@ export interface Recepcion {
     idInventario?: number,
     idAlmacenes?: number,
     idCentroDistribucion?: number,
+    Cantidadsuma?: number,
 }
 
  export interface Lotes {

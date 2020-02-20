@@ -11,7 +11,8 @@ export interface Almacent {
     NombreCentroZonal ? :string,
     NombrePE ?: string,
     NombreUDS ?: string,
-
+    Cantidadex?: number,
+    Cantidadex2?: number,
 
 
 }
