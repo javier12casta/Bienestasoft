@@ -37,6 +37,12 @@ export class ReporteinventarioComponent implements OnInit {
   salco: Salidaconsumot [] = [];
   val;
 au :  Datosinventario [] = [];
+salb :  Datosinventario [] = [];
+salcon :  Datosinventario [] = [];
+salcen :  Datosinventario [] = [];
+vector1 = [];
+vector2 = [];
+vector = [];
 
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
@@ -126,12 +132,71 @@ id = {
        var dato = '-'
       r.benefi = dato;
       r.unidades = dato;
+      r.cantidad  = 0;
       
      }
     }, err => {
       console.log(err);
     });
- 
+
+    this.service.getdatosinventariosa()
+    .subscribe(res => {
+      this.salb = res;
+      console.log(this.salb);
+     for(let r of this.salb) {
+       var dato = 'x'
+      r.benefi = dato;
+      r.unidades = ' ';
+      r.numero = 'N/A';
+      r.Cantidad = 0;
+     //this.au = this.salb.slice(0, this.salb.length);
+     
+     }
+     this.vector1 =this.au.concat(this.salb);
+     //console.log('nuevo array', this.vector1);
+     
+    }, err => {
+      console.log(err);
+    });
+
+    this.service.getdatosinventarioco()
+    .subscribe(res => {
+      this.salcon = res;
+      console.log(this.salcon);
+     for(let r of this.salcon) {
+       var dato = ' '
+      r.benefi = dato;
+      r.unidades = 'x';
+      r.numero = 'N/A';
+      r.Cantidad = 0;
+     
+     }
+     var vec =this.vector1.concat(this.salcon);
+     this.vector2 = this.au.concat(vec);
+     //console.log('nuevo array', this.vector2);
+     
+    }, err => {
+      console.log(err);
+    });
+     this.service.getdatosinventariocen()
+    .subscribe(res => {
+      this.salcen = res;
+      console.log(this.salcen);
+     for(let r of this.salcen) {
+       var dato = '-'
+      r.benefi = dato;
+      r.unidades = '-';
+      r.numero = 'N/A';
+      r.Cantidad = 0;
+     
+     }
+     var vec =this.vector2.concat(this.salcen);
+     this.vector = this.au.concat(vec);
+     console.log('nuevo array', this.vector);
+     
+    }, err => {
+      console.log(err);
+    });  
 
    
     this.service.getActa()

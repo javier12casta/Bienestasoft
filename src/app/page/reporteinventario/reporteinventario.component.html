@@ -544,7 +544,7 @@
           <thead class="thead-green">
             <tr  STYLE="border-top: 3px solid #000000" WIDTH=27 HEIGHT=30 ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General" >
              
-              <th scope="col" style="font-size: 8px;">Fecha entrada </th>
+              <th scope="col" style="font-size: 8px;">Fecha entrada o salida</th>
               <th scope="col" style="font-size: 8px;">Numero de acta </th>
               <th scope="col" style="font-size: 8px;">No. Lote</th>
               <th scope="col" style="font-size: 8px;">Fecha de vencimiento</th>
@@ -560,7 +560,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr  *ngFor="let cen of au" >
+            <tr  *ngFor="let cen of vector" >
               
               <th scope="row" style="font-size: 9px;">{{cen.FechaRecepcion }}</th>
               <th scope="row" style="font-size: 9px;">{{cen.numero}}</th>

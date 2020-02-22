@@ -965,6 +965,21 @@ export class ServicioService {
     return this.http.get<[Datosinventario]>(path);
 
   }
+  getdatosinventariosa(){
+    const path = `${this.api}/bienestarina/datosien`;
+    return this.http.get<[Datosinventario]>(path);
+
+  }
+  getdatosinventarioco(){
+    const path = `${this.api}/bienestarina/datosicon`;
+    return this.http.get<[Datosinventario]>(path);
+
+  }
+  getdatosinventariocen(){
+    const path = `${this.api}/bienestarina/datosicen`;
+    return this.http.get<[Datosinventario]>(path);
+
+  }
 
   postacta(recep: Acta) {
 
