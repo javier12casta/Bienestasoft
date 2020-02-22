@@ -10,6 +10,6 @@ export interface Salidaconsumo {
     idTipoBienesterina:number,
     idCentroDistribucion : number,
     idAlmacenes  : number,
-   
+    Cantidadsuma?: number,
 
 }

@@ -14,6 +14,9 @@ import { Inventario } from "src/app/interfaces/inventario";
 import { Validacion} from "src/app/interfaces/biometrico";
 import { Lotes } from 'src/app/interfaces/recepcion';
 
+import {DatePipe} from '@angular/common';
+import { from } from 'rxjs';
+
 @Component({
   selector: "app-salidabeneficiarioc",
   templateUrl: "./salidabeneficiarioc.component.html",
@@ -38,7 +41,8 @@ export class SalidabeneficiariocComponent implements OnInit {
     private activeRoute: ActivatedRoute,
     private Service: ServicioService,
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private datepipe: DatePipe,
   ) {}
 
   //para las operaciones capacidad
@@ -74,7 +78,8 @@ export class SalidabeneficiariocComponent implements OnInit {
     idAlmacenes: null,
     idTipoBienesterina: null,
     idTipoDocumento: null,
-  
+    Cantidadsuma: 0,
+    fechasalida: null,
   };
 
   tiporef: TipoBienestarina = {
@@ -156,6 +161,7 @@ export class SalidabeneficiariocComponent implements OnInit {
       if(cantidad <= can){
         this.val2 = true;
         this.inventario.Cantidad = can - cantidad;
+        this.sal.Cantidadsuma = can - cantidad;
       }else{
         this.val2 = false;
         this.showMenssagecantidad();
@@ -165,6 +171,7 @@ export class SalidabeneficiariocComponent implements OnInit {
       if(cantidad2 <= can2){
         this.val2 = true;
         this.inventario.Cantidad2 = can2 - cantidad2;
+        this.sal.Cantidadsuma = can - cantidad;
       }else{
         this.val2 = false;
         this.showMenssagecantidad();
@@ -182,6 +189,10 @@ export class SalidabeneficiariocComponent implements OnInit {
     });
   }
 
+  fech = new Date();
+ // fech =this.fecha.getDay()+''+this.fecha.getMonth()+''+this.fecha.getFullYear();
+  
+  //fecha = this.fech.getDate() + "/" + (this.fech.getMonth() +1) + "/" + this.fech.getFullYear();
 
   ngOnInit() {
     this.czForm = this.fb.group({
@@ -232,6 +243,8 @@ export class SalidabeneficiariocComponent implements OnInit {
       //console.log(data);
       //console.log('funciona');
     });
+    this.sal.fechasalida = this.datepipe.transform(this.fech,"yyyy-MM-dd");
+    console.log('fecha actual',this.sal.fechasalida);
   }
 
   acudienteb = null;

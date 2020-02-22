@@ -320,6 +320,8 @@ import { FiltrodevolucionPipe } from '../app/pipes/filtrodevolucion.pipe';
 import { FiltrorolPipe } from '../app/pipes/filtrorol.pipe';
 import { FiltrousuarioPipe } from '../app/pipes/filtrousuario.pipe';
 
+import {DatePipe} from '@angular/common';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -633,7 +635,7 @@ import { FiltrousuarioPipe } from '../app/pipes/filtrousuario.pipe';
     Select2Module,
     PipesModule,
   ],
-  providers: [], 
+  providers: [DatePipe], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -67,7 +67,7 @@ export class SalidaconsumocComponent implements OnInit {
     idTipoBienesterina: null,
     idCentroDistribucion: null,
     idAlmacenes: null,
-
+    Cantidadsuma: 0,
 
   };
 
@@ -137,6 +137,7 @@ export class SalidaconsumocComponent implements OnInit {
       if(cantidad <= can){
         this.val2 = true;
         this.inventario.Cantidad = can - cantidad;
+        this.sal.Cantidadsuma = can - cantidad;
       }else{
         this.val2 = false;
         this.showMenssagecantidad();
@@ -147,6 +148,7 @@ export class SalidaconsumocComponent implements OnInit {
       if(cantidad2 <= can2){
         this.val2 = true;
         this.inventario.Cantidad2 = can2 - cantidad2;
+        this.sal.Cantidadsuma = can2 - cantidad2;
       }else{
         this.val2 = false;
         this.showMenssagecantidad();

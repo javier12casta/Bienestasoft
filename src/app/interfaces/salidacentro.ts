@@ -11,5 +11,6 @@ export interface Salidacentro {
     idAlmacen  : number,
     idAlmacenesDestino: number,
     idTipoBienesterina : number,
+    Cantidadsuma?: number,
 }
     

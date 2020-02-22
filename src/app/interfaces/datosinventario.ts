@@ -7,6 +7,8 @@ export interface Datosinventario {
     Cantidad : number,
     cantidad : number,
     nombrec : string,
+    benefi: string, // -
+    unidades: string,// -
     lote1 : string
     Cantidadsuma: number,
 

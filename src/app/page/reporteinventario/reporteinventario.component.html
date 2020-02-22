@@ -543,7 +543,7 @@
       <table class="table" style="border-collapse: collapse;"  [hidden]="visible" >
           <thead class="thead-green">
             <tr  STYLE="border-top: 3px solid #000000" WIDTH=27 HEIGHT=30 ALIGN=LEFT VALIGN=BOTTOM SDNUM="1033;1033;General" >
-              <th scope="col" style="font-size: 8px;" ># </th>
+             
               <th scope="col" style="font-size: 8px;">Fecha entrada </th>
               <th scope="col" style="font-size: 8px;">Numero de acta </th>
               <th scope="col" style="font-size: 8px;">No. Lote</th>
@@ -556,26 +556,24 @@
               <th scope="col" style="font-size: 8px;">Existencias a lote(Unidades)</th>
               <th scope="col" style="font-size: 8px;">Existencias punto de entrega(Unidades)</th>
               <th scope="col" style="font-size: 8px;">Reserva(Unidades)</th>
-              <th scope="col" style="font-size: 8px;">Fecha</th>
+           
             </tr>
           </thead>
           <tbody>
             <tr  *ngFor="let cen of au" >
-              <th scope="row"style="font-size: 9px;">{{cen.idBienestarina  }}</th>
+              
               <th scope="row" style="font-size: 9px;">{{cen.FechaRecepcion }}</th>
               <th scope="row" style="font-size: 9px;">{{cen.numero}}</th>
               <th scope="row"style="font-size: 9px;" >{{cen.lote }}</th>
               <th scope="row" style="font-size: 9px;" >{{cen.FechaVencimiento }}</th>
               <th scope="row" style="font-size: 9px;" >{{cen.Cantidad  }}</th>
               <th scope="row" style="font-size: 9px;">{{cen.cantidad  }}</th>
-              <th scope="row" style="font-size: 9px;"> <input type="checkbox" value="second_checkbox" (change)="checkbeneficiario($event)"
-                [disabled]="checkb"  > </th>
-              <th scope="row"  ><input type="checkbox"  value="second_checkbox" (change)="checkunidade($event)"
-                [disabled]="checku" > </th>
+              <th scope="row"> {{cen.benefi}} </th>
+              <th scope="row"> {{cen.unidades}}</th>
               <th scope="row" style="font-size: 9px;">{{cen.lote1 }}</th>
               <th scope="row" style="font-size: 9px;" >{{cen.Cantidadsuma}}</th>
               <th scope="row"  style="font-size: 9px;"><input type="text" name="cen" size="1" /></th>
-              <th scope="row" style="font-size: 9px;"> {{fecha}}</th>
+              
             </tr>
             
           </tbody>

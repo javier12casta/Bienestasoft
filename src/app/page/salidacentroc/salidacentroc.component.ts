@@ -68,6 +68,7 @@ export class SalidacentrocComponent implements OnInit {
       idAlmacen  : null,
       idTipoBienesterina  : null,
       idAlmacenesDestino: null,
+      Cantidadsuma: 0,
     };
 
       //para la capacidad almacen
@@ -216,6 +217,7 @@ export class SalidacentrocComponent implements OnInit {
         this.val4 = true;
       this.inventario1.Cantidad = cant1 - can;
       this.inventario2.Cantidad = cant3 + can;
+      this.sal.Cantidadsuma = cant1 - can;
       }else{
         this.val4 = false;
         this.showMenssagecantidad();
@@ -226,6 +228,7 @@ export class SalidacentrocComponent implements OnInit {
         this.val4 =true;
         this.inventario1.Cantidad2 = cant2 - can;
         this.inventario2.Cantidad2 = cant4 + can;
+        this.sal.Cantidadsuma = cant2 - can;
       }else{
         this.val4 =false;
         this.showMenssagecantidad();

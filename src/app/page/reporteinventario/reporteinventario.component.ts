@@ -121,6 +121,13 @@ id = {
     this.service.getdatosinventario()
     .subscribe(res => {
       this.au = res;
+      console.log(this.au);
+     for(let r of this.au) {
+       var dato = '-'
+      r.benefi = dato;
+      r.unidades = dato;
+      
+     }
     }, err => {
       console.log(err);
     });

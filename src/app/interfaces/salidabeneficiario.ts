@@ -13,4 +13,6 @@ export interface Salidabeneficiario {
     Cantidad2?: number,
     idTipoDocumento ?: number,
     NumeroDocumento ?: number,
+    Cantidadsuma?:number,
+    fechasalida: string,
 }
