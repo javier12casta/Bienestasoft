@@ -1,6 +1,44 @@
 <nav class="navbar navbar-success bg-success">
     <button class="btn btn-dark" routerLink="/menu"> Volver</button>
-  </nav>
+    <div
+    style="margin-left: auto; margin-right: auto; display: inline-flex; width: 450px;
+  justify-content: center; align-items: center;"
+  >
+  <div style="  padding: 5px; margin: auto;">
+    <label>
+      <mat-icon class="icon" style="font-size: larger;"
+        >filter_list <a>Filtar por :</a>
+      </mat-icon>
+    </label>
+  </div>
+  
+    <select
+      style="width: 200px;"
+      class="form-control"
+      [(ngModel)]="fil"
+      (change)="onChange()"
+    >
+      <option>
+        Fecha de entrada
+      </option>
+      
+    </select>
+  </div>
+
+  <label [hidden]="isHidden2" class="menu"> Fecha de entrada</label>
+  <input
+    type="text"
+    style="width: 200px;"
+    class="form-control"
+    class="menu"
+    placeholder="Fecha de entrada"
+    [hidden]="isHidden2"
+    [(ngModel)]="FechaRecepcion"
+    name="FechaRecepcion"
+  />
+
+  
+</nav>
 
 
  <div id="contentToConvert">
@@ -560,7 +598,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr  *ngFor="let cen of vector" >
+            <tr  *ngFor="let cen of vector | filtroinventario: FechaRecepcion" >
               
               <th scope="row" style="font-size: 9px;">{{cen.FechaRecepcion }}</th>
               <th scope="row" style="font-size: 9px;">{{cen.numero}}</th>

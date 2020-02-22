@@ -43,7 +43,9 @@ salcen :  Datosinventario [] = [];
 vector1 = [];
 vector2 = [];
 vector = [];
-
+isHidden2: boolean = true;
+fil;
+FechaRecepcion = "";
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
   Nombrereporte = 'Reporte inventario';
@@ -190,7 +192,7 @@ id = {
       r.Cantidad = 0;
      
      }
-     var vec =this.vector2.concat(this.salcen);
+     var vec = this.vector2.concat(this.salcen);
      this.vector = this.au.concat(vec);
      console.log('nuevo array', this.vector);
      
@@ -499,4 +501,19 @@ if(values.currentTarget.checked == true){
 
 }
 }
+
+onChange(){
+
+  if(this.fil == "Fecha de entrada"){
+
+
+    this.isHidden2 = false;
+  }else{
+
+    
+    this.isHidden2 = true;
+  }
+}
+
+
 }
