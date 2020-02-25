@@ -1,81 +1,79 @@
 <nav class="navbar navbar-fixed-top">
   <button class="btn btn-dark" routerLink="/menu">Volver</button>
 
-
-  <div style="margin-left: auto; margin-right: auto; display: inline-flex; width: 450px;
-  justify-content: center; align-items: center;"
-  >
-    <div style="  padding: 5px; margin: auto;">
-      <label>
-        <mat-icon class="icon" style="font-size: larger;"
-          >filter_list <a>Filtar por :</a>
-        </mat-icon>
-      </label>
-    </div>
-
-    <div
-      style="  padding: 5px;
-    margin: 5px;"
-    >
-      <select
-        style="width: 200px;"
-        class="form-control"
-        [(ngModel)]="fil"
-        (change)="onChange()"
-      >
-        <option >  
-          Tipo de documento
-        </option > 
-       <option> 
-         Fecha de ingreso
-       </option > 
-        <option > 
-          Estado
-       </option > 
-      </select>
-    </div>
+  <div
+  style="margin-left: auto; margin-right: auto; display: inline-flex; width: 450px;
+justify-content: center; align-items: center;"
+>
+  <div style="  padding: 5px; margin: auto;">
+    <label>
+      <mat-icon class="icon" style="font-size: larger;"
+        >filter_list <a>Filtar por :</a>
+      </mat-icon>
+    </label>
   </div>
 
-  <label [hidden]="isHidden2" class="menu">Tipo de documento</label>
-  <select
-    class="menu "
-    style="width: 300px;"
-    class="form-control"
-    [(ngModel)]="tipo"
-    name="tipo"
-    [hidden]="isHidden2"
-  >
-    <option *ngFor="let t of tip"  > {{t.NombreTipo}} </option>
-  </select>
-
-  <label class="menu" [hidden]="isHidden">Fecha de Ingreso  </label>
-  <input
-    type="text"
-    style="width: 200px;"
-    class="form-control"
-    class="menu"
-    placeholder="Fecha de ingreso "
-    [(ngModel)]="fechas"
-    name="fechas"
-    [hidden]="isHidden"
-  />
-
-  <label [hidden]="isHidden1" class="menu"> Estado </label>
-
   <select
     style="width: 200px;"
     class="form-control"
-    [(ngModel)]="est"
-    name="est"
-    [hidden]="isHidden1"
+    [(ngModel)]="fil"
+    (change)="onChange()"
   >
-    <option [value]="1">
-      Habilitado
+    <option>
+      Nombre
     </option>
-    <option [value]="0">
-      Deshabilitado
+    <option>
+      Tipo de documento
+    </option>
+    <option>
+      Estado
     </option>
   </select>
+</div>
+
+<label [hidden]="isHidden2" class="menu">Nombre</label>
+<input
+  type="text"
+  style="width: 200px;"
+  class="form-control"
+  class="menu"
+  placeholder="Nombre "
+  [hidden]="isHidden2"
+  [(ngModel)]="feci"
+  name="feci"
+/>
+
+<label class="menu" [hidden]="isHidden">Tipo de documento</label>
+
+<select
+style="width: 300px;"
+class="form-control"
+[(ngModel)]="tipdoc"
+  name="tipdoc"
+  [hidden]="isHidden"
+>
+<option *ngFor="let t of tip"  > {{t.NombreTipo}} </option>
+</select>
+
+
+
+
+<label [hidden]="isHidden1" class="menu"> Estado </label>
+
+<select
+  style="width: 200px;"
+  class="form-control"
+  [(ngModel)]="est"
+  (change)="estad()"
+  [hidden]="isHidden1"
+>
+  <option [value]="1">
+    Habilitado
+  </option>
+  <option [value]="0">
+    Deshabilitado
+  </option>
+</select> 
 </nav>
 
 <table class="table" id="contentToConvert">
@@ -107,7 +105,9 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let usu of usua | filtrousuario: est | filtrousuario: tipo | filtrousuario: fecha  ">
+    <tr *ngFor="let usu of usua | filtrousuario: feci
+    | filtrousuario: tipdoc
+    | filtrousuario: est ">
       <th scope="row">{{usu.idUsuarios}}</th>
       <td>{{usu.Nombres}}</td>
       <td>{{usu.Apellidos}}</td>

@@ -12,7 +12,7 @@ export class FiltrolistadocursosPipe implements PipeTransform {
     for (const centro of value) {
       if (centro.NombreAgenteE.toLowerCase().indexOf(valor.toLowerCase()) > -1) {
         resultcod.push(centro);
-      } else if (centro.Fecha.toString().indexOf(valor.toString() ) > -1) {
+      } else if (centro.tipodocumento.toString().indexOf(valor.toString() ) > -1) {
         resultcod.push(centro);
       } else if (centro.Estado.toString().indexOf(valor) > -1) {
         console.log(''+ valor);

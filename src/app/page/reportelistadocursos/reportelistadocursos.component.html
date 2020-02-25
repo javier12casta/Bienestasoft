@@ -27,7 +27,7 @@
           Nombre Agente
         </option>
         <option>
-          Fecha
+          Tipo de documento
         </option>
         <option>
           Estado
@@ -48,8 +48,17 @@
     [(ngModel)]="nom"
   />
 
-  <label class="menu" [hidden]="isHidden">Fecha </label>
-  <input type="text" [hidden]="isHidden" name="fec" [(ngModel)]="fec" />
+  <label class="menu" [hidden]="isHidden">Tipo de documento </label>
+
+  <select
+  style="width: 300px;"
+  class="form-control"
+  [hidden]="isHidden" name="fec" [(ngModel)]="fec"
+  >
+  <option *ngFor="let t of tip"  > {{t.NombreTipo}} </option>
+  </select>
+  
+
 
   <label [hidden]="isHidden1" class="menu"> Estado </label>
 

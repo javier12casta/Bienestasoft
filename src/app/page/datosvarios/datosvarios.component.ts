@@ -17,7 +17,7 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 export class DatosvariosComponent implements OnInit {
 
   listamaestro:string[]=["0","1"];
-  unidadm:string[]=["g","personas"];
+  unidadm:string[]=["g"];
   public cen1: Centrozonal[] = [];
   
   x : Datosvarios = {

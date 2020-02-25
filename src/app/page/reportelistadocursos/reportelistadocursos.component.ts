@@ -4,6 +4,7 @@ import { Listadocursos } from '../../interfaces/listadocursos';
 import * as jspdf from 'jspdf'; 
 import html2canvas from 'html2canvas';
 import { Listadocursost } from 'src/app/interfaces/listadocursost';
+import { Tipodocumento } from '../../interfaces/tipodocumento';
 
 @Component({
   selector: 'app-reportelistadocursos',
@@ -24,6 +25,7 @@ export class ReportelistadocursosComponent implements OnInit {
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
   Nombrereporte = 'Reporte listado de cursos';
+  tip: Tipodocumento[] = [];
 
   constructor(private Service: ServicioService) { }
 
@@ -45,6 +47,13 @@ export class ReportelistadocursosComponent implements OnInit {
     }
     );
 
+    this.Service.gettipodocumento()
+    .subscribe(res => {
+      this.tip = res;
+    }, err => {
+      console.log(err);
+    });
+    
   }
 
   Generareporte(){
@@ -90,7 +99,7 @@ export class ReportelistadocursosComponent implements OnInit {
     }
 
 
-    if(this.fil == "Fecha"){
+    if(this.fil == "Tipo de documento"){
 
       this.isHidden = false;
       this.isHidden1 = true;

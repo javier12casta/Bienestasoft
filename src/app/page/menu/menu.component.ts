@@ -148,7 +148,7 @@ export class MenuComponent implements OnInit {
 
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro zonal",
+                name: "Deshabilitar centro zonal",
                 route: "/centrozonalin",
                 icon: "public"
               };

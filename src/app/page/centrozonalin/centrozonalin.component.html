@@ -5,7 +5,7 @@
       </div>
 
       <div>
-          <label>Inhabilitar centro zonal</label>
+          <label>Deshabilitar centro zonal</label>
       
       {{fecha}}  
       </div>
@@ -28,7 +28,7 @@
         <th scope="col">Código externo ICBF centro zonal</th>
         <th scope="col">Estado</th>
         <th scope="col">Regional</th>
-        <th scope="col">Inhabilitar</th>
+        <th scope="col">Deshabilitar</th>
       </tr>
     </thead>
     <tbody>
@@ -49,7 +49,7 @@
         </td>
         <td>{{cen.Regional}}</td>
         <td>
-          <button class="btn btn-dark" [routerLink]="['/centrozonalinh', cen.idCentrosZonales]">Inhabilitar</button>
+          <button class="btn btn-dark" [routerLink]="['/centrozonalinh', cen.idCentrosZonales]">Deshabilitar</button>
         </td>
       </tr>
     </tbody>

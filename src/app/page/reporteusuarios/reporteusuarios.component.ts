@@ -16,9 +16,9 @@ export class ReporteusuariosComponent implements OnInit {
   isHidden1: boolean = true;
   isHidden2: boolean = true;
   fil;
-  fechas = "";
   est = "";
-  tipo = "";
+  tipdoc = "";
+  feci = "";
   tip: Tipodocumento[] = [];
   usua: Usuariost[] = [];
   f = new Date();
@@ -84,18 +84,19 @@ export class ReporteusuariosComponent implements OnInit {
 
     onChange(){
 
-      if(this.fil == "Fecha de ingreso"){
-  
-        this.isHidden = false;
-        this.isHidden1 = true;
-        this.isHidden2 = true;
-      }
-  
-      if(this.fil == "Tipo de documento"){
+      if(this.fil == "Nombre"){
   
         this.isHidden = true;
         this.isHidden1 = true;
         this.isHidden2 = false;
+      }
+  
+  
+      if(this.fil == "Tipo de documento"){
+  
+        this.isHidden = false;
+        this.isHidden1 = true;
+        this.isHidden2 = true;
       }
   
   
@@ -125,6 +126,12 @@ export class ReporteusuariosComponent implements OnInit {
   
       }
   
+  
+      opmunicipio(){
+  
+  
+  
+      }
   
     
   
