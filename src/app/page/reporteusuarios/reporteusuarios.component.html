@@ -41,10 +41,11 @@
     class="menu "
     style="width: 300px;"
     class="form-control"
-    [(ngModel)]="tip"
+    [(ngModel)]="tipo"
+    name="tipo"
     [hidden]="isHidden2"
   >
-    <option *ngFor="let t of tip"  (ngModelChange)="opmunicipio()"  > {{t.NombreTipo}} </option>
+    <option *ngFor="let t of tip"  > {{t.NombreTipo}} </option>
   </select>
 
   <label class="menu" [hidden]="isHidden">Fecha de Ingreso  </label>
@@ -106,7 +107,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let usu of usua | filtrousuario: est | filtrousuario: tip | filtrousuario: fecha ">
+    <tr *ngFor="let usu of usua | filtrousuario: est | filtrousuario: tipo | filtrousuario: fecha  ">
       <th scope="row">{{usu.idUsuarios}}</th>
       <td>{{usu.Nombres}}</td>
       <td>{{usu.Apellidos}}</td>

@@ -18,6 +18,7 @@ export class ReporteusuariosComponent implements OnInit {
   fil;
   fechas = "";
   est = "";
+  tipo = "";
   tip: Tipodocumento[] = [];
   usua: Usuariost[] = [];
   f = new Date();
@@ -35,8 +36,6 @@ export class ReporteusuariosComponent implements OnInit {
     }
     );
 
-    
-    
     this.Service.gettipodocumento()
     .subscribe(res => {
       this.tip = res;
@@ -85,19 +84,18 @@ export class ReporteusuariosComponent implements OnInit {
 
     onChange(){
 
-      if(this.fil == "Fecha ingreso"){
-  
-        this.isHidden = true;
-        this.isHidden1 = true;
-        this.isHidden2 = false;
-      }
-  
-  
-      if(this.fil == "Tipo documento"){
+      if(this.fil == "Fecha de ingreso"){
   
         this.isHidden = false;
         this.isHidden1 = true;
         this.isHidden2 = true;
+      }
+  
+      if(this.fil == "Tipo de documento"){
+  
+        this.isHidden = true;
+        this.isHidden1 = true;
+        this.isHidden2 = false;
       }
   
   
@@ -128,11 +126,7 @@ export class ReporteusuariosComponent implements OnInit {
       }
   
   
-      opmunicipio(){
-  
-  
-  
-      }
+    
   
   
 

@@ -2,47 +2,53 @@
     <button class="btn btn-dark" routerLink="/menu">Volver</button>
 
 
+  <div
+    style="margin-left: auto; margin-right: auto; display: inline-flex; width: 450px;
+  justify-content: center; align-items: center;"
+  >
+    <div style="  padding: 5px; margin: auto;">
+      <label>
+        <mat-icon class="icon" style="font-size: larger;"
+          >filter_list <a>Filtar por :</a>
+        </mat-icon>
+      </label>
+    </div>
 
-    <label  style="text-align:left;"  >Filtar Por : </label>
+    <div
+      style="  padding: 5px;
+    margin: 5px;"
+    >
     <select style="width: 200px;" class="form-control"  [(ngModel)]="fil" (change)="onChange()"> 
-        <option >  
-          Fecha recepción 
-        </option > 
-        <option> 
-          Tipo bienesterina 
-        </option > 
-        <option > 
-          lote
-        </option > 
-        
-        </select>
+      <option >  
+        Fecha recepción 
+      </option > 
+      <option> 
+        Tipo bienesterina 
+      </option > 
+      <option > 
+        Lote
+      </option > 
+      
+      </select>
+
+   </div>
+  </div>
+
+      <label [hidden]="isHidden2" class="menu">Fecha recepción</label>
+      <input type="text"  style="width: 200px;" class="form-control" placeholder="Fecha recepción"  [(ngModel)]="fecrec"
+      name="fecrec" [hidden]="isHidden2"/>
   
-        <label [hidden]="isHidden2" class="menu">Fecha recepción</label>
-        <input type="date"  min="1900-01-01" max="2050-12-31" [hidden]="isHidden2"/>
+        <label class="menu" [hidden]="isHidden">Tipo bienesterina  </label>
+      <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Tipo bienesterina"  [(ngModel)]="tipb"
+      name="tipb" [hidden]="isHidden" />
+
+
+      <label  [hidden]="isHidden1" class="menu"> Lote </label>
+      <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Lote" [hidden]="isHidden1"  [(ngModel)]="lot"
+      name="lot" />
+
+
     
-          <label class="menu" [hidden]="isHidden">Tipo bienesterina  </label>
-        <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Tipo bienesterina  " [hidden]="isHidden" [(ngModel)]="res" (ngModelChange)="cambiaLado($event)" />
-  
-  
-        <label  [hidden]="isHidden1" class="menu"> lote </label>
-        <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="lote " [hidden]="isHidden1" [(ngModel)]="res" (ngModelChange)="cambiaLado($event)" />
-       
-     
-          <button class="btn btn-dark" >Buscar</button>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   </nav>
@@ -71,7 +77,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let ser of rec">
+      <tr *ngFor="let ser of rec | filtrorecepcion: fecrec | filtrorecepcion: tipb | filtrorecepcion: lot ">
         <th scope="row">{{ser.idBienestarina}}</th>
         <td>{{ser.lote}}</td>
         <td>{{ser.FechaVencimiento   }}</td>

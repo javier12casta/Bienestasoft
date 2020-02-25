@@ -320,6 +320,7 @@ import { FiltrodevolucionPipe } from '../app/pipes/filtrodevolucion.pipe';
 import { FiltrorolPipe } from '../app/pipes/filtrorol.pipe';
 import { FiltrousuarioPipe } from '../app/pipes/filtrousuario.pipe';
 import { FiltroinventarioPipe } from '../app/pipes/filtroinventario.pipe';
+import { FiltrorecepcionPipe } from '../app/pipes/filtrorecepcion.pipe';
 import {DatePipe} from '@angular/common';
 
 @NgModule({
@@ -615,7 +616,7 @@ import {DatePipe} from '@angular/common';
     FiltrorolPipe,
     FiltrousuarioPipe,
     FiltroinventarioPipe,
-    
+    FiltrorecepcionPipe,
  ],
   imports: [
     BrowserModule,

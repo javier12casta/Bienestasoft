@@ -15,10 +15,11 @@ export class ReporterecepcionComponent implements OnInit {
   isHidden: boolean = true;
   isHidden1: boolean = true;
   isHidden2: boolean = true;
-
-
-fil;
+  fil;
   est;
+  fecrec = "";
+  tipb = "";
+  lot = "";
   rec: Recepciont[] = [];
   f = new Date();
   fecha = this.f.getDate() + "/" + (this.f.getMonth() +1) + "/" + this.f.getFullYear();
@@ -91,7 +92,7 @@ fil;
   
   
   
-      if(this.fil == "lote"){
+      if(this.fil == "Lote"){
   
        this.isHidden = true;
        this.isHidden1 = false;

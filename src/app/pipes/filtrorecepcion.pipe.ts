@@ -1,26 +1,23 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'filtrousuario'
+  name: 'filtrorecepcion'
 })
-export class FiltrousuarioPipe implements PipeTransform {
+export class FiltrorecepcionPipe implements PipeTransform {
 
   transform(value: any, arg: any): any {
     const resultcod = [];
     var valor = arg;
     if (arg === "" || arg.length < 1) return value;
     for (const centro of value) {
-      if (centro.FechaIngreso.toString().indexOf(valor.toString()) ) {
+      if (centro.FechaRecepcion.toString().indexOf(valor.toString()) > -1) {
         resultcod.push(centro);
-      }  else if ( centro.NombreTipo.toString().indexOf(valor) > -1 ) {
+      } else if (centro.TipoBienesterina.toLowerCase().indexOf(valor.toLowerCase()) > -1) {
         resultcod.push(centro);
-      } else if (centro.Estado.toString().indexOf(valor) > -1) {
+      } else if (centro.lote.toString().indexOf(valor.toString()) > -1) {
         console.log(''+ valor);
-        resultcod.push(centro); 
+        resultcod.push(centro);
       }
-
-      
-
     }
     return resultcod;
   }
