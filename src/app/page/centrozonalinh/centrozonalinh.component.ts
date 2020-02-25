@@ -113,26 +113,26 @@ export class CentrozonalinhComponent implements OnInit {
     var cont3: number = 0;
     for (let numeros of this.puntos) {
       if (numero == numeros.idCentrosZonales && numeros.Estado == 1) {
-        var cont: number = 0;
-        var cont2 = cont + 1;
+        var cont = Number(0);
+        var cont2 = Number(cont + 1);
         this.showMenssage3();
       } else if(numero == numeros.idCentrosZonales && numeros.Estado == 0) {
-        var cont: number = 0;
-        cont3 = cont + 1;
+        var cont= Number(0);
+        cont3 = Number(cont + 1);
       }
     }
     for (let numeros of this.usuarios) {
       if (numero == numeros.idCentrosZonales && numeros.Estado == 1) {
-        var cont: number = 0;
-        var cont2 = cont + 1;
-        //console.log('Comaparado', numero, numeros.idPuntoEntrega);
-        //console.log('contador 2', cont2);
+        var cont=Number(0);
+        var cont2 = Number(cont + 1);
+        console.log('Comaparado', numero, numeros.idPuntoEntrega);
+        console.log('contador 2', cont2);
       } else if (numero == numeros.idCentrosZonales && numeros.Estado == 0) {
-        var cont: number = 0;
-        cont3 = cont + 1;
-        //console.log('contador 3', cont3);
+        var cont = Number(0);
+        cont3 = Number(cont + 1);
+        console.log('contador 3', cont3);
       }
-    if (cont2 == 0 && cont3 > 0) {
+    if (cont2 == 0 && cont3 >= 0) {
       console.log('funciona');
       this.updateDatos2();
     } else {
