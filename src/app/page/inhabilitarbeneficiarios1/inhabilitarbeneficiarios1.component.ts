@@ -16,7 +16,7 @@ import { Beneficiariot } from '../../interfaces/beneficiariot';
         </td>
 
         <div>
-          <label>Inhabilitar beneficiario centro zonal</label>
+          <label>Deshabilitar beneficiario centro zonal</label>
       
       {{fecha}}  
       </div>
@@ -91,7 +91,7 @@ import { Beneficiariot } from '../../interfaces/beneficiariot';
           <td>{{cen.NombreCentroZonal}}</td>
   
           <td>
-            <button class="btn btn-dark" [routerLink]="['/InhabilitarBeneficiarioi', cen.idBeneficiarios]">Inhabilitar</button>
+            <button class="btn btn-dark" [routerLink]="['/InhabilitarBeneficiarioi', cen.idBeneficiarios]">Deshabilitar</button>
           </td>
         </tr>
       </tbody>

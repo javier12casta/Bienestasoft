@@ -43,7 +43,7 @@ export class InhabilitarusuariospComponent implements OnInit {
   showMenssage(){
     Swal.fire({
       title: 'Deshabilitado',
-      text: 'Usuario Deshabilitado',
+      text: 'Usuario deshabilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {
@@ -57,7 +57,7 @@ export class InhabilitarusuariospComponent implements OnInit {
 
   showMenssage1(){
     Swal.fire({
-      title: 'habilitado',
+      title: 'Habilitado',
       text: 'Usuario habilitado',
       type: 'success',
       confirmButtonText: 'Entendido'

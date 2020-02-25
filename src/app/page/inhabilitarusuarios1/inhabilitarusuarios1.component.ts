@@ -11,7 +11,7 @@ import { ServicioService } from '../../servicio.service';
   <nav class="navbar navbar-fixed-top">
   <button class="btn btn-dark" routerLink="/inhabilitarusuarios">Volver</button>
   <div>
-          <label>Inhabilitar usuarios centro zonal</label>
+          <label>Deshabilitar usuarios centro zonal</label>
       
       {{fecha}}  
       </div>
@@ -70,7 +70,7 @@ import { ServicioService } from '../../servicio.service';
         <td>{{usu.RolPersona}}</td>
         <td>{{usu.NombreCentroZonal}}</td>
         <td>
-          <button class="btn btn-dark" [routerLink]="['/inhabilitarusuariosi', usu.idUsuarios]">Inhabilitar</button>
+          <button class="btn btn-dark" [routerLink]="['/inhabilitarusuariosi', usu.idUsuarios]">Deshabilitar</button>
         </td>
       </tr>
     </tbody>

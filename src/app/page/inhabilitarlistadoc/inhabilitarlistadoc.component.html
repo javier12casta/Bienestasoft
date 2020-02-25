@@ -1,7 +1,7 @@
 <nav class="navbar navbar-success bg-success">
         <button class="btn btn-dark" routerLink="/nivelistadocursosi">Volver</button>
         <div>
-          <label>Inhabilitar listado de cursos centro zonal</label>
+          <label>Deshabilitar listado de cursos centro zonal</label>
       
       {{fecha}}  
       </div>
@@ -43,7 +43,7 @@
               <td> {{cen.nombrecompleto }}</td>
               <td> {{cen.NombreCentroZonal }}</td>
               <td>
-                <button class="btn btn-dark" [routerLink]="['/inhabilitarelistadoci', cen.idListadoCursos]">Inhabilitar</button>
+                <button class="btn btn-dark" [routerLink]="['/inhabilitarelistadoci', cen.idListadoCursos]">Deshabilitar</button>
               </td>
               </tr>
                         

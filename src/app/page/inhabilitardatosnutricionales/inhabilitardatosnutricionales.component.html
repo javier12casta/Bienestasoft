@@ -1,7 +1,7 @@
 <nav class="navbar navbar-success bg-success">
     <button class="btn btn-dark" routerLink="/niveldatosnutricionalesi">Volver</button>
     <div>
-      <label>Inhabilitar datos nutricionales centro zonal</label>
+      <label>Deshabilitar datos nutricionales centro zonal</label>
   
   {{fecha}}  
   </div>
@@ -42,7 +42,7 @@
           <td>{{cen.UnidadDeMedida}}</td>
           <td>{{cen.NombreCentroZonal}}</td>
           <td>  
-            <button class="btn btn-dark" [routerLink]="['/inhabilitardatosnutricionalesi', cen.idDatosVarios]">Inhabilitar</button>
+            <button class="btn btn-dark" [routerLink]="['/inhabilitardatosnutricionalesi', cen.idDatosVarios]">Deshabilitar</button>
           </td>
         </tr>
       </tbody>

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-success bg-success">
     <button class="btn btn-dark" routerLink="/menu"> Volver</button>
     <div>
-        <label>Inhabilitar rol</label>
+        <label>Deshabilitar rol</label>
     
     {{fecha}}  
     </div>
@@ -17,7 +17,6 @@
         <th scope="col">#</th>
         <th scope="col">Nombre rol</th>
         <th scope="col">Estado</th>
-        <th scope="col">Inhabilitar</th>
       </tr>
     </thead>
     <tbody>
@@ -34,7 +33,7 @@
           </div>
         </td>
         <td>
-          <button class="btn btn-dark" [routerLink]="['/rolinh',rol.idRolPersona]" type="submit">Inhabilitar</button>
+          <button class="btn btn-dark" [routerLink]="['/rolinh',rol.idRolPersona]" type="submit">Deshabilitar</button>
         </td>
       </tr>
     </tbody>

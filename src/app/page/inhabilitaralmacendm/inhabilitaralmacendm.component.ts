@@ -48,7 +48,7 @@ export class InhabilitaralmacendmComponent implements OnInit {
   showMenssage(){
     Swal.fire({
       title: 'Deshabilitado',
-      text: 'Almacén Deshabilitado',
+      text: 'Almacén deshabilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {

@@ -49,7 +49,7 @@ export class InhabilitarbeneficiariouiComponent implements OnInit {
   showMenssage(){
     Swal.fire({
       title: 'Deshabilitado',
-      text: 'Beneficiario Deshabilitado',
+      text: 'Beneficiario deshabilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {
@@ -67,7 +67,7 @@ export class InhabilitarbeneficiariouiComponent implements OnInit {
   showMenssage1(){
     Swal.fire({
       title: 'Habilitado',
-      text: 'Beneficiario Habilitado',
+      text: 'Beneficiario habilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {

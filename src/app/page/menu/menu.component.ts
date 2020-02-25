@@ -204,7 +204,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro zonal",
+                name: "Deshabilitar centro zonal",
                 route: "/centrozonalin",
                 icon: "public"
               };
@@ -223,7 +223,7 @@ export class MenuComponent implements OnInit {
 
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro zonal",
+                name: "Deshabilitar centro zonal",
                 route: "/centrozonalin",
                 icon: "public"
               };
@@ -233,7 +233,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro zonal",
+                name: "Deshabilitar centro zonal",
                 route: "/centrozonalin",
                 icon: "public"
               };
@@ -254,7 +254,7 @@ export class MenuComponent implements OnInit {
 
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro zonal",
+                name: "Deshabilitar centro zonal",
                 route: "/centrozonalin",
                 icon: "public"
               };
@@ -264,7 +264,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro zonal",
+                name: "Deshabilitar centro zonal",
                 route: "/centrozonalin",
                 icon: "public"
               };
@@ -283,7 +283,7 @@ export class MenuComponent implements OnInit {
 
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro zonal",
+                name: "Deshabilitar centro zonal",
                 route: "/centrozonalin",
                 icon: "public"
               };
@@ -293,7 +293,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro zonal",
+                name: "Deshabilitar centro zonal",
                 route: "/centrozonalin",
                 icon: "public"
               };
@@ -323,7 +323,7 @@ export class MenuComponent implements OnInit {
 
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro zonal",
+                name: "Deshabilitar centro zonal",
                 route: "/centrozonalin",
                 icon: "public"
               };
@@ -333,7 +333,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro zonal",
+                name: "Deshabilitar centro zonal",
                 route: "/centrozonalin",
                 icon: "public"
               };
@@ -352,7 +352,7 @@ export class MenuComponent implements OnInit {
 
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro zonal",
+                name: "Deshabilitar centro zonal",
                 route: "/centrozonalin",
                 icon: "public"
               };
@@ -362,7 +362,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro zonal",
+                name: "Deshabilitar centro zonal",
                 route: "/centrozonalin",
                 icon: "public"
               };
@@ -383,7 +383,7 @@ export class MenuComponent implements OnInit {
 
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro zonal",
+                name: "Deshabilitar centro zonal",
                 route: "/centrozonalin",
                 icon: "public"
               };
@@ -393,7 +393,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro zonal",
+                name: "Deshabilitar centro zonal",
                 route: "/centrozonalin",
                 icon: "public"
               };
@@ -412,7 +412,7 @@ export class MenuComponent implements OnInit {
 
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro zonal",
+                name: "Deshabilitar centro zonal",
                 route: "/centrozonalin",
                 icon: "public"
               };
@@ -422,7 +422,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro zonal",
+                name: "Deshabilitar centro zonal",
                 route: "/centrozonalin",
                 icon: "public"
               };
@@ -466,7 +466,7 @@ export class MenuComponent implements OnInit {
             this.estructura.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar punto entrega",
+                name: "Deshabilitar punto entrega",
                 route: "/puntoentregain",
                 icon: "public"
               };
@@ -476,7 +476,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar punto entrega",
+                name: "Deshabilitar punto entrega",
                 route: "/puntoentregain",
                 icon: "public"
               };
@@ -495,7 +495,7 @@ export class MenuComponent implements OnInit {
 
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar punto entrega",
+                name: "Deshabilitar punto entrega",
                 route: "/puntoentregain",
                 icon: "public"
               };
@@ -505,7 +505,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar punto entrega",
+                name: "Deshabilitar punto entrega",
                 route: "/puntoentregain",
                 icon: "public"
               };
@@ -526,7 +526,7 @@ export class MenuComponent implements OnInit {
 
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar punto entrega",
+                name: "Deshabilitar punto entrega",
                 route: "/puntoentregain",
                 icon: "public"
               };
@@ -536,7 +536,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar punto entrega",
+                name: "Deshabilitar punto entrega",
                 route: "/puntoentregain",
                 icon: "public"
               };
@@ -555,7 +555,7 @@ export class MenuComponent implements OnInit {
 
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar punto entrega",
+                name: "Deshabilitar punto entrega",
                 route: "/puntoentregain",
                 icon: "public"
               };
@@ -565,7 +565,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar punto entrega",
+                name: "Deshabilitar punto entrega",
                 route: "/puntoentregain",
                 icon: "public"
               };
@@ -594,7 +594,7 @@ export class MenuComponent implements OnInit {
             this.estructura.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar punto entrega",
+                name: "Deshabilitar punto entrega",
                 route: "/puntoentregain",
                 icon: "public"
               };
@@ -604,7 +604,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar punto entrega",
+                name: "Deshabilitar punto entrega",
                 route: "/puntoentregain",
                 icon: "public"
               };
@@ -623,7 +623,7 @@ export class MenuComponent implements OnInit {
 
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar punto entrega",
+                name: "Deshabilitar punto entrega",
                 route: "/puntoentregain",
                 icon: "public"
               };
@@ -633,7 +633,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar punto entrega",
+                name: "Deshabilitar punto entrega",
                 route: "/puntoentregain",
                 icon: "public"
               };
@@ -654,7 +654,7 @@ export class MenuComponent implements OnInit {
 
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar punto entrega",
+                name: "Deshabilitar punto entrega",
                 route: "/puntoentregain",
                 icon: "public"
               };
@@ -664,7 +664,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar punto entrega",
+                name: "Deshabilitar punto entrega",
                 route: "/puntoentregain",
                 icon: "public"
               };
@@ -683,7 +683,7 @@ export class MenuComponent implements OnInit {
 
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar punto entrega",
+                name: "Deshabilitar punto entrega",
                 route: "/puntoentregain",
                 icon: "public"
               };
@@ -693,7 +693,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar punto entrega",
+                name: "Deshabilitar punto entrega",
                 route: "/puntoentregain",
                 icon: "public"
               };
@@ -730,7 +730,7 @@ export class MenuComponent implements OnInit {
             this.estructura.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar UDS",
+                name: "Deshabilitar UDS",
                 route: "/udsin",
                 icon: "public"
               };
@@ -740,7 +740,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar UDS",
+                name: "Deshabilitar UDS",
                 route: "/udsin",
                 icon: "public"
               };
@@ -759,7 +759,7 @@ export class MenuComponent implements OnInit {
 
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar UDS",
+                name: "Deshabilitar UDS",
                 route: "/udsin",
                 icon: "public"
               };
@@ -769,7 +769,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar UDS",
+                name: "Deshabilitar UDS",
                 route: "/udsin",
                 icon: "public"
               };
@@ -790,7 +790,7 @@ export class MenuComponent implements OnInit {
 
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar UDS",
+                name: "Deshabilitar UDS",
                 route: "/udsin",
                 icon: "public"
               };
@@ -800,7 +800,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar UDS",
+                name: "Deshabilitar UDS",
                 route: "/udsin",
                 icon: "public"
               };
@@ -819,7 +819,7 @@ export class MenuComponent implements OnInit {
 
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar UDS",
+                name: "Deshabilitar UDS",
                 route: "/udsin",
                 icon: "public"
               };
@@ -829,7 +829,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar UDS",
+                name: "Deshabilitar UDS",
                 route: "/udsin",
                 icon: "public"
               };
@@ -855,7 +855,7 @@ export class MenuComponent implements OnInit {
 
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar UDS",
+                name: "Deshabilitar UDS",
                 route: "/udsin",
                 icon: "public"
               };
@@ -865,7 +865,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar UDS",
+                name: "Deshabilitar UDS",
                 route: "/udsin",
                 icon: "public"
               };
@@ -884,7 +884,7 @@ export class MenuComponent implements OnInit {
 
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar UDS",
+                name: "Deshabilitar UDS",
                 route: "/udsin",
                 icon: "public"
               };
@@ -894,7 +894,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar UDS",
+                name: "Deshabilitar UDS",
                 route: "/udsin",
                 icon: "public"
               };
@@ -915,7 +915,7 @@ export class MenuComponent implements OnInit {
 
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar UDS",
+                name: "Deshabilitar UDS",
                 route: "/udsin",
                 icon: "public"
               };
@@ -925,7 +925,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar UDS",
+                name: "Deshabilitar UDS",
                 route: "/udsin",
                 icon: "public"
               };
@@ -944,7 +944,7 @@ export class MenuComponent implements OnInit {
 
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar UDS",
+                name: "Deshabilitar UDS",
                 route: "/udsin",
                 icon: "public"
               };
@@ -954,7 +954,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar UDS",
+                name: "Deshabilitar UDS",
                 route: "/udsin",
                 icon: "public"
               };
@@ -995,7 +995,7 @@ export class MenuComponent implements OnInit {
             this.Usuarios.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar usuarios",
+                name: "Deshabilitar usuarios",
                 route: "/inhabilitarusuarios",
                 icon: "face"
               };
@@ -1005,7 +1005,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar usuarios",
+                name: "Deshabilitar usuarios",
                 route: "/inhabilitarusuarios",
                 icon: "face"
               };
@@ -1023,7 +1023,7 @@ export class MenuComponent implements OnInit {
             this.Usuarios.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar usuarios",
+                name: "Deshabilitar usuarios",
                 route: "/inhabilitarusuarios",
                 icon: "face"
               };
@@ -1033,7 +1033,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar usuarios",
+                name: "Deshabilitar usuarios",
                 route: "/inhabilitarusuarios",
                 icon: "face"
               };
@@ -1053,7 +1053,7 @@ export class MenuComponent implements OnInit {
             this.Usuarios.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar usuarios",
+                name: "Deshabilitar usuarios",
                 route: "/inhabilitarusuarios",
                 icon: "face"
               };
@@ -1063,7 +1063,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar usuarios",
+                name: "Deshabilitar usuarios",
                 route: "/inhabilitarusuarios",
                 icon: "face"
               };
@@ -1081,7 +1081,7 @@ export class MenuComponent implements OnInit {
             this.Usuarios.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar usuarios",
+                name: "Deshabilitar usuarios",
                 route: "/inhabilitarusuarios",
                 icon: "face"
               };
@@ -1091,7 +1091,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar usuarios",
+                name: "Deshabilitar usuarios",
                 route: "/inhabilitarusuarios",
                 icon: "face"
               };
@@ -1120,7 +1120,7 @@ export class MenuComponent implements OnInit {
             this.Usuarios.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar usuarios",
+                name: "Deshabilitar usuarios",
                 route: "/inhabilitarusuarios",
                 icon: "face"
               };
@@ -1130,7 +1130,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar usuarios",
+                name: "Deshabilitar usuarios",
                 route: "/inhabilitarusuarios",
                 icon: "face"
               };
@@ -1148,7 +1148,7 @@ export class MenuComponent implements OnInit {
             this.Usuarios.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar usuarios",
+                name: "Deshabilitar usuarios",
                 route: "/inhabilitarusuarios",
                 icon: "face"
               };
@@ -1158,7 +1158,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar usuarios",
+                name: "Deshabilitar usuarios",
                 route: "/inhabilitarusuarios",
                 icon: "face"
               };
@@ -1178,7 +1178,7 @@ export class MenuComponent implements OnInit {
             this.Usuarios.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar usuarios",
+                name: "Deshabilitar usuarios",
                 route: "/inhabilitarusuarios",
                 icon: "face"
               };
@@ -1188,7 +1188,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar usuarios",
+                name: "Deshabilitar usuarios",
                 route: "/inhabilitarusuarios",
                 icon: "face"
               };
@@ -1206,7 +1206,7 @@ export class MenuComponent implements OnInit {
             this.Usuarios.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar usuarios",
+                name: "Deshabilitar usuarios",
                 route: "/inhabilitarusuarios",
                 icon: "face"
               };
@@ -1216,7 +1216,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar usuarios",
+                name: "Deshabilitar usuarios",
                 route: "/inhabilitarusuarios",
                 icon: "face"
               };
@@ -1263,7 +1263,7 @@ export class MenuComponent implements OnInit {
             this.beneficiarios.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar beneficiarios ",
+                name: "Deshabilitar beneficiarios ",
                 route: "/inhabilitarnivelbeneficiario",
                 icon: "face"
               };
@@ -1273,7 +1273,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar beneficiarios ",
+                name: "Deshabilitar beneficiarios ",
                 route: "/inhabilitarnivelbeneficiario",
                 icon: "face"
               };
@@ -1292,7 +1292,7 @@ export class MenuComponent implements OnInit {
 
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar beneficiarios ",
+                name: "Deshabilitar beneficiarios ",
                 route: "/inhabilitarnivelbeneficiario",
                 icon: "face"
               };
@@ -1302,7 +1302,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar beneficiarios ",
+                name: "Deshabilitar beneficiarios ",
                 route: "/inhabilitarnivelbeneficiario",
                 icon: "face"
               };
@@ -1323,7 +1323,7 @@ export class MenuComponent implements OnInit {
 
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar beneficiarios ",
+                name: "Deshabilitar beneficiarios ",
                 route: "/inhabilitarnivelbeneficiario",
                 icon: "face"
               };
@@ -1333,7 +1333,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar beneficiarios ",
+                name: "Deshabilitar beneficiarios ",
                 route: "/inhabilitarnivelbeneficiario",
                 icon: "face"
               };
@@ -1351,7 +1351,7 @@ export class MenuComponent implements OnInit {
             this.beneficiarios.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar beneficiarios ",
+                name: "Deshabilitar beneficiarios ",
                 route: "/inhabilitarnivelbeneficiario",
                 icon: "face"
               };
@@ -1361,7 +1361,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar beneficiarios ",
+                name: "Deshabilitar beneficiarios ",
                 route: "/inhabilitarnivelbeneficiario",
                 icon: "face"
               };
@@ -1391,7 +1391,7 @@ export class MenuComponent implements OnInit {
 
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar beneficiarios ",
+                name: "Deshabilitar beneficiarios ",
                 route: "/inhabilitarnivelbeneficiario",
                 icon: "face"
               };
@@ -1401,7 +1401,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar beneficiarios ",
+                name: "Deshabilitar beneficiarios ",
                 route: "/inhabilitarnivelbeneficiario",
                 icon: "face"
               };
@@ -1419,7 +1419,7 @@ export class MenuComponent implements OnInit {
             this.beneficiarios.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar beneficiarios ",
+                name: "Deshabilitar beneficiarios ",
                 route: "/inhabilitarnivelbeneficiario",
                 icon: "face"
               };
@@ -1429,7 +1429,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar beneficiarios ",
+                name: "Deshabilitar beneficiarios ",
                 route: "/inhabilitarnivelbeneficiario",
                 icon: "face"
               };
@@ -1449,7 +1449,7 @@ export class MenuComponent implements OnInit {
             this.beneficiarios.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar beneficiarios ",
+                name: "Deshabilitar beneficiarios ",
                 route: "/inhabilitarnivelbeneficiario",
                 icon: "face"
               };
@@ -1459,7 +1459,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar beneficiarios ",
+                name: "Deshabilitar beneficiarios ",
                 route: "/inhabilitarnivelbeneficiario",
                 icon: "face"
               };
@@ -1477,7 +1477,7 @@ export class MenuComponent implements OnInit {
             this.beneficiarios.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar beneficiarios ",
+                name: "Deshabilitar beneficiarios ",
                 route: "/inhabilitarnivelbeneficiario",
                 icon: "face"
               };
@@ -1487,7 +1487,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar beneficiarios ",
+                name: "Deshabilitar beneficiarios ",
                 route: "/inhabilitarnivelbeneficiario",
                 icon: "face"
               };
@@ -1622,7 +1622,7 @@ export class MenuComponent implements OnInit {
             this.centrod.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro distribución",
+                name: "Deshabilitar centro distribución",
                 route: "/inhabilitarcentrod",
                 icon: "face"
               };
@@ -1632,7 +1632,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro distribución",
+                name: "Deshabilitar centro distribución",
                 route: "/inhabilitarcentrod",
                 icon: "face"
               };
@@ -1650,7 +1650,7 @@ export class MenuComponent implements OnInit {
             this.centrod.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro distribución",
+                name: "Deshabilitar centro distribución",
                 route: "/inhabilitarcentrod",
                 icon: "face"
               };
@@ -1660,7 +1660,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro distribución",
+                name: "Deshabilitar centro distribución",
                 route: "/inhabilitarcentrod",
                 icon: "face"
               };
@@ -1680,7 +1680,7 @@ export class MenuComponent implements OnInit {
             this.centrod.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro distribución",
+                name: "Deshabilitar centro distribución",
                 route: "/inhabilitarcentrod",
                 icon: "face"
               };
@@ -1690,7 +1690,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro distribución",
+                name: "Deshabilitar centro distribución",
                 route: "/inhabilitarcentrod",
                 icon: "face"
               };
@@ -1708,7 +1708,7 @@ export class MenuComponent implements OnInit {
             this.centrod.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro distribución",
+                name: "Deshabilitar centro distribución",
                 route: "/inhabilitarcentrod",
                 icon: "face"
               };
@@ -1718,7 +1718,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro distribución",
+                name: "Deshabilitar centro distribución",
                 route: "/inhabilitarcentrod",
                 icon: "face"
               };
@@ -1746,7 +1746,7 @@ export class MenuComponent implements OnInit {
             this.centrod.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro distribución",
+                name: "Deshabilitar centro distribución",
                 route: "/inhabilitarcentrod",
                 icon: "face"
               };
@@ -1756,7 +1756,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro distribución",
+                name: "Deshabilitar centro distribución",
                 route: "/inhabilitarcentrod",
                 icon: "face"
               };
@@ -1774,7 +1774,7 @@ export class MenuComponent implements OnInit {
             this.centrod.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro distribución",
+                name: "Deshabilitar centro distribución",
                 route: "/inhabilitarcentrod",
                 icon: "face"
               };
@@ -1784,7 +1784,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro distribución",
+                name: "Deshabilitar centro distribución",
                 route: "/inhabilitarcentrod",
                 icon: "face"
               };
@@ -1804,7 +1804,7 @@ export class MenuComponent implements OnInit {
             this.centrod.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro distribución",
+                name: "Deshabilitar centro distribución",
                 route: "/inhabilitarcentrod",
                 icon: "face"
               };
@@ -1814,7 +1814,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro distribución",
+                name: "Deshabilitar centro distribución",
                 route: "/inhabilitarcentrod",
                 icon: "face"
               };
@@ -1832,7 +1832,7 @@ export class MenuComponent implements OnInit {
             this.centrod.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro distribución",
+                name: "Deshabilitar centro distribución",
                 route: "/inhabilitarcentrod",
                 icon: "face"
               };
@@ -1842,7 +1842,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar centro distribución",
+                name: "Deshabilitar centro distribución",
                 route: "/inhabilitarcentrod",
                 icon: "face"
               };
@@ -2077,7 +2077,7 @@ export class MenuComponent implements OnInit {
             this.rol.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar rol",
+                name: "Deshabilitar rol",
                 route: "/rolin",
                 icon: "face"
               };
@@ -2087,7 +2087,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar rol",
+                name: "Deshabilitar rol",
                 route: "/rolin",
                 icon: "face"
               };
@@ -2105,7 +2105,7 @@ export class MenuComponent implements OnInit {
             this.rol.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar rol",
+                name: "Deshabilitar rol",
                 route: "/rolin",
                 icon: "face"
               };
@@ -2115,7 +2115,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar rol",
+                name: "Deshabilitar rol",
                 route: "/rolin",
                 icon: "face"
               };
@@ -2135,7 +2135,7 @@ export class MenuComponent implements OnInit {
             this.rol.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar rol",
+                name: "Deshabilitar rol",
                 route: "/rolin",
                 icon: "face"
               };
@@ -2145,7 +2145,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar rol",
+                name: "Deshabilitar rol",
                 route: "/rolin",
                 icon: "face"
               };
@@ -2163,7 +2163,7 @@ export class MenuComponent implements OnInit {
             this.rol.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar rol",
+                name: "Deshabilitar rol",
                 route: "/rolin",
                 icon: "face"
               };
@@ -2173,7 +2173,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar rol",
+                name: "Deshabilitar rol",
                 route: "/rolin",
                 icon: "face"
               };
@@ -2198,7 +2198,7 @@ export class MenuComponent implements OnInit {
             this.rol.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar rol",
+                name: "Deshabilitar rol",
                 route: "/rolin",
                 icon: "face"
               };
@@ -2208,7 +2208,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar rol",
+                name: "Deshabilitar rol",
                 route: "/rolin",
                 icon: "face"
               };
@@ -2226,7 +2226,7 @@ export class MenuComponent implements OnInit {
             this.rol.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar rol",
+                name: "Deshabilitar rol",
                 route: "/rolin",
                 icon: "face"
               };
@@ -2236,7 +2236,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar rol",
+                name: "Deshabilitar rol",
                 route: "/rolin",
                 icon: "face"
               };
@@ -2256,7 +2256,7 @@ export class MenuComponent implements OnInit {
             this.rol.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar rol",
+                name: "Deshabilitar rol",
                 route: "/rolin",
                 icon: "face"
               };
@@ -2266,7 +2266,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar rol",
+                name: "Deshabilitar rol",
                 route: "/rolin",
                 icon: "face"
               };
@@ -2284,7 +2284,7 @@ export class MenuComponent implements OnInit {
             this.rol.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar rol",
+                name: "Deshabilitar rol",
                 route: "/rolin",
                 icon: "face"
               };
@@ -2294,7 +2294,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar rol",
+                name: "Deshabilitar rol",
                 route: "/rolin",
                 icon: "face"
               };
@@ -2413,7 +2413,7 @@ export class MenuComponent implements OnInit {
             this.datos.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar datos maestros",
+                name: "Deshabilitar datos maestros",
                 route: "/listamaestrosinhabilitar",
                 icon: "face"
               };
@@ -2423,7 +2423,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar datos maestros",
+                name: "Deshabilitar datos maestros",
                 route: "/listamaestrosinhabilitar",
                 icon: "face"
               };
@@ -2441,7 +2441,7 @@ export class MenuComponent implements OnInit {
             this.datos.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar datos maestros",
+                name: "Deshabilitar datos maestros",
                 route: "/listamaestrosinhabilitar",
                 icon: "face"
               };
@@ -2451,7 +2451,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar datos maestros",
+                name: "Deshabilitar datos maestros",
                 route: "/listamaestrosinhabilitar",
                 icon: "face"
               };
@@ -2471,7 +2471,7 @@ export class MenuComponent implements OnInit {
             this.datos.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar datos maestros",
+                name: "Deshabilitar datos maestros",
                 route: "/listamaestrosinhabilitar",
                 icon: "face"
               };
@@ -2481,7 +2481,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar datos maestros",
+                name: "Deshabilitar datos maestros",
                 route: "/listamaestrosinhabilitar",
                 icon: "face"
               };
@@ -2499,7 +2499,7 @@ export class MenuComponent implements OnInit {
             this.datos.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar datos maestros",
+                name: "Deshabilitar datos maestros",
                 route: "/listamaestrosinhabilitar",
                 icon: "face"
               };
@@ -2509,7 +2509,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar datos maestros",
+                name: "Deshabilitar datos maestros",
                 route: "/listamaestrosinhabilitar",
                 icon: "face"
               };
@@ -2567,7 +2567,7 @@ export class MenuComponent implements OnInit {
             this.datos.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar datos maestros",
+                name: "Deshabilitar datos maestros",
                 route: "/listamaestrosinhabilitar",
                 icon: "face"
               };
@@ -2577,7 +2577,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar datos maestros",
+                name: "Deshabilitar datos maestros",
                 route: "/listamaestrosinhabilitar",
                 icon: "face"
               };
@@ -2595,7 +2595,7 @@ export class MenuComponent implements OnInit {
             this.datos.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar datos maestros",
+                name: "Deshabilitar datos maestros",
                 route: "/listamaestrosinhabilitar",
                 icon: "face"
               };
@@ -2605,7 +2605,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar datos maestros",
+                name: "Deshabilitar datos maestros",
                 route: "/listamaestrosinhabilitar",
                 icon: "face"
               };
@@ -2625,7 +2625,7 @@ export class MenuComponent implements OnInit {
             this.datos.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar datos maestros",
+                name: "Deshabilitar datos maestros",
                 route: "/listamaestrosinhabilitar",
                 icon: "face"
               };
@@ -2635,7 +2635,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar datos maestros",
+                name: "Deshabilitar datos maestros",
                 route: "/listamaestrosinhabilitar",
                 icon: "face"
               };
@@ -2653,7 +2653,7 @@ export class MenuComponent implements OnInit {
             this.datos.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar datos maestros",
+                name: "Deshabilitar datos maestros",
                 route: "/listamaestrosinhabilitar",
                 icon: "face"
               };
@@ -2663,7 +2663,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar datos maestros",
+                name: "Deshabilitar datos maestros",
                 route: "/listamaestrosinhabilitar",
                 icon: "face"
               };
@@ -2708,7 +2708,7 @@ export class MenuComponent implements OnInit {
             this.almacen.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar almacén",
+                name: "Deshabilitar almacén",
                 route: "/inhabilitaralmacen",
                 icon: "store"
               };
@@ -2718,7 +2718,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar almacén",
+                name: "Deshabilitar almacén",
                 route: "/inhabilitaralmacen",
                 icon: "store"
               };
@@ -2736,7 +2736,7 @@ export class MenuComponent implements OnInit {
             this.almacen.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar almacén",
+                name: "Deshabilitar almacén",
                 route: "/inhabilitaralmacen",
                 icon: "store"
               };
@@ -2746,7 +2746,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar almacén",
+                name: "Deshabilitar almacén",
                 route: "/inhabilitaralmacen",
                 icon: "store"
               };
@@ -2766,7 +2766,7 @@ export class MenuComponent implements OnInit {
             this.almacen.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar almacén",
+                name: "Deshabilitar almacén",
                 route: "/inhabilitaralmacen",
                 icon: "store"
               };
@@ -2776,7 +2776,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar almacén",
+                name: "Deshabilitar almacén",
                 route: "/inhabilitaralmacen",
                 icon: "store"
               };
@@ -2794,7 +2794,7 @@ export class MenuComponent implements OnInit {
             this.almacen.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar almacén",
+                name: "Deshabilitar almacén",
                 route: "/inhabilitaralmacen",
                 icon: "store"
               };
@@ -2804,7 +2804,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar almacén",
+                name: "Deshabilitar almacén",
                 route: "/inhabilitaralmacen",
                 icon: "store"
               };
@@ -2832,7 +2832,7 @@ export class MenuComponent implements OnInit {
             this.almacen.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar almacén",
+                name: "Deshabilitar almacén",
                 route: "/inhabilitaralmacen",
                 icon: "store"
               };
@@ -2842,7 +2842,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar almacén",
+                name: "Deshabilitar almacén",
                 route: "/inhabilitaralmacen",
                 icon: "store"
               };
@@ -2860,7 +2860,7 @@ export class MenuComponent implements OnInit {
             this.almacen.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar almacén",
+                name: "Deshabilitar almacén",
                 route: "/inhabilitaralmacen",
                 icon: "store"
               };
@@ -2870,7 +2870,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar almacén",
+                name: "Deshabilitar almacén",
                 route: "/inhabilitaralmacen",
                 icon: "store"
               };
@@ -2890,7 +2890,7 @@ export class MenuComponent implements OnInit {
             this.almacen.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar almacén",
+                name: "Deshabilitar almacén",
                 route: "/inhabilitaralmacen",
                 icon: "store"
               };
@@ -2900,7 +2900,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar almacén",
+                name: "deshabilitar almacén",
                 route: "/inhabilitaralmacen",
                 icon: "store"
               };
@@ -2918,7 +2918,7 @@ export class MenuComponent implements OnInit {
             this.almacen.push(create);
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar almacén",
+                name: "Deshabilitar almacén",
                 route: "/inhabilitaralmacen",
                 icon: "store"
               };
@@ -2928,7 +2928,7 @@ export class MenuComponent implements OnInit {
           } else if (array[3] == "0") {
             if (array[4] == "1") {
               var create = {
-                name: "Inhabilitar almacén",
+                name: "Deshabilitar almacén",
                 route: "/inhabilitaralmacen",
                 icon: "store"
               };

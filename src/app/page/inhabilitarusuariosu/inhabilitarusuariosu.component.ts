@@ -58,7 +58,7 @@ export class InhabilitarusuariosuComponent implements OnInit {
 
   showMenssage1(){
     Swal.fire({
-      title: 'habilitado',
+      title: 'Habilitado',
       text: 'Usuario habilitado',
       type: 'success',
       confirmButtonText: 'Entendido'

@@ -45,8 +45,8 @@ export class IlistadocursospiComponent implements OnInit {
 
   showMenssage(){
     Swal.fire({
-      title: 'Inhabilitado',
-      text: 'Dato Maestro Inhabilitado',
+      title: 'Deshabilitado',
+      text: 'Dato Maestro deshabilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {
@@ -60,7 +60,7 @@ export class IlistadocursospiComponent implements OnInit {
 
   showMenssage1(){
     Swal.fire({
-      title: 'habilitado',
+      title: 'Habilitado',
       text: 'Dato Maestro habilitado',
       type: 'success',
       confirmButtonText: 'Entendido'

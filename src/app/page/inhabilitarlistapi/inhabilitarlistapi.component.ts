@@ -42,8 +42,8 @@ export class InhabilitarlistapiComponent implements OnInit {
 
   showMenssage(){
     Swal.fire({
-      title: 'Inhabilitado',
-      text: 'Dato Maestro Inhabilitado',
+      title: 'Deshabilitado',
+      text: 'Dato Maestro deshabilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {

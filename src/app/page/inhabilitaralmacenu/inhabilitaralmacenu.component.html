@@ -1,7 +1,7 @@
 <nav class="navbar navbar-success bg-success">
   <button class="btn btn-dark" routerLink="/inhabilitaralmacen">Volver</button>
   <div>
-    <label>Inhabilitar almacén uds</label>
+    <label>Deshabilitar almacén uds</label>
 
     {{fecha}}
   </div>
@@ -48,7 +48,7 @@
       <td>{{cen.Nombrecentrodistribucion}}</td>
       <td>{{cen.NombreUDS}}</td>
       <td>
-        <button class="btn btn-dark" [routerLink]="['/inhabilitaralmacenui', cen.idAlmacenes]">inhabilitar</button>
+        <button class="btn btn-dark" [routerLink]="['/inhabilitaralmacenui', cen.idAlmacenes]">Deshabilitar</button>
       </td>
     </tr>
 

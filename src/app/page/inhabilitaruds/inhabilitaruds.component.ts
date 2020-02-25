@@ -128,8 +128,8 @@ export class InhabilitarudsComponent implements OnInit {
 
   showMenssage() {
     Swal.fire({
-      title: 'Inhabilitado',
-      text: 'Uds Inhabilitado',
+      title: 'Deshabilitado',
+      text: 'Uds Deshabilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {
@@ -143,7 +143,7 @@ export class InhabilitarudsComponent implements OnInit {
 
   showMenssage1() {
     Swal.fire({
-      title: 'habilitado',
+      title: 'Habilitado',
       text: 'Uds habilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
@@ -159,7 +159,7 @@ export class InhabilitarudsComponent implements OnInit {
   showMenssage3() {
     Swal.fire({
       title: 'Error!',
-      text: 'No es posible inhabilitar la unidad de servicio',
+      text: 'No es posible deshabilitar la unidad de servicio',
       type: 'error',
       confirmButtonText: 'Entendido'
     }).then((result) => {

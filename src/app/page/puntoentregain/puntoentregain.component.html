@@ -4,7 +4,7 @@
     <button class="btn btn-dark" routerLink="/menu"> Volver </button>
   </div>
     <div>
-        <label>Inhabilitar punto de entrega</label>
+        <label>Deshabilitar punto de entrega</label>
     
     {{fecha}}  
     </div>
@@ -31,7 +31,6 @@
         <th scope="col">Dirección PE</th>
         <th scope="col">Barrio PE</th>
         <th scope="col">Teléfono</th>
-        <th scope="col">inhabilitar</th>
       </tr>
     </thead>
     <tbody>
@@ -55,7 +54,7 @@
         <td>{{pun.BarrioPE}}</td>
         <td>{{pun.Telefono}}</td>
         <td>
-          <button class="btn btn-dark" [routerLink]="['/puntoentregainh', pun.idPuntoEntrega]">Inhabilitar</button>
+          <button class="btn btn-dark" [routerLink]="['/puntoentregainh', pun.idPuntoEntrega]">Deshabilitar</button>
         </td>
   
       </tr>

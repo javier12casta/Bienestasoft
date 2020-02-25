@@ -46,8 +46,8 @@ export class InhabilitareferenciabiComponent implements OnInit {
 
   showMenssage(){
     Swal.fire({
-      title: 'Inhabilitado',
-      text: 'Dato maestro inhabilitado',
+      title: 'Deshabilitado',
+      text: 'Dato maestro Deshabilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {

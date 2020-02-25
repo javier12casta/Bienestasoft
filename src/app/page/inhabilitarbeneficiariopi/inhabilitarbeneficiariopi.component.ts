@@ -48,7 +48,7 @@ export class InhabilitarbeneficiariopiComponent implements OnInit {
   showMenssage(){
     Swal.fire({
       title: 'Deshabilitado',
-      text: 'Beneficiario Deshabilitado',
+      text: 'Beneficiario deshabilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {

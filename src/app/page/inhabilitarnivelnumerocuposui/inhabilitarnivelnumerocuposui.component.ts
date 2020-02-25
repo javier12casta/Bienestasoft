@@ -44,7 +44,7 @@ export class InhabilitarnivelnumerocuposuiComponent implements OnInit {
   showMenssage(){
     Swal.fire({
       title: 'Deshabilitado',
-      text: 'dato maestro Deshabilitado',
+      text: 'dato maestro deshabilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {
@@ -58,7 +58,7 @@ export class InhabilitarnivelnumerocuposuiComponent implements OnInit {
 
   showMenssage1(){
     Swal.fire({
-      title: 'habilitado',
+      title: 'Habilitado',
       text: 'dato maestro habilitado',
       type: 'success',
       confirmButtonText: 'Entendido'

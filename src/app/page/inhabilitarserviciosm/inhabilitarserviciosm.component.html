@@ -1,7 +1,7 @@
 <nav class="navbar navbar-success bg-success">
         <button class="btn btn-dark" routerLink="/listamaestrosinhabilitar">Volver</button>
         <div>
-          <label>Inhabilitar servicios y modalidades</label>
+          <label>Deshabilitar servicios y modalidades</label>
       
       {{fecha}}  
       </div>
@@ -37,7 +37,7 @@
               <td>{{cen.Modalidad}}</td>
               <td>{{cen.Servicio}}</td>
               <td>
-                <button class="btn btn-dark" [routerLink]="['/inhabilitarserviciomi', cen.idListasMaestro]">Inhabilitar</button>
+                <button class="btn btn-dark" [routerLink]="['/inhabilitarserviciomi', cen.idListasMaestro]">Deshabilitar</button>
               </td>
             </tr>
           </tbody>

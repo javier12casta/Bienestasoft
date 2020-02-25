@@ -43,8 +43,8 @@ export class IdatosnutricionalesuiComponent implements OnInit {
 
   showMenssage(){
     Swal.fire({
-      title: 'Inhabilitado',
-      text: 'dato maestro Inhabilitado',
+      title: 'Deshabilitado',
+      text: 'dato maestro deshabilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {
@@ -58,7 +58,7 @@ export class IdatosnutricionalesuiComponent implements OnInit {
 
   showMenssage1(){
     Swal.fire({
-      title: 'habilitado',
+      title: 'Habilitado',
       text: 'dato maestro habilitado',
       type: 'success',
       confirmButtonText: 'Entendido'

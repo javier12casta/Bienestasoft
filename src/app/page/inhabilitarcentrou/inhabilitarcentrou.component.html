@@ -1,7 +1,7 @@
 <nav class="navbar navbar-success bg-success">
         <button class="btn btn-dark" routerLink="/inhabilitarcentrod">Volver</button>
         <div>
-          <label>Inhabilitar centro de distribucion uds</label>
+          <label>Deshabilitar centro de distribucion uds</label>
       
       {{fecha}}  
       </div>
@@ -47,7 +47,7 @@
                 </td>      
                 <td>{{cen.NombreUDS}}</td>     
               <td>
-                <button class="btn btn-dark" [routerLink]="['/inhabilitarui', cen.idCentroDistribucion]">inhabilitar</button>
+                <button class="btn btn-dark" [routerLink]="['/inhabilitarui', cen.idCentroDistribucion]">Deshabilitar</button>
               </td>
             </tr>
                         

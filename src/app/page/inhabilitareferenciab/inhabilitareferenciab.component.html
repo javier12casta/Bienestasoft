@@ -1,7 +1,7 @@
 <nav class="navbar navbar-success bg-success">
         <button class="btn btn-dark" routerLink="/listamaestrosinhabilitar">Volver</button>
         <div>
-          <label>Inhabilitar referencia bienestarina</label>
+          <label>Deshabilitar referencia bienestarina</label>
       
       {{fecha}}  
       </div>
@@ -45,7 +45,7 @@
               <td>{{cen.Cantidad}}</td>
               <td>{{cen.UnidadSecundaria}}</td>
               <td>
-                <button class="btn btn-dark" [routerLink]="['/inhabilitareferenciabi', cen.idTipoBienesterina]">Inhabilitar</button>
+                <button class="btn btn-dark" [routerLink]="['/inhabilitareferenciabi', cen.idTipoBienesterina]">Deshabilitar</button>
               </td>
             </tr>
           </tbody>
