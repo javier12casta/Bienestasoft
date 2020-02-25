@@ -10,12 +10,13 @@ export class FiltrolistadocursosPipe implements PipeTransform {
     var valor = arg;
     if (arg === "" || arg.length < 1) return value;
     for (const centro of value) {
-      if (centro.NombreAgenteE.toString().indexOf(valor.toString()) > -1) {
+      if (centro.NombreAgenteE.toLowerCase().indexOf(valor.toLowerCase()) > -1) {
         resultcod.push(centro);
-      } else if (centro.Fecha.toString() .indexOf(valor.toString() ) > -1) {
+      } else if (centro.Fecha.toString().indexOf(valor.toString() ) > -1) {
         resultcod.push(centro);
-      } else if (centro.Estado.toString().indexOf(valor.toString()) > -1) {
+      } else if (centro.Estado.toString().indexOf(valor) > -1) {
         console.log(''+ valor);
+        console.log(''+ centro.Estado);
         resultcod.push(centro);
       }
 

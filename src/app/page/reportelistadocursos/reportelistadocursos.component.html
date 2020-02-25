@@ -1,7 +1,7 @@
 <nav class="navbar navbar-success bg-success">
-    <button class="btn btn-dark" routerLink="/reportes">Volver</button>
-  
-    <div
+  <button class="btn btn-dark" routerLink="/reportes">Volver</button>
+
+  <div
     style="margin-left: auto; margin-right: auto; display: inline-flex; width: 450px;
   justify-content: center; align-items: center;"
   >
@@ -13,96 +13,123 @@
       </label>
     </div>
 
-
-
     <div
-    style="  padding: 5px;
+      style="  padding: 5px;
   margin: 5px;"
-  >
-
-    <select style="width: 200px;" class="form-control"  [(ngModel)]="fil" (change)="onChange()"> 
-        <option >  
-          Nombre Agente 
-        </option > 
-        <option> 
-          Fecha 
-        </option > 
-        <option > 
+    >
+      <select
+        style="width: 200px;"
+        class="form-control"
+        [(ngModel)]="fil"
+        (change)="onChange()"
+      >
+        <option>
+          Nombre Agente
+        </option>
+        <option>
+          Fecha
+        </option>
+        <option>
           Estado
-        </option > 
-        
-        </select>
-      </div>
+        </option>
+      </select>
     </div>
+  </div>
 
+  <label [hidden]="isHidden2" class="menu">Nombre Agente </label>
+  <input
+    type="text"
+    style="width: 200px;"
+    class="form-control"
+    class="menu"
+    placeholder="Nombre Agente"
+    [hidden]="isHidden2"
+    name="nom"
+    [(ngModel)]="nom"
+  />
 
-        <label [hidden]="isHidden2" class="menu">Nombre Agente </label>
-        <input type="text"  style="width: 200px;" class="form-control" class="menu" placeholder="Nombre Agente" [hidden]="isHidden2" name="nom" [(ngModel)]="nom"  />
-        
-    
-          <label class="menu" [hidden]="isHidden">Fecha </label>
-          <input type="text"  [hidden]="isHidden" name="fec" [(ngModel)]="fec" />
-  
-  
-          <label [hidden]="isHidden1" class="menu"> Estado </label>
+  <label class="menu" [hidden]="isHidden">Fecha </label>
+  <input type="text" [hidden]="isHidden" name="fec" [(ngModel)]="fec" />
 
-          <select   style="width: 200px;" class="form-control"  name="est" [(ngModel)]="est"   [hidden]="isHidden1"> 
-            <option  [value]="1" > 
-              Habilitado
-            </option > 
-            <option  [value]="0" > 
-              Deshabilitado
-            </option > 
-            
-            </select>
-  </nav>
+  <label [hidden]="isHidden1" class="menu"> Estado </label>
 
-  <table class="table" id="contentToConvert">
-    <thead class="thead-green">
-      <footer id="sticky-footer" class="text-white-50" style="margin-bottom: 0px; bottom: 0px;">
-        <div class="container text-center" style="justify-content: center;  bottom: 0px; margin-left: auto; margin-right: auto; margin-bottom: 0px;">
- 
-         <img src="../../assets/icbf-logo.png" id="imagen" style="width: 65px; height: 65px; margin-left: 10px; margin-top: 10px; margin-bottom: 0px;" class="rounded float-left">
+  <select
+    class="form-control"
+    style="width: 200px;"
+    [(ngModel)]="est"
+    [hidden]="isHidden1"
+  >
+    <option [value]="1">
+      Habilitado
+    </option>
+    <option [value]="0">
+      Deshabilitado
+    </option>
+  </select>
+</nav>
+
+<table class="table" id="contentToConvert">
+  <thead class="thead-green">
+    <footer
+      id="sticky-footer"
+      class="text-white-50"
+      style="margin-bottom: 0px; bottom: 0px;"
+    >
+      <div
+        class="container text-center"
+        style="justify-content: center;  bottom: 0px; margin-left: auto; margin-right: auto; margin-bottom: 0px;"
+      >
+        <img
+          src="../../assets/icbf-logo.png"
+          id="imagen"
+          style="width: 65px; height: 65px; margin-left: 10px; margin-top: 10px; margin-bottom: 0px;"
+          class="rounded float-left"
+        />
+      </div>
+    </footer>
+    {{
+      Nombrereporte
+    }}
+    {{
+      fecha
+    }}
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre Agente</th>
+      <th scope="col">Numero Documento</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Tipo Documento</th>
+      <th scope="col">Beneficiarios</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="
+        let cen of listad
+          | filtrolistadoc: nom
+          | filtrolistadoc: fec | filtrolistadoc:est
+      "
+    >
+      <th scope="row">{{ cen.idListadoCursos }}</th>
+      <td>{{ cen.NombreAgenteE }}</td>
+      <td>{{ cen.NumeroDocumento }}</td>
+      <td>{{ cen.Fecha }}</td>
+      <td>
+        <div *ngIf="cen.Estado == 1">
+          Habilitado
         </div>
-      </footer>
-        {{Nombrereporte}}       {{fecha}}
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nombre Agente</th>
-        <th scope="col">Numero Documento</th>
-        <th scope="col">Fecha</th>
-        <th scope="col">Estado</th>
-        <th scope="col">Tipo Documento</th>
-        <th scope="col">Beneficiarios</th>
-        
-      </tr>
-    </thead>
-    <tbody>
-            <tr *ngFor="let cen of listad | filtrolistadoc: nom | filtrolistadoc: fec |filtrolistadoc: est ">
-                    <th scope="row">{{cen.idListadoCursos}}</th>
-                    <td>{{cen.NombreAgenteE}}</td>
-                    <td>{{cen.NumeroDocumento}}</td>
-                    <td>{{cen.Fecha}}</td>
-          <td>
-            
-            
-              <div *ngIf="cen.Estado == 1">
-                  Habilitado
-                </div>
-                <div *ngIf="cen.Estado == 0">
-                  Deshabilitado
-                </div>
-
-            </td>
-          <td>{{cen.tipodocumento}}</td>
-          <td>{{cen.nombrecompleto}}</td>
-        
-                  </tr>
-                    
-            
-      </tbody>
-  
+        <div *ngIf="cen.Estado == 0">
+          Deshabilitado
+        </div>
+      </td>
+      <td>{{ cen.tipodocumento }}</td>
+      <td>{{ cen.nombrecompleto }}</td>
+    </tr>
+  </tbody>
 </table>
 <div class="trans">
-<button class="btn btn-dark" (click)="Generareporte()">Generar Reporte</button>
+  <button class="btn btn-dark" (click)="Generareporte()">
+    Generar Reporte
+  </button>
 </div>

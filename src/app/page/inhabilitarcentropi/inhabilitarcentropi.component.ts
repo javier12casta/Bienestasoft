@@ -58,12 +58,12 @@ export class InhabilitarcentropiComponent implements OnInit {
     console.log('Almacenes', this.almacen);
     for (let numeros of this.almacen) {
       if (numero == numeros.idCentroDistribucion && numeros.Estado == 1) {
-        var cont: number = 0;
-        var cont2 = cont + 1;
+        var cont=Number(0);
+        var cont2 = Number(cont + 1);
         //this.showMenssage3();
       } else if(numero == numeros.idCentroDistribucion && numeros.Estado == 0) {
-        var cont: number = 0;
-        cont3 = cont + 1;
+        var cont=Number(0);
+        cont3 = Number(cont + 1);
       }
     }
     if (cont2 == 0 && cont3 >= 0){
@@ -78,7 +78,7 @@ export class InhabilitarcentropiComponent implements OnInit {
   showMenssage4() {
     Swal.fire({
       title: 'Error',
-      text: 'No es posible inhabilitar el centro de distribución',
+      text: 'No es posible inhabilitar el centro de distribución, se encuentra asociado a un almacén',
       type: 'error',
       confirmButtonText: 'Entendido'
     }).then((result) => {

@@ -308,7 +308,7 @@ import { FiltroalmacenPipe } from './pipes/filtroalmacen.pipe';
 import { FiltroservicioymodalidadesPipe } from './pipes/filtroservicioymodalidades.pipe';
 import { FiltroreferenciabienestarinaPipe } from './pipes/filtroreferenciabienestarina.pipe';
 import { FiltropreciobienestarinaPipe } from './pipes/filtropreciobienestarina.pipe';
-import {FiltrolistadocursosPipe } from './pipes/filtrolistadocursos.pipe';
+import {FiltrolistadocursosPipe} from './pipes/filtrolistadocursos.pipe';
 import {FiltrodatosnutricionalesPipe } from './pipes/filtrodatosnutricionales.pipe';
 import {FiltronumerocuposPipe } from './pipes/filtronumerocupos.pipe';
 import { FiltrocentrodistribucionPipe } from './pipes/filtrocentrodistribucion.pipe';
