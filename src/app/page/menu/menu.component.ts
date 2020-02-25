@@ -6,6 +6,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import Swal from "sweetalert2";
 import { Permisos } from "../../interfaces/permisos";
 import { Usuarios } from "src/app/interfaces/usuarios";
+import { empty } from 'rxjs';
 
 @Component({
   selector: "app-menu",
@@ -88,6 +89,17 @@ export class MenuComponent implements OnInit {
     this.estado = 1;
   }
 
+  hide = true;
+  hide1 = true;
+  hide2 = true;
+  hide3 = true;
+  hide4 = true;
+  hide5 = true;
+  hide6 = true;
+  hide7 = true;
+  hide8 = true;
+  hide9 = true;
+  hide10 = true;
   //------------------------------ Traer datos API y cargar permisos pra el menu ----------------------------------------------------
   ngOnInit() {
     this.obtenerStorage();
@@ -109,6 +121,40 @@ export class MenuComponent implements OnInit {
           this.cargarpermiso11();
           this.cargarpermiso12();
           this.cargarpermiso13();
+           if(this.estructura.length > 0  ){
+            this.hide =false;
+          }
+          if(this.entrega.length > 0){
+            this.hide1 = false;
+          }
+          if(this.recepcion.length > 0){
+            this.hide2 = false;
+          }
+          else if(this.devolucion.length > 0){
+            this.hide3 = false;
+          }
+          if(this.inventarios.length > 0){
+            this.hide4 = false;
+          }
+          if(this.beneficiarios.length > 0){
+            this.hide5 = false;
+          }
+          if(this.rol.length > 0){
+            this.hide6 = false;
+          }
+          if(this.Usuarios.length > 0){
+            this.hide7 = false;
+          }
+         if(this.datos.length > 0){
+            this.hide8 = false;
+          }
+          if(this.centrod.length > 0){
+            this.hide9 = false;
+          }
+          if(this.almacen.length > 0){
+            this.hide10 = false;
+          } 
+          
         },
         err => {
           console.log(err);
