@@ -82,7 +82,7 @@ export class RolinhComponent implements OnInit {
   showMenssage4() {
     Swal.fire({
       title: 'Error',
-      text: 'No es posible inhabilitar el rol',
+      text: 'No es posible deshabilitar el rol',
       type: 'error',
       confirmButtonText: 'Entendido'
     });
@@ -143,8 +143,8 @@ export class RolinhComponent implements OnInit {
   }
   showMenssage5() {
     Swal.fire({
-      title: 'Inhabilitado',
-      text: 'se ha inhabilitado el ' + this.roles.RolPersona,
+      title: 'Deshabilitado',
+      text: 'se ha Deshabilitado el ' + this.roles.RolPersona,
       type: 'error',
       confirmButtonText: 'Entendido'
     }).then((res) => {

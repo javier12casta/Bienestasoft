@@ -46,15 +46,15 @@ export class InhabilitarserviciosmiComponent implements OnInit {
 
   showMenssage(){
     Swal.fire({
-      title: 'Inhabilitado',
-      text: 'Dato maestro inhabilitado',
+      title: 'Deshabilitado',
+      text: 'Dato maestro deshabilitado',
       type: 'success',
       confirmButtonText: 'Entendido'
     }).then((result) => {
       if (result.value) {
         
         this.router.navigate(['/inhabilitarserviciom']);
-        window.location.reload();
+       
     
       }
     });
@@ -70,7 +70,7 @@ export class InhabilitarserviciosmiComponent implements OnInit {
       if (result.value) {
         
         this.router.navigate(['/inhabilitarserviciom']);
-        window.location.reload();
+       
     
       }
     });
