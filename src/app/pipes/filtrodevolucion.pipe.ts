@@ -10,11 +10,11 @@ export class FiltrodevolucionPipe implements PipeTransform {
     var valor = arg;
     if (arg === "" || arg.length < 1) return value;
     for (const centro of value) {
-      if (centro.unidad.toLowerCase().indexOf(valor.toLowerCase()) > -1) {
+      if (centro.motivo.toString().indexOf(valor.toString()) > -1) {
         resultcod.push(centro);
-      } else if (centro.lote.toLowerCase().indexOf(valor.toLowerCase()) > -1) {
+      } else if (centro.unidad.toString().indexOf(valor.toString()) > -1) {
         resultcod.push(centro);
-      } else if (centro.fecharegistro.toString() .indexOf(valor.toString() ) > -1) {
+      } else if (centro.lote.toString() .indexOf(valor.toString() ) > -1) {
         resultcod.push(centro);
       }
 

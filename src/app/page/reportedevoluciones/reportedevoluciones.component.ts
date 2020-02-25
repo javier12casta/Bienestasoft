@@ -77,7 +77,7 @@ fil;
 
     onChange(){
 
-      if(this.fil == "Fecha registro"){
+      if(this.fil == "Motivo"){
   
         this.isHidden = true;
         this.isHidden1 = true;

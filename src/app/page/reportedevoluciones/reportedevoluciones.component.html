@@ -3,7 +3,7 @@
 
     <div
     style="margin-left: auto; margin-right: auto; display: inline-flex; width: 450px;
-  justify-content: center; align-items: center;"
+justify-content: center; align-items: center;"
   >
     <div style="  padding: 5px; margin: auto;">
       <label>
@@ -13,50 +13,50 @@
       </label>
     </div>
 
-    <div
-      style="  padding: 5px;
-    margin: 5px;"
+    <select
+      style="width: 200px;"
+      class="form-control"
+      [(ngModel)]="fil"
+      (change)="onChange()"
     >
-      <select style="width: 200px;" class="form-control"  [(ngModel)]="fil" (change)="onChange()"> 
-        <option >  
-          Fecha registro
-        </option > 
-        <option> 
-          Presentación
-        </option > 
-        <option > 
-          Lote
-        </option > 
-        
-        </select>
-    </div>
+      <option>
+        Motivo
+      </option>
+      <option>
+        Presentación
+      </option>
+      <option>
+        Lote
+      </option>
+    </select>
   </div>
- 
-  <label [hidden]="isHidden2" class="menu">Fecha de registro</label>
+
+  <label [hidden]="isHidden2" class="menu">Motivo</label>
   <input
     type="text"
     style="width: 200px;"
     class="form-control"
     class="menu"
-    placeholder="Fecha "
+    placeholder="Motivo "
     [hidden]="isHidden2"
     [(ngModel)]="fechas"
-    name="Fecha"
+    name="fechas"
   />
 
-  <label class="menu" [hidden]="isHidden">Presetacion</label>
+  <label class="menu" [hidden]="isHidden">Presentación</label>
   <input
     type="text"
     style="width: 200px;"
     class="form-control"
     class="menu"
-    placeholder="Presetacion "
+    placeholder="Presentación "
     [hidden]="isHidden"
-    [(ngModel)]="presetacion"
-    name="Presetacion"
+    [(ngModel)]="presentacion"
+    name="presentacion"
   />
 
   <label [hidden]="isHidden1" class="menu"> Lote </label>
+
   <input
     type="text"
     style="width: 200px;"
@@ -65,12 +65,8 @@
     placeholder="Lote "
     [hidden]="isHidden1"
     [(ngModel)]="lote"
-    name="Almacen"
-  />  
-  
-  
-
-
+    name="lote"
+  />
 
 
 
@@ -103,7 +99,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let sal of devolucion | filtrodevolucion: fechas | filtrodevolucion: presetacion | filtrodevolucion: lote">
+        <tr *ngFor="let sal of devolucion | filtrodevolucion: fechas
+        | filtrodevolucion: presentacion
+        | filtrodevolucion: lote ">
           <th scope="row">{{sal.iddevoluciones}}</th>
           <td>{{sal.lote}}</td>
           <td>{{sal.cantidad}}</td>
