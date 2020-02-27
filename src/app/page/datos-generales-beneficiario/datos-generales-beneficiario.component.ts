@@ -85,7 +85,7 @@ export class DatosGeneralesBeneficiarioComponent implements OnInit {
       this.bio = Object(res);
       console.log(this.bio.Huella1);
      // let bytes2 = new TextEncoder().encode(str);
-      this.y.RegistroBiometrico = new TextEncoder().encode(this.bio.Huella1);
+      this.y.RegistroBiometrico = this.bio.Huella1;
       this.y.RegistroBiometrico1 =this.bio.Huella2;
       console.log(this.y.RegistroBiometrico);
       console.log(this.y.RegistroBiometrico1);

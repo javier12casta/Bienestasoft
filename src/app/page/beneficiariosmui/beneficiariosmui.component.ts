@@ -77,6 +77,20 @@ export class BeneficiariosmuiComponent implements OnInit {
     Huella2: '',
   };
 
+  traerhuellas(){
+    this.Service.ObtenerHuellas().subscribe(res => {
+      this.bio = Object(res);
+      console.log(this.bio.Huella1);
+     // let bytes2 = new TextEncoder().encode(str);
+      this.y.RegistroBiometrico = this.bio.Huella1;
+      this.y.RegistroBiometrico1 =this.bio.Huella2;
+      console.log(this.y.RegistroBiometrico);
+      console.log(this.y.RegistroBiometrico1);
+      
+    });
+    
+  }
+
   showMenssage() {
 
     Swal.fire({
