@@ -100,6 +100,43 @@ export class SalidabeneficiariocComponent implements OnInit {
   czForm: FormGroup;
   submitted = false;
 
+  acudi: Acudientes ={
+    idAcudientes: null,
+    NumeroDocumento : null,
+    Nombres : null,
+    Apellidos : null,
+    Parentesco : null,
+    idGenero : null,
+    idTipoDocumento : null,
+    idBeneficiarios: null,
+    FechaNacimiento : null,
+    FechaIngreso : null,
+    RegistroBiometrico : null,
+    RegistroBiometrico1 :null,
+  };
+  respuesta: Validacion = {
+    id: '',
+    Nombre: '',
+  };
+  onChange(){
+    this.Service.getAcudientesid(this.sal.idBeneficiarios.toString()).subscribe(res => {
+      this.acudi =Object(res);
+      console.log('acudi', this.acudi);
+      
+      this.Service.ObtenerValidacion().subscribe(res => {
+        this.respuesta = Object(res);
+        var nombre = this.acudi.Nombres+' '+this.acudi.Apellidos;
+        console.log('val', nombre);
+
+        if(nombre == this.respuesta.Nombre && this.acudi.idAcudientes.toString() == this.respuesta.id){
+          this.validacion = false;
+          console.log('boton', this.validacion);
+        }
+      });
+    });
+   // console.log('metodo validacion entro');
+  }
+
   onSubmit() {
     this.submitted = true;
 
@@ -252,7 +289,7 @@ export class SalidabeneficiariocComponent implements OnInit {
     id:null,
     Nombre: ""
   }
-  validacion: boolean = false;
+  validacion = true;
 
   bene: Beneficiario = {
     idBeneficiarios: null,
@@ -286,13 +323,10 @@ export class SalidabeneficiariocComponent implements OnInit {
         this.Service.getBeneficiariosid(this.sal.idBeneficiarios.toString()).subscribe(res => {
           this.bene = Object(res);
           this.sal.idTipoDocumento = this.bene.idTipoDocumento;
-
+          
         });
-        if(this.sal.idAcudientes == Number(this.vali.id))
-        {
-            this.validacion = true;
-        }
-       
+  
+        
       }
     }
   }

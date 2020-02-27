@@ -142,7 +142,7 @@
           <span>Beneficiario </span>
           <h2></h2>
 
-          <select [(ngModel)]="sal.idBeneficiarios" placeholder="" class="form-control"
+          <select [(ngModel)]="sal.idBeneficiarios" placeholder="" class="form-control" (ngModelChange)="onChange($event)"
             formControlName="idBeneficiarios" [ngClass]="{ 'is-invalid': submitted && f.idBeneficiarios.errors }" (ngModelChange)="acudientes($event)" >
             <option *ngFor="let ud of ben" [value]="ud.idBeneficiarios"  >{{ud.PrimerNombre}}  {{ud.PrimerApellido}}
             </option>
@@ -160,7 +160,7 @@
           <span>Acudiente </span>
           <h2></h2>
           <select [(ngModel)]="sal.idAcudientes" placeholder="" class="form-control" formControlName="idAcudientes"
-            [ngClass]="{ 'is-invalid': submitted && f.idAcudientes.errors }" >
+            [ngClass]="{ 'is-invalid': submitted && f.idAcudientes.errors }">
             <option *ngFor="let ud of acu" [value]="ud.idAcudientes">{{ud.Nombres || ud.Apellidos}} </option>
           </select>
 
@@ -173,7 +173,7 @@
         <div class="form-group">
 
 
-          <button type="submit" class="btn btn-success btn-block" disabled = "validacion" >Aceptar</button>
+          <button type="submit" class="btn btn-success btn-block" [disabled]="validacion" >Aceptar</button>
 
         </div>
 
