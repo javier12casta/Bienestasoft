@@ -11,6 +11,7 @@ import { Tipodocumento } from 'src/app/interfaces/tipodocumento';
 import { Genero } from 'src/app/interfaces/genero';
 import { MaestroBienestarina } from 'src/app/interfaces/maestrosBienestarina';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { Biometrico } from 'src/app/interfaces/biometrico';
 
 @Component({
   selector: 'app-modificar-beneficiariopi',
@@ -78,6 +79,43 @@ export class ModificarBeneficiariopiComponent implements OnInit {
       RegistroBiometrico1: '',
       idBeneficiarios: null,
     };
+    bio: Biometrico = {
+      Huella1: '',
+      Huella2: '',
+    };
+    filter = false;
+    filter1 = false;
+    
+    onFilterChange(e){
+      var element = <HTMLInputElement> document.getElementById("check");
+      var check = element.checked;
+      if(check){
+        //console.log('check 1');
+        this.Service.ObtenerHuellas().subscribe(res => {
+          this.bio = Object(res);
+          console.log(this.bio.Huella1);
+         // let bytes2 = new TextEncoder().encode(str);
+          this.y.RegistroBiometrico = this.bio.Huella1;
+          console.log(this.y.RegistroBiometrico);
+          
+        });
+      }
+    }
+    onFilterChange1(e){
+      var element = <HTMLInputElement> document.getElementById("check2");
+      var check = element.checked;
+      if(check){
+        //console.log('check 2');
+        this.Service.ObtenerHuellas().subscribe(res => {
+          this.bio = Object(res);
+          console.log(this.bio.Huella1);
+         // let bytes2 = new TextEncoder().encode(str);
+          this.y.RegistroBiometrico1 =this.bio.Huella2;
+          console.log(this.y.RegistroBiometrico1);
+          
+        });
+      }
+    }
 
     //----Validaciones de campos
   beForm: FormGroup;

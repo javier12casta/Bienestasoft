@@ -285,6 +285,8 @@
           <div *ngIf="submitted && f.RegistroBiometrico.errors" class="invalid-feedback">
             <div *ngIf="f.RegistroBiometrico.errors.required">El registro biometrico es requiredo</div>
           </div>
+          <label>Seleccione para modificar el registro biometrico índice derecho</label>
+          <input type="checkbox" id="check" name="Crear" [(ngModel)]="filter" (change)="onFilterChange($event)" />
         </div>
 
         <div class="form-group">
@@ -295,8 +297,11 @@
 						[ngClass]="{ 'is-invalid': submitted && f.RegistroBiometrico1.errors }" />
 
 					<div *ngIf="submitted && f.RegistroBiometrico1.errors" class="invalid-feedback">
-						<div *ngIf="f.RegistroBiometrico1.errors.required">El registro biometrico es requiredo</div>
-					</div>
+            <div *ngIf="f.RegistroBiometrico1.errors.required">El registro biometrico es requiredo</div>
+          </div>
+          <label>Seleccione para modificar el registro biometrico índice izquierdo</label>
+          <input type="checkbox" id="check2" name="Crear" [(ngModel)]="filter1" (change)="onFilterChange1($event)" />
+       
 				</div>
 
         <h1>Datos de contacto</h1>
