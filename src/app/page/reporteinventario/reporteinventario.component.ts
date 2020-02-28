@@ -238,15 +238,14 @@ id = {
       // Calidad del PDF
       scale: 1,
       
-    }).then(function(canvas) {
-
+    }).then(function(canvas) {0
   
-      var doc = new jspdf('l', 'px', 'a2');
+      var doc = new jspdf('l', 'px', 'a2'); // aca es la configuracion de la joja
 
       var height = doc.internal.pageSize.getHeight();
       var width = doc.internal.pageSize.getWidth();
        
-      doc.addImage(canvas.toDataURL("image/png"),'PNG',3, 0,width - 45, height);
+      doc.addImage(canvas.toDataURL("image/png"),'PNG',3, 0,width, height); //tamaño de la imagen
       
       doc.save('reporteinventario.pdf');
       
