@@ -41,7 +41,7 @@ fil;
   est;
   acudi = "";
   lotes = "";
-  referen = "";
+  num = "";
   centroB: Salidabeneficiariot[] = [];
 
   region: Regional[] = [];
@@ -78,7 +78,7 @@ cen;
     .subscribe( (data) => {
       this.centroB = Object(data);
       console.log(data);
-      console.log('funciona');
+      console.log('funciona tabla', this.centroB);
     }
     );
 

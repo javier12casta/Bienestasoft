@@ -13,6 +13,9 @@ export class FiltroentregabePipe implements PipeTransform {
       if (centro.PrimerNombre.toLowerCase().indexOf(valor.toLowerCase()) > -1) {
         resultcod.push(centro);
       } 
+      if (centro.NumeroDocumento.indexOf(valor) > -1) {
+        resultcod.push(centro);
+      }
 
     }
     return resultcod;

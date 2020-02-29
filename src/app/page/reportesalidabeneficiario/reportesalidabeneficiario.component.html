@@ -47,8 +47,8 @@ justify-content: center; align-items: center;"
     class="menu"
     placeholder="Número de documento"
     [hidden]="isHidden"
-    [(ngModel)]="presentacion"
-    name="presentacion"
+    [(ngModel)]="num"
+    name="num"
   />
 
 </nav>
@@ -785,7 +785,7 @@ justify-content: center; align-items: center;"
    
         </tr>
         <!--TABLE ngFor-->
-        <tr *ngFor="let sal of centroB | filtroentregabe: acudi " >
+        <tr *ngFor="let sal of centroB | filtroentregabe: acudi | filtroentregabe: num  " >
           <th
             STYLE="border-bottom: 3px solid #000000; border-left: 3px solid #000000"
             HEIGHT="10"
@@ -793,7 +793,7 @@ justify-content: center; align-items: center;"
             VALIGN="BOTTOM"
             SDNUM="1033;1033;General"
           >
-            {{ sal.idEntregaBeneficiario | filtroentregabe: acudi }}
+            {{ sal.idEntregaBeneficiario}}
           </th>
           <td
             STYLE="border-bottom: 3px solid #000000; border-left: 3px solid #000000"
@@ -847,7 +847,7 @@ justify-content: center; align-items: center;"
             VALIGN="BOTTOM"
             SDNUM="1033;1033;General"
           >
-            {{ sal.NumeroDocumento }}
+            {{ sal.NumeroDocumento}}
           </td>
           <td
             STYLE="border-bottom: 3px solid #000000; border-left: 3px solid #000000"
