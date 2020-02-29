@@ -88,7 +88,7 @@
           <span>Lote</span>
           <h2></h2>
           <select formControlName="lote" class="form-control" [(ngModel)]="sal.lote" placeholder="Lote" [ngClass]="{ 'is-invalid': submitted && f.lote.errors }">
-            <option *ngFor="let lo of lotes" [value]="lo.lote">{{lo.lote }} </option>
+            <option *ngFor="let lo of vector1" [value]="lo.lote">{{lo.lote }} </option>
           </select>
 
           <div *ngIf="submitted && f.lote.errors" class="invalid-feedback">

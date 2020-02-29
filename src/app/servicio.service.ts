@@ -794,6 +794,9 @@ export class ServicioService {
   getlotesid(id: string | number) {
     return this.http.get(`${this.api}/bienestarina/lotes/${id}`);
   }
+  getlotescargaid(id: string | number) {
+    return this.http.get(`${this.api}/bienestarina/carga/${id}`);
+  }
 
   postrecepcion(recep: Recepcion) {
 

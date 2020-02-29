@@ -246,7 +246,8 @@ export class SalidacentrocComponent implements OnInit {
   }
 
   lotes: Lotes [] = [];
-
+  lotes2: Lotes [] = [];
+  vector1= [];
   traerAlmacen() {
     if (this.sal.idAlmacen !== 0 || this.sal.idAlmacen !== null) {
 
@@ -261,6 +262,14 @@ export class SalidacentrocComponent implements OnInit {
 
       this.Service.getlotesid(this.sal.idAlmacen).subscribe(res => {
         this.lotes = Object(res);
+      }, err => {
+        console.log(err);
+      });
+      this.Service.getlotescargaid(this.sal.idAlmacen).subscribe(res => {
+        this.lotes2 = Object(res);
+        //this.vector1 =this.au.concat(this.salb);
+        this.vector1 = this.lotes.concat(this.lotes2);
+        console.log(this.lotes);
       }, err => {
         console.log(err);
       });

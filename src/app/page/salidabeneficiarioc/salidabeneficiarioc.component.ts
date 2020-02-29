@@ -374,7 +374,8 @@ export class SalidabeneficiariocComponent implements OnInit {
   }
 
   lotes: Lotes [] = [];
-  
+  lotes2: Lotes [] = [];
+  vector1 = [];
   traerAlmacen() {
     if (this.sal.idAlmacenes !== 0 || this.sal.idAlmacenes !== null) {
       this.Service.getalmacenid(this.sal.idAlmacenes.toString()).subscribe(
@@ -393,6 +394,14 @@ export class SalidabeneficiariocComponent implements OnInit {
 
       this.Service.getlotesid(this.sal.idAlmacenes).subscribe(res => {
         this.lotes = Object(res);
+      }, err => {
+        console.log(err);
+      });
+      this.Service.getlotescargaid(this.sal.idAlmacenes).subscribe(res => {
+        this.lotes2 = Object(res);
+        //this.vector1 =this.au.concat(this.salb);
+        this.vector1 = this.lotes.concat(this.lotes2);
+        console.log(this.lotes);
       }, err => {
         console.log(err);
       });
