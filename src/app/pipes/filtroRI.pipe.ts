@@ -12,7 +12,7 @@ export class FiltroRIPipe implements PipeTransform {
     for (const centro of value) {
       if (centro.almacenes.toString().indexOf(valor.toString()) > -1) {
         resultcod.push(centro);
-      } else if (centro.unidadmedida1.toString().indexOf(valor.toString()) > -1) {
+      }else if (centro.unidadmedida1.toLowerCase().indexOf(valor.toString().toLowerCase()) > -1) {
         resultcod.push(centro);
       } else if (centro.fechavencimiento.toString().indexOf(valor.toString() ) > -1) {
         resultcod.push(centro);

@@ -39,16 +39,16 @@
     name="Fecha"
   />
 
-  <label class="menu" [hidden]="isHidden">Presetacion</label>
+  <label class="menu" [hidden]="isHidden">Presentacion</label>
   <input
     type="text"
     style="width: 200px;"
     class="form-control"
     class="menu"
-    placeholder="Presetacion "
+    placeholder="Presentacion "
     [hidden]="isHidden"
-    [(ngModel)]="presetacion"
-    name="Presetacion"
+    [(ngModel)]="presentacion"
+    name="Presentacion"
   />
 
   <label [hidden]="isHidden1" class="menu"> Almacen </label>
@@ -91,7 +91,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let sal of recuento | filtroRI: fechas | filtroRI: presetacion | filtroRI: almacen">
+        <!--     -->
+        <tr *ngFor="let sal of recuento | filtroRI: almacen | filtroRI: presentacion | filtroRI: fechas">
           <th scope="row">{{sal.idrecuentroinventario}}</th>
           <td>{{sal.lote}}</td>
           <td>{{sal.fechavencimiento}}</td>

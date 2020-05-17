@@ -125,8 +125,9 @@ export class RecuentoinventariocComponent implements OnInit {
   get f() { return this.rec.controls; }
 
   onClickMe(){
-
+  if(this.tiporef.Referencia == "Granular" || this.tiporef.Referencia == "granular"){
     
+    this.inventario.Cantidad = this.sal.cantidadcontada;
     this.Service.postrecuento(this.sal).subscribe(res => {
       console.log(this.sal);
       this.showMenssage();
@@ -136,8 +137,32 @@ export class RecuentoinventariocComponent implements OnInit {
         console.log(err);
       });
       
+     this.Service.putinventario(this.sal.idAlmacenes, this.inventario).subscribe(res => {
+    
+      },
+      err => {
+        console.log(err);
+      });
      
-     
+      
+    } else if (this.tiporef.Referencia == "Liquida" || this.tiporef.Referencia == "liquida") {
+      this.inventario.Cantidad2 = this.sal.cantidadcontada;
+      this.Service.postrecuento(this.sal).subscribe(res => {
+        console.log(this.sal);
+        this.showMenssage();
+        
+        },
+        err => {
+          console.log(err);
+        });
+        
+       this.Service.putinventario(this.sal.idAlmacenes, this.inventario).subscribe(res => {
+      
+        },
+        err => {
+          console.log(err);
+        });
+    }
 
   }
 
@@ -234,7 +259,7 @@ export class RecuentoinventariocComponent implements OnInit {
         this.refe.referencia = this.tiporef.Referencia;
         this.granular = true;
         this.liquida = false;
-
+        
 
       } else if (this.tiporef.Referencia == "Liquida" || this.tiporef.Referencia == "liquida") {
         this.sal.unidadmedida1 = this.tiporef.UnidadPrincipal;

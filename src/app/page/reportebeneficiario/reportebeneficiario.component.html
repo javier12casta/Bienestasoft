@@ -2,78 +2,91 @@
   
     <button class="btn btn-dark" routerLink="/menu">Volver</button>
      
-    <label  style="text-align:left;"  >Filtar Por : </label>
-  <select style="width: 200px;" class="form-control"  [(ngModel)]="fil" (change)="onChange()"> 
-      <option >  
-        Municipio 
-      </option > 
-      <option> 
-        Fecha ingreso
-      </option > 
-      <option > 
-        Estado
-      </option > 
-      <option > 
-        Servicio o modalidad
-      </option >
-      <option > 
-        Nivel
-      </option > 
-      
-      </select>
+    <div
+    style="margin-left: auto; margin-right: auto; display: inline-flex; width: 450px;
+  justify-content: center; align-items: center;"
+  >
+    <div style="  padding: 5px; margin: auto;">
+      <label>
+        <mat-icon class="icon" style="font-size: larger;"
+          >filter_list <a>Filtar por :</a>
+        </mat-icon>
+      </label>
+    </div>
 
-      <label [hidden]="isHidden2" class="menu">Municipio</label>
-        <select class="menu "  style="width: 300px;" class="form-control" formControlName="idMunicipios"  [(ngModel)]="mun" [hidden]="isHidden2">
-            <option *ngFor="let muni of municipios"  (ngModelChange)="opmunicipio()"  > {{muni.Municipio}} </option>
-        </select>
-      
+  <select
+    class="form-control"
+    style="width: 200px;"
+    [(ngModel)]="fil"
+    (change)="onChange()"
+    [value]="Responsable"
+  >
+    <option>
+      Municipio
+    </option>
+    <option>
+     Fecha de ingreso
+    </option>
+    <option>
+      Estado
+    </option>
+    <option>
+      Servicio o modalidad
+    </option>
+  </select>
+  </div>
+
+  <label [hidden]="isHidden2">Municipio : </label>
+  <h2></h2>
+  <input
+    type="text"
+    placeholder="Municipio"
+    [hidden]="isHidden2"
+    [(ngModel)]="muni"
+    name="muni"
   
-        <label class="menu" [hidden]="isHidden">Fecha ingreso </label>
-        <input type="date"  min="1900-01-01" max="2050-12-31" [hidden]="isHidden"/>
+  />
+  <h2></h2>
 
+  <label [hidden]="isHidden">Fecha de ingreso : </label>
+  <h2></h2>
+  <input
+    type="text"
+    placeholder="Fecha de ingreso"
+    [hidden]="isHidden"
+    [(ngModel)]="Fecha"
+    name="Fecha"
+  
+  />
+  <h2></h2>
 
-      <label  [hidden]="isHidden1" class="menu"> Estado </label>
+  <label [hidden]="isHidden1">Estado : </label>
+  <select
+    class="form-control"
+    style="width: 200px;"
+    [(ngModel)]="est"
+    name="est"
+    (change)="estad()"
+    [hidden]="isHidden1"
+  >
+    <option [value]="1">
+      Habilitado
+    </option>
+    <option [value]="0">
+      Deshabilitado
+    </option>
+  </select>
 
-      <select   style="width: 200px;" class="form-control" [(ngModel)]="est" (change)="estad()"  [hidden]="isHidden1"> 
-        <option   > 
-          Habilitado
-        </option > 
-        <option  > 
-          Deshabilitado
-        </option > 
-        
-        </select>
+  <label [hidden]="isHidden3">Servicio o modalidad : </label>
+  <h2></h2>
+  <input type="text" 
+  placeholder="Servicio o modalidad "
+  [hidden]="isHidden3"
+  [(ngModel)]="servicio"
+  name="servicio"
+  >
 
-        <label [hidden]="isHidden3" >Servicio o modalidad : </label>
-        <h2> </h2> 
-        <input type="text" placeholder="Servicio o modalidad" [(ngModel)]="res" [hidden]="isHidden3" />
-        <h2> </h2> 
-
-
-        <label  class="menu" [hidden]="isHidden4"> Nivel </label>
-
-        <select style="width: 200px;" class="form-control" [(ngModel)]="est" (change)="estad()" [hidden]="isHidden4"> 
-          <option   > 
-            Centro zonal
-          </option > 
-          <option  > 
-            Punto de entrega
-          </option > 
-          <option  > 
-            Unidad de servicio
-          </option > 
-          
-          </select>
-
-
-   
-        <button class="btn btn-dark" >Buscar</button>
-
-
-
-
-   
-  </nav>
+</nav>
      
     <table class="table" id="contentToConvert">
         <thead class="thead-green">
@@ -112,7 +125,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let centro of benefi">
+          <tr *ngFor="let centro of benefi | filtrobenefi: muni | filtrobenefi: est | filtrobenefi: servicio | filtrobenefi: Fecha">
             <th scope="row">{{centro.idBeneficiarios}}</th>
             <td>{{centro.NumeroDocumento }}</td>
             <td>{{centro.FechaI  }}</td>
@@ -123,7 +136,7 @@
             <td>{{centro.SegundoApellido }}</td>
             <td>{{centro.Direccion}}</td>
             <td>{{centro.Pais }}</td>
-            <td>{{centro.Departamento  }}</td>
+            <td>{{centro.Departamento}}</td>
             <td>{{centro.Municipio }}</td>
             <td>{{centro.TelefonoFijo }}</td>
             <td>{{centro.TelefonoFijo2 }}</td>

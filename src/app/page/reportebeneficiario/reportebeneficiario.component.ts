@@ -25,7 +25,7 @@ export class ReportebeneficiarioComponent implements OnInit {
   isHidden4: boolean = true;
 
 
-fil;
+  fil;
   est;
   municipios: Municipio[] = [];
   benefi: Beneficiarior[] = [];
@@ -99,7 +99,7 @@ onChange(){
   }
 
 
-  if(this.fil == "Fecha ingreso"){
+  if(this.fil == "Fecha de ingreso"){
 
     this.isHidden = false;
     this.isHidden1 = true;

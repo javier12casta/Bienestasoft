@@ -15,7 +15,7 @@ export class FiltroentregacPipe implements PipeTransform {
         resultcod.push(centro);
       } else if(centro.lote.toLowerCase().indexOf(valor.toLowerCase()) > -1){
         resultcod.push(centro);
-      }else if (centro.fecharegistro.toString() .indexOf(valor.toString() ) > -1) {
+      }else if (centro.fecharegistro.toString().indexOf(valor.toString() ) > -1) {
         resultcod.push(centro);
       }
 
